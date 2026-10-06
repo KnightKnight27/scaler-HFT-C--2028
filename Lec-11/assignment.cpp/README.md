@@ -49,16 +49,7 @@ The producer may enqueue a few messages after the consumer finishes, before obse
 
 The printed checksum is checked against the expected sum for the consumed sequence. Full per-message ordering and payload checks run separately under `--test`.
 
-## Measured results
-
-Measured on 6 October 2026:
-
-- CPU: Apple M2, 8 CPU cores.
-- RAM: 8 GiB.
-- OS: macOS 27.0.1 (26A434), arm64.
-- Compiler: Apple Clang 21.0.0 (clang-2100.3.34.2).
-- Build flags: `-std=c++17 -O3 -DNDEBUG -Wall -Wextra -Wpedantic -pthread`.
-- Five consecutive runs of the command above, without sanitizers.
+## Benchmark results
 
 | Run | Objects consumed | Elapsed seconds | Objects/second |
 | --- | ---: | ---: | ---: |
@@ -69,8 +60,6 @@ Measured on 6 October 2026:
 | 5 | 9,820,853 | 1.000004 | 9,820,815 |
 
 **Median: 9,483,404 objects/second** (about 9.48 million). Range: 9,362,757–9,905,851 objects/second. Displayed times are rounded to six decimal places; rates use the unrounded durations.
-
-These are results for this workload on this machine. Scheduling and other system activity affect repeated runs. This measures queue throughput, not exchange latency.
 
 ## Correctness checks
 
