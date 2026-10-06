@@ -2,6 +2,13 @@
 
 A single producer and a single consumer transfer 64-byte messages through a fixed ring buffer protected by `std::mutex`.
 
+## Submission details
+
+```yaml
+email: "mayank.24bcs10220@sst.scaler.com"
+roll_no: "24bcs10220"
+```
+
 ## Build and run
 
 From the repository root:
@@ -14,6 +21,14 @@ clang++ -std=c++17 -O3 -DNDEBUG -Wall -Wextra -Wpedantic -pthread spsc_queue.cpp
 ```
 
 C++17 and the standard library are the only requirements. No external dependencies.
+
+To collect five separate one-second benchmark runs:
+
+```sh
+for run in 1 2 3 4 5; do
+    /tmp/scaler-spsc
+done
+```
 
 ## Implementation
 
