@@ -1,4 +1,9 @@
 # SPSC Queue — Performance Evolution
+**--email: mohammed.24bcs10620@sst.scaler.com**
+
+**--name: Mohammed Rehan**
+
+**--rollno: 10620**   
 
 A C++ implementation and benchmark of a **Single-Producer Single-Consumer (SPSC) queue**, progressing from a mutex-based queue to an optimized lock-free implementation.
 
