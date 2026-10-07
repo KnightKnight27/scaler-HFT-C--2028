@@ -1,5 +1,8 @@
 # Lec 11 assignment
 
+email: dhruv.24bcs10205@sst.scaler.com
+roll no.: 24bcs10205
+
 This is a bounded SPSC queue protected by `std::mutex`.
 
 Build and run:
