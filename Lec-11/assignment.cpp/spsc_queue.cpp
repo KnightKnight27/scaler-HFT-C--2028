@@ -15,15 +15,48 @@
 #include <cstddef>
 #include <iostream>
 #include <mutex>
+#include <new>
 
 template <typename T>
 class SPSC{
     public:
+        // Constructor
         SPSC(std::size_t size) : mSize(size){
+            // Allocating raw memory
             mData = static_cast<T*>(::operator new(sizeof(T) * size));
         }
 
+        // Destructor
+        ~SPSC(){
+            ::operator delete(mData);
+        }
+
+        // No copying
+        SPSC(const SPSC<T>&) = delete;
+        SPSC(SPSC&&) = delete;
+
+        // Push
+        bool push(T val){
+            std::lock_guard<std::mutex> lock(mMutex);
+
+            if(size() == mSize){
+                return false;
+            }
+
+            // Since we are using raw memory
+            // We have to construct a T object with val at the specified memory address
+            new (&mData[mPushIdx % mSize]) T(val);
+
+            ++mPushIdx;
+            return true
+        }
+
     private:
+        // Number of elements in the queue
+        std::size_t size() const{
+            return mPushIdx - mPopIdx;
+        }
+
         T* mData{nullptr};  // Pointer to memory where queue objects will live 
 
         std::size_t mSize{0};         // Queue Capacity
