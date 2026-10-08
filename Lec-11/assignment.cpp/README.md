@@ -1,5 +1,8 @@
 # SPSC queue benchmark (spinlock vs mutex)
 
+email: anika.24bcs10409@sst.scaler.com
+roll no: 10409
+
 ## what this is
 
 A single producer single consumer (SPSC) queue built on a ring buffer, protected by a lock.
