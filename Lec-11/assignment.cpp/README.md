@@ -11,6 +11,9 @@ get through in 1 second for each lock type.
 
 Goal: compare how much the choice of lock (spinlock / own mutex / std::mutex) affects throughput.
 
+The ring buffer doubles as the memory pool - all N slots are preallocated when the
+queue is created, push/pop only copy in and out, nothing ever hits the heap.
+
 ## files
 
 | file | what it does |
