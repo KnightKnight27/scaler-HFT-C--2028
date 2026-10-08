@@ -1,0 +1,24 @@
+clang++ -std=c++17 -pthread -Wall -Wextra -Wpedantic -Werror -O1 -g -fno-omit-frame-pointer -fsanitize=address,undefined tests/test_spsc.cpp -o build/spsc_tests_asan
+clang++ -std=c++17 -pthread -Wall -Wextra -Wpedantic -Werror -O1 -g -fno-omit-frame-pointer -fsanitize=address,undefined spsc_queue.cpp -o build/spsc_bench_asan
+./build/spsc_tests_asan
+PASS mutex capacity=1 slow_side=0 transferred=250000
+PASS mutex capacity=1 slow_side=1 transferred=250000
+PASS mutex capacity=1 slow_side=2 transferred=250000
+PASS mutex capacity=7 slow_side=0 transferred=250000
+PASS mutex capacity=7 slow_side=1 transferred=250000
+PASS mutex capacity=7 slow_side=2 transferred=250000
+PASS mutex capacity=1024 slow_side=0 transferred=250000
+PASS mutex capacity=1024 slow_side=1 transferred=250000
+PASS mutex capacity=1024 slow_side=2 transferred=250000
+PASS spin capacity=1 slow_side=0 transferred=250000
+PASS spin capacity=1 slow_side=1 transferred=250000
+PASS spin capacity=1 slow_side=2 transferred=250000
+PASS spin capacity=7 slow_side=0 transferred=250000
+PASS spin capacity=7 slow_side=1 transferred=250000
+PASS spin capacity=7 slow_side=2 transferred=250000
+PASS spin capacity=1024 slow_side=0 transferred=250000
+PASS spin capacity=1024 slow_side=1 transferred=250000
+PASS spin capacity=1024 slow_side=2 transferred=250000
+PASS 200602 checks; 18 concurrent trials; 4500000 objects
+python3 tests/test_cli.py ./build/spsc_bench_asan
+PASS 72 CLI/benchmark checks
