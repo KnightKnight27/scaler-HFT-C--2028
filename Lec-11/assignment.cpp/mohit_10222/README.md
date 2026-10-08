@@ -28,7 +28,7 @@ The benchmark arguments are duration in seconds, measured trials per lock, queue
 ./build/spsc_bench --help
 ```
 
-Defaults are `1 5 1024 both`. On a system with GCC, the C++ programs can also be built with `make CXX=g++`; the recording script uses `clang++` to match the measurements below.
+Defaults are `1 5 1024 both`. The recording script forces a fresh `clang++` build before measuring. On a system with GCC, run `make clean` before switching to `make CXX=g++`.
 
 ## Results
 
@@ -41,19 +41,25 @@ Measured on 8 October 2026: Apple M5 Pro, 15 logical CPUs, 24 GiB RAM, macOS 26.
 
 These are five measured one-second windows per variant, after one 0.1-second warm-up. Every sample finished with equal total push/pop counts and zero payload errors. See [raw CSV](results/benchmark.csv), [summary](results/summary.json), and [machine details and source hashes](results/environment.json).
 
-One counted object means a successful push followed by a successful pop within the timing window. Push and pop are not added together. Both workers wait at a start gate; the main thread then publishes a shared deadline using `steady_clock`. The producer stops at that deadline. The consumer timestamps each successful pop and counts it only if the timestamp is within the window. Objects popped later are reported as `drained_after_window` and excluded from objects/sec. `elapsed_including_drain_seconds` includes final draining and joins.
+One counted object means a successful push followed by a successful pop within the timing window. Push and pop are not added together. Both workers wait at a start gate; the main thread then publishes a shared deadline using `steady_clock`.
 
-The consumer checks the FIFO sequence and all eight 64-bit words, including objects drained after the deadline. The clock checks, payload generation/validation, locking, copies and retry loops are part of the measured workload. Payload MB/sec is objects/sec × 64 ÷ 1,000,000; it is not a measurement of total memory traffic. These are application throughput results, not bare lock timings.
+The producer checks the deadline before each push attempt. A push already in progress may finish later. The consumer timestamps each successful pop and counts it only if the timestamp is within the window. Objects popped later are reported as `drained_after_window` and excluded from objects/sec. `elapsed_including_drain_seconds` includes final draining and joins.
 
-The mutex was faster in this run. Both versions yield when the queue is full or empty; the spinlock also yields after a failed lock attempt. Scheduling and contention affect the comparison. Threads were not pinned, background activity was uncontrolled, and macOS may schedule workers on different core types. Results can change on another machine or run. There is no required performance threshold in the brief.
+The consumer checks the FIFO sequence and all eight 64-bit words, including objects drained after the deadline. The clock checks, payload generation/validation, locking, copies and retry loops are part of the measured workload. Payload MB/sec is objects/sec × 64 ÷ 1,000,000. The rate measures this complete producer/consumer workload.
+
+The mutex was faster in this run. Both versions yield when the queue is full or empty; the spinlock also yields after a failed lock attempt. Scheduling and contention affect the comparison. Threads were not pinned, background activity was uncontrolled, and macOS may schedule workers on different core types. Results can change on another machine or run.
 
 ## Queue design
 
-`SPSCQueue<T, Lock>` owns a fixed array allocated at construction. This is the memory pool: popped slots are reused, with no allocation or deallocation in `try_push` or `try_pop`. The queue stores trivially copyable objects with nonthrowing copy assignment. It rejects zero capacity, supports any positive capacity, and cannot be copied or moved. Destroy it after joining its users.
+`SPSCQueue<T, Lock>` owns a fixed array allocated at construction. This is the memory pool: popped slots are reused, with no allocation or deallocation in `try_push` or `try_pop`.
+
+The queue stores trivially copyable objects with nonthrowing copy assignment. It rejects zero capacity, supports any positive capacity, and cannot be copied or moved. Destroy it after joining its users.
 
 `head_` is the next slot to pop, `tail_` is the next slot to fill, and `size_` distinguishes full from empty even when the indices are equal. Each operation holds the same lock for its state check, object copy and index update. A full push returns `false` without changing the queue; an empty pop returns `false` without changing the output object. All allocated slots are usable, including when capacity is one.
 
-For the spinlock, `atomic_flag::test_and_set` with acquire ordering grants ownership and `clear` with release ordering publishes the updates when the lock is released. The mutex provides the same exclusion through `lock_guard`. The queue is lock based and its lock acquisition can wait; the `try_` names describe the full/empty check, not a lock-free operation. A spinlock has no fairness guarantee and can waste CPU under contention.
+For the spinlock, `atomic_flag::test_and_set` with acquire ordering grants ownership and `clear` with release ordering publishes the updates when the lock is released. The mutex provides the same exclusion through `lock_guard`.
+
+The queue is lock based and its lock acquisition can wait; the `try_` names describe the full/empty check, not a lock-free operation. A spinlock has no fairness guarantee and can waste CPU under contention.
 
 The producer's separate atomic completion flag uses release/acquire ordering. When the consumer sees an empty queue and then sees completion, it checks the queue once more before exiting. This covers a final push occurring between those two observations.
 
@@ -72,6 +78,6 @@ All passed on the Mac described above:
 - 72 CLI/benchmark checks covering invalid arguments, requested lock variants, timed transfers, rate arithmetic and drain accounting.
 - AddressSanitizer + UndefinedBehaviorSanitizer and ThreadSanitizer on the C++ tests and benchmark CLI checks. Logs: [ASan/UBSan](results/asan-ubsan.log), [TSan](results/tsan.log).
 
-Sanitizer runs are correctness checks; their timings are not used in the results table. Sanitizer availability varies by compiler and platform. These tests provide evidence for the exercised cases rather than a proof for every possible scheduling interleaving.
+Sanitizer runs are correctness checks; their timings are not used in the results table. These runs cover the listed capacities and schedules. Sanitizers may be unavailable with other compilers or platforms.
 
 AI assistance was used to draft the implementation, tests and explanation. The reported measurements and checks were actually run on the recorded machine.

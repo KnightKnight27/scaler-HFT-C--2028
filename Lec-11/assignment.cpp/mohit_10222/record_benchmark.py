@@ -21,7 +21,7 @@ def read_command(arguments):
     return result.stdout.strip() if result.returncode == 0 else None
 
 
-build_command = ["make", "CXX=clang++", "build/spsc_bench"]
+build_command = ["make", "-B", "CXX=clang++", "build/spsc_bench"]
 build = subprocess.run(build_command, cwd=root, text=True, capture_output=True, timeout=45)
 if build.returncode != 0:
     sys.exit(build.stdout + build.stderr)
