@@ -192,3 +192,6 @@ naive     counter = 1058012  (expected 2000000)
   lines with `alignas(64)` would help.
 - results depend on whether the two threads run on the same core or different cores.
   Pinning threads with `taskset` / `pthread_setaffinity_np` would make runs more consistent.
+- the atomics use the default seq_cst ordering, stronger than needed. acquire on
+  lock() / release on unlock() is enough, and the lockfree queue could run relaxed
+  loads + release/acquire stores on head/tail for a bit more speed.
