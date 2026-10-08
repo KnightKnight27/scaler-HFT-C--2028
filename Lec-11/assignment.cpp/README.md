@@ -19,8 +19,13 @@ Goal: compare how much the choice of lock (spinlock / own mutex / std::mutex) af
 | `mutex_queue.h` | ring buffer + std::mutex written out by hand |
 | `test_ringbuffer.cpp` | unit tests for the ring buffer (empty, full, wraparound, order) |
 | `naive_test.cpp` | shows why the naive spinlock fails |
-| `bench.cpp` | benchmark for spinlock, mymutex and std::mutex |
+| `lock_test.cpp` | same counter test but 10M iters, prints ok/BROKEN |
+| `bench.cpp` | 1 second benchmark for spinlock, mymutex and std::mutex |
 | `bench_mutex.cpp` | standalone benchmark for std::mutex only |
+| `latency_bench.cpp` | latency version: ns per lock+unlock and push->pop time |
+| `spsc_queue.cpp` | single file version, everything inline (queue + locks + bench) |
+| `Makefile` | `make` builds test, bench, bench_mutex, naive |
+| `TerminalSS.png` | screenshot of a bench run |
 
 ## architecture
 
