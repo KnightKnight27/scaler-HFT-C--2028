@@ -1,0 +1,8 @@
+bench
+test_suite
+*.o
+*.dSYM
+build/
+perf_results/
+*.data
+*.data.old
