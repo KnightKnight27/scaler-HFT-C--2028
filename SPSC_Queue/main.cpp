@@ -1,40 +1,56 @@
 #include <thread>
 #include <iostream>
+#include <atomic>
 #include <chrono>
 #include "spsc_queue.cpp"
 
 constexpr size_t QUEUE_SIZE = 1024;
 constexpr int NUM_MESSAGES = 10'000'000; 
 
-void producer(SpscQueue<int, QUEUE_SIZE>& q, int num_messages) {
-    for (int i = 0; i < num_messages; ++i) {
-        while (!q.push(i)) {
+struct Payload {
+    std::array<char, 64> data{};
+};
+
+void producer(SpscQueue<Payload, 1024>& q, std::atomic<bool>& running, size_t& push_count) {
+    Payload p;
+    while (running.load(std::memory_order_relaxed)) {
+        if (q.push(p)) {
+            push_count++;
+        } else {
             std::this_thread::yield();
         }
     }
 }
-void consumer(SpscQueue<int, QUEUE_SIZE>& q, int num_messages) {
-    int item;
-    for (int i = 0; i < num_messages; ++i) {
-        while (!q.pop(item)) {
+
+void consumer(SpscQueue<Payload, 1024>& q, std::atomic<bool>& running, size_t& pop_count) {
+    Payload p;
+    while (running.load(std::memory_order_relaxed)) {
+        if (q.pop(p)) {
+            pop_count++;
+        } else {
             std::this_thread::yield();
         }
-    }   
+    }
 }
 
 int main() {
-    SpscQueue<int, QUEUE_SIZE> queue;
+    SpscQueue<Payload, 1024> queue;
+    std::atomic<bool> running{true};
+    size_t total_pushes = 0;
+    size_t total_pops = 0;
 
-    auto start = std::chrono::high_resolution_clock::now();
-    std::thread prod_thread(producer, std::ref(queue), NUM_MESSAGES);
-    std::thread cons_thread(consumer, std::ref(queue), NUM_MESSAGES);
+    std::thread prod_thread(producer, std::ref(queue), std::ref(running), std::ref(total_pushes));
+    std::thread cons_thread(consumer, std::ref(queue), std::ref(running), std::ref(total_pops));
+
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+
+    running.store(false, std::memory_order_relaxed);
 
     prod_thread.join();
     cons_thread.join();
 
-    auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> diff = end - start;
-    std::cout << "Time: " << diff.count() << " seconds\n";
-    std::cout << "Throughput: " << (NUM_MESSAGES / diff.count()) / 1'000'000.0 << " Million Ops/sec\n";
+    std::cout << "Pushes in 1 sec: " << total_pushes << "\n";
+    std::cout << "Pops in 1 sec:   " << total_pops << "\n";
+
     return 0;
 }
