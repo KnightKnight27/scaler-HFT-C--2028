@@ -1,4 +1,6 @@
 # Low-Latency SPSC Queue
+- **Email**: minesh.24bcs10029@sst.scaler.com
+- **Roll No.:** 24BCS10029
 
 ## Architecture Overview
 
