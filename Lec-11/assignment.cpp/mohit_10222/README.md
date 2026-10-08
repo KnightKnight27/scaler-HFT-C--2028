@@ -6,7 +6,7 @@ This implements the [Lec-11 assignment](../spsc_queue.cpp): one producer pushes 
 
 ## Build and run
 
-Requirements: a C++17 compiler, `make`, and Python 3 for the test/recording scripts. No external libraries are needed. Run these commands from this directory:
+The default commands require `clang++` with C++17 support, `make`, and Python 3 for the test/recording scripts. No external libraries are needed. Run these commands from this directory:
 
 ```sh
 make
@@ -28,7 +28,13 @@ The benchmark arguments are duration in seconds, measured trials per lock, queue
 ./build/spsc_bench --help
 ```
 
-Defaults are `1 5 1024 both`. The recording script forces a fresh `clang++` build before measuring. On a system with GCC, run `make clean` before switching to `make CXX=g++`.
+Defaults are `1 5 1024 both`. The recording script requires `clang++` and forces a fresh build before measuring. GCC users can build, test and benchmark with:
+
+```sh
+make clean
+make CXX=g++ test
+make CXX=g++ benchmark
+```
 
 ## Results
 
@@ -39,7 +45,7 @@ Measured on 8 October 2026: Apple M5 Pro, 15 logical CPUs, 24 GiB RAM, macOS 26.
 | `std::mutex` | 8,901,400 | 8,864,926 | 8,908,052 | 569.69 |
 | Spinlock | 8,332,156 | 8,288,582 | 8,405,278 | 533.26 |
 
-These are five measured one-second windows per variant, after one 0.1-second warm-up. Every sample finished with equal total push/pop counts and zero payload errors. See [raw CSV](results/benchmark.csv), [summary](results/summary.json), and [machine details and source hashes](results/environment.json).
+These are five measured one-second windows per variant, after one 0.1-second warm-up. Every sample finished with equal total push/pop counts and zero payload errors. See [raw CSV](results/benchmark.csv), [summary](results/summary.json), and [machine details and source hashes](results/environment.json). The saved run used an existing release build; a forced Clang rebuild reproduced its recorded SHA-256.
 
 One counted object means a successful push followed by a successful pop within the timing window. Push and pop are not added together. Both workers wait at a start gate; the main thread then publishes a shared deadline using `steady_clock`.
 
@@ -47,7 +53,7 @@ The producer checks the deadline before each push attempt. A push already in pro
 
 The consumer checks the FIFO sequence and all eight 64-bit words, including objects drained after the deadline. The clock checks, payload generation/validation, locking, copies and retry loops are part of the measured workload. Payload MB/sec is objects/sec × 64 ÷ 1,000,000. The rate measures this complete producer/consumer workload.
 
-The mutex was faster in this run. Both versions yield when the queue is full or empty; the spinlock also yields after a failed lock attempt. Scheduling and contention affect the comparison. Threads were not pinned, background activity was uncontrolled, and macOS may schedule workers on different core types. Results can change on another machine or run.
+The mutex was faster in this run. Both versions yield when the queue is full or empty; the spinlock also yields after a failed lock attempt. Threads were not pinned, background activity was uncontrolled, and macOS may schedule workers on different core types.
 
 ## Queue design
 
@@ -78,6 +84,6 @@ All passed on the Mac described above:
 - 72 CLI/benchmark checks covering invalid arguments, requested lock variants, timed transfers, rate arithmetic and drain accounting.
 - AddressSanitizer + UndefinedBehaviorSanitizer and ThreadSanitizer on the C++ tests and benchmark CLI checks. Logs: [ASan/UBSan](results/asan-ubsan.log), [TSan](results/tsan.log).
 
-Sanitizer runs are correctness checks; their timings are not used in the results table. These runs cover the listed capacities and schedules. Sanitizers may be unavailable with other compilers or platforms.
+Sanitizer runs are correctness checks; their timings are not used in the results table. These runs cover the listed capacities and schedules. The saved sanitizer logs are from Apple Clang 21.0.0 on the Mac described above.
 
 AI assistance was used to draft the implementation, tests and explanation. The reported measurements and checks were actually run on the recorded machine.
