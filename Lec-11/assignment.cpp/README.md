@@ -1,3 +1,7 @@
+
+### email: ujjwal.24bcs10415@sst.scaler.com 
+### roll_no: 24bcs10415
+
 # SPSC Queue assignment
 
 single producer single consumer queue. 1 thread pushes 64 byte objects, other
