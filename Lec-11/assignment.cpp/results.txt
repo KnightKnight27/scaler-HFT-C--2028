@@ -1,0 +1,6 @@
+spinlock   pushed:      1687110  popped:      1687109  (1.69 M ops/sec popped, 102.97 MB/s)
+mutex      pushed:      4977702  popped:      4976679  (4.98 M ops/sec popped, 303.75 MB/s)
+spinlock   pushed:      1169437  popped:      1169436  (1.17 M ops/sec popped, 71.38 MB/s)
+mutex      pushed:      4424617  popped:      4423593  (4.42 M ops/sec popped, 269.99 MB/s)
+spinlock   pushed:       905249  popped:       905248  (0.91 M ops/sec popped, 55.25 MB/s)
+mutex      pushed:      6322569  popped:      6321546  (6.32 M ops/sec popped, 385.84 MB/s)
