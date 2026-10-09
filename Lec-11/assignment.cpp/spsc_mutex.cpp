@@ -2,6 +2,7 @@
 #include <thread>
 #include <chrono>
 #include <atomic>
+#include <mutex>
 
 using namespace std;
 
@@ -15,41 +16,31 @@ Object64 arr[QUEUE_SIZE];
 int head = 0;
 int tail = 0;
 int count_val = 0;
-
-atomic_flag spin_flag = ATOMIC_FLAG_INIT;
-
-void my_lock() {
-    while (spin_flag.test_and_set()) {
-    }
-}
-
-void my_unlock() {
-    spin_flag.clear();
-}
+mutex mtx;
 
 bool push_item(Object64 val) {
-    my_lock();
+    mtx.lock();
     if (count_val >= QUEUE_SIZE) {
-        my_unlock();
+        mtx.unlock();
         return false;
     }
     arr[tail] = val;
     tail = (tail + 1) % QUEUE_SIZE;
     count_val = count_val + 1;
-    my_unlock();
+    mtx.unlock();
     return true;
 }
 
 bool pop_item(Object64 &val) {
-    my_lock();
+    mtx.lock();
     if (count_val <= 0) {
-        my_unlock();
+        mtx.unlock();
         return false;
     }
     val = arr[head];
     head = (head + 1) % QUEUE_SIZE;
     count_val = count_val - 1;
-    my_unlock();
+    mtx.unlock();
     return true;
 }
 
@@ -81,7 +72,7 @@ void consumer() {
 
 int main() {
     cout << "sizeof Object64: " << sizeof(Object64) << " bytes" << endl;
-    cout << "running benchmark for 1 sec..." << endl;
+    cout << "running mutex benchmark for 1 sec..." << endl;
 
     thread t1(producer);
     thread t2(consumer);
