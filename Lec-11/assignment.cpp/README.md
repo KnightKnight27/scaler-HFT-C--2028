@@ -1,4 +1,6 @@
 # SPSC Queue Benchmarks (Lec-11 Assignment)
+email: "sarthak.24bcs10149@sst.scaler.com"  
+roll_no: "24BCS10149"
 
 Implementation of SPSC queue for 64-byte objects using:
 1. `spsc_spinlock.cpp` - Spinlock implementation with busy-wait `while` loop using `std::atomic_flag`.
