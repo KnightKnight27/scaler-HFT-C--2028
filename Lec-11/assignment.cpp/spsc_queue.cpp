@@ -21,6 +21,9 @@
 #include <atomic>
 #include <chrono>
 #include <cstring>
+#include <string>
+
+#include "spsc_queue.hpp"
 
 using namespace std;
 
@@ -30,76 +33,11 @@ struct Obj {
     char data[56];
 };
 
-// simple spinlock using atomic_flag, just keeps looping till it gets the lock
-struct SpinLock {
-    atomic_flag flag = ATOMIC_FLAG_INIT;
-
-    void lock() {
-        while (flag.test_and_set(memory_order_acquire)) {
-            // spin
-        }
-    }
-    void unlock() {
-        flag.clear(memory_order_release);
-    }
-};
-
-// ring buffer queue. the array is allocated once at the start
-// so we never call new while pushing/popping (this is the memory pool part)
-template <typename LockType>
-class SPSCQueue {
-    Obj* buf;
-    int cap;
-    int head; // consumer reads from here
-    int tail; // producer writes here
-    int count;
-    LockType lk;
-
-public:
-    SPSCQueue(int size) {
-        cap = size;
-        buf = new Obj[cap];
-        head = 0;
-        tail = 0;
-        count = 0;
-    }
-
-    ~SPSCQueue() {
-        delete[] buf;
-    }
-
-    bool push(const Obj& o) {
-        lk.lock();
-        if (count == cap) {
-            lk.unlock();
-            return false; // full
-        }
-        buf[tail] = o;
-        tail++;
-        if (tail == cap) tail = 0;
-        count++;
-        lk.unlock();
-        return true;
-    }
-
-    bool pop(Obj& o) {
-        lk.lock();
-        if (count == 0) {
-            lk.unlock();
-            return false; // empty
-        }
-        o = buf[head];
-        head++;
-        if (head == cap) head = 0;
-        count--;
-        lk.unlock();
-        return true;
-    }
-};
+static_assert(sizeof(Obj) == 64, "Obj should be 64 bytes");
 
 template <typename LockType>
 void runTest(string name) {
-    SPSCQueue<LockType> q(1024);
+    SPSCQueue<Obj, LockType> q(1024);
     atomic<bool> stop(false);
     long long pushed = 0;
     long long popped = 0;

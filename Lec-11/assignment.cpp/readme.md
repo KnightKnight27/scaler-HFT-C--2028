@@ -7,7 +7,12 @@ roll_no: "10135"
 One producer thread pushes 64 byte objects into a queue and one consumer thread pops them.
 Both run for 1 second and then I count how many went through.
 
-Code is in `spsc_queue.cpp`.
+## Files
+
+- `spsc_queue.hpp` - the queue (ring buffer) and my spinlock
+- `spsc_queue.cpp` - the 1 second benchmark, runs it with std::mutex and then spinlock
+- `test.cpp` - small tests with assert (empty/full, wrap around, order with 2 threads)
+- `image.png` - screenshot of my run
 
 ## What I did
 
@@ -22,6 +27,9 @@ Code is in `spsc_queue.cpp`.
 ## How to run
 
 ```
+g++ -std=c++17 -pthread test.cpp -o test
+./test
+
 g++ -O2 -std=c++17 -pthread spsc_queue.cpp -o spsc_queue
 ./spsc_queue
 ```
@@ -30,36 +38,23 @@ g++ -O2 -std=c++17 -pthread spsc_queue.cpp -o spsc_queue
 
 Machine: Apple M5 Pro (macOS), compiled with `-O2`
 
-Ran it 3 times:
+Ran it a few times:
 
 | Run | std::mutex (objects/sec) | spinlock (objects/sec) |
 |-----|--------------------------|------------------------|
 | 1   | 13,011,126               | 5,100,728              |
 | 2   | 14,409,201               | 4,890,371              |
 | 3   | 15,097,589               | 5,428,998              |
+| 4   | 12,431,332               | 5,067,023              |
 
 So roughly:
 
-- **std::mutex: ~14 million 64B objects per second** (~880 MB/s)
-- **spinlock: ~5 million 64B objects per second** (~310 MB/s)
+- **std::mutex: ~13-14 million 64B objects per second** (~800 MB/s)
+- **spinlock: ~5 million 64B objects per second** (~300 MB/s)
 
-Output from one run:
+Screenshot of run 4 (tests + benchmark):
 
-```
-sizeof(Obj) = 64 bytes
-
-std::mutex
-  pushed in 1 sec : 15097589
-  popped in 1 sec : 15097589
-  MB/s popped     : 921
-  order ok
-
-spinlock
-  pushed in 1 sec : 5429022
-  popped in 1 sec : 5428998
-  MB/s popped     : 331
-  order ok
-```
+![benchmark](image.png)
 
 ## Notes
 
