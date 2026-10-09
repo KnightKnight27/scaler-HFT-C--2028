@@ -34,7 +34,7 @@ public:
             new_node,
             std::memory_order_release,
             std::memory_order_relaxed)) {
-            // Loop until successful
+     
         }
     }
 
@@ -45,12 +45,11 @@ public:
             old_head->next,
             std::memory_order_acquire,
             std::memory_order_relaxed)) {
-            // Loop until successful or stack becomes empty
+   
         }
         
         if (old_head) {
             val = old_head->data;
-            // Safe deallocation in a simple producer-consumer setup
             delete old_head;
             return true;
         }
