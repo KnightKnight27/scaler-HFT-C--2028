@@ -32,9 +32,9 @@ g++ -O2 -std=c++17 -pthread spsc_queue.cpp -o /tmp/spsc
 ## my machine
 
 - laptop: ASUS Vivobook
-- CPU: <paste from `lscpu | grep "Model name"`>
-- OS: <paste from `lsb_release -d`>
-- compiler: <paste from `g++ --version | head -1`>
+- CPU: 13th Gen Intel Core i5-13500H
+- OS: Ubuntu 24.04.4 LTS
+- compiler: g++ 13.3.0
 - flags: `-O2 -std=c++17 -pthread`
 
 ## results
