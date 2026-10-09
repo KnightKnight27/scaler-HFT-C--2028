@@ -13,32 +13,72 @@
 // ^^ MEMORY POOL ^^
 
 #include <cstddef>
+#include <cstdint>
 #include <iostream>
 #include <mutex>
 #include <new>
 #include <stdexcept>
+#include <thread>
+#include <chrono>
 
+// Memory Pool
+// Allocates memory for multiple fixed-size blocks in one go.
+class MemoryPool {
+public:
+    MemoryPool(std::size_t blockSize, std::size_t blockCount)
+        : mBlockSize(blockSize), mBlockCount(blockCount) {
+
+        if (blockSize == 0 || blockCount == 0) {
+            throw std::invalid_argument("Invalid memory pool size");
+        }
+
+        // Allocate memory for all blocks at once.
+        mMemory = ::operator new(mBlockSize * mBlockCount);
+    }
+
+    void* getBlock(std::size_t index) {
+        if (index >= mBlockCount) {
+            throw std::out_of_range("Invalid block index");
+        }
+
+        char* memory = static_cast<char*>(mMemory);
+        return memory + index * mBlockSize;
+    }
+
+    ~MemoryPool() {
+        ::operator delete(mMemory);
+    }
+
+    MemoryPool(const MemoryPool&) = delete;
+    MemoryPool& operator=(const MemoryPool&) = delete;
+    MemoryPool(MemoryPool&&) = delete;
+    MemoryPool& operator=(MemoryPool&&) = delete;
+
+private:
+    void* mMemory{nullptr};
+    std::size_t mBlockSize{0};
+    std::size_t mBlockCount{0};
+};
+
+// SPSC Queue
 template <typename T>
-class SPSC{
+class SPSC {
     public:
         // Constructor
-        SPSC(std::size_t size) : mSize(size){
-            if(mSize == 0){
-                throw std::invalid_argument("Queue size is zero");
-            }
-            // Allocating raw memory for queue
-            mData = static_cast<T*>(::operator new(sizeof(T) * size));
+        SPSC(std::size_t size)
+            : mPool(sizeof(T), size), mSize(size) {
         }
 
         // Destructor
-        ~SPSC(){
+        ~SPSC() {
             // Destroying any objects still inside the queue
             for (std::size_t i = mPopIdx; i < mPushIdx; ++i) {
-                mData[i % mSize].~T();
-            }
+                T* item = static_cast<T*>(
+                    mPool.getBlock(i % mSize)
+                );
 
-            // Release the allocated memory
-            ::operator delete(mData);
+                item->~T();
+            }
         }
 
         // No copying or moving
@@ -48,35 +88,37 @@ class SPSC{
         SPSC& operator=(SPSC&&) = delete;
 
         // Push
-        bool push(const T& val){
+        bool push(const T& val) {
             std::lock_guard<std::mutex> lock(mMutex);
 
             // Queue full
-            if(size() == mSize){
+            if (size() == mSize) {
                 return false;
             }
 
             // Since we are using raw memory
             // We have to construct a T object with val at the specified memory address
-            new (&mData[mPushIdx % mSize]) T(val);
+            void* slot = mPool.getBlock(mPushIdx % mSize);
+            new (slot) T(val);
 
             ++mPushIdx;
             return true;
         }
 
         // Pop
-        bool pop(T& val){
-            std::lock_guard<std::mutex> lcok(mMutex);
+        bool pop(T& val) {
+            std::lock_guard<std::mutex> lock(mMutex);
 
             // Queue empty
-            if(mPushIdx == mPopIdx){
+            if (mPushIdx == mPopIdx) {
                 return false;
             }
 
-            val = mData[mPopIdx % mSize];
+            T* item = static_cast<T*>(mPool.getBlock(mPopIdx % mSize));
+            val = *item;
 
             // Destroying object 
-            mData[mPopIdx % mSize].~T();
+            item->~T();
             ++mPopIdx;
 
             return true;
@@ -84,11 +126,11 @@ class SPSC{
 
     private:
         // Number of objects in the queue
-        std::size_t size() const{
+        std::size_t size() const {
             return mPushIdx - mPopIdx;
         }
 
-        T* mData{nullptr};  // Pointer to memory where queue objects will live 
+        MemoryPool mPool;  // Memory pool used to store queue objects
 
         std::size_t mSize{0};         // Queue Capacity
         std::size_t mPushIdx{0};      // Where the next object should be pushed
@@ -96,3 +138,60 @@ class SPSC{
 
         std::mutex mMutex;
 };
+
+struct Message {
+    char data[64];
+};
+
+static_assert(sizeof(Message) == 64, "Message exactly of 64 bytes");
+
+
+int main() {
+    SPSC<Message> queue(1024);
+
+    std::uint64_t pushCount = 0;
+    std::uint64_t popCount = 0;
+
+    auto start = std::chrono::steady_clock::now();
+    auto end = start + std::chrono::seconds(1);
+
+    std::thread t1([&]() {
+        Message msg{};
+
+        while (std::chrono::steady_clock::now() < end) {
+            if (queue.push(msg)) {
+                ++pushCount;
+            }
+        }
+    });
+
+    std::thread t2([&]() {
+        Message msg{};
+
+        while (std::chrono::steady_clock::now() < end) {
+            if (queue.pop(msg)) {
+                ++popCount;
+            }
+        }
+    });
+
+    t1.join();
+    t2.join();
+
+    double elapsed = std::chrono::duration<double>(
+        std::chrono::steady_clock::now() - start
+    ).count();
+
+    std::cout << "Object size: " << sizeof(Message) << " bytes\n";
+    std::cout << "Queue capacity: 1024 objects\n";
+    std::cout << "Successful pushes: " << pushCount << '\n';
+    std::cout << "Successful pops: " << popCount << '\n';
+
+    std::cout << "Push throughput: " << pushCount / elapsed
+              << " objects/second\n";
+
+    std::cout << "Pop throughput: " << popCount / elapsed
+              << " objects/second\n";
+
+    return 0;
+}
