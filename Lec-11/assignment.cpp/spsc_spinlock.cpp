@@ -18,38 +18,38 @@ int count_val = 0;
 
 atomic_flag spin_flag = ATOMIC_FLAG_INIT;
 
-void my_lock() {
+void my_spinlock() {
     while (spin_flag.test_and_set()) {
     }
 }
 
-void my_unlock() {
+void my_spinunlock() {
     spin_flag.clear();
 }
 
 bool push_item(Object64 val) {
-    my_lock();
+    my_spinlock();
     if (count_val >= QUEUE_SIZE) {
-        my_unlock();
+        my_spinunlock();
         return false;
     }
     arr[tail] = val;
     tail = (tail + 1) % QUEUE_SIZE;
     count_val = count_val + 1;
-    my_unlock();
+    my_spinunlock();
     return true;
 }
 
 bool pop_item(Object64 &val) {
-    my_lock();
+    my_spinlock();
     if (count_val <= 0) {
-        my_unlock();
+        my_spinunlock();
         return false;
     }
     val = arr[head];
     head = (head + 1) % QUEUE_SIZE;
     count_val = count_val - 1;
-    my_unlock();
+    my_spinunlock();
     return true;
 }
 
@@ -81,7 +81,7 @@ void consumer() {
 
 int main() {
     cout << "sizeof Object64: " << sizeof(Object64) << " bytes" << endl;
-    cout << "running benchmark for 1 sec..." << endl;
+    cout << "running spinlock benchmark for 1 sec..." << endl;
 
     thread t1(producer);
     thread t2(consumer);
