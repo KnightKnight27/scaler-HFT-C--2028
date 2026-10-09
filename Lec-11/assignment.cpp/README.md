@@ -1,5 +1,9 @@
 # SPSC Queue Benchmark: Mutex vs Spinlock
 
+Name: Namami Verma
+Email: namami.24bcs10349@sst.scaler.com
+Roll Number: 24bcs10349
+
 ## Overview
 
 This assignment implements a Single Producer, Single Consumer (SPSC)
