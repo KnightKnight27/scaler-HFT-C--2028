@@ -1,5 +1,11 @@
 # SPSC Queue with Mutex Locks
 
+- email: akshat.24bcs10059@sst.scaler.com
+
+- roll_no: 10059
+
+---
+
 ## 1. Design
 - Queue: `MutexSPSCQueue<T>` in `spsc_queue_mutex.cpp` (`std::mutex` + `lock_guard`)
 
