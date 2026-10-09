@@ -1,3 +1,6 @@
+// Name: Ayush Kumar Patra
+// Roll No: 24bcs10474
+//
 // WRITE AN SPSC QUEUE 
 // SPINLOCK ( WHILE LOOP) OR STD::MUTEX 
 // t1.join()  t2.join()
@@ -66,7 +69,7 @@ public:
         size_t next_tail = (tail + 1) % capacity;
         if (next_tail == head) {
             release();
-            return false; // full
+            return false; 
         }
         buffer[tail] = msg;
         tail = next_tail;
@@ -78,7 +81,7 @@ public:
         acquire();
         if (head == tail) {
             release();
-            return false; // empty
+            return false;
         }
         msg = buffer[head];
         head = (head + 1) % capacity;
@@ -97,7 +100,7 @@ private:
 
 public:
     SPSCQueue(size_t capacity) {
-        // Find next power of 2
+     
         size_t cap = 1;
         while (cap < capacity) cap *= 2;
         buffer.resize(cap);
@@ -155,7 +158,7 @@ void benchmark(const char* name) {
                 count++;
             }
         }
-        // Consume remaining
+     
         while (q.pop(msg)) {
             count++;
         }

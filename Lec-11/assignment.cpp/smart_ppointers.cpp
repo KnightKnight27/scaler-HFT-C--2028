@@ -10,11 +10,11 @@ private:
 public:
     explicit SmartPointer(T* p = nullptr) : ptr(p) {}
 
-    // Disable copy semantics
+
     SmartPointer(const SmartPointer&) = delete;
     SmartPointer& operator=(const SmartPointer&) = delete;
 
-    // Move semantics
+
     SmartPointer(SmartPointer&& other) noexcept : ptr(other.ptr) {
         other.ptr = nullptr;
     }
@@ -44,8 +44,7 @@ private:
 
     void release_ref() {
         if (ref_count) {
-            // Decrement with release semantics. If we hit 1 (meaning it will become 0),
-            // we use acquire to ensure all prior writes are visible before deletion.
+           
             if (ref_count->fetch_sub(1, std::memory_order_acq_rel) == 1) {
                 delete ptr;
                 delete ref_count;
@@ -64,7 +63,7 @@ public:
         }
     }
 
-    // Copy semantics
+  
     SharedPtr(const SharedPtr& other) : ptr(other.ptr), ref_count(other.ref_count) {
         if (ref_count) {
             ref_count->fetch_add(1, std::memory_order_relaxed);
@@ -83,7 +82,6 @@ public:
         return *this;
     }
 
-    // Move semantics
     SharedPtr(SharedPtr&& other) noexcept : ptr(other.ptr), ref_count(other.ref_count) {
         other.ptr = nullptr;
         other.ref_count = nullptr;

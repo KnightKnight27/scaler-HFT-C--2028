@@ -1,5 +1,8 @@
 # HFT C++ Assignment - Lec 11
 
+**Name:** Ayush Kumar Patra  
+**Roll No:** 24bcs10474
+
 ## Architecture & Design Patterns
 
 ### Cache Line Alignment & False Sharing
