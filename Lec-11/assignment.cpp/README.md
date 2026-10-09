@@ -1,3 +1,6 @@
+## Name : Nandani Kumari 
+## 24bcs10317
+
 # Ultra-Low-Latency HFT C++ Systems: Lock-Free Concurrency, Memory Models & Cache Coherence
 
 This repository module contains production-grade, low-latency implementations of fundamental concurrent primitives engineered for High-Frequency Trading (HFT) and ultra-low-latency financial engineering:
