@@ -16,29 +16,42 @@
 #include <iostream>
 #include <mutex>
 #include <new>
+#include <stdexcept>
 
 template <typename T>
 class SPSC{
     public:
         // Constructor
         SPSC(std::size_t size) : mSize(size){
-            // Allocating raw memory
+            if(mSize == 0){
+                throw std::invalid_argument("Queue size is zero");
+            }
+            // Allocating raw memory for queue
             mData = static_cast<T*>(::operator new(sizeof(T) * size));
         }
 
         // Destructor
         ~SPSC(){
+            // Destroying any objects still inside the queue
+            for (std::size_t i = mPopIdx; i < mPushIdx; ++i) {
+                mData[i % mSize].~T();
+            }
+
+            // Release the allocated memory
             ::operator delete(mData);
         }
 
-        // No copying
+        // No copying or moving
         SPSC(const SPSC<T>&) = delete;
+        SPSC& operator=(const SPSC<T>&) = delete;
         SPSC(SPSC&&) = delete;
+        SPSC& operator=(SPSC&&) = delete;
 
         // Push
-        bool push(T val){
+        bool push(const T& val){
             std::lock_guard<std::mutex> lock(mMutex);
 
+            // Queue full
             if(size() == mSize){
                 return false;
             }
@@ -48,11 +61,29 @@ class SPSC{
             new (&mData[mPushIdx % mSize]) T(val);
 
             ++mPushIdx;
-            return true
+            return true;
+        }
+
+        // Pop
+        bool pop(T& val){
+            std::lock_guard<std::mutex> lcok(mMutex);
+
+            // Queue empty
+            if(mPushIdx == mPopIdx){
+                return false;
+            }
+
+            val = mData[mPopIdx % mSize];
+
+            // Destroying object 
+            mData[mPopIdx % mSize].~T();
+            ++mPopIdx;
+
+            return true;
         }
 
     private:
-        // Number of elements in the queue
+        // Number of objects in the queue
         std::size_t size() const{
             return mPushIdx - mPopIdx;
         }
