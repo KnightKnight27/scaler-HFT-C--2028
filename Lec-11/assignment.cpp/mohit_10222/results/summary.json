@@ -1,0 +1,28 @@
+{
+  "mutex": {
+    "objects_per_second_trials": [
+      8901400,
+      8908052,
+      8864926,
+      8871811,
+      8902670
+    ],
+    "median_objects_per_second": 8901400,
+    "min_objects_per_second": 8864926,
+    "max_objects_per_second": 8908052,
+    "median_payload_MB_per_second": 569.6896
+  },
+  "spin": {
+    "objects_per_second_trials": [
+      8340473,
+      8405278,
+      8326606,
+      8288582,
+      8332156
+    ],
+    "median_objects_per_second": 8332156,
+    "min_objects_per_second": 8288582,
+    "max_objects_per_second": 8405278,
+    "median_payload_MB_per_second": 533.257984
+  }
+}
