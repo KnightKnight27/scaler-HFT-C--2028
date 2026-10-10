@@ -13,7 +13,7 @@
 #include <iomanip>
 #include <immintrin.h>
 
-// 64-byte object as specified in assignment
+// 64-byte object as specified in the assignment
 struct alignas(64) Object64 {
     uint64_t data[8]; // 8 * 8 = 64 bytes
 
@@ -28,11 +28,11 @@ struct alignas(64) Object64 {
 
 static_assert(sizeof(Object64) == 64, "Object64 must be exactly 64 bytes");
 
-// Global sink to prevent compiler optimization
+// Global sink to prevent compiler dead-code elimination
 std::atomic<uint64_t> g_sink{0};
 
 // ============================================================================
-// Lec-10: Mutex-based SPSC Queue using power-of-2 circular buffer
+// 1. Mutex-based SPSC Queue (Lec-10)
 // ============================================================================
 template <typename T, size_t Capacity = 65536>
 class MutexSPSCQueue {
@@ -69,7 +69,7 @@ public:
 };
 
 // ============================================================================
-// Lec-11: Atomic Spinlock SPSC Queue (while loop test_and_set)
+// 2. Spinlock-based SPSC Queue (Lec-11: while loop atomic_flag)
 // ============================================================================
 struct Spinlock {
     std::atomic_flag flag = ATOMIC_FLAG_INIT;
@@ -126,7 +126,43 @@ public:
 };
 
 // ============================================================================
-// Benchmark Runner for 1 Second (Measures 64B objects pushed & popped in 1s)
+// 3. Lock-free Atomic Ring Buffer (Lec-12: Separated cache lines to avoid false sharing)
+// ============================================================================
+template <typename T, size_t Capacity = 65536>
+class LockFreeSPSCQueue {
+    static_assert((Capacity & (Capacity - 1)) == 0, "Capacity must be power of 2");
+    static constexpr size_t kMask = Capacity - 1;
+
+    alignas(64) std::atomic<size_t> tail_{0};
+    alignas(64) std::atomic<size_t> head_{0};
+    alignas(64) std::vector<T> buffer_;
+
+public:
+    LockFreeSPSCQueue() : buffer_(Capacity) {}
+
+    bool push(const T& item) {
+        const size_t current_tail = tail_.load(std::memory_order_relaxed);
+        if (current_tail - head_.load(std::memory_order_acquire) == Capacity) {
+            return false; // full
+        }
+        buffer_[current_tail & kMask] = item;
+        tail_.store(current_tail + 1, std::memory_order_release);
+        return true;
+    }
+
+    bool pop(T& item) {
+        const size_t current_head = head_.load(std::memory_order_relaxed);
+        if (current_head == tail_.load(std::memory_order_acquire)) {
+            return false; // empty
+        }
+        item = buffer_[current_head & kMask];
+        head_.store(current_head + 1, std::memory_order_release);
+        return true;
+    }
+};
+
+// ============================================================================
+// Benchmark Runner for 1 Second
 // ============================================================================
 template <typename QueueType>
 void run_1_second_benchmark(const std::string& name) {
@@ -198,12 +234,18 @@ void run_1_second_benchmark(const std::string& name) {
 
 int main() {
     std::cout << "============================================================\n";
-    std::cout << " Lec-11 Assignment: SPSC Queue with Locks (64B Objects / 1s)\n";
+    std::cout << " HFT C++ SPSC Queue 1-Second Benchmark (64-byte Objects)\n";
+    std::cout << " Student: Angel (Roll No: 10011)\n";
+    std::cout << " Email: angel.24bcs10011@sst.scaler.com\n";
     std::cout << "============================================================\n\n";
 
     run_1_second_benchmark<MutexSPSCQueue<Object64>>("1. std::mutex SPSC Queue");
     run_1_second_benchmark<SpinlockSPSCQueue<Object64>>("2. Atomic Spinlock SPSC Queue");
+    run_1_second_benchmark<LockFreeSPSCQueue<Object64>>("3. Lock-free Atomic SPSC Queue (alignas 64)");
 
-    std::cout << "\nSink verification: " << g_sink.load() << "\n";
+    std::cout << "\n============================================================\n";
+    std::cout << "Sink verification: " << g_sink.load() << "\n";
+    std::cout << "============================================================\n";
+
     return 0;
 }
