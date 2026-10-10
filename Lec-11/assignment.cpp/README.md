@@ -23,21 +23,21 @@ clang++ -std=c++20 -O2 -Wall -Wextra spsc_queue.cpp -o main.out
 (`g++ -std=c++20 -O2 -Wall -Wextra -pthread spsc_queue.cpp -o main.out` also works)
 
 ## 3. Results (5 runs, 1 second each)
+Machine: Apple M3 (macOS), Apple clang 21.0.0, `-O2`
+
 | Run | Pushed | Popped |
 |-----|--------|--------|
-| 1 | 7,982,552 | 7,982,552 |
-| 2 | 8,082,066 | 8,082,066 |
-| 3 | 8,168,248 | 8,168,248 |
-| 4 | 7,546,601 | 7,546,601 |
-| 5 | 7,845,584 | 7,845,584 |
-| **Average** | **~7.9 million / sec** | **~7.9 million / sec** |
+| 1 | 18,715,430 | 18,715,430 |
+| 2 | 18,878,093 | 18,878,093 |
+| 3 | 19,054,767 | 19,054,767 |
+| 4 | 19,011,569 | 19,011,569 |
+| 5 | 18,987,798 | 18,987,798 |
+| **Average** | **~18.9 million / sec** | **~18.9 million / sec** |
 
 Every message pushed was popped (no losses).
 
-Measured with g++ -O2 on a 4-core ARM64 (aarch64) Linux machine.
-
 Sample output:
 ```
-objects pushed in 1 second: 7982552
-objects popped in 1 second: 7982552
+objects pushed in 1 second: 18715430
+objects popped in 1 second: 18715430
 ```
