@@ -67,7 +67,6 @@ public:
     }
 };
 
-// run producer and consumer for 1 second and count how many orders got popped
 // no lock version, only atomics
 // works because only producer writes tail and only consumer writes head
 // each side keeps a cached copy of the other index so it doesn't have to
@@ -106,6 +105,7 @@ public:
     }
 };
 
+// run producer and consumer for 1 second and count how many orders got popped
 template <typename Q>
 void benchmark(const char* name) {
     Q* q = new Q();  // heap, the buffer is 64KB
@@ -120,8 +120,8 @@ void benchmark(const char* name) {
 
     std::thread producer([&]() {
         long i = 0;
+        Order o{};  // zero it once, only id changes
         while (!stop.load(std::memory_order_relaxed)) {
-            Order o;
             o.id = i;
             if (q->push(o)) i++;
         }
