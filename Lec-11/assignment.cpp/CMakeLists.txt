@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.16)
+project(spsc_assignment LANGUAGES CXX)
+
+find_package(Threads REQUIRED)
+add_executable(spsc_bench main.cpp)
+add_executable(spsc_tests tests.cpp)
+
+foreach(target IN ITEMS spsc_bench spsc_tests)
+    target_compile_features(${target} PRIVATE cxx_std_17)
+    target_link_libraries(${target} PRIVATE Threads::Threads)
+    if(MSVC)
+        target_compile_options(${target} PRIVATE /W4)
+    else()
+        target_compile_options(${target} PRIVATE -Wall -Wextra -Wpedantic)
+    endif()
+endforeach()
+
+enable_testing()
+add_test(NAME queue_correctness COMMAND spsc_tests)
+set_tests_properties(queue_correctness PROPERTIES TIMEOUT 60)
+add_test(NAME benchmark_validation COMMAND spsc_bench 1)
+set_tests_properties(benchmark_validation PROPERTIES TIMEOUT 15)
