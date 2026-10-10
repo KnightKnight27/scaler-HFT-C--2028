@@ -15,12 +15,12 @@
 #include <cstddef>
 #include <cstdint>
 #include <iostream>
-#include <new>
 #include <stdexcept>
 #include <thread>
 #include <chrono>
 #include <atomic>
 #include <mutex>
+#include <vector>
 
 // Spinlock
 // Uses a while loop to wait until the lock is available.
@@ -40,63 +40,23 @@ private:
     std::atomic_flag mLock = ATOMIC_FLAG_INIT;
 };
 
-// Memory Pool
-// Allocates memory for multiple fixed-size blocks in one go.
-class MemoryPool {
-public:
-    MemoryPool(std::size_t blockSize, std::size_t blockCount)
-        : mBlockSize(blockSize), mBlockCount(blockCount) {
-
-        if (blockSize == 0 || blockCount == 0) {
-            throw std::invalid_argument("Invalid memory pool size");
-        }
-
-        // Allocate memory for all blocks at once.
-        mMemory = ::operator new(mBlockSize * mBlockCount);
-    }
-
-    void* getBlock(std::size_t index) {
-        if (index >= mBlockCount) {
-            throw std::out_of_range("Invalid block index");
-        }
-
-        char* memory = static_cast<char*>(mMemory);
-        return memory + index * mBlockSize;
-    }
-
-    ~MemoryPool() {
-        ::operator delete(mMemory);
-    }
-
-    MemoryPool(const MemoryPool&) = delete;
-    MemoryPool& operator=(const MemoryPool&) = delete;
-
-private:
-    void* mMemory{nullptr};
-    std::size_t mBlockSize{0};
-    std::size_t mBlockCount{0};
-};
-
 // SPSC Queue
 template <typename T>
 class SPSC {
     public:
         // Constructor
         SPSC(std::size_t size)
-            : mPool(sizeof(T), size), mSize(size) {
+            : mBuffer(size), mSize(size) {
+
+            if (size == 0 || (size & (size - 1)) != 0) {
+                throw std::invalid_argument(
+                    "Queue size must be a power of two"
+                );
+            }
         }
 
         // Destructor
-        ~SPSC() {
-            // Destroying any objects still inside the queue
-            for (std::size_t i = mPopIdx; i < mPushIdx; ++i) {
-                T* item = static_cast<T*>(
-                    mPool.getBlock(i % mSize)
-                );
-
-                item->~T();
-            }
-        }
+        ~SPSC() = default;
 
         // No copying or moving
         SPSC(const SPSC<T>&) = delete;
@@ -113,10 +73,7 @@ class SPSC {
                 return false;
             }
 
-            // Since we are using raw memory
-            // We have to construct a T object with val at the specified memory address
-            void* slot = mPool.getBlock(mPushIdx % mSize);
-            new (slot) T(val);
+            mBuffer[mPushIdx & (mSize - 1)] = val;
 
             ++mPushIdx;
             return true;
@@ -131,14 +88,8 @@ class SPSC {
                 return false;
             }
 
-            T* item = static_cast<T*>(
-                mPool.getBlock(mPopIdx % mSize)
-            );
+            val = mBuffer[mPopIdx & (mSize - 1)];
 
-            val = *item;
-
-            // Destroying object
-            item->~T();
             ++mPopIdx;
 
             return true;
@@ -150,7 +101,7 @@ class SPSC {
             return mPushIdx - mPopIdx;
         }
 
-        MemoryPool mPool;  // Memory pool used to store queue objects
+        std::vector<T> mBuffer;  // Queue buffer
 
         std::size_t mSize{0};         // Queue Capacity
         std::size_t mPushIdx{0};      // Where the next object should be pushed

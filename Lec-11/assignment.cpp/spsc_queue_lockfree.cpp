@@ -1,24 +1,10 @@
-// WRITE AN SPSC QUEUE 
-// SPINLOCK ( WHILE LOOP) OR STD::MUTEX 
-// t1.join()  t2.join()
-// producer consumer to push objects and pop objects 
-//
-// you need to figure out a way that with locks how many 
-// 64 byte objects can u push and pop in 1 second
-//  raise a git PR for the same 
-//  add readme for ur per second specs 
-//  feel free to add worst code qaulity :)
-//
-//
-// ^^ MEMORY POOL ^^
-
 #include <cstddef>
 #include <cstdint>
 #include <iostream>
-#include <mutex>
 #include <stdexcept>
 #include <thread>
 #include <chrono>
+#include <atomic>
 #include <vector>
 
 // SPSC Queue
@@ -47,48 +33,91 @@ class SPSC {
 
         // Push
         bool push(const T& val) {
-            std::lock_guard<std::mutex> lock(mMutex);
+            // Getting the current push index
+            std::size_t pushIdx = mPushIdx.load(
+                std::memory_order_relaxed
+            );
+
+            // Getting the current pop index
+            std::size_t popIdx = mPopIdx.load(
+                std::memory_order_acquire
+            );
 
             // Queue full
-            if (size() == mSize) {
+            if (pushIdx - popIdx == mSize) [[unlikely]] {
                 return false;
             }
 
-            mBuffer[mPushIdx & (mSize - 1)] = val;
+            mBuffer[pushIdx & (mSize - 1)] = val;
 
-            ++mPushIdx;
+            mPushIdx.store(
+                pushIdx + 1,
+                std::memory_order_release
+            );
+
             return true;
         }
 
         // Pop
-        bool pop(T& val) {
-            std::lock_guard<std::mutex> lock(mMutex);
-
-            // Queue empty
-            if (mPushIdx == mPopIdx) {
+        bool pop(const T*& val) {
+            // Checking whether the previous object is still being used
+            if (mItemInUse) [[unlikely]] {
                 return false;
             }
 
-            val = mBuffer[mPopIdx & (mSize - 1)];
+            // Getting the current pop index
+            std::size_t popIdx = mPopIdx.load(
+                std::memory_order_relaxed
+            );
 
-            ++mPopIdx;
+            // Getting the current push index
+            std::size_t pushIdx = mPushIdx.load(
+                std::memory_order_acquire
+            );
+
+            // Queue empty
+            if (pushIdx == popIdx) [[unlikely]] {
+                return false;
+            }
+
+            val = &mBuffer[popIdx & (mSize - 1)];
+
+            // The slot cannot be reused until release() is called
+            mItemInUse = true;
 
             return true;
         }
 
-    private:
-        // Number of objects in the queue
-        std::size_t size() const {
-            return mPushIdx - mPopIdx;
+        // Release
+        void release() {
+            if (mItemInUse) {
+                std::size_t popIdx = mPopIdx.load(
+                    std::memory_order_relaxed
+                );
+
+                mPopIdx.store(
+                    popIdx + 1,
+                    std::memory_order_release
+                );
+
+                mItemInUse = false;
+            }
         }
 
+        bool isLockFree() const {
+            return mPushIdx.is_lock_free() && mPopIdx.is_lock_free();
+        }
+
+    private:
         std::vector<T> mBuffer;  // Queue buffer
 
         std::size_t mSize{0};         // Queue Capacity
-        std::size_t mPushIdx{0};      // Where the next object should be pushed
-        std::size_t mPopIdx{0};       // Where the next object should be popped
 
-        std::mutex mMutex;
+        alignas(64) std::atomic<std::size_t> mPushIdx{0};
+        alignas(64) std::atomic<std::size_t> mPopIdx{0};
+
+        // Used by the consumer thread
+        bool mItemInUse{false};
 };
 
 struct Message {
@@ -118,10 +147,14 @@ int main() {
     });
 
     std::thread t2([&]() {
-        Message msg{};
+        const Message* msg = nullptr;
 
         while (std::chrono::steady_clock::now() < end) {
             if (queue.pop(msg)) {
+                // Use msg here before releasing the slot
+                // The pointer must not be used after release()
+                queue.release();
+
                 ++popCount;
             }
         }
@@ -136,6 +169,9 @@ int main() {
 
     std::cout << "Object size: " << sizeof(Message) << " bytes\n";
     std::cout << "Queue capacity: 1024 objects\n";
+    std::cout << "Atomic indices are lock-free: "
+          << std::boolalpha
+          << queue.isLockFree() << '\n';
     std::cout << "Successful pushes: " << pushCount << '\n';
     std::cout << "Successful pops: " << popCount << '\n';
 
