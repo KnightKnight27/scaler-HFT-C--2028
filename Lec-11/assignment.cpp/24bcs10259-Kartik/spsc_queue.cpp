@@ -19,7 +19,9 @@ class SpinLock {
 public:
     void lock() {
         while (locked.exchange(true, std::memory_order_acquire)) {
-            // spin
+            // spin on a normal load until it looks free, so we are not
+            // doing exchange (a write) in a loop and bouncing the cache line
+            while (locked.load(std::memory_order_relaxed)) {}
         }
     }
     void unlock() {
