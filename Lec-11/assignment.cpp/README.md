@@ -1,7 +1,21 @@
+# Lec-11 Assignment: SPSC Queue with Locks (64-byte objects / second)
+
+## Submission Details
+
+```yaml
+name: "Subhan Rahiman"
 email: "subhan.24bcs10095@sst.scaler.com"
 roll_no: "24BCS10095"
+```
 
-# Lec-11 Assignment: SPSC queue with locks (64-byte objects / second)
+## Summary
+
+A single-producer / single-consumer queue guarded by a lock, used to measure how many 64-byte objects
+can be pushed and popped in 1 second. Headline numbers (median of 5 runs, Apple M3 Pro):
+
+| `std::mutex` | Spinlock | Lock-free (baseline) |
+|---|---|---|
+| ~31.7 M objects/s | ~8.4 M objects/s | ~105 M objects/s |
 
 Single-producer / single-consumer queue, one producer thread and one consumer
 thread (`t1.join()`, `t2.join()`), each run for 1 second. Source: [`spsc_queue.cpp`](./spsc_queue.cpp).
