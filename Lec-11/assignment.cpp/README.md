@@ -1,4 +1,4 @@
-# Lec-11 Assignment: SPSC Queue with Locks (64-byte objects / second)
+# Lec-11 Assignment: SPSC Queue with Locks (64-byte objects / second) - Subhan Rahiman
 
 ## Submission Details
 
