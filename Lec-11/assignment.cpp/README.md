@@ -1,4 +1,8 @@
-# Locked SPSC queue with a reusable memory pool
+# Lec-11 Assignment: SPSC Queue with Locks
+
+**Name:** Daksh Shah
+**Roll No:** 24bcs10092
+
 
 This C++17 assignment transfers 64-byte packets from one producer to one consumer. It compares `std::mutex` with a custom spinlock over the same queue, measures successful operations in a one-second window, and joins both threads before reporting results.
 
