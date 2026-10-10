@@ -1,6 +1,6 @@
 // lec-11 assignment - SPSC queue
+// Name: Tanishka Mangure - Roll: 24bcs10264
 // spsc means single producer single consumer
-// sorry for bad code sir, it is working pls check output
 #include <bits/stdc++.h>
 using namespace std;
 

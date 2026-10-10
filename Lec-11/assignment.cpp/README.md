@@ -1,4 +1,5 @@
 # lec 11 spsc queue readout
+# Tanishka Mangure - 24bcs10264
 
 made spsc queue with array memory pool of 8192. 64 byte struct. one producer thread and one consumer thread, t1.join t2.join. tested both mutex and spinlock (while loop) for 1 sec.
 
