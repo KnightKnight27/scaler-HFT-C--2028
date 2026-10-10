@@ -1,5 +1,9 @@
 # SPSC Queue Benchmark
 
+- **Name**: Sanjay Kumar
+- **Roll No**: 24BCS10147
+- **Email**: sanjay.24bcs10147@sst.scaler.com
+
 ## Build and Run
 ```bash
 g++ spsc_queue.cpp -O0 -o spsc_queue
