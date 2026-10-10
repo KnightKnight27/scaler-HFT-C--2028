@@ -67,6 +67,36 @@ public:
 };
 
 // run producer and consumer for 1 second and count how many orders got popped
+// no lock version, only atomics
+// works because only producer writes tail and only consumer writes head
+class AtomicQueue {
+    Order buf[SIZE];
+    // put head and tail on different cache lines (false sharing)
+    alignas(64) std::atomic<int> head{0};
+    alignas(64) std::atomic<int> tail{0};
+public:
+    bool push(const Order& o) {
+        int t = tail.load(std::memory_order_relaxed);
+        int next = (t + 1) % SIZE;
+        if (next == head.load(std::memory_order_acquire)) {  // full
+            return false;
+        }
+        buf[t] = o;
+        tail.store(next, std::memory_order_release);  // publish after writing
+        return true;
+    }
+
+    bool pop(Order& o) {
+        int h = head.load(std::memory_order_relaxed);
+        if (h == tail.load(std::memory_order_acquire)) {  // empty
+            return false;
+        }
+        o = buf[h];
+        head.store((h + 1) % SIZE, std::memory_order_release);
+        return true;
+    }
+};
+
 template <typename Q>
 void benchmark(const char* name) {
     Q* q = new Q();  // heap, the buffer is 64KB
@@ -112,5 +142,6 @@ int main() {
     std::cout << "sizeof(Order) = " << sizeof(Order) << " bytes\n";
     benchmark<LockQueue<SpinLock>>("spinlock  ");
     benchmark<LockQueue<std::mutex>>("std::mutex");
+    benchmark<AtomicQueue>("atomics   ");
     return 0;
 }
