@@ -69,17 +69,23 @@ public:
 // run producer and consumer for 1 second and count how many orders got popped
 // no lock version, only atomics
 // works because only producer writes tail and only consumer writes head
+// each side keeps a cached copy of the other index so it doesn't have to
+// read the other core's cache line on every push/pop
 class AtomicQueue {
     Order buf[SIZE];
     // put head and tail on different cache lines (false sharing)
     alignas(64) std::atomic<int> head{0};
+    int cachedTail = 0;  // consumer's copy of tail
     alignas(64) std::atomic<int> tail{0};
+    int cachedHead = 0;  // producer's copy of head
 public:
     bool push(const Order& o) {
         int t = tail.load(std::memory_order_relaxed);
         int next = (t + 1) % SIZE;
-        if (next == head.load(std::memory_order_acquire)) {  // full
-            return false;
+        if (next == cachedHead) {
+            // looks full, read the real head (this is the expensive part)
+            cachedHead = head.load(std::memory_order_acquire);
+            if (next == cachedHead) return false;  // really full
         }
         buf[t] = o;
         tail.store(next, std::memory_order_release);  // publish after writing
@@ -88,8 +94,10 @@ public:
 
     bool pop(Order& o) {
         int h = head.load(std::memory_order_relaxed);
-        if (h == tail.load(std::memory_order_acquire)) {  // empty
-            return false;
+        if (h == cachedTail) {
+            // looks empty, read the real tail
+            cachedTail = tail.load(std::memory_order_acquire);
+            if (h == cachedTail) return false;  // really empty
         }
         o = buf[h];
         head.store((h + 1) % SIZE, std::memory_order_release);
