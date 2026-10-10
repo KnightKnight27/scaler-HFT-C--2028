@@ -33,24 +33,34 @@ Each packet is 64 bytes. The program reports completed producer and consumer wor
 
 I compiled the current source in Ubuntu 26.04 WSL with GCC 15.2.0 (`-O2`) and ran `perf` 7.0.14. Three benchmark runs reported:
 
-| Run | Elapsed | Throughput |
-| --- | ---: | ---: |
-| 1 | 0.497296 s | 4.02 million packets/s |
-| 2 | 0.483836 s | 4.13 million packets/s |
-| 3 | 0.479381 s | 4.17 million packets/s |
-| Average | 0.486838 s | 4.11 million packets/s |
-
-The explicit software-counter run (`perf stat -e task-clock,context-switches,cpu-migrations,page-faults -r 3`) reported:
-
 ```text
-931.83 msec task-clock:u ( +- 1.07% )
-         0      context-switches:u
-         0      cpu-migrations:u
-      4243      page-faults:u ( +- 0.01% )
-0.499517333 +- 0.005298440 seconds time elapsed ( +- 1.06% )
+SPSC queue benchmark
+Object size: 64 bytes
+Operations: 2000000
+Elapsed: 0.445037 seconds
+Throughput: 4.49401e+06 64-byte objects/sec
+SPSC queue benchmark
+Object size: 64 bytes
+Operations: 2000000
+Elapsed: 0.519921 seconds
+Throughput: 3.84674e+06 64-byte objects/sec
+SPSC queue benchmark
+Object size: 64 bytes
+Operations: 2000000
+Elapsed: 0.455986 seconds
+Throughput: 4.3861e+06 64-byte objects/sec
+
+ Performance counter stats for './queue_bench' (3 runs):
+
+            934.71 msec task-clock:u                                                            ( +-  4.40% )
+                 0      context-switches:u
+                 0      cpu-migrations:u
+              4241      page-faults:u                                                           ( +-  0.02% )
+
+       0.489230183 +- 0.022321832 seconds time elapsed  ( +- 4.56% )
 ```
 
-The default `perf stat -r 3` did not run successfully: WSL does not expose the CPU PMU events requested by this `perf` build (`cpu_atom` event unavailable). As a result, hardware counters such as cycles, instructions, and branch misses could not be collected. These WSL measurements are separate from the Windows/MSVC results above; compiler, operating system, and virtualization differences affect throughput.
+These are the latest WSL results and replace the earlier sample in this section. The default `perf stat -r 3` did not run successfully: WSL does not expose the CPU PMU events requested by this `perf` build (`cpu_atom` event unavailable). As a result, hardware counters such as cycles, instructions, and branch misses could not be collected. These WSL measurements are separate from the Windows/MSVC results above; compiler, operating system, and virtualization differences affect throughput.
 
 Commands used:
 
