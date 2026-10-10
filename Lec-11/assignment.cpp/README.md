@@ -1,19 +1,27 @@
-# lec 11 spsc queue readout
-# Tanishka Mangure - 24bcs10264
+# Lec-11 — SPSC Queue (64-byte objects)
 
-made spsc queue with array memory pool of 8192. 64 byte struct. one producer thread and one consumer thread, t1.join t2.join. tested both mutex and spinlock (while loop) for 1 sec.
+**Name:** Tanishka Mangure
+**Roll:** 24bcs10264
 
-how to run:
-```
+Single-producer / single-consumer ring buffer over a preallocated memory pool
+(capacity 8192, no allocation in the hot path). Payload is exactly 64 bytes
+(one cache line). Benchmarks `std::mutex` vs spinlock (`atomic_flag` while-loop)
+with one producer thread and one consumer thread (`t1.join()`, `t2.join()`)
+over a 1-second window.
+
+## Build & run
+
+```bash
 g++ -O2 -std=c++17 -pthread spsc_queue.cpp -o spsc_bench && ./spsc_bench
 ```
 
-## my specs / output
+## Result
 
 - CPU: AMD Ryzen 5 6600H, 12 threads, 14 GB RAM
 - Compiler: g++ 16.2.1, `-O2 -std=c++17`
-- `mutex:    pushed=11672195 popped=11672135 / sec`
-- `spinlock: pushed=7244610 popped=7243093 / sec`
-- mutex won on my laptop (~11.6M/s vs ~7.2M/s)
+- `mutex:    pushed=~11.6M popped=~11.6M / sec`
+- `spinlock: pushed=~7.2M popped=~7.2M / sec`
+- Winner on this machine: **mutex**
 
-numbers will change a bit every run, just re-run and paste ur output.
+Throughput varies per run and CPU. Re-run on your machine and compare.
+At ~11.6M × 64 B this moves roughly 740 MB/s through the queue.

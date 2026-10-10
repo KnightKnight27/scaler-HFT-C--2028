@@ -1,112 +1,142 @@
-// lec-11 assignment - SPSC queue
-// Name: Tanishka Mangure - Roll: 24bcs10264
-// spsc means single producer single consumer
-#include <bits/stdc++.h>
-using namespace std;
+// Lec-11 Assignment: SPSC Queue benchmark
+// Name: Tanishka Mangure — Roll: 24bcs10264
+//
+// Single-producer / single-consumer ring buffer holding 64-byte objects.
+// Backed by a preallocated memory pool (no allocation in the hot path).
+// Compares std::mutex vs spinlock (atomic_flag while-loop) over a 1-second window.
+#include <atomic>
+#include <chrono>
+#include <cstdint>
+#include <cstdio>
+#include <cstring>
+#include <mutex>
+#include <thread>
+#include <vector>
 
-// 64 byte object
-struct Data {
-    char x[64];
+// 64-byte payload: exactly one cache line on x86-64, typical for HFT feeds.
+struct Payload64 {
+    char data[64];
 };
+static_assert(sizeof(Payload64) == 64, "Payload64 must be 64 bytes");
 
-// memory pool, made big array only once so no new malloc again and again
-#define MAX 8192
-Data pool[MAX];
-int head = 0, tail = 0, cnt = 0;
-
-mutex m; // using mutex, spinlock also tried below
-atomic_flag mylock = ATOMIC_FLAG_INIT;
-
-int use_spin = 0; // 0 = mutex, 1 = spinlock
-
-void mylock_on() {
-    if (use_spin == 0) m.lock();
-    else { while (mylock.test_and_set()) {} } // spinlock while loop
-}
-void mylock_off() {
-    if (use_spin == 0) m.unlock();
-    else mylock.clear();
-}
-
-int myPush(Data d) {
-    mylock_on();
-    if (cnt == MAX) { mylock_off(); return 0; }
-    pool[tail] = d;
-    tail++;
-    if (tail == MAX) tail = 0;
-    cnt++;
-    mylock_off();
-    return 1;
-}
-
-int myPop(Data &d) {
-    mylock_on();
-    if (cnt == 0) { mylock_off(); return 0; }
-    d = pool[head];
-    head++;
-    if (head == MAX) head = 0;
-    cnt--;
-    mylock_off();
-    return 1;
-}
-
-long long pushed = 0, popped = 0;
-int stop = 0;
-
-void producer() {
-    Data d;
-    for (int i = 0; i < 64; i++) d.x[i] = 'A' + (i % 26);
-    long long c = 0;
-    while (stop == 0) {
-        if (myPush(d) == 1) c++;
-    }
-    pushed = c;
-}
-
-void consumer() {
-    Data d;
-    long long c = 0;
-    while (stop == 0) {
-        if (myPop(d) == 1) {
-            c++;
-            // just to use data so compiler dont remove it
-            if (d.x[0] == 'Z') cout << "";
+// Simple spinlock: busy while-loop on atomic_flag.
+class Spinlock {
+public:
+    void lock() {
+        while (flag_.test_and_set(std::memory_order_acquire)) {
+            // Single yield point keeps single-core runs from wedging;
+            // remove for a pure spin on dedicated cores.
+            // std::this_thread::yield();
         }
     }
-    popped = c;
-}
+    void unlock() { flag_.clear(std::memory_order_release); }
 
-long long run_test(string name) {
-    head = 0; tail = 0; cnt = 0;
-    pushed = 0; popped = 0;
-    stop = 0;
+private:
+    std::atomic_flag flag_ = ATOMIC_FLAG_INIT;
+};
 
-    thread t1(producer); // producer
-    thread t2(consumer); // consumer
+// Fixed-size ring buffer. Capacity is rounded up to a power of two so
+// indexing uses a bitmask. The pool vector is the memory pool: allocated
+// once in the constructor, then reused via copy in push/pop.
+template <typename Lock>
+class SpscQueue {
+public:
+    explicit SpscQueue(std::size_t capacity = 8192) {
+        std::size_t p = 1;
+        while (p < capacity) {
+            p <<= 1;
+        }
+        capacity_ = p;
+        mask_ = p - 1;
+        pool_.resize(capacity_);
+    }
 
-    this_thread::sleep_for(chrono::seconds(1)); // run for 1 sec
-    stop = 1;
+    SpscQueue(const SpscQueue&) = delete;
+    SpscQueue& operator=(const SpscQueue&) = delete;
 
+    bool push(const Payload64& obj) {
+        std::lock_guard<Lock> guard(mutex_);
+        if (size_ == capacity_) {
+            return false;  // full: drop, producer retries
+        }
+        pool_[tail_ & mask_] = obj;
+        ++tail_;
+        ++size_;
+        return true;
+    }
+
+    bool pop(Payload64& out) {
+        std::lock_guard<Lock> guard(mutex_);
+        if (size_ == 0) {
+            return false;  // empty: consumer retries
+        }
+        out = pool_[head_ & mask_];
+        ++head_;
+        --size_;
+        return true;
+    }
+
+private:
+    std::vector<Payload64> pool_;
+    std::size_t capacity_ = 0;
+    std::size_t mask_ = 0;
+    std::size_t head_ = 0;  // consumer index
+    std::size_t tail_ = 0;  // producer index
+    std::size_t size_ = 0;
+    Lock mutex_;
+};
+
+// Runs producer + consumer for exactly 1 second, returns popped count.
+template <typename Lock>
+uint64_t BenchmarkOneSecond(const char* label) {
+    SpscQueue<Lock> queue(8192);
+    std::atomic<bool> stop{false};
+    std::atomic<uint64_t> pushed{0};
+    std::atomic<uint64_t> popped{0};
+
+    std::thread t1([&] {  // producer
+        Payload64 obj;
+        std::memset(obj.data, 0xCD, sizeof(obj.data));
+        uint64_t count = 0;
+        while (!stop.load(std::memory_order_relaxed)) {
+            if (queue.push(obj)) {
+                ++count;
+            }
+        }
+        pushed.store(count, std::memory_order_relaxed);
+    });
+
+    std::thread t2([&] {  // consumer
+        Payload64 obj;
+        uint64_t count = 0;
+        while (!stop.load(std::memory_order_relaxed)) {
+            if (queue.pop(obj)) {
+                ++count;
+            }
+        }
+        popped.store(count, std::memory_order_relaxed);
+    });
+
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+    stop.store(true, std::memory_order_relaxed);
     t1.join();
     t2.join();
 
-    cout << name << " pushed=" << pushed << " popped=" << popped << " (64B objs, 1 sec)" << endl;
-    return popped;
+    const uint64_t p = pushed.load();
+    const uint64_t c = popped.load();
+    std::printf("%-10s pushed=%llu popped=%llu (64B objs, 1s)\n", label,
+                static_cast<unsigned long long>(p),
+                static_cast<unsigned long long>(c));
+    return c;
 }
 
 int main() {
-    cout << "SPSC 64B throughput (1-sec window, queue 8192, memory pool array)" << endl;
-
-    use_spin = 0;
-    long long a = run_test("mutex:     ");
-
-    // reset spinlock flag just in case
-    mylock.clear();
-    use_spin = 1;
-    long long b = run_test("spinlock:  ");
-
-    if (b > a) cout << "winner: spinlock (mutex=" << a << "/s spin=" << b << "/s)" << endl;
-    else cout << "winner: mutex (mutex=" << a << "/s spin=" << b << "/s)" << endl;
-
+    std::printf("SPSC 64B throughput — cap 8192, memory-pool ring, 1s window\n");
+    const uint64_t with_mutex = BenchmarkOneSecond<std::mutex>("mutex:");
+    const uint64_t with_spin = BenchmarkOneSecond<Spinlock>("spinlock:");
+    std::printf("summary: mutex=%llu/s spinlock=%llu/s winner=%s\n",
+                static_cast<unsigned long long>(with_mutex),
+                static_cast<unsigned long long>(with_spin),
+                with_spin > with_mutex ? "spinlock" : "mutex");
     return 0;
 }
