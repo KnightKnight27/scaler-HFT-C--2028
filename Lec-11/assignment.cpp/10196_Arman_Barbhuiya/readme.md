@@ -1,3 +1,7 @@
+Name : Arman Barbhuiya
+Roll no. : 24bcs10196
+Email : arman.24bcs10196@sst.scaler.com
+
 # SPSC Queue Benchmark: Spinlock & Memory Pool
 
 ## Assignment Overview
