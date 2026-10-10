@@ -19,12 +19,12 @@ that the number pushed equals the number popped.
 
 | Lock type | Trial 1 (objects/sec) | Trial 2 (objects/sec) | Trial 3 (objects/sec) | Average (objects/sec) |
 |-----------|----------------------:|----------------------:|----------------------:|----------------------:|
-| Mutex     | 4,738,701 | 5,177,728 | 4,565,391 | 4,827,273 |
-| Spinlock  | 3,333,760 | 3,951,047 | 3,830,322 | 3,705,043 |
+| Mutex     | 4,501,232 | 4,276,968 | 4,553,637 | 4,443,946 |
+| Spinlock  | 4,610,409 | 10,805,859 | 5,933,338 | 7,116,535 |
 
-The mutex had higher average throughput in these runs. A spinlock burns CPU
-while waiting; under contention that can waste cycles, while a mutex can yield
-the processor and let its thread sleep until the lock is available.
+The spinlock had higher average throughput in this run: it avoids a mutex's
+possible sleep and kernel context-switch overhead. It burns CPU while waiting,
+though, and its trial-to-trial performance varied substantially.
 
 Correctness: `pushes == pops` in all six trials, so no item was lost or duplicated.
 
