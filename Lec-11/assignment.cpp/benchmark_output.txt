@@ -1,0 +1,14 @@
+SPSC benchmark | C++20 | object_size=64 bytes | capacity=1024 | transfers=2000000
+One operation = one object successfully pushed and then popped.
+
+Implementation                 Objects     M objects/s       ns/transfer    Verified
+LockSPSC                       2000000           10.49             95.35         yes
+SpinLockSPSC                   2000000           10.70             93.47         yes
+Naive Lock-Free                2000000           22.10             45.24         yes
+Optimized Lock-Free            2000000           17.40             57.47         yes
+
+Relative throughput vs mutex baseline:
+  LockSPSC: 1.00x
+  SpinLockSPSC: 1.02x
+  Naive Lock-Free: 2.11x
+  Optimized Lock-Free: 1.66x
