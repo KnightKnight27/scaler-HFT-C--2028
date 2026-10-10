@@ -5,6 +5,7 @@
 #include <thread>
 #include <atomic>
 #include <chrono>
+#include <mutex>
 
 // 64 byte object that we push and pop
 struct Order {
@@ -27,13 +28,15 @@ public:
 };
 
 // ring buffer queue, one producer and one consumer
+// Lock can be SpinLock or std::mutex (both have lock() / unlock())
 const int SIZE = 1024;
 
-class SpinQueue {
+template <typename Lock>
+class LockQueue {
     Order buf[SIZE];
     int head = 0;  // consumer reads from here
     int tail = 0;  // producer writes here
-    SpinLock lk;
+    Lock lk;
 public:
     bool push(const Order& o) {
         lk.lock();
@@ -105,6 +108,7 @@ void benchmark(const char* name) {
 
 int main() {
     std::cout << "sizeof(Order) = " << sizeof(Order) << " bytes\n";
-    benchmark<SpinQueue>("spinlock");
+    benchmark<LockQueue<SpinLock>>("spinlock  ");
+    benchmark<LockQueue<std::mutex>>("std::mutex");
     return 0;
 }
