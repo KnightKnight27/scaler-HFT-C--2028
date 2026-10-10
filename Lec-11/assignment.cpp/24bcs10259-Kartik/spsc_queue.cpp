@@ -4,6 +4,7 @@
 #include <iostream>
 #include <thread>
 #include <atomic>
+#include <chrono>
 
 // 64 byte object that we push and pop
 struct Order {
@@ -60,32 +61,50 @@ public:
     }
 };
 
-int main() {
-    SpinQueue q;
-    const long N = 1000000;
+// run producer and consumer for 1 second and count how many orders got popped
+template <typename Q>
+void benchmark(const char* name) {
+    Q* q = new Q();  // heap, the buffer is 64KB
+    std::atomic<bool> stop{false};
+    long pushed = 0, popped = 0;
+    bool ok = true;
 
     std::thread producer([&]() {
-        for (long i = 0; i < N; i++) {
+        long i = 0;
+        while (!stop.load(std::memory_order_relaxed)) {
             Order o;
             o.id = i;
-            while (!q.push(o)) {}
+            if (q->push(o)) i++;
         }
+        pushed = i;
     });
 
     std::thread consumer([&]() {
-        for (long i = 0; i < N; i++) {
-            Order o;
-            while (!q.pop(o)) {}
-            if (o.id != i) {
-                std::cout << "wrong order! got " << o.id << " expected " << i << "\n";
+        long i = 0;
+        Order o;
+        while (!stop.load(std::memory_order_relaxed)) {
+            if (q->pop(o)) {
+                if (o.id != i) ok = false;
+                i++;
             }
         }
+        popped = i;
     });
+
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+    stop = true;
 
     producer.join();
     consumer.join();
 
-    std::cout << "sizeof(Order) = " << sizeof(Order) << "\n";
-    std::cout << "done, pushed and popped " << N << " orders\n";
+    std::cout << name << ": pushed " << pushed << ", popped " << popped
+              << " in 1 second (" << popped / 1000000.0 << " M ops/sec)"
+              << (ok ? "" : "  ORDER WRONG!") << "\n";
+    delete q;
+}
+
+int main() {
+    std::cout << "sizeof(Order) = " << sizeof(Order) << " bytes\n";
+    benchmark<SpinQueue>("spinlock");
     return 0;
 }
