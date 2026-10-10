@@ -6,6 +6,7 @@
 #include <atomic>
 #include <chrono>
 #include <mutex>
+#include <sys/resource.h>
 
 // 64 byte object that we push and pop
 struct Order {
@@ -109,6 +110,11 @@ template <typename Q>
 void benchmark(const char* name) {
     Q* q = new Q();  // heap, the buffer is 64KB
     std::atomic<bool> stop{false};
+
+    // no perf on mac, so use getrusage for cpu time and context switches
+    rusage before, after;
+    getrusage(RUSAGE_SELF, &before);
+
     long pushed = 0, popped = 0;
     bool ok = true;
 
@@ -139,10 +145,20 @@ void benchmark(const char* name) {
 
     producer.join();
     consumer.join();
+    getrusage(RUSAGE_SELF, &after);
+
+    double cpu = (after.ru_utime.tv_sec - before.ru_utime.tv_sec)
+               + (after.ru_utime.tv_usec - before.ru_utime.tv_usec) / 1e6
+               + (after.ru_stime.tv_sec - before.ru_stime.tv_sec)
+               + (after.ru_stime.tv_usec - before.ru_stime.tv_usec) / 1e6;
+    long vcsw = after.ru_nvcsw - before.ru_nvcsw;
+    long ivcsw = after.ru_nivcsw - before.ru_nivcsw;
 
     std::cout << name << ": pushed " << pushed << ", popped " << popped
               << " in 1 second (" << popped / 1000000.0 << " M ops/sec)"
               << (ok ? "" : "  ORDER WRONG!") << "\n";
+    std::cout << "            cpu time " << cpu << " s, context switches: "
+              << vcsw << " voluntary, " << ivcsw << " involuntary\n";
     delete q;
 }
 
