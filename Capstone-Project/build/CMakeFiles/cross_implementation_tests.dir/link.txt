@@ -1,0 +1,1 @@
+/usr/bin/c++  -O2 -Wl,--dependency-file=CMakeFiles/cross_implementation_tests.dir/link.d CMakeFiles/cross_implementation_tests.dir/tests/cross_implementation.cpp.o -o cross_implementation_tests

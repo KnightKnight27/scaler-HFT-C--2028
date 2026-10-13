@@ -1,0 +1,33 @@
+Start testing: Oct 12 16:18 IST
+----------------------------------------------------------
+1/2 Testing: order_book_contract
+1/2 Test: order_book_contract
+Command: "/home/dhruv/Workbench/CPP/Capstone-Project/build/order_book_tests"
+Directory: /home/dhruv/Workbench/CPP/Capstone-Project/build
+"order_book_contract" start time: Oct 12 16:18 IST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"order_book_contract" end time: Oct 12 16:18 IST
+"order_book_contract" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: cross_implementation
+2/2 Test: cross_implementation
+Command: "/home/dhruv/Workbench/CPP/Capstone-Project/build/cross_implementation_tests"
+Directory: /home/dhruv/Workbench/CPP/Capstone-Project/build
+"cross_implementation" start time: Oct 12 16:18 IST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =  13.07 sec
+----------------------------------------------------------
+Test Passed.
+"cross_implementation" end time: Oct 12 16:18 IST
+"cross_implementation" time elapsed: 00:00:13
+----------------------------------------------------------
+
+End testing: Oct 12 16:18 IST

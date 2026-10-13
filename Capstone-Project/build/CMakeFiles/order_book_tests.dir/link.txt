@@ -1,0 +1,1 @@
+/usr/bin/c++  -O2 -Wl,--dependency-file=CMakeFiles/order_book_tests.dir/link.d CMakeFiles/order_book_tests.dir/tests/order_book_contract.cpp.o -o order_book_tests
