@@ -1,0 +1,5 @@
+build/
+build-*/
+perf.data*
+.devcontainer
+.dockerignore
