@@ -11,3 +11,48 @@
 //
 //
 // ^^ MEMORY POOL ^^
+
+#include <array>
+#include <cstddef>
+#include <mutex>
+
+#include "spin_lock.cpp"
+
+template <typename T, std::size_t Capacity>
+class SpscQueue
+{
+public:
+    bool push(const T &item)
+    {
+        std::lock_guard<SpinLock> guard(lock_);
+
+        if (pushIdx_ - popIdx_ < Capacity)
+        {
+            buffer_[pushIdx_ % Capacity] = item;
+            ++pushIdx_;
+            return true;
+        }
+
+        return false;
+    }
+
+    bool pop(T &item)
+    {
+        std::lock_guard<SpinLock> guard(lock_);
+
+        if (pushIdx_ > popIdx_)
+        {
+            item = buffer_[popIdx_ % Capacity];
+            ++popIdx_;
+            return true;
+        }
+
+        return false;
+    }
+
+private:
+    alignas(64) std::size_t popIdx_ { 0 };
+    alignas(64) std::size_t pushIdx_ { 0 };
+    std::array<T, Capacity> buffer_;
+    SpinLock lock_;
+};
