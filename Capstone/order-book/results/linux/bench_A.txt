@@ -1,0 +1,13 @@
+Implementation A (std::map + std::list + unordered_map) | 1000000 ops (add 700829, cancel 199496, bbo 99675) + depth every 100 | seed 42
+steady_clock::now() pair overhead: 22.8 ns (included in per-op numbers)
+
+run       total(ms)     ns/add  ns/cancel     ns/bbo     ns/depth             checksum
+1            590.60      562.6      803.4       38.0        377.8 17644364262346812077
+2           1224.92     1288.7     1361.6       70.0        649.7 17644364262346812077
+3           1698.30     1589.2     2643.6       77.0        968.8 17644364262346812077
+4           1283.36     1314.9     1556.4       56.7        664.9 17644364262346812077
+5            922.71      937.6     1110.0       64.1        559.7 17644364262346812077
+median      1224.92     1288.7     1361.6       64.1        649.7
+
+Final BBO:  Bid: 99.99 x 2193  Ask: 100.01 x 2522
+Checksum: 17644364262346812077

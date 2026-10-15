@@ -1,0 +1,13 @@
+Implementation B (priority_queue lazy-delete + unordered_maps) | 1000000 ops (add 700829, cancel 199496, bbo 99675) + depth every 100 | seed 42
+steady_clock::now() pair overhead: 18.0 ns (included in per-op numbers)
+
+run       total(ms)     ns/add  ns/cancel     ns/bbo     ns/depth             checksum
+1            156.92       92.8      258.5       20.6       1822.1 17644364262346812077
+2            145.64       82.3      233.4       20.9       1869.8 17644364262346812077
+3            155.53       93.3      252.5       20.2       1781.6 17644364262346812077
+4            138.34       82.1      206.5       19.9       1784.3 17644364262346812077
+5            144.65       84.5      235.3       19.3       1723.6 17644364262346812077
+median       145.64       84.5      235.3       20.2       1784.3
+
+Final BBO:  Bid: 99.99 x 2193  Ask: 100.01 x 2522
+Checksum: 17644364262346812077

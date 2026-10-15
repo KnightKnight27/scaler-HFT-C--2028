@@ -1,0 +1,123 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 5K of event 'cpu-clock'
+# Event count (approx.): 1274500000
+#
+# Overhead  Command  Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                                         
+# ........  .......  .....................  ...............................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    17.10%  bench    bench                  [.] OrderBookA::cancel_order
+            |
+            ---OrderBookA::cancel_order
+               (anonymous namespace)::benchmark<OrderBookA>
+               main
+               0xffff945a7744
+               __libc_start_main
+               _start
+    16.03%  bench    bench                  [.] OrderBookA::add_order
+            |
+            ---OrderBookA::add_order
+               (anonymous namespace)::benchmark<OrderBookA>
+               main
+               0xffff945a7744
+               __libc_start_main
+               _start
+    13.71%  bench    bench                  [.] OrderBookA::insert<std::map<int, OrderBookA::PriceLevel, std::less<int>, std::allocator<std::pair<int const, OrderBookA::PriceLevel> > > >
+            |
+            ---OrderBookA::insert<std::map<int, OrderBookA::PriceLevel, std::less<int>, std::allocator<std::pair<int const, OrderBookA::PriceLevel> > > >
+               OrderBookA::add_order
+               (anonymous namespace)::benchmark<OrderBookA>
+               main
+               0xffff945a7744
+               __libc_start_main
+               _start
+    13.08%  bench    libc.so.6              [.] cfree
+            |
+            ---cfree
+               |          
+               |--5.16%--std::_Rb_tree<int, std::pair<int const, OrderBookA::PriceLevel>, std::_Select1st<std::pair<int const, OrderBookA::PriceLevel> >, std::less<int>, std::allocator<std::pair<int const, OrderBookA::PriceLevel> > >::_M_erase
+               |          |          
+               |           --5.10%--(anonymous namespace)::benchmark<OrderBookA>
+               |                     main
+               |                     0xffff945a7744
+               |                     __libc_start_main
+               |                     _start
+               |          
+               |--4.79%--std::_Rb_tree<int, std::pair<int const, OrderBookA::PriceLevel>, std::_Select1st<std::pair<int const, OrderBookA::PriceLevel> >, std::greater<int>, std::allocator<std::pair<int const, OrderBookA::PriceLevel> > >::_M_erase
+               |          |          
+               |           --4.73%--(anonymous namespace)::benchmark<OrderBookA>
+               |                     main
+               |                     0xffff945a7744
+               |                     __libc_start_main
+               |                     _start
+               |          
+                --2.75%--(anonymous namespace)::benchmark<OrderBookA>
+                          main
+                          0xffff945a7744
+                          __libc_start_main
+                          _start
+     6.39%  bench    [kernel.kallsyms]      [k] __pi_clear_page
+            |
+            ---__pi_clear_page
+               |          
+                --5.75%--__alloc_frozen_pages_noprof
+                          |          
+                           --5.65%--__folio_alloc_noprof
+                                     vma_alloc_zeroed_movable_folio
+                                     __handle_mm_fault
+                                     handle_mm_fault
+                                     do_page_fault
+                                     do_translation_fault
+                                     do_mem_abort
+                                     el0_da
+                                     el0t_64_sync_handler
+                                     el0t_64_sync
+                                     |          
+                                      --4.63%--0xffff946117a4
+                                                malloc
+                                                operator new
+                                                |          
+                                                 --3.75%--OrderBookA::add_order
+                                                           (anonymous namespace)::benchmark<OrderBookA>
+                                                           main
+                                                           0xffff945a7744
+                                                           __libc_start_main
+                                                           _start
+     3.41%  bench    bench                  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookA::Locator>, std::allocator<std::pair<unsigned long const, OrderBookA::Locator> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash
+            |
+            ---std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookA::Locator>, std::allocator<std::pair<unsigned long const, OrderBookA::Locator> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash
+               OrderBookA::add_order
+               (anonymous namespace)::benchmark<OrderBookA>
+               main
+               0xffff945a7744
+               __libc_start_main
+               _start
+     2.82%  bench    bench                  [.] (anonymous namespace)::benchmark<OrderBookA>
+            |
+            ---(anonymous namespace)::benchmark<OrderBookA>
+               main
+               0xffff945a7744
+               __libc_start_main
+               _start
+     2.14%  bench    bench                  [.] (anonymous namespace)::generate_workload
+            |
+            ---(anonymous namespace)::generate_workload
+               (anonymous namespace)::benchmark<OrderBookA>
+               main
+               0xffff945a7744
+               __libc_start_main
+               _start
+     1.94%  bench    bench                  [.] std::_Rb_tree<int, std::pair<int const, OrderBookA::PriceLevel>, std::_Select1st<std::pair<int const, OrderBookA::PriceLevel> >, std::less<int>, std::allocator<std::pair<int const, OrderBookA::PriceLevel> > >::_M_erase
+            |
+            ---std::_Rb_tree<int, std::pair<int const, OrderBookA::PriceLevel>, std::_Select1st<std::pair<int const, OrderBookA::PriceLevel> >, std::less<int>, std::allocator<std::pair<int const, OrderBookA::PriceLevel> > >::_M_erase
+               (anonymous namespace)::benchmark<OrderBookA>
+               main
+               0xffff945a7744
+               __libc_start_main
+               _start
+#
+# (Tip: Add -I to perf record to sample register values, which will be visible in perf report sample context.)
+#
