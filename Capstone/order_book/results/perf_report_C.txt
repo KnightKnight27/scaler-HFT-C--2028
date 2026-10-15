@@ -1,0 +1,79 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 215  of event 'task-clock:ppp'
+# Event count (approx.): 53750000
+#
+# Overhead  Command     Shared Object     Symbol                                                                                                                                                                               
+# ........  ..........  ................  .....................................................................................................................................................................................
+#
+    43.26%  bench_prof  bench_prof        [.] BookC::add_order(unsigned long, Side, int, long)
+            |
+            ---BookC::add_order(unsigned long, Side, int, long)
+               |          
+               |--41.40%--unsigned long play<BookC>(BookC&, std::vector<Op, std::allocator<Op> > const&, BBO*)
+               |          main
+               |          0xffffb58184c4
+               |          0xffffb5818598
+               |          _start
+               |          
+                --1.86%--main
+                          0xffffb58184c4
+                          0xffffb5818598
+                          _start
+
+    29.77%  bench_prof  bench_prof        [.] unsigned long play<BookC>(BookC&, std::vector<Op, std::allocator<Op> > const&, BBO*)
+            |
+            ---unsigned long play<BookC>(BookC&, std::vector<Op, std::allocator<Op> > const&, BBO*)
+               main
+               0xffffb58184c4
+               0xffffb5818598
+               _start
+
+    16.28%  bench_prof  bench_prof        [.] BookC::cancel_order(unsigned long)
+            |
+            ---BookC::cancel_order(unsigned long)
+               unsigned long play<BookC>(BookC&, std::vector<Op, std::allocator<Op> > const&, BBO*)
+               main
+               0xffffb58184c4
+               0xffffb5818598
+               _start
+
+     3.72%  bench_prof  bench_prof        [.] make_workload(unsigned long, unsigned int, PriceModel, unsigned int, unsigned int)
+            |
+            ---make_workload(unsigned long, unsigned int, PriceModel, unsigned int, unsigned int)
+               main
+               0xffffb58184c4
+               0xffffb5818598
+               _start
+
+     2.79%  bench_prof  bench_prof        [.] std::vector<BookC::Slot, std::allocator<BookC::Slot> >::_M_fill_assign(unsigned long, BookC::Slot const&)
+            |
+            ---std::vector<BookC::Slot, std::allocator<BookC::Slot> >::_M_fill_assign(unsigned long, BookC::Slot const&)
+               BookC::BookC(unsigned long)
+               main
+               0xffffb58184c4
+               0xffffb5818598
+               _start
+
+     1.86%  bench_prof  bench_prof        [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+            |
+            ---std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+               make_workload(unsigned long, unsigned int, PriceModel, unsigned int, unsigned int)
+               main
+               0xffffb58184c4
+               0xffffb5818598
+               _start
+
+     0.47%  bench_prof   (deleted)        [.] 0x0000000000094134
+     0.47%  bench_prof   (deleted)        [.] 0x00000000000a8940
+     0.47%  bench_prof  bench_prof        [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand()
+     0.47%  bench_prof  [unknown]         [k] 0xffff8000812b15d8
+     0.47%  bench_prof  [unknown]         [k] 0xffff8000812b4240
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

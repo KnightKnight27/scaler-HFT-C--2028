@@ -1,0 +1,11 @@
+Running correctness test...
+  phase 1: 1000000 ops of the benchmark workload
+  phase 2: 200000 ops of churn workload (levels empty and refill constantly)
+Implementation A: PASS  (edge-case failures: 0, workload mismatches vs reference: 0)
+Implementation B: PASS  (edge-case failures: 0, workload mismatches vs reference: 0)
+Implementation C: PASS  (edge-case failures: 0, workload mismatches vs reference: 0)
+Implementation C started with a 16-slot hash table (forces rehash + collision paths): PASS  (mismatches: 0)
+  BBO + top-10 of both sides compared across A/B/C after every operation;
+  complete book (every price level) compared with a naive reference periodically.
+
+All implementations produce identical results.

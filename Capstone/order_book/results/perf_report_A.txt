@@ -1,0 +1,80 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'task-clock:ppp'
+# Event count (approx.): 276500000
+#
+# Overhead  Command     Shared Object        Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+# ........  ..........  ...................  ........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    52.26%  bench_prof  bench_prof           [.] BookA::add_order(unsigned long, Side, int, long)
+            |
+            ---BookA::add_order(unsigned long, Side, int, long)
+               |          
+                --52.08%--unsigned long play<BookA>(BookA&, std::vector<Op, std::allocator<Op> > const&, BBO*)
+                          main
+                          0xffff871c84c4
+                          __libc_start_main
+                          _start
+
+    23.15%  bench_prof  bench_prof           [.] BookA::cancel_order(unsigned long)
+            |
+            ---BookA::cancel_order(unsigned long)
+               unsigned long play<BookA>(BookA&, std::vector<Op, std::allocator<Op> > const&, BBO*)
+               main
+               0xffff871c84c4
+               __libc_start_main
+               _start
+
+     3.07%  bench_prof  bench_prof           [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, BookA::Rec>, std::allocator<std::pair<unsigned long const, BookA::Rec> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+            |
+            ---std::_Hashtable<unsigned long, std::pair<unsigned long const, BookA::Rec>, std::allocator<std::pair<unsigned long const, BookA::Rec> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+               BookA::add_order(unsigned long, Side, int, long)
+               unsigned long play<BookA>(BookA&, std::vector<Op, std::allocator<Op> > const&, BBO*)
+               main
+               0xffff871c84c4
+               __libc_start_main
+               _start
+
+     2.44%  bench_prof  libc.so.6            [.] cfree
+            |
+            ---cfree
+               |          
+                --1.99%--BookA::~BookA()
+                          main
+                          0xffff871c84c4
+                          __libc_start_main
+                          _start
+
+     1.99%  bench_prof  libc.so.6            [.] 0x0000000000092ae4
+            |
+            ---0xffff87232ae4
+               0xffff87233d98
+               cfree
+               main
+               0xffff871c84c4
+               __libc_start_main
+               _start
+
+     1.90%  bench_prof  bench_prof           [.] unsigned long play<BookA>(BookA&, std::vector<Op, std::allocator<Op> > const&, BBO*)
+            |
+            ---unsigned long play<BookA>(BookA&, std::vector<Op, std::allocator<Op> > const&, BBO*)
+               main
+               0xffff871c84c4
+               __libc_start_main
+               _start
+
+     1.90%  bench_prof  libc.so.6            [.] malloc
+            |
+            ---malloc
+               operator new(unsigned long)
+               BookA::add_order(unsigned long, Side, int, long)
+               unsigned long play<BookA>(BookA&, std::vector<Op, std::allocator<Op> > const&, BBO*)
+               main
+               0xffff871c84c4
+               __libc_start_main
+               _start
+
+     1.36%  bench_prof  libc.so.6            [.] 0x0000000000094220

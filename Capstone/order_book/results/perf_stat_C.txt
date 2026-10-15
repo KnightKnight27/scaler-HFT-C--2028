@@ -1,0 +1,15 @@
+
+ Performance counter stats for '/tmp/ob_build/bench --impl C --perf --reps 10' (5 runs):
+
+            232.69 msec task-clock                       #    0.999 CPUs utilized               ( +-  4.41% )
+   <not supported>      cycles                                                                
+   <not supported>      instructions                                                          
+   <not supported>      branches                                                              
+   <not supported>      branch-misses                                                         
+   <not supported>      cache-misses                                                          
+   <not supported>      L1-dcache-load-misses                                                 
+   <not supported>      dTLB-load-misses                                                      
+              2006      page-faults                      #    8.621 K/sec                       ( +-  7.69% )
+
+            0.2330 +- 0.0103 seconds time elapsed  ( +-  4.41% )
+

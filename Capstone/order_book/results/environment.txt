@@ -1,0 +1,7 @@
+Linux 6.12.54-linuxkit aarch64
+Architecture:                            aarch64
+CPU(s):                                  11
+Model name:                              -
+11
+perf version 6.8.12
+2
