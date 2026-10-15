@@ -1,0 +1,3 @@
+perf record sampling event: cpu-clock
+Linux a95fc6ef8c9d 7.0.14-linuxkit #1 SMP PREEMPT Sun Sep 20 16:14:09 UTC 2026 aarch64 GNU/Linux
+perf version 6.1.187

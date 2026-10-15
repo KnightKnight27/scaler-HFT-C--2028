@@ -1,0 +1,11 @@
+Running correctness test...
+  edge cases (empty book, unknown/double cancel, depth, invalid input): done
+  workload: benchmark mix 70/20/10, full price band  1000000 ops, seed 42: done
+  workload: narrow band (20 ticks/side)              1000000 ops, seed 43: done
+  workload: cancel-heavy 50/45/5, 50 ticks/side      200000 ops, seed 44: done
+
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+
+All implementations produce identical results.

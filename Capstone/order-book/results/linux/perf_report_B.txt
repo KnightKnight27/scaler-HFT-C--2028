@@ -1,0 +1,139 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 914  of event 'cpu-clock'
+# Event count (approx.): 228500000
+#
+# Overhead  Command  Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                                             
+# ........  .......  .....................  ...................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    13.13%  bench    bench                  [.] OrderBookB::cancel_order
+            |
+            ---OrderBookB::cancel_order
+               main
+               0xffff89107744
+               __libc_start_main
+               _start
+     7.00%  bench    bench                  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookB::OrderInfo>, std::allocator<std::pair<unsigned long const, OrderBookB::OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash
+            |
+            ---std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookB::OrderInfo>, std::allocator<std::pair<unsigned long const, OrderBookB::OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash
+               OrderBookB::add_order
+               main
+               0xffff89107744
+               __libc_start_main
+               _start
+     6.46%  bench    bench                  [.] (anonymous namespace)::generate_workload
+            |
+            ---(anonymous namespace)::generate_workload
+               main
+               0xffff89107744
+               __libc_start_main
+               _start
+     6.35%  bench    [kernel.kallsyms]      [k] __pi_clear_page
+            |
+            ---__pi_clear_page
+               |          
+                --5.25%--__alloc_frozen_pages_noprof
+                          |          
+                           --4.70%--__folio_alloc_noprof
+                                     vma_alloc_zeroed_movable_folio
+                                     __handle_mm_fault
+                                     handle_mm_fault
+                                     do_page_fault
+                                     do_translation_fault
+                                     do_mem_abort
+                                     el0_da
+                                     el0t_64_sync_handler
+                                     el0t_64_sync
+                                     |          
+                                     |--1.97%--0xffff8917d200
+                                     |          OrderBookB::HeapSide<std::less<int> >::top
+                                     |          main
+                                     |          0xffff89107744
+                                     |          __libc_start_main
+                                     |          _start
+                                     |          
+                                      --1.64%--0xffff8917d208
+                                                |          
+                                                 --1.53%--OrderBookB::HeapSide<std::less<int> >::top
+                                                           main
+                                                           0xffff89107744
+                                                           __libc_start_main
+                                                           _start
+     5.91%  bench    bench                  [.] OrderBookB::add_order
+            |
+            ---OrderBookB::add_order
+               main
+               0xffff89107744
+               __libc_start_main
+               _start
+     5.80%  bench    libc.so.6              [.] cfree
+            |
+            ---cfree
+               |          
+                --4.70%--OrderBookB::~OrderBookB
+                          main
+                          0xffff89107744
+                          __libc_start_main
+                          _start
+     4.16%  bench    bench                  [.] main
+            |
+            ---main
+               0xffff89107744
+               __libc_start_main
+               _start
+     3.83%  bench    libc.so.6              [.] 0x000000000009d200
+            |
+            ---0xffff8917d200
+               |          
+               |--1.97%--OrderBookB::HeapSide<std::less<int> >::top
+               |          main
+               |          0xffff89107744
+               |          __libc_start_main
+               |          _start
+               |          
+                --1.75%--OrderBookB::HeapSide<std::greater<int> >::top
+                          main
+                          0xffff89107744
+                          __libc_start_main
+                          _start
+     3.61%  bench    bench                  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+            |
+            ---std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+               (anonymous namespace)::generate_workload
+               main
+               0xffff89107744
+               __libc_start_main
+               _start
+     3.28%  bench    libc.so.6              [.] malloc
+            |
+            ---malloc
+               operator new
+               |          
+                --2.84%--OrderBookB::add_order
+                          main
+                          0xffff89107744
+                          __libc_start_main
+                          _start
+     3.28%  bench    libstdc++.so.6.0.30    [.] operator new
+            |
+            ---operator new
+               |          
+                --2.63%--OrderBookB::add_order
+                          main
+                          0xffff89107744
+                          __libc_start_main
+                          _start
+     2.30%  bench    bench                  [.] std::__detail::_Insert_base<int, std::pair<int const, long>, std::allocator<std::pair<int const, long> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::try_emplace<int const&, int>
+            |
+            ---std::__detail::_Insert_base<int, std::pair<int const, long>, std::allocator<std::pair<int const, long> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::try_emplace<int const&, int>
+               OrderBookB::add_order
+               main
+               0xffff89107744
+               __libc_start_main
+               _start
+#
+# (Tip: To change sampling frequency to 100 Hz: perf record -F 100)
+#

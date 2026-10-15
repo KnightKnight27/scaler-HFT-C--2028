@@ -1,0 +1,13 @@
+Implementation C (price-indexed array + bitmap + pool + open addressing) | 1000000 ops (add 700829, cancel 199496, bbo 99675) + depth every 100 | seed 42
+--untimed: per-op timers compiled out, only total time is measured
+
+run       total(ms)     ns/add  ns/cancel     ns/bbo     ns/depth             checksum
+1             38.17        0.0        0.0        0.0          0.0 17644364262346812077
+2             37.54        0.0        0.0        0.0          0.0 17644364262346812077
+3             36.97        0.0        0.0        0.0          0.0 17644364262346812077
+4             48.12        0.0        0.0        0.0          0.0 17644364262346812077
+5             37.05        0.0        0.0        0.0          0.0 17644364262346812077
+median        37.54        0.0        0.0        0.0          0.0
+
+Final BBO:  Bid: 99.99 x 2193  Ask: 100.01 x 2522
+Checksum: 17644364262346812077

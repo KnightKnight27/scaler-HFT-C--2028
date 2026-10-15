@@ -1,0 +1,30 @@
+==4402== Cachegrind, a cache and branch-prediction profiler
+==4402== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==4402== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==4402== Command: /tmp/bench --impl B --untimed --runs 1
+==4402== 
+--4402-- Warning: Cannot auto-detect cache config, using defaults.
+--4402--          Run with -v to see.
+==4402== brk segment overflow in thread #1: can't grow to 0x4846000
+==4402== (see section Limitations in user manual)
+==4402== NOTE: further instances of this message will not be shown
+==4402== 
+==4402== I   refs:      751,577,576
+==4402== I1  misses:         61,144
+==4402== LLi misses:          6,121
+==4402== I1  miss rate:        0.01%
+==4402== LLi miss rate:        0.00%
+==4402== 
+==4402== D   refs:      337,035,134  (201,223,327 rd   + 135,811,807 wr)
+==4402== D1  misses:     24,448,556  ( 16,937,715 rd   +   7,510,841 wr)
+==4402== LLd misses:      8,888,319  (  7,456,598 rd   +   1,431,721 wr)
+==4402== D1  miss rate:         7.3% (        8.4%     +         5.5%  )
+==4402== LLd miss rate:         2.6% (        3.7%     +         1.1%  )
+==4402== 
+==4402== LL refs:        24,509,700  ( 16,998,859 rd   +   7,510,841 wr)
+==4402== LL misses:       8,894,440  (  7,462,719 rd   +   1,431,721 wr)
+==4402== LL miss rate:          0.8% (        0.8%     +         1.1%  )
+==4402== 
+==4402== Branches:       95,957,759  ( 90,791,552 cond +   5,166,207 ind)
+==4402== Mispredicts:     3,233,126  (  3,232,906 cond +         220 ind)
+==4402== Mispred rate:          3.4% (        3.6%     +         0.0%   )

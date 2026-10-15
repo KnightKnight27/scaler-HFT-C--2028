@@ -1,0 +1,15 @@
+
+ Performance counter stats for './bench --impl C --untimed' (5 runs):
+
+            317.32 msec task-clock                       #    1.022 CPUs utilized            ( +-  3.44% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      cache-misses                                                
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      dTLB-load-misses                                            
+             56556      page-faults                      #  182.774 K/sec                    ( +-  1.00% )
+
+            0.3105 +- 0.0110 seconds time elapsed  ( +-  3.54% )
+

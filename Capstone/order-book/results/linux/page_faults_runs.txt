@@ -1,0 +1,10 @@
+# perf stat -e page-faults ./bench --impl X --untimed --runs N   (Docker, Debian bookworm, linuxkit 7.0.14 aarch64)
+# Same process, 1 vs 5 fresh books. "per extra run" = (runs5 - runs1) / 4.
+impl=0 runs=1 page-faults=9410
+impl=0 runs=5 page-faults=9409
+impl=A runs=1 page-faults=22722
+impl=A runs=5 page-faults=24627
+impl=B runs=1 page-faults=16768
+impl=B runs=5 page-faults=18169
+impl=C runs=1 page-faults=25116
+impl=C runs=5 page-faults=62174

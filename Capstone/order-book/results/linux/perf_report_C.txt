@@ -1,0 +1,137 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 580  of event 'cpu-clock'
+# Event count (approx.): 145000000
+#
+# Overhead  Command  Shared Object          Symbol                                                                                                                                                                             
+# ........  .......  .....................  ...................................................................................................................................................................................
+#
+    26.72%  bench    bench                  [.] OrderBookC::add_order
+            |
+            ---OrderBookC::add_order
+               main
+               0xffff807b7744
+               __libc_start_main
+               _start
+    15.17%  bench    [kernel.kallsyms]      [k] __pi_clear_page
+            |
+            ---__pi_clear_page
+               |          
+               |--7.76%--vma_alloc_anon_folio_pmd
+               |          do_huge_pmd_anonymous_page
+               |          __handle_mm_fault
+               |          handle_mm_fault
+               |          do_page_fault
+               |          do_translation_fault
+               |          do_mem_abort
+               |          el0_da
+               |          el0t_64_sync_handler
+               |          el0t_64_sync
+               |          |          
+               |          |--2.41%--0xffff8082d208
+               |          |          std::vector<OrderBookC::Order, std::allocator<OrderBookC::Order> >::_M_realloc_insert<>
+               |          |          OrderBookC::add_order
+               |          |          main
+               |          |          0xffff807b7744
+               |          |          __libc_start_main
+               |          |          _start
+               |          |          
+               |          |--2.41%--std::vector<unsigned long, std::allocator<unsigned long> >::_M_realloc_insert<unsigned long const&>
+               |          |          (anonymous namespace)::generate_workload
+               |          |          main
+               |          |          0xffff807b7744
+               |          |          __libc_start_main
+               |          |          _start
+               |          |          
+               |           --2.41%--(anonymous namespace)::generate_workload
+               |                     main
+               |                     0xffff807b7744
+               |                     __libc_start_main
+               |                     _start
+               |          
+                --7.41%--__alloc_frozen_pages_noprof
+                          |          
+                           --7.07%--__folio_alloc_noprof
+                                     vma_alloc_zeroed_movable_folio
+                                     __handle_mm_fault
+                                     handle_mm_fault
+                                     do_page_fault
+                                     do_translation_fault
+                                     do_mem_abort
+                                     el0_da
+                                     el0t_64_sync_handler
+                                     el0t_64_sync
+                                     |          
+                                     |--2.93%--0xffff8082d208
+                                     |          |          
+                                     |           --1.90%--std::vector<OrderBookC::Order, std::allocator<OrderBookC::Order> >::_M_realloc_insert<>
+                                     |                     OrderBookC::add_order
+                                     |                     main
+                                     |                     0xffff807b7744
+                                     |                     __libc_start_main
+                                     |                     _start
+                                     |          
+                                      --2.59%--std::vector<book_c_detail::IdIndex::Slot, std::allocator<book_c_detail::IdIndex::Slot> >::_M_fill_assign
+                                                OrderBookC::add_order
+                                                main
+                                                0xffff807b7744
+                                                __libc_start_main
+                                                _start
+    13.10%  bench    bench                  [.] main
+            |
+            ---main
+               0xffff807b7744
+               __libc_start_main
+               _start
+    12.93%  bench    bench                  [.] (anonymous namespace)::generate_workload
+            |
+            ---(anonymous namespace)::generate_workload
+               main
+               0xffff807b7744
+               __libc_start_main
+               _start
+     6.55%  bench    bench                  [.] OrderBookC::cancel_order
+            |
+            ---OrderBookC::cancel_order
+               main
+               0xffff807b7744
+               __libc_start_main
+               _start
+     4.66%  bench    bench                  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+            |
+            ---std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+               (anonymous namespace)::generate_workload
+               main
+               0xffff807b7744
+               __libc_start_main
+               _start
+     2.41%  bench    [kernel.kallsyms]      [k] get_mem_cgroup_from_mm
+            |
+            ---get_mem_cgroup_from_mm
+               __mem_cgroup_charge
+               __handle_mm_fault
+               handle_mm_fault
+               do_page_fault
+               do_translation_fault
+               do_mem_abort
+               el0_da
+               el0t_64_sync_handler
+               el0t_64_sync
+     2.24%  bench    bench                  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand
+            |
+            ---std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand
+               std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+               (anonymous namespace)::generate_workload
+               main
+               0xffff807b7744
+               __libc_start_main
+               _start
+     1.55%  bench    bench                  [.] std::vector<book_c_detail::IdIndex::Slot, std::allocator<book_c_detail::IdIndex::Slot> >::_M_fill_assign
+            |
+            ---std::vector<book_c_detail::IdIndex::Slot, std::allocator<book_c_detail::IdIndex::Slot> >::_M_fill_assign
+#
+# (Tip: Generate a script for your data: perf script -g <lang>)
+#

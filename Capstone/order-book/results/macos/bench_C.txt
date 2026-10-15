@@ -1,0 +1,13 @@
+Implementation C (price-indexed array + bitmap + pool + open addressing) | 1000000 ops (add 700829, cancel 199496, bbo 99675) + depth every 100 | seed 42
+steady_clock::now() pair overhead: 16.8 ns (included in per-op numbers)
+
+run       total(ms)     ns/add  ns/cancel     ns/bbo     ns/depth             checksum
+1             72.81       54.1       68.5       17.4        102.3 17644364262346812077
+2             77.23       57.3       78.6       19.3        104.6 17644364262346812077
+3             68.22       50.3       60.6       17.2         98.9 17644364262346812077
+4             75.74       56.0       77.6       17.4         99.2 17644364262346812077
+5             87.01       66.0       94.7       17.8        108.9 17644364262346812077
+median        75.74       56.0       77.6       17.4        102.3
+
+Final BBO:  Bid: 99.99 x 2193  Ask: 100.01 x 2522
+Checksum: 17644364262346812077
