@@ -1,0 +1,27 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'cpu/cycles/P'
+# Event count (approx.): 360129006
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                               
+# ........  .......  ....................  .....................................................................................................................................................................................
+#
+    22.08%  bench    bench                 [.] make_workload(unsigned long, unsigned int)
+    17.40%  bench    bench                 [.] Result run_once<OrderBookC>(std::vector<Op, std::allocator<Op> > const&, bool, double)
+     9.19%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+     8.84%  bench    libc.so.6             [.] __memmove_evex_unaligned_erms
+     3.03%  bench    libm.so.6             [.] __llround
+     2.70%  bench    [unknown]             [k] 0xffffffff9fa7f84e
+     2.55%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand()
+     2.22%  bench    [unknown]             [k] 0xffffffff9e401268
+     1.45%  bench    bench                 [.] std::vector<Order, std::allocator<Order> >::_M_fill_insert(__gnu_cxx::__normal_iterator<Order*, std::vector<Order, std::allocator<Order> > >, unsigned long, Order const&)
+     1.26%  bench    [unknown]             [k] 0xffffffff9eb77dce
+     1.26%  bench    [unknown]             [k] 0xffffffff9eb8035a
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

@@ -1,0 +1,45 @@
+=== Implementation B (median of 1 runs, 1000000 ops) ===
+Total time (ms) : 870.89
+Final BBO:
+  Bid: 99.99 x 2971
+  Ask: 100.01 x 2974
+Checksum: 3176686469504601788
+=== Implementation B (median of 1 runs, 1000000 ops) ===
+Total time (ms) : 869.29
+Final BBO:
+  Bid: 99.99 x 2971
+  Ask: 100.01 x 2974
+Checksum: 3176686469504601788
+=== Implementation B (median of 1 runs, 1000000 ops) ===
+Total time (ms) : 854.40
+Final BBO:
+  Bid: 99.99 x 2971
+  Ask: 100.01 x 2974
+Checksum: 3176686469504601788
+=== Implementation B (median of 1 runs, 1000000 ops) ===
+Total time (ms) : 879.74
+Final BBO:
+  Bid: 99.99 x 2971
+  Ask: 100.01 x 2974
+Checksum: 3176686469504601788
+=== Implementation B (median of 1 runs, 1000000 ops) ===
+Total time (ms) : 821.29
+Final BBO:
+  Bid: 99.99 x 2971
+  Ask: 100.01 x 2974
+Checksum: 3176686469504601788
+
+ Performance counter stats for './bench --impl B --runs 1 --no-op-timing' (5 runs):
+
+          1,128.08 msec task-clock                                                              ( +-  0.69% )
+     1,384,125,428      cycles                                                                  ( +-  0.63% )
+     1,192,021,410      instructions                                                            ( +-  0.11% )
+       230,145,187      branches                                                                ( +-  0.12% )
+        12,753,618      branch-misses                                                           ( +-  0.06% )
+        10,006,422      cache-misses                                                            ( +-  0.66% )
+        28,402,626      L1-dcache-load-misses                                                   ( +-  0.75% )
+         1,213,312      dTLB-load-misses                                                        ( +-  1.70% )
+            24,012      page-faults                                                             ( +-  0.00% )
+
+       1.143131068 +- 0.008549685 seconds time elapsed  ( +-  0.75% )
+

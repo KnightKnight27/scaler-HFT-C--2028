@@ -1,0 +1,45 @@
+=== Implementation C (median of 1 runs, 1000000 ops) ===
+Total time (ms) : 89.18
+Final BBO:
+  Bid: 99.99 x 2971
+  Ask: 100.01 x 2974
+Checksum: 3176686469504601788
+=== Implementation C (median of 1 runs, 1000000 ops) ===
+Total time (ms) : 90.96
+Final BBO:
+  Bid: 99.99 x 2971
+  Ask: 100.01 x 2974
+Checksum: 3176686469504601788
+=== Implementation C (median of 1 runs, 1000000 ops) ===
+Total time (ms) : 77.97
+Final BBO:
+  Bid: 99.99 x 2971
+  Ask: 100.01 x 2974
+Checksum: 3176686469504601788
+=== Implementation C (median of 1 runs, 1000000 ops) ===
+Total time (ms) : 93.83
+Final BBO:
+  Bid: 99.99 x 2971
+  Ask: 100.01 x 2974
+Checksum: 3176686469504601788
+=== Implementation C (median of 1 runs, 1000000 ops) ===
+Total time (ms) : 76.02
+Final BBO:
+  Bid: 99.99 x 2971
+  Ask: 100.01 x 2974
+Checksum: 3176686469504601788
+
+ Performance counter stats for './bench --impl C --runs 1 --no-op-timing' (5 runs):
+
+            271.01 msec task-clock                                                              ( +-  4.69% )
+       344,596,156      cycles                                                                  ( +-  4.34% )
+       519,462,214      instructions                                                            ( +-  0.31% )
+        76,722,941      branches                                                                ( +-  0.35% )
+         1,633,272      branch-misses                                                           ( +-  0.20% )
+         2,797,925      cache-misses                                                            ( +-  1.84% )
+         5,363,202      L1-dcache-load-misses                                                   ( +-  3.09% )
+            82,654      dTLB-load-misses                                                        ( +- 10.79% )
+            24,325      page-faults                                                             ( +-  0.00% )
+
+       0.274804614 +- 0.013997603 seconds time elapsed  ( +-  5.09% )
+

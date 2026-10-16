@@ -1,0 +1,29 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 4K of event 'cpu/cycles/P'
+# Event count (approx.): 1409062642
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                          
+# ........  .......  ....................  ................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    56.17%  bench    bench                 [.] Result run_once<OrderBookB>(std::vector<Op, std::allocator<Op> > const&, bool, double)
+     5.29%  bench    libstdc++.so.6.0.33   [.] std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+     5.28%  bench    bench                 [.] make_workload(unsigned long, unsigned int)
+     3.01%  bench    libstdc++.so.6.0.33   [.] std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+     2.83%  bench    libc.so.6             [.] __memmove_evex_unaligned_erms
+     2.72%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+     2.46%  bench    bench                 [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, Order>, std::_Select1st<std::pair<unsigned long const, Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, Order> >*) [clone .isra.0]
+     2.40%  bench    libc.so.6             [.] malloc_consolidate
+     1.85%  bench    libc.so.6             [.] unlink_chunk.isra.0
+     1.83%  bench    libc.so.6             [.] _int_malloc
+     1.37%  bench    libc.so.6             [.] malloc
+     1.27%  bench    bench                 [.] std::_Rb_tree_iterator<std::pair<unsigned long const, Order> > std::_Rb_tree<unsigned long, std::pair<unsigned long const, Order>, std::_Select1st<std::pair<unsigned long const, Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, Order> > >::_M_emplace_hint_unique<unsigned long&, Order>(std::_Rb_tree_const_iterator<std::pair<unsigned long const, Order> >, unsigned long&, Order&&)
+     1.06%  bench    libc.so.6             [.] cfree@GLIBC_2.2.5
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

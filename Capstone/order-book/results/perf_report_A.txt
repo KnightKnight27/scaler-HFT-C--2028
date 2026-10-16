@@ -1,0 +1,28 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 3K of event 'cpu/cycles/P'
+# Event count (approx.): 1114010464
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+# ........  .......  ....................  .........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    36.66%  bench    bench                 [.] Result run_once<OrderBookA>(std::vector<Op, std::allocator<Op> > const&, bool, double)
+    17.27%  bench    bench                 [.] OrderBookA::cancel_order(unsigned long)
+     6.16%  bench    bench                 [.] make_workload(unsigned long, unsigned int)
+     4.59%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+     3.27%  bench    libc.so.6             [.] malloc_consolidate
+     2.92%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::erase(std::__detail::_Node_const_iterator<std::pair<unsigned long const, Order>, false, false>)
+     2.69%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+     2.57%  bench    libc.so.6             [.] unlink_chunk.isra.0
+     2.12%  bench    libc.so.6             [.] __memmove_evex_unaligned_erms
+     1.92%  bench    libc.so.6             [.] _int_malloc
+     1.74%  bench    libc.so.6             [.] malloc
+     1.53%  bench    libc.so.6             [.] _int_free
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

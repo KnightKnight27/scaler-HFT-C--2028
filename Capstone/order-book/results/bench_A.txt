@@ -1,0 +1,10 @@
+(clock read overhead 48.9 ns is subtracted from per-op numbers)
+=== Implementation A (median of 5 runs, 1000000 ops) ===
+Total time (ms) : 598.75
+ns / add_order  : 560.2
+ns / cancel     : 932.8
+ns / get_bbo    : 21.2
+Final BBO:
+  Bid: 99.99 x 2971
+  Ask: 100.01 x 2974
+Checksum: 3176686469504601788
