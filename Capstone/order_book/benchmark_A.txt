@@ -1,0 +1,12 @@
+Run 1: total = 1389.3 ms, checksum = 297281999578
+Run 2: total = 1130.47 ms, checksum = 297281999578
+Run 3: total = 976.987 ms, checksum = 297281999578
+Run 4: total = 1092.12 ms, checksum = 297281999578
+Run 5: total = 888.424 ms, checksum = 297281999578
+
+Implementation A — median of 5 runs
+Total time: 1092.12 ms
+Average add latency: 895.784 ns
+Average cancel latency: 1563.02 ns
+Average BBO latency: 78.3205 ns
+Checksum: 297281999578

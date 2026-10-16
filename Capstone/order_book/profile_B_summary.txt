@@ -1,0 +1,45 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 8K of event 'cpu_atom/cycles/P'
+# Event count (approx.): 1936842484
+#
+# Overhead  Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  IPC   [IPC Coverage]
+# ........  ......................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................  ....................
+#
+    18.08%  [.] std::pair<std::__detail::_Node_iterator<std::pair<int const, long>, false, false>, bool> std::_Hashtable<int, std::pair<int const, long>, std::allocator<std::pair<int const, long> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace<int&, long&>(std::integral_constant<bool, true>, int&, long&) [clone .isra.0]                                                                                                 -      -            
+            |          
+             --18.05%--std::pair<std::__detail::_Node_iterator<std::pair<int const, long>, false, false>, bool> std::_Hashtable<int, std::pair<int const, long>, std::allocator<std::pair<int const, long> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace<int&, long&>(std::integral_constant<bool, true>, int&, long&) [clone .isra.0]
+
+    12.18%  [.] HeapOrderBook::cancel_order(unsigned long)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          -      -            
+            |          
+             --12.12%--HeapOrderBook::cancel_order(unsigned long)
+                       |          
+                       |--5.49%--0x616cae3cc6a0
+                       |          HeapOrderBook::~HeapOrderBook()
+                       |          0xfb89485300007ccc
+                       |          
+                       |--3.51%--0x616cae3b60f0
+                       |          HeapOrderBook::~HeapOrderBook()
+                       |          0xfb89485300007ccc
+                       |          
+                       |--1.62%--0x616cae3a1990
+                       |          HeapOrderBook::~HeapOrderBook()
+                       |          0xfb89485300007ccc
+                       |          
+                        --1.17%--0x616cae3726c0
+                                  HeapOrderBook::~HeapOrderBook()
+                                  0xfb89485300007ccc
+
+     6.86%  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, HeapOrderBook::Order>, std::allocator<std::pair<unsigned long const, HeapOrderBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)                                                                                                                                                  -      -            
+            |          
+             --6.86%--std::_Hashtable<unsigned long, std::pair<unsigned long const, HeapOrderBook::Order>, std::allocator<std::pair<unsigned long const, HeapOrderBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+                       |          
+                       |--3.49%--0x55b55
+                       |          |          
+                       |          |--1.62%--0x616cb063a650
+                       |          |          0x55b56
+                       |          |          0x55b57
+                       |          |          0x55b58

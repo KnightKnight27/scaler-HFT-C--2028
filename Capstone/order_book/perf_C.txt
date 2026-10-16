@@ -1,0 +1,82 @@
+Run 1: total = 660.27 ms, checksum = 297281999578
+Run 2: total = 805.321 ms, checksum = 297281999578
+Run 3: total = 615.692 ms, checksum = 297281999578
+Run 4: total = 586.845 ms, checksum = 297281999578
+Run 5: total = 611.153 ms, checksum = 297281999578
+
+Implementation C — median of 5 runs
+Total time: 615.692 ms
+Average add latency: 369.735 ns
+Average cancel latency: 1052.39 ns
+Average BBO latency: 62.6862 ns
+Checksum: 297281999578
+Run 1: total = 802.793 ms, checksum = 297281999578
+Run 2: total = 744.003 ms, checksum = 297281999578
+Run 3: total = 546.868 ms, checksum = 297281999578
+Run 4: total = 539.444 ms, checksum = 297281999578
+Run 5: total = 587.544 ms, checksum = 297281999578
+
+Implementation C — median of 5 runs
+Total time: 587.544 ms
+Average add latency: 357.722 ns
+Average cancel latency: 1014.25 ns
+Average BBO latency: 64.7208 ns
+Checksum: 297281999578
+Run 1: total = 746.08 ms, checksum = 297281999578
+Run 2: total = 655.014 ms, checksum = 297281999578
+Run 3: total = 541.232 ms, checksum = 297281999578
+Run 4: total = 550.988 ms, checksum = 297281999578
+Run 5: total = 551.311 ms, checksum = 297281999578
+
+Implementation C — median of 5 runs
+Total time: 551.311 ms
+Average add latency: 328.272 ns
+Average cancel latency: 972.285 ns
+Average BBO latency: 52.7507 ns
+Checksum: 297281999578
+Run 1: total = 713.054 ms, checksum = 297281999578
+Run 2: total = 553.738 ms, checksum = 297281999578
+Run 3: total = 539.661 ms, checksum = 297281999578
+Run 4: total = 546.277 ms, checksum = 297281999578
+Run 5: total = 748.431 ms, checksum = 297281999578
+
+Implementation C — median of 5 runs
+Total time: 553.738 ms
+Average add latency: 340.088 ns
+Average cancel latency: 970.982 ns
+Average BBO latency: 52.7646 ns
+Checksum: 297281999578
+Run 1: total = 697.824 ms, checksum = 297281999578
+Run 2: total = 590.761 ms, checksum = 297281999578
+Run 3: total = 563.046 ms, checksum = 297281999578
+Run 4: total = 592.318 ms, checksum = 297281999578
+Run 5: total = 538.8 ms, checksum = 297281999578
+
+Implementation C — median of 5 runs
+Total time: 590.761 ms
+Average add latency: 362.109 ns
+Average cancel latency: 1006.62 ns
+Average BBO latency: 55.9659 ns
+Checksum: 297281999578
+
+ Performance counter stats for './Capstone/order_book/benchmark --impl C' (5 runs):
+
+     4,091,723,481      task-clock                       #    0.992 CPUs utilized               ( +-  1.52% )
+     4,294,375,324      cpu_atom/cycles/                 #    1.050 GHz                         ( +-  2.54% )  (11.41%)
+     4,799,141,628      cpu_core/cycles/                 #    1.173 GHz                         ( +-  0.79% )  (88.59%)
+     4,210,396,589      cpu_atom/instructions/           #    0.98  insn per cycle              ( +-  6.04% )  (11.41%)
+     5,684,965,889      cpu_core/instructions/           #    1.18  insn per cycle              ( +-  0.60% )  (88.59%)
+       769,971,730      cpu_atom/branches/               #  188.178 M/sec                       ( +-  5.76% )  (11.41%)
+     1,101,448,544      cpu_core/branches/               #  269.189 M/sec                       ( +-  0.63% )  (88.59%)
+         6,774,704      cpu_atom/branch-misses/          #    0.88% of all branches             ( +-  8.36% )  (11.41%)
+         7,931,205      cpu_core/branch-misses/          #    0.72% of all branches             ( +-  0.69% )  (88.59%)
+        46,041,716      cpu_atom/cache-misses/                                                  ( +-  5.72% )  (11.41%)
+        74,528,363      cpu_core/cache-misses/                                                  ( +-  1.31% )  (88.59%)
+   <not supported>      cpu_atom/L1-dcache-load-misses/                                       
+        35,071,104      cpu_core/L1-dcache-load-misses/                                         ( +-  1.10% )  (88.59%)
+         3,322,814      cpu_atom/dTLB-load-misses/                                              ( +- 16.03% )  (11.41%)
+         5,375,638      cpu_core/dTLB-load-misses/                                              ( +-  1.27% )  (88.59%)
+            30,415      page-faults                      #    7.433 K/sec                       ( +-  0.00% )
+
+            4.1261 +- 0.0639 seconds time elapsed  ( +-  1.55% )
+

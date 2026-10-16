@@ -1,0 +1,45 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 6K of event 'cpu_atom/cycles/P'
+# Event count (approx.): 1663320559
+#
+# Overhead  Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 IPC   [IPC Coverage]
+# ........  .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................  ....................
+#
+    19.05%  [.] MapOrderBook::cancel_order(unsigned long)                                                                                                                                                                                                                                                                                                                                                                                                                                                          -      -            
+            |          
+             --19.02%--MapOrderBook::cancel_order(unsigned long)
+                       0
+                       MapOrderBook::~MapOrderBook()
+                       0x53fd894800009374
+
+    17.75%  [.] MapOrderBook::add_order(unsigned long, Side, double, long)                                                                                                                                                                                                                                                                                                                                                                                                                                         -      -            
+            |          
+             --17.71%--MapOrderBook::add_order(unsigned long, Side, double, long)
+                       |          
+                        --17.55%--0
+                                  MapOrderBook::~MapOrderBook()
+                                  0x53fd894800009374
+
+    13.83%  [.] std::map<int, long, std::greater<int>, std::allocator<std::pair<int const, long> > >::operator[](int const&)                                                                                                                                                                                                                                                                                                                                                                                       -      -            
+            |          
+             --13.77%--std::map<int, long, std::greater<int>, std::allocator<std::pair<int const, long> > >::operator[](int const&)
+                       0
+
+     4.98%  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, MapOrderBook::Order>, std::allocator<std::pair<unsigned long const, MapOrderBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)                                   -      -            
+            |          
+             --4.97%--std::_Hashtable<unsigned long, std::pair<unsigned long const, MapOrderBook::Order>, std::allocator<std::pair<unsigned long const, MapOrderBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+                       |          
+                        --4.18%--0x55b55
+                                  |          
+                                   --3.31%--0x573b52c6c3e0
+                                             0x55b56
+                                             |          
+                                              --2.60%--0x55b57
+                                                        0x55b58
+                                                        0x55b59
+                                                        0x55b5a
+                                                        0x55b5b
