@@ -1,0 +1,4 @@
+bench
+*.o
+.DS_Store
+*.data

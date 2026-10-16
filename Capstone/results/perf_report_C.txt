@@ -1,0 +1,43 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 3  of event 'cpu_atom/cycles/Pu'
+# Event count (approx.): 423001
+#
+# Overhead  Command  Shared Object     Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                            
+# ........  .......  ................  ..................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    40.90%  bench    [vdso]            [.] 0x0000000000000998
+    29.55%  bench    bench             [.] FixedOrderBook::cancel_order(unsigned long)
+    29.55%  bench    bench             [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderInfo>, std::allocator<std::pair<unsigned long const, OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) const [clone .isra.0]
+
+
+# Samples: 2K of event 'cpu_core/cycles/Pu'
+# Event count (approx.): 2363556195
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+# ........  .......  ....................  ..........................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    27.33%  bench    bench                 [.] FixedOrderBook::cancel_order(unsigned long)
+    12.23%  bench    [vdso]                [.] 0x0000000000000998
+     7.14%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderInfo>, std::allocator<std::pair<unsigned long const, OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) const [clone .isra.0]
+     6.32%  bench    libc.so.6             [.] malloc_consolidate
+     5.54%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderInfo>, std::allocator<std::pair<unsigned long const, OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+     4.54%  bench    bench                 [.] Metric run_single<FixedOrderBook>(std::vector<Operation, std::allocator<Operation> > const&)
+     4.06%  bench    libc.so.6             [.] unlink_chunk.isra.0
+     3.10%  bench    bench                 [.] std::__detail::_Map_base<unsigned long, std::pair<unsigned long const, OrderInfo>, std::allocator<std::pair<unsigned long const, OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](unsigned long const&)
+     3.03%  bench    libc.so.6             [.] _int_malloc
+     2.93%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderInfo>, std::allocator<std::pair<unsigned long const, OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable()
+     2.91%  bench    libc.so.6             [.] _int_free
+     2.45%  bench    bench                 [.] make_workload(int)
+     1.72%  bench    libc.so.6             [.] cfree@GLIBC_2.2.5
+     1.50%  bench    libstdc++.so.6.0.33   [.] std::chrono::_V2::steady_clock::now()
+     1.40%  bench    libc.so.6             [.] malloc
+     1.34%  bench    libc.so.6             [.] clock_gettime@@GLIBC_2.17
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

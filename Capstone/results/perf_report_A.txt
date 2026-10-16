@@ -1,0 +1,53 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 81  of event 'cpu_atom/cycles/Pu'
+# Event count (approx.): 45691716
+#
+# Overhead  Command  Shared Object        Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                        
+# ........  .......  ...................  ..............................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    30.25%  bench    bench                [.] MapOrderBook::add_order(unsigned long, Side, int, long)
+    26.02%  bench    bench                [.] MapOrderBook::cancel_order(unsigned long)
+    10.31%  bench    [vdso]               [.] 0x0000000000000998
+     8.69%  bench    bench                [.] std::map<int, PriceLevel, std::less<int>, std::allocator<std::pair<int const, PriceLevel> > >::operator[](int const&)
+     5.18%  bench    bench                [.] Metric run_single<MapOrderBook>(std::vector<Operation, std::allocator<Operation> > const&)
+     3.98%  bench    libstdc++.so.6.0.33  [.] std::__detail::_List_node_base::_M_hook(std::__detail::_List_node_base*)
+     3.63%  bench    libc.so.6            [.] _int_malloc
+     2.78%  bench    bench                [.] std::__detail::_Map_base<unsigned long, std::pair<unsigned long const, OrderRef>, std::allocator<std::pair<unsigned long const, OrderRef> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](unsigned long const&)
+     2.30%  bench    [vdso]               [.] 0x00000000000009d1
+     1.39%  bench    [vdso]               [.] 0x0000000000000967
+     1.39%  bench    [vdso]               [.] 0x0000000000000a20
+     1.38%  bench    libc.so.6            [.] clock_gettime@@GLIBC_2.17
+     1.38%  bench    libstdc++.so.6.0.33  [.] malloc@plt
+     1.31%  bench    [vdso]               [.] 0x0000000000000a0e
+
+
+# Samples: 8K of event 'cpu_core/cycles/Pu'
+# Event count (approx.): 6551321290
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+# ........  .......  ....................  ..........................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    19.02%  bench    bench                 [.] MapOrderBook::cancel_order(unsigned long)
+    16.46%  bench    bench                 [.] MapOrderBook::add_order(unsigned long, Side, int, long)
+    11.24%  bench    bench                 [.] std::map<int, PriceLevel, std::less<int>, std::allocator<std::pair<int const, PriceLevel> > >::operator[](int const&)
+     6.75%  bench    libc.so.6             [.] unlink_chunk.isra.0
+     6.61%  bench    libc.so.6             [.] malloc_consolidate
+     4.60%  bench    bench                 [.] std::_Rb_tree<int, std::pair<int const, PriceLevel>, std::_Select1st<std::pair<int const, PriceLevel> >, std::less<int>, std::allocator<std::pair<int const, PriceLevel> > >::_M_erase(std::_Rb_tree_node<std::pair<int const, PriceLevel> >*) [clone .isra.0]
+     4.55%  bench    bench                 [.] std::_Rb_tree<int, std::pair<int const, PriceLevel>, std::_Select1st<std::pair<int const, PriceLevel> >, std::greater<int>, std::allocator<std::pair<int const, PriceLevel> > >::_M_erase(std::_Rb_tree_node<std::pair<int const, PriceLevel> >*) [clone .isra.0]
+     4.30%  bench    [vdso]                [.] 0x0000000000000998
+     3.94%  bench    bench                 [.] Metric run_single<MapOrderBook>(std::vector<Operation, std::allocator<Operation> > const&)
+     3.69%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderRef>, std::allocator<std::pair<unsigned long const, OrderRef> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+     3.15%  bench    libc.so.6             [.] _int_free
+     2.87%  bench    libc.so.6             [.] _int_malloc
+     2.09%  bench    libc.so.6             [.] malloc
+     1.53%  bench    bench                 [.] std::__detail::_Map_base<unsigned long, std::pair<unsigned long const, OrderRef>, std::allocator<std::pair<unsigned long const, OrderRef> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](unsigned long const&)
+     1.29%  bench    libc.so.6             [.] cfree@GLIBC_2.2.5
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

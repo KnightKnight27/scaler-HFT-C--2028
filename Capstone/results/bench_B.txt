@@ -1,0 +1,18 @@
+Benchmarking Implementation B (Heap) (5 runs)...
+Run 1: 218.23 ms | add: 109.50 ns | cancel: 477.21 ns | BBO: 31.77 ns
+Run 2: 206.48 ms | add: 108.70 ns | cancel: 461.45 ns | BBO: 31.54 ns
+Run 3: 210.97 ms | add: 107.50 ns | cancel: 489.03 ns | BBO: 32.17 ns
+Run 4: 207.21 ms | add: 107.50 ns | cancel: 470.85 ns | BBO: 32.02 ns
+Run 5: 209.45 ms | add: 107.77 ns | cancel: 480.75 ns | BBO: 32.09 ns
+
+Median Result:
+Total time: 209.45 ms
+ns / add:    107.77
+ns / cancel: 480.75
+ns / BBO:    32.09
+
+Final BBO:
+Bid: 99.99 x 2617
+Ask: 100.01 x 1985
+
+Checksum: 2193480560

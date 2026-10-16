@@ -1,0 +1,18 @@
+Benchmarking Implementation A (Map) (5 runs)...
+Run 1: 265.65 ms | add: 240.78 ns | cancel: 377.54 ns | BBO: 16.74 ns
+Run 2: 247.59 ms | add: 218.63 ns | cancel: 364.97 ns | BBO: 17.03 ns
+Run 3: 248.78 ms | add: 217.23 ns | cancel: 375.84 ns | BBO: 17.10 ns
+Run 4: 252.06 ms | add: 218.73 ns | cancel: 386.29 ns | BBO: 17.22 ns
+Run 5: 251.57 ms | add: 218.28 ns | cancel: 386.01 ns | BBO: 16.91 ns
+
+Median Result:
+Total time: 251.57 ms
+ns / add:    218.28
+ns / cancel: 386.01
+ns / BBO:    16.91
+
+Final BBO:
+Bid: 99.99 x 2617
+Ask: 100.01 x 1985
+
+Checksum: 2193480560
