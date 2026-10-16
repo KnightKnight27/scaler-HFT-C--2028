@@ -1,0 +1,8 @@
+# bench summary: 5 fresh processes per impl, median of each metric
+# host: MINGW64_NT-10.0-26200 3.6.9-b4195d69.x86_64 x86_64  date: 2026-10-10T02:57:34Z
+# build: compiler 16.2.0, optimised yes, NDEBUG on
+Impl B: total 326.25 ms | ns/add 168.0 | ns/cancel 875.1 | ns/bbo 8.7 | ns/depth 207.2 | checksum(s) cfa9e743f13cd8a8 
+Impl A: total 241.08 ms | ns/add 219.2 | ns/cancel 463.1 | ns/bbo 8.5 | ns/depth 275.7 | checksum(s) cfa9e743f13cd8a8 
+Impl C: total 36.69 ms | ns/add 107.8 | ns/cancel 113.0 | ns/bbo 7.1 | ns/depth 232.8 | checksum(s) cfa9e743f13cd8a8 
+Impl B: total 335.70 ms | ns/add 176.5 | ns/cancel 907.4 | ns/bbo 10.8 | ns/depth 223.4 | checksum(s) cfa9e743f13cd8a8 
+Impl C: total 35.01 ms | ns/add 101.9 | ns/cancel 104.3 | ns/bbo 6.4 | ns/depth 227.4 | checksum(s) cfa9e743f13cd8a8 

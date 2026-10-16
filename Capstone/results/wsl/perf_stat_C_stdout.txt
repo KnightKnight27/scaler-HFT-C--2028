@@ -1,0 +1,50 @@
+Impl: C
+Build: compiler 15.2.0, optimised yes, NDEBUG on
+Ops: 1000000 (adds=700471, cancels=199303, bbo=100226) + 10000 depth queries (get_bids(10)+get_asks(10))
+Workload: seed 42, hash 27f23594045a1e72
+Run 1: total    29.67 ms
+Median total: 29.67 ms (1 runs)
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: cfa9e743f13cd8a8
+Impl: C
+Build: compiler 15.2.0, optimised yes, NDEBUG on
+Ops: 1000000 (adds=700471, cancels=199303, bbo=100226) + 10000 depth queries (get_bids(10)+get_asks(10))
+Workload: seed 42, hash 27f23594045a1e72
+Run 1: total    30.54 ms
+Median total: 30.54 ms (1 runs)
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: cfa9e743f13cd8a8
+Impl: C
+Build: compiler 15.2.0, optimised yes, NDEBUG on
+Ops: 1000000 (adds=700471, cancels=199303, bbo=100226) + 10000 depth queries (get_bids(10)+get_asks(10))
+Workload: seed 42, hash 27f23594045a1e72
+Run 1: total    31.54 ms
+Median total: 31.54 ms (1 runs)
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: cfa9e743f13cd8a8
+Impl: C
+Build: compiler 15.2.0, optimised yes, NDEBUG on
+Ops: 1000000 (adds=700471, cancels=199303, bbo=100226) + 10000 depth queries (get_bids(10)+get_asks(10))
+Workload: seed 42, hash 27f23594045a1e72
+Run 1: total    30.86 ms
+Median total: 30.86 ms (1 runs)
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: cfa9e743f13cd8a8
+Impl: C
+Build: compiler 15.2.0, optimised yes, NDEBUG on
+Ops: 1000000 (adds=700471, cancels=199303, bbo=100226) + 10000 depth queries (get_bids(10)+get_asks(10))
+Workload: seed 42, hash 27f23594045a1e72
+Run 1: total    30.83 ms
+Median total: 30.83 ms (1 runs)
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: cfa9e743f13cd8a8

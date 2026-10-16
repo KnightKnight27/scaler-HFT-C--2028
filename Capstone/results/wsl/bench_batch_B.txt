@@ -1,0 +1,80 @@
+=== process 1/5 ===
+Impl: B
+Build: compiler 15.2.0, optimised yes, NDEBUG on
+Ops: 1000000 (adds=700471, cancels=199303, bbo=100226) + 10000 depth queries (get_bids(10)+get_asks(10))
+Workload: seed 42, hash 27f23594045a1e72
+Clock: steady_clock pair overhead 14.6 ns (subtracted from per-op means), granularity 12 ns
+Per-op method: block least squares (50-op blocks); plus a clock-perturbed total pass
+Run 1: total   226.31 ms | ns/add   113.6 ns/cancel   512.6 ns/bbo     1.4 ns/depth    60.0 | R2 0.085 | perturbed   236.48 ms
+Median total: 226.31 ms (1 runs)
+Median  ns/add: 113.6  ns/cancel: 512.6  ns/bbo: 1.4  ns/depth: 60.0
+Median R2 of block model: 0.085
+Median perturbed total: 236.48 ms = total 226.31 + clock reads 1010000 x 14.6 ns (14.73 ms) + unexplained -4.56 ms
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: cfa9e743f13cd8a8
+=== process 2/5 ===
+Impl: B
+Build: compiler 15.2.0, optimised yes, NDEBUG on
+Ops: 1000000 (adds=700471, cancels=199303, bbo=100226) + 10000 depth queries (get_bids(10)+get_asks(10))
+Workload: seed 42, hash 27f23594045a1e72
+Clock: steady_clock pair overhead 14.4 ns (subtracted from per-op means), granularity 12 ns
+Per-op method: block least squares (50-op blocks); plus a clock-perturbed total pass
+Run 1: total   239.67 ms | ns/add   153.2 ns/cancel   451.4 ns/bbo   106.5 ns/depth  1009.8 | R2 0.000 | perturbed   222.11 ms
+Median total: 239.67 ms (1 runs)
+Median  ns/add: 153.2  ns/cancel: 451.4  ns/bbo: 106.5  ns/depth: 1009.8
+Median R2 of block model: 0.000
+Median perturbed total: 222.11 ms = total 239.67 + clock reads 1010000 x 14.4 ns (14.56 ms) + unexplained -32.12 ms
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: cfa9e743f13cd8a8
+=== process 3/5 ===
+Impl: B
+Build: compiler 15.2.0, optimised yes, NDEBUG on
+Ops: 1000000 (adds=700471, cancels=199303, bbo=100226) + 10000 depth queries (get_bids(10)+get_asks(10))
+Workload: seed 42, hash 27f23594045a1e72
+Clock: steady_clock pair overhead 14.4 ns (subtracted from per-op means), granularity 12 ns
+Per-op method: block least squares (50-op blocks); plus a clock-perturbed total pass
+Run 1: total   220.20 ms | ns/add   113.5 ns/cancel   622.1 ns/bbo     1.5 ns/depth   136.4 | R2 0.092 | perturbed   243.62 ms
+Median total: 220.20 ms (1 runs)
+Median  ns/add: 113.5  ns/cancel: 622.1  ns/bbo: 1.5  ns/depth: 136.4
+Median R2 of block model: 0.092
+Median perturbed total: 243.62 ms = total 220.20 + clock reads 1010000 x 14.4 ns (14.56 ms) + unexplained 8.86 ms
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: cfa9e743f13cd8a8
+=== process 4/5 ===
+Impl: B
+Build: compiler 15.2.0, optimised yes, NDEBUG on
+Ops: 1000000 (adds=700471, cancels=199303, bbo=100226) + 10000 depth queries (get_bids(10)+get_asks(10))
+Workload: seed 42, hash 27f23594045a1e72
+Clock: steady_clock pair overhead 14.3 ns (subtracted from per-op means), granularity 12 ns
+Per-op method: block least squares (50-op blocks); plus a clock-perturbed total pass
+Run 1: total   191.60 ms | ns/add   111.9 ns/cancel   497.2 ns/bbo    27.8 ns/depth    -7.0 | R2 0.040 | perturbed   194.27 ms
+Median total: 191.60 ms (1 runs)
+Median  ns/add: 111.9  ns/cancel: 497.2  ns/bbo: 27.8  ns/depth: -7.0
+Median R2 of block model: 0.040
+Median perturbed total: 194.27 ms = total 191.60 + clock reads 1010000 x 14.3 ns (14.40 ms) + unexplained -11.73 ms
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: cfa9e743f13cd8a8
+=== process 5/5 ===
+Impl: B
+Build: compiler 15.2.0, optimised yes, NDEBUG on
+Ops: 1000000 (adds=700471, cancels=199303, bbo=100226) + 10000 depth queries (get_bids(10)+get_asks(10))
+Workload: seed 42, hash 27f23594045a1e72
+Clock: steady_clock pair overhead 14.1 ns (subtracted from per-op means), granularity 12 ns
+Per-op method: block least squares (50-op blocks); plus a clock-perturbed total pass
+Run 1: total   168.11 ms | ns/add   110.4 ns/cancel   394.9 ns/bbo     7.6 ns/depth    46.1 | R2 0.125 | perturbed   185.72 ms
+Median total: 168.11 ms (1 runs)
+Median  ns/add: 110.4  ns/cancel: 394.9  ns/bbo: 7.6  ns/depth: 46.1
+Median R2 of block model: 0.125
+Median perturbed total: 185.72 ms = total 168.11 + clock reads 1010000 x 14.1 ns (14.24 ms) + unexplained 3.37 ms
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: cfa9e743f13cd8a8

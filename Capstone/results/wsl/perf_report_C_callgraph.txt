@@ -1,0 +1,116 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 416  of event 'task-clock:uppp'
+# Event count (approx.): 104000000
+#
+# Overhead  Command     Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+# ........  ..........  ....................  .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    33.65%  bench_perf  bench_perf            [.] hash_workload(std::vector<Op, std::allocator<Op> > const&)
+            |
+            ---_start
+               __libc_start_main
+               0x757685c2a601
+               main
+               run_benchmark<BookC> (inlined)
+               main
+               hash_workload(std::vector<Op, std::allocator<Op> > const&)
+               |          
+               |--21.39%--operator() (inlined)
+               |          
+                --11.06%--hash_workload(std::vector<Op, std::allocator<Op> > const&)
+
+    25.72%  bench_perf  bench_perf            [.] main
+            |
+            ---_start
+               __libc_start_main
+               0x757685c2a601
+               main
+               run_benchmark<BookC> (inlined)
+               |          
+                --23.80%--run_total_pass<BookC> (inlined)
+                          |          
+                           --23.56%--apply<BookC> (inlined)
+                                     |          
+                                      --23.08%--apply<BookC> (inlined)
+                                                BookC::add_order(unsigned long, Side, double, long) (inlined)
+                                                |          
+                                                 --22.84%--BookC::insert_order(unsigned long, int, int) (inlined)
+
+    17.31%  bench_perf  bench_perf            [.] generate_workload(WorkloadSpec const&, unsigned long*)
+            |
+            ---_start
+               __libc_start_main
+               0x757685c2a601
+               main
+               main
+               generate_workload(WorkloadSpec const&, unsigned long*)
+               |          
+                --5.77%--std::vector<Op, std::allocator<Op> >::push_back(Op&&) (inlined)
+                          Op& std::vector<Op, std::allocator<Op> >::emplace_back<Op>(Op&&) (inlined)
+                          |          
+                           --2.64%--void std::allocator_traits<std::allocator<Op> >::construct<Op, Op>(std::allocator<Op>&, Op*, Op&&) (inlined)
+                                     void std::__new_allocator<Op>::construct<Op, Op>(Op*, Op&&) (inlined)
+
+     6.25%  bench_perf  bench_perf            [.] BookC::cancel_order(unsigned long)
+            |
+            ---_start
+               __libc_start_main
+               0x757685c2a601
+               |          
+                --4.81%--BookC::cancel_order(unsigned long)
+                          |          
+                           --4.57%--BookC::find_slot(unsigned long) const (inlined)
+
+     3.85%  bench_perf  bench_perf            [.] count_ops(std::vector<Op, std::allocator<Op> > const&)
+            |
+            ---_start
+               __libc_start_main
+               0x757685c2a601
+               main
+               run_benchmark<BookC> (inlined)
+               std::vector<Op, std::allocator<Op> >::size() const (inlined)
+               count_ops(std::vector<Op, std::allocator<Op> > const&)
+
+     3.37%  bench_perf  bench_perf            [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+            |
+            ---_start
+               __libc_start_main
+               0x757685c2a601
+               main
+               main
+               generate_workload(WorkloadSpec const&, unsigned long*)
+
+     2.16%  bench_perf  bench_perf            [.] BookC::reset_table(unsigned long)
+            |
+            ---_start
+               __libc_start_main
+               0x757685c2a601
+               main
+               run_benchmark<BookC> (inlined)
+               main
+               BookC::reset_table(unsigned long)
+               std::vector<BookC::Slot, std::allocator<BookC::Slot> >::assign(unsigned long, BookC::Slot const&) (inlined)
+               std::vector<BookC::Slot, std::allocator<BookC::Slot> >::_M_fill_assign(unsigned long, BookC::Slot const&) (inlined)
+               std::vector<BookC::Slot, std::allocator<BookC::Slot> >::vector(unsigned long, BookC::Slot const&, std::allocator<BookC::Slot> const&) (inlined)
+               std::vector<BookC::Slot, std::allocator<BookC::Slot> >::_M_fill_initialize(unsigned long, BookC::Slot const&) (inlined)
+               BookC::Slot* std::__uninitialized_fill_n_a<BookC::Slot*, unsigned long, BookC::Slot, BookC::Slot>(BookC::Slot*, unsigned long, BookC::Slot const&, std::allocator<BookC::Slot>&) (inlined)
+               BookC::Slot* std::uninitialized_fill_n<BookC::Slot*, unsigned long, BookC::Slot>(BookC::Slot*, unsigned long, BookC::Slot const&) (inlined)
+               BookC::Slot* std::__do_uninit_fill_n<BookC::Slot*, unsigned long, BookC::Slot>(BookC::Slot*, unsigned long, BookC::Slot const&) (inlined)
+
+     2.16%  bench_perf  bench_perf            [.] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+            |
+            ---_start
+               __libc_start_main
+               0x757685c2a601
+               main
+               main
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

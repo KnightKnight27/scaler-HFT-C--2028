@@ -1,0 +1,15 @@
+Impl: A
+Build: compiler 15.2.0, optimised yes, NDEBUG on
+Ops: 1000000 (adds=700471, cancels=199303, bbo=100226) + 10000 depth queries (get_bids(10)+get_asks(10))
+Workload: seed 42, hash 27f23594045a1e72
+Run 1: total   176.00 ms
+Run 2: total   170.96 ms
+Run 3: total   157.37 ms
+Run 4: total   149.45 ms
+Run 5: total   182.66 ms
+Median total: 170.96 ms (5 runs)
+Spread total: min 149.45 ms, max 182.66 ms, max/min 1.22x
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: cfa9e743f13cd8a8

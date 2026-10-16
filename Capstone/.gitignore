@@ -1,0 +1,6 @@
+# build outputs
+build/
+cmake-build-*/
+*.exe
+perf.data*
+.idea

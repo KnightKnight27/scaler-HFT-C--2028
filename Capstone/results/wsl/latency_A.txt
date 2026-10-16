@@ -1,0 +1,19 @@
+Impl: A
+Build: compiler 15.2.0, optimised yes, NDEBUG on
+Ops: 1000000 (adds=700471, cancels=199303, bbo=100226) + 10000 depth queries (get_bids(10)+get_asks(10))
+Workload: seed 42, hash 27f23594045a1e72
+Clock: steady_clock pair overhead 15.0 ns (subtracted from per-op means), granularity 12 ns
+Per-op method: clock pair around every op
+Run 1: total   196.55 ms | ns/add   140.0 ns/cancel   289.2 ns/bbo    14.4 ns/depth   144.2
+Median total: 196.55 ms (1 runs)
+Median  ns/add: 140.0  ns/cancel: 289.2  ns/bbo: 14.4  ns/depth: 144.2
+Per-op latency, last run (raw ns, clock overhead NOT subtracted):
+  op           p50      p99    p99.9      max
+  add          127      273      625  8331002
+  cancel       264      629     4744   788355
+  bbo           29       37       63    19493
+  depth        131      396     1364    20159
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: cfa9e743f13cd8a8

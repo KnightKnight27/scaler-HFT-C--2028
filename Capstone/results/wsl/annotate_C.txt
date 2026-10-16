@@ -1,0 +1,3482 @@
+ Percent |	Source code & Disassembly of bench_perf for task-clock:uppp (140 samples, percent: local period)
+----------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3    Disassembly of section .text:
+         :
+         : 5    000000000000d110 <hash_workload(std::vector<Op, std::allocator<Op> > const&)>:
+    0.00 :   d110:   endbr64
+    0.00 :   d114:   push   %rbp
+    0.00 :   d115:   mov    %rsp,%rbp
+    0.00 :   d118:   push   %r14
+    0.00 :   d11a:   mov    (%rdi),%r14
+    0.00 :   d11d:   push   %r13
+    0.00 :   d11f:   push   %r12
+    0.00 :   d121:   mov    0x8(%rdi),%r12
+    0.00 :   d125:   push   %rbx
+    0.00 :   d126:   movabs $0xcbf29ce484222325,%rbx
+    0.00 :   d130:   cmp    %r14,%r12
+    0.00 :   d133:   je     d268 <hash_workload(std::vector<Op, std::allocator<Op> > const&)+0x158>
+    0.00 :   d139:   movabs $0x100000001b3,%r13
+    0.00 :   d143:   xchg   %ax,%ax
+    0.00 :   d145:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   d150:   movzbl (%r14),%edx
+    0.00 :   d154:   xor    %ecx,%ecx
+    0.00 :   d156:   cs nopw 0x0(%rax,%rax,1)
+    0.00 :   d160:   mov    %rdx,%rax
+    1.43 :   d163:   shr    %cl,%rax
+    0.00 :   d166:   add    $0x8,%ecx
+    0.00 :   d169:   xor    %rbx,%rax
+    7.14 :   d16c:   imul   %r13,%rax
+   13.57 :   d170:   mov    %rax,%rbx
+    0.00 :   d173:   cmp    $0x40,%ecx
+    0.00 :   d176:   jne    d160 <hash_workload(std::vector<Op, std::allocator<Op> > const&)+0x50>
+    0.00 :   d178:   movslq 0x4(%r14),%rdx
+    0.00 :   d17c:   xor    %ecx,%ecx
+    0.00 :   d17e:   xchg   %ax,%ax
+    0.00 :   d180:   mov    %rdx,%rax
+    0.00 :   d183:   shr    %cl,%rax
+    0.71 :   d186:   add    $0x8,%ecx
+    0.00 :   d189:   movzbl %al,%eax
+    0.00 :   d18c:   xor    %rbx,%rax
+    7.86 :   d18f:   imul   %r13,%rax
+    8.57 :   d193:   mov    %rax,%rbx
+    0.00 :   d196:   cmp    $0x40,%ecx
+    0.00 :   d199:   jne    d180 <hash_workload(std::vector<Op, std::allocator<Op> > const&)+0x70>
+    0.00 :   d19b:   mov    0x8(%r14),%rdx
+    0.00 :   d19f:   xor    %ecx,%ecx
+    0.00 :   d1a1:   nopw   0x0(%rax,%rax,1)
+    0.00 :   d1aa:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   d1b5:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   d1c0:   mov    %rdx,%rax
+    0.71 :   d1c3:   shr    %cl,%rax
+    0.00 :   d1c6:   add    $0x8,%ecx
+    0.00 :   d1c9:   movzbl %al,%eax
+    0.71 :   d1cc:   xor    %rbx,%rax
+   10.00 :   d1cf:   imul   %r13,%rax
+   10.71 :   d1d3:   mov    %rax,%rbx
+    0.00 :   d1d6:   cmp    $0x40,%ecx
+    0.00 :   d1d9:   jne    d1c0 <hash_workload(std::vector<Op, std::allocator<Op> > const&)+0xb0>
+    0.00 :   d1db:   movsd  0x147a5(%rip),%xmm0        # 21988 <_IO_stdin_used+0x988>
+    0.00 :   d1e3:   mulsd  0x10(%r14),%xmm0
+    2.86 :   d1e9:   call   22d0 <llround@plt>
+    0.71 :   d1ee:   xor    %ecx,%ecx
+    0.00 :   d1f0:   cltq
+    0.00 :   d1f2:   nopl   (%rax)
+    0.00 :   d1f5:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   d200:   mov    %rax,%rdx
+    0.00 :   d203:   shr    %cl,%rdx
+    0.00 :   d206:   add    $0x8,%ecx
+    0.71 :   d209:   movzbl %dl,%edx
+    2.86 :   d20c:   xor    %rbx,%rdx
+    5.71 :   d20f:   mov    %rdx,%rbx
+    2.86 :   d212:   imul   %r13,%rbx
+    7.14 :   d216:   cmp    $0x40,%ecx
+    0.00 :   d219:   jne    d200 <hash_workload(std::vector<Op, std::allocator<Op> > const&)+0xf0>
+    0.00 :   d21b:   mov    0x18(%r14),%rdx
+    0.00 :   d21f:   xor    %ecx,%ecx
+    0.00 :   d221:   nopw   0x0(%rax,%rax,1)
+    0.00 :   d22a:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   d235:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   d240:   mov    %rdx,%rax
+    0.00 :   d243:   shr    %cl,%rax
+    0.00 :   d246:   add    $0x8,%ecx
+    0.00 :   d249:   movzbl %al,%eax
+    0.71 :   d24c:   xor    %rbx,%rax
+    7.14 :   d24f:   imul   %r13,%rax
+    7.86 :   d253:   mov    %rax,%rbx
+    0.00 :   d256:   cmp    $0x40,%ecx
+    0.00 :   d259:   jne    d240 <hash_workload(std::vector<Op, std::allocator<Op> > const&)+0x130>
+    0.00 :   d25b:   add    $0x20,%r14
+    0.00 :   d25f:   cmp    %r14,%r12
+    0.00 :   d262:   jne    d150 <hash_workload(std::vector<Op, std::allocator<Op> > const&)+0x40>
+    0.00 :   d268:   mov    %rbx,%rax
+    0.00 :   d26b:   pop    %rbx
+    0.00 :   d26c:   pop    %r12
+    0.00 :   d26e:   pop    %r13
+    0.00 :   d270:   pop    %r14
+    0.00 :   d272:   pop    %rbp
+    0.00 :   d273:   ret
+ Percent |	Source code & Disassembly of bench_perf for task-clock:uppp (107 samples, percent: local period)
+----------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3    Disassembly of section .text:
+         :
+         : 5    00000000000047c0 <main>:
+    0.00 :   47c0:   endbr64
+    0.00 :   47c4:   push   %rbp
+    0.00 :   47c5:   mov    %rsp,%rbp
+    0.00 :   47c8:   push   %r15
+    0.00 :   47ca:   push   %r14
+    0.00 :   47cc:   lea    -0x160(%rbp),%rax
+    0.00 :   47d3:   push   %r13
+    0.00 :   47d5:   push   %r12
+    0.00 :   47d7:   push   %rbx
+    0.00 :   47d8:   sub    $0x3e8,%rsp
+    0.00 :   47df:   mov    %edi,-0x348(%rbp)
+    0.00 :   47e5:   mov    %fs:0x28,%r15
+    0.00 :   47ee:   mov    %r15,-0x38(%rbp)
+    0.00 :   47f2:   mov    %rsi,%r15
+    0.00 :   47f5:   mov    %rax,-0x170(%rbp)
+    0.00 :   47fc:   movabs $0x460000002a,%rax
+    0.00 :   4806:   movq   $0x0,-0x168(%rbp)
+    0.00 :   4811:   movb   $0x0,-0x160(%rbp)
+    0.00 :   4818:   movq   $0x5,-0x328(%rbp)
+    0.00 :   4823:   movq   $0xf4240,-0x2e0(%rbp)
+    0.00 :   482e:   mov    %rax,-0x2d8(%rbp)
+    0.00 :   4835:   movq   $0x14,-0x2d0(%rbp)
+    0.00 :   4840:   cmp    $0x1,%edi
+    0.00 :   4843:   jle    70e4 <main+0x2924>
+    0.00 :   4849:   lea    -0x170(%rbp),%rax
+    0.00 :   4850:   movb   $0x0,-0x358(%rbp)
+    0.00 :   4857:   mov    $0x1,%ebx
+    0.00 :   485c:   movb   $0x0,-0x350(%rbp)
+    0.00 :   4863:   mov    %rax,-0x368(%rbp)
+    0.00 :   486a:   jmp    48b0 <main+0xf0>
+    0.00 :   486c:   nopl   0x0(%rax)
+    0.00 :   4870:   lea    0x1c891(%rip),%rsi        # 21108 <_IO_stdin_used+0x108>
+    0.00 :   4877:   mov    %r12,%rdi
+    0.00 :   487a:   call   2400 <strcmp@plt>
+    0.00 :   487f:   test   %eax,%eax
+    0.00 :   4881:   je     49b0 <main+0x1f0>
+    0.00 :   4887:   lea    0x1c88a(%rip),%rsi        # 21118 <_IO_stdin_used+0x118>
+    0.00 :   488e:   mov    %r12,%rdi
+    0.00 :   4891:   call   2400 <strcmp@plt>
+    0.00 :   4896:   test   %eax,%eax
+    0.00 :   4898:   jne    49c0 <main+0x200>
+    0.00 :   489e:   movb   $0x1,-0x324(%rbp)
+    0.00 :   48a5:   mov    %r14d,%ebx
+    0.00 :   48a8:   cmp    %ebx,-0x348(%rbp)
+    0.00 :   48ae:   jle    48e0 <main+0x120>
+    0.00 :   48b0:   movslq %ebx,%r13
+    0.00 :   48b3:   lea    0x1c845(%rip),%rsi        # 210ff <_IO_stdin_used+0xff>
+    0.00 :   48ba:   lea    0x1(%rbx),%r14d
+    0.00 :   48be:   mov    (%r15,%r13,8),%r12
+    0.00 :   48c2:   mov    %r12,%rdi
+    0.00 :   48c5:   call   2400 <strcmp@plt>
+    0.00 :   48ca:   test   %eax,%eax
+    0.00 :   48cc:   jne    4870 <main+0xb0>
+    0.00 :   48ce:   movb   $0x1,-0x350(%rbp)
+    0.00 :   48d5:   mov    %r14d,%ebx
+    0.00 :   48d8:   cmp    %ebx,-0x348(%rbp)
+    0.00 :   48de:   jg     48b0 <main+0xf0>
+    0.00 :   48e0:   cmpb   $0x0,-0x350(%rbp)
+    0.00 :   48e7:   je     4a5f <main+0x29f>
+    0.00 :   48ed:   mov    -0x168(%rbp),%rax
+    0.00 :   48f4:   mov    -0x2d8(%rbp),%ebx
+    0.00 :   48fa:   mov    -0x2e0(%rbp),%r12
+    0.00 :   4901:   test   %rax,%rax
+    0.00 :   4904:   je     4b80 <main+0x3c0>
+    0.00 :   490a:   lea    -0xa0(%rbp),%rcx
+    0.00 :   4911:   lea    -0x90(%rbp),%rdi
+    0.00 :   4918:   mov    %rax,-0x1b0(%rbp)
+    0.00 :   491f:   mov    -0x170(%rbp),%r13
+    0.00 :   4926:   mov    %rcx,-0x380(%rbp)
+    0.00 :   492d:   lea    0x1(%rax),%rdx
+    0.00 :   4931:   mov    %rdi,-0xa0(%rbp)
+    0.00 :   4938:   cmp    $0xf,%rax
+    0.00 :   493c:   ja     4bc3 <main+0x403>
+    0.00 :   4942:   mov    %r13,%rsi
+    0.00 :   4945:   call   2350 <memcpy@plt>
+    0.00 :   494a:   mov    -0x1b0(%rbp),%rax
+    0.00 :   4951:   mov    %rax,-0x98(%rbp)
+    0.00 :   4958:   mov    -0x380(%rbp),%r15
+    0.00 :   495f:   mov    %ebx,%edx
+    0.00 :   4961:   mov    %r12,%rsi
+    0.00 :   4964:   mov    %r15,%rdi
+    0.00 :   4967:   call   1b6e0 <run_verify(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long, unsigned int)>
+    0.00 :   496c:   mov    %r15,%rdi
+    0.00 :   496f:   mov    %eax,%ebx
+    0.00 :   4971:   call   23b0 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose()@plt>
+    0.00 :   4976:   mov    -0x368(%rbp),%rdi
+    0.00 :   497d:   call   23b0 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose()@plt>
+    0.00 :   4982:   mov    -0x38(%rbp),%rax
+    0.00 :   4986:   sub    %fs:0x28,%rax
+    0.00 :   498f:   jne    7479 <main+0x2cb9>
+    0.00 :   4995:   lea    -0x28(%rbp),%rsp
+    0.00 :   4999:   mov    %ebx,%eax
+    0.00 :   499b:   pop    %rbx
+    0.00 :   499c:   pop    %r12
+    0.00 :   499e:   pop    %r13
+    0.00 :   49a0:   pop    %r14
+    0.00 :   49a2:   pop    %r15
+    0.00 :   49a4:   pop    %rbp
+    0.00 :   49a5:   ret
+    0.00 :   49a6:   cs nopw 0x0(%rax,%rax,1)
+    0.00 :   49b0:   movb   $0x1,-0x358(%rbp)
+    0.00 :   49b7:   mov    %r14d,%ebx
+    0.00 :   49ba:   jmp    48a8 <main+0xe8>
+    0.00 :   49bf:   nop
+    0.00 :   49c0:   lea    0x1c75e(%rip),%rsi        # 21125 <_IO_stdin_used+0x125>
+    0.00 :   49c7:   mov    %r12,%rdi
+    0.00 :   49ca:   call   2400 <strcmp@plt>
+    0.00 :   49cf:   test   %eax,%eax
+    0.00 :   49d1:   jne    49e8 <main+0x228>
+    0.00 :   49d3:   movb   $0x1,-0x323(%rbp)
+    0.00 :   49da:   mov    %r14d,%ebx
+    0.00 :   49dd:   jmp    48a8 <main+0xe8>
+    0.00 :   49e2:   nopw   0x0(%rax,%rax,1)
+    0.00 :   49e8:   lea    0x1c740(%rip),%rsi        # 2112f <_IO_stdin_used+0x12f>
+    0.00 :   49ef:   mov    %r12,%rdi
+    0.00 :   49f2:   call   2400 <strcmp@plt>
+    0.00 :   49f7:   test   %eax,%eax
+    0.00 :   49f9:   jne    4a20 <main+0x260>
+    0.00 :   49fb:   cmp    -0x348(%rbp),%r14d
+    0.00 :   4a02:   jl     4b26 <main+0x366>
+    0.00 :   4a08:   mov    (%r15),%rdi
+    0.00 :   4a0b:   call   7820 <(anonymous namespace)::print_usage(char const*)>
+    0.00 :   4a10:   mov    $0x2,%ebx
+    0.00 :   4a15:   jmp    4976 <main+0x1b6>
+    0.00 :   4a1a:   nopw   0x0(%rax,%rax,1)
+    0.00 :   4a20:   lea    0x1c70f(%rip),%rsi        # 21136 <_IO_stdin_used+0x136>
+    0.00 :   4a27:   mov    %r12,%rdi
+    0.00 :   4a2a:   call   2400 <strcmp@plt>
+    0.00 :   4a2f:   test   %eax,%eax
+    0.00 :   4a31:   jne    4ad0 <main+0x310>
+    0.00 :   4a37:   cmp    -0x348(%rbp),%r14d
+    0.00 :   4a3e:   jge    4a08 <main+0x248>
+    0.00 :   4a40:   mov    0x8(%r15,%r13,8),%rdi
+    0.00 :   4a45:   mov    $0xa,%edx
+    0.00 :   4a4a:   xor    %esi,%esi
+    0.00 :   4a4c:   call   2470 <__isoc23_strtol@plt>
+    0.00 :   4a51:   mov    %eax,-0x328(%rbp)
+    0.00 :   4a57:   add    $0x2,%ebx
+    0.00 :   4a5a:   jmp    48a8 <main+0xe8>
+    0.00 :   4a5f:   cmpb   $0x0,-0x358(%rbp)
+    0.00 :   4a66:   jne    4c16 <main+0x456>
+    0.00 :   4a6c:   mov    -0x328(%rbp),%eax
+    0.00 :   4a72:   mov    %eax,-0x384(%rbp)
+    0.00 :   4a78:   test   %eax,%eax
+    0.00 :   4a7a:   jle    4a08 <main+0x248>
+    0.00 :   4a7c:   cmpq   $0x1,-0x168(%rbp)
+    0.00 :   4a84:   jne    4a08 <main+0x248>
+    0.00 :   4a86:   cmpq   $0x0,-0x2e0(%rbp)
+    0.00 :   4a8e:   je     4a08 <main+0x248>
+    0.00 :   4a94:   mov    -0x170(%rbp),%rax
+    0.00 :   4a9b:   movzbl (%rax),%eax
+    0.00 :   4a9e:   cmp    $0x42,%al
+    0.00 :   4aa0:   je     5e32 <main+0x1672>
+    0.00 :   4aa6:   cmp    $0x43,%al
+    0.00 :   4aa8:   je     4c72 <main+0x4b2>
+    0.00 :   4aae:   cmp    $0x41,%al
+    0.00 :   4ab0:   jne    4a08 <main+0x248>
+    0.00 :   4ab6:   lea    -0x328(%rbp),%rsi
+    0.00 :   4abd:   lea    -0x2e0(%rbp),%rdi
+    0.00 :   4ac4:   call   9fd0 <int (anonymous namespace)::run_benchmark<BookA>(char, WorkloadSpec const&, (anonymous namespace)::BenchOptions const&) [clone .constprop.0]>
+    0.00 :   4ac9:   mov    %eax,%ebx
+    0.00 :   4acb:   jmp    4976 <main+0x1b6>
+    0.00 :   4ad0:   lea    0x1c666(%rip),%rsi        # 2113d <_IO_stdin_used+0x13d>
+    0.00 :   4ad7:   mov    %r12,%rdi
+    0.00 :   4ada:   call   2400 <strcmp@plt>
+    0.00 :   4adf:   test   %eax,%eax
+    0.00 :   4ae1:   je     4b53 <main+0x393>
+    0.00 :   4ae3:   lea    0x1c659(%rip),%rsi        # 21143 <_IO_stdin_used+0x143>
+    0.00 :   4aea:   mov    %r12,%rdi
+    0.00 :   4aed:   call   2400 <strcmp@plt>
+    0.00 :   4af2:   test   %eax,%eax
+    0.00 :   4af4:   jne    4a08 <main+0x248>
+    0.00 :   4afa:   cmp    -0x348(%rbp),%r14d
+    0.00 :   4b01:   jge    4a08 <main+0x248>
+    0.00 :   4b07:   mov    0x8(%r15,%r13,8),%rdi
+    0.00 :   4b0c:   mov    $0xa,%edx
+    0.00 :   4b11:   xor    %esi,%esi
+    0.00 :   4b13:   add    $0x2,%ebx
+    0.00 :   4b16:   call   23c0 <__isoc23_strtoul@plt>
+    0.00 :   4b1b:   mov    %eax,-0x2d8(%rbp)
+    0.00 :   4b21:   jmp    48a8 <main+0xe8>
+    0.00 :   4b26:   mov    0x8(%r15,%r13,8),%r12
+    0.00 :   4b2b:   mov    %r12,%rdi
+    0.00 :   4b2e:   call   22b0 <strlen@plt>
+    0.00 :   4b33:   mov    -0x168(%rbp),%rdx
+    0.00 :   4b3a:   mov    -0x368(%rbp),%rdi
+    0.00 :   4b41:   xor    %esi,%esi
+    0.00 :   4b43:   mov    %rax,%r8
+    0.00 :   4b46:   mov    %r12,%rcx
+    0.00 :   4b49:   call   2410 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long)@plt>
+    0.00 :   4b4e:   jmp    4a57 <main+0x297>
+    0.00 :   4b53:   cmp    -0x348(%rbp),%r14d
+    0.00 :   4b5a:   jge    4a08 <main+0x248>
+    0.00 :   4b60:   mov    0x8(%r15,%r13,8),%rdi
+    0.00 :   4b65:   mov    $0xa,%edx
+    0.00 :   4b6a:   xor    %esi,%esi
+    0.00 :   4b6c:   add    $0x2,%ebx
+    0.00 :   4b6f:   call   23f0 <__isoc23_strtoull@plt>
+    0.00 :   4b74:   mov    %rax,-0x2e0(%rbp)
+    0.00 :   4b7b:   jmp    48a8 <main+0xe8>
+    0.00 :   4b80:   lea    -0x90(%rbp),%rax
+    0.00 :   4b87:   movw   $0x4241,-0x90(%rbp)
+    0.00 :   4b90:   mov    %rax,-0xa0(%rbp)
+    0.00 :   4b97:   lea    -0xa0(%rbp),%rax
+    0.00 :   4b9e:   movb   $0x43,-0x8e(%rbp)
+    0.00 :   4ba5:   movq   $0x3,-0x98(%rbp)
+    0.00 :   4bb0:   movb   $0x0,-0x8d(%rbp)
+    0.00 :   4bb7:   mov    %rax,-0x380(%rbp)
+    0.00 :   4bbe:   jmp    4958 <main+0x198>
+    0.00 :   4bc3:   lea    -0x1b0(%rbp),%rsi
+    0.00 :   4bca:   xor    %edx,%edx
+    0.00 :   4bcc:   mov    %rcx,%rdi
+    0.00 :   4bcf:   call   2460 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_create(unsigned long&, unsigned long)@plt>
+    0.00 :   4bd4:   mov    %rax,-0xa0(%rbp)
+    0.00 :   4bdb:   mov    %rax,%rdi
+    0.00 :   4bde:   mov    -0x1b0(%rbp),%rax
+    0.00 :   4be5:   mov    %rax,-0x90(%rbp)
+    0.00 :   4bec:   lea    0x1(%rax),%rdx
+    0.00 :   4bf0:   test   %rax,%rax
+    0.00 :   4bf3:   jne    4c08 <main+0x448>
+    0.00 :   4bf5:   movzbl 0x0(%r13),%eax
+    0.00 :   4bfa:   mov    %al,(%rdi)
+    0.00 :   4bfc:   mov    -0x1b0(%rbp),%rax
+    0.00 :   4c03:   jmp    4951 <main+0x191>
+    0.00 :   4c08:   test   %rdx,%rdx
+    0.00 :   4c0b:   je     4951 <main+0x191>
+    0.00 :   4c11:   jmp    4942 <main+0x182>
+    0.00 :   4c16:   lea    -0x2e0(%rbp),%rsi
+    0.00 :   4c1d:   xor    %edx,%edx
+    0.00 :   4c1f:   lea    -0x1b0(%rbp),%rdi
+    0.00 :   4c26:   call   d520 <generate_workload(WorkloadSpec const&, unsigned long*)>
+    0.00 :   4c2b:   lea    -0x1b0(%rbp),%rdi
+    0.00 :   4c32:   call   d110 <hash_workload(std::vector<Op, std::allocator<Op> > const&)>
+    0.00 :   4c37:   mov    -0x1a8(%rbp),%rdx
+    0.00 :   4c3e:   sub    -0x1b0(%rbp),%rdx
+    0.00 :   4c45:   mov    %rax,%rcx
+    0.00 :   4c48:   lea    0x1ca79(%rip),%rsi        # 216c8 <_IO_stdin_used+0x6c8>
+    0.00 :   4c4f:   sar    $0x5,%rdx
+    0.00 :   4c53:   mov    $0x2,%edi
+    0.00 :   4c58:   xor    %eax,%eax
+    0.00 :   4c5a:   call   2260 <__printf_chk@plt>
+    0.00 :   4c5f:   lea    -0x1b0(%rbp),%rdi
+    0.00 :   4c66:   xor    %ebx,%ebx
+    0.00 :   4c68:   call   c850 <std::_Vector_base<Op, std::allocator<Op> >::~_Vector_base()>
+    0.00 :   4c6d:   jmp    4976 <main+0x1b6>
+    0.00 :   4c72:   lea    -0x260(%rbp),%rbx
+    0.00 :   4c79:   lea    -0x2e0(%rbp),%rsi
+    0.00 :   4c80:   xor    %edx,%edx
+    0.00 :   4c82:   mov    %rbx,%rdi
+    0.00 :   4c85:   mov    %rbx,-0x358(%rbp)
+    0.00 :   4c8c:   call   d520 <generate_workload(WorkloadSpec const&, unsigned long*)>
+    0.00 :   4c91:   lea    -0x240(%rbp),%rdi
+    0.00 :   4c98:   mov    %rbx,%rsi
+    0.00 :   4c9b:   call   d040 <count_ops(std::vector<Op, std::allocator<Op> > const&)>
+    0.00 :   4ca0:   mov    -0x258(%rbp),%rdi
+    0.00 :   4ca7:   xor    %r14d,%r14d
+    0.00 :   4caa:   xor    %ecx,%ecx
+    0.00 :   4cac:   mov    $0x64,%esi
+    0.00 :   4cb1:   sub    -0x260(%rbp),%rdi
+    0.00 :   4cb8:   sar    $0x5,%rdi
+    0.00 :   4cbc:   jmp    4cd4 <main+0x514>
+    0.00 :   4cbe:   xchg   %ax,%ax
+    0.00 :   4cc0:   add    $0x1,%rcx
+    0.00 :   4cc4:   xor    %edx,%edx
+    0.00 :   4cc6:   mov    %rcx,%rax
+    0.93 :   4cc9:   div    %rsi
+    5.61 :   4ccc:   cmp    $0x1,%rdx
+    0.93 :   4cd0:   adc    $0x0,%r14
+    0.00 :   4cd4:   cmp    %rcx,%rdi
+    0.00 :   4cd7:   jne    4cc0 <main+0x500>
+    0.00 :   4cd9:   mov    $0x43,%edx
+    0.00 :   4cde:   lea    0x1c3b4(%rip),%rsi        # 21099 <_IO_stdin_used+0x99>
+    0.00 :   4ce5:   mov    $0x2,%edi
+    0.00 :   4cea:   xor    %eax,%eax
+    0.00 :   4cec:   call   2260 <__printf_chk@plt>
+    0.00 :   4cf1:   lea    0x1c3ab(%rip),%r8        # 210a3 <_IO_stdin_used+0xa3>
+    0.00 :   4cf8:   lea    0x1c3a7(%rip),%rcx        # 210a6 <_IO_stdin_used+0xa6>
+    0.00 :   4cff:   xor    %eax,%eax
+    0.00 :   4d01:   mov    $0x2,%edi
+    0.00 :   4d06:   lea    0x1c39d(%rip),%rdx        # 210aa <_IO_stdin_used+0xaa>
+    0.00 :   4d0d:   lea    0x1c76c(%rip),%rsi        # 21480 <_IO_stdin_used+0x480>
+    0.00 :   4d14:   call   2260 <__printf_chk@plt>
+    0.00 :   4d19:   mov    -0x230(%rbp),%rbx
+    0.00 :   4d20:   mov    -0x238(%rbp),%r12
+    0.00 :   4d27:   xor    %eax,%eax
+    0.00 :   4d29:   lea    0x1c780(%rip),%rsi        # 214b0 <_IO_stdin_used+0x4b0>
+    0.00 :   4d30:   mov    -0x240(%rbp),%r13
+    0.00 :   4d37:   mov    -0x258(%rbp),%rdx
+    0.00 :   4d3e:   sub    -0x260(%rbp),%rdx
+    0.00 :   4d45:   push   %rdi
+    0.00 :   4d46:   mov    %rbx,%r9
+    0.00 :   4d49:   mov    %r12,%r8
+    0.00 :   4d4c:   push   $0xa
+    0.00 :   4d4e:   sar    $0x5,%rdx
+    0.00 :   4d52:   mov    %r13,%rcx
+    0.00 :   4d55:   mov    $0x2,%edi
+    0.00 :   4d5a:   push   $0xa
+    0.00 :   4d5c:   push   %r14
+    0.00 :   4d5e:   call   2260 <__printf_chk@plt>
+    0.00 :   4d63:   mov    -0x358(%rbp),%rdi
+    0.00 :   4d6a:   add    $0x20,%rsp
+    0.00 :   4d6e:   call   d110 <hash_workload(std::vector<Op, std::allocator<Op> > const&)>
+    0.00 :   4d73:   mov    -0x2d8(%rbp),%edx
+    0.00 :   4d79:   mov    %rax,%rcx
+    0.00 :   4d7c:   mov    $0x2,%edi
+    0.00 :   4d81:   xor    %eax,%eax
+    0.00 :   4d83:   lea    0x1c786(%rip),%rsi        # 21510 <_IO_stdin_used+0x510>
+    0.00 :   4d8a:   call   2260 <__printf_chk@plt>
+    0.00 :   4d8f:   movzbl -0x324(%rbp),%eax
+    0.00 :   4d96:   movq   $0x0,-0x3b0(%rbp)
+    0.00 :   4da1:   mov    %al,-0x385(%rbp)
+    0.00 :   4da7:   test   %al,%al
+    0.00 :   4da9:   je     72b9 <main+0x2af9>
+    0.00 :   4daf:   lea    -0x100(%rbp),%rax
+    0.00 :   4db6:   lea    -0xa0(%rbp),%rdx
+    0.00 :   4dbd:   pxor   %xmm0,%xmm0
+    0.00 :   4dc1:   mov    %rax,-0x3d0(%rbp)
+    0.00 :   4dc8:   mov    %rdx,-0x380(%rbp)
+    0.00 :   4dcf:   xor    %esi,%esi
+    0.00 :   4dd1:   movups %xmm0,(%rax)
+    0.00 :   4dd4:   add    $0x18,%rax
+    0.00 :   4dd8:   mov    %rsi,-0x8(%rax)
+    0.00 :   4ddc:   cmp    %rdx,%rax
+    0.00 :   4ddf:   jne    4dcf <main+0x60f>
+    0.00 :   4de1:   lea    -0x40(%rbp),%rdx
+    0.00 :   4de5:   xor    %eax,%eax
+    0.00 :   4de7:   pxor   %xmm0,%xmm0
+    0.00 :   4deb:   mov    $0xc,%ecx
+    0.00 :   4df0:   lea    -0x1e0(%rbp),%rdi
+    0.00 :   4df7:   mov    %rdx,-0x408(%rbp)
+    0.00 :   4dfe:   mov    %rdi,-0x3f8(%rbp)
+    0.00 :   4e05:   rep stos %eax,(%rdi)
+    0.00 :   4e07:   mov    -0x380(%rbp),%rax
+    0.00 :   4e0e:   xor    %ecx,%ecx
+    0.00 :   4e10:   movups %xmm0,(%rax)
+    0.00 :   4e13:   add    $0x18,%rax
+    0.00 :   4e17:   mov    %rcx,-0x8(%rax)
+    0.00 :   4e1b:   cmp    %rax,%rdx
+    0.00 :   4e1e:   jne    4e0e <main+0x64e>
+    0.00 :   4e20:   movzbl -0x323(%rbp),%eax
+    0.00 :   4e27:   mov    %al,-0x3e5(%rbp)
+    0.00 :   4e2d:   test   %al,%al
+    0.00 :   4e2f:   jne    727e <main+0x2abe>
+    0.00 :   4e35:   xor    %eax,%eax
+    0.00 :   4e37:   movb   $0x1,-0x3c8(%rbp)
+    0.00 :   4e3e:   movabs $0x100000001b3,%r15
+    0.00 :   4e48:   mov    %rax,-0x3c0(%rbp)
+    0.00 :   4e4f:   mov    %rax,-0x378(%rbp)
+    0.00 :   4e56:   mov    %rax,-0x3f0(%rbp)
+    0.00 :   4e5d:   mov    %rax,-0x3b8(%rbp)
+    0.00 :   4e64:   lea    -0x220(%rbp),%rax
+    0.00 :   4e6b:   movl   $0x1,-0x370(%rbp)
+    0.00 :   4e75:   mov    %rax,-0x400(%rbp)
+    0.00 :   4e7c:   mov    $0x550,%edi
+    0.00 :   4e81:   call   2360 <operator new(unsigned long)@plt>
+    0.00 :   4e86:   pxor   %xmm0,%xmm0
+    0.00 :   4e8a:   mov    %rax,%rbx
+    0.00 :   4e8d:   mov    $0x27110,%edi
+    0.00 :   4e92:   movups %xmm0,(%rax)
+    0.00 :   4e95:   xor    %eax,%eax
+    0.00 :   4e97:   mov    %rax,0x10(%rbx)
+    0.00 :   4e9b:   call   2360 <operator new(unsigned long)@plt>
+    0.00 :   4ea0:   lea    0x27110(%rax),%rdx
+    0.00 :   4ea7:   pxor   %xmm0,%xmm0
+    0.00 :   4eab:   mov    %rax,(%rbx)
+    0.00 :   4eae:   add    $0x10,%rax
+    0.00 :   4eb2:   mov    %rdx,0x10(%rbx)
+    0.00 :   4eb6:   movups %xmm0,-0x10(%rax)
+    0.00 :   4eba:   nopw   0x0(%rax,%rax,1)
+    0.00 :   4ec0:   movups %xmm0,(%rax)
+    0.00 :   4ec3:   add    $0x20,%rax
+    0.00 :   4ec7:   movups %xmm0,-0x10(%rax)
+    0.00 :   4ecb:   cmp    %rdx,%rax
+    0.00 :   4ece:   jne    4ec0 <main+0x700>
+    0.00 :   4ed0:   mov    %rax,0x8(%rbx)
+    0.00 :   4ed4:   lea    0x18(%rbx),%rdi
+    0.00 :   4ed8:   xor    %eax,%eax
+    0.00 :   4eda:   mov    $0x9d,%ecx
+    0.00 :   4edf:   rep stos %rax,(%rdi)
+    0.00 :   4ee2:   lea    0x500(%rbx),%rdi
+    0.00 :   4ee9:   xor    %r12d,%r12d
+    0.00 :   4eec:   xor    %r13d,%r13d
+    0.00 :   4eef:   mov    $0x6,%ecx
+    0.00 :   4ef4:   xor    %r14d,%r14d
+    0.00 :   4ef7:   mov    $0x200000,%esi
+    0.00 :   4efc:   rep stos %eax,(%rdi)
+    0.00 :   4efe:   mov    0x1ca7b(%rip),%rax        # 21980 <_IO_stdin_used+0x980>
+    0.00 :   4f05:   mov    %r12,0x530(%rbx)
+    0.00 :   4f0c:   mov    %rbx,%rdi
+    0.00 :   4f0f:   mov    %r12,0x538(%rbx)
+    0.00 :   4f16:   mov    %rax,0x518(%rbx)
+    0.00 :   4f1d:   mov    %r13d,0x540(%rbx)
+    0.00 :   4f24:   mov    %r14,0x548(%rbx)
+    0.00 :   4f2b:   movups %xmm0,0x520(%rbx)
+    0.00 :   4f32:   call   ba20 <BookC::reset_table(unsigned long)>
+    0.00 :   4f37:   call   23e0 <std::chrono::_V2::steady_clock::now()@plt>
+    0.00 :   4f3c:   xor    %r13d,%r13d
+    0.00 :   4f3f:   mov    -0x260(%rbp),%rdx
+    0.00 :   4f46:   movabs $0xcbf29ce484222325,%r12
+    0.00 :   4f50:   mov    %rax,-0x3a8(%rbp)
+    0.00 :   4f57:   mov    -0x258(%rbp),%rax
+    0.00 :   4f5e:   sub    %rdx,%rax
+    0.00 :   4f61:   sar    $0x5,%rax
+    0.00 :   4f65:   cmp    %rax,%r13
+    0.00 :   4f68:   jae    50fa <main+0x93a>
+    0.00 :   4f6e:   xchg   %ax,%ax
+    0.00 :   4f70:   mov    %r13,%rax
+    0.00 :   4f73:   shl    $0x5,%rax
+    0.00 :   4f77:   add    %rax,%rdx
+    0.00 :   4f7a:   movzbl (%rdx),%eax
+    0.00 :   4f7d:   cmp    $0x1,%al
+    0.00 :   4f7f:   je     5410 <main+0xc50>
+    0.93 :   4f85:   cmp    $0x2,%al
+    0.00 :   4f87:   je     5430 <main+0xc70>
+    0.00 :   4f8d:   test   %al,%al
+    0.00 :   4f8f:   jne    50b3 <main+0x8f3>
+    0.00 :   4f95:   movsd  0x1c9eb(%rip),%xmm0        # 21988 <_IO_stdin_used+0x988>
+    0.00 :   4f9d:   mulsd  0x10(%rdx),%xmm0
+    0.00 :   4fa2:   mov    0x18(%rdx),%rax
+    0.00 :   4fa6:   mov    0x8(%rdx),%r14
+    0.00 :   4faa:   mov    %rax,-0x348(%rbp)
+    0.00 :   4fb1:   mov    0x4(%rdx),%eax
+    0.00 :   4fb4:   mov    %eax,-0x3a0(%rbp)
+    0.00 :   4fba:   call   22d0 <llround@plt>
+    0.00 :   4fbf:   movdqu 0x520(%rbx),%xmm0
+    0.00 :   4fc7:   mov    %rax,-0x350(%rbp)
+    0.00 :   4fce:   mov    0x548(%rbx),%rax
+    0.00 :   4fd5:   movhlps %xmm0,%xmm3
+    0.00 :   4fd8:   movq   %xmm0,%r10
+    0.00 :   4fdd:   movq   %xmm3,%rsi
+    0.00 :   4fe2:   lea    0x2(%rax,%rax,1),%rax
+    0.00 :   4fe7:   sub    %r10,%rsi
+    0.00 :   4fea:   sar    $0x4,%rsi
+    0.00 :   4fee:   cmp    %rax,%rsi
+    0.00 :   4ff1:   jb     54fe <main+0xd3e>
+    0.93 :   4ff7:   movabs $0x9e3779b97f4a7c15,%rax
+    0.00 :   5001:   mov    0x540(%rbx),%ecx
+    0.00 :   5007:   movq   -0x348(%rbp),%xmm0
+    0.00 :   500f:   movhps -0x350(%rbp),%xmm0
+    0.00 :   5016:   imul   %r14,%rax
+    0.00 :   501a:   shufps $0xe8,%xmm0,%xmm0
+    0.00 :   501e:   pshufd $0xe5,%xmm0,%xmm4
+    0.00 :   5023:   movq   %xmm0,%r9
+    0.93 :   5028:   movd   %xmm4,%esi
+    0.00 :   502c:   shr    %cl,%rax
+    0.00 :   502f:   mov    0x520(%rbx),%rcx
+    0.00 :   5036:   mov    %rax,%rdx
+    0.00 :   5039:   shl    $0x4,%rdx
+    0.00 :   503d:   add    %rcx,%rdx
+    0.00 :   5040:   mov    0x8(%rdx),%r10d
+   87.85 :   5044:   test   %r10d,%r10d
+    0.00 :   5047:   je     507a <main+0x8ba>
+    0.00 :   5049:   mov    0x538(%rbx),%rdi
+    0.00 :   5050:   nopl   0x0(%rax,%rax,1)
+    0.00 :   5055:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   5060:   add    $0x1,%rax
+    0.00 :   5064:   and    %rdi,%rax
+    0.00 :   5067:   mov    %rax,%rdx
+    0.00 :   506a:   shl    $0x4,%rdx
+    0.00 :   506e:   add    %rcx,%rdx
+    0.00 :   5071:   mov    0x8(%rdx),%r8d
+    0.00 :   5075:   test   %r8d,%r8d
+    0.00 :   5078:   jne    5060 <main+0x8a0>
+    0.00 :   507a:   sub    $0x1388,%esi
+    0.00 :   5080:   mov    %r14,(%rdx)
+    0.00 :   5083:   movslq %esi,%rax
+    0.00 :   5086:   mov    %r9,0x8(%rdx)
+    0.00 :   508a:   shl    $0x4,%rax
+    0.00 :   508e:   add    (%rbx),%rax
+    0.00 :   5091:   addq   $0x1,0x548(%rbx)
+    0.00 :   5099:   cmpq   $0x0,0x8(%rax)
+    0.00 :   509e:   je     55da <main+0xe1a>
+    0.00 :   50a4:   mov    -0x348(%rbp),%rcx
+    0.00 :   50ab:   addq   $0x1,0x8(%rax)
+    0.00 :   50b0:   add    %rcx,(%rax)
+    0.00 :   50b3:   movabs $0x8f5c28f5c28f5c29,%rax
+    0.93 :   50bd:   add    $0x1,%r13
+    0.00 :   50c1:   movabs $0x28f5c28f5c28f5c,%rdx
+    0.00 :   50cb:   imul   %r13,%rax
+    0.00 :   50cf:   ror    $0x2,%rax
+    0.00 :   50d3:   cmp    %rax,%rdx
+    0.00 :   50d6:   jae    53e8 <main+0xc28>
+    0.00 :   50dc:   mov    -0x260(%rbp),%rdx
+    0.00 :   50e3:   mov    -0x258(%rbp),%rax
+    0.00 :   50ea:   sub    %rdx,%rax
+    0.00 :   50ed:   sar    $0x5,%rax
+    0.00 :   50f1:   cmp    %rax,%r13
+    0.00 :   50f4:   jb     4f70 <main+0x7b0>
+    0.00 :   50fa:   call   23e0 <std::chrono::_V2::steady_clock::now()@plt>
+    0.00 :   50ff:   sub    -0x3a8(%rbp),%rax
+    0.00 :   5106:   mov    $0xc,%ecx
+    0.00 :   510b:   lea    -0x1a0(%rbp),%rdi
+    0.00 :   5112:   mov    %rax,%r13
+    0.00 :   5115:   xor    %eax,%eax
+    0.00 :   5117:   rep stos %eax,(%rdi)
+    0.00 :   5119:   movslq 0x518(%rbx),%rax
+    0.00 :   5120:   cmp    $0xffffffff,%eax
+    0.00 :   5123:   je     515b <main+0x99b>
+    0.00 :   5125:   lea    0x1388(%rax),%edx
+    0.00 :   512b:   shl    $0x4,%rax
+    0.00 :   512f:   pxor   %xmm0,%xmm0
+    0.00 :   5133:   add    (%rbx),%rax
+    0.00 :   5136:   mov    (%rax),%rax
+    0.00 :   5139:   movb   $0x1,-0x1a0(%rbp)
+    0.00 :   5140:   cvtsi2sd %edx,%xmm0
+    0.00 :   5144:   divsd  0x1c83c(%rip),%xmm0        # 21988 <_IO_stdin_used+0x988>
+    0.00 :   514c:   movsd  %xmm0,-0x198(%rbp)
+    0.00 :   5154:   mov    %rax,-0x190(%rbp)
+    0.00 :   515b:   movslq 0x51c(%rbx),%rax
+    0.00 :   5162:   cmp    $0xffffffff,%eax
+    0.00 :   5165:   je     519d <main+0x9dd>
+    0.00 :   5167:   lea    0x1388(%rax),%edx
+    0.00 :   516d:   shl    $0x4,%rax
+    0.00 :   5171:   pxor   %xmm0,%xmm0
+    0.00 :   5175:   add    (%rbx),%rax
+    0.00 :   5178:   mov    (%rax),%rax
+    0.00 :   517b:   movb   $0x1,-0x188(%rbp)
+    0.00 :   5182:   cvtsi2sd %edx,%xmm0
+    0.00 :   5186:   divsd  0x1c7fa(%rip),%xmm0        # 21988 <_IO_stdin_used+0x988>
+    0.00 :   518e:   movsd  %xmm0,-0x180(%rbp)
+    0.00 :   5196:   mov    %rax,-0x178(%rbp)
+    0.00 :   519d:   mov    0x520(%rbx),%rdi
+    0.00 :   51a4:   test   %rdi,%rdi
+    0.00 :   51a7:   je     51b8 <main+0x9f8>
+    0.00 :   51a9:   mov    0x530(%rbx),%rsi
+    0.00 :   51b0:   sub    %rdi,%rsi
+    0.00 :   51b3:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   51b8:   mov    (%rbx),%rdi
+    0.00 :   51bb:   test   %rdi,%rdi
+    0.00 :   51be:   je     51cc <main+0xa0c>
+    0.00 :   51c0:   mov    0x10(%rbx),%rsi
+    0.00 :   51c4:   sub    %rdi,%rsi
+    0.00 :   51c7:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   51cc:   mov    $0x550,%esi
+    0.00 :   51d1:   mov    %rbx,%rdi
+    0.00 :   51d4:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   51d9:   pxor   %xmm0,%xmm0
+    0.00 :   51dd:   mov    -0x3c0(%rbp),%rcx
+    0.00 :   51e4:   cvtsi2sd %r13,%xmm0
+    0.00 :   51e9:   divsd  0x1c79f(%rip),%xmm0        # 21990 <_IO_stdin_used+0x990>
+    0.00 :   51f1:   movsd  %xmm0,-0x200(%rbp)
+    0.00 :   51f9:   cmp    %rcx,-0x378(%rbp)
+    0.00 :   5200:   je     5dab <main+0x15eb>
+    0.00 :   5206:   mov    -0x378(%rbp),%rax
+    0.00 :   520d:   movsd  %xmm0,(%rax)
+    0.00 :   5211:   add    $0x8,%rax
+    0.00 :   5215:   mov    %rax,-0x378(%rbp)
+    0.00 :   521c:   cmpl   $0x1,-0x370(%rbp)
+    0.00 :   5223:   jne    5241 <main+0xa81>
+    0.00 :   5225:   mov    -0x3f8(%rbp),%rdi
+    0.00 :   522c:   mov    $0xc,%ecx
+    0.00 :   5231:   lea    -0x1a0(%rbp),%rsi
+    0.00 :   5238:   mov    %r12,-0x3b8(%rbp)
+    0.00 :   523f:   rep movsl (%rsi),(%rdi)
+    0.00 :   5241:   cmp    -0x3b8(%rbp),%r12
+    0.00 :   5248:   mov    -0x370(%rbp),%ebx
+    0.00 :   524e:   mov    $0x2,%edi
+    0.00 :   5253:   lea    0x1be57(%rip),%rsi        # 210b1 <_IO_stdin_used+0xb1>
+    0.00 :   525a:   sete   %al
+    0.00 :   525d:   and    %al,-0x3c8(%rbp)
+    0.00 :   5263:   mov    -0x378(%rbp),%rax
+    0.00 :   526a:   mov    %ebx,%edx
+    0.00 :   526c:   movsd  -0x8(%rax),%xmm0
+    0.00 :   5271:   mov    $0x1,%eax
+    0.00 :   5276:   call   2260 <__printf_chk@plt>
+    0.00 :   527b:   cmpb   $0x0,-0x385(%rbp)
+    0.00 :   5282:   je     5637 <main+0xe77>
+    0.00 :   5288:   lea    0x1c0b9(%rip),%rsi        # 21348 <_IO_stdin_used+0x348>
+    0.00 :   528f:   mov    $0x2,%edi
+    0.00 :   5294:   xor    %eax,%eax
+    0.00 :   5296:   call   2260 <__printf_chk@plt>
+    0.00 :   529b:   addl   $0x1,-0x370(%rbp)
+    0.00 :   52a2:   mov    -0x384(%rbp),%esi
+    0.00 :   52a8:   cmp    %esi,-0x370(%rbp)
+    0.00 :   52ae:   jle    4e7c <main+0x6bc>
+    0.00 :   52b4:   mov    -0x3f0(%rbp),%rbx
+    0.00 :   52bb:   mov    -0x378(%rbp),%r15
+    0.00 :   52c2:   lea    -0x1b0(%rbp),%r13
+    0.00 :   52c9:   mov    -0x3c0(%rbp),%rax
+    0.00 :   52d0:   mov    -0x400(%rbp),%rsi
+    0.00 :   52d7:   mov    %r13,%rdi
+    0.00 :   52da:   mov    %rbx,-0x220(%rbp)
+    0.00 :   52e1:   mov    %r15,-0x218(%rbp)
+    0.00 :   52e8:   mov    %rax,-0x210(%rbp)
+    0.00 :   52ef:   call   c970 <std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)>
+    0.00 :   52f4:   mov    %r13,%rdi
+    0.00 :   52f7:   call   8630 <(anonymous namespace)::median(std::vector<double, std::allocator<double> >)>
+    0.00 :   52fc:   mov    $0x2,%edi
+    0.00 :   5301:   mov    $0x1,%eax
+    0.00 :   5306:   mov    -0x384(%rbp),%r14d
+    0.00 :   530d:   lea    0x1c27c(%rip),%rsi        # 21590 <_IO_stdin_used+0x590>
+    0.00 :   5314:   mov    %r14d,%edx
+    0.00 :   5317:   call   2260 <__printf_chk@plt>
+    0.00 :   531c:   mov    %r13,%rdi
+    0.00 :   531f:   call   c7f0 <std::_Vector_base<double, std::allocator<double> >::~_Vector_base()>
+    0.00 :   5324:   sub    $0x1,%r14d
+    0.00 :   5328:   jne    7184 <main+0x29c4>
+    0.00 :   532e:   cmpb   $0x0,-0x385(%rbp)
+    0.00 :   5335:   je     71ea <main+0x2a2a>
+    0.00 :   533b:   mov    -0x3f8(%rbp),%rdi
+    0.00 :   5342:   call   7780 <(anonymous namespace)::print_bbo(BBO const&)>
+    0.00 :   5347:   mov    -0x3b8(%rbp),%rdx
+    0.00 :   534e:   lea    0x1bd98(%rip),%rsi        # 210ed <_IO_stdin_used+0xed>
+    0.00 :   5355:   mov    $0x2,%edi
+    0.00 :   535a:   xor    %eax,%eax
+    0.00 :   535c:   call   2260 <__printf_chk@plt>
+    0.00 :   5361:   xor    %ebx,%ebx
+    0.00 :   5363:   cmpb   $0x0,-0x3c8(%rbp)
+    0.00 :   536a:   je     745c <main+0x2c9c>
+    0.00 :   5370:   mov    -0x408(%rbp),%r12
+    0.00 :   5377:   mov    -0x380(%rbp),%r13
+    0.00 :   537e:   mov    -0x18(%r12),%rdi
+    0.00 :   5383:   sub    $0x18,%r12
+    0.00 :   5387:   test   %rdi,%rdi
+    0.00 :   538a:   je     5399 <main+0xbd9>
+    0.00 :   538c:   mov    0x10(%r12),%rsi
+    0.00 :   5391:   sub    %rdi,%rsi
+    0.00 :   5394:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   5399:   cmp    %r13,%r12
+    0.00 :   539c:   jne    537e <main+0xbbe>
+    0.00 :   539e:   mov    -0x3d0(%rbp),%r13
+    0.00 :   53a5:   mov    -0x18(%r12),%rdi
+    0.00 :   53aa:   sub    $0x18,%r12
+    0.00 :   53ae:   test   %rdi,%rdi
+    0.00 :   53b1:   je     53c0 <main+0xc00>
+    0.00 :   53b3:   mov    0x10(%r12),%rsi
+    0.00 :   53b8:   sub    %rdi,%rsi
+    0.00 :   53bb:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   53c0:   cmp    %r13,%r12
+    0.00 :   53c3:   jne    53a5 <main+0xbe5>
+    0.00 :   53c5:   mov    -0x400(%rbp),%rdi
+    0.00 :   53cc:   call   c7f0 <std::_Vector_base<double, std::allocator<double> >::~_Vector_base()>
+    0.00 :   53d1:   mov    -0x358(%rbp),%rdi
+    0.00 :   53d8:   call   c850 <std::_Vector_base<Op, std::allocator<Op> >::~_Vector_base()>
+    0.00 :   53dd:   jmp    4976 <main+0x1b6>
+    0.00 :   53e2:   nopw   0x0(%rax,%rax,1)
+    0.00 :   53e8:   lea    -0x330(%rbp),%rsi
+    0.00 :   53ef:   mov    %rbx,%rdi
+    0.00 :   53f2:   mov    %r12,-0x330(%rbp)
+    0.00 :   53f9:   call   8fd0 <void (anonymous namespace)::depth_query<BookC>(BookC const&, (anonymous namespace)::Checksum&)>
+    0.00 :   53fe:   mov    -0x330(%rbp),%r12
+    0.00 :   5405:   jmp    50dc <main+0x91c>
+    0.00 :   540a:   nopw   0x0(%rax,%rax,1)
+    0.00 :   5410:   mov    0x8(%rdx),%rsi
+    0.00 :   5414:   mov    %rbx,%rdi
+    0.00 :   5417:   call   b680 <BookC::cancel_order(unsigned long)>
+    0.00 :   541c:   movzbl %al,%eax
+    0.00 :   541f:   xor    %r12,%rax
+    0.00 :   5422:   imul   %r15,%rax
+    0.00 :   5426:   mov    %rax,%r12
+    0.00 :   5429:   jmp    50b3 <main+0x8f3>
+    0.00 :   542e:   xchg   %ax,%ax
+    0.00 :   5430:   movslq 0x518(%rbx),%rax
+    0.00 :   5437:   cmp    $0xffffffff,%eax
+    0.00 :   543a:   je     54f1 <main+0xd31>
+    0.93 :   5440:   lea    0x1388(%rax),%edx
+    0.00 :   5446:   shl    $0x4,%rax
+    0.00 :   544a:   add    (%rbx),%rax
+    0.00 :   544d:   mov    $0x1,%edi
+    0.00 :   5452:   mov    (%rax),%rsi
+    0.00 :   5455:   pxor   %xmm1,%xmm1
+    0.00 :   5459:   cvtsi2sd %edx,%xmm1
+    0.00 :   545d:   divsd  0x1c523(%rip),%xmm1        # 21988 <_IO_stdin_used+0x988>
+    0.00 :   5465:   movslq 0x51c(%rbx),%rax
+    0.00 :   546c:   cmp    $0xffffffff,%eax
+    0.00 :   546f:   je     54e7 <main+0xd27>
+    0.00 :   5471:   lea    0x1388(%rax),%edx
+    0.00 :   5477:   shl    $0x4,%rax
+    0.00 :   547b:   add    (%rbx),%rax
+    0.00 :   547e:   pxor   %xmm0,%xmm0
+    0.00 :   5482:   mov    (%rax),%rcx
+    0.00 :   5485:   cvtsi2sd %edx,%xmm0
+    0.00 :   5489:   mov    $0x1,%edx
+    0.00 :   548e:   divsd  0x1c4f2(%rip),%xmm0        # 21988 <_IO_stdin_used+0x988>
+    0.00 :   5496:   movzbl %dil,%eax
+    0.00 :   549a:   xor    %r12,%rax
+    0.00 :   549d:   imul   %r15,%rax
+    0.00 :   54a1:   test   %dil,%dil
+    0.00 :   54a4:   je     54b9 <main+0xcf9>
+    0.00 :   54a6:   movq   %xmm1,%rdi
+    0.00 :   54ab:   xor    %rdi,%rax
+    0.00 :   54ae:   imul   %r15,%rax
+    0.00 :   54b2:   xor    %rsi,%rax
+    0.00 :   54b5:   imul   %r15,%rax
+    0.00 :   54b9:   movzbl %dl,%r12d
+    0.00 :   54bd:   xor    %rax,%r12
+    0.00 :   54c0:   imul   %r15,%r12
+    0.00 :   54c4:   test   %dl,%dl
+    0.00 :   54c6:   je     50b3 <main+0x8f3>
+    0.00 :   54cc:   movq   %xmm0,%rax
+    0.00 :   54d1:   xor    %r12,%rax
+    0.00 :   54d4:   imul   %r15,%rax
+    0.00 :   54d8:   xor    %rcx,%rax
+    0.00 :   54db:   imul   %r15,%rax
+    0.00 :   54df:   mov    %rax,%r12
+    0.00 :   54e2:   jmp    50b3 <main+0x8f3>
+    0.00 :   54e7:   xor    %ecx,%ecx
+    0.00 :   54e9:   pxor   %xmm0,%xmm0
+    0.00 :   54ed:   xor    %edx,%edx
+    0.00 :   54ef:   jmp    5496 <main+0xcd6>
+    0.00 :   54f1:   xor    %esi,%esi
+    0.00 :   54f3:   pxor   %xmm1,%xmm1
+    0.00 :   54f7:   xor    %edi,%edi
+    0.00 :   54f9:   jmp    5465 <main+0xca5>
+    0.00 :   54fe:   xor    %r11d,%r11d
+    0.00 :   5501:   mov    0x530(%rbx),%rax
+    0.00 :   5508:   add    %rsi,%rsi
+    0.00 :   550b:   mov    %rbx,%rdi
+    0.00 :   550e:   mov    %r11,0x530(%rbx)
+    0.00 :   5515:   movq   %xmm0,-0x390(%rbp)
+    0.00 :   551d:   movaps %xmm0,-0x1b0(%rbp)
+    0.00 :   5524:   pxor   %xmm0,%xmm0
+    0.00 :   5528:   movups %xmm0,0x520(%rbx)
+    0.00 :   552f:   mov    %rax,-0x3d8(%rbp)
+    0.00 :   5536:   mov    %rax,-0x1a0(%rbp)
+    0.00 :   553d:   movq   %xmm3,-0x360(%rbp)
+    0.00 :   5545:   call   ba20 <BookC::reset_table(unsigned long)>
+    0.00 :   554a:   mov    -0x390(%rbp),%r10
+    0.00 :   5551:   mov    -0x360(%rbp),%r9
+    0.00 :   5558:   mov    %r10,%rax
+    0.00 :   555b:   cmp    %r9,%r10
+    0.00 :   555e:   jne    5579 <main+0xdb9>
+    0.00 :   5560:   jmp    55ba <main+0xdfa>
+    0.00 :   5562:   nopl   (%rax)
+    0.00 :   5565:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   5570:   add    $0x10,%rax
+    0.00 :   5574:   cmp    %rax,%r9
+    0.00 :   5577:   je     55ba <main+0xdfa>
+    0.00 :   5579:   mov    0x8(%rax),%edx
+    0.00 :   557c:   test   %edx,%edx
+    0.00 :   557e:   je     5570 <main+0xdb0>
+    0.00 :   5580:   mov    0xc(%rax),%ecx
+    0.00 :   5583:   mov    (%rax),%rsi
+    0.00 :   5586:   mov    %rbx,%rdi
+    0.00 :   5589:   mov    %r10,-0x398(%rbp)
+    0.00 :   5590:   mov    %r9,-0x390(%rbp)
+    0.00 :   5597:   mov    %rax,-0x360(%rbp)
+    0.00 :   559e:   call   bec0 <BookC::insert_order(unsigned long, int, int)>
+    0.00 :   55a3:   mov    -0x398(%rbp),%r10
+    0.00 :   55aa:   mov    -0x390(%rbp),%r9
+    0.00 :   55b1:   mov    -0x360(%rbp),%rax
+    0.00 :   55b8:   jmp    5570 <main+0xdb0>
+    0.00 :   55ba:   test   %r10,%r10
+    0.00 :   55bd:   je     4ff7 <main+0x837>
+    0.00 :   55c3:   mov    -0x3d8(%rbp),%rsi
+    0.00 :   55ca:   mov    %r10,%rdi
+    0.00 :   55cd:   sub    %r10,%rsi
+    0.00 :   55d0:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   55d5:   jmp    4ff7 <main+0x837>
+    0.00 :   55da:   mov    %esi,%r9d
+    0.00 :   55dd:   mov    $0x1,%edi
+    0.00 :   55e2:   mov    %esi,%ecx
+    0.00 :   55e4:   sar    $0x6,%r9d
+    0.00 :   55e8:   mov    %rdi,%r11
+    0.00 :   55eb:   movslq %r9d,%rdx
+    0.00 :   55ee:   shl    %cl,%r11
+    0.00 :   55f1:   mov    %r9d,%ecx
+    0.00 :   55f4:   or     %r11,0x18(%rbx,%rdx,8)
+    0.00 :   55f9:   mov    %esi,%edx
+    0.00 :   55fb:   shl    %cl,%rdi
+    0.00 :   55fe:   sar    $0xc,%edx
+    0.00 :   5601:   movslq %edx,%rdx
+    0.00 :   5604:   or     %rdi,0x500(%rbx,%rdx,8)
+    0.00 :   560c:   cmpl   $0x0,-0x3a0(%rbp)
+    0.00 :   5613:   jne    5c10 <main+0x1450>
+    0.00 :   5619:   mov    0x518(%rbx),%edx
+    0.00 :   561f:   cmp    $0xffffffff,%edx
+    0.00 :   5622:   je     562c <main+0xe6c>
+    0.00 :   5624:   cmp    %edx,%esi
+    0.00 :   5626:   jle    50a4 <main+0x8e4>
+    0.00 :   562c:   mov    %esi,0x518(%rbx)
+    0.00 :   5632:   jmp    50a4 <main+0x8e4>
+    0.00 :   5637:   cmp    -0x384(%rbp),%ebx
+    0.00 :   563d:   jne    564c <main+0xe8c>
+    0.00 :   563f:   cmpb   $0x0,-0x3e5(%rbp)
+    0.00 :   5646:   jne    7412 <main+0x2c52>
+    0.00 :   564c:   xor    %r14d,%r14d
+    0.00 :   564f:   mov    $0x550,%edi
+    0.00 :   5654:   call   2360 <operator new(unsigned long)@plt>
+    0.00 :   5659:   pxor   %xmm0,%xmm0
+    0.00 :   565d:   mov    %rax,%r12
+    0.00 :   5660:   mov    $0x27110,%edi
+    0.00 :   5665:   movups %xmm0,(%rax)
+    0.00 :   5668:   xor    %eax,%eax
+    0.00 :   566a:   mov    %rax,0x10(%r12)
+    0.00 :   566f:   call   2360 <operator new(unsigned long)@plt>
+    0.00 :   5674:   lea    0x27110(%rax),%rdx
+    0.00 :   567b:   pxor   %xmm0,%xmm0
+    0.00 :   567f:   mov    %rax,(%r12)
+    0.00 :   5683:   add    $0x10,%rax
+    0.00 :   5687:   mov    %rdx,0x10(%r12)
+    0.00 :   568c:   movups %xmm0,-0x10(%rax)
+    0.00 :   5690:   movups %xmm0,(%rax)
+    0.00 :   5693:   add    $0x20,%rax
+    0.00 :   5697:   movups %xmm0,-0x10(%rax)
+    0.00 :   569b:   cmp    %rdx,%rax
+    0.00 :   569e:   jne    5690 <main+0xed0>
+    0.00 :   56a0:   mov    %rax,0x8(%r12)
+    0.00 :   56a5:   lea    0x18(%r12),%rdi
+    0.00 :   56aa:   xor    %eax,%eax
+    0.00 :   56ac:   xor    %r11d,%r11d
+    0.00 :   56af:   mov    $0x9d,%ecx
+    0.00 :   56b4:   xor    %ebx,%ebx
+    0.00 :   56b6:   xor    %r13d,%r13d
+    0.00 :   56b9:   mov    $0x200000,%esi
+    0.00 :   56be:   rep stos %rax,(%rdi)
+    0.00 :   56c1:   lea    0x500(%r12),%rdi
+    0.00 :   56c9:   mov    $0x6,%ecx
+    0.00 :   56ce:   rep stos %eax,(%rdi)
+    0.00 :   56d0:   mov    0x1c2a9(%rip),%rax        # 21980 <_IO_stdin_used+0x980>
+    0.00 :   56d7:   mov    %r12,%rdi
+    0.00 :   56da:   mov    %r11,0x530(%r12)
+    0.00 :   56e2:   mov    %r11,0x538(%r12)
+    0.00 :   56ea:   mov    %rax,0x518(%r12)
+    0.00 :   56f2:   mov    %ebx,0x540(%r12)
+    0.00 :   56fa:   mov    %r13,0x548(%r12)
+    0.00 :   5702:   movups %xmm0,0x520(%r12)
+    0.00 :   570b:   call   ba20 <BookC::reset_table(unsigned long)>
+    0.00 :   5710:   lea    -0x150(%rbp),%rdi
+    0.00 :   5717:   xor    %eax,%eax
+    0.00 :   5719:   mov    $0x12,%ecx
+    0.00 :   571e:   xor    %r13d,%r13d
+    0.00 :   5721:   mov    %rdi,-0x398(%rbp)
+    0.00 :   5728:   mov    -0x260(%rbp),%rdx
+    0.00 :   572f:   rep stos %eax,(%rdi)
+    0.00 :   5731:   mov    -0x258(%rbp),%rax
+    0.00 :   5738:   movabs $0xcbf29ce484222325,%rcx
+    0.00 :   5742:   mov    %rcx,-0x360(%rbp)
+    0.00 :   5749:   sub    %rdx,%rax
+    0.00 :   574c:   sar    $0x5,%rax
+    0.00 :   5750:   cmp    %rax,%r13
+    0.00 :   5753:   jae    596f <main+0x11af>
+    0.00 :   5759:   nopl   0x0(%rax)
+    0.00 :   5760:   mov    %r13,%rax
+    0.00 :   5763:   shl    $0x5,%rax
+    0.00 :   5767:   add    %rax,%rdx
+    0.00 :   576a:   mov    %rdx,-0x350(%rbp)
+    0.00 :   5771:   movzbl (%rdx),%ebx
+    0.00 :   5774:   call   23e0 <std::chrono::_V2::steady_clock::now()@plt>
+    0.00 :   5779:   mov    -0x350(%rbp),%rdx
+    0.00 :   5780:   mov    %rax,-0x348(%rbp)
+    0.00 :   5787:   movzbl (%rdx),%eax
+    0.00 :   578a:   cmp    $0x1,%al
+    0.00 :   578c:   je     5bcc <main+0x140c>
+    0.00 :   5792:   cmp    $0x2,%al
+    0.00 :   5794:   je     5aff <main+0x133f>
+    0.00 :   579a:   test   %al,%al
+    0.00 :   579c:   jne    58dc <main+0x111c>
+    0.00 :   57a2:   mov    0x18(%rdx),%rax
+    0.00 :   57a6:   movsd  0x1c1da(%rip),%xmm0        # 21988 <_IO_stdin_used+0x988>
+    0.00 :   57ae:   mulsd  0x10(%rdx),%xmm0
+    0.00 :   57b3:   mov    %rax,-0x350(%rbp)
+    0.00 :   57ba:   mov    0x4(%rdx),%eax
+    0.00 :   57bd:   mov    %eax,-0x3e4(%rbp)
+    0.00 :   57c3:   mov    0x8(%rdx),%rax
+    0.00 :   57c7:   mov    %rax,-0x390(%rbp)
+    0.00 :   57ce:   call   22d0 <llround@plt>
+    0.00 :   57d3:   movdqu 0x520(%r12),%xmm0
+    0.00 :   57dd:   mov    %rax,-0x3a0(%rbp)
+    0.00 :   57e4:   mov    0x548(%r12),%rax
+    0.00 :   57ec:   movhlps %xmm0,%xmm7
+    0.00 :   57ef:   movq   %xmm0,%r9
+    0.00 :   57f4:   movq   %xmm7,%rsi
+    0.00 :   57f9:   add    $0x1,%rax
+    0.00 :   57fd:   sub    %r9,%rsi
+    0.00 :   5800:   add    %rax,%rax
+    0.00 :   5803:   sar    $0x4,%rsi
+    0.00 :   5807:   cmp    %rax,%rsi
+    0.00 :   580a:   jb     5c6d <main+0x14ad>
+    0.00 :   5810:   movabs $0x9e3779b97f4a7c15,%rax
+    0.00 :   581a:   imul   -0x390(%rbp),%rax
+    0.00 :   5822:   mov    0x540(%r12),%ecx
+    0.00 :   582a:   movq   -0x350(%rbp),%xmm0
+    0.00 :   5832:   movhps -0x3a0(%rbp),%xmm0
+    0.00 :   5839:   shufps $0xe8,%xmm0,%xmm0
+    0.00 :   583d:   pshufd $0xe5,%xmm0,%xmm7
+    0.00 :   5842:   movq   %xmm0,%r8
+    0.00 :   5847:   movd   %xmm7,%esi
+    0.00 :   584b:   shr    %cl,%rax
+    0.00 :   584e:   mov    0x520(%r12),%rcx
+    0.00 :   5856:   mov    %rax,%rdx
+    0.00 :   5859:   shl    $0x4,%rdx
+    0.00 :   585d:   add    %rcx,%rdx
+    0.00 :   5860:   cmpl   $0x0,0x8(%rdx)
+    0.00 :   5864:   je     589a <main+0x10da>
+    0.00 :   5866:   mov    0x538(%r12),%rdi
+    0.00 :   586e:   nopl   0x0(%rax)
+    0.00 :   5875:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   5880:   add    $0x1,%rax
+    0.00 :   5884:   and    %rdi,%rax
+    0.00 :   5887:   mov    %rax,%rdx
+    0.00 :   588a:   shl    $0x4,%rdx
+    0.00 :   588e:   add    %rcx,%rdx
+    0.00 :   5891:   mov    0x8(%rdx),%r9d
+    0.00 :   5895:   test   %r9d,%r9d
+    0.00 :   5898:   jne    5880 <main+0x10c0>
+    0.00 :   589a:   mov    -0x390(%rbp),%rax
+    0.00 :   58a1:   sub    $0x1388,%esi
+    0.00 :   58a7:   mov    %r8,0x8(%rdx)
+    0.00 :   58ab:   mov    %rax,(%rdx)
+    0.00 :   58ae:   movslq %esi,%rax
+    0.00 :   58b1:   addq   $0x1,0x548(%r12)
+    0.00 :   58ba:   shl    $0x4,%rax
+    0.00 :   58be:   add    (%r12),%rax
+    0.00 :   58c2:   cmpq   $0x0,0x8(%rax)
+    0.00 :   58c7:   je     5d4a <main+0x158a>
+    0.00 :   58cd:   mov    -0x350(%rbp),%rsi
+    0.00 :   58d4:   addq   $0x1,0x8(%rax)
+    0.00 :   58d9:   add    %rsi,(%rax)
+    0.00 :   58dc:   call   23e0 <std::chrono::_V2::steady_clock::now()@plt>
+    0.00 :   58e1:   movzbl %bl,%edx
+    0.00 :   58e4:   sub    -0x348(%rbp),%rax
+    0.00 :   58eb:   addq   $0x1,-0x130(%rbp,%rdx,8)
+    0.00 :   58f4:   add    %rax,-0x150(%rbp,%rdx,8)
+    0.00 :   58fc:   mov    %rax,-0x280(%rbp)
+    0.00 :   5903:   test   %r14,%r14
+    0.00 :   5906:   je     5928 <main+0x1168>
+    0.00 :   5908:   imul   $0x18,%rdx,%rdi
+    0.00 :   590c:   add    %r14,%rdi
+    0.00 :   590f:   mov    0x8(%rdi),%rdx
+    0.00 :   5913:   cmp    0x10(%rdi),%rdx
+    0.00 :   5917:   je     5c2e <main+0x146e>
+    0.00 :   591d:   mov    %rax,(%rdx)
+    0.00 :   5920:   add    $0x8,%rdx
+    0.00 :   5924:   mov    %rdx,0x8(%rdi)
+    0.00 :   5928:   movabs $0x8f5c28f5c28f5c29,%rax
+    0.00 :   5932:   add    $0x1,%r13
+    0.00 :   5936:   movabs $0x28f5c28f5c28f5c,%rdx
+    0.00 :   5940:   imul   %r13,%rax
+    0.00 :   5944:   ror    $0x2,%rax
+    0.00 :   5948:   cmp    %rax,%rdx
+    0.00 :   594b:   jae    5a87 <main+0x12c7>
+    0.00 :   5951:   mov    -0x260(%rbp),%rdx
+    0.00 :   5958:   mov    -0x258(%rbp),%rax
+    0.00 :   595f:   sub    %rdx,%rax
+    0.00 :   5962:   sar    $0x5,%rax
+    0.00 :   5966:   cmp    %rax,%r13
+    0.00 :   5969:   jb     5760 <main+0xfa0>
+    0.00 :   596f:   mov    0x520(%r12),%rdi
+    0.00 :   5977:   test   %rdi,%rdi
+    0.00 :   597a:   je     598c <main+0x11cc>
+    0.00 :   597c:   mov    0x530(%r12),%rsi
+    0.00 :   5984:   sub    %rdi,%rsi
+    0.00 :   5987:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   598c:   mov    (%r12),%rdi
+    0.00 :   5990:   test   %rdi,%rdi
+    0.00 :   5993:   je     59a2 <main+0x11e2>
+    0.00 :   5995:   mov    0x10(%r12),%rsi
+    0.00 :   599a:   sub    %rdi,%rsi
+    0.00 :   599d:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   59a2:   mov    $0x550,%esi
+    0.00 :   59a7:   mov    %r12,%rdi
+    0.00 :   59aa:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   59af:   lea    0x1b712(%rip),%rsi        # 210c8 <_IO_stdin_used+0xc8>
+    0.00 :   59b6:   mov    $0x2,%edi
+    0.00 :   59bb:   xor    %eax,%eax
+    0.00 :   59bd:   call   2260 <__printf_chk@plt>
+    0.00 :   59c2:   mov    -0x3d0(%rbp),%r12
+    0.00 :   59c9:   xor    %r13d,%r13d
+    0.00 :   59cc:   lea    0x1f28d(%rip),%rbx        # 24c60 <(anonymous namespace)::kCategoryNames>
+    0.00 :   59d3:   mov    -0x130(%rbp,%r13,1),%rax
+    0.00 :   59db:   pxor   %xmm0,%xmm0
+    0.00 :   59df:   test   %rax,%rax
+    0.00 :   59e2:   je     5a08 <main+0x1248>
+    0.00 :   59e4:   mov    -0x398(%rbp),%rcx
+    0.00 :   59eb:   pxor   %xmm0,%xmm0
+    0.00 :   59ef:   cvtsi2sdq (%rcx,%r13,1),%xmm0
+    0.00 :   59f5:   js     5bf2 <main+0x1432>
+    0.00 :   59fb:   pxor   %xmm1,%xmm1
+    0.00 :   59ff:   cvtsi2sd %rax,%xmm1
+    0.00 :   5a04:   divsd  %xmm1,%xmm0
+    0.00 :   5a08:   subsd  -0x3b0(%rbp),%xmm0
+    0.00 :   5a10:   mov    0x8(%r12),%rax
+    0.00 :   5a15:   movsd  %xmm0,-0x200(%rbp)
+    0.00 :   5a1d:   cmp    0x10(%r12),%rax
+    0.00 :   5a22:   je     5c3f <main+0x147f>
+    0.00 :   5a28:   movsd  %xmm0,(%rax)
+    0.00 :   5a2c:   add    $0x8,%rax
+    0.00 :   5a30:   mov    %rax,0x8(%r12)
+    0.00 :   5a35:   mov    0x8(%r12),%rax
+    0.00 :   5a3a:   mov    (%rbx,%r13,1),%rdx
+    0.00 :   5a3e:   mov    $0x2,%edi
+    0.00 :   5a43:   lea    0x1b681(%rip),%rsi        # 210cb <_IO_stdin_used+0xcb>
+    0.00 :   5a4a:   movsd  -0x8(%rax),%xmm0
+    0.00 :   5a4f:   mov    $0x1,%eax
+    0.00 :   5a54:   call   2260 <__printf_chk@plt>
+    0.00 :   5a59:   add    $0x8,%r13
+    0.00 :   5a5d:   add    $0x18,%r12
+    0.00 :   5a61:   cmp    $0x20,%r13
+    0.00 :   5a65:   jne    59d3 <main+0x1213>
+    0.00 :   5a6b:   mov    -0x360(%rbp),%rcx
+    0.00 :   5a72:   cmp    %rcx,-0x3b8(%rbp)
+    0.00 :   5a79:   sete   %al
+    0.00 :   5a7c:   and    %al,-0x3c8(%rbp)
+    0.00 :   5a82:   jmp    5288 <main+0xac8>
+    0.00 :   5a87:   call   23e0 <std::chrono::_V2::steady_clock::now()@plt>
+    0.00 :   5a8c:   lea    -0x2c0(%rbp),%rsi
+    0.00 :   5a93:   mov    %r12,%rdi
+    0.00 :   5a96:   mov    %rax,%rbx
+    0.00 :   5a99:   mov    -0x360(%rbp),%rax
+    0.00 :   5aa0:   mov    %rax,-0x2c0(%rbp)
+    0.00 :   5aa7:   call   8fd0 <void (anonymous namespace)::depth_query<BookC>(BookC const&, (anonymous namespace)::Checksum&)>
+    0.00 :   5aac:   mov    -0x2c0(%rbp),%rax
+    0.00 :   5ab3:   mov    %rax,-0x360(%rbp)
+    0.00 :   5aba:   call   23e0 <std::chrono::_V2::steady_clock::now()@plt>
+    0.00 :   5abf:   addq   $0x1,-0x118(%rbp)
+    0.00 :   5ac7:   sub    %rbx,%rax
+    0.00 :   5aca:   add    %rax,-0x138(%rbp)
+    0.00 :   5ad1:   mov    %rax,-0x200(%rbp)
+    0.00 :   5ad8:   test   %r14,%r14
+    0.00 :   5adb:   je     5951 <main+0x1191>
+    0.00 :   5ae1:   mov    0x50(%r14),%rdx
+    0.00 :   5ae5:   cmp    0x58(%r14),%rdx
+    0.00 :   5ae9:   je     70cf <main+0x290f>
+    0.00 :   5aef:   mov    %rax,(%rdx)
+    0.00 :   5af2:   add    $0x8,%rdx
+    0.00 :   5af6:   mov    %rdx,0x50(%r14)
+    0.00 :   5afa:   jmp    5951 <main+0x1191>
+    0.00 :   5aff:   movslq 0x518(%r12),%rax
+    0.00 :   5b07:   cmp    $0xffffffff,%eax
+    0.00 :   5b0a:   je     5c60 <main+0x14a0>
+    0.00 :   5b10:   lea    0x1388(%rax),%edx
+    0.00 :   5b16:   shl    $0x4,%rax
+    0.00 :   5b1a:   add    (%r12),%rax
+    0.00 :   5b1e:   mov    $0x1,%edi
+    0.00 :   5b23:   mov    (%rax),%rcx
+    0.00 :   5b26:   pxor   %xmm1,%xmm1
+    0.00 :   5b2a:   cvtsi2sd %edx,%xmm1
+    0.00 :   5b2e:   divsd  0x1be52(%rip),%xmm1        # 21988 <_IO_stdin_used+0x988>
+    0.00 :   5b36:   movslq 0x51c(%r12),%rax
+    0.00 :   5b3e:   cmp    $0xffffffff,%eax
+    0.00 :   5b41:   je     5c53 <main+0x1493>
+    0.00 :   5b47:   lea    0x1388(%rax),%edx
+    0.00 :   5b4d:   shl    $0x4,%rax
+    0.00 :   5b51:   add    (%r12),%rax
+    0.00 :   5b55:   pxor   %xmm0,%xmm0
+    0.00 :   5b59:   mov    (%rax),%rsi
+    0.00 :   5b5c:   cvtsi2sd %edx,%xmm0
+    0.00 :   5b60:   mov    $0x1,%edx
+    0.00 :   5b65:   divsd  0x1be1b(%rip),%xmm0        # 21988 <_IO_stdin_used+0x988>
+    0.00 :   5b6d:   movzbl %dil,%eax
+    0.00 :   5b71:   xor    -0x360(%rbp),%rax
+    0.00 :   5b78:   imul   %r15,%rax
+    0.00 :   5b7c:   test   %dil,%dil
+    0.00 :   5b7f:   je     5b94 <main+0x13d4>
+    0.00 :   5b81:   movq   %xmm1,%rdi
+    0.00 :   5b86:   xor    %rdi,%rax
+    0.00 :   5b89:   imul   %r15,%rax
+    0.00 :   5b8d:   xor    %rcx,%rax
+    0.00 :   5b90:   imul   %r15,%rax
+    0.00 :   5b94:   movzbl %dl,%ecx
+    0.00 :   5b97:   xor    %rcx,%rax
+    0.00 :   5b9a:   imul   %r15,%rax
+    0.00 :   5b9e:   mov    %rax,-0x360(%rbp)
+    0.00 :   5ba5:   test   %dl,%dl
+    0.00 :   5ba7:   je     58dc <main+0x111c>
+    0.00 :   5bad:   movq   %xmm0,%rcx
+    0.00 :   5bb2:   xor    %rcx,%rax
+    0.00 :   5bb5:   imul   %r15,%rax
+    0.00 :   5bb9:   xor    %rsi,%rax
+    0.00 :   5bbc:   imul   %r15,%rax
+    0.00 :   5bc0:   mov    %rax,-0x360(%rbp)
+    0.00 :   5bc7:   jmp    58dc <main+0x111c>
+    0.00 :   5bcc:   mov    0x8(%rdx),%rsi
+    0.00 :   5bd0:   mov    %r12,%rdi
+    0.00 :   5bd3:   call   b680 <BookC::cancel_order(unsigned long)>
+    0.00 :   5bd8:   movzbl %al,%eax
+    0.00 :   5bdb:   xor    -0x360(%rbp),%rax
+    0.00 :   5be2:   imul   %r15,%rax
+    0.00 :   5be6:   mov    %rax,-0x360(%rbp)
+    0.00 :   5bed:   jmp    58dc <main+0x111c>
+    0.00 :   5bf2:   mov    %rax,%rdx
+    0.00 :   5bf5:   and    $0x1,%eax
+    0.00 :   5bf8:   pxor   %xmm1,%xmm1
+    0.00 :   5bfc:   shr    $1,%rdx
+    0.00 :   5bff:   or     %rax,%rdx
+    0.00 :   5c02:   cvtsi2sd %rdx,%xmm1
+    0.00 :   5c07:   addsd  %xmm1,%xmm1
+    0.00 :   5c0b:   jmp    5a04 <main+0x1244>
+    0.00 :   5c10:   mov    0x51c(%rbx),%edx
+    0.00 :   5c16:   cmp    $0xffffffff,%edx
+    0.00 :   5c19:   je     5c23 <main+0x1463>
+    0.00 :   5c1b:   cmp    %edx,%esi
+    0.00 :   5c1d:   jge    50a4 <main+0x8e4>
+    0.00 :   5c23:   mov    %esi,0x51c(%rbx)
+    0.00 :   5c29:   jmp    50a4 <main+0x8e4>
+    0.00 :   5c2e:   lea    -0x280(%rbp),%rsi
+    0.00 :   5c35:   call   cf50 <void std::vector<long, std::allocator<long> >::_M_realloc_append<long const&>(long const&)>
+    0.00 :   5c3a:   jmp    5928 <main+0x1168>
+    0.00 :   5c3f:   lea    -0x200(%rbp),%rsi
+    0.00 :   5c46:   mov    %r12,%rdi
+    0.00 :   5c49:   call   cae0 <void std::vector<double, std::allocator<double> >::_M_realloc_append<double>(double&&)>
+    0.00 :   5c4e:   jmp    5a35 <main+0x1275>
+    0.00 :   5c53:   xor    %esi,%esi
+    0.00 :   5c55:   pxor   %xmm0,%xmm0
+    0.00 :   5c59:   xor    %edx,%edx
+    0.00 :   5c5b:   jmp    5b6d <main+0x13ad>
+    0.00 :   5c60:   xor    %ecx,%ecx
+    0.00 :   5c62:   pxor   %xmm1,%xmm1
+    0.00 :   5c66:   xor    %edi,%edi
+    0.00 :   5c68:   jmp    5b36 <main+0x1376>
+    0.00 :   5c6d:   xor    %r10d,%r10d
+    0.00 :   5c70:   movaps %xmm0,-0x200(%rbp)
+    0.00 :   5c77:   add    %rsi,%rsi
+    0.00 :   5c7a:   mov    %r12,%rdi
+    0.00 :   5c7d:   mov    0x530(%r12),%rax
+    0.00 :   5c85:   mov    %r10,0x530(%r12)
+    0.00 :   5c8d:   movq   %xmm0,-0x3a8(%rbp)
+    0.00 :   5c95:   pxor   %xmm0,%xmm0
+    0.00 :   5c99:   movups %xmm0,0x520(%r12)
+    0.00 :   5ca2:   mov    %rax,-0x410(%rbp)
+    0.00 :   5ca9:   mov    %rax,-0x1f0(%rbp)
+    0.00 :   5cb0:   movq   %xmm7,-0x3d8(%rbp)
+    0.00 :   5cb8:   call   ba20 <BookC::reset_table(unsigned long)>
+    0.00 :   5cbd:   mov    -0x3a8(%rbp),%r9
+    0.00 :   5cc4:   mov    -0x3d8(%rbp),%r8
+    0.00 :   5ccb:   mov    %r9,%rax
+    0.00 :   5cce:   cmp    %r8,%r9
+    0.00 :   5cd1:   jne    5ce9 <main+0x1529>
+    0.00 :   5cd3:   jmp    5d2a <main+0x156a>
+    0.00 :   5cd5:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   5ce0:   add    $0x10,%rax
+    0.00 :   5ce4:   cmp    %rax,%r8
+    0.00 :   5ce7:   je     5d2a <main+0x156a>
+    0.00 :   5ce9:   mov    0x8(%rax),%edx
+    0.00 :   5cec:   test   %edx,%edx
+    0.00 :   5cee:   je     5ce0 <main+0x1520>
+    0.00 :   5cf0:   mov    0xc(%rax),%ecx
+    0.00 :   5cf3:   mov    (%rax),%rsi
+    0.00 :   5cf6:   mov    %r12,%rdi
+    0.00 :   5cf9:   mov    %r8,-0x3e0(%rbp)
+    0.00 :   5d00:   mov    %r9,-0x3d8(%rbp)
+    0.00 :   5d07:   mov    %rax,-0x3a8(%rbp)
+    0.00 :   5d0e:   call   bec0 <BookC::insert_order(unsigned long, int, int)>
+    0.00 :   5d13:   mov    -0x3e0(%rbp),%r8
+    0.00 :   5d1a:   mov    -0x3d8(%rbp),%r9
+    0.00 :   5d21:   mov    -0x3a8(%rbp),%rax
+    0.00 :   5d28:   jmp    5ce0 <main+0x1520>
+    0.00 :   5d2a:   test   %r9,%r9
+    0.00 :   5d2d:   je     5810 <main+0x1050>
+    0.00 :   5d33:   mov    -0x410(%rbp),%rsi
+    0.00 :   5d3a:   mov    %r9,%rdi
+    0.00 :   5d3d:   sub    %r9,%rsi
+    0.00 :   5d40:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   5d45:   jmp    5810 <main+0x1050>
+    0.00 :   5d4a:   mov    %esi,%r8d
+    0.00 :   5d4d:   mov    $0x1,%edi
+    0.00 :   5d52:   mov    %esi,%ecx
+    0.00 :   5d54:   sar    $0x6,%r8d
+    0.00 :   5d58:   mov    %rdi,%r11
+    0.00 :   5d5b:   movslq %r8d,%rdx
+    0.00 :   5d5e:   shl    %cl,%r11
+    0.00 :   5d61:   mov    %r8d,%ecx
+    0.00 :   5d64:   or     %r11,0x18(%r12,%rdx,8)
+    0.00 :   5d69:   mov    %esi,%edx
+    0.00 :   5d6b:   shl    %cl,%rdi
+    0.00 :   5d6e:   sar    $0xc,%edx
+    0.00 :   5d71:   movslq %edx,%rdx
+    0.00 :   5d74:   or     %rdi,0x500(%r12,%rdx,8)
+    0.00 :   5d7c:   cmpl   $0x0,-0x3e4(%rbp)
+    0.00 :   5d83:   jne    5e10 <main+0x1650>
+    0.00 :   5d89:   mov    0x518(%r12),%edx
+    0.00 :   5d91:   cmp    $0xffffffff,%edx
+    0.00 :   5d94:   je     5d9e <main+0x15de>
+    0.00 :   5d96:   cmp    %edx,%esi
+    0.00 :   5d98:   jle    58cd <main+0x110d>
+    0.00 :   5d9e:   mov    %esi,0x518(%r12)
+    0.00 :   5da6:   jmp    58cd <main+0x110d>
+    0.00 :   5dab:   mov    -0x3f0(%rbp),%rax
+    0.00 :   5db2:   mov    -0x400(%rbp),%rdi
+    0.00 :   5db9:   lea    -0x200(%rbp),%rsi
+    0.00 :   5dc0:   mov    %rax,-0x220(%rbp)
+    0.00 :   5dc7:   mov    -0x378(%rbp),%rax
+    0.00 :   5dce:   mov    %rax,-0x218(%rbp)
+    0.00 :   5dd5:   mov    %rax,-0x210(%rbp)
+    0.00 :   5ddc:   call   cae0 <void std::vector<double, std::allocator<double> >::_M_realloc_append<double>(double&&)>
+    0.00 :   5de1:   mov    -0x220(%rbp),%rax
+    0.00 :   5de8:   mov    %rax,-0x3f0(%rbp)
+    0.00 :   5def:   mov    -0x218(%rbp),%rax
+    0.00 :   5df6:   mov    %rax,-0x378(%rbp)
+    0.00 :   5dfd:   mov    -0x210(%rbp),%rax
+    0.00 :   5e04:   mov    %rax,-0x3c0(%rbp)
+    0.00 :   5e0b:   jmp    521c <main+0xa5c>
+    0.00 :   5e10:   mov    0x51c(%r12),%edx
+    0.00 :   5e18:   cmp    $0xffffffff,%edx
+    0.00 :   5e1b:   je     5e25 <main+0x1665>
+    0.00 :   5e1d:   cmp    %edx,%esi
+    0.00 :   5e1f:   jge    58cd <main+0x110d>
+    0.00 :   5e25:   mov    %esi,0x51c(%r12)
+    0.00 :   5e2d:   jmp    58cd <main+0x110d>
+    0.00 :   5e32:   lea    -0x2c0(%rbp),%rbx
+    0.00 :   5e39:   lea    -0x2e0(%rbp),%rsi
+    0.00 :   5e40:   xor    %edx,%edx
+    0.00 :   5e42:   mov    %rbx,%rdi
+    0.00 :   5e45:   mov    %rbx,-0x3e0(%rbp)
+    0.00 :   5e4c:   call   d520 <generate_workload(WorkloadSpec const&, unsigned long*)>
+    0.00 :   5e51:   lea    -0x220(%rbp),%rdi
+    0.00 :   5e58:   mov    %rbx,%rsi
+    0.00 :   5e5b:   call   d040 <count_ops(std::vector<Op, std::allocator<Op> > const&)>
+    0.00 :   5e60:   mov    -0x2b8(%rbp),%rdi
+    0.00 :   5e67:   xor    %r14d,%r14d
+    0.00 :   5e6a:   xor    %ecx,%ecx
+    0.00 :   5e6c:   mov    $0x64,%esi
+    0.00 :   5e71:   sub    -0x2c0(%rbp),%rdi
+    0.00 :   5e78:   sar    $0x5,%rdi
+    0.00 :   5e7c:   jmp    5e94 <main+0x16d4>
+    0.00 :   5e7e:   xchg   %ax,%ax
+    0.00 :   5e80:   add    $0x1,%rcx
+    0.00 :   5e84:   xor    %edx,%edx
+    0.00 :   5e86:   mov    %rcx,%rax
+    0.00 :   5e89:   div    %rsi
+    0.00 :   5e8c:   cmp    $0x1,%rdx
+    0.00 :   5e90:   adc    $0x0,%r14
+    0.00 :   5e94:   cmp    %rcx,%rdi
+    0.00 :   5e97:   jne    5e80 <main+0x16c0>
+    0.00 :   5e99:   mov    $0x42,%edx
+    0.00 :   5e9e:   lea    0x1b1f4(%rip),%rsi        # 21099 <_IO_stdin_used+0x99>
+    0.00 :   5ea5:   mov    $0x2,%edi
+    0.00 :   5eaa:   xor    %eax,%eax
+    0.00 :   5eac:   call   2260 <__printf_chk@plt>
+    0.00 :   5eb1:   lea    0x1b1eb(%rip),%r8        # 210a3 <_IO_stdin_used+0xa3>
+    0.00 :   5eb8:   lea    0x1b1e7(%rip),%rcx        # 210a6 <_IO_stdin_used+0xa6>
+    0.00 :   5ebf:   xor    %eax,%eax
+    0.00 :   5ec1:   mov    $0x2,%edi
+    0.00 :   5ec6:   lea    0x1b1dd(%rip),%rdx        # 210aa <_IO_stdin_used+0xaa>
+    0.00 :   5ecd:   lea    0x1b5ac(%rip),%rsi        # 21480 <_IO_stdin_used+0x480>
+    0.00 :   5ed4:   call   2260 <__printf_chk@plt>
+    0.00 :   5ed9:   mov    -0x210(%rbp),%rbx
+    0.00 :   5ee0:   mov    -0x218(%rbp),%r12
+    0.00 :   5ee7:   xor    %eax,%eax
+    0.00 :   5ee9:   lea    0x1b5c0(%rip),%rsi        # 214b0 <_IO_stdin_used+0x4b0>
+    0.00 :   5ef0:   mov    -0x220(%rbp),%r13
+    0.00 :   5ef7:   mov    -0x2b8(%rbp),%rdx
+    0.00 :   5efe:   sub    -0x2c0(%rbp),%rdx
+    0.00 :   5f05:   push   %rdi
+    0.00 :   5f06:   mov    %rbx,%r9
+    0.00 :   5f09:   mov    %r12,%r8
+    0.00 :   5f0c:   push   $0xa
+    0.00 :   5f0e:   sar    $0x5,%rdx
+    0.00 :   5f12:   mov    %r13,%rcx
+    0.00 :   5f15:   mov    $0x2,%edi
+    0.00 :   5f1a:   push   $0xa
+    0.00 :   5f1c:   push   %r14
+    0.00 :   5f1e:   call   2260 <__printf_chk@plt>
+    0.00 :   5f23:   mov    -0x3e0(%rbp),%rdi
+    0.00 :   5f2a:   add    $0x20,%rsp
+    0.00 :   5f2e:   call   d110 <hash_workload(std::vector<Op, std::allocator<Op> > const&)>
+    0.00 :   5f33:   mov    -0x2d8(%rbp),%edx
+    0.00 :   5f39:   mov    %rax,%rcx
+    0.00 :   5f3c:   mov    $0x2,%edi
+    0.00 :   5f41:   xor    %eax,%eax
+    0.00 :   5f43:   lea    0x1b5c6(%rip),%rsi        # 21510 <_IO_stdin_used+0x510>
+    0.00 :   5f4a:   call   2260 <__printf_chk@plt>
+    0.00 :   5f4f:   movzbl -0x324(%rbp),%eax
+    0.00 :   5f56:   movq   $0x0,-0x390(%rbp)
+    0.00 :   5f61:   mov    %al,-0x3b8(%rbp)
+    0.00 :   5f67:   test   %al,%al
+    0.00 :   5f69:   je     73b3 <main+0x2bf3>
+    0.00 :   5f6f:   lea    -0x100(%rbp),%rax
+    0.00 :   5f76:   lea    -0xa0(%rbp),%rdx
+    0.00 :   5f7d:   pxor   %xmm0,%xmm0
+    0.00 :   5f81:   mov    %rax,-0x3d0(%rbp)
+    0.00 :   5f88:   mov    %rdx,-0x380(%rbp)
+    0.00 :   5f8f:   xor    %esi,%esi
+    0.00 :   5f91:   movups %xmm0,(%rax)
+    0.00 :   5f94:   add    $0x18,%rax
+    0.00 :   5f98:   mov    %rsi,-0x8(%rax)
+    0.00 :   5f9c:   cmp    %rax,%rdx
+    0.00 :   5f9f:   jne    5f8f <main+0x17cf>
+    0.00 :   5fa1:   lea    -0x40(%rbp),%rdx
+    0.00 :   5fa5:   xor    %eax,%eax
+    0.00 :   5fa7:   pxor   %xmm0,%xmm0
+    0.00 :   5fab:   mov    $0xc,%ecx
+    0.00 :   5fb0:   lea    -0x1e0(%rbp),%rdi
+    0.00 :   5fb7:   mov    %rdx,-0x408(%rbp)
+    0.00 :   5fbe:   mov    %rdi,-0x3f8(%rbp)
+    0.00 :   5fc5:   rep stos %eax,(%rdi)
+    0.00 :   5fc7:   mov    -0x380(%rbp),%rax
+    0.00 :   5fce:   xor    %ecx,%ecx
+    0.00 :   5fd0:   movups %xmm0,(%rax)
+    0.00 :   5fd3:   add    $0x18,%rax
+    0.00 :   5fd7:   mov    %rcx,-0x8(%rax)
+    0.00 :   5fdb:   cmp    %rax,%rdx
+    0.00 :   5fde:   jne    5fce <main+0x180e>
+    0.00 :   5fe0:   movzbl -0x323(%rbp),%eax
+    0.00 :   5fe7:   mov    %al,-0x3d8(%rbp)
+    0.00 :   5fed:   test   %al,%al
+    0.00 :   5fef:   jne    7378 <main+0x2bb8>
+    0.00 :   5ff5:   xor    %eax,%eax
+    0.00 :   5ff7:   movb   $0x1,-0x3b0(%rbp)
+    0.00 :   5ffe:   mov    %rax,-0x3a0(%rbp)
+    0.00 :   6005:   mov    %rax,-0x370(%rbp)
+    0.00 :   600c:   mov    %rax,-0x3c0(%rbp)
+    0.00 :   6013:   mov    %rax,-0x3a8(%rbp)
+    0.00 :   601a:   lea    -0x2a0(%rbp),%rax
+    0.00 :   6021:   movl   $0x1,-0x360(%rbp)
+    0.00 :   602b:   mov    %rax,-0x3c8(%rbp)
+    0.00 :   6032:   mov    $0x60,%edi
+    0.00 :   6037:   call   2360 <operator new(unsigned long)@plt>
+    0.00 :   603c:   xor    %r13d,%r13d
+    0.00 :   603f:   xor    %r14d,%r14d
+    0.00 :   6042:   mov    %rax,%rbx
+    0.00 :   6045:   xor    %r15d,%r15d
+    0.00 :   6048:   mov    %r13d,0x8(%rax)
+    0.00 :   604c:   lea    0x8(%rax),%rax
+    0.00 :   6050:   pxor   %xmm0,%xmm0
+    0.00 :   6054:   lea    0x30(%rbx),%r13
+    0.00 :   6058:   mov    %r14,0x8(%rax)
+    0.00 :   605c:   mov    $0x1388,%esi
+    0.00 :   6061:   mov    %r13,%rdi
+    0.00 :   6064:   lea    0x48(%rbx),%r12
+    0.00 :   6068:   mov    %rax,0x18(%rbx)
+    0.00 :   606c:   mov    %rax,0x20(%rbx)
+    0.00 :   6070:   mov    %r15,0x28(%rbx)
+    0.00 :   6074:   movups %xmm0,0x30(%rbx)
+    0.00 :   6078:   movups %xmm0,0x40(%rbx)
+    0.00 :   607c:   movups %xmm0,0x50(%rbx)
+    0.00 :   6080:   call   bc80 <std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> >::reserve(unsigned long)>
+    0.00 :   6085:   mov    $0x1388,%esi
+    0.00 :   608a:   mov    %r12,%rdi
+    0.00 :   608d:   call   bc80 <std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> >::reserve(unsigned long)>
+    0.00 :   6092:   call   23e0 <std::chrono::_V2::steady_clock::now()@plt>
+    0.00 :   6097:   xor    %r12d,%r12d
+    0.00 :   609a:   mov    -0x2c0(%rbp),%rsi
+    0.00 :   60a1:   movabs $0xcbf29ce484222325,%r13
+    0.00 :   60ab:   mov    %rax,-0x378(%rbp)
+    0.00 :   60b2:   mov    -0x2b8(%rbp),%rax
+    0.00 :   60b9:   movabs $0x100000001b3,%r15
+    0.00 :   60c3:   sub    %rsi,%rax
+    0.00 :   60c6:   sar    $0x5,%rax
+    0.00 :   60ca:   jmp    60e5 <main+0x1925>
+    0.00 :   60cc:   nopl   0x0(%rax)
+    0.00 :   60d0:   mov    -0x2c0(%rbp),%rsi
+    0.00 :   60d7:   mov    -0x2b8(%rbp),%rax
+    0.00 :   60de:   sub    %rsi,%rax
+    0.00 :   60e1:   sar    $0x5,%rax
+    0.00 :   60e5:   cmp    %rax,%r12
+    0.00 :   60e8:   jae    656e <main+0x1dae>
+    0.00 :   60ee:   mov    %r12,%rax
+    0.00 :   60f1:   shl    $0x5,%rax
+    0.00 :   60f5:   add    %rax,%rsi
+    0.00 :   60f8:   movzbl (%rsi),%eax
+    0.00 :   60fb:   cmp    $0x1,%al
+    0.00 :   60fd:   je     6550 <main+0x1d90>
+    0.00 :   6103:   cmp    $0x2,%al
+    0.00 :   6105:   je     64b0 <main+0x1cf0>
+    0.00 :   610b:   test   %al,%al
+    0.00 :   610d:   jne    6117 <main+0x1957>
+    0.00 :   610f:   mov    %rbx,%rdi
+    0.00 :   6112:   call   9c00 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]>
+    0.00 :   6117:   movabs $0x8f5c28f5c28f5c29,%rax
+    0.00 :   6121:   add    $0x1,%r12
+    0.00 :   6125:   movabs $0x28f5c28f5c28f5c,%rdx
+    0.00 :   612f:   imul   %r12,%rax
+    0.00 :   6133:   ror    $0x2,%rax
+    0.00 :   6137:   cmp    %rax,%rdx
+    0.00 :   613a:   jb     60d0 <main+0x1910>
+    0.00 :   613c:   mov    0x38(%rbx),%r9
+    0.00 :   6140:   sub    0x30(%rbx),%r9
+    0.00 :   6144:   movabs $0xaaaaaaaaaaaaaaab,%rax
+    0.00 :   614e:   pxor   %xmm0,%xmm0
+    0.00 :   6152:   sar    $0x3,%r9
+    0.00 :   6156:   lea    -0x260(%rbp),%rdi
+    0.00 :   615d:   movq   $0x0,-0x250(%rbp)
+    0.00 :   6168:   imul   %rax,%r9
+    0.00 :   616c:   mov    $0xa,%eax
+    0.00 :   6171:   mov    %rdi,-0x358(%rbp)
+    0.00 :   6178:   movaps %xmm0,-0x260(%rbp)
+    0.00 :   617f:   cmp    %rax,%r9
+    0.00 :   6182:   cmova  %rax,%r9
+    0.00 :   6186:   mov    %r9,%rsi
+    0.00 :   6189:   mov    %r9,-0x348(%rbp)
+    0.00 :   6190:   call   bdc0 <std::vector<Level, std::allocator<Level> >::reserve(unsigned long)>
+    0.00 :   6195:   mov    -0x258(%rbp),%rax
+    0.00 :   619c:   mov    -0x260(%rbp),%rdi
+    0.00 :   61a3:   mov    0x38(%rbx),%rdx
+    0.00 :   61a7:   mov    -0x250(%rbp),%rsi
+    0.00 :   61ae:   mov    %rax,%rcx
+    0.00 :   61b1:   mov    -0x348(%rbp),%r9
+    0.00 :   61b8:   sub    %rdi,%rcx
+    0.00 :   61bb:   lea    -0x18(%rdx),%r14
+    0.00 :   61bf:   sar    $0x4,%rcx
+    0.00 :   61c3:   jmp    621b <main+0x1a5b>
+    0.00 :   61c5:   nopl   0x0(%rax)
+    0.00 :   61c9:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   61d4:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   61df:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   61ea:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   61f5:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   6200:   mov    %rdx,0x8(%rax)
+    0.00 :   6204:   add    $0x10,%rax
+    0.00 :   6208:   movsd  %xmm0,-0x10(%rax)
+    0.00 :   620d:   mov    %rax,%rcx
+    0.00 :   6210:   sub    $0x18,%r14
+    0.00 :   6214:   sub    %rdi,%rcx
+    0.00 :   6217:   sar    $0x4,%rcx
+    0.00 :   621b:   cmp    %r9,%rcx
+    0.00 :   621e:   jae    62a0 <main+0x1ae0>
+    0.00 :   6224:   pxor   %xmm0,%xmm0
+    0.00 :   6228:   mov    0x8(%r14),%rdx
+    0.00 :   622c:   cvtsi2sdl (%r14),%xmm0
+    0.00 :   6231:   divsd  0x1b74f(%rip),%xmm0        # 21988 <_IO_stdin_used+0x988>
+    0.00 :   6239:   cmp    %rax,%rsi
+    0.00 :   623c:   jne    6200 <main+0x1a40>
+    0.00 :   623e:   mov    %rdi,-0x260(%rbp)
+    0.00 :   6245:   mov    -0x358(%rbp),%rdi
+    0.00 :   624c:   mov    %rsi,-0x258(%rbp)
+    0.00 :   6253:   mov    %rsi,-0x250(%rbp)
+    0.00 :   625a:   lea    -0x320(%rbp),%rsi
+    0.00 :   6261:   mov    %r9,-0x348(%rbp)
+    0.00 :   6268:   mov    %rdx,-0x318(%rbp)
+    0.00 :   626f:   movsd  %xmm0,-0x320(%rbp)
+    0.00 :   6277:   call   ca00 <void std::vector<Level, std::allocator<Level> >::_M_realloc_append<Level>(Level&&)>
+    0.00 :   627c:   mov    -0x348(%rbp),%r9
+    0.00 :   6283:   mov    -0x260(%rbp),%rdi
+    0.00 :   628a:   mov    -0x258(%rbp),%rax
+    0.00 :   6291:   mov    -0x250(%rbp),%rsi
+    0.00 :   6298:   jmp    620d <main+0x1a4d>
+    0.00 :   629d:   nopl   (%rax)
+    0.00 :   62a0:   xor    %r13,%rcx
+    0.00 :   62a3:   imul   %r15,%rcx
+    0.00 :   62a7:   cmp    %rdi,%rax
+    0.00 :   62aa:   je     62d8 <main+0x1b18>
+    0.00 :   62ac:   mov    %rdi,%rdx
+    0.00 :   62af:   nopw   0x0(%rax,%rax,1)
+    0.00 :   62b5:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   62c0:   xor    (%rdx),%rcx
+    0.00 :   62c3:   add    $0x10,%rdx
+    0.00 :   62c7:   imul   %r15,%rcx
+    0.00 :   62cb:   xor    -0x8(%rdx),%rcx
+    0.00 :   62cf:   imul   %r15,%rcx
+    0.00 :   62d3:   cmp    %rdx,%rax
+    0.00 :   62d6:   jne    62c0 <main+0x1b00>
+    0.00 :   62d8:   test   %rdi,%rdi
+    0.00 :   62db:   je     62f3 <main+0x1b33>
+    0.00 :   62dd:   sub    %rdi,%rsi
+    0.00 :   62e0:   mov    %rcx,-0x348(%rbp)
+    0.00 :   62e7:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   62ec:   mov    -0x348(%rbp),%rcx
+    0.00 :   62f3:   mov    0x50(%rbx),%r9
+    0.00 :   62f7:   sub    0x48(%rbx),%r9
+    0.00 :   62fb:   movabs $0xaaaaaaaaaaaaaaab,%rax
+    0.00 :   6305:   pxor   %xmm0,%xmm0
+    0.00 :   6309:   sar    $0x3,%r9
+    0.00 :   630d:   mov    %rcx,-0x348(%rbp)
+    0.00 :   6314:   imul   %rax,%r9
+    0.00 :   6318:   mov    $0xa,%eax
+    0.00 :   631d:   movq   $0x0,-0x270(%rbp)
+    0.00 :   6328:   movaps %xmm0,-0x280(%rbp)
+    0.00 :   632f:   cmp    %rax,%r9
+    0.00 :   6332:   cmovbe %r9,%rax
+    0.00 :   6336:   mov    %rax,%r13
+    0.00 :   6339:   lea    -0x280(%rbp),%rax
+    0.00 :   6340:   mov    %r13,%rsi
+    0.00 :   6343:   mov    %rax,%rdi
+    0.00 :   6346:   mov    %rax,-0x350(%rbp)
+    0.00 :   634d:   call   bdc0 <std::vector<Level, std::allocator<Level> >::reserve(unsigned long)>
+    0.00 :   6352:   mov    -0x278(%rbp),%rax
+    0.00 :   6359:   mov    -0x280(%rbp),%rdi
+    0.00 :   6360:   mov    0x50(%rbx),%rcx
+    0.00 :   6364:   mov    -0x270(%rbp),%rsi
+    0.00 :   636b:   mov    %rax,%rdx
+    0.00 :   636e:   sub    %rdi,%rdx
+    0.00 :   6371:   lea    -0x18(%rcx),%r14
+    0.00 :   6375:   mov    -0x348(%rbp),%rcx
+    0.00 :   637c:   sar    $0x4,%rdx
+    0.00 :   6380:   jmp    63db <main+0x1c1b>
+    0.00 :   6382:   nopl   0x0(%rax)
+    0.00 :   6389:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   6394:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   639f:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   63aa:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   63b5:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   63c0:   mov    %rdx,0x8(%rax)
+    0.00 :   63c4:   add    $0x10,%rax
+    0.00 :   63c8:   movsd  %xmm0,-0x10(%rax)
+    0.00 :   63cd:   mov    %rax,%rdx
+    0.00 :   63d0:   sub    $0x18,%r14
+    0.00 :   63d4:   sub    %rdi,%rdx
+    0.00 :   63d7:   sar    $0x4,%rdx
+    0.00 :   63db:   cmp    %r13,%rdx
+    0.00 :   63de:   jae    6460 <main+0x1ca0>
+    0.00 :   63e4:   pxor   %xmm0,%xmm0
+    0.00 :   63e8:   mov    0x8(%r14),%rdx
+    0.00 :   63ec:   cvtsi2sdl (%r14),%xmm0
+    0.00 :   63f1:   divsd  0x1b58f(%rip),%xmm0        # 21988 <_IO_stdin_used+0x988>
+    0.00 :   63f9:   cmp    %rsi,%rax
+    0.00 :   63fc:   jne    63c0 <main+0x1c00>
+    0.00 :   63fe:   mov    %rdi,-0x280(%rbp)
+    0.00 :   6405:   mov    -0x350(%rbp),%rdi
+    0.00 :   640c:   lea    -0x310(%rbp),%rsi
+    0.00 :   6413:   mov    %rcx,-0x348(%rbp)
+    0.00 :   641a:   mov    %rax,-0x278(%rbp)
+    0.00 :   6421:   mov    %rax,-0x270(%rbp)
+    0.00 :   6428:   mov    %rdx,-0x308(%rbp)
+    0.00 :   642f:   movsd  %xmm0,-0x310(%rbp)
+    0.00 :   6437:   call   ca00 <void std::vector<Level, std::allocator<Level> >::_M_realloc_append<Level>(Level&&)>
+    0.00 :   643c:   mov    -0x348(%rbp),%rcx
+    0.00 :   6443:   mov    -0x280(%rbp),%rdi
+    0.00 :   644a:   mov    -0x278(%rbp),%rax
+    0.00 :   6451:   mov    -0x270(%rbp),%rsi
+    0.00 :   6458:   jmp    63cd <main+0x1c0d>
+    0.00 :   645d:   nopl   (%rax)
+    0.00 :   6460:   xor    %rcx,%rdx
+    0.00 :   6463:   mov    %rdx,%r13
+    0.00 :   6466:   imul   %r15,%r13
+    0.00 :   646a:   cmp    %rdi,%rax
+    0.00 :   646d:   je     6498 <main+0x1cd8>
+    0.00 :   646f:   mov    %rdi,%rdx
+    0.00 :   6472:   nopl   (%rax)
+    0.00 :   6475:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   6480:   xor    (%rdx),%r13
+    0.00 :   6483:   add    $0x10,%rdx
+    0.00 :   6487:   imul   %r15,%r13
+    0.00 :   648b:   xor    -0x8(%rdx),%r13
+    0.00 :   648f:   imul   %r15,%r13
+    0.00 :   6493:   cmp    %rdx,%rax
+    0.00 :   6496:   jne    6480 <main+0x1cc0>
+    0.00 :   6498:   test   %rdi,%rdi
+    0.00 :   649b:   je     60d0 <main+0x1910>
+    0.00 :   64a1:   sub    %rdi,%rsi
+    0.00 :   64a4:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   64a9:   jmp    60d0 <main+0x1910>
+    0.00 :   64ae:   xchg   %ax,%ax
+    0.00 :   64b0:   mov    0x38(%rbx),%rax
+    0.00 :   64b4:   cmp    0x30(%rbx),%rax
+    0.00 :   64b8:   je     6866 <main+0x20a6>
+    0.00 :   64be:   movsd  0x1b4c2(%rip),%xmm0        # 21988 <_IO_stdin_used+0x988>
+    0.00 :   64c6:   pxor   %xmm1,%xmm1
+    0.00 :   64ca:   cvtsi2sdl -0x18(%rax),%xmm1
+    0.00 :   64cf:   mov    -0x10(%rax),%rdi
+    0.00 :   64d3:   mov    0x50(%rbx),%rdx
+    0.00 :   64d7:   divsd  %xmm0,%xmm1
+    0.00 :   64db:   movq   %xmm1,%r8
+    0.00 :   64e0:   cmp    %rdx,0x48(%rbx)
+    0.00 :   64e4:   je     6f9e <main+0x27de>
+    0.00 :   64ea:   mov    $0x1,%ecx
+    0.00 :   64ef:   pxor   %xmm1,%xmm1
+    0.00 :   64f3:   cvtsi2sdl -0x18(%rdx),%xmm1
+    0.00 :   64f8:   movzbl %cl,%eax
+    0.00 :   64fb:   divsd  %xmm0,%xmm1
+    0.00 :   64ff:   xor    %r13,%rax
+    0.00 :   6502:   imul   %r15,%rax
+    0.00 :   6506:   mov    %rax,%rsi
+    0.00 :   6509:   xor    %r8,%rax
+    0.00 :   650c:   imul   %r15,%rax
+    0.00 :   6510:   xor    $0x1,%rsi
+    0.00 :   6514:   imul   %r15,%rsi
+    0.00 :   6518:   xor    %rdi,%rax
+    0.00 :   651b:   imul   %r15,%rax
+    0.00 :   651f:   xor    $0x1,%rax
+    0.00 :   6523:   imul   %r15,%rax
+    0.00 :   6527:   test   %cl,%cl
+    0.00 :   6529:   cmove  %rsi,%rax
+    0.00 :   652d:   movq   %xmm1,%r9
+    0.00 :   6532:   xor    %r9,%rax
+    0.00 :   6535:   imul   %r15,%rax
+    0.00 :   6539:   xor    -0x10(%rdx),%rax
+    0.00 :   653d:   imul   %r15,%rax
+    0.00 :   6541:   mov    %rax,%r13
+    0.00 :   6544:   jmp    6117 <main+0x1957>
+    0.00 :   6549:   nopl   0x0(%rax)
+    0.00 :   6550:   mov    0x8(%rsi),%rsi
+    0.00 :   6554:   mov    %rbx,%rdi
+    0.00 :   6557:   call   b400 <BookB::cancel_order(unsigned long)>
+    0.00 :   655c:   movzbl %al,%eax
+    0.00 :   655f:   xor    %r13,%rax
+    0.00 :   6562:   imul   %r15,%rax
+    0.00 :   6566:   mov    %rax,%r13
+    0.00 :   6569:   jmp    6117 <main+0x1957>
+    0.00 :   656e:   call   23e0 <std::chrono::_V2::steady_clock::now()@plt>
+    0.00 :   6573:   sub    -0x378(%rbp),%rax
+    0.00 :   657a:   mov    $0xc,%ecx
+    0.00 :   657f:   lea    -0x1a0(%rbp),%rdi
+    0.00 :   6586:   mov    %rax,%r12
+    0.00 :   6589:   xor    %eax,%eax
+    0.00 :   658b:   rep stos %eax,(%rdi)
+    0.00 :   658d:   mov    0x38(%rbx),%rax
+    0.00 :   6591:   cmp    0x30(%rbx),%rax
+    0.00 :   6595:   je     65c6 <main+0x1e06>
+    0.00 :   6597:   movsd  0x1b3e9(%rip),%xmm0        # 21988 <_IO_stdin_used+0x988>
+    0.00 :   659f:   pxor   %xmm1,%xmm1
+    0.00 :   65a3:   cvtsi2sdl -0x18(%rax),%xmm1
+    0.00 :   65a8:   mov    -0x10(%rax),%rax
+    0.00 :   65ac:   movb   $0x1,-0x1a0(%rbp)
+    0.00 :   65b3:   divsd  %xmm0,%xmm1
+    0.00 :   65b7:   mov    %rax,-0x190(%rbp)
+    0.00 :   65be:   movsd  %xmm1,-0x198(%rbp)
+    0.00 :   65c6:   mov    0x50(%rbx),%rax
+    0.00 :   65ca:   mov    0x48(%rbx),%rdi
+    0.00 :   65ce:   cmp    %rdi,%rax
+    0.00 :   65d1:   je     6602 <main+0x1e42>
+    0.00 :   65d3:   movsd  0x1b3ad(%rip),%xmm0        # 21988 <_IO_stdin_used+0x988>
+    0.00 :   65db:   pxor   %xmm1,%xmm1
+    0.00 :   65df:   cvtsi2sdl -0x18(%rax),%xmm1
+    0.00 :   65e4:   mov    -0x10(%rax),%rax
+    0.00 :   65e8:   movb   $0x1,-0x188(%rbp)
+    0.00 :   65ef:   divsd  %xmm0,%xmm1
+    0.00 :   65f3:   mov    %rax,-0x178(%rbp)
+    0.00 :   65fa:   movsd  %xmm1,-0x180(%rbp)
+    0.00 :   6602:   test   %rdi,%rdi
+    0.00 :   6605:   je     6613 <main+0x1e53>
+    0.00 :   6607:   mov    0x58(%rbx),%rsi
+    0.00 :   660b:   sub    %rdi,%rsi
+    0.00 :   660e:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   6613:   mov    0x30(%rbx),%rdi
+    0.00 :   6617:   test   %rdi,%rdi
+    0.00 :   661a:   je     6628 <main+0x1e68>
+    0.00 :   661c:   mov    0x40(%rbx),%rsi
+    0.00 :   6620:   sub    %rdi,%rsi
+    0.00 :   6623:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   6628:   mov    0x10(%rbx),%r15
+    0.00 :   662c:   test   %r15,%r15
+    0.00 :   662f:   je     6650 <main+0x1e90>
+    0.00 :   6631:   mov    0x18(%r15),%rdi
+    0.00 :   6635:   call   8a70 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]>
+    0.00 :   663a:   mov    %r15,%rdi
+    0.00 :   663d:   mov    0x10(%r15),%r15
+    0.00 :   6641:   mov    $0x38,%esi
+    0.00 :   6646:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   664b:   test   %r15,%r15
+    0.00 :   664e:   jne    6631 <main+0x1e71>
+    0.00 :   6650:   mov    $0x60,%esi
+    0.00 :   6655:   mov    %rbx,%rdi
+    0.00 :   6658:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   665d:   pxor   %xmm0,%xmm0
+    0.00 :   6661:   mov    -0x370(%rbp),%rcx
+    0.00 :   6668:   cvtsi2sd %r12,%xmm0
+    0.00 :   666d:   divsd  0x1b31b(%rip),%xmm0        # 21990 <_IO_stdin_used+0x990>
+    0.00 :   6675:   movsd  %xmm0,-0x330(%rbp)
+    0.00 :   667d:   cmp    %rcx,-0x3a0(%rbp)
+    0.00 :   6684:   je     704e <main+0x288e>
+    0.00 :   668a:   mov    -0x370(%rbp),%rax
+    0.00 :   6691:   movsd  %xmm0,(%rax)
+    0.00 :   6695:   add    $0x8,%rax
+    0.00 :   6699:   mov    %rax,-0x370(%rbp)
+    0.00 :   66a0:   cmpl   $0x1,-0x360(%rbp)
+    0.00 :   66a7:   jne    66c5 <main+0x1f05>
+    0.00 :   66a9:   mov    -0x3f8(%rbp),%rdi
+    0.00 :   66b0:   mov    $0xc,%ecx
+    0.00 :   66b5:   lea    -0x1a0(%rbp),%rsi
+    0.00 :   66bc:   mov    %r13,-0x3a8(%rbp)
+    0.00 :   66c3:   rep movsl (%rsi),(%rdi)
+    0.00 :   66c5:   cmp    %r13,-0x3a8(%rbp)
+    0.00 :   66cc:   mov    -0x360(%rbp),%ebx
+    0.00 :   66d2:   mov    $0x2,%edi
+    0.00 :   66d7:   lea    0x1a9d3(%rip),%rsi        # 210b1 <_IO_stdin_used+0xb1>
+    0.00 :   66de:   sete   %al
+    0.00 :   66e1:   and    %al,-0x3b0(%rbp)
+    0.00 :   66e7:   mov    -0x370(%rbp),%rax
+    0.00 :   66ee:   mov    %ebx,%edx
+    0.00 :   66f0:   movsd  -0x8(%rax),%xmm0
+    0.00 :   66f5:   mov    $0x1,%eax
+    0.00 :   66fa:   call   2260 <__printf_chk@plt>
+    0.00 :   66ff:   cmpb   $0x0,-0x3b8(%rbp)
+    0.00 :   6706:   je     6888 <main+0x20c8>
+    0.00 :   670c:   lea    0x1ac35(%rip),%rsi        # 21348 <_IO_stdin_used+0x348>
+    0.00 :   6713:   mov    $0x2,%edi
+    0.00 :   6718:   xor    %eax,%eax
+    0.00 :   671a:   call   2260 <__printf_chk@plt>
+    0.00 :   671f:   addl   $0x1,-0x360(%rbp)
+    0.00 :   6726:   mov    -0x384(%rbp),%ecx
+    0.00 :   672c:   cmp    %ecx,-0x360(%rbp)
+    0.00 :   6732:   jle    6032 <main+0x1872>
+    0.00 :   6738:   mov    -0x3c0(%rbp),%rbx
+    0.00 :   673f:   mov    -0x370(%rbp),%r15
+    0.00 :   6746:   lea    -0x1b0(%rbp),%r13
+    0.00 :   674d:   mov    -0x3a0(%rbp),%rax
+    0.00 :   6754:   mov    -0x3c8(%rbp),%rsi
+    0.00 :   675b:   mov    %r13,%rdi
+    0.00 :   675e:   mov    %rbx,-0x2a0(%rbp)
+    0.00 :   6765:   mov    %r15,-0x298(%rbp)
+    0.00 :   676c:   mov    %rax,-0x290(%rbp)
+    0.00 :   6773:   call   c970 <std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)>
+    0.00 :   6778:   mov    %r13,%rdi
+    0.00 :   677b:   call   8630 <(anonymous namespace)::median(std::vector<double, std::allocator<double> >)>
+    0.00 :   6780:   mov    $0x2,%edi
+    0.00 :   6785:   mov    $0x1,%eax
+    0.00 :   678a:   mov    -0x384(%rbp),%r14d
+    0.00 :   6791:   lea    0x1adf8(%rip),%rsi        # 21590 <_IO_stdin_used+0x590>
+    0.00 :   6798:   mov    %r14d,%edx
+    0.00 :   679b:   call   2260 <__printf_chk@plt>
+    0.00 :   67a0:   mov    %r13,%rdi
+    0.00 :   67a3:   call   c7f0 <std::_Vector_base<double, std::allocator<double> >::~_Vector_base()>
+    0.00 :   67a8:   sub    $0x1,%r14d
+    0.00 :   67ac:   jne    711e <main+0x295e>
+    0.00 :   67b2:   cmpb   $0x0,-0x3b8(%rbp)
+    0.00 :   67b9:   je     72e4 <main+0x2b24>
+    0.00 :   67bf:   mov    -0x3f8(%rbp),%rdi
+    0.00 :   67c6:   call   7780 <(anonymous namespace)::print_bbo(BBO const&)>
+    0.00 :   67cb:   mov    -0x3a8(%rbp),%rdx
+    0.00 :   67d2:   lea    0x1a914(%rip),%rsi        # 210ed <_IO_stdin_used+0xed>
+    0.00 :   67d9:   mov    $0x2,%edi
+    0.00 :   67de:   xor    %eax,%eax
+    0.00 :   67e0:   call   2260 <__printf_chk@plt>
+    0.00 :   67e5:   xor    %ebx,%ebx
+    0.00 :   67e7:   cmpb   $0x0,-0x3b0(%rbp)
+    0.00 :   67ee:   je     743f <main+0x2c7f>
+    0.00 :   67f4:   mov    -0x408(%rbp),%r12
+    0.00 :   67fb:   mov    -0x380(%rbp),%r13
+    0.00 :   6802:   mov    -0x18(%r12),%rdi
+    0.00 :   6807:   sub    $0x18,%r12
+    0.00 :   680b:   test   %rdi,%rdi
+    0.00 :   680e:   je     681d <main+0x205d>
+    0.00 :   6810:   mov    0x10(%r12),%rsi
+    0.00 :   6815:   sub    %rdi,%rsi
+    0.00 :   6818:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   681d:   cmp    %r13,%r12
+    0.00 :   6820:   jne    6802 <main+0x2042>
+    0.00 :   6822:   mov    -0x3d0(%rbp),%r13
+    0.00 :   6829:   mov    -0x18(%r12),%rdi
+    0.00 :   682e:   sub    $0x18,%r12
+    0.00 :   6832:   test   %rdi,%rdi
+    0.00 :   6835:   je     6844 <main+0x2084>
+    0.00 :   6837:   mov    0x10(%r12),%rsi
+    0.00 :   683c:   sub    %rdi,%rsi
+    0.00 :   683f:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   6844:   cmp    %r13,%r12
+    0.00 :   6847:   jne    6829 <main+0x2069>
+    0.00 :   6849:   mov    -0x3c8(%rbp),%rdi
+    0.00 :   6850:   call   c7f0 <std::_Vector_base<double, std::allocator<double> >::~_Vector_base()>
+    0.00 :   6855:   mov    -0x3e0(%rbp),%rdi
+    0.00 :   685c:   call   c850 <std::_Vector_base<Op, std::allocator<Op> >::~_Vector_base()>
+    0.00 :   6861:   jmp    4976 <main+0x1b6>
+    0.00 :   6866:   mov    0x50(%rbx),%rdx
+    0.00 :   686a:   cmp    %rdx,0x48(%rbx)
+    0.00 :   686e:   je     703b <main+0x287b>
+    0.00 :   6874:   movsd  0x1b10c(%rip),%xmm0        # 21988 <_IO_stdin_used+0x988>
+    0.00 :   687c:   xor    %r8d,%r8d
+    0.00 :   687f:   xor    %edi,%edi
+    0.00 :   6881:   xor    %ecx,%ecx
+    0.00 :   6883:   jmp    64ef <main+0x1d2f>
+    0.00 :   6888:   cmp    -0x384(%rbp),%ebx
+    0.00 :   688e:   jne    689d <main+0x20dd>
+    0.00 :   6890:   cmpb   $0x0,-0x3d8(%rbp)
+    0.00 :   6897:   jne    73de <main+0x2c1e>
+    0.00 :   689d:   xor    %r12d,%r12d
+    0.00 :   68a0:   mov    %r12,-0x358(%rbp)
+    0.00 :   68a7:   mov    $0x60,%edi
+    0.00 :   68ac:   call   2360 <operator new(unsigned long)@plt>
+    0.00 :   68b1:   xor    %r10d,%r10d
+    0.00 :   68b4:   xor    %r11d,%r11d
+    0.00 :   68b7:   mov    %rax,%r14
+    0.00 :   68ba:   xor    %ebx,%ebx
+    0.00 :   68bc:   mov    %r10d,0x8(%rax)
+    0.00 :   68c0:   lea    0x8(%rax),%rax
+    0.00 :   68c4:   pxor   %xmm0,%xmm0
+    0.00 :   68c8:   lea    0x30(%r14),%r12
+    0.00 :   68cc:   mov    %r11,0x8(%rax)
+    0.00 :   68d0:   mov    $0x1388,%esi
+    0.00 :   68d5:   mov    %r12,%rdi
+    0.00 :   68d8:   mov    %rbx,0x28(%r14)
+    0.00 :   68dc:   lea    0x48(%r14),%rbx
+    0.00 :   68e0:   mov    %rax,0x18(%r14)
+    0.00 :   68e4:   mov    %rax,0x20(%r14)
+    0.00 :   68e8:   movups %xmm0,0x30(%r14)
+    0.00 :   68ed:   movups %xmm0,0x40(%r14)
+    0.00 :   68f2:   movups %xmm0,0x50(%r14)
+    0.00 :   68f7:   call   bc80 <std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> >::reserve(unsigned long)>
+    0.00 :   68fc:   mov    $0x1388,%esi
+    0.00 :   6901:   mov    %rbx,%rdi
+    0.00 :   6904:   call   bc80 <std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> >::reserve(unsigned long)>
+    0.00 :   6909:   lea    -0x150(%rbp),%rdi
+    0.00 :   6910:   xor    %eax,%eax
+    0.00 :   6912:   mov    $0x12,%ecx
+    0.00 :   6917:   xor    %r13d,%r13d
+    0.00 :   691a:   mov    %rdi,-0x398(%rbp)
+    0.00 :   6921:   mov    -0x2c0(%rbp),%rsi
+    0.00 :   6928:   movabs $0xcbf29ce484222325,%rbx
+    0.00 :   6932:   movabs $0x100000001b3,%r15
+    0.00 :   693c:   rep stos %eax,(%rdi)
+    0.00 :   693e:   mov    -0x2b8(%rbp),%rax
+    0.00 :   6945:   sub    %rsi,%rax
+    0.00 :   6948:   sar    $0x5,%rax
+    0.00 :   694c:   jmp    6965 <main+0x21a5>
+    0.00 :   694e:   xchg   %ax,%ax
+    0.00 :   6950:   mov    -0x2c0(%rbp),%rsi
+    0.00 :   6957:   mov    -0x2b8(%rbp),%rax
+    0.00 :   695e:   sub    %rsi,%rax
+    0.00 :   6961:   sar    $0x5,%rax
+    0.00 :   6965:   cmp    %rax,%r13
+    0.00 :   6968:   jae    6e91 <main+0x26d1>
+    0.00 :   696e:   mov    %r13,%rax
+    0.00 :   6971:   shl    $0x5,%rax
+    0.00 :   6975:   add    %rax,%rsi
+    0.00 :   6978:   mov    %rsi,-0x350(%rbp)
+    0.00 :   697f:   movzbl (%rsi),%r12d
+    0.00 :   6983:   call   23e0 <std::chrono::_V2::steady_clock::now()@plt>
+    0.00 :   6988:   mov    -0x350(%rbp),%rsi
+    0.00 :   698f:   mov    %rax,-0x348(%rbp)
+    0.00 :   6996:   movzbl (%rsi),%eax
+    0.00 :   6999:   cmp    $0x1,%al
+    0.00 :   699b:   je     6db5 <main+0x25f5>
+    0.00 :   69a1:   cmp    $0x2,%al
+    0.00 :   69a3:   je     6dd3 <main+0x2613>
+    0.00 :   69a9:   test   %al,%al
+    0.00 :   69ab:   jne    69b5 <main+0x21f5>
+    0.00 :   69ad:   mov    %r14,%rdi
+    0.00 :   69b0:   call   9c00 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]>
+    0.00 :   69b5:   call   23e0 <std::chrono::_V2::steady_clock::now()@plt>
+    0.00 :   69ba:   mov    -0x358(%rbp),%rcx
+    0.00 :   69c1:   movzbl %r12b,%edx
+    0.00 :   69c5:   sub    -0x348(%rbp),%rax
+    0.00 :   69cc:   addq   $0x1,-0x130(%rbp,%rdx,8)
+    0.00 :   69d5:   add    %rax,-0x150(%rbp,%rdx,8)
+    0.00 :   69dd:   mov    %rax,-0x338(%rbp)
+    0.00 :   69e4:   test   %rcx,%rcx
+    0.00 :   69e7:   je     6a09 <main+0x2249>
+    0.00 :   69e9:   imul   $0x18,%rdx,%rdi
+    0.00 :   69ed:   add    %rcx,%rdi
+    0.00 :   69f0:   mov    0x8(%rdi),%rdx
+    0.00 :   69f4:   cmp    0x10(%rdi),%rdx
+    0.00 :   69f8:   je     6ff2 <main+0x2832>
+    0.00 :   69fe:   mov    %rax,(%rdx)
+    0.00 :   6a01:   add    $0x8,%rdx
+    0.00 :   6a05:   mov    %rdx,0x8(%rdi)
+    0.00 :   6a09:   movabs $0x8f5c28f5c28f5c29,%rax
+    0.00 :   6a13:   add    $0x1,%r13
+    0.00 :   6a17:   movabs $0x28f5c28f5c28f5c,%rdx
+    0.00 :   6a21:   imul   %r13,%rax
+    0.00 :   6a25:   ror    $0x2,%rax
+    0.00 :   6a29:   cmp    %rax,%rdx
+    0.00 :   6a2c:   jb     6950 <main+0x2190>
+    0.00 :   6a32:   call   23e0 <std::chrono::_V2::steady_clock::now()@plt>
+    0.00 :   6a37:   mov    0x38(%r14),%r9
+    0.00 :   6a3b:   sub    0x30(%r14),%r9
+    0.00 :   6a3f:   pxor   %xmm0,%xmm0
+    0.00 :   6a43:   sar    $0x3,%r9
+    0.00 :   6a47:   mov    %rax,-0x378(%rbp)
+    0.00 :   6a4e:   movabs $0xaaaaaaaaaaaaaaab,%rax
+    0.00 :   6a58:   imul   %rax,%r9
+    0.00 :   6a5c:   mov    $0xa,%eax
+    0.00 :   6a61:   movaps %xmm0,-0x200(%rbp)
+    0.00 :   6a68:   cmp    %rax,%r9
+    0.00 :   6a6b:   cmovbe %r9,%rax
+    0.00 :   6a6f:   xor    %r9d,%r9d
+    0.00 :   6a72:   mov    %r9,-0x1f0(%rbp)
+    0.00 :   6a79:   mov    %rax,%r12
+    0.00 :   6a7c:   lea    -0x200(%rbp),%rax
+    0.00 :   6a83:   mov    %r12,%rsi
+    0.00 :   6a86:   mov    %rax,%rdi
+    0.00 :   6a89:   mov    %rax,-0x350(%rbp)
+    0.00 :   6a90:   call   bdc0 <std::vector<Level, std::allocator<Level> >::reserve(unsigned long)>
+    0.00 :   6a95:   mov    -0x1f8(%rbp),%rax
+    0.00 :   6a9c:   mov    -0x200(%rbp),%rdi
+    0.00 :   6aa3:   mov    0x38(%r14),%rcx
+    0.00 :   6aa7:   mov    -0x1f0(%rbp),%rsi
+    0.00 :   6aae:   mov    %rax,%rdx
+    0.00 :   6ab1:   movsd  0x1aecf(%rip),%xmm1        # 21988 <_IO_stdin_used+0x988>
+    0.00 :   6ab9:   sub    %rdi,%rdx
+    0.00 :   6abc:   lea    -0x18(%rcx),%r8
+    0.00 :   6ac0:   sar    $0x4,%rdx
+    0.00 :   6ac4:   jmp    6b1b <main+0x235b>
+    0.00 :   6ac6:   nopl   (%rax)
+    0.00 :   6ac9:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   6ad4:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   6adf:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   6aea:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   6af5:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   6b00:   mov    %rdx,0x8(%rax)
+    0.00 :   6b04:   add    $0x10,%rax
+    0.00 :   6b08:   movsd  %xmm0,-0x10(%rax)
+    0.00 :   6b0d:   mov    %rax,%rdx
+    0.00 :   6b10:   sub    $0x18,%r8
+    0.00 :   6b14:   sub    %rdi,%rdx
+    0.00 :   6b17:   sar    $0x4,%rdx
+    0.00 :   6b1b:   cmp    %r12,%rdx
+    0.00 :   6b1e:   jae    6b9d <main+0x23dd>
+    0.00 :   6b20:   pxor   %xmm0,%xmm0
+    0.00 :   6b24:   mov    0x8(%r8),%rdx
+    0.00 :   6b28:   cvtsi2sdl (%r8),%xmm0
+    0.00 :   6b2d:   divsd  %xmm1,%xmm0
+    0.00 :   6b31:   cmp    %rax,%rsi
+    0.00 :   6b34:   jne    6b00 <main+0x2340>
+    0.00 :   6b36:   mov    %rdi,-0x200(%rbp)
+    0.00 :   6b3d:   mov    -0x350(%rbp),%rdi
+    0.00 :   6b44:   mov    %rsi,-0x1f8(%rbp)
+    0.00 :   6b4b:   mov    %rsi,-0x1f0(%rbp)
+    0.00 :   6b52:   lea    -0x300(%rbp),%rsi
+    0.00 :   6b59:   mov    %r8,-0x348(%rbp)
+    0.00 :   6b60:   mov    %rdx,-0x2f8(%rbp)
+    0.00 :   6b67:   movsd  %xmm0,-0x300(%rbp)
+    0.00 :   6b6f:   call   ca00 <void std::vector<Level, std::allocator<Level> >::_M_realloc_append<Level>(Level&&)>
+    0.00 :   6b74:   mov    -0x348(%rbp),%r8
+    0.00 :   6b7b:   movsd  0x1ae05(%rip),%xmm1        # 21988 <_IO_stdin_used+0x988>
+    0.00 :   6b83:   mov    -0x200(%rbp),%rdi
+    0.00 :   6b8a:   mov    -0x1f8(%rbp),%rax
+    0.00 :   6b91:   mov    -0x1f0(%rbp),%rsi
+    0.00 :   6b98:   jmp    6b0d <main+0x234d>
+    0.00 :   6b9d:   xor    %rdx,%rbx
+    0.00 :   6ba0:   imul   %r15,%rbx
+    0.00 :   6ba4:   cmp    %rax,%rdi
+    0.00 :   6ba7:   je     6bd8 <main+0x2418>
+    0.00 :   6ba9:   mov    %rdi,%rdx
+    0.00 :   6bac:   nopw   0x0(%rax,%rax,1)
+    0.00 :   6bb5:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   6bc0:   xor    (%rdx),%rbx
+    0.00 :   6bc3:   add    $0x10,%rdx
+    0.00 :   6bc7:   imul   %r15,%rbx
+    0.00 :   6bcb:   xor    -0x8(%rdx),%rbx
+    0.00 :   6bcf:   imul   %r15,%rbx
+    0.00 :   6bd3:   cmp    %rdx,%rax
+    0.00 :   6bd6:   jne    6bc0 <main+0x2400>
+    0.00 :   6bd8:   test   %rdi,%rdi
+    0.00 :   6bdb:   je     6be5 <main+0x2425>
+    0.00 :   6bdd:   sub    %rdi,%rsi
+    0.00 :   6be0:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   6be5:   mov    0x50(%r14),%r9
+    0.00 :   6be9:   sub    0x48(%r14),%r9
+    0.00 :   6bed:   pxor   %xmm0,%xmm0
+    0.00 :   6bf1:   movabs $0xaaaaaaaaaaaaaaab,%rax
+    0.00 :   6bfb:   sar    $0x3,%r9
+    0.00 :   6bff:   movaps %xmm0,-0x240(%rbp)
+    0.00 :   6c06:   imul   %rax,%r9
+    0.00 :   6c0a:   mov    $0xa,%eax
+    0.00 :   6c0f:   cmp    %rax,%r9
+    0.00 :   6c12:   cmovbe %r9,%rax
+    0.00 :   6c16:   xor    %r8d,%r8d
+    0.00 :   6c19:   mov    %r8,-0x230(%rbp)
+    0.00 :   6c20:   mov    %rax,%r12
+    0.00 :   6c23:   lea    -0x240(%rbp),%rax
+    0.00 :   6c2a:   mov    %r12,%rsi
+    0.00 :   6c2d:   mov    %rax,%rdi
+    0.00 :   6c30:   mov    %rax,-0x350(%rbp)
+    0.00 :   6c37:   call   bdc0 <std::vector<Level, std::allocator<Level> >::reserve(unsigned long)>
+    0.00 :   6c3c:   mov    -0x238(%rbp),%rax
+    0.00 :   6c43:   mov    -0x240(%rbp),%rdi
+    0.00 :   6c4a:   mov    0x50(%r14),%rcx
+    0.00 :   6c4e:   mov    -0x230(%rbp),%rsi
+    0.00 :   6c55:   mov    %rax,%rdx
+    0.00 :   6c58:   sub    %rdi,%rdx
+    0.00 :   6c5b:   lea    -0x18(%rcx),%r8
+    0.00 :   6c5f:   sar    $0x4,%rdx
+    0.00 :   6c63:   jmp    6c9b <main+0x24db>
+    0.00 :   6c65:   nopl   0x0(%rax,%rax,1)
+    0.00 :   6c6a:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   6c75:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   6c80:   mov    %rdx,0x8(%rax)
+    0.00 :   6c84:   add    $0x10,%rax
+    0.00 :   6c88:   movsd  %xmm0,-0x10(%rax)
+    0.00 :   6c8d:   mov    %rax,%rdx
+    0.00 :   6c90:   sub    $0x18,%r8
+    0.00 :   6c94:   sub    %rdi,%rdx
+    0.00 :   6c97:   sar    $0x4,%rdx
+    0.00 :   6c9b:   cmp    %r12,%rdx
+    0.00 :   6c9e:   jae    6d19 <main+0x2559>
+    0.00 :   6ca0:   pxor   %xmm0,%xmm0
+    0.00 :   6ca4:   mov    0x8(%r8),%rdx
+    0.00 :   6ca8:   cvtsi2sdl (%r8),%xmm0
+    0.00 :   6cad:   divsd  0x1acd3(%rip),%xmm0        # 21988 <_IO_stdin_used+0x988>
+    0.00 :   6cb5:   cmp    %rsi,%rax
+    0.00 :   6cb8:   jne    6c80 <main+0x24c0>
+    0.00 :   6cba:   mov    %rdi,-0x240(%rbp)
+    0.00 :   6cc1:   mov    -0x350(%rbp),%rdi
+    0.00 :   6cc8:   lea    -0x2f0(%rbp),%rsi
+    0.00 :   6ccf:   mov    %r8,-0x348(%rbp)
+    0.00 :   6cd6:   mov    %rax,-0x238(%rbp)
+    0.00 :   6cdd:   mov    %rax,-0x230(%rbp)
+    0.00 :   6ce4:   mov    %rdx,-0x2e8(%rbp)
+    0.00 :   6ceb:   movsd  %xmm0,-0x2f0(%rbp)
+    0.00 :   6cf3:   call   ca00 <void std::vector<Level, std::allocator<Level> >::_M_realloc_append<Level>(Level&&)>
+    0.00 :   6cf8:   mov    -0x348(%rbp),%r8
+    0.00 :   6cff:   mov    -0x240(%rbp),%rdi
+    0.00 :   6d06:   mov    -0x238(%rbp),%rax
+    0.00 :   6d0d:   mov    -0x230(%rbp),%rsi
+    0.00 :   6d14:   jmp    6c8d <main+0x24cd>
+    0.00 :   6d19:   xor    %rdx,%rbx
+    0.00 :   6d1c:   imul   %r15,%rbx
+    0.00 :   6d20:   cmp    %rax,%rdi
+    0.00 :   6d23:   je     6d58 <main+0x2598>
+    0.00 :   6d25:   mov    %rdi,%rdx
+    0.00 :   6d28:   xchg   %ax,%ax
+    0.00 :   6d2a:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   6d35:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   6d40:   xor    (%rdx),%rbx
+    0.00 :   6d43:   add    $0x10,%rdx
+    0.00 :   6d47:   imul   %r15,%rbx
+    0.00 :   6d4b:   xor    -0x8(%rdx),%rbx
+    0.00 :   6d4f:   imul   %r15,%rbx
+    0.00 :   6d53:   cmp    %rdx,%rax
+    0.00 :   6d56:   jne    6d40 <main+0x2580>
+    0.00 :   6d58:   test   %rdi,%rdi
+    0.00 :   6d5b:   je     6d65 <main+0x25a5>
+    0.00 :   6d5d:   sub    %rdi,%rsi
+    0.00 :   6d60:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   6d65:   call   23e0 <std::chrono::_V2::steady_clock::now()@plt>
+    0.00 :   6d6a:   mov    -0x358(%rbp),%rcx
+    0.00 :   6d71:   sub    -0x378(%rbp),%rax
+    0.00 :   6d78:   addq   $0x1,-0x118(%rbp)
+    0.00 :   6d80:   add    %rax,-0x138(%rbp)
+    0.00 :   6d87:   mov    %rax,-0x330(%rbp)
+    0.00 :   6d8e:   test   %rcx,%rcx
+    0.00 :   6d91:   je     6950 <main+0x2190>
+    0.00 :   6d97:   mov    0x50(%rcx),%rdx
+    0.00 :   6d9b:   cmp    0x58(%rcx),%rdx
+    0.00 :   6d9f:   je     70b3 <main+0x28f3>
+    0.00 :   6da5:   mov    %rax,(%rdx)
+    0.00 :   6da8:   add    $0x8,%rdx
+    0.00 :   6dac:   mov    %rdx,0x50(%rcx)
+    0.00 :   6db0:   jmp    6950 <main+0x2190>
+    0.00 :   6db5:   mov    0x8(%rsi),%rsi
+    0.00 :   6db9:   mov    %r14,%rdi
+    0.00 :   6dbc:   call   b400 <BookB::cancel_order(unsigned long)>
+    0.00 :   6dc1:   movzbl %al,%eax
+    0.00 :   6dc4:   xor    %rbx,%rax
+    0.00 :   6dc7:   imul   %r15,%rax
+    0.00 :   6dcb:   mov    %rax,%rbx
+    0.00 :   6dce:   jmp    69b5 <main+0x21f5>
+    0.00 :   6dd3:   mov    0x38(%r14),%rax
+    0.00 :   6dd7:   cmp    0x30(%r14),%rax
+    0.00 :   6ddb:   je     7017 <main+0x2857>
+    0.00 :   6de1:   movsd  0x1ab9f(%rip),%xmm0        # 21988 <_IO_stdin_used+0x988>
+    0.00 :   6de9:   mov    -0x10(%rax),%rsi
+    0.00 :   6ded:   pxor   %xmm2,%xmm2
+    0.00 :   6df1:   cvtsi2sdl -0x18(%rax),%xmm2
+    0.00 :   6df6:   mov    0x50(%r14),%rax
+    0.00 :   6dfa:   divsd  %xmm0,%xmm2
+    0.00 :   6dfe:   cmp    %rax,0x48(%r14)
+    0.00 :   6e02:   je     6e5f <main+0x269f>
+    0.00 :   6e04:   mov    $0x1,%r8d
+    0.00 :   6e0a:   mov    -0x10(%rax),%rdx
+    0.00 :   6e0e:   pxor   %xmm1,%xmm1
+    0.00 :   6e12:   cvtsi2sdl -0x18(%rax),%xmm1
+    0.00 :   6e17:   movzbl %r8b,%eax
+    0.00 :   6e1b:   xor    %rbx,%rax
+    0.00 :   6e1e:   mov    $0x1,%edi
+    0.00 :   6e23:   imul   %r15,%rax
+    0.00 :   6e27:   divsd  %xmm0,%xmm1
+    0.00 :   6e2b:   test   %r8b,%r8b
+    0.00 :   6e2e:   jne    6e7c <main+0x26bc>
+    0.00 :   6e30:   movzbl %dil,%ebx
+    0.00 :   6e34:   xor    %rax,%rbx
+    0.00 :   6e37:   imul   %r15,%rbx
+    0.00 :   6e3b:   test   %dil,%dil
+    0.00 :   6e3e:   je     69b5 <main+0x21f5>
+    0.00 :   6e44:   movq   %xmm1,%rax
+    0.00 :   6e49:   xor    %rbx,%rax
+    0.00 :   6e4c:   imul   %r15,%rax
+    0.00 :   6e50:   xor    %rdx,%rax
+    0.00 :   6e53:   imul   %r15,%rax
+    0.00 :   6e57:   mov    %rax,%rbx
+    0.00 :   6e5a:   jmp    69b5 <main+0x21f5>
+    0.00 :   6e5f:   mov    %rbx,%rax
+    0.00 :   6e62:   xor    %edi,%edi
+    0.00 :   6e64:   pxor   %xmm1,%xmm1
+    0.00 :   6e68:   movabs $0x100000001b3,%rdx
+    0.00 :   6e72:   xor    $0x1,%rax
+    0.00 :   6e76:   imul   %rdx,%rax
+    0.00 :   6e7a:   xor    %edx,%edx
+    0.00 :   6e7c:   movq   %xmm2,%rcx
+    0.00 :   6e81:   xor    %rcx,%rax
+    0.00 :   6e84:   imul   %r15,%rax
+    0.00 :   6e88:   xor    %rsi,%rax
+    0.00 :   6e8b:   imul   %r15,%rax
+    0.00 :   6e8f:   jmp    6e30 <main+0x2670>
+    0.00 :   6e91:   mov    0x48(%r14),%rdi
+    0.00 :   6e95:   test   %rdi,%rdi
+    0.00 :   6e98:   je     6ea6 <main+0x26e6>
+    0.00 :   6e9a:   mov    0x58(%r14),%rsi
+    0.00 :   6e9e:   sub    %rdi,%rsi
+    0.00 :   6ea1:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   6ea6:   mov    0x30(%r14),%rdi
+    0.00 :   6eaa:   test   %rdi,%rdi
+    0.00 :   6ead:   je     6ebb <main+0x26fb>
+    0.00 :   6eaf:   mov    0x40(%r14),%rsi
+    0.00 :   6eb3:   sub    %rdi,%rsi
+    0.00 :   6eb6:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   6ebb:   mov    0x10(%r14),%rdi
+    0.00 :   6ebf:   call   8a70 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]>
+    0.00 :   6ec4:   mov    $0x60,%esi
+    0.00 :   6ec9:   mov    %r14,%rdi
+    0.00 :   6ecc:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   6ed1:   lea    0x1a1f0(%rip),%rsi        # 210c8 <_IO_stdin_used+0xc8>
+    0.00 :   6ed8:   mov    $0x2,%edi
+    0.00 :   6edd:   xor    %eax,%eax
+    0.00 :   6edf:   call   2260 <__printf_chk@plt>
+    0.00 :   6ee4:   mov    -0x3d0(%rbp),%r13
+    0.00 :   6eeb:   xor    %r14d,%r14d
+    0.00 :   6eee:   lea    0x1dd6b(%rip),%r12        # 24c60 <(anonymous namespace)::kCategoryNames>
+    0.00 :   6ef5:   mov    -0x130(%rbp,%r14,1),%rax
+    0.00 :   6efd:   pxor   %xmm0,%xmm0
+    0.00 :   6f01:   test   %rax,%rax
+    0.00 :   6f04:   je     6f2a <main+0x276a>
+    0.00 :   6f06:   mov    -0x398(%rbp),%rsi
+    0.00 :   6f0d:   pxor   %xmm0,%xmm0
+    0.00 :   6f11:   cvtsi2sdq (%rsi,%r14,1),%xmm0
+    0.00 :   6f17:   js     6fd4 <main+0x2814>
+    0.00 :   6f1d:   pxor   %xmm1,%xmm1
+    0.00 :   6f21:   cvtsi2sd %rax,%xmm1
+    0.00 :   6f26:   divsd  %xmm1,%xmm0
+    0.00 :   6f2a:   subsd  -0x390(%rbp),%xmm0
+    0.00 :   6f32:   mov    0x8(%r13),%rax
+    0.00 :   6f36:   movsd  %xmm0,-0x330(%rbp)
+    0.00 :   6f3e:   cmp    0x10(%r13),%rax
+    0.00 :   6f42:   je     7003 <main+0x2843>
+    0.00 :   6f48:   movsd  %xmm0,(%rax)
+    0.00 :   6f4c:   add    $0x8,%rax
+    0.00 :   6f50:   mov    %rax,0x8(%r13)
+    0.00 :   6f54:   mov    0x8(%r13),%rax
+    0.00 :   6f58:   mov    (%r12,%r14,1),%rdx
+    0.00 :   6f5c:   mov    $0x2,%edi
+    0.00 :   6f61:   lea    0x1a163(%rip),%rsi        # 210cb <_IO_stdin_used+0xcb>
+    0.00 :   6f68:   movsd  -0x8(%rax),%xmm0
+    0.00 :   6f6d:   mov    $0x1,%eax
+    0.00 :   6f72:   call   2260 <__printf_chk@plt>
+    0.00 :   6f77:   add    $0x8,%r14
+    0.00 :   6f7b:   add    $0x18,%r13
+    0.00 :   6f7f:   cmp    $0x20,%r14
+    0.00 :   6f83:   jne    6ef5 <main+0x2735>
+    0.00 :   6f89:   cmp    %rbx,-0x3a8(%rbp)
+    0.00 :   6f90:   sete   %al
+    0.00 :   6f93:   and    %al,-0x3b0(%rbp)
+    0.00 :   6f99:   jmp    670c <main+0x1f4c>
+    0.00 :   6f9e:   movabs $0x100000001b3,%rdx
+    0.00 :   6fa8:   mov    %r13,%rax
+    0.00 :   6fab:   xor    $0x1,%rax
+    0.00 :   6faf:   imul   %rdx,%rax
+    0.00 :   6fb3:   xor    %r8,%rax
+    0.00 :   6fb6:   imul   %rdx,%rax
+    0.00 :   6fba:   xor    %rdi,%rax
+    0.00 :   6fbd:   imul   %rdx,%rax
+    0.00 :   6fc1:   movabs $0x100000001b3,%r13
+    0.00 :   6fcb:   imul   %rax,%r13
+    0.00 :   6fcf:   jmp    6117 <main+0x1957>
+    0.00 :   6fd4:   mov    %rax,%rdx
+    0.00 :   6fd7:   and    $0x1,%eax
+    0.00 :   6fda:   pxor   %xmm1,%xmm1
+    0.00 :   6fde:   shr    $1,%rdx
+    0.00 :   6fe1:   or     %rax,%rdx
+    0.00 :   6fe4:   cvtsi2sd %rdx,%xmm1
+    0.00 :   6fe9:   addsd  %xmm1,%xmm1
+    0.00 :   6fed:   jmp    6f26 <main+0x2766>
+    0.00 :   6ff2:   lea    -0x338(%rbp),%rsi
+    0.00 :   6ff9:   call   cf50 <void std::vector<long, std::allocator<long> >::_M_realloc_append<long const&>(long const&)>
+    0.00 :   6ffe:   jmp    6a09 <main+0x2249>
+    0.00 :   7003:   lea    -0x330(%rbp),%rsi
+    0.00 :   700a:   mov    %r13,%rdi
+    0.00 :   700d:   call   cae0 <void std::vector<double, std::allocator<double> >::_M_realloc_append<double>(double&&)>
+    0.00 :   7012:   jmp    6f54 <main+0x2794>
+    0.00 :   7017:   mov    0x50(%r14),%rax
+    0.00 :   701b:   cmp    %rax,0x48(%r14)
+    0.00 :   701f:   je     7103 <main+0x2943>
+    0.00 :   7025:   movsd  0x1a95b(%rip),%xmm0        # 21988 <_IO_stdin_used+0x988>
+    0.00 :   702d:   xor    %esi,%esi
+    0.00 :   702f:   xor    %r8d,%r8d
+    0.00 :   7032:   pxor   %xmm2,%xmm2
+    0.00 :   7036:   jmp    6e0a <main+0x264a>
+    0.00 :   703b:   movabs $0x100000001b3,%rax
+    0.00 :   7045:   imul   %r13,%rax
+    0.00 :   7049:   jmp    6fc1 <main+0x2801>
+    0.00 :   704e:   mov    -0x3c0(%rbp),%rax
+    0.00 :   7055:   mov    -0x3c8(%rbp),%rdi
+    0.00 :   705c:   lea    -0x330(%rbp),%rsi
+    0.00 :   7063:   mov    %rax,-0x2a0(%rbp)
+    0.00 :   706a:   mov    -0x3a0(%rbp),%rax
+    0.00 :   7071:   mov    %rax,-0x298(%rbp)
+    0.00 :   7078:   mov    %rax,-0x290(%rbp)
+    0.00 :   707f:   call   cae0 <void std::vector<double, std::allocator<double> >::_M_realloc_append<double>(double&&)>
+    0.00 :   7084:   mov    -0x2a0(%rbp),%rax
+    0.00 :   708b:   mov    %rax,-0x3c0(%rbp)
+    0.00 :   7092:   mov    -0x298(%rbp),%rax
+    0.00 :   7099:   mov    %rax,-0x370(%rbp)
+    0.00 :   70a0:   mov    -0x290(%rbp),%rax
+    0.00 :   70a7:   mov    %rax,-0x3a0(%rbp)
+    0.00 :   70ae:   jmp    66a0 <main+0x1ee0>
+    0.00 :   70b3:   mov    -0x358(%rbp),%rax
+    0.00 :   70ba:   lea    -0x330(%rbp),%rsi
+    0.00 :   70c1:   lea    0x48(%rax),%rdi
+    0.00 :   70c5:   call   cf50 <void std::vector<long, std::allocator<long> >::_M_realloc_append<long const&>(long const&)>
+    0.00 :   70ca:   jmp    6950 <main+0x2190>
+    0.00 :   70cf:   lea    -0x200(%rbp),%rsi
+    0.00 :   70d6:   lea    0x48(%r14),%rdi
+    0.00 :   70da:   call   cf50 <void std::vector<long, std::allocator<long> >::_M_realloc_append<long const&>(long const&)>
+    0.00 :   70df:   jmp    5951 <main+0x1191>
+    0.00 :   70e4:   mov    -0x328(%rbp),%eax
+    0.00 :   70ea:   mov    %eax,-0x384(%rbp)
+    0.00 :   70f0:   lea    -0x170(%rbp),%rax
+    0.00 :   70f7:   mov    %rax,-0x368(%rbp)
+    0.00 :   70fe:   jmp    4a7c <main+0x2bc>
+    0.00 :   7103:   movabs $0x100000001b3,%rax
+    0.00 :   710d:   xor    %edi,%edi
+    0.00 :   710f:   pxor   %xmm1,%xmm1
+    0.00 :   7113:   xor    %edx,%edx
+    0.00 :   7115:   imul   %rbx,%rax
+    0.00 :   7119:   jmp    6e30 <main+0x2670>
+    0.00 :   711e:   mov    %rbx,%rdi
+    0.00 :   7121:   mov    %r15,%rsi
+    0.00 :   7124:   call   7d60 <std::pair<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > > std::__minmax_element<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__ops::_Iter_less_iter) [clone .isra.0]>
+    0.00 :   7129:   lea    0x1a488(%rip),%rsi        # 215b8 <_IO_stdin_used+0x5b8>
+    0.00 :   7130:   mov    $0x2,%edi
+    0.00 :   7135:   movsd  (%rdx),%xmm1
+    0.00 :   7139:   movsd  (%rax),%xmm0
+    0.00 :   713d:   mov    %rax,%rbx
+    0.00 :   7140:   mov    $0x3,%eax
+    0.00 :   7145:   mov    %rdx,%r14
+    0.00 :   7148:   movapd %xmm1,%xmm2
+    0.00 :   714c:   divsd  %xmm0,%xmm2
+    0.00 :   7150:   call   2260 <__printf_chk@plt>
+    0.00 :   7155:   movsd  (%r14),%xmm0
+    0.00 :   715a:   divsd  (%rbx),%xmm0
+    0.00 :   715e:   comisd 0x1a83a(%rip),%xmm0        # 219a0 <_IO_stdin_used+0x9a0>
+    0.00 :   7166:   jbe    67b2 <main+0x1ff2>
+    0.00 :   716c:   lea    0x1a47d(%rip),%rsi        # 215f0 <_IO_stdin_used+0x5f0>
+    0.00 :   7173:   mov    $0x2,%edi
+    0.00 :   7178:   xor    %eax,%eax
+    0.00 :   717a:   call   2260 <__printf_chk@plt>
+    0.00 :   717f:   jmp    67b2 <main+0x1ff2>
+    0.00 :   7184:   mov    %rbx,%rdi
+    0.00 :   7187:   mov    %r15,%rsi
+    0.00 :   718a:   call   7d60 <std::pair<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > > > std::__minmax_element<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__ops::_Iter_less_iter) [clone .isra.0]>
+    0.00 :   718f:   lea    0x1a422(%rip),%rsi        # 215b8 <_IO_stdin_used+0x5b8>
+    0.00 :   7196:   mov    $0x2,%edi
+    0.00 :   719b:   movsd  (%rdx),%xmm1
+    0.00 :   719f:   movsd  (%rax),%xmm0
+    0.00 :   71a3:   mov    %rax,%rbx
+    0.00 :   71a6:   mov    $0x3,%eax
+    0.00 :   71ab:   mov    %rdx,%r14
+    0.00 :   71ae:   movapd %xmm1,%xmm2
+    0.00 :   71b2:   divsd  %xmm0,%xmm2
+    0.00 :   71b6:   call   2260 <__printf_chk@plt>
+    0.00 :   71bb:   movsd  (%r14),%xmm0
+    0.00 :   71c0:   divsd  (%rbx),%xmm0
+    0.00 :   71c4:   comisd 0x1a7d4(%rip),%xmm0        # 219a0 <_IO_stdin_used+0x9a0>
+    0.00 :   71cc:   jbe    532e <main+0xb6e>
+    0.00 :   71d2:   lea    0x1a417(%rip),%rsi        # 215f0 <_IO_stdin_used+0x5f0>
+    0.00 :   71d9:   mov    $0x2,%edi
+    0.00 :   71de:   xor    %eax,%eax
+    0.00 :   71e0:   call   2260 <__printf_chk@plt>
+    0.00 :   71e5:   jmp    532e <main+0xb6e>
+    0.00 :   71ea:   lea    0x19ee7(%rip),%rsi        # 210d8 <_IO_stdin_used+0xd8>
+    0.00 :   71f1:   mov    $0x2,%edi
+    0.00 :   71f6:   xor    %eax,%eax
+    0.00 :   71f8:   call   2260 <__printf_chk@plt>
+    0.00 :   71fd:   xor    %ebx,%ebx
+    0.00 :   71ff:   lea    0x1da5a(%rip),%r14        # 24c60 <(anonymous namespace)::kCategoryNames>
+    0.00 :   7206:   imul   $0x18,%rbx,%rsi
+    0.00 :   720a:   mov    %r13,%rdi
+    0.00 :   720d:   add    -0x3d0(%rbp),%rsi
+    0.00 :   7214:   call   c970 <std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)>
+    0.00 :   7219:   mov    %r13,%rdi
+    0.00 :   721c:   call   8630 <(anonymous namespace)::median(std::vector<double, std::allocator<double> >)>
+    0.00 :   7221:   mov    (%r14,%rbx,8),%rdx
+    0.00 :   7225:   mov    $0x2,%edi
+    0.00 :   722a:   lea    0x19eae(%rip),%rsi        # 210df <_IO_stdin_used+0xdf>
+    0.00 :   7231:   mov    $0x1,%eax
+    0.00 :   7236:   call   2260 <__printf_chk@plt>
+    0.00 :   723b:   mov    %r13,%rdi
+    0.00 :   723e:   add    $0x1,%rbx
+    0.00 :   7242:   call   c7f0 <std::_Vector_base<double, std::allocator<double> >::~_Vector_base()>
+    0.00 :   7247:   cmp    $0x4,%rbx
+    0.00 :   724b:   jne    7206 <main+0x2a46>
+    0.00 :   724d:   lea    0x1a0f4(%rip),%rsi        # 21348 <_IO_stdin_used+0x348>
+    0.00 :   7254:   mov    $0x2,%edi
+    0.00 :   7259:   xor    %eax,%eax
+    0.00 :   725b:   call   2260 <__printf_chk@plt>
+    0.00 :   7260:   cmpb   $0x0,-0x3e5(%rbp)
+    0.00 :   7267:   je     533b <main+0xb7b>
+    0.00 :   726d:   mov    -0x380(%rbp),%rdi
+    0.00 :   7274:   call   82e0 <(anonymous namespace)::print_latency_percentiles(std::vector<long, std::allocator<long> >*)>
+    0.00 :   7279:   jmp    533b <main+0xb7b>
+    0.00 :   727e:   mov    -0x380(%rbp),%rdi
+    0.00 :   7285:   mov    %r13,%rsi
+    0.00 :   7288:   call   c8b0 <std::vector<long, std::allocator<long> >::reserve(unsigned long)>
+    0.00 :   728d:   lea    -0x88(%rbp),%rdi
+    0.00 :   7294:   mov    %r12,%rsi
+    0.00 :   7297:   call   c8b0 <std::vector<long, std::allocator<long> >::reserve(unsigned long)>
+    0.00 :   729c:   lea    -0x70(%rbp),%rdi
+    0.00 :   72a0:   mov    %rbx,%rsi
+    0.00 :   72a3:   call   c8b0 <std::vector<long, std::allocator<long> >::reserve(unsigned long)>
+    0.00 :   72a8:   lea    -0x58(%rbp),%rdi
+    0.00 :   72ac:   mov    %r14,%rsi
+    0.00 :   72af:   call   c8b0 <std::vector<long, std::allocator<long> >::reserve(unsigned long)>
+    0.00 :   72b4:   jmp    4e35 <main+0x675>
+    0.00 :   72b9:   call   94e0 <(anonymous namespace)::calibrate_clock()>
+    0.00 :   72be:   mov    %rax,%rdx
+    0.00 :   72c1:   lea    0x1a268(%rip),%rsi        # 21530 <_IO_stdin_used+0x530>
+    0.00 :   72c8:   mov    $0x2,%edi
+    0.00 :   72cd:   mov    $0x1,%eax
+    0.00 :   72d2:   movsd  %xmm0,-0x3b0(%rbp)
+    0.00 :   72da:   call   2260 <__printf_chk@plt>
+    0.00 :   72df:   jmp    4daf <main+0x5ef>
+    0.00 :   72e4:   lea    0x19ded(%rip),%rsi        # 210d8 <_IO_stdin_used+0xd8>
+    0.00 :   72eb:   mov    $0x2,%edi
+    0.00 :   72f0:   xor    %eax,%eax
+    0.00 :   72f2:   call   2260 <__printf_chk@plt>
+    0.00 :   72f7:   xor    %ebx,%ebx
+    0.00 :   72f9:   lea    0x1d960(%rip),%r14        # 24c60 <(anonymous namespace)::kCategoryNames>
+    0.00 :   7300:   imul   $0x18,%rbx,%rsi
+    0.00 :   7304:   mov    %r13,%rdi
+    0.00 :   7307:   add    -0x3d0(%rbp),%rsi
+    0.00 :   730e:   call   c970 <std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)>
+    0.00 :   7313:   mov    %r13,%rdi
+    0.00 :   7316:   call   8630 <(anonymous namespace)::median(std::vector<double, std::allocator<double> >)>
+    0.00 :   731b:   mov    (%r14,%rbx,8),%rdx
+    0.00 :   731f:   mov    $0x2,%edi
+    0.00 :   7324:   lea    0x19db4(%rip),%rsi        # 210df <_IO_stdin_used+0xdf>
+    0.00 :   732b:   mov    $0x1,%eax
+    0.00 :   7330:   call   2260 <__printf_chk@plt>
+    0.00 :   7335:   mov    %r13,%rdi
+    0.00 :   7338:   add    $0x1,%rbx
+    0.00 :   733c:   call   c7f0 <std::_Vector_base<double, std::allocator<double> >::~_Vector_base()>
+    0.00 :   7341:   cmp    $0x4,%rbx
+    0.00 :   7345:   jne    7300 <main+0x2b40>
+    0.00 :   7347:   lea    0x19ffa(%rip),%rsi        # 21348 <_IO_stdin_used+0x348>
+    0.00 :   734e:   mov    $0x2,%edi
+    0.00 :   7353:   xor    %eax,%eax
+    0.00 :   7355:   call   2260 <__printf_chk@plt>
+    0.00 :   735a:   cmpb   $0x0,-0x3d8(%rbp)
+    0.00 :   7361:   je     67bf <main+0x1fff>
+    0.00 :   7367:   mov    -0x380(%rbp),%rdi
+    0.00 :   736e:   call   82e0 <(anonymous namespace)::print_latency_percentiles(std::vector<long, std::allocator<long> >*)>
+    0.00 :   7373:   jmp    67bf <main+0x1fff>
+    0.00 :   7378:   mov    -0x380(%rbp),%rdi
+    0.00 :   737f:   mov    %r13,%rsi
+    0.00 :   7382:   call   c8b0 <std::vector<long, std::allocator<long> >::reserve(unsigned long)>
+    0.00 :   7387:   lea    -0x88(%rbp),%rdi
+    0.00 :   738e:   mov    %r12,%rsi
+    0.00 :   7391:   call   c8b0 <std::vector<long, std::allocator<long> >::reserve(unsigned long)>
+    0.00 :   7396:   lea    -0x70(%rbp),%rdi
+    0.00 :   739a:   mov    %rbx,%rsi
+    0.00 :   739d:   call   c8b0 <std::vector<long, std::allocator<long> >::reserve(unsigned long)>
+    0.00 :   73a2:   lea    -0x58(%rbp),%rdi
+    0.00 :   73a6:   mov    %r14,%rsi
+    0.00 :   73a9:   call   c8b0 <std::vector<long, std::allocator<long> >::reserve(unsigned long)>
+    0.00 :   73ae:   jmp    5ff5 <main+0x1835>
+    0.00 :   73b3:   call   94e0 <(anonymous namespace)::calibrate_clock()>
+    0.00 :   73b8:   mov    %rax,%rdx
+    0.00 :   73bb:   lea    0x1a16e(%rip),%rsi        # 21530 <_IO_stdin_used+0x530>
+    0.00 :   73c2:   mov    $0x2,%edi
+    0.00 :   73c7:   mov    $0x1,%eax
+    0.00 :   73cc:   movsd  %xmm0,-0x390(%rbp)
+    0.00 :   73d4:   call   2260 <__printf_chk@plt>
+    0.00 :   73d9:   jmp    5f6f <main+0x17af>
+    0.00 :   73de:   mov    -0x380(%rbp),%rax
+    0.00 :   73e5:   mov    (%rax),%rdx
+    0.00 :   73e8:   cmp    0x8(%rax),%rdx
+    0.00 :   73ec:   je     73f2 <main+0x2c32>
+    0.00 :   73ee:   mov    %rdx,0x8(%rax)
+    0.00 :   73f2:   add    $0x18,%rax
+    0.00 :   73f6:   cmp    %rax,-0x408(%rbp)
+    0.00 :   73fd:   jne    73e5 <main+0x2c25>
+    0.00 :   73ff:   mov    -0x380(%rbp),%rax
+    0.00 :   7406:   mov    %rax,-0x358(%rbp)
+    0.00 :   740d:   jmp    68a7 <main+0x20e7>
+    0.00 :   7412:   mov    -0x380(%rbp),%rax
+    0.00 :   7419:   mov    (%rax),%rdx
+    0.00 :   741c:   cmp    0x8(%rax),%rdx
+    0.00 :   7420:   je     7426 <main+0x2c66>
+    0.00 :   7422:   mov    %rdx,0x8(%rax)
+    0.00 :   7426:   add    $0x18,%rax
+    0.00 :   742a:   cmp    -0x408(%rbp),%rax
+    0.00 :   7431:   jne    7419 <main+0x2c59>
+    0.00 :   7433:   mov    -0x380(%rbp),%r14
+    0.00 :   743a:   jmp    564f <main+0xe8f>
+    0.00 :   743f:   lea    0x1a22a(%rip),%rsi        # 21670 <_IO_stdin_used+0x670>
+    0.00 :   7446:   mov    $0x2,%edi
+    0.00 :   744b:   xor    %eax,%eax
+    0.00 :   744d:   call   2260 <__printf_chk@plt>
+    0.00 :   7452:   mov    $0x1,%ebx
+    0.00 :   7457:   jmp    67f4 <main+0x2034>
+    0.00 :   745c:   lea    0x1a20d(%rip),%rsi        # 21670 <_IO_stdin_used+0x670>
+    0.00 :   7463:   mov    $0x2,%edi
+    0.00 :   7468:   xor    %eax,%eax
+    0.00 :   746a:   call   2260 <__printf_chk@plt>
+    0.00 :   746f:   mov    $0x1,%ebx
+    0.00 :   7474:   jmp    5370 <main+0xbb0>
+    0.00 :   7479:   call   2390 <__stack_chk_fail@plt>
+    0.00 :   747e:   endbr64
+    0.00 :   7482:   mov    %rax,%rbx
+    0.00 :   7485:   jmp    28bd <main.cold+0xb3>
+    0.00 :   748a:   endbr64
+    0.00 :   748e:   mov    %rax,%rbx
+    0.00 :   7491:   jmp    292c <main.cold+0x122>
+    0.00 :   7496:   endbr64
+    0.00 :   749a:   mov    %rax,%rbx
+    0.00 :   749d:   jmp    280a <main.cold>
+    0.00 :   74a2:   endbr64
+    0.00 :   74a6:   jmp    2969 <main.cold+0x15f>
+    0.00 :   74ab:   endbr64
+    0.00 :   74af:   mov    %rax,%rbx
+    0.00 :   74b2:   jmp    28ec <main.cold+0xe2>
+    0.00 :   74b7:   endbr64
+    0.00 :   74bb:   mov    %rax,%rbx
+    0.00 :   74be:   jmp    293a <main.cold+0x130>
+    0.00 :   74c3:   endbr64
+    0.00 :   74c7:   mov    %rax,%rbx
+    0.00 :   74ca:   jmp    280a <main.cold>
+    0.00 :   74cf:   endbr64
+    0.00 :   74d3:   mov    %rax,%rbx
+    0.00 :   74d6:   jmp    2840 <main.cold+0x36>
+    0.00 :   74db:   endbr64
+    0.00 :   74df:   mov    %rax,%rbx
+    0.00 :   74e2:   jmp    28ec <main.cold+0xe2>
+    0.00 :   74e7:   endbr64
+    0.00 :   74eb:   mov    %rax,%r14
+    0.00 :   74ee:   jmp    2997 <main.cold+0x18d>
+    0.00 :   74f3:   endbr64
+    0.00 :   74f7:   mov    %rax,%rbx
+    0.00 :   74fa:   jmp    2848 <main.cold+0x3e>
+    0.00 :   74ff:   endbr64
+    0.00 :   7503:   mov    %rax,%rbx
+    0.00 :   7506:   jmp    29c5 <main.cold+0x1bb>
+    0.00 :   750b:   endbr64
+    0.00 :   750f:   mov    %rax,%r12
+    0.00 :   7512:   jmp    29d2 <main.cold+0x1c8>
+    0.00 :   7517:   endbr64
+    0.00 :   751b:   mov    %rax,%rbx
+    0.00 :   751e:   jmp    29eb <main.cold+0x1e1>
+    0.00 :   7523:   endbr64
+    0.00 :   7527:   mov    %rax,%r12
+    0.00 :   752a:   jmp    2a6b <main.cold+0x261>
+    0.00 :   752f:   endbr64
+    0.00 :   7533:   mov    %rax,%rbx
+    0.00 :   7536:   jmp    29c5 <main.cold+0x1bb>
+    0.00 :   753b:   endbr64
+    0.00 :   753f:   mov    %rax,%r12
+    0.00 :   7542:   jmp    2a7f <main.cold+0x275>
+    0.00 :   7547:   endbr64
+    0.00 :   754b:   mov    %rax,%r12
+    0.00 :   754e:   jmp    2a94 <main.cold+0x28a>
+    0.00 :   7553:   endbr64
+    0.00 :   7557:   mov    %rax,%rbx
+    0.00 :   755a:   jmp    2b12 <main.cold+0x308>
+    0.00 :   755f:   endbr64
+    0.00 :   7563:   mov    %rax,%r12
+    0.00 :   7566:   jmp    2a94 <main.cold+0x28a>
+    0.00 :   756b:   endbr64
+    0.00 :   756f:   mov    %rax,%rbx
+    0.00 :   7572:   jmp    2b12 <main.cold+0x308>
+    0.00 :   7577:   endbr64
+    0.00 :   757b:   mov    %rax,%rbx
+    0.00 :   757e:   jmp    2b12 <main.cold+0x308>
+    0.00 :   7583:   endbr64
+    0.00 :   7587:   mov    %rax,%rbx
+    0.00 :   758a:   jmp    2b12 <main.cold+0x308>
+    0.00 :   758f:   endbr64
+    0.00 :   7593:   mov    %rax,%r12
+    0.00 :   7596:   jmp    2ada <main.cold+0x2d0>
+    0.00 :   759b:   endbr64
+    0.00 :   759f:   mov    %rax,%r12
+    0.00 :   75a2:   jmp    2ada <main.cold+0x2d0>
+    0.00 :   75a7:   endbr64
+    0.00 :   75ab:   mov    %rax,%rbx
+    0.00 :   75ae:   jmp    2b3c <main.cold+0x332>
+    0.00 :   75b3:   endbr64
+    0.00 :   75b7:   mov    %rax,%rbx
+    0.00 :   75ba:   jmp    2b3c <main.cold+0x332>
+    0.00 :   75bf:   endbr64
+    0.00 :   75c3:   mov    %rax,%rbx
+    0.00 :   75c6:   jmp    2b3c <main.cold+0x332>
+    0.00 :   75cb:   endbr64
+    0.00 :   75cf:   mov    %rax,%rbx
+    0.00 :   75d2:   jmp    2b3c <main.cold+0x332>
+    0.00 :   75d7:   endbr64
+    0.00 :   75db:   mov    %rax,%rbx
+    0.00 :   75de:   jmp    29f3 <main.cold+0x1e9>
+    0.00 :   75e3:   endbr64
+    0.00 :   75e7:   mov    %rax,%rbx
+    0.00 :   75ea:   jmp    2a5a <main.cold+0x250>
+    0.00 :   75ef:   endbr64
+    0.00 :   75f3:   mov    %rax,%r12
+    0.00 :   75f6:   jmp    29de <main.cold+0x1d4>
+    0.00 :   75fb:   endbr64
+    0.00 :   75ff:   mov    %rax,%rbx
+    0.00 :   7602:   jmp    28c9 <main.cold+0xbf>
+    0.00 :   7607:   endbr64
+    0.00 :   760b:   mov    %rax,%rbx
+    0.00 :   760e:   jmp    2b72 <main.cold+0x368>
+    0.00 :   7613:   endbr64
+    0.00 :   7617:   mov    %rax,%rbx
+    0.00 :   761a:   jmp    2b94 <main.cold+0x38a>
+    0.00 :   761f:   endbr64
+    0.00 :   7623:   mov    %rax,%r12
+    0.00 :   7626:   jmp    2aca <main.cold+0x2c0>
+    0.00 :   762b:   endbr64
+    0.00 :   762f:   mov    %rax,%rbx
+    0.00 :   7632:   jmp    28af <main.cold+0xa5>
+    0.00 :   7637:   endbr64
+    0.00 :   763b:   mov    %rax,%rbx
+    0.00 :   763e:   jmp    2b7f <main.cold+0x375>
+    0.00 :   7643:   endbr64
+    0.00 :   7647:   mov    %rax,%rbx
+    0.00 :   764a:   jmp    29eb <main.cold+0x1e1>
+    0.00 :   764f:   endbr64
+    0.00 :   7653:   mov    %rax,%rbx
+    0.00 :   7656:   jmp    2b66 <main.cold+0x35c>
+    0.00 :   765b:   endbr64
+    0.00 :   765f:   mov    %rax,%rbx
+    0.00 :   7662:   jmp    2ba6 <main.cold+0x39c>
+ Percent |	Source code & Disassembly of bench_perf for task-clock:uppp (72 samples, percent: local period)
+---------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3    Disassembly of section .text:
+         :
+         : 5    000000000000d520 <generate_workload(WorkloadSpec const&, unsigned long*)>:
+    0.00 :   d520:   endbr64
+    0.00 :   d524:   push   %rbp
+    0.00 :   d525:   mov    %rsp,%rbp
+    0.00 :   d528:   push   %r15
+    0.00 :   d52a:   push   %r14
+    0.00 :   d52c:   push   %r13
+    0.00 :   d52e:   push   %r12
+    0.00 :   d530:   push   %rbx
+    0.00 :   d531:   sub    $0x1000,%rsp
+    0.00 :   d538:   orq    $0x0,(%rsp)
+    0.00 :   d53d:   sub    $0x418,%rsp
+    0.00 :   d544:   mov    $0x1,%ecx
+    0.00 :   d549:   mov    0x8(%rsi),%eax
+    0.00 :   d54c:   mov    %rsi,-0x1410(%rbp)
+    0.00 :   d553:   mov    %rdi,%rbx
+    0.00 :   d556:   mov    0xc(%rsi),%edi
+    0.00 :   d559:   mov    %rdx,-0x1418(%rbp)
+    0.00 :   d560:   mov    %rax,%rdx
+    0.00 :   d563:   mov    %fs:0x28,%r15
+    0.00 :   d56c:   mov    %r15,-0x38(%rbp)
+    0.00 :   d570:   mov    (%rsi),%r15
+    0.00 :   d573:   mov    %edi,-0x13ec(%rbp)
+    0.00 :   d579:   mov    0x10(%rsi),%edi
+    0.00 :   d57c:   lea    -0x13b8(%rbp),%rsi
+    0.00 :   d583:   mov    %rax,-0x13c0(%rbp)
+    0.00 :   d58a:   mov    %edi,-0x13f0(%rbp)
+    0.00 :   d590:   nopl   0x0(%rax)
+    0.00 :   d594:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   d59f:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   d5aa:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   d5b5:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   d5c0:   mov    %rdx,%rax
+    0.00 :   d5c3:   add    $0x8,%rsi
+    0.00 :   d5c7:   shr    $0x1e,%rax
+    0.00 :   d5cb:   xor    %rdx,%rax
+    0.00 :   d5ce:   imul   $0x6c078965,%rax,%rax
+    0.00 :   d5d5:   lea    (%rax,%rcx,1),%edx
+    0.00 :   d5d8:   add    $0x1,%rcx
+    0.00 :   d5dc:   mov    %rdx,-0x8(%rsi)
+    0.00 :   d5e0:   cmp    $0x270,%rcx
+    0.00 :   d5e7:   jne    d5c0 <generate_workload(WorkloadSpec const&, unsigned long*)+0xa0>
+    0.00 :   d5e9:   mov    %r15,%rax
+    0.00 :   d5ec:   movq   $0x270,-0x40(%rbp)
+    0.00 :   d5f4:   shr    $0x3c,%rax
+    0.00 :   d5f8:   jne    2c71 <generate_workload(WorkloadSpec const&, unsigned long*) [clone .cold]+0x9c>
+    0.00 :   d5fe:   test   %r15,%r15
+    0.00 :   d601:   jne    d64d <generate_workload(WorkloadSpec const&, unsigned long*)+0x12d>
+    0.00 :   d603:   mov    -0x1418(%rbp),%rax
+    0.00 :   d60a:   pxor   %xmm0,%xmm0
+    0.00 :   d60e:   movq   $0x0,0x10(%rbx)
+    0.00 :   d616:   movups %xmm0,(%rbx)
+    0.00 :   d619:   test   %rax,%rax
+    0.00 :   d61c:   je     d625 <generate_workload(WorkloadSpec const&, unsigned long*)+0x105>
+    0.00 :   d61e:   movq   $0x0,(%rax)
+    0.00 :   d625:   mov    -0x38(%rbp),%rax
+    0.00 :   d629:   sub    %fs:0x28,%rax
+    0.00 :   d632:   jne    db08 <generate_workload(WorkloadSpec const&, unsigned long*)+0x5e8>
+    0.00 :   d638:   add    $0x1418,%rsp
+    0.00 :   d63f:   mov    %rbx,%rax
+    0.00 :   d642:   pop    %rbx
+    0.00 :   d643:   pop    %r12
+    0.00 :   d645:   pop    %r13
+    0.00 :   d647:   pop    %r14
+    0.00 :   d649:   pop    %r15
+    0.00 :   d64b:   pop    %rbp
+    0.00 :   d64c:   ret
+    0.00 :   d64d:   lea    0x0(,%r15,8),%rdi
+    0.00 :   d655:   call   2360 <operator new(unsigned long)@plt>
+    0.00 :   d65a:   pxor   %xmm0,%xmm0
+    0.00 :   d65e:   movq   $0x0,0x10(%rbx)
+    0.00 :   d666:   mov    %rax,%r12
+    0.00 :   d669:   lea    (%rax,%r15,8),%rax
+    0.00 :   d66d:   movups %xmm0,(%rbx)
+    0.00 :   d670:   mov    %rax,-0x1408(%rbp)
+    0.00 :   d677:   mov    %r15,%rax
+    0.00 :   d67a:   shr    $0x3a,%rax
+    0.00 :   d67e:   jne    2bd5 <generate_workload(WorkloadSpec const&, unsigned long*) [clone .cold]>
+    0.00 :   d684:   mov    %r15,%r13
+    0.00 :   d687:   shl    $0x5,%r13
+    0.00 :   d68b:   mov    %r13,%rdi
+    0.00 :   d68e:   call   2360 <operator new(unsigned long)@plt>
+    0.00 :   d693:   movq   %rax,%xmm0
+    0.00 :   d698:   add    %r13,%rax
+    0.00 :   d69b:   mov    %r12,-0x13e8(%rbp)
+    0.00 :   d6a2:   xor    %r13d,%r13d
+    0.00 :   d6a5:   mov    %rax,0x10(%rbx)
+    0.00 :   d6a9:   punpcklqdq %xmm0,%xmm0
+    0.00 :   d6ad:   mov    -0x13f0(%rbp),%eax
+    0.00 :   d6b3:   add    -0x13ec(%rbp),%eax
+    0.00 :   d6b9:   movups %xmm0,(%rbx)
+    0.00 :   d6bc:   movq   $0x0,-0x1420(%rbp)
+    0.00 :   d6c7:   movq   $0x1,-0x13f8(%rbp)
+    0.00 :   d6d2:   mov    %eax,-0x1400(%rbp)
+    0.00 :   d6d8:   jmp    d824 <generate_workload(WorkloadSpec const&, unsigned long*)+0x304>
+    0.00 :   d6dd:   nopl   (%rax)
+    0.00 :   d6e0:   mov    $0x1,%edx
+    0.00 :   d6e5:   xor    %esi,%esi
+    0.00 :   d6e7:   lea    -0x13c0(%rbp),%rdi
+    0.00 :   d6ee:   call   d440 <int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]>
+    2.78 :   d6f3:   mov    %eax,-0x13fc(%rbp)
+    0.00 :   d6f9:   test   %eax,%eax
+    0.00 :   d6fb:   jne    d980 <generate_workload(WorkloadSpec const&, unsigned long*)+0x460>
+    0.00 :   d701:   mov    $0x270f,%edx
+    1.39 :   d706:   mov    $0x1388,%esi
+    0.00 :   d70b:   lea    -0x13c0(%rbp),%rdi
+    0.00 :   d712:   call   d440 <int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]>
+    0.00 :   d717:   mov    %eax,-0x13f0(%rbp)
+    0.00 :   d71d:   lea    -0x13c0(%rbp),%rdi
+    0.00 :   d724:   mov    $0x64,%edx
+    0.00 :   d729:   mov    $0x1,%esi
+    0.00 :   d72e:   call   d280 <long std::uniform_int_distribution<long>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<long>::param_type const&) [clone .isra.0]>
+    0.00 :   d733:   mov    -0x1410(%rbp),%rdi
+    0.00 :   d73a:   mov    -0x13f8(%rbp),%rcx
+    0.00 :   d741:   mov    %rax,%r8
+    0.00 :   d744:   cmpb   $0x0,0x14(%rdi)
+    0.00 :   d748:   je     d785 <generate_workload(WorkloadSpec const&, unsigned long*)+0x265>
+    0.00 :   d74a:   movabs $0xbf58476d1ce4e5b9,%rax
+    0.00 :   d754:   shr    $0x1e,%rcx
+    0.00 :   d758:   xor    -0x13f8(%rbp),%rcx
+    0.00 :   d75f:   imul   %rax,%rcx
+    0.00 :   d763:   mov    %rcx,%rax
+    0.00 :   d766:   shr    $0x1b,%rax
+    0.00 :   d76a:   xor    %rax,%rcx
+    0.00 :   d76d:   movabs $0x94d049bb133111eb,%rax
+    0.00 :   d777:   imul   %rax,%rcx
+    0.00 :   d77b:   mov    %rcx,%rax
+    0.00 :   d77e:   shr    $0x1f,%rax
+    0.00 :   d782:   xor    %rax,%rcx
+    0.00 :   d785:   cmp    -0x1408(%rbp),%r12
+    0.00 :   d78c:   je     d9e4 <generate_workload(WorkloadSpec const&, unsigned long*)+0x4c4>
+    1.39 :   d792:   mov    %rcx,(%r12)
+    0.00 :   d796:   add    $0x8,%r12
+    0.00 :   d79a:   mov    -0x13fc(%rbp),%eax
+    0.00 :   d7a0:   xor    %edx,%edx
+    0.00 :   d7a2:   pxor   %xmm0,%xmm0
+    0.00 :   d7a6:   movl   $0x0,-0x13e0(%rbp)
+    0.00 :   d7b0:   cvtsi2sdl -0x13f0(%rbp),%xmm0
+    0.00 :   d7b8:   divsd  0x141c8(%rip),%xmm0        # 21988 <_IO_stdin_used+0x988>
+    1.39 :   d7c0:   test   %eax,%eax
+    0.00 :   d7c2:   mov    0x8(%rbx),%rax
+    0.00 :   d7c6:   setne  %dl
+    0.00 :   d7c9:   cmp    0x10(%rbx),%rax
+    0.00 :   d7cd:   mov    %rcx,-0x13d8(%rbp)
+    0.00 :   d7d4:   mov    %edx,-0x13dc(%rbp)
+    0.00 :   d7da:   mov    %r8,-0x13c8(%rbp)
+    0.00 :   d7e1:   movsd  %xmm0,-0x13d0(%rbp)
+    1.39 :   d7e9:   je     d9d0 <generate_workload(WorkloadSpec const&, unsigned long*)+0x4b0>
+    0.00 :   d7ef:   movdqa -0x13e0(%rbp),%xmm0
+   11.11 :   d7f7:   add    $0x20,%rax
+    0.00 :   d7fb:   movups %xmm0,-0x20(%rax)
+    1.39 :   d7ff:   movdqa -0x13d0(%rbp),%xmm0
+    1.39 :   d807:   movups %xmm0,-0x10(%rax)
+    2.78 :   d80b:   mov    %rax,0x8(%rbx)
+    0.00 :   d80f:   addq   $0x1,-0x13f8(%rbp)
+    0.00 :   d817:   add    $0x1,%r13
+    0.00 :   d81b:   cmp    %r13,%r15
+    0.00 :   d81e:   je     d8ef <generate_workload(WorkloadSpec const&, unsigned long*)+0x3cf>
+    0.00 :   d824:   xor    %esi,%esi
+    0.00 :   d826:   mov    $0x63,%edx
+    0.00 :   d82b:   lea    -0x13c0(%rbp),%rdi
+    0.00 :   d832:   call   d440 <int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]>
+    0.00 :   d837:   cmp    %eax,-0x13ec(%rbp)
+    0.00 :   d83d:   jg     d6e0 <generate_workload(WorkloadSpec const&, unsigned long*)+0x1c0>
+    0.00 :   d843:   cmp    %eax,-0x1400(%rbp)
+    0.00 :   d849:   jle    d930 <generate_workload(WorkloadSpec const&, unsigned long*)+0x410>
+    0.00 :   d84f:   cmp    %r12,-0x13e8(%rbp)
+    0.00 :   d856:   je     d9a1 <generate_workload(WorkloadSpec const&, unsigned long*)+0x481>
+    0.00 :   d85c:   mov    %r12,%rdx
+    0.00 :   d85f:   sub    -0x13e8(%rbp),%rdx
+    0.00 :   d866:   lea    -0x13c0(%rbp),%rdi
+    0.00 :   d86d:   xor    %esi,%esi
+    0.00 :   d86f:   sar    $0x3,%rdx
+    1.39 :   d873:   sub    $0x1,%rdx
+    0.00 :   d877:   call   d360 <unsigned long std::uniform_int_distribution<unsigned long>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<unsigned long>::param_type const&) [clone .isra.0]>
+    0.00 :   d87c:   mov    -0x13e8(%rbp),%rdi
+    0.00 :   d883:   mov    -0x8(%r12),%rcx
+    0.00 :   d888:   pxor   %xmm0,%xmm0
+    0.00 :   d88c:   movaps %xmm0,-0x13e0(%rbp)
+    0.00 :   d893:   mov    (%rdi,%rax,8),%rdx
+   54.17 :   d897:   movaps %xmm0,-0x13d0(%rbp)
+    0.00 :   d89e:   mov    %rcx,(%rdi,%rax,8)
+    0.00 :   d8a2:   mov    0x8(%rbx),%rax
+    0.00 :   d8a6:   cmp    0x10(%rbx),%rax
+    0.00 :   d8aa:   je     d9ae <generate_workload(WorkloadSpec const&, unsigned long*)+0x48e>
+    0.00 :   d8b0:   movb   $0x1,-0x13e0(%rbp)
+    0.00 :   d8b7:   add    $0x20,%rax
+    0.00 :   d8bb:   mov    %rdx,-0x13d8(%rbp)
+    1.39 :   d8c2:   movdqa -0x13e0(%rbp),%xmm0
+    8.33 :   d8ca:   movups %xmm0,-0x20(%rax)
+    1.39 :   d8ce:   movdqa -0x13d0(%rbp),%xmm0
+    0.00 :   d8d6:   movups %xmm0,-0x10(%rax)
+    0.00 :   d8da:   mov    %rax,0x8(%rbx)
+    0.00 :   d8de:   add    $0x1,%r13
+    0.00 :   d8e2:   sub    $0x8,%r12
+    0.00 :   d8e6:   cmp    %r13,%r15
+    0.00 :   d8e9:   jne    d824 <generate_workload(WorkloadSpec const&, unsigned long*)+0x304>
+    0.00 :   d8ef:   mov    -0x1418(%rbp),%rax
+    0.00 :   d8f6:   test   %rax,%rax
+    0.00 :   d8f9:   je     d905 <generate_workload(WorkloadSpec const&, unsigned long*)+0x3e5>
+    0.00 :   d8fb:   mov    -0x1420(%rbp),%rdi
+    0.00 :   d902:   mov    %rdi,(%rax)
+    0.00 :   d905:   mov    -0x13e8(%rbp),%rdi
+    0.00 :   d90c:   test   %rdi,%rdi
+    0.00 :   d90f:   je     d625 <generate_workload(WorkloadSpec const&, unsigned long*)+0x105>
+    0.00 :   d915:   mov    -0x1408(%rbp),%rsi
+    0.00 :   d91c:   sub    %rdi,%rsi
+    0.00 :   d91f:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   d924:   jmp    d625 <generate_workload(WorkloadSpec const&, unsigned long*)+0x105>
+    0.00 :   d929:   nopl   0x0(%rax)
+    1.39 :   d930:   pxor   %xmm0,%xmm0
+    0.00 :   d934:   mov    0x8(%rbx),%rax
+    1.39 :   d938:   movaps %xmm0,-0x13e0(%rbp)
+    0.00 :   d93f:   movaps %xmm0,-0x13d0(%rbp)
+    0.00 :   d946:   cmp    0x10(%rbx),%rax
+    0.00 :   d94a:   je     daed <generate_workload(WorkloadSpec const&, unsigned long*)+0x5cd>
+    0.00 :   d950:   movb   $0x2,-0x13e0(%rbp)
+    0.00 :   d957:   movdqa -0x13e0(%rbp),%xmm0
+    2.78 :   d95f:   add    $0x20,%rax
+    0.00 :   d963:   movups %xmm0,-0x20(%rax)
+    0.00 :   d967:   movdqa -0x13d0(%rbp),%xmm0
+    1.39 :   d96f:   movups %xmm0,-0x10(%rax)
+    0.00 :   d973:   mov    %rax,0x8(%rbx)
+    0.00 :   d977:   jmp    d817 <generate_workload(WorkloadSpec const&, unsigned long*)+0x2f7>
+    0.00 :   d97c:   nopl   0x0(%rax)
+    0.00 :   d980:   mov    $0x3a98,%edx
+    0.00 :   d985:   mov    $0x2711,%esi
+    0.00 :   d98a:   lea    -0x13c0(%rbp),%rdi
+    0.00 :   d991:   call   d440 <int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]>
+    1.39 :   d996:   mov    %eax,-0x13f0(%rbp)
+    0.00 :   d99c:   jmp    d71d <generate_workload(WorkloadSpec const&, unsigned long*)+0x1fd>
+    0.00 :   d9a1:   addq   $0x1,-0x1420(%rbp)
+    0.00 :   d9a9:   jmp    d6e0 <generate_workload(WorkloadSpec const&, unsigned long*)+0x1c0>
+    0.00 :   d9ae:   lea    -0x13e0(%rbp),%rsi
+    0.00 :   d9b5:   mov    %rbx,%rdi
+    0.00 :   d9b8:   movb   $0x1,-0x13e0(%rbp)
+    0.00 :   d9bf:   mov    %rdx,-0x13d8(%rbp)
+    0.00 :   d9c6:   call   db30 <void std::vector<Op, std::allocator<Op> >::_M_realloc_append<Op>(Op&&)>
+    0.00 :   d9cb:   jmp    d8de <generate_workload(WorkloadSpec const&, unsigned long*)+0x3be>
+    0.00 :   d9d0:   lea    -0x13e0(%rbp),%rsi
+    0.00 :   d9d7:   mov    %rbx,%rdi
+    0.00 :   d9da:   call   db30 <void std::vector<Op, std::allocator<Op> >::_M_realloc_append<Op>(Op&&)>
+    0.00 :   d9df:   jmp    d80f <generate_workload(WorkloadSpec const&, unsigned long*)+0x2ef>
+    0.00 :   d9e4:   sub    -0x13e8(%rbp),%r12
+    0.00 :   d9eb:   movabs $0xfffffffffffffff,%rax
+    0.00 :   d9f5:   mov    %r12,%rdx
+    0.00 :   d9f8:   sar    $0x3,%rdx
+    0.00 :   d9fc:   cmp    %rax,%rdx
+    0.00 :   d9ff:   je     2c56 <generate_workload(WorkloadSpec const&, unsigned long*) [clone .cold]+0x81>
+    0.00 :   da05:   test   %rdx,%rdx
+    0.00 :   da08:   mov    $0x1,%eax
+    0.00 :   da0d:   mov    %r8,-0x1438(%rbp)
+    0.00 :   da14:   cmovne %rdx,%rax
+    0.00 :   da18:   mov    %rcx,-0x1430(%rbp)
+    0.00 :   da1f:   add    %rdx,%rax
+    0.00 :   da22:   movabs $0xfffffffffffffff,%rdx
+    0.00 :   da2c:   cmp    %rdx,%rax
+    0.00 :   da2f:   cmova  %rdx,%rax
+    0.00 :   da33:   shl    $0x3,%rax
+    0.00 :   da37:   mov    %rax,%rdi
+    0.00 :   da3a:   mov    %rax,-0x1428(%rbp)
+    0.00 :   da41:   call   2360 <operator new(unsigned long)@plt>
+    0.00 :   da46:   mov    -0x1430(%rbp),%rcx
+    0.00 :   da4d:   test   %r12,%r12
+    0.00 :   da50:   mov    -0x1438(%rbp),%r8
+    0.00 :   da57:   mov    %rax,%r9
+    0.00 :   da5a:   mov    %rcx,(%rax,%r12,1)
+    0.00 :   da5e:   je     da83 <generate_workload(WorkloadSpec const&, unsigned long*)+0x563>
+    0.00 :   da60:   mov    -0x13e8(%rbp),%rsi
+    0.00 :   da67:   mov    %r12,%rdx
+    0.00 :   da6a:   mov    %rax,%rdi
+    0.00 :   da6d:   call   2350 <memcpy@plt>
+    0.00 :   da72:   mov    -0x1438(%rbp),%r8
+    0.00 :   da79:   mov    -0x1430(%rbp),%rcx
+    0.00 :   da80:   mov    %rax,%r9
+    0.00 :   da83:   mov    -0x13e8(%rbp),%rax
+    0.00 :   da8a:   lea    0x8(%r9,%r12,1),%r12
+    0.00 :   da8f:   test   %rax,%rax
+    0.00 :   da92:   je     dad0 <generate_workload(WorkloadSpec const&, unsigned long*)+0x5b0>
+    0.00 :   da94:   mov    -0x1408(%rbp),%rsi
+    0.00 :   da9b:   mov    %rax,%rdi
+    0.00 :   da9e:   mov    %r9,-0x1438(%rbp)
+    0.00 :   daa5:   mov    %r8,-0x1430(%rbp)
+    0.00 :   daac:   sub    %rax,%rsi
+    0.00 :   daaf:   mov    %rcx,-0x13e8(%rbp)
+    0.00 :   dab6:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   dabb:   mov    -0x1438(%rbp),%r9
+    0.00 :   dac2:   mov    -0x1430(%rbp),%r8
+    0.00 :   dac9:   mov    -0x13e8(%rbp),%rcx
+    0.00 :   dad0:   mov    -0x1428(%rbp),%rax
+    0.00 :   dad7:   mov    %r9,-0x13e8(%rbp)
+    0.00 :   dade:   add    %r9,%rax
+    0.00 :   dae1:   mov    %rax,-0x1408(%rbp)
+    0.00 :   dae8:   jmp    d79a <generate_workload(WorkloadSpec const&, unsigned long*)+0x27a>
+    0.00 :   daed:   lea    -0x13e0(%rbp),%rsi
+    0.00 :   daf4:   mov    %rbx,%rdi
+    0.00 :   daf7:   movb   $0x2,-0x13e0(%rbp)
+    0.00 :   dafe:   call   db30 <void std::vector<Op, std::allocator<Op> >::_M_realloc_append<Op>(Op&&)>
+    0.00 :   db03:   jmp    d817 <generate_workload(WorkloadSpec const&, unsigned long*)+0x2f7>
+    0.00 :   db08:   call   2390 <__stack_chk_fail@plt>
+    0.00 :   db0d:   endbr64
+    0.00 :   db11:   mov    %rax,%r13
+    0.00 :   db14:   jmp    2bfb <generate_workload(WorkloadSpec const&, unsigned long*) [clone .cold]+0x26>
+    0.00 :   db19:   endbr64
+    0.00 :   db1d:   jmp    2c51 <generate_workload(WorkloadSpec const&, unsigned long*) [clone .cold]+0x7c>
+ Percent |	Source code & Disassembly of bench_perf for task-clock:uppp (26 samples, percent: local period)
+---------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3    Disassembly of section .text:
+         :
+         : 5    000000000000b680 <BookC::cancel_order(unsigned long)>:
+    3.85 :   b680:   endbr64
+    0.00 :   b684:   movabs $0x9e3779b97f4a7c15,%rax
+    0.00 :   b68e:   mov    0x540(%rdi),%ecx
+    0.00 :   b694:   mov    0x520(%rdi),%r10
+    0.00 :   b69b:   imul   %rsi,%rax
+    0.00 :   b69f:   shr    %cl,%rax
+    0.00 :   b6a2:   mov    %rax,%rdx
+    0.00 :   b6a5:   shl    $0x4,%rdx
+    0.00 :   b6a9:   add    %r10,%rdx
+    0.00 :   b6ac:   mov    0x8(%rdx),%r8d
+   73.08 :   b6b0:   test   %r8d,%r8d
+    0.00 :   b6b3:   je     b810 <BookC::cancel_order(unsigned long)+0x190>
+    0.00 :   b6b9:   mov    %rdi,%r9
+    0.00 :   b6bc:   jmp    b6e2 <BookC::cancel_order(unsigned long)+0x62>
+    0.00 :   b6be:   xchg   %ax,%ax
+    0.00 :   b6c0:   add    $0x1,%rax
+    0.00 :   b6c4:   and    0x538(%r9),%rax
+    0.00 :   b6cb:   mov    %rax,%rdx
+    0.00 :   b6ce:   shl    $0x4,%rdx
+    0.00 :   b6d2:   add    %r10,%rdx
+    0.00 :   b6d5:   mov    0x8(%rdx),%r11d
+    0.00 :   b6d9:   test   %r11d,%r11d
+    0.00 :   b6dc:   je     b810 <BookC::cancel_order(unsigned long)+0x190>
+    0.00 :   b6e2:   cmp    (%rdx),%rsi
+    0.00 :   b6e5:   jne    b6c0 <BookC::cancel_order(unsigned long)+0x40>
+    0.00 :   b6e7:   cmp    $0xffffffffffffffff,%rax
+    0.00 :   b6eb:   je     b810 <BookC::cancel_order(unsigned long)+0x190>
+    0.00 :   b6f1:   push   %rbp
+    0.00 :   b6f2:   lea    0x1(%rax),%rdx
+    0.00 :   b6f6:   mov    %rax,%rsi
+    0.00 :   b6f9:   shl    $0x4,%rsi
+    0.00 :   b6fd:   add    %r10,%rsi
+    0.00 :   b700:   mov    %rsp,%rbp
+    0.00 :   b703:   push   %r13
+    0.00 :   b705:   push   %r12
+    0.00 :   b707:   push   %rbx
+    0.00 :   b708:   mov    0x538(%r9),%r11
+    0.00 :   b70f:   mov    0x8(%rsi),%rbx
+    0.00 :   b713:   and    %r11,%rdx
+    0.00 :   b716:   mov    %rdx,%rdi
+    0.00 :   b719:   shl    $0x4,%rdi
+    0.00 :   b71d:   add    %r10,%rdi
+    0.00 :   b720:   mov    0x8(%rdi),%r8d
+    3.85 :   b724:   test   %r8d,%r8d
+    0.00 :   b727:   je     b79d <BookC::cancel_order(unsigned long)+0x11d>
+    0.00 :   b729:   movabs $0x9e3779b97f4a7c15,%r12
+    0.00 :   b733:   xchg   %ax,%ax
+    0.00 :   b735:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   b740:   mov    (%rdi),%r8
+    0.00 :   b743:   imul   %r12,%r8
+    0.00 :   b747:   shr    %cl,%r8
+    0.00 :   b74a:   cmp    %r8,%rax
+    0.00 :   b74d:   setb   %sil
+    0.00 :   b751:   cmp    %r8,%rdx
+    0.00 :   b754:   setae  %r8b
+    0.00 :   b758:   mov    %esi,%r13d
+    0.00 :   b75b:   and    %r8d,%r13d
+    0.00 :   b75e:   or     %r8d,%esi
+    0.00 :   b761:   cmp    %rax,%rdx
+    0.00 :   b764:   cmovae %r13d,%esi
+    0.00 :   b768:   test   %sil,%sil
+    0.00 :   b76b:   jne    b77d <BookC::cancel_order(unsigned long)+0xfd>
+    0.00 :   b76d:   movdqu (%rdi),%xmm0
+    0.00 :   b771:   shl    $0x4,%rax
+    0.00 :   b775:   movups %xmm0,(%r10,%rax,1)
+    0.00 :   b77a:   mov    %rdx,%rax
+    0.00 :   b77d:   add    $0x1,%rdx
+    0.00 :   b781:   and    %r11,%rdx
+    0.00 :   b784:   mov    %rdx,%rdi
+    0.00 :   b787:   shl    $0x4,%rdi
+    0.00 :   b78b:   add    %r10,%rdi
+    0.00 :   b78e:   mov    0x8(%rdi),%esi
+    0.00 :   b791:   test   %esi,%esi
+    0.00 :   b793:   jne    b740 <BookC::cancel_order(unsigned long)+0xc0>
+    0.00 :   b795:   shl    $0x4,%rax
+    0.00 :   b799:   lea    (%r10,%rax,1),%rsi
+    0.00 :   b79d:   mov    %rbx,%rdx
+    0.00 :   b7a0:   movq   $0x0,(%rsi)
+    0.00 :   b7a7:   movslq %ebx,%rbx
+    0.00 :   b7aa:   sar    $0x20,%rdx
+    0.00 :   b7ae:   movq   $0x0,0x8(%rsi)
+    0.00 :   b7b6:   movq   %rbx,%xmm0
+    0.00 :   b7bb:   movhps 0x161be(%rip),%xmm0        # 21980 <_IO_stdin_used+0x980>
+    0.00 :   b7c2:   lea    -0x1388(%rdx),%esi
+    0.00 :   b7c8:   subq   $0x1,0x548(%r9)
+    0.00 :   b7d0:   movdqa %xmm0,%xmm1
+    0.00 :   b7d4:   movslq %esi,%rax
+    0.00 :   b7d7:   shl    $0x4,%rax
+    0.00 :   b7db:   add    (%r9),%rax
+    0.00 :   b7de:   movdqu (%rax),%xmm2
+   11.54 :   b7e2:   paddq  %xmm2,%xmm1
+    7.69 :   b7e6:   psubq  %xmm0,%xmm2
+    0.00 :   b7ea:   shufpd $0x2,%xmm1,%xmm2
+    0.00 :   b7ef:   movhlps %xmm1,%xmm3
+    0.00 :   b7f2:   movups %xmm2,(%rax)
+    0.00 :   b7f5:   movq   %xmm3,%rax
+    0.00 :   b7fa:   test   %rax,%rax
+    0.00 :   b7fd:   je     b818 <BookC::cancel_order(unsigned long)+0x198>
+    0.00 :   b7ff:   pop    %rbx
+    0.00 :   b800:   mov    $0x1,%eax
+    0.00 :   b805:   pop    %r12
+    0.00 :   b807:   pop    %r13
+    0.00 :   b809:   pop    %rbp
+    0.00 :   b80a:   ret
+    0.00 :   b80b:   nopl   0x0(%rax,%rax,1)
+    0.00 :   b810:   xor    %eax,%eax
+    0.00 :   b812:   ret
+    0.00 :   b813:   nopl   0x0(%rax,%rax,1)
+    0.00 :   b818:   mov    %esi,%r10d
+    0.00 :   b81b:   mov    $0x1,%edi
+    0.00 :   b820:   mov    %esi,%ecx
+    0.00 :   b822:   sar    $0x6,%r10d
+    0.00 :   b826:   mov    %rdi,%rax
+    0.00 :   b829:   shl    %cl,%rax
+    0.00 :   b82c:   movslq %r10d,%r8
+    0.00 :   b82f:   not    %rax
+    0.00 :   b832:   and    %rax,0x18(%r9,%r8,8)
+    0.00 :   b837:   jne    b851 <BookC::cancel_order(unsigned long)+0x1d1>
+    0.00 :   b839:   mov    %esi,%eax
+    0.00 :   b83b:   mov    %r10d,%ecx
+    0.00 :   b83e:   sar    $0xc,%eax
+    0.00 :   b841:   shl    %cl,%rdi
+    0.00 :   b844:   cltq
+    0.00 :   b846:   not    %rdi
+    0.00 :   b849:   and    %rdi,0x500(%r9,%rax,8)
+    0.00 :   b851:   cmp    %esi,0x518(%r9)
+    0.00 :   b858:   je     b8ab <BookC::cancel_order(unsigned long)+0x22b>
+    0.00 :   b85a:   cmp    %esi,0x51c(%r9)
+    0.00 :   b861:   jne    b7ff <BookC::cancel_order(unsigned long)+0x17f>
+    0.00 :   b863:   lea    -0x1387(%rdx),%ecx
+    0.00 :   b869:   cmp    $0x2710,%ecx
+    0.00 :   b86f:   jg     b9b8 <BookC::cancel_order(unsigned long)+0x338>
+    0.00 :   b875:   mov    %ecx,%edi
+    0.00 :   b877:   mov    $0xffffffffffffffff,%rdx
+    0.00 :   b87e:   sar    $0x6,%edi
+    0.00 :   b881:   mov    %rdx,%rax
+    0.00 :   b884:   movslq %edi,%rsi
+    0.00 :   b887:   shl    %cl,%rax
+    0.00 :   b88a:   and    0x18(%r9,%rsi,8),%rax
+    0.00 :   b88f:   je     b973 <BookC::cancel_order(unsigned long)+0x2f3>
+    0.00 :   b895:   tzcnt  %rax,%rax
+    0.00 :   b89a:   and    $0xffffffc0,%ecx
+    0.00 :   b89d:   add    %ecx,%eax
+    0.00 :   b89f:   mov    %eax,0x51c(%r9)
+    0.00 :   b8a6:   jmp    b7ff <BookC::cancel_order(unsigned long)+0x17f>
+    0.00 :   b8ab:   sub    $0x1389,%edx
+    0.00 :   b8b1:   js     b957 <BookC::cancel_order(unsigned long)+0x2d7>
+    0.00 :   b8b7:   mov    %edx,%edi
+    0.00 :   b8b9:   sar    $0x6,%edi
+    0.00 :   b8bc:   movslq %edi,%rax
+    0.00 :   b8bf:   mov    0x18(%r9,%rax,8),%rsi
+    0.00 :   b8c4:   mov    %edx,%eax
+    0.00 :   b8c6:   and    $0x3f,%eax
+    0.00 :   b8c9:   cmp    $0x3f,%eax
+    0.00 :   b8cc:   je     b8e1 <BookC::cancel_order(unsigned long)+0x261>
+    0.00 :   b8ce:   lea    0x1(%rax),%ecx
+    0.00 :   b8d1:   mov    $0xffffffffffffffff,%rax
+    0.00 :   b8d8:   shl    %cl,%rax
+    0.00 :   b8db:   not    %rax
+    0.00 :   b8de:   and    %rax,%rsi
+    0.00 :   b8e1:   test   %rsi,%rsi
+    0.00 :   b8e4:   jne    b95e <BookC::cancel_order(unsigned long)+0x2de>
+    0.00 :   b8e6:   lea    -0x1(%rdi),%edx
+    0.00 :   b8e9:   test   %edi,%edi
+    0.00 :   b8eb:   je     b967 <BookC::cancel_order(unsigned long)+0x2e7>
+    0.00 :   b8ed:   mov    %edx,%eax
+    0.00 :   b8ef:   and    $0x3f,%edx
+    0.00 :   b8f2:   sar    $0x6,%eax
+    0.00 :   b8f5:   movslq %eax,%rdi
+    0.00 :   b8f8:   mov    0x500(%r9,%rdi,8),%rsi
+    0.00 :   b900:   cmp    $0x3f,%edx
+    0.00 :   b903:   je     b918 <BookC::cancel_order(unsigned long)+0x298>
+    0.00 :   b905:   lea    0x1(%rdx),%ecx
+    0.00 :   b908:   mov    $0xffffffffffffffff,%rdx
+    0.00 :   b90f:   shl    %cl,%rdx
+    0.00 :   b912:   not    %rdx
+    0.00 :   b915:   and    %rdx,%rsi
+    0.00 :   b918:   test   %rsi,%rsi
+    0.00 :   b91b:   jne    b9c2 <BookC::cancel_order(unsigned long)+0x342>
+    0.00 :   b921:   lea    (%r9,%rdi,8),%rdx
+    0.00 :   b925:   jmp    b953 <BookC::cancel_order(unsigned long)+0x2d3>
+    0.00 :   b927:   nopl   (%rax)
+    0.00 :   b92a:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   b935:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   b940:   mov    0x4f8(%rdx),%rsi
+    0.00 :   b947:   sub    $0x8,%rdx
+    0.00 :   b94b:   sub    $0x1,%eax
+    0.00 :   b94e:   test   %rsi,%rsi
+    0.00 :   b951:   jne    b9c2 <BookC::cancel_order(unsigned long)+0x342>
+    0.00 :   b953:   test   %eax,%eax
+    0.00 :   b955:   jne    b940 <BookC::cancel_order(unsigned long)+0x2c0>
+    0.00 :   b957:   mov    $0xffffffff,%edx
+    0.00 :   b95c:   jmp    b967 <BookC::cancel_order(unsigned long)+0x2e7>
+    0.00 :   b95e:   and    $0xffffffc0,%edx
+    0.00 :   b961:   bsr    %rsi,%rsi
+    0.00 :   b965:   add    %esi,%edx
+    0.00 :   b967:   mov    %edx,0x518(%r9)
+    0.00 :   b96e:   jmp    b7ff <BookC::cancel_order(unsigned long)+0x17f>
+    0.00 :   b973:   lea    0x1(%rdi),%ecx
+    0.00 :   b976:   cmp    $0x9c,%edi
+    0.00 :   b97c:   je     b9b8 <BookC::cancel_order(unsigned long)+0x338>
+    0.00 :   b97e:   mov    %ecx,%eax
+    0.00 :   b980:   shl    %cl,%rdx
+    0.00 :   b983:   sar    $0x6,%eax
+    0.00 :   b986:   movslq %eax,%rsi
+    0.00 :   b989:   and    0x500(%r9,%rsi,8),%rdx
+    0.00 :   b991:   jne    b9f1 <BookC::cancel_order(unsigned long)+0x371>
+    0.00 :   b993:   lea    (%r9,%rsi,8),%rcx
+    0.00 :   b997:   jmp    b9b0 <BookC::cancel_order(unsigned long)+0x330>
+    0.00 :   b999:   nopl   0x0(%rax)
+    0.00 :   b9a0:   mov    0x508(%rcx),%rdx
+    0.00 :   b9a7:   add    $0x8,%rcx
+    0.00 :   b9ab:   test   %rdx,%rdx
+    0.00 :   b9ae:   jne    b9f1 <BookC::cancel_order(unsigned long)+0x371>
+    0.00 :   b9b0:   add    $0x1,%eax
+    0.00 :   b9b3:   cmp    $0x3,%eax
+    0.00 :   b9b6:   jne    b9a0 <BookC::cancel_order(unsigned long)+0x320>
+    0.00 :   b9b8:   mov    $0xffffffff,%eax
+    0.00 :   b9bd:   jmp    b89f <BookC::cancel_order(unsigned long)+0x21f>
+    0.00 :   b9c2:   bsr    %rsi,%rsi
+    0.00 :   b9c6:   mov    $0x3f,%edx
+    0.00 :   b9cb:   shl    $0x6,%eax
+    0.00 :   b9ce:   xor    $0x3f,%rsi
+    0.00 :   b9d2:   mov    %edx,%ecx
+    0.00 :   b9d4:   sub    %esi,%ecx
+    0.00 :   b9d6:   add    %ecx,%eax
+    0.00 :   b9d8:   movslq %eax,%rcx
+    0.00 :   b9db:   bsr    0x18(%r9,%rcx,8),%rcx
+    0.00 :   b9e1:   shl    $0x6,%eax
+    0.00 :   b9e4:   xor    $0x3f,%rcx
+    0.00 :   b9e8:   sub    %ecx,%edx
+    0.00 :   b9ea:   add    %eax,%edx
+    0.00 :   b9ec:   jmp    b967 <BookC::cancel_order(unsigned long)+0x2e7>
+    0.00 :   b9f1:   tzcnt  %rdx,%rdx
+    0.00 :   b9f6:   shl    $0x6,%eax
+    0.00 :   b9f9:   add    %edx,%eax
+    0.00 :   b9fb:   movslq %eax,%rdx
+    0.00 :   b9fe:   shl    $0x6,%eax
+    0.00 :   ba01:   tzcnt  0x18(%r9,%rdx,8),%rdx
+    0.00 :   ba08:   add    %edx,%eax
+    0.00 :   ba0a:   jmp    b89f <BookC::cancel_order(unsigned long)+0x21f>
+ Percent |	Source code & Disassembly of bench_perf for task-clock:uppp (16 samples, percent: local period)
+---------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3    Disassembly of section .text:
+         :
+         : 5    000000000000d040 <count_ops(std::vector<Op, std::allocator<Op> > const&)>:
+    0.00 :   d040:   endbr64
+    0.00 :   d044:   mov    (%rsi),%rax
+    0.00 :   d047:   mov    0x8(%rsi),%rsi
+    0.00 :   d04b:   pxor   %xmm0,%xmm0
+    0.00 :   d04f:   mov    %rdi,%r9
+    0.00 :   d052:   movq   $0x0,0x10(%rdi)
+    0.00 :   d05a:   movups %xmm0,(%rdi)
+    0.00 :   d05d:   cmp    %rax,%rsi
+    0.00 :   d060:   je     d100 <count_ops(std::vector<Op, std::allocator<Op> > const&)+0xc0>
+    0.00 :   d066:   push   %rbp
+    0.00 :   d067:   xor    %r11d,%r11d
+    0.00 :   d06a:   xor    %r10d,%r10d
+    0.00 :   d06d:   xor    %edi,%edi
+    0.00 :   d06f:   xor    %ecx,%ecx
+    0.00 :   d071:   mov    %rsp,%rbp
+    0.00 :   d074:   push   %r13
+    0.00 :   d076:   xor    %r13d,%r13d
+    0.00 :   d079:   push   %r12
+    0.00 :   d07b:   xor    %r12d,%r12d
+    0.00 :   d07e:   push   %rbx
+    0.00 :   d07f:   mov    $0x1,%ebx
+    0.00 :   d084:   jmp    d0a6 <count_ops(std::vector<Op, std::allocator<Op> > const&)+0x66>
+    0.00 :   d086:   cs nopw 0x0(%rax,%rax,1)
+   12.50 :   d090:   test   %dl,%dl
+    0.00 :   d092:   lea    0x1(%rcx),%r8
+    6.25 :   d096:   cmove  %r8,%rcx
+    0.00 :   d09a:   cmove  %ebx,%edi
+    0.00 :   d09d:   add    $0x20,%rax
+    0.00 :   d0a1:   cmp    %rsi,%rax
+    0.00 :   d0a4:   je     d0c6 <count_ops(std::vector<Op, std::allocator<Op> > const&)+0x86>
+    6.25 :   d0a6:   movzbl (%rax),%edx
+   37.50 :   d0a9:   cmp    $0x1,%dl
+    0.00 :   d0ac:   je     d0f0 <count_ops(std::vector<Op, std::allocator<Op> > const&)+0xb0>
+    6.25 :   d0ae:   cmp    $0x2,%dl
+    0.00 :   d0b1:   jne    d090 <count_ops(std::vector<Op, std::allocator<Op> > const&)+0x50>
+    6.25 :   d0b3:   add    $0x20,%rax
+    0.00 :   d0b7:   add    $0x1,%r11
+    6.25 :   d0bb:   mov    $0x1,%r13d
+    0.00 :   d0c1:   cmp    %rsi,%rax
+    0.00 :   d0c4:   jne    d0a6 <count_ops(std::vector<Op, std::allocator<Op> > const&)+0x66>
+    0.00 :   d0c6:   test   %r13b,%r13b
+    0.00 :   d0c9:   je     d0cf <count_ops(std::vector<Op, std::allocator<Op> > const&)+0x8f>
+    0.00 :   d0cb:   mov    %r11,0x10(%r9)
+    0.00 :   d0cf:   test   %r12b,%r12b
+    0.00 :   d0d2:   je     d0d8 <count_ops(std::vector<Op, std::allocator<Op> > const&)+0x98>
+    0.00 :   d0d4:   mov    %r10,0x8(%r9)
+    0.00 :   d0d8:   test   %dil,%dil
+    0.00 :   d0db:   je     d0e0 <count_ops(std::vector<Op, std::allocator<Op> > const&)+0xa0>
+    0.00 :   d0dd:   mov    %rcx,(%r9)
+    0.00 :   d0e0:   pop    %rbx
+    0.00 :   d0e1:   mov    %r9,%rax
+    0.00 :   d0e4:   pop    %r12
+    0.00 :   d0e6:   pop    %r13
+    0.00 :   d0e8:   pop    %rbp
+    0.00 :   d0e9:   ret
+    0.00 :   d0ea:   nopw   0x0(%rax,%rax,1)
+    6.25 :   d0f0:   add    $0x1,%r10
+   12.50 :   d0f4:   mov    $0x1,%r12d
+    0.00 :   d0fa:   jmp    d09d <count_ops(std::vector<Op, std::allocator<Op> > const&)+0x5d>
+    0.00 :   d0fc:   nopl   0x0(%rax)
+    0.00 :   d100:   mov    %rdi,%rax
+    0.00 :   d103:   ret
+ Percent |	Source code & Disassembly of bench_perf for task-clock:uppp (14 samples, percent: local period)
+---------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3    Disassembly of section .text:
+         :
+         : 5    000000000000dd10 <std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()>:
+   35.71 :   dd10:   endbr64
+    0.00 :   dd14:   push   %rbp
+    0.00 :   dd15:   mov    %rsp,%rbp
+    0.00 :   dd18:   sub    $0x10,%rsp
+    0.00 :   dd1c:   mov    0x1380(%rdi),%rax
+    0.00 :   dd23:   cmp    $0x26f,%rax
+    0.00 :   dd29:   ja     dd78 <std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()+0x68>
+    0.00 :   dd2b:   lea    0x1(%rax),%rdx
+    0.00 :   dd2f:   mov    (%rdi,%rax,8),%rax
+    7.14 :   dd33:   mov    %rdx,0x1380(%rdi)
+    0.00 :   dd3a:   leave
+    0.00 :   dd3b:   mov    %rax,%rdx
+    0.00 :   dd3e:   shr    $0xb,%rdx
+    0.00 :   dd42:   mov    %edx,%edx
+    0.00 :   dd44:   xor    %rax,%rdx
+   14.29 :   dd47:   mov    %rdx,%rax
+    0.00 :   dd4a:   shl    $0x7,%rax
+    0.00 :   dd4e:   and    $0x9d2c5680,%eax
+    0.00 :   dd53:   xor    %rdx,%rax
+    0.00 :   dd56:   mov    %rax,%rdx
+    0.00 :   dd59:   shl    $0xf,%rdx
+    7.14 :   dd5d:   and    $0xefc60000,%edx
+    0.00 :   dd63:   xor    %rax,%rdx
+   35.71 :   dd66:   mov    %rdx,%rax
+    0.00 :   dd69:   shr    $0x12,%rax
+    0.00 :   dd6d:   xor    %rdx,%rax
+    0.00 :   dd70:   ret
+    0.00 :   dd71:   nopl   0x0(%rax)
+    0.00 :   dd78:   mov    %rdi,-0x8(%rbp)
+    0.00 :   dd7c:   call   dc10 <std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand()>
+    0.00 :   dd81:   mov    -0x8(%rbp),%rdi
+    0.00 :   dd85:   mov    0x1380(%rdi),%rax
+    0.00 :   dd8c:   jmp    dd2b <std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()+0x1b>
+ Percent |	Source code & Disassembly of bench_perf for task-clock:uppp (9 samples, percent: local period)
+--------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3    Disassembly of section .text:
+         :
+         : 5    000000000000ba20 <BookC::reset_table(unsigned long)>:
+    0.00 :   ba20:   endbr64
+    0.00 :   ba24:   push   %rbp
+    0.00 :   ba25:   mov    $0x2,%edx
+    0.00 :   ba2a:   mov    %rsp,%rbp
+    0.00 :   ba2d:   push   %r12
+    0.00 :   ba2f:   mov    %rdi,%r12
+    0.00 :   ba32:   push   %rbx
+    0.00 :   ba33:   mov    $0x1,%ebx
+    0.00 :   ba38:   sub    $0x20,%rsp
+    0.00 :   ba3c:   cmp    $0x2,%rsi
+    0.00 :   ba40:   jbe    ba5b <BookC::reset_table(unsigned long)+0x3b>
+    0.00 :   ba42:   nopl   (%rax)
+    0.00 :   ba45:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   ba50:   add    %rdx,%rdx
+    0.00 :   ba53:   add    $0x1,%ebx
+    0.00 :   ba56:   cmp    %rsi,%rdx
+    0.00 :   ba59:   jb     ba50 <BookC::reset_table(unsigned long)+0x30>
+    0.00 :   ba5b:   mov    0x520(%r12),%rcx
+    0.00 :   ba63:   mov    0x530(%r12),%r8
+    0.00 :   ba6b:   sub    %rcx,%r8
+    0.00 :   ba6e:   mov    %r8,%rax
+    0.00 :   ba71:   sar    $0x4,%rax
+    0.00 :   ba75:   cmp    %rdx,%rax
+    0.00 :   ba78:   jae    bb58 <BookC::reset_table(unsigned long)+0x138>
+    0.00 :   ba7e:   mov    %rdx,%rax
+    0.00 :   ba81:   shr    $0x3b,%rax
+    0.00 :   ba85:   jne    bc33 <BookC::reset_table(unsigned long)+0x213>
+    0.00 :   ba8b:   mov    %rdx,%rsi
+    0.00 :   ba8e:   mov    %rcx,-0x30(%rbp)
+    0.00 :   ba92:   shl    $0x4,%rsi
+    0.00 :   ba96:   mov    %r8,-0x28(%rbp)
+    0.00 :   ba9a:   mov    %rsi,%rdi
+    0.00 :   ba9d:   mov    %rdx,-0x20(%rbp)
+    0.00 :   baa1:   mov    %rsi,-0x18(%rbp)
+    0.00 :   baa5:   call   2360 <operator new(unsigned long)@plt>
+    0.00 :   baaa:   mov    -0x18(%rbp),%rsi
+    0.00 :   baae:   mov    -0x20(%rbp),%rdx
+    0.00 :   bab2:   mov    -0x30(%rbp),%rcx
+    0.00 :   bab6:   mov    -0x28(%rbp),%r8
+    0.00 :   baba:   mov    %rax,%rdi
+    0.00 :   babd:   add    %rax,%rsi
+    0.00 :   bac0:   sub    $0x1,%rdx
+    0.00 :   bac4:   nopw   0x0(%rax,%rax,1)
+    0.00 :   baca:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   bad5:   data16 cs nopw 0x0(%rax,%rax,1)
+   55.56 :   bae0:   movq   $0x0,(%rax)
+   44.44 :   bae7:   add    $0x10,%rax
+    0.00 :   baeb:   movq   $0x0,-0x8(%rax)
+    0.00 :   baf3:   cmp    %rsi,%rax
+    0.00 :   baf6:   jne    bae0 <BookC::reset_table(unsigned long)+0xc0>
+    0.00 :   baf8:   mov    %rdi,0x520(%r12)
+    0.00 :   bb00:   mov    %rax,0x528(%r12)
+    0.00 :   bb08:   mov    %rax,0x530(%r12)
+    0.00 :   bb10:   test   %rcx,%rcx
+    0.00 :   bb13:   je     bb28 <BookC::reset_table(unsigned long)+0x108>
+    0.00 :   bb15:   mov    %r8,%rsi
+    0.00 :   bb18:   mov    %rcx,%rdi
+    0.00 :   bb1b:   mov    %rdx,-0x18(%rbp)
+    0.00 :   bb1f:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   bb24:   mov    -0x18(%rbp),%rdx
+    0.00 :   bb28:   mov    $0x40,%eax
+    0.00 :   bb2d:   mov    %rdx,0x538(%r12)
+    0.00 :   bb35:   movq   $0x0,0x548(%r12)
+    0.00 :   bb41:   sub    %ebx,%eax
+    0.00 :   bb43:   mov    %eax,0x540(%r12)
+    0.00 :   bb4b:   add    $0x20,%rsp
+    0.00 :   bb4f:   pop    %rbx
+    0.00 :   bb50:   pop    %r12
+    0.00 :   bb52:   pop    %rbp
+    0.00 :   bb53:   ret
+    0.00 :   bb54:   nopl   0x0(%rax)
+    0.00 :   bb58:   mov    0x528(%r12),%rsi
+    0.00 :   bb60:   mov    %rsi,%rax
+    0.00 :   bb63:   sub    %rcx,%rax
+    0.00 :   bb66:   sar    $0x4,%rax
+    0.00 :   bb6a:   cmp    %rdx,%rax
+    0.00 :   bb6d:   jb     bbd3 <BookC::reset_table(unsigned long)+0x1b3>
+    0.00 :   bb6f:   mov    %rdx,%rax
+    0.00 :   bb72:   shl    $0x4,%rax
+    0.00 :   bb76:   add    %rcx,%rax
+    0.00 :   bb79:   nopl   0x0(%rax)
+    0.00 :   bb80:   movq   $0x0,(%rcx)
+    0.00 :   bb87:   add    $0x10,%rcx
+    0.00 :   bb8b:   movq   $0x0,-0x8(%rcx)
+    0.00 :   bb93:   cmp    %rcx,%rax
+    0.00 :   bb96:   jne    bb80 <BookC::reset_table(unsigned long)+0x160>
+    0.00 :   bb98:   sub    $0x1,%rdx
+    0.00 :   bb9c:   cmp    %rax,%rsi
+    0.00 :   bb9f:   je     bb28 <BookC::reset_table(unsigned long)+0x108>
+    0.00 :   bba1:   mov    %rax,0x528(%r12)
+    0.00 :   bba9:   jmp    bb28 <BookC::reset_table(unsigned long)+0x108>
+    0.00 :   bbae:   nopl   0x0(%rax)
+    0.00 :   bbb5:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   bbc0:   movq   $0x0,(%rcx)
+    0.00 :   bbc7:   add    $0x10,%rcx
+    0.00 :   bbcb:   movq   $0x0,-0x8(%rcx)
+    0.00 :   bbd3:   cmp    %rcx,%rsi
+    0.00 :   bbd6:   jne    bbc0 <BookC::reset_table(unsigned long)+0x1a0>
+    0.00 :   bbd8:   mov    %rdx,%rdi
+    0.00 :   bbdb:   sub    %rax,%rdi
+    0.00 :   bbde:   mov    %rsi,%rax
+    0.00 :   bbe1:   sub    $0x1,%rdi
+    0.00 :   bbe5:   mov    %rdi,%rcx
+    0.00 :   bbe8:   xchg   %ax,%ax
+    0.00 :   bbea:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   bbf5:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   bc00:   movq   $0x0,(%rax)
+    0.00 :   bc07:   add    $0x10,%rax
+    0.00 :   bc0b:   movq   $0x0,-0x8(%rax)
+    0.00 :   bc13:   sub    $0x1,%rcx
+    0.00 :   bc17:   jae    bc00 <BookC::reset_table(unsigned long)+0x1e0>
+    0.00 :   bc19:   shl    $0x4,%rdi
+    0.00 :   bc1d:   sub    $0x1,%rdx
+    0.00 :   bc21:   lea    0x10(%rsi,%rdi,1),%rax
+    0.00 :   bc26:   mov    %rax,0x528(%r12)
+    0.00 :   bc2e:   jmp    bb28 <BookC::reset_table(unsigned long)+0x108>
+    0.00 :   bc33:   lea    0x15aae(%rip),%rdi        # 216e8 <_IO_stdin_used+0x6e8>
+    0.00 :   bc3a:   call   22e0 <std::__throw_length_error(char const*)@plt>
+ Percent |	Source code & Disassembly of bench_perf for task-clock:uppp (9 samples, percent: local period)
+--------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3    Disassembly of section .text:
+         :
+         : 5    000000000000d440 <int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]>:
+   33.33 :   d440:   push   %rbp
+    0.00 :   d441:   movslq %esi,%rax
+    0.00 :   d444:   mov    %rsp,%rbp
+    0.00 :   d447:   push   %r14
+    0.00 :   d449:   push   %r13
+    0.00 :   d44b:   mov    %rdi,%r13
+    0.00 :   d44e:   push   %r12
+    0.00 :   d450:   mov    %rax,%r12
+   33.33 :   d453:   push   %rbx
+    0.00 :   d454:   movslq %edx,%rbx
+    0.00 :   d457:   sub    %rax,%rbx
+    0.00 :   d45a:   mov    $0xfffffffe,%eax
+    0.00 :   d45f:   cmp    %rbx,%rax
+    0.00 :   d462:   jae    d4b8 <int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]+0x78>
+    0.00 :   d464:   mov    $0xffffffff,%eax
+    0.00 :   d469:   cmp    %rax,%rbx
+    0.00 :   d46c:   je     d508 <int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]+0xc8>
+    0.00 :   d472:   xor    %esi,%esi
+    0.00 :   d474:   mov    $0xffffffff,%edx
+    0.00 :   d479:   mov    %r13,%rdi
+    0.00 :   d47c:   call   d440 <int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]>
+    0.00 :   d481:   mov    %r13,%rdi
+    0.00 :   d484:   mov    %eax,%r14d
+    0.00 :   d487:   call   dd10 <std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()>
+    0.00 :   d48c:   mov    %r14,%rcx
+    0.00 :   d48f:   shl    $0x20,%rcx
+    0.00 :   d493:   add    %rax,%rcx
+    0.00 :   d496:   setb   %al
+    0.00 :   d499:   movzbl %al,%eax
+    0.00 :   d49c:   cmp    %rcx,%rbx
+    0.00 :   d49f:   jb     d472 <int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]+0x32>
+    0.00 :   d4a1:   test   %rax,%rax
+    0.00 :   d4a4:   jne    d472 <int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]+0x32>
+    0.00 :   d4a6:   pop    %rbx
+    0.00 :   d4a7:   lea    (%r12,%rcx,1),%eax
+    0.00 :   d4ab:   pop    %r12
+    0.00 :   d4ad:   pop    %r13
+    0.00 :   d4af:   pop    %r14
+    0.00 :   d4b1:   pop    %rbp
+    0.00 :   d4b2:   ret
+    0.00 :   d4b3:   nopl   0x0(%rax,%rax,1)
+    0.00 :   d4b8:   call   dd10 <std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()>
+    0.00 :   d4bd:   add    $0x1,%rbx
+    0.00 :   d4c1:   imul   %rbx,%rax
+    0.00 :   d4c5:   mov    %rax,%rcx
+    0.00 :   d4c8:   cmp    %ebx,%eax
+    0.00 :   d4ca:   jae    d4f4 <int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]+0xb4>
+    0.00 :   d4cc:   mov    %ebx,%eax
+    0.00 :   d4ce:   xor    %edx,%edx
+    0.00 :   d4d0:   neg    %eax
+    0.00 :   d4d2:   div    %ebx
+    0.00 :   d4d4:   mov    %edx,%r14d
+    0.00 :   d4d7:   cmp    %edx,%ecx
+    0.00 :   d4d9:   jae    d4f4 <int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]+0xb4>
+    0.00 :   d4db:   nopl   0x0(%rax,%rax,1)
+    0.00 :   d4e0:   mov    %r13,%rdi
+    0.00 :   d4e3:   call   dd10 <std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()>
+    0.00 :   d4e8:   imul   %rbx,%rax
+    0.00 :   d4ec:   mov    %rax,%rcx
+    0.00 :   d4ef:   cmp    %r14d,%eax
+    0.00 :   d4f2:   jb     d4e0 <int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]+0xa0>
+   33.33 :   d4f4:   shr    $0x20,%rcx
+    0.00 :   d4f8:   pop    %rbx
+    0.00 :   d4f9:   lea    (%r12,%rcx,1),%eax
+    0.00 :   d4fd:   pop    %r12
+    0.00 :   d4ff:   pop    %r13
+    0.00 :   d501:   pop    %r14
+    0.00 :   d503:   pop    %rbp
+    0.00 :   d504:   ret
+    0.00 :   d505:   nopl   (%rax)
+    0.00 :   d508:   call   dd10 <std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()>
+    0.00 :   d50d:   pop    %rbx
+    0.00 :   d50e:   mov    %rax,%rcx
+    0.00 :   d511:   lea    (%r12,%rcx,1),%eax
+    0.00 :   d515:   pop    %r12
+    0.00 :   d517:   pop    %r13
+    0.00 :   d519:   pop    %r14
+    0.00 :   d51b:   pop    %rbp
+    0.00 :   d51c:   ret

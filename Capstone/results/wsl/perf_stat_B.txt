@@ -1,0 +1,18 @@
+# started on Sat Oct 10 03:26:06 2026
+
+
+ Performance counter stats for './build/bench --impl B --runs 1 --total-only' (5 runs):
+
+            295.08 msec task-clock:u                                                            ( +-  1.04% )
+   <not supported>      cycles:u                                                              
+   <not supported>      instructions:u                                                        
+   <not supported>      branches:u                                                            
+   <not supported>      branch-misses:u                                                       
+   <not supported>      cache-references:u                                                    
+   <not supported>      cache-misses:u                                                        
+   <not supported>      L1-dcache-load-misses:u                                               
+   <not supported>      dTLB-load-misses:u                                                    
+             16823      page-faults:u                                                           ( +-  0.00% )
+
+       0.329726410 +- 0.005980706 seconds time elapsed  ( +-  1.81% )
+

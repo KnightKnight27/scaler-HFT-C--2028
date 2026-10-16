@@ -1,0 +1,75 @@
+=== process 1/5 ===
+Impl: A
+Build: compiler 15.2.0, optimised yes, NDEBUG on
+Ops: 1000000 (adds=700471, cancels=199303, bbo=100226) + 10000 depth queries (get_bids(10)+get_asks(10))
+Workload: seed 42, hash 28d0f0c6140fee90
+WARNING: NON-GRADED workload variant (ops 1000000, seed 42, mix 70/20/10, scrambled ids). Report separately from the graded numbers.
+Clock: steady_clock pair overhead 14.2 ns (subtracted from per-op means), granularity 12 ns
+Per-op method: clock pair around every op
+Run 1: total   194.37 ms | ns/add   231.5 ns/cancel   278.7 ns/bbo    15.2 ns/depth   129.0
+Median total: 194.37 ms (1 runs)
+Median  ns/add: 231.5  ns/cancel: 278.7  ns/bbo: 15.2  ns/depth: 129.0
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: cfa9e743f13cd8a8
+=== process 2/5 ===
+Impl: A
+Build: compiler 15.2.0, optimised yes, NDEBUG on
+Ops: 1000000 (adds=700471, cancels=199303, bbo=100226) + 10000 depth queries (get_bids(10)+get_asks(10))
+Workload: seed 42, hash 28d0f0c6140fee90
+WARNING: NON-GRADED workload variant (ops 1000000, seed 42, mix 70/20/10, scrambled ids). Report separately from the graded numbers.
+Clock: steady_clock pair overhead 14.8 ns (subtracted from per-op means), granularity 12 ns
+Per-op method: clock pair around every op
+Run 1: total   216.77 ms | ns/add   248.6 ns/cancel   317.7 ns/bbo    14.4 ns/depth   131.4
+Median total: 216.77 ms (1 runs)
+Median  ns/add: 248.6  ns/cancel: 317.7  ns/bbo: 14.4  ns/depth: 131.4
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: cfa9e743f13cd8a8
+=== process 3/5 ===
+Impl: A
+Build: compiler 15.2.0, optimised yes, NDEBUG on
+Ops: 1000000 (adds=700471, cancels=199303, bbo=100226) + 10000 depth queries (get_bids(10)+get_asks(10))
+Workload: seed 42, hash 28d0f0c6140fee90
+WARNING: NON-GRADED workload variant (ops 1000000, seed 42, mix 70/20/10, scrambled ids). Report separately from the graded numbers.
+Clock: steady_clock pair overhead 14.4 ns (subtracted from per-op means), granularity 12 ns
+Per-op method: clock pair around every op
+Run 1: total   238.54 ms | ns/add   210.5 ns/cancel   265.5 ns/bbo    14.9 ns/depth   126.1
+Median total: 238.54 ms (1 runs)
+Median  ns/add: 210.5  ns/cancel: 265.5  ns/bbo: 14.9  ns/depth: 126.1
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: cfa9e743f13cd8a8
+=== process 4/5 ===
+Impl: A
+Build: compiler 15.2.0, optimised yes, NDEBUG on
+Ops: 1000000 (adds=700471, cancels=199303, bbo=100226) + 10000 depth queries (get_bids(10)+get_asks(10))
+Workload: seed 42, hash 28d0f0c6140fee90
+WARNING: NON-GRADED workload variant (ops 1000000, seed 42, mix 70/20/10, scrambled ids). Report separately from the graded numbers.
+Clock: steady_clock pair overhead 14.2 ns (subtracted from per-op means), granularity 12 ns
+Per-op method: clock pair around every op
+Run 1: total   214.16 ms | ns/add   243.9 ns/cancel   299.2 ns/bbo    13.9 ns/depth   127.0
+Median total: 214.16 ms (1 runs)
+Median  ns/add: 243.9  ns/cancel: 299.2  ns/bbo: 13.9  ns/depth: 127.0
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: cfa9e743f13cd8a8
+=== process 5/5 ===
+Impl: A
+Build: compiler 15.2.0, optimised yes, NDEBUG on
+Ops: 1000000 (adds=700471, cancels=199303, bbo=100226) + 10000 depth queries (get_bids(10)+get_asks(10))
+Workload: seed 42, hash 28d0f0c6140fee90
+WARNING: NON-GRADED workload variant (ops 1000000, seed 42, mix 70/20/10, scrambled ids). Report separately from the graded numbers.
+Clock: steady_clock pair overhead 14.3 ns (subtracted from per-op means), granularity 12 ns
+Per-op method: clock pair around every op
+Run 1: total   192.52 ms | ns/add   240.3 ns/cancel   303.8 ns/bbo    14.8 ns/depth   130.9
+Median total: 192.52 ms (1 runs)
+Median  ns/add: 240.3  ns/cancel: 303.8  ns/bbo: 14.8  ns/depth: 130.9
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: cfa9e743f13cd8a8

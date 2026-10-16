@@ -1,0 +1,65 @@
+=== process 1/5 ===
+Impl: A
+Build: compiler 15.2.0, optimised yes, NDEBUG on
+Ops: 1000000 (adds=700471, cancels=199303, bbo=100226) + 10000 depth queries (get_bids(10)+get_asks(10))
+Workload: seed 42, hash 27f23594045a1e72
+Clock: steady_clock pair overhead 14.2 ns (subtracted from per-op means), granularity 12 ns
+Run 1: total   160.89 ms | ns/add   133.0 ns/cancel   295.6 ns/bbo    15.2 ns/depth   127.0
+Median total: 160.89 ms (1 runs)
+Median  ns/add: 133.0  ns/cancel: 295.6  ns/bbo: 15.2  ns/depth: 127.0
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: cfa9e743f13cd8a8
+=== process 2/5 ===
+Impl: A
+Build: compiler 15.2.0, optimised yes, NDEBUG on
+Ops: 1000000 (adds=700471, cancels=199303, bbo=100226) + 10000 depth queries (get_bids(10)+get_asks(10))
+Workload: seed 42, hash 27f23594045a1e72
+Clock: steady_clock pair overhead 14.7 ns (subtracted from per-op means), granularity 12 ns
+Run 1: total   156.59 ms | ns/add   140.2 ns/cancel   317.7 ns/bbo    15.9 ns/depth   136.4
+Median total: 156.59 ms (1 runs)
+Median  ns/add: 140.2  ns/cancel: 317.7  ns/bbo: 15.9  ns/depth: 136.4
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: cfa9e743f13cd8a8
+=== process 3/5 ===
+Impl: A
+Build: compiler 15.2.0, optimised yes, NDEBUG on
+Ops: 1000000 (adds=700471, cancels=199303, bbo=100226) + 10000 depth queries (get_bids(10)+get_asks(10))
+Workload: seed 42, hash 27f23594045a1e72
+Clock: steady_clock pair overhead 14.2 ns (subtracted from per-op means), granularity 12 ns
+Run 1: total   163.66 ms | ns/add   136.6 ns/cancel   319.9 ns/bbo    14.7 ns/depth   126.7
+Median total: 163.66 ms (1 runs)
+Median  ns/add: 136.6  ns/cancel: 319.9  ns/bbo: 14.7  ns/depth: 126.7
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: cfa9e743f13cd8a8
+=== process 4/5 ===
+Impl: A
+Build: compiler 15.2.0, optimised yes, NDEBUG on
+Ops: 1000000 (adds=700471, cancels=199303, bbo=100226) + 10000 depth queries (get_bids(10)+get_asks(10))
+Workload: seed 42, hash 27f23594045a1e72
+Clock: steady_clock pair overhead 14.3 ns (subtracted from per-op means), granularity 12 ns
+Run 1: total   169.74 ms | ns/add   134.8 ns/cancel   302.9 ns/bbo    15.6 ns/depth   124.1
+Median total: 169.74 ms (1 runs)
+Median  ns/add: 134.8  ns/cancel: 302.9  ns/bbo: 15.6  ns/depth: 124.1
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: cfa9e743f13cd8a8
+=== process 5/5 ===
+Impl: A
+Build: compiler 15.2.0, optimised yes, NDEBUG on
+Ops: 1000000 (adds=700471, cancels=199303, bbo=100226) + 10000 depth queries (get_bids(10)+get_asks(10))
+Workload: seed 42, hash 27f23594045a1e72
+Clock: steady_clock pair overhead 14.2 ns (subtracted from per-op means), granularity 12 ns
+Run 1: total   157.45 ms | ns/add   127.3 ns/cancel   249.3 ns/bbo    14.8 ns/depth   123.3
+Median total: 157.45 ms (1 runs)
+Median  ns/add: 127.3  ns/cancel: 249.3  ns/bbo: 14.8  ns/depth: 123.3
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: cfa9e743f13cd8a8

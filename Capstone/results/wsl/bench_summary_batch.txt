@@ -1,0 +1,7 @@
+# bench summary: 5 fresh processes per impl, median of each metric
+# args: --runs 1 --batch
+# host: Linux 6.18.33.2-microsoft-standard-WSL2 x86_64  date: 2026-10-10T03:44:55Z
+# build: compiler 15.2.0, optimised yes, NDEBUG on
+Impl A: total 170.12 ms | ns/add 156.2 | ns/cancel 250.7 | ns/bbo -298.4 | ns/depth 1158.5 | R2 0.000 | perturbed 178.55 ms | checksum(s) cfa9e743f13cd8a8 
+Impl B: total 220.20 ms | ns/add 113.5 | ns/cancel 497.2 | ns/bbo 7.6 | ns/depth 60.0 | R2 0.085 | perturbed 222.11 ms | checksum(s) cfa9e743f13cd8a8 
+Impl C: total 30.12 ms | ns/add 31.7 | ns/cancel 27.7 | ns/bbo 17.1 | ns/depth 62.5 | R2 0.001 | perturbed 114.55 ms | checksum(s) cfa9e743f13cd8a8 

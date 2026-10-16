@@ -1,0 +1,18 @@
+# started on Sat Oct 10 03:26:04 2026
+
+
+ Performance counter stats for './build/bench --generate-only' (5 runs):
+
+             68.46 msec task-clock:u                                                            ( +-  2.20% )
+   <not supported>      cycles:u                                                              
+   <not supported>      instructions:u                                                        
+   <not supported>      branches:u                                                            
+   <not supported>      branch-misses:u                                                       
+   <not supported>      cache-references:u                                                    
+   <not supported>      cache-misses:u                                                        
+   <not supported>      L1-dcache-load-misses:u                                               
+   <not supported>      dTLB-load-misses:u                                                    
+              8932      page-faults:u                                                           ( +-  0.00% )
+
+       0.094046825 +- 0.011832845 seconds time elapsed  ( +- 12.58% )
+

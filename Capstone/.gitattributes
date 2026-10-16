@@ -1,0 +1,3 @@
+# Shell scripts must keep LF line endings or bash fails on Linux/WSL ("$'\r': command not found"),
+# even when core.autocrlf=true converts other files on Windows checkouts.
+*.sh text eol=lf

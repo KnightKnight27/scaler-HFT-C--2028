@@ -1,0 +1,31 @@
+# AddressSanitizer + UndefinedBehaviorSanitizer pass (not a timing build)
+# 2026-10-10T03:26:47Z  Linux 6.18.33.2-microsoft-standard-WSL2  g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0
+# build: scripts/build.sh asan  (-O1 -g -fno-omit-frame-pointer -fsanitize=address,undefined)
+## ./build/edge_tests_asan
+Oracle:
+  PASS (108 checks, 0 failed)
+Implementation A:
+  PASS (108 checks, 0 failed)
+Implementation B:
+  PASS (108 checks, 0 failed)
+Implementation C:
+  PASS (22929 checks, 0 failed)
+exit=0
+## ./build/bench_asan --verify
+Running correctness test...
+[graded] 1000000 ops, seed 42, sequential ids (adds=700471, cancels=199303, bbo=100226, fallback adds=0)
+  workload hash: 27f23594045a1e72
+  book at end: 501168 live orders, non-empty levels bid=5000/5000 ask=5000/5000
+  levels: 13845 created, 3845 emptied (0 in second half of ops, last at op 160754)
+  best level emptied by a cancel: bid 1 times, ask 5 times
+[thin-book] 200000 ops, seed 43, scrambled ids (adds=90092, cancels=89822, bbo=20086, fallback adds=15)
+  workload hash: 5b37273b494c20c8
+  book at end: 270 live orders, non-empty levels bid=119/5000 ask=146/5000
+  levels: 88014 created, 87749 emptied (43924 in second half of ops, last at op 199999)
+  best level emptied by a cancel: bid 742 times, ask 771 times
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+Implementation C (16-slot initial table): PASS
+All implementations produce identical results.
+exit=0

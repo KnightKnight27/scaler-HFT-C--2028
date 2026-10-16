@@ -1,0 +1,134 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'task-clock:uppp'
+# Event count (approx.): 292750000
+#
+# Overhead  Command     Shared Object        Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+# ........  ..........  ...................  .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    35.61%  bench_perf  bench_perf           [.] BookB::cancel_order(unsigned long)
+            |
+            ---_start
+               __libc_start_main
+               0x72bcbd02a601
+               main
+               run_benchmark<BookB> (inlined)
+               run_total_pass<BookB> (inlined)
+               main
+               BookB::cancel_order(unsigned long)
+               |          
+                --32.54%--std::map<unsigned long, OrderInfo, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::find(unsigned long const&) (inlined)
+                          std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::find(unsigned long const&) (inlined)
+                          |          
+                           --32.45%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+                                     |          
+                                      --29.72%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+
+    19.90%  bench_perf  bench_perf           [.] void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]
+            |
+            ---_start
+               __libc_start_main
+               0x72bcbd02a601
+               main
+               run_benchmark<BookB> (inlined)
+               run_total_pass<BookB> (inlined)
+               main
+               void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]
+               |          
+                --19.64%--BookB::add_order(unsigned long, Side, double, long) (inlined)
+                          |          
+                          |--6.66%--void BookB::add_to_level<(Side)1>(std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> >&, int, long) (inlined)
+                          |          |          
+                          |           --5.55%--__gnu_cxx::__normal_iterator<BookB::LevelEntry*, std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> > > BookB::find_slot<(Side)1>(std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> >&, int) (inlined)
+                          |                     |          
+                          |                      --5.47%--__gnu_cxx::__normal_iterator<BookB::LevelEntry*, std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> > > std::lower_bound<__gnu_cxx::__normal_iterator<BookB::LevelEntry*, std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> > >, int, BookB::find_slot<(Side)1>(std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> >&, int)::{lambda(BookB::LevelEntry const&, int)#1}>(__gnu_cxx::__normal_iterator<BookB::LevelEntry*, std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> > >, __gnu_cxx::__normal_iterator<BookB::LevelEntry*, std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> > >, int const&, BookB::find_slot<(Side)1>(std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> >&, int)::{lambda(BookB::LevelEntry const&, int)#1}) (inlined)
+                          |                                __gnu_cxx::__normal_iterator<BookB::LevelEntry*, std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> > > std::__lower_bound<__gnu_cxx::__normal_iterator<BookB::LevelEntry*, std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> > >, int, __gnu_cxx::__ops::_Iter_comp_val<BookB::find_slot<(Side)1>(std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> >&, int)::{lambda(BookB::LevelEntry const&, int)#1}> >(__gnu_cxx::__normal_iterator<BookB::LevelEntry*, std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> > >, __gnu_cxx::__normal_iterator<BookB::LevelEntry*, std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> > >, int const&, __gnu_cxx::__ops::_Iter_comp_val<BookB::find_slot<(Side)1>(std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> >&, int)::{lambda(BookB::LevelEntry const&, int)#1}>) (inlined)
+                          |          
+                          |--6.40%--std::pair<std::_Rb_tree_iterator<std::pair<unsigned long const, OrderInfo> >, bool> std::map<unsigned long, OrderInfo, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::emplace<unsigned long&, OrderInfo>(unsigned long&, OrderInfo&&) (inlined)
+                          |          |          
+                          |           --6.06%--std::map<unsigned long, OrderInfo, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::lower_bound(unsigned long const&) (inlined)
+                          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::lower_bound(unsigned long const&) (inlined)
+                          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+                          |                     |          
+                          |                      --3.42%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+                          |          
+                           --6.32%--void BookB::add_to_level<(Side)0>(std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> >&, int, long) (inlined)
+                                     |          
+                                      --6.15%--__gnu_cxx::__normal_iterator<BookB::LevelEntry*, std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> > > BookB::find_slot<(Side)0>(std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> >&, int) (inlined)
+                                                |          
+                                                 --6.06%--__gnu_cxx::__normal_iterator<BookB::LevelEntry*, std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> > > std::lower_bound<__gnu_cxx::__normal_iterator<BookB::LevelEntry*, std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> > >, int, BookB::find_slot<(Side)0>(std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> >&, int)::{lambda(BookB::LevelEntry const&, int)#1}>(__gnu_cxx::__normal_iterator<BookB::LevelEntry*, std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> > >, __gnu_cxx::__normal_iterator<BookB::LevelEntry*, std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> > >, int const&, BookB::find_slot<(Side)0>(std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> >&, int)::{lambda(BookB::LevelEntry const&, int)#1}) (inlined)
+                                                           __gnu_cxx::__normal_iterator<BookB::LevelEntry*, std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> > > std::__lower_bound<__gnu_cxx::__normal_iterator<BookB::LevelEntry*, std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> > >, int, __gnu_cxx::__ops::_Iter_comp_val<BookB::find_slot<(Side)0>(std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> >&, int)::{lambda(BookB::LevelEntry const&, int)#1}> >(__gnu_cxx::__normal_iterator<BookB::LevelEntry*, std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> > >, __gnu_cxx::__normal_iterator<BookB::LevelEntry*, std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> > >, int const&, __gnu_cxx::__ops::_Iter_comp_val<BookB::find_slot<(Side)0>(std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> >&, int)::{lambda(BookB::LevelEntry const&, int)#1}>) (inlined)
+
+    11.27%  bench_perf  bench_perf           [.] hash_workload(std::vector<Op, std::allocator<Op> > const&)
+            |
+            ---_start
+               __libc_start_main
+               0x72bcbd02a601
+               main
+               run_benchmark<BookB> (inlined)
+               main
+               hash_workload(std::vector<Op, std::allocator<Op> > const&)
+               |          
+               |--5.72%--hash_workload(std::vector<Op, std::allocator<Op> > const&)
+               |          
+                --5.47%--operator() (inlined)
+
+     7.86%  bench_perf  libstdc++.so.6.0.35  [.] std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+            |
+            ---_start
+               __libc_start_main
+               0x72bcbd02a601
+               main
+               run_benchmark<BookB> (inlined)
+               run_total_pass<BookB> (inlined)
+               main
+               std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+
+     4.70%  bench_perf  bench_perf           [.] generate_workload(WorkloadSpec const&, unsigned long*)
+            |
+            ---_start
+               __libc_start_main
+               0x72bcbd02a601
+               main
+               main
+               generate_workload(WorkloadSpec const&, unsigned long*)
+
+     3.16%  bench_perf  bench_perf           [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]
+            |
+            ---_start
+               __libc_start_main
+               0x72bcbd02a601
+               main
+               run_benchmark<BookB> (inlined)
+               run_total_pass<BookB> (inlined)
+               std::unique_ptr<BookB, std::default_delete<BookB> >::~unique_ptr() (inlined)
+               std::default_delete<BookB>::operator()(BookB*) const (inlined)
+               std::default_delete<BookB>::operator()(BookB*) const (inlined)
+               BookB::~BookB() (inlined)
+               std::map<unsigned long, OrderInfo, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::~map() (inlined)
+               std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::~_Rb_tree() (inlined)
+               std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) (inlined)
+               std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_S_left(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) (inlined)
+               std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) (inlined)
+               std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) (inlined)
+               |          
+                --3.07%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) (inlined)
+                          std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) (inlined)
+                          |          
+                           --2.99%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) (inlined)
+                                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) (inlined)
+                                     |          
+                                      --2.90%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) (inlined)
+                                                |          
+                                                 --2.73%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) (inlined)
+                                                           |          
+                                                            --2.31%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) (inlined)
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

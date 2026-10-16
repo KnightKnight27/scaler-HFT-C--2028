@@ -1,0 +1,1294 @@
+ Percent |	Source code & Disassembly of bench_perf for task-clock:uppp (417 samples, percent: local period)
+----------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3    Disassembly of section .text:
+         :
+         : 5    000000000000b400 <BookB::cancel_order(unsigned long)>:
+    0.00 :   b400:   endbr64
+    0.00 :   b404:   mov    0x10(%rdi),%rax
+    0.00 :   b408:   test   %rax,%rax
+    0.00 :   b40b:   je     b648 <BookB::cancel_order(unsigned long)+0x248>
+    0.00 :   b411:   push   %rbp
+    0.00 :   b412:   lea    0x8(%rdi),%r8
+    0.00 :   b416:   mov    %rsp,%rbp
+    0.00 :   b419:   push   %r12
+    0.00 :   b41b:   push   %rbx
+    0.72 :   b41c:   mov    %rdi,%rbx
+    0.00 :   b41f:   mov    %r8,%rdi
+    0.00 :   b422:   sub    $0x10,%rsp
+    0.00 :   b426:   jmp    b44b <BookB::cancel_order(unsigned long)+0x4b>
+    0.00 :   b428:   xchg   %ax,%ax
+    0.00 :   b42a:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   b435:   data16 cs nopw 0x0(%rax,%rax,1)
+    1.44 :   b440:   mov    %rax,%rdi
+    0.72 :   b443:   mov    %rcx,%rax
+    0.00 :   b446:   test   %rax,%rax
+    0.00 :   b449:   je     b461 <BookB::cancel_order(unsigned long)+0x61>
+    1.20 :   b44b:   mov    0x10(%rax),%rcx
+   83.45 :   b44f:   mov    0x18(%rax),%rdx
+    1.20 :   b453:   cmp    %rsi,0x20(%rax)
+    0.00 :   b457:   jae    b440 <BookB::cancel_order(unsigned long)+0x40>
+    0.96 :   b459:   mov    %rdx,%rax
+    2.16 :   b45c:   test   %rax,%rax
+    0.00 :   b45f:   jne    b44b <BookB::cancel_order(unsigned long)+0x4b>
+    0.24 :   b461:   cmp    %rdi,%r8
+    0.00 :   b464:   je     b46c <BookB::cancel_order(unsigned long)+0x6c>
+    0.00 :   b466:   cmp    0x20(%rdi),%rsi
+    0.00 :   b46a:   jae    b478 <BookB::cancel_order(unsigned long)+0x78>
+    0.00 :   b46c:   add    $0x10,%rsp
+    0.00 :   b470:   pop    %rbx
+    0.00 :   b471:   pop    %r12
+    0.00 :   b473:   pop    %rbp
+    0.00 :   b474:   ret
+    0.00 :   b475:   nopl   (%rax)
+    0.24 :   b478:   movq   0x30(%rdi),%xmm0
+    0.48 :   b47d:   mov    %r8,%rsi
+    0.00 :   b480:   mov    0x28(%rdi),%r12
+    0.00 :   b484:   movq   %xmm0,-0x18(%rbp)
+    0.00 :   b489:   call   2310 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@plt>
+    0.00 :   b48e:   mov    $0x38,%esi
+    0.00 :   b493:   mov    %rax,%rdi
+    0.00 :   b496:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   b49b:   mov    %r12,%rax
+    0.00 :   b49e:   movq   -0x18(%rbp),%xmm0
+    0.00 :   b4a3:   subq   $0x1,0x28(%rbx)
+    0.00 :   b4a8:   shr    $0x20,%rax
+    0.00 :   b4ac:   movhps 0x164cd(%rip),%xmm0        # 21980 <_IO_stdin_used+0x980>
+    0.00 :   b4b3:   mov    %eax,%ecx
+    0.00 :   b4b5:   test   %r12d,%r12d
+    0.00 :   b4b8:   jne    b570 <BookB::cancel_order(unsigned long)+0x170>
+    0.00 :   b4be:   mov    0x30(%rbx),%rdi
+    0.24 :   b4c2:   mov    0x38(%rbx),%rax
+    0.00 :   b4c6:   sub    %rdi,%rax
+    0.00 :   b4c9:   test   %rax,%rax
+    0.00 :   b4cc:   jle    b52e <BookB::cancel_order(unsigned long)+0x12e>
+    0.00 :   b4ce:   movabs $0xaaaaaaaaaaaaaaab,%rdx
+    0.00 :   b4d8:   sar    $0x3,%rax
+    0.00 :   b4dc:   imul   %rdx,%rax
+    0.00 :   b4e0:   jmp    b511 <BookB::cancel_order(unsigned long)+0x111>
+    0.00 :   b4e2:   nopl   0x0(%rax,%rax,1)
+    0.00 :   b4ea:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   b4f5:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.24 :   b500:   sub    %rsi,%rax
+    0.24 :   b503:   lea    0x18(%rdi,%rdx,8),%rdi
+    0.00 :   b508:   sub    $0x1,%rax
+    0.24 :   b50c:   test   %rax,%rax
+    0.00 :   b50f:   jle    b52e <BookB::cancel_order(unsigned long)+0x12e>
+    0.00 :   b511:   mov    %rax,%rsi
+    0.00 :   b514:   mov    %rax,%rdx
+    0.00 :   b517:   sar    $1,%rsi
+    0.48 :   b51a:   and    $0xfffffffffffffffe,%rdx
+    0.24 :   b51e:   add    %rsi,%rdx
+    0.00 :   b521:   cmp    (%rdi,%rdx,8),%ecx
+    0.00 :   b524:   jg     b500 <BookB::cancel_order(unsigned long)+0x100>
+    0.24 :   b526:   mov    %rsi,%rax
+    0.00 :   b529:   test   %rax,%rax
+    0.00 :   b52c:   jg     b511 <BookB::cancel_order(unsigned long)+0x111>
+    0.00 :   b52e:   movdqu 0x8(%rdi),%xmm2
+    0.48 :   b533:   movdqa %xmm2,%xmm1
+    0.00 :   b537:   psubq  %xmm0,%xmm2
+    0.00 :   b53b:   paddq  %xmm0,%xmm1
+    0.00 :   b53f:   movhlps %xmm1,%xmm3
+    0.00 :   b542:   shufpd $0x2,%xmm1,%xmm2
+    0.00 :   b547:   movq   %xmm3,%rax
+    0.00 :   b54c:   movups %xmm2,0x8(%rdi)
+    0.00 :   b550:   test   %rax,%rax
+    0.00 :   b553:   je     b630 <BookB::cancel_order(unsigned long)+0x230>
+    0.00 :   b559:   add    $0x10,%rsp
+    0.00 :   b55d:   mov    $0x1,%eax
+    0.00 :   b562:   pop    %rbx
+    0.00 :   b563:   pop    %r12
+    0.00 :   b565:   pop    %rbp
+    0.00 :   b566:   ret
+    0.00 :   b567:   nopw   0x0(%rax,%rax,1)
+    0.00 :   b570:   mov    0x48(%rbx),%rdi
+    0.00 :   b574:   mov    0x50(%rbx),%rax
+    0.00 :   b578:   sub    %rdi,%rax
+    0.00 :   b57b:   test   %rax,%rax
+    0.00 :   b57e:   jle    b5ee <BookB::cancel_order(unsigned long)+0x1ee>
+    0.00 :   b580:   movabs $0xaaaaaaaaaaaaaaab,%rdx
+    0.00 :   b58a:   sar    $0x3,%rax
+    0.00 :   b58e:   imul   %rdx,%rax
+    0.00 :   b592:   jmp    b5d1 <BookB::cancel_order(unsigned long)+0x1d1>
+    0.00 :   b594:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   b59f:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   b5aa:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   b5b5:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.48 :   b5c0:   sub    %rsi,%rax
+    0.24 :   b5c3:   lea    0x18(%rdi,%rdx,8),%rdi
+    0.24 :   b5c8:   sub    $0x1,%rax
+    0.00 :   b5cc:   test   %rax,%rax
+    0.00 :   b5cf:   jle    b5ee <BookB::cancel_order(unsigned long)+0x1ee>
+    0.00 :   b5d1:   mov    %rax,%rsi
+    0.00 :   b5d4:   mov    %rax,%rdx
+    0.00 :   b5d7:   sar    $1,%rsi
+    0.72 :   b5da:   and    $0xfffffffffffffffe,%rdx
+    0.24 :   b5de:   add    %rsi,%rdx
+    1.44 :   b5e1:   cmp    (%rdi,%rdx,8),%ecx
+    0.00 :   b5e4:   jl     b5c0 <BookB::cancel_order(unsigned long)+0x1c0>
+    0.48 :   b5e6:   mov    %rsi,%rax
+    0.96 :   b5e9:   test   %rax,%rax
+    0.00 :   b5ec:   jg     b5d1 <BookB::cancel_order(unsigned long)+0x1d1>
+    0.00 :   b5ee:   movdqu 0x8(%rdi),%xmm2
+    0.00 :   b5f3:   movdqa %xmm2,%xmm1
+    0.00 :   b5f7:   psubq  %xmm0,%xmm2
+    0.00 :   b5fb:   paddq  %xmm0,%xmm1
+    0.00 :   b5ff:   movhlps %xmm1,%xmm4
+    0.00 :   b602:   shufpd $0x2,%xmm1,%xmm2
+    0.00 :   b607:   movq   %xmm4,%rax
+    0.00 :   b60c:   movups %xmm2,0x8(%rdi)
+    0.00 :   b610:   test   %rax,%rax
+    0.00 :   b613:   jne    b559 <BookB::cancel_order(unsigned long)+0x159>
+    0.00 :   b619:   mov    %rdi,%rsi
+    0.00 :   b61c:   lea    0x48(%rbx),%rdi
+    0.00 :   b620:   call   b080 <std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> >::_M_erase(__gnu_cxx::__normal_iterator<BookB::LevelEntry*, std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> > >) [clone .isra.0]>
+    0.00 :   b625:   jmp    b559 <BookB::cancel_order(unsigned long)+0x159>
+    0.00 :   b62a:   nopw   0x0(%rax,%rax,1)
+    0.00 :   b630:   mov    %rdi,%rsi
+    0.00 :   b633:   lea    0x30(%rbx),%rdi
+    0.00 :   b637:   call   b080 <std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> >::_M_erase(__gnu_cxx::__normal_iterator<BookB::LevelEntry*, std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> > >) [clone .isra.0]>
+    0.00 :   b63c:   jmp    b559 <BookB::cancel_order(unsigned long)+0x159>
+    0.00 :   b641:   nopl   0x0(%rax)
+    0.00 :   b648:   xor    %eax,%eax
+    0.00 :   b64a:   ret
+ Percent |	Source code & Disassembly of bench_perf for task-clock:uppp (233 samples, percent: local period)
+----------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3    Disassembly of section .text:
+         :
+         : 5    0000000000009c00 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]>:
+    0.00 :   9c00:   push   %rbp
+    0.00 :   9c01:   mov    %rsp,%rbp
+    0.00 :   9c04:   push   %r15
+    0.00 :   9c06:   push   %r14
+    0.00 :   9c08:   push   %r13
+    0.00 :   9c0a:   push   %r12
+    0.00 :   9c0c:   push   %rbx
+    0.00 :   9c0d:   sub    $0x48,%rsp
+    0.00 :   9c11:   movsd  0x17d6f(%rip),%xmm0        # 21988 <_IO_stdin_used+0x988>
+    0.00 :   9c19:   mov    0x4(%rsi),%r14d
+    0.00 :   9c1d:   mov    %fs:0x28,%r13
+    0.00 :   9c26:   mov    %r13,-0x38(%rbp)
+    0.00 :   9c2a:   mov    %rdi,%r13
+    0.43 :   9c2d:   mulsd  0x10(%rsi),%xmm0
+    0.43 :   9c32:   mov    0x18(%rsi),%rbx
+    0.00 :   9c36:   mov    %r14d,-0x54(%rbp)
+    0.00 :   9c3a:   mov    0x8(%rsi),%r15
+    0.00 :   9c3e:   call   22d0 <llround@plt>
+    0.00 :   9c43:   movd   %r14d,%xmm0
+    0.00 :   9c48:   movd   %eax,%xmm1
+    0.86 :   9c4c:   mov    %rax,%r12
+    0.00 :   9c4f:   mov    0x10(%r13),%rax
+    0.00 :   9c53:   lea    0x8(%r13),%r14
+    0.00 :   9c57:   punpckldq %xmm1,%xmm0
+    0.43 :   9c5b:   test   %rax,%rax
+    0.00 :   9c5e:   je     9f40 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x340>
+    0.00 :   9c64:   mov    %r14,%rsi
+    0.00 :   9c67:   jmp    9c8b <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x8b>
+    0.00 :   9c69:   nop
+    0.00 :   9c6a:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   9c75:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   9c80:   mov    %rax,%rsi
+    0.00 :   9c83:   mov    %rcx,%rax
+    0.00 :   9c86:   test   %rax,%rax
+    0.00 :   9c89:   je     9ca1 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0xa1>
+    1.72 :   9c8b:   mov    0x10(%rax),%rcx
+   17.17 :   9c8f:   mov    0x18(%rax),%rdx
+    2.15 :   9c93:   cmp    %r15,0x20(%rax)
+    0.00 :   9c97:   jae    9c80 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x80>
+    6.01 :   9c99:   mov    %rdx,%rax
+    3.00 :   9c9c:   test   %rax,%rax
+    0.00 :   9c9f:   jne    9c8b <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x8b>
+    0.00 :   9ca1:   cmp    %rsi,%r14
+    0.00 :   9ca4:   je     9f40 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x340>
+    0.00 :   9caa:   cmp    0x20(%rsi),%r15
+    0.00 :   9cae:   jae    9d43 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x143>
+    0.00 :   9cb4:   mov    $0x38,%edi
+    0.00 :   9cb9:   mov    %rsi,-0x60(%rbp)
+    0.00 :   9cbd:   movq   %xmm0,-0x68(%rbp)
+    0.00 :   9cc2:   call   2360 <operator new(unsigned long)@plt>
+    0.00 :   9cc7:   movq   -0x68(%rbp),%xmm0
+    0.00 :   9ccc:   mov    -0x60(%rbp),%rsi
+    0.00 :   9cd0:   mov    %r15,0x20(%rax)
+    0.00 :   9cd4:   mov    %rax,%r9
+    0.00 :   9cd7:   mov    %rbx,0x30(%rax)
+    0.00 :   9cdb:   movq   %xmm0,0x28(%rax)
+    0.00 :   9ce0:   mov    0x20(%rsi),%rax
+    0.00 :   9ce4:   cmp    %rax,%r15
+    0.00 :   9ce7:   jae    9ec0 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x2c0>
+    0.00 :   9ced:   cmp    0x18(%r13),%rsi
+    0.00 :   9cf1:   je     9f80 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x380>
+    0.00 :   9cf7:   mov    %rsi,%rdi
+    0.00 :   9cfa:   mov    %r9,-0x60(%rbp)
+    0.00 :   9cfe:   mov    %rsi,-0x68(%rbp)
+    0.00 :   9d02:   call   2380 <std::_Rb_tree_decrement(std::_Rb_tree_node_base*)@plt>
+    0.00 :   9d07:   mov    -0x60(%rbp),%r9
+    0.00 :   9d0b:   cmp    %r15,0x20(%rax)
+    0.00 :   9d0f:   jae    9f08 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x308>
+    0.00 :   9d15:   cmpq   $0x0,0x18(%rax)
+    0.00 :   9d1a:   je     9fbb <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x3bb>
+    0.00 :   9d20:   mov    -0x68(%rbp),%rsi
+    0.00 :   9d24:   mov    $0x1,%edi
+    0.00 :   9d29:   nopl   0x0(%rax)
+    0.00 :   9d30:   mov    %rsi,%rdx
+    0.00 :   9d33:   mov    %r14,%rcx
+    0.00 :   9d36:   mov    %r9,%rsi
+    0.00 :   9d39:   call   2270 <std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@plt>
+    0.00 :   9d3e:   addq   $0x1,0x28(%r13)
+    0.00 :   9d43:   mov    -0x54(%rbp),%eax
+    0.00 :   9d46:   test   %eax,%eax
+    0.00 :   9d48:   jne    9e08 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x208>
+    0.00 :   9d4e:   mov    0x38(%r13),%rdi
+    0.43 :   9d52:   mov    0x30(%r13),%rsi
+    0.00 :   9d56:   mov    %rdi,%rax
+    0.00 :   9d59:   sub    %rsi,%rax
+    0.43 :   9d5c:   test   %rax,%rax
+    0.00 :   9d5f:   jle    9daf <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x1af>
+    0.00 :   9d61:   movabs $0xaaaaaaaaaaaaaaab,%rdx
+    0.00 :   9d6b:   sar    $0x3,%rax
+    0.00 :   9d6f:   imul   %rdx,%rax
+    0.00 :   9d73:   jmp    9d91 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x191>
+    0.00 :   9d75:   data16 cs nopw 0x0(%rax,%rax,1)
+    8.58 :   9d80:   sub    %rcx,%rax
+    3.86 :   9d83:   lea    0x18(%rsi,%rdx,8),%rsi
+    0.00 :   9d88:   sub    $0x1,%rax
+    0.00 :   9d8c:   test   %rax,%rax
+    0.00 :   9d8f:   jle    9daf <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x1af>
+    1.72 :   9d91:   mov    %rax,%rcx
+    0.86 :   9d94:   mov    %rax,%rdx
+    0.00 :   9d97:   sar    $1,%rcx
+    1.72 :   9d9a:   and    $0xfffffffffffffffe,%rdx
+    0.00 :   9d9e:   add    %rcx,%rdx
+    3.43 :   9da1:   cmp    (%rsi,%rdx,8),%r12d
+    0.00 :   9da5:   jg     9d80 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x180>
+    8.15 :   9da7:   mov    %rcx,%rax
+    1.72 :   9daa:   test   %rax,%rax
+    0.00 :   9dad:   jg     9d91 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x191>
+    0.00 :   9daf:   cmp    %rsi,%rdi
+    0.00 :   9db2:   je     9dbd <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x1bd>
+    0.86 :   9db4:   cmp    (%rsi),%r12d
+    0.00 :   9db7:   je     9ea8 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x2a8>
+    0.00 :   9dbd:   lea    -0x50(%rbp),%rdx
+    0.00 :   9dc1:   lea    0x30(%r13),%rdi
+    0.00 :   9dc5:   movl   $0x0,-0x4c(%rbp)
+    0.00 :   9dcc:   mov    %r12d,-0x50(%rbp)
+    0.00 :   9dd0:   mov    %rbx,-0x48(%rbp)
+    0.00 :   9dd4:   movq   $0x1,-0x40(%rbp)
+    0.00 :   9ddc:   call   9b40 <std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> >::_M_insert_rval(__gnu_cxx::__normal_iterator<BookB::LevelEntry const*, std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> > >, BookB::LevelEntry&&) [clone .isra.0]>
+    0.43 :   9de1:   mov    -0x38(%rbp),%rax
+    0.00 :   9de5:   sub    %fs:0x28,%rax
+    0.00 :   9dee:   jne    9fc2 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x3c2>
+    0.00 :   9df4:   add    $0x48,%rsp
+    0.00 :   9df8:   pop    %rbx
+    0.43 :   9df9:   pop    %r12
+    0.00 :   9dfb:   pop    %r13
+    0.00 :   9dfd:   pop    %r14
+    0.00 :   9dff:   pop    %r15
+    0.00 :   9e01:   pop    %rbp
+    0.00 :   9e02:   ret
+    0.00 :   9e03:   nopl   0x0(%rax,%rax,1)
+    0.00 :   9e08:   mov    0x50(%r13),%rdi
+    0.43 :   9e0c:   mov    0x48(%r13),%rsi
+    0.00 :   9e10:   mov    %rdi,%rax
+    0.00 :   9e13:   sub    %rsi,%rax
+    0.00 :   9e16:   test   %rax,%rax
+    0.00 :   9e19:   jle    9e6f <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x26f>
+    0.00 :   9e1b:   movabs $0xaaaaaaaaaaaaaaab,%rdx
+    0.00 :   9e25:   sar    $0x3,%rax
+    0.00 :   9e29:   imul   %rdx,%rax
+    0.00 :   9e2d:   jmp    9e51 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x251>
+    0.00 :   9e2f:   nopw   0x0(%rax,%rax,1)
+    0.00 :   9e35:   data16 cs nopw 0x0(%rax,%rax,1)
+    3.43 :   9e40:   sub    %rcx,%rax
+    4.29 :   9e43:   lea    0x18(%rsi,%rdx,8),%rsi
+    0.00 :   9e48:   sub    $0x1,%rax
+    0.00 :   9e4c:   test   %rax,%rax
+    0.00 :   9e4f:   jle    9e6f <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x26f>
+    1.29 :   9e51:   mov    %rax,%rcx
+    0.00 :   9e54:   mov    %rax,%rdx
+    0.00 :   9e57:   sar    $1,%rcx
+    2.15 :   9e5a:   and    $0xfffffffffffffffe,%rdx
+    3.00 :   9e5e:   add    %rcx,%rdx
+    3.43 :   9e61:   cmp    (%rsi,%rdx,8),%r12d
+    0.00 :   9e65:   jl     9e40 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x240>
+    6.01 :   9e67:   mov    %rcx,%rax
+    3.86 :   9e6a:   test   %rax,%rax
+    0.00 :   9e6d:   jg     9e51 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x251>
+    0.00 :   9e6f:   cmp    %rsi,%rdi
+    0.00 :   9e72:   je     9e79 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x279>
+    0.86 :   9e74:   cmp    (%rsi),%r12d
+    0.00 :   9e77:   je     9ea8 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x2a8>
+    0.00 :   9e79:   lea    -0x50(%rbp),%rdx
+    0.00 :   9e7d:   lea    0x48(%r13),%rdi
+    0.00 :   9e81:   movl   $0x0,-0x4c(%rbp)
+    0.00 :   9e88:   mov    %r12d,-0x50(%rbp)
+    0.00 :   9e8c:   mov    %rbx,-0x48(%rbp)
+    0.00 :   9e90:   movq   $0x1,-0x40(%rbp)
+    0.00 :   9e98:   call   9b40 <std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> >::_M_insert_rval(__gnu_cxx::__normal_iterator<BookB::LevelEntry const*, std::vector<BookB::LevelEntry, std::allocator<BookB::LevelEntry> > >, BookB::LevelEntry&&) [clone .isra.0]>
+    0.00 :   9e9d:   jmp    9de1 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x1e1>
+    0.00 :   9ea2:   nopw   0x0(%rax,%rax,1)
+    0.86 :   9ea8:   add    %rbx,0x8(%rsi)
+    3.00 :   9eac:   addq   $0x1,0x10(%rsi)
+    0.86 :   9eb1:   jmp    9de1 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x1e1>
+    0.00 :   9eb6:   cs nopw 0x0(%rax,%rax,1)
+    0.00 :   9ec0:   cmp    %r15,%rax
+    0.00 :   9ec3:   jae    9f29 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x329>
+    0.00 :   9ec5:   cmp    %rsi,0x20(%r13)
+    0.00 :   9ec9:   je     9f8a <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x38a>
+    0.00 :   9ecf:   mov    %rsi,%rdi
+    0.00 :   9ed2:   mov    %r9,-0x60(%rbp)
+    0.00 :   9ed6:   mov    %rsi,-0x68(%rbp)
+    0.00 :   9eda:   call   2330 <std::_Rb_tree_increment(std::_Rb_tree_node_base*)@plt>
+    0.00 :   9edf:   mov    -0x60(%rbp),%r9
+    0.00 :   9ee3:   cmp    0x20(%rax),%r15
+    0.00 :   9ee7:   jae    9f08 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x308>
+    0.00 :   9ee9:   mov    -0x68(%rbp),%rsi
+    0.00 :   9eed:   cmpq   $0x0,0x18(%rsi)
+    0.00 :   9ef2:   je     9f8a <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x38a>
+    0.00 :   9ef8:   mov    %rax,%rsi
+    0.00 :   9efb:   mov    $0x1,%edi
+    0.00 :   9f00:   jmp    9d30 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x130>
+    0.00 :   9f05:   nopl   (%rax)
+    0.00 :   9f08:   mov    %r15,%rsi
+    0.00 :   9f0b:   mov    %r13,%rdi
+    0.00 :   9f0e:   mov    %r9,-0x60(%rbp)
+    0.00 :   9f12:   call   7ed0 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_get_insert_unique_pos(unsigned long const&) [clone .isra.0]>
+    0.00 :   9f17:   mov    -0x60(%rbp),%r9
+    0.00 :   9f1b:   mov    %rdx,%rsi
+    0.00 :   9f1e:   test   %rax,%rax
+    0.00 :   9f21:   setne  %al
+    0.00 :   9f24:   test   %rdx,%rdx
+    0.00 :   9f27:   jne    9f77 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x377>
+    0.00 :   9f29:   mov    $0x38,%esi
+    0.00 :   9f2e:   mov    %r9,%rdi
+    0.00 :   9f31:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   9f36:   jmp    9d43 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x143>
+    0.00 :   9f3b:   nopl   0x0(%rax,%rax,1)
+    0.43 :   9f40:   mov    $0x38,%edi
+    0.00 :   9f45:   movq   %xmm0,-0x60(%rbp)
+    0.00 :   9f4a:   call   2360 <operator new(unsigned long)@plt>
+    0.00 :   9f4f:   movq   -0x60(%rbp),%xmm0
+    0.00 :   9f54:   mov    %r15,0x20(%rax)
+    0.00 :   9f58:   mov    %rax,%r9
+    0.43 :   9f5b:   mov    %rbx,0x30(%rax)
+    0.00 :   9f5f:   movq   %xmm0,0x28(%rax)
+    0.00 :   9f64:   cmpq   $0x0,0x28(%r13)
+    0.00 :   9f69:   je     9fa0 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x3a0>
+    0.43 :   9f6b:   mov    0x20(%r13),%rsi
+    0.00 :   9f6f:   cmp    %r15,0x20(%rsi)
+    0.00 :   9f73:   jae    9fa0 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x3a0>
+    0.00 :   9f75:   xor    %eax,%eax
+    0.00 :   9f77:   cmp    %rsi,%r14
+    0.00 :   9f7a:   je     9f80 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x380>
+    0.00 :   9f7c:   test   %al,%al
+    0.00 :   9f7e:   je     9f8a <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x38a>
+    0.00 :   9f80:   mov    $0x1,%edi
+    0.00 :   9f85:   jmp    9d30 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x130>
+    0.00 :   9f8a:   xor    %edi,%edi
+    0.00 :   9f8c:   cmp    0x20(%rsi),%r15
+    0.00 :   9f90:   setb   %dil
+    0.43 :   9f94:   jmp    9d30 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x130>
+    0.00 :   9f99:   nopl   0x0(%rax)
+    0.00 :   9fa0:   mov    %r15,%rsi
+    0.00 :   9fa3:   mov    %r13,%rdi
+    0.00 :   9fa6:   mov    %r9,-0x60(%rbp)
+    0.00 :   9faa:   call   7ed0 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_get_insert_unique_pos(unsigned long const&) [clone .isra.0]>
+    0.00 :   9faf:   mov    -0x60(%rbp),%r9
+    0.00 :   9fb3:   mov    %rdx,%rsi
+    0.00 :   9fb6:   jmp    9f1e <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x31e>
+    0.00 :   9fbb:   mov    %rax,%rsi
+    0.00 :   9fbe:   xor    %eax,%eax
+    0.00 :   9fc0:   jmp    9f77 <void (anonymous namespace)::apply<BookB>(BookB&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]+0x377>
+    0.00 :   9fc2:   call   2390 <__stack_chk_fail@plt>
+ Percent |	Source code & Disassembly of bench_perf for task-clock:uppp (132 samples, percent: local period)
+----------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3    Disassembly of section .text:
+         :
+         : 5    000000000000d110 <hash_workload(std::vector<Op, std::allocator<Op> > const&)>:
+    0.00 :   d110:   endbr64
+    0.00 :   d114:   push   %rbp
+    0.00 :   d115:   mov    %rsp,%rbp
+    0.00 :   d118:   push   %r14
+    0.00 :   d11a:   mov    (%rdi),%r14
+    0.00 :   d11d:   push   %r13
+    0.00 :   d11f:   push   %r12
+    0.00 :   d121:   mov    0x8(%rdi),%r12
+    0.00 :   d125:   push   %rbx
+    0.00 :   d126:   movabs $0xcbf29ce484222325,%rbx
+    0.00 :   d130:   cmp    %r14,%r12
+    0.00 :   d133:   je     d268 <hash_workload(std::vector<Op, std::allocator<Op> > const&)+0x158>
+    0.00 :   d139:   movabs $0x100000001b3,%r13
+    0.00 :   d143:   xchg   %ax,%ax
+    0.00 :   d145:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   d150:   movzbl (%r14),%edx
+    0.00 :   d154:   xor    %ecx,%ecx
+    0.00 :   d156:   cs nopw 0x0(%rax,%rax,1)
+    0.00 :   d160:   mov    %rdx,%rax
+    0.00 :   d163:   shr    %cl,%rax
+    0.00 :   d166:   add    $0x8,%ecx
+    0.00 :   d169:   xor    %rbx,%rax
+    3.79 :   d16c:   imul   %r13,%rax
+   17.42 :   d170:   mov    %rax,%rbx
+    0.00 :   d173:   cmp    $0x40,%ecx
+    0.00 :   d176:   jne    d160 <hash_workload(std::vector<Op, std::allocator<Op> > const&)+0x50>
+    0.00 :   d178:   movslq 0x4(%r14),%rdx
+    0.00 :   d17c:   xor    %ecx,%ecx
+    0.00 :   d17e:   xchg   %ax,%ax
+    0.00 :   d180:   mov    %rdx,%rax
+    0.00 :   d183:   shr    %cl,%rax
+    0.76 :   d186:   add    $0x8,%ecx
+    0.00 :   d189:   movzbl %al,%eax
+    1.52 :   d18c:   xor    %rbx,%rax
+   12.12 :   d18f:   imul   %r13,%rax
+    7.58 :   d193:   mov    %rax,%rbx
+    0.00 :   d196:   cmp    $0x40,%ecx
+    0.00 :   d199:   jne    d180 <hash_workload(std::vector<Op, std::allocator<Op> > const&)+0x70>
+    0.00 :   d19b:   mov    0x8(%r14),%rdx
+    0.00 :   d19f:   xor    %ecx,%ecx
+    0.00 :   d1a1:   nopw   0x0(%rax,%rax,1)
+    0.00 :   d1aa:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   d1b5:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   d1c0:   mov    %rdx,%rax
+    0.00 :   d1c3:   shr    %cl,%rax
+    0.00 :   d1c6:   add    $0x8,%ecx
+    0.00 :   d1c9:   movzbl %al,%eax
+    0.00 :   d1cc:   xor    %rbx,%rax
+   12.12 :   d1cf:   imul   %r13,%rax
+    9.85 :   d1d3:   mov    %rax,%rbx
+    0.00 :   d1d6:   cmp    $0x40,%ecx
+    0.00 :   d1d9:   jne    d1c0 <hash_workload(std::vector<Op, std::allocator<Op> > const&)+0xb0>
+    0.00 :   d1db:   movsd  0x147a5(%rip),%xmm0        # 21988 <_IO_stdin_used+0x988>
+    0.00 :   d1e3:   mulsd  0x10(%r14),%xmm0
+    0.76 :   d1e9:   call   22d0 <llround@plt>
+    0.00 :   d1ee:   xor    %ecx,%ecx
+    0.00 :   d1f0:   cltq
+    0.76 :   d1f2:   nopl   (%rax)
+    0.00 :   d1f5:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   d200:   mov    %rax,%rdx
+    0.00 :   d203:   shr    %cl,%rdx
+    0.00 :   d206:   add    $0x8,%ecx
+    0.76 :   d209:   movzbl %dl,%edx
+    0.76 :   d20c:   xor    %rbx,%rdx
+    4.55 :   d20f:   mov    %rdx,%rbx
+    3.79 :   d212:   imul   %r13,%rbx
+    9.85 :   d216:   cmp    $0x40,%ecx
+    0.00 :   d219:   jne    d200 <hash_workload(std::vector<Op, std::allocator<Op> > const&)+0xf0>
+    0.00 :   d21b:   mov    0x18(%r14),%rdx
+    0.00 :   d21f:   xor    %ecx,%ecx
+    0.00 :   d221:   nopw   0x0(%rax,%rax,1)
+    0.00 :   d22a:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   d235:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   d240:   mov    %rdx,%rax
+    0.00 :   d243:   shr    %cl,%rax
+    0.00 :   d246:   add    $0x8,%ecx
+    0.00 :   d249:   movzbl %al,%eax
+    2.27 :   d24c:   xor    %rbx,%rax
+    3.79 :   d24f:   imul   %r13,%rax
+    7.58 :   d253:   mov    %rax,%rbx
+    0.00 :   d256:   cmp    $0x40,%ecx
+    0.00 :   d259:   jne    d240 <hash_workload(std::vector<Op, std::allocator<Op> > const&)+0x130>
+    0.00 :   d25b:   add    $0x20,%r14
+    0.00 :   d25f:   cmp    %r14,%r12
+    0.00 :   d262:   jne    d150 <hash_workload(std::vector<Op, std::allocator<Op> > const&)+0x40>
+    0.00 :   d268:   mov    %rbx,%rax
+    0.00 :   d26b:   pop    %rbx
+    0.00 :   d26c:   pop    %r12
+    0.00 :   d26e:   pop    %r13
+    0.00 :   d270:   pop    %r14
+    0.00 :   d272:   pop    %rbp
+    0.00 :   d273:   ret
+ Percent |	Source code & Disassembly of libstdc++.so.6.0.35 for task-clock:uppp (92 samples, percent: local period)
+------------------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3     Disassembly of section .text:
+         :
+         : 5     00000000000dd970 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4>:
+    0.00 :   dd970:  endbr64
+    0.00 :   dd974:  mov    %rdi,%r9
+    0.00 :   dd977:  mov    0x10(%rdi),%rdi
+    1.09 :   dd97b:  mov    %rsi,%r8
+    1.09 :   dd97e:  mov    0x18(%r9),%rsi
+    0.00 :   dd982:  test   %rdi,%rdi
+    0.00 :   dd985:  je     ddc40 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x2d0>
+    0.00 :   dd98b:  mov    %rsi,%rax
+    0.00 :   dd98e:  test   %rsi,%rsi
+    0.00 :   dd991:  je     ddb28 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x1b8>
+    0.00 :   dd997:  nopw   0x0(%rax,%rax,1)
+    1.09 :   dd9a0:  mov    %rax,%rdx
+    0.00 :   dd9a3:  mov    0x10(%rax),%rax
+   21.74 :   dd9a7:  test   %rax,%rax
+    0.00 :   dd9aa:  jne    dd9a0 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x30>
+    1.09 :   dd9ac:  mov    0x18(%rdx),%rcx
+    0.00 :   dd9b0:  cmp    %r9,%rdx
+    0.00 :   dd9b3:  je     ddc33 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x2c3>
+    0.00 :   dd9b9:  mov    %rdx,0x8(%rdi)
+    0.00 :   dd9bd:  mov    %rsi,%rax
+    0.00 :   dd9c0:  mov    %rdi,0x10(%rdx)
+    0.00 :   dd9c4:  cmp    %rsi,%rdx
+    0.00 :   dd9c7:  je     dd9e6 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x76>
+    0.00 :   dd9c9:  mov    0x8(%rdx),%rax
+    4.35 :   dd9cd:  test   %rcx,%rcx
+    0.00 :   dd9d0:  je     dd9d6 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x66>
+    0.00 :   dd9d2:  mov    %rax,0x8(%rcx)
+    0.00 :   dd9d6:  mov    %rcx,0x10(%rax)
+    0.00 :   dd9da:  mov    %rsi,0x18(%rdx)
+    0.00 :   dd9de:  mov    0x18(%r9),%rsi
+    0.00 :   dd9e2:  mov    %rdx,0x8(%rsi)
+    0.00 :   dd9e6:  cmp    %r9,0x8(%r8)
+    0.00 :   dd9ea:  je     ddc68 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x2f8>
+    0.00 :   dd9f0:  mov    0x8(%r9),%rsi
+    1.09 :   dd9f4:  cmp    %r9,0x10(%rsi)
+    0.00 :   dd9f8:  je     ddca0 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x330>
+    0.00 :   dd9fe:  mov    %rdx,0x18(%rsi)
+    0.00 :   dda02:  mov    %rsi,0x8(%rdx)
+    0.00 :   dda06:  mov    (%r9),%edi
+    0.00 :   dda09:  mov    (%rdx),%esi
+    2.17 :   dda0b:  mov    %edi,(%rdx)
+    0.00 :   dda0d:  mov    %esi,(%r9)
+    0.00 :   dda10:  test   %esi,%esi
+    0.00 :   dda12:  je     ddb1d <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x1ad>
+    0.00 :   dda18:  cmp    0x8(%r8),%rcx
+    0.00 :   dda1c:  je     ddb14 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x1a4>
+    0.00 :   dda22:  test   %rcx,%rcx
+    0.00 :   dda25:  jne    ddc80 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x310>
+    0.00 :   dda2b:  mov    0x10(%rax),%rdx
+    0.00 :   dda2f:  cmp    %rcx,%rdx
+    0.00 :   dda32:  je     dda8e <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x11e>
+    0.00 :   dda34:  mov    (%rdx),%esi
+   13.04 :   dda36:  test   %esi,%esi
+    0.00 :   dda38:  je     ddb70 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x200>
+    1.09 :   dda3e:  mov    0x18(%rdx),%rsi
+    2.17 :   dda42:  test   %rsi,%rsi
+    0.00 :   dda45:  je     dda50 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0xe0>
+    0.00 :   dda47:  cmpl   $0x1,(%rsi)
+   10.87 :   dda4a:  jne    ddca9 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x339>
+    0.00 :   dda50:  mov    0x10(%rdx),%rdi
+    0.00 :   dda54:  test   %rdi,%rdi
+    0.00 :   dda57:  je     dda62 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0xf2>
+    0.00 :   dda59:  cmpl   $0x1,(%rdi)
+    5.43 :   dda5c:  jne    ddcb6 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x346>
+    0.00 :   dda62:  movl   $0x0,(%rdx)
+    0.00 :   dda68:  mov    0x8(%rax),%rdx
+    2.17 :   dda6c:  cmp    %rax,0x8(%r8)
+    0.00 :   dda70:  je     ddc29 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x2b9>
+    0.00 :   dda76:  cmpl   $0x1,(%rax)
+    3.26 :   dda79:  jne    ddc29 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x2b9>
+    0.00 :   dda7f:  mov    %rax,%rcx
+    0.00 :   dda82:  mov    %rdx,%rax
+    0.00 :   dda85:  mov    0x10(%rax),%rdx
+    0.00 :   dda89:  cmp    %rcx,%rdx
+    0.00 :   dda8c:  jne    dda34 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0xc4>
+    0.00 :   dda8e:  mov    0x18(%rax),%rdx
+    0.00 :   dda92:  mov    (%rdx),%edi
+   11.96 :   dda94:  test   %edi,%edi
+    0.00 :   dda96:  je     ddbc0 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x250>
+    0.00 :   dda9c:  mov    0x10(%rdx),%rsi
+    3.26 :   ddaa0:  test   %rsi,%rsi
+    0.00 :   ddaa3:  je     ddaae <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x13e>
+    0.00 :   ddaa5:  cmpl   $0x1,(%rsi)
+    5.43 :   ddaa8:  jne    ddde8 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x478>
+    0.00 :   ddaae:  mov    0x18(%rdx),%rdi
+    0.00 :   ddab2:  test   %rdi,%rdi
+    0.00 :   ddab5:  je     dda62 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0xf2>
+    0.00 :   ddab7:  cmpl   $0x1,(%rdi)
+    3.26 :   ddaba:  je     dda62 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0xf2>
+    0.00 :   ddabc:  cmpl   $0x1,(%rdi)
+    0.00 :   ddabf:  je     dddf5 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x485>
+    0.00 :   ddac5:  mov    (%rax),%r10d
+    0.00 :   ddac8:  mov    0x18(%rax),%rsi
+    0.00 :   ddacc:  mov    %r10d,(%rdx)
+    0.00 :   ddacf:  movl   $0x1,(%rax)
+    0.00 :   ddad5:  movl   $0x1,(%rdi)
+    0.00 :   ddadb:  mov    0x10(%rsi),%rdx
+    0.00 :   ddadf:  mov    %rdx,0x18(%rax)
+    0.00 :   ddae3:  test   %rdx,%rdx
+    0.00 :   ddae6:  je     ddaec <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x17c>
+    0.00 :   ddae8:  mov    %rax,0x8(%rdx)
+    0.00 :   ddaec:  mov    0x8(%rax),%rdx
+    0.00 :   ddaf0:  mov    %rdx,0x8(%rsi)
+    0.00 :   ddaf4:  cmp    %rax,0x8(%r8)
+    0.00 :   ddaf8:  je     dde81 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x511>
+    0.00 :   ddafe:  cmp    %rax,0x10(%rdx)
+    0.00 :   ddb02:  je     dde93 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x523>
+    0.00 :   ddb08:  mov    %rsi,0x18(%rdx)
+    0.00 :   ddb0c:  mov    %rax,0x10(%rsi)
+    0.00 :   ddb10:  mov    %rsi,0x8(%rax)
+    0.00 :   ddb14:  test   %rcx,%rcx
+    0.00 :   ddb17:  jne    ddc26 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x2b6>
+    0.00 :   ddb1d:  mov    %r9,%rax
+    1.09 :   ddb20:  ret
+    0.00 :   ddb21:  nopl   0x0(%rax)
+    0.00 :   ddb28:  mov    0x8(%r9),%rax
+    0.00 :   ddb2c:  mov    %rdi,%rsi
+    0.00 :   ddb2f:  mov    %rax,0x8(%rsi)
+    0.00 :   ddb33:  mov    %rsi,%rcx
+    0.00 :   ddb36:  cmp    %r9,0x8(%r8)
+    0.00 :   ddb3a:  je     ddd78 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x408>
+    0.00 :   ddb40:  mov    0x8(%r9),%rdx
+    0.00 :   ddb44:  cmp    %r9,0x10(%rdx)
+    0.00 :   ddb48:  je     ddc75 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x305>
+    0.00 :   ddb4e:  mov    %rcx,0x18(%rdx)
+    0.00 :   ddb52:  cmp    %r9,0x10(%r8)
+    0.00 :   ddb56:  je     ddd48 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x3d8>
+    0.00 :   ddb5c:  cmp    %r9,0x18(%r8)
+    0.00 :   ddb60:  je     ddd20 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x3b0>
+    0.00 :   ddb66:  mov    (%r9),%esi
+    0.00 :   ddb69:  jmp    dda10 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0xa0>
+    0.00 :   ddb6e:  xchg   %ax,%ax
+    0.00 :   ddb70:  mov    0x18(%rdx),%rsi
+    0.00 :   ddb74:  movl   $0x1,(%rdx)
+    0.00 :   ddb7a:  movl   $0x0,(%rax)
+    0.00 :   ddb80:  mov    %rsi,0x10(%rax)
+    0.00 :   ddb84:  test   %rsi,%rsi
+    0.00 :   ddb87:  je     ddb8d <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x21d>
+    0.00 :   ddb89:  mov    %rax,0x8(%rsi)
+    0.00 :   ddb8d:  mov    0x8(%rax),%rdi
+    0.00 :   ddb91:  mov    %rdi,0x8(%rdx)
+    0.00 :   ddb95:  cmp    %rax,0x8(%r8)
+    0.00 :   ddb99:  je     ddc10 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x2a0>
+    0.00 :   ddb9b:  cmp    %rax,0x18(%rdi)
+    0.00 :   ddb9f:  je     ddc20 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x2b0>
+    0.00 :   ddba1:  mov    %rdx,0x10(%rdi)
+    0.00 :   ddba5:  mov    0x10(%rax),%rsi
+    0.00 :   ddba9:  mov    %rax,0x18(%rdx)
+    0.00 :   ddbad:  mov    %rdx,0x8(%rax)
+    0.00 :   ddbb1:  mov    %rsi,%rdx
+    0.00 :   ddbb4:  jmp    dda3e <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0xce>
+    0.00 :   ddbb9:  nopl   0x0(%rax)
+    0.00 :   ddbc0:  mov    0x10(%rdx),%rsi
+    0.00 :   ddbc4:  movl   $0x1,(%rdx)
+    0.00 :   ddbca:  movl   $0x0,(%rax)
+    0.00 :   ddbd0:  mov    %rsi,0x18(%rax)
+    0.00 :   ddbd4:  test   %rsi,%rsi
+    0.00 :   ddbd7:  je     ddbdd <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x26d>
+    0.00 :   ddbd9:  mov    %rax,0x8(%rsi)
+    0.00 :   ddbdd:  mov    0x8(%rax),%rdi
+    0.00 :   ddbe1:  mov    %rdi,0x8(%rdx)
+    0.00 :   ddbe5:  cmp    %rax,0x8(%r8)
+    0.00 :   ddbe9:  je     ddc58 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x2e8>
+    0.00 :   ddbeb:  cmp    %rax,0x10(%rdi)
+    0.00 :   ddbef:  je     ddc90 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x320>
+    0.00 :   ddbf5:  mov    %rdx,0x18(%rdi)
+    0.00 :   ddbf9:  mov    0x18(%rax),%rsi
+    0.00 :   ddbfd:  mov    %rax,0x10(%rdx)
+    0.00 :   ddc01:  mov    %rdx,0x8(%rax)
+    0.00 :   ddc05:  mov    %rsi,%rdx
+    0.00 :   ddc08:  jmp    dda9c <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x12c>
+    0.00 :   ddc0d:  nopl   (%rax)
+    0.00 :   ddc10:  mov    %rdx,0x8(%r8)
+    0.00 :   ddc14:  mov    0x10(%rax),%rsi
+    0.00 :   ddc18:  jmp    ddba9 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x239>
+    0.00 :   ddc1a:  nopw   0x0(%rax,%rax,1)
+    0.00 :   ddc20:  mov    %rdx,0x18(%rdi)
+    0.00 :   ddc24:  jmp    ddba9 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x239>
+    0.00 :   ddc26:  mov    %rcx,%rax
+    0.00 :   ddc29:  movl   $0x1,(%rax)
+    0.00 :   ddc2f:  mov    %r9,%rax
+    0.00 :   ddc32:  ret
+    0.00 :   ddc33:  mov    %rcx,%rsi
+    0.00 :   ddc36:  cs nopw 0x0(%rax,%rax,1)
+    0.00 :   ddc40:  mov    0x8(%r9),%rax
+    2.17 :   ddc44:  xor    %ecx,%ecx
+    0.00 :   ddc46:  test   %rsi,%rsi
+    0.00 :   ddc49:  jne    ddb2f <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x1bf>
+    0.00 :   ddc4f:  jmp    ddb36 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x1c6>
+    0.00 :   ddc54:  nopl   0x0(%rax)
+    0.00 :   ddc58:  mov    %rdx,0x8(%r8)
+    0.00 :   ddc5c:  mov    0x18(%rax),%rsi
+    0.00 :   ddc60:  jmp    ddbfd <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x28d>
+    0.00 :   ddc62:  nopw   0x0(%rax,%rax,1)
+    0.00 :   ddc68:  mov    %rdx,0x8(%r8)
+    0.00 :   ddc6c:  mov    0x8(%r9),%rsi
+    0.00 :   ddc70:  jmp    dda02 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x92>
+    0.00 :   ddc75:  mov    %rcx,0x10(%rdx)
+    0.00 :   ddc79:  jmp    ddb52 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x1e2>
+    0.00 :   ddc7e:  xchg   %ax,%ax
+    0.00 :   ddc80:  mov    %rax,%rdx
+    0.00 :   ddc83:  mov    %rcx,%rax
+    0.00 :   ddc86:  jmp    dda76 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x106>
+    0.00 :   ddc8b:  nopl   0x0(%rax,%rax,1)
+    0.00 :   ddc90:  mov    %rdx,0x10(%rdi)
+    0.00 :   ddc94:  jmp    ddbfd <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x28d>
+    0.00 :   ddc99:  nopl   0x0(%rax)
+    0.00 :   ddca0:  mov    %rdx,0x10(%rsi)
+    0.00 :   ddca4:  jmp    dda02 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x92>
+    0.00 :   ddca9:  mov    0x10(%rdx),%rdi
+    0.00 :   ddcad:  test   %rdi,%rdi
+    0.00 :   ddcb0:  je     ddd81 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x411>
+    0.00 :   ddcb6:  cmpl   $0x1,(%rdi)
+    0.00 :   ddcb9:  je     ddd81 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x411>
+    0.00 :   ddcbf:  mov    (%rax),%r10d
+    0.00 :   ddcc2:  mov    0x10(%rax),%rsi
+    0.00 :   ddcc6:  mov    %r10d,(%rdx)
+    0.00 :   ddcc9:  movl   $0x1,(%rax)
+    0.00 :   ddccf:  movl   $0x1,(%rdi)
+    0.00 :   ddcd5:  mov    0x18(%rsi),%rdx
+    0.00 :   ddcd9:  mov    %rdx,0x10(%rax)
+    0.00 :   ddcdd:  test   %rdx,%rdx
+    0.00 :   ddce0:  je     ddce6 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x376>
+    0.00 :   ddce2:  mov    %rax,0x8(%rdx)
+    0.00 :   ddce6:  mov    0x8(%rax),%rdx
+    0.00 :   ddcea:  mov    %rdx,0x8(%rsi)
+    0.00 :   ddcee:  cmp    %rax,0x8(%r8)
+    0.00 :   ddcf2:  je     dde52 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x4e2>
+    0.00 :   ddcf8:  cmp    %rax,0x18(%rdx)
+    0.00 :   ddcfc:  je     dde5b <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x4eb>
+    0.00 :   ddd02:  mov    %rsi,0x10(%rdx)
+    1.09 :   ddd06:  mov    %rax,0x18(%rsi)
+    0.00 :   ddd0a:  mov    %rsi,0x8(%rax)
+    0.00 :   ddd0e:  test   %rcx,%rcx
+    0.00 :   ddd11:  je     ddb1d <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x1ad>
+    0.00 :   ddd17:  jmp    ddc26 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x2b6>
+    0.00 :   ddd1c:  nopl   0x0(%rax)
+    0.00 :   ddd20:  mov    %rcx,%rdx
+    0.00 :   ddd23:  cmpq   $0x0,0x10(%r9)
+    0.00 :   ddd28:  je     dde71 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x501>
+    0.00 :   ddd2e:  xchg   %ax,%ax
+    0.00 :   ddd30:  mov    %rdx,%rsi
+    0.00 :   ddd33:  mov    0x18(%rdx),%rdx
+    0.00 :   ddd37:  test   %rdx,%rdx
+    0.00 :   ddd3a:  jne    ddd30 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x3c0>
+    0.00 :   ddd3c:  mov    %rsi,0x18(%r8)
+    0.00 :   ddd40:  jmp    ddb66 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x1f6>
+    0.00 :   ddd45:  nopl   (%rax)
+    0.00 :   ddd48:  mov    %rcx,%rdx
+    0.00 :   ddd4b:  cmpq   $0x0,0x18(%r9)
+    0.00 :   ddd50:  je     dde64 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x4f4>
+    0.00 :   ddd56:  cs nopw 0x0(%rax,%rax,1)
+    0.00 :   ddd60:  mov    %rdx,%rsi
+    0.00 :   ddd63:  mov    0x10(%rdx),%rdx
+    0.00 :   ddd67:  test   %rdx,%rdx
+    0.00 :   ddd6a:  jne    ddd60 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x3f0>
+    0.00 :   ddd6c:  mov    %rsi,0x10(%r8)
+    0.00 :   ddd70:  jmp    ddb5c <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x1ec>
+    0.00 :   ddd75:  nopl   (%rax)
+    0.00 :   ddd78:  mov    %rcx,0x8(%r8)
+    0.00 :   ddd7c:  jmp    ddb52 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x1e2>
+    0.00 :   ddd81:  mov    0x10(%rsi),%rdi
+    0.00 :   ddd85:  movl   $0x1,(%rsi)
+    0.00 :   ddd8b:  movl   $0x0,(%rdx)
+    0.00 :   ddd91:  mov    %rdi,0x18(%rdx)
+    0.00 :   ddd95:  test   %rdi,%rdi
+    0.00 :   ddd98:  je     ddd9e <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x42e>
+    0.00 :   ddd9a:  mov    %rdx,0x8(%rdi)
+    0.00 :   ddd9e:  mov    0x8(%rdx),%rdi
+    0.00 :   ddda2:  mov    %rdi,0x8(%rsi)
+    0.00 :   ddda6:  cmp    0x8(%r8),%rdx
+    0.00 :   dddaa:  je     ddde2 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x472>
+    0.00 :   dddac:  cmp    0x10(%rdi),%rdx
+    0.00 :   dddb0:  je     dde8a <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x51a>
+    0.00 :   dddb6:  mov    %rsi,0x18(%rdi)
+    0.00 :   dddba:  mov    %rdx,0x10(%rsi)
+    0.00 :   dddbe:  mov    %rsi,0x8(%rdx)
+    0.00 :   dddc2:  mov    0x10(%rax),%rsi
+    0.00 :   dddc6:  mov    (%rax),%edx
+    0.00 :   dddc8:  mov    0x10(%rsi),%rdi
+    0.00 :   dddcc:  mov    %edx,(%rsi)
+    0.00 :   dddce:  movl   $0x1,(%rax)
+    0.00 :   dddd4:  test   %rdi,%rdi
+    0.00 :   dddd7:  je     ddcd5 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x365>
+    0.00 :   ddddd:  jmp    ddccf <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x35f>
+    0.00 :   ddde2:  mov    %rsi,0x8(%r8)
+    0.00 :   ddde6:  jmp    dddba <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x44a>
+    0.00 :   ddde8:  mov    0x18(%rdx),%rdi
+    0.00 :   dddec:  test   %rdi,%rdi
+    0.00 :   dddef:  jne    ddabc <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x14c>
+    0.00 :   dddf5:  mov    0x18(%rsi),%rdi
+    0.00 :   dddf9:  movl   $0x1,(%rsi)
+    0.00 :   dddff:  movl   $0x0,(%rdx)
+    0.00 :   dde05:  mov    %rdi,0x10(%rdx)
+    0.00 :   dde09:  test   %rdi,%rdi
+    0.00 :   dde0c:  je     dde12 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x4a2>
+    0.00 :   dde0e:  mov    %rdx,0x8(%rdi)
+    0.00 :   dde12:  mov    0x8(%rdx),%rdi
+    0.00 :   dde16:  mov    %rdi,0x8(%rsi)
+    0.00 :   dde1a:  cmp    0x8(%r8),%rdx
+    0.00 :   dde1e:  je     dde9c <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x52c>
+    0.00 :   dde20:  cmp    0x18(%rdi),%rdx
+    0.00 :   dde24:  je     ddea2 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x532>
+    0.00 :   dde26:  mov    %rsi,0x10(%rdi)
+    0.00 :   dde2a:  mov    %rdx,0x18(%rsi)
+    0.00 :   dde2e:  mov    %rsi,0x8(%rdx)
+    0.00 :   dde32:  mov    0x18(%rax),%rsi
+    0.00 :   dde36:  mov    (%rax),%edx
+    0.00 :   dde38:  mov    0x18(%rsi),%rdi
+    0.00 :   dde3c:  mov    %edx,(%rsi)
+    0.00 :   dde3e:  movl   $0x1,(%rax)
+    0.00 :   dde44:  test   %rdi,%rdi
+    0.00 :   dde47:  je     ddadb <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x16b>
+    0.00 :   dde4d:  jmp    ddad5 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x165>
+    0.00 :   dde52:  mov    %rsi,0x8(%r8)
+    0.00 :   dde56:  jmp    ddd06 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x396>
+    0.00 :   dde5b:  mov    %rsi,0x18(%rdx)
+    0.00 :   dde5f:  jmp    ddd06 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x396>
+    0.00 :   dde64:  mov    0x8(%r9),%rdx
+    0.00 :   dde68:  mov    %rdx,0x10(%r8)
+    0.00 :   dde6c:  jmp    ddb5c <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x1ec>
+    0.00 :   dde71:  mov    0x8(%r9),%rdx
+    0.00 :   dde75:  mov    (%r9),%esi
+    0.00 :   dde78:  mov    %rdx,0x18(%r8)
+    0.00 :   dde7c:  jmp    dda10 <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0xa0>
+    0.00 :   dde81:  mov    %rsi,0x8(%r8)
+    0.00 :   dde85:  jmp    ddb0c <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x19c>
+    0.00 :   dde8a:  mov    %rsi,0x10(%rdi)
+    0.00 :   dde8e:  jmp    dddba <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x44a>
+    0.00 :   dde93:  mov    %rsi,0x10(%rdx)
+    0.00 :   dde97:  jmp    ddb0c <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x19c>
+    0.00 :   dde9c:  mov    %rsi,0x8(%r8)
+    0.00 :   ddea0:  jmp    dde2a <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x4ba>
+    0.00 :   ddea2:  mov    %rsi,0x18(%rdi)
+    0.00 :   ddea6:  jmp    dde2a <std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4+0x4ba>
+ Percent |	Source code & Disassembly of bench_perf for task-clock:uppp (55 samples, percent: local period)
+---------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3    Disassembly of section .text:
+         :
+         : 5    000000000000d520 <generate_workload(WorkloadSpec const&, unsigned long*)>:
+    0.00 :   d520:   endbr64
+    0.00 :   d524:   push   %rbp
+    0.00 :   d525:   mov    %rsp,%rbp
+    0.00 :   d528:   push   %r15
+    0.00 :   d52a:   push   %r14
+    0.00 :   d52c:   push   %r13
+    0.00 :   d52e:   push   %r12
+    0.00 :   d530:   push   %rbx
+    0.00 :   d531:   sub    $0x1000,%rsp
+    0.00 :   d538:   orq    $0x0,(%rsp)
+    0.00 :   d53d:   sub    $0x418,%rsp
+    0.00 :   d544:   mov    $0x1,%ecx
+    0.00 :   d549:   mov    0x8(%rsi),%eax
+    0.00 :   d54c:   mov    %rsi,-0x1410(%rbp)
+    0.00 :   d553:   mov    %rdi,%rbx
+    0.00 :   d556:   mov    0xc(%rsi),%edi
+    0.00 :   d559:   mov    %rdx,-0x1418(%rbp)
+    0.00 :   d560:   mov    %rax,%rdx
+    0.00 :   d563:   mov    %fs:0x28,%r15
+    0.00 :   d56c:   mov    %r15,-0x38(%rbp)
+    0.00 :   d570:   mov    (%rsi),%r15
+    0.00 :   d573:   mov    %edi,-0x13ec(%rbp)
+    0.00 :   d579:   mov    0x10(%rsi),%edi
+    0.00 :   d57c:   lea    -0x13b8(%rbp),%rsi
+    0.00 :   d583:   mov    %rax,-0x13c0(%rbp)
+    0.00 :   d58a:   mov    %edi,-0x13f0(%rbp)
+    0.00 :   d590:   nopl   0x0(%rax)
+    0.00 :   d594:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   d59f:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   d5aa:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   d5b5:   data16 cs nopw 0x0(%rax,%rax,1)
+    0.00 :   d5c0:   mov    %rdx,%rax
+    0.00 :   d5c3:   add    $0x8,%rsi
+    0.00 :   d5c7:   shr    $0x1e,%rax
+    0.00 :   d5cb:   xor    %rdx,%rax
+    0.00 :   d5ce:   imul   $0x6c078965,%rax,%rax
+    0.00 :   d5d5:   lea    (%rax,%rcx,1),%edx
+    0.00 :   d5d8:   add    $0x1,%rcx
+    0.00 :   d5dc:   mov    %rdx,-0x8(%rsi)
+    0.00 :   d5e0:   cmp    $0x270,%rcx
+    0.00 :   d5e7:   jne    d5c0 <generate_workload(WorkloadSpec const&, unsigned long*)+0xa0>
+    0.00 :   d5e9:   mov    %r15,%rax
+    0.00 :   d5ec:   movq   $0x270,-0x40(%rbp)
+    0.00 :   d5f4:   shr    $0x3c,%rax
+    0.00 :   d5f8:   jne    2c71 <generate_workload(WorkloadSpec const&, unsigned long*) [clone .cold]+0x9c>
+    0.00 :   d5fe:   test   %r15,%r15
+    0.00 :   d601:   jne    d64d <generate_workload(WorkloadSpec const&, unsigned long*)+0x12d>
+    0.00 :   d603:   mov    -0x1418(%rbp),%rax
+    0.00 :   d60a:   pxor   %xmm0,%xmm0
+    0.00 :   d60e:   movq   $0x0,0x10(%rbx)
+    0.00 :   d616:   movups %xmm0,(%rbx)
+    0.00 :   d619:   test   %rax,%rax
+    0.00 :   d61c:   je     d625 <generate_workload(WorkloadSpec const&, unsigned long*)+0x105>
+    0.00 :   d61e:   movq   $0x0,(%rax)
+    0.00 :   d625:   mov    -0x38(%rbp),%rax
+    0.00 :   d629:   sub    %fs:0x28,%rax
+    0.00 :   d632:   jne    db08 <generate_workload(WorkloadSpec const&, unsigned long*)+0x5e8>
+    0.00 :   d638:   add    $0x1418,%rsp
+    0.00 :   d63f:   mov    %rbx,%rax
+    0.00 :   d642:   pop    %rbx
+    0.00 :   d643:   pop    %r12
+    0.00 :   d645:   pop    %r13
+    0.00 :   d647:   pop    %r14
+    0.00 :   d649:   pop    %r15
+    0.00 :   d64b:   pop    %rbp
+    0.00 :   d64c:   ret
+    0.00 :   d64d:   lea    0x0(,%r15,8),%rdi
+    0.00 :   d655:   call   2360 <operator new(unsigned long)@plt>
+    0.00 :   d65a:   pxor   %xmm0,%xmm0
+    0.00 :   d65e:   movq   $0x0,0x10(%rbx)
+    0.00 :   d666:   mov    %rax,%r12
+    0.00 :   d669:   lea    (%rax,%r15,8),%rax
+    0.00 :   d66d:   movups %xmm0,(%rbx)
+    0.00 :   d670:   mov    %rax,-0x1408(%rbp)
+    0.00 :   d677:   mov    %r15,%rax
+    0.00 :   d67a:   shr    $0x3a,%rax
+    0.00 :   d67e:   jne    2bd5 <generate_workload(WorkloadSpec const&, unsigned long*) [clone .cold]>
+    0.00 :   d684:   mov    %r15,%r13
+    0.00 :   d687:   shl    $0x5,%r13
+    0.00 :   d68b:   mov    %r13,%rdi
+    0.00 :   d68e:   call   2360 <operator new(unsigned long)@plt>
+    0.00 :   d693:   movq   %rax,%xmm0
+    0.00 :   d698:   add    %r13,%rax
+    0.00 :   d69b:   mov    %r12,-0x13e8(%rbp)
+    0.00 :   d6a2:   xor    %r13d,%r13d
+    0.00 :   d6a5:   mov    %rax,0x10(%rbx)
+    0.00 :   d6a9:   punpcklqdq %xmm0,%xmm0
+    0.00 :   d6ad:   mov    -0x13f0(%rbp),%eax
+    0.00 :   d6b3:   add    -0x13ec(%rbp),%eax
+    0.00 :   d6b9:   movups %xmm0,(%rbx)
+    0.00 :   d6bc:   movq   $0x0,-0x1420(%rbp)
+    0.00 :   d6c7:   movq   $0x1,-0x13f8(%rbp)
+    0.00 :   d6d2:   mov    %eax,-0x1400(%rbp)
+    0.00 :   d6d8:   jmp    d824 <generate_workload(WorkloadSpec const&, unsigned long*)+0x304>
+    0.00 :   d6dd:   nopl   (%rax)
+    0.00 :   d6e0:   mov    $0x1,%edx
+    0.00 :   d6e5:   xor    %esi,%esi
+    0.00 :   d6e7:   lea    -0x13c0(%rbp),%rdi
+    0.00 :   d6ee:   call   d440 <int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]>
+    1.82 :   d6f3:   mov    %eax,-0x13fc(%rbp)
+    0.00 :   d6f9:   test   %eax,%eax
+    0.00 :   d6fb:   jne    d980 <generate_workload(WorkloadSpec const&, unsigned long*)+0x460>
+    0.00 :   d701:   mov    $0x270f,%edx
+    0.00 :   d706:   mov    $0x1388,%esi
+    0.00 :   d70b:   lea    -0x13c0(%rbp),%rdi
+    0.00 :   d712:   call   d440 <int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]>
+    0.00 :   d717:   mov    %eax,-0x13f0(%rbp)
+    3.64 :   d71d:   lea    -0x13c0(%rbp),%rdi
+    0.00 :   d724:   mov    $0x64,%edx
+    0.00 :   d729:   mov    $0x1,%esi
+    0.00 :   d72e:   call   d280 <long std::uniform_int_distribution<long>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<long>::param_type const&) [clone .isra.0]>
+    0.00 :   d733:   mov    -0x1410(%rbp),%rdi
+    0.00 :   d73a:   mov    -0x13f8(%rbp),%rcx
+    0.00 :   d741:   mov    %rax,%r8
+    0.00 :   d744:   cmpb   $0x0,0x14(%rdi)
+    0.00 :   d748:   je     d785 <generate_workload(WorkloadSpec const&, unsigned long*)+0x265>
+    0.00 :   d74a:   movabs $0xbf58476d1ce4e5b9,%rax
+    0.00 :   d754:   shr    $0x1e,%rcx
+    0.00 :   d758:   xor    -0x13f8(%rbp),%rcx
+    0.00 :   d75f:   imul   %rax,%rcx
+    0.00 :   d763:   mov    %rcx,%rax
+    0.00 :   d766:   shr    $0x1b,%rax
+    0.00 :   d76a:   xor    %rax,%rcx
+    0.00 :   d76d:   movabs $0x94d049bb133111eb,%rax
+    0.00 :   d777:   imul   %rax,%rcx
+    0.00 :   d77b:   mov    %rcx,%rax
+    0.00 :   d77e:   shr    $0x1f,%rax
+    0.00 :   d782:   xor    %rax,%rcx
+    0.00 :   d785:   cmp    -0x1408(%rbp),%r12
+    0.00 :   d78c:   je     d9e4 <generate_workload(WorkloadSpec const&, unsigned long*)+0x4c4>
+    3.64 :   d792:   mov    %rcx,(%r12)
+    0.00 :   d796:   add    $0x8,%r12
+    0.00 :   d79a:   mov    -0x13fc(%rbp),%eax
+    0.00 :   d7a0:   xor    %edx,%edx
+    0.00 :   d7a2:   pxor   %xmm0,%xmm0
+    0.00 :   d7a6:   movl   $0x0,-0x13e0(%rbp)
+    0.00 :   d7b0:   cvtsi2sdl -0x13f0(%rbp),%xmm0
+    0.00 :   d7b8:   divsd  0x141c8(%rip),%xmm0        # 21988 <_IO_stdin_used+0x988>
+    3.64 :   d7c0:   test   %eax,%eax
+    0.00 :   d7c2:   mov    0x8(%rbx),%rax
+    0.00 :   d7c6:   setne  %dl
+    0.00 :   d7c9:   cmp    0x10(%rbx),%rax
+    0.00 :   d7cd:   mov    %rcx,-0x13d8(%rbp)
+    0.00 :   d7d4:   mov    %edx,-0x13dc(%rbp)
+    0.00 :   d7da:   mov    %r8,-0x13c8(%rbp)
+    0.00 :   d7e1:   movsd  %xmm0,-0x13d0(%rbp)
+    1.82 :   d7e9:   je     d9d0 <generate_workload(WorkloadSpec const&, unsigned long*)+0x4b0>
+    0.00 :   d7ef:   movdqa -0x13e0(%rbp),%xmm0
+   10.91 :   d7f7:   add    $0x20,%rax
+    0.00 :   d7fb:   movups %xmm0,-0x20(%rax)
+    3.64 :   d7ff:   movdqa -0x13d0(%rbp),%xmm0
+    1.82 :   d807:   movups %xmm0,-0x10(%rax)
+    1.82 :   d80b:   mov    %rax,0x8(%rbx)
+    0.00 :   d80f:   addq   $0x1,-0x13f8(%rbp)
+    0.00 :   d817:   add    $0x1,%r13
+    1.82 :   d81b:   cmp    %r13,%r15
+    0.00 :   d81e:   je     d8ef <generate_workload(WorkloadSpec const&, unsigned long*)+0x3cf>
+    0.00 :   d824:   xor    %esi,%esi
+    0.00 :   d826:   mov    $0x63,%edx
+    1.82 :   d82b:   lea    -0x13c0(%rbp),%rdi
+    0.00 :   d832:   call   d440 <int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]>
+    1.82 :   d837:   cmp    %eax,-0x13ec(%rbp)
+    0.00 :   d83d:   jg     d6e0 <generate_workload(WorkloadSpec const&, unsigned long*)+0x1c0>
+    0.00 :   d843:   cmp    %eax,-0x1400(%rbp)
+    0.00 :   d849:   jle    d930 <generate_workload(WorkloadSpec const&, unsigned long*)+0x410>
+    1.82 :   d84f:   cmp    %r12,-0x13e8(%rbp)
+    0.00 :   d856:   je     d9a1 <generate_workload(WorkloadSpec const&, unsigned long*)+0x481>
+    0.00 :   d85c:   mov    %r12,%rdx
+    0.00 :   d85f:   sub    -0x13e8(%rbp),%rdx
+    0.00 :   d866:   lea    -0x13c0(%rbp),%rdi
+    0.00 :   d86d:   xor    %esi,%esi
+    0.00 :   d86f:   sar    $0x3,%rdx
+    0.00 :   d873:   sub    $0x1,%rdx
+    0.00 :   d877:   call   d360 <unsigned long std::uniform_int_distribution<unsigned long>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<unsigned long>::param_type const&) [clone .isra.0]>
+    0.00 :   d87c:   mov    -0x13e8(%rbp),%rdi
+    0.00 :   d883:   mov    -0x8(%r12),%rcx
+    0.00 :   d888:   pxor   %xmm0,%xmm0
+    0.00 :   d88c:   movaps %xmm0,-0x13e0(%rbp)
+    0.00 :   d893:   mov    (%rdi,%rax,8),%rdx
+   45.45 :   d897:   movaps %xmm0,-0x13d0(%rbp)
+    1.82 :   d89e:   mov    %rcx,(%rdi,%rax,8)
+    0.00 :   d8a2:   mov    0x8(%rbx),%rax
+    0.00 :   d8a6:   cmp    0x10(%rbx),%rax
+    0.00 :   d8aa:   je     d9ae <generate_workload(WorkloadSpec const&, unsigned long*)+0x48e>
+    0.00 :   d8b0:   movb   $0x1,-0x13e0(%rbp)
+    0.00 :   d8b7:   add    $0x20,%rax
+    0.00 :   d8bb:   mov    %rdx,-0x13d8(%rbp)
+    0.00 :   d8c2:   movdqa -0x13e0(%rbp),%xmm0
+    5.45 :   d8ca:   movups %xmm0,-0x20(%rax)
+    1.82 :   d8ce:   movdqa -0x13d0(%rbp),%xmm0
+    1.82 :   d8d6:   movups %xmm0,-0x10(%rax)
+    0.00 :   d8da:   mov    %rax,0x8(%rbx)
+    0.00 :   d8de:   add    $0x1,%r13
+    0.00 :   d8e2:   sub    $0x8,%r12
+    0.00 :   d8e6:   cmp    %r13,%r15
+    0.00 :   d8e9:   jne    d824 <generate_workload(WorkloadSpec const&, unsigned long*)+0x304>
+    0.00 :   d8ef:   mov    -0x1418(%rbp),%rax
+    0.00 :   d8f6:   test   %rax,%rax
+    0.00 :   d8f9:   je     d905 <generate_workload(WorkloadSpec const&, unsigned long*)+0x3e5>
+    0.00 :   d8fb:   mov    -0x1420(%rbp),%rdi
+    0.00 :   d902:   mov    %rdi,(%rax)
+    0.00 :   d905:   mov    -0x13e8(%rbp),%rdi
+    0.00 :   d90c:   test   %rdi,%rdi
+    0.00 :   d90f:   je     d625 <generate_workload(WorkloadSpec const&, unsigned long*)+0x105>
+    0.00 :   d915:   mov    -0x1408(%rbp),%rsi
+    0.00 :   d91c:   sub    %rdi,%rsi
+    0.00 :   d91f:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   d924:   jmp    d625 <generate_workload(WorkloadSpec const&, unsigned long*)+0x105>
+    0.00 :   d929:   nopl   0x0(%rax)
+    0.00 :   d930:   pxor   %xmm0,%xmm0
+    0.00 :   d934:   mov    0x8(%rbx),%rax
+    0.00 :   d938:   movaps %xmm0,-0x13e0(%rbp)
+    0.00 :   d93f:   movaps %xmm0,-0x13d0(%rbp)
+    0.00 :   d946:   cmp    0x10(%rbx),%rax
+    0.00 :   d94a:   je     daed <generate_workload(WorkloadSpec const&, unsigned long*)+0x5cd>
+    0.00 :   d950:   movb   $0x2,-0x13e0(%rbp)
+    0.00 :   d957:   movdqa -0x13e0(%rbp),%xmm0
+    1.82 :   d95f:   add    $0x20,%rax
+    0.00 :   d963:   movups %xmm0,-0x20(%rax)
+    0.00 :   d967:   movdqa -0x13d0(%rbp),%xmm0
+    0.00 :   d96f:   movups %xmm0,-0x10(%rax)
+    0.00 :   d973:   mov    %rax,0x8(%rbx)
+    0.00 :   d977:   jmp    d817 <generate_workload(WorkloadSpec const&, unsigned long*)+0x2f7>
+    0.00 :   d97c:   nopl   0x0(%rax)
+    0.00 :   d980:   mov    $0x3a98,%edx
+    0.00 :   d985:   mov    $0x2711,%esi
+    0.00 :   d98a:   lea    -0x13c0(%rbp),%rdi
+    0.00 :   d991:   call   d440 <int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]>
+    1.82 :   d996:   mov    %eax,-0x13f0(%rbp)
+    0.00 :   d99c:   jmp    d71d <generate_workload(WorkloadSpec const&, unsigned long*)+0x1fd>
+    0.00 :   d9a1:   addq   $0x1,-0x1420(%rbp)
+    0.00 :   d9a9:   jmp    d6e0 <generate_workload(WorkloadSpec const&, unsigned long*)+0x1c0>
+    0.00 :   d9ae:   lea    -0x13e0(%rbp),%rsi
+    0.00 :   d9b5:   mov    %rbx,%rdi
+    0.00 :   d9b8:   movb   $0x1,-0x13e0(%rbp)
+    0.00 :   d9bf:   mov    %rdx,-0x13d8(%rbp)
+    0.00 :   d9c6:   call   db30 <void std::vector<Op, std::allocator<Op> >::_M_realloc_append<Op>(Op&&)>
+    0.00 :   d9cb:   jmp    d8de <generate_workload(WorkloadSpec const&, unsigned long*)+0x3be>
+    0.00 :   d9d0:   lea    -0x13e0(%rbp),%rsi
+    0.00 :   d9d7:   mov    %rbx,%rdi
+    0.00 :   d9da:   call   db30 <void std::vector<Op, std::allocator<Op> >::_M_realloc_append<Op>(Op&&)>
+    0.00 :   d9df:   jmp    d80f <generate_workload(WorkloadSpec const&, unsigned long*)+0x2ef>
+    0.00 :   d9e4:   sub    -0x13e8(%rbp),%r12
+    0.00 :   d9eb:   movabs $0xfffffffffffffff,%rax
+    0.00 :   d9f5:   mov    %r12,%rdx
+    0.00 :   d9f8:   sar    $0x3,%rdx
+    0.00 :   d9fc:   cmp    %rax,%rdx
+    0.00 :   d9ff:   je     2c56 <generate_workload(WorkloadSpec const&, unsigned long*) [clone .cold]+0x81>
+    0.00 :   da05:   test   %rdx,%rdx
+    0.00 :   da08:   mov    $0x1,%eax
+    0.00 :   da0d:   mov    %r8,-0x1438(%rbp)
+    0.00 :   da14:   cmovne %rdx,%rax
+    0.00 :   da18:   mov    %rcx,-0x1430(%rbp)
+    0.00 :   da1f:   add    %rdx,%rax
+    0.00 :   da22:   movabs $0xfffffffffffffff,%rdx
+    0.00 :   da2c:   cmp    %rdx,%rax
+    0.00 :   da2f:   cmova  %rdx,%rax
+    0.00 :   da33:   shl    $0x3,%rax
+    0.00 :   da37:   mov    %rax,%rdi
+    0.00 :   da3a:   mov    %rax,-0x1428(%rbp)
+    0.00 :   da41:   call   2360 <operator new(unsigned long)@plt>
+    0.00 :   da46:   mov    -0x1430(%rbp),%rcx
+    0.00 :   da4d:   test   %r12,%r12
+    0.00 :   da50:   mov    -0x1438(%rbp),%r8
+    0.00 :   da57:   mov    %rax,%r9
+    0.00 :   da5a:   mov    %rcx,(%rax,%r12,1)
+    0.00 :   da5e:   je     da83 <generate_workload(WorkloadSpec const&, unsigned long*)+0x563>
+    0.00 :   da60:   mov    -0x13e8(%rbp),%rsi
+    0.00 :   da67:   mov    %r12,%rdx
+    0.00 :   da6a:   mov    %rax,%rdi
+    0.00 :   da6d:   call   2350 <memcpy@plt>
+    0.00 :   da72:   mov    -0x1438(%rbp),%r8
+    0.00 :   da79:   mov    -0x1430(%rbp),%rcx
+    0.00 :   da80:   mov    %rax,%r9
+    0.00 :   da83:   mov    -0x13e8(%rbp),%rax
+    0.00 :   da8a:   lea    0x8(%r9,%r12,1),%r12
+    0.00 :   da8f:   test   %rax,%rax
+    0.00 :   da92:   je     dad0 <generate_workload(WorkloadSpec const&, unsigned long*)+0x5b0>
+    0.00 :   da94:   mov    -0x1408(%rbp),%rsi
+    0.00 :   da9b:   mov    %rax,%rdi
+    0.00 :   da9e:   mov    %r9,-0x1438(%rbp)
+    0.00 :   daa5:   mov    %r8,-0x1430(%rbp)
+    0.00 :   daac:   sub    %rax,%rsi
+    0.00 :   daaf:   mov    %rcx,-0x13e8(%rbp)
+    0.00 :   dab6:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   dabb:   mov    -0x1438(%rbp),%r9
+    0.00 :   dac2:   mov    -0x1430(%rbp),%r8
+    0.00 :   dac9:   mov    -0x13e8(%rbp),%rcx
+    0.00 :   dad0:   mov    -0x1428(%rbp),%rax
+    0.00 :   dad7:   mov    %r9,-0x13e8(%rbp)
+    0.00 :   dade:   add    %r9,%rax
+    0.00 :   dae1:   mov    %rax,-0x1408(%rbp)
+    0.00 :   dae8:   jmp    d79a <generate_workload(WorkloadSpec const&, unsigned long*)+0x27a>
+    0.00 :   daed:   lea    -0x13e0(%rbp),%rsi
+    0.00 :   daf4:   mov    %rbx,%rdi
+    0.00 :   daf7:   movb   $0x2,-0x13e0(%rbp)
+    0.00 :   dafe:   call   db30 <void std::vector<Op, std::allocator<Op> >::_M_realloc_append<Op>(Op&&)>
+    0.00 :   db03:   jmp    d817 <generate_workload(WorkloadSpec const&, unsigned long*)+0x2f7>
+    0.00 :   db08:   call   2390 <__stack_chk_fail@plt>
+    0.00 :   db0d:   endbr64
+    0.00 :   db11:   mov    %rax,%r13
+    0.00 :   db14:   jmp    2bfb <generate_workload(WorkloadSpec const&, unsigned long*) [clone .cold]+0x26>
+    0.00 :   db19:   endbr64
+    0.00 :   db1d:   jmp    2c51 <generate_workload(WorkloadSpec const&, unsigned long*) [clone .cold]+0x7c>
+ Percent |	Source code & Disassembly of bench_perf for task-clock:uppp (37 samples, percent: local period)
+---------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3    Disassembly of section .text:
+         :
+         : 5    0000000000008a70 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]>:
+    0.00 :   8a70:   push   %rbp
+    0.00 :   8a71:   mov    %rsp,%rbp
+    0.00 :   8a74:   push   %r15
+    0.00 :   8a76:   push   %r14
+    0.00 :   8a78:   push   %r13
+    0.00 :   8a7a:   push   %r12
+    0.00 :   8a7c:   push   %rbx
+    0.00 :   8a7d:   sub    $0x28,%rsp
+    0.00 :   8a81:   mov    %rdi,-0x48(%rbp)
+    0.00 :   8a85:   test   %rdi,%rdi
+    0.00 :   8a88:   je     8c26 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0x1b6>
+    0.00 :   8a8e:   mov    -0x48(%rbp),%rax
+    0.00 :   8a92:   mov    0x18(%rax),%rax
+   24.32 :   8a96:   mov    %rax,-0x38(%rbp)
+    0.00 :   8a9a:   test   %rax,%rax
+    0.00 :   8a9d:   je     8c06 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0x196>
+    0.00 :   8aa3:   mov    -0x38(%rbp),%rax
+    2.70 :   8aa7:   mov    0x18(%rax),%rax
+    8.11 :   8aab:   mov    %rax,-0x40(%rbp)
+    0.00 :   8aaf:   test   %rax,%rax
+    0.00 :   8ab2:   je     8be6 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0x176>
+    0.00 :   8ab8:   mov    -0x40(%rbp),%rax
+    0.00 :   8abc:   mov    0x18(%rax),%r15
+    5.41 :   8ac0:   test   %r15,%r15
+    0.00 :   8ac3:   je     8bc6 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0x156>
+    0.00 :   8ac9:   mov    0x18(%r15),%r12
+    2.70 :   8acd:   test   %r12,%r12
+    0.00 :   8ad0:   je     8b7e <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0x10e>
+    0.00 :   8ad6:   mov    0x18(%r12),%r13
+    2.70 :   8adb:   test   %r13,%r13
+    0.00 :   8ade:   je     8b41 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0xd1>
+    0.00 :   8ae0:   mov    0x18(%r13),%rbx
+    2.70 :   8ae4:   test   %rbx,%rbx
+    0.00 :   8ae7:   je     8b60 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0xf0>
+    0.00 :   8ae9:   mov    0x18(%rbx),%rdx
+   13.51 :   8aed:   test   %rdx,%rdx
+    0.00 :   8af0:   je     8ba0 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0x130>
+    0.00 :   8af6:   mov    0x18(%rdx),%r14
+   16.22 :   8afa:   test   %r14,%r14
+    0.00 :   8afd:   je     8b26 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0xb6>
+    0.00 :   8aff:   mov    0x18(%r14),%rdi
+   13.51 :   8b03:   mov    %rdx,-0x50(%rbp)
+    0.00 :   8b07:   call   8a70 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]>
+    0.00 :   8b0c:   mov    %r14,%rdi
+    0.00 :   8b0f:   mov    0x10(%r14),%r14
+    0.00 :   8b13:   mov    $0x38,%esi
+    0.00 :   8b18:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   8b1d:   mov    -0x50(%rbp),%rdx
+    0.00 :   8b21:   test   %r14,%r14
+    0.00 :   8b24:   jne    8aff <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0x8f>
+    0.00 :   8b26:   mov    0x10(%rdx),%r14
+    0.00 :   8b2a:   mov    $0x38,%esi
+    0.00 :   8b2f:   mov    %rdx,%rdi
+    0.00 :   8b32:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   8b37:   test   %r14,%r14
+    0.00 :   8b3a:   je     8ba0 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0x130>
+    0.00 :   8b3c:   mov    %r14,%rdx
+    0.00 :   8b3f:   jmp    8af6 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0x86>
+    0.00 :   8b41:   mov    0x10(%r12),%rbx
+    0.00 :   8b46:   mov    $0x38,%esi
+    0.00 :   8b4b:   mov    %r12,%rdi
+    0.00 :   8b4e:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   8b53:   test   %rbx,%rbx
+    0.00 :   8b56:   je     8b7e <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0x10e>
+    0.00 :   8b58:   mov    %rbx,%r12
+    0.00 :   8b5b:   jmp    8ad6 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0x66>
+    0.00 :   8b60:   mov    0x10(%r13),%rbx
+    0.00 :   8b64:   mov    $0x38,%esi
+    0.00 :   8b69:   mov    %r13,%rdi
+    0.00 :   8b6c:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   8b71:   test   %rbx,%rbx
+    0.00 :   8b74:   je     8b41 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0xd1>
+    0.00 :   8b76:   mov    %rbx,%r13
+    0.00 :   8b79:   jmp    8ae0 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0x70>
+    0.00 :   8b7e:   mov    0x10(%r15),%rbx
+    0.00 :   8b82:   mov    $0x38,%esi
+    0.00 :   8b87:   mov    %r15,%rdi
+    0.00 :   8b8a:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   8b8f:   test   %rbx,%rbx
+    0.00 :   8b92:   je     8bc6 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0x156>
+    0.00 :   8b94:   mov    %rbx,%r15
+    0.00 :   8b97:   jmp    8ac9 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0x59>
+    0.00 :   8b9c:   nopl   0x0(%rax)
+    0.00 :   8ba0:   mov    0x10(%rbx),%rdx
+    2.70 :   8ba4:   mov    $0x38,%esi
+    0.00 :   8ba9:   mov    %rbx,%rdi
+    0.00 :   8bac:   mov    %rdx,-0x50(%rbp)
+    0.00 :   8bb0:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   8bb5:   mov    -0x50(%rbp),%rdx
+    0.00 :   8bb9:   test   %rdx,%rdx
+    0.00 :   8bbc:   je     8b60 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0xf0>
+    0.00 :   8bbe:   mov    %rdx,%rbx
+    0.00 :   8bc1:   jmp    8ae9 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0x79>
+    0.00 :   8bc6:   mov    -0x40(%rbp),%rdi
+    0.00 :   8bca:   mov    $0x38,%esi
+    0.00 :   8bcf:   mov    0x10(%rdi),%rbx
+    0.00 :   8bd3:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   8bd8:   test   %rbx,%rbx
+    0.00 :   8bdb:   je     8be6 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0x176>
+    0.00 :   8bdd:   mov    %rbx,-0x40(%rbp)
+    0.00 :   8be1:   jmp    8ab8 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0x48>
+    0.00 :   8be6:   mov    -0x38(%rbp),%rdi
+    0.00 :   8bea:   mov    $0x38,%esi
+    2.70 :   8bef:   mov    0x10(%rdi),%rbx
+    0.00 :   8bf3:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   8bf8:   test   %rbx,%rbx
+    0.00 :   8bfb:   je     8c06 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0x196>
+    0.00 :   8bfd:   mov    %rbx,-0x38(%rbp)
+    0.00 :   8c01:   jmp    8aa3 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0x33>
+    0.00 :   8c06:   mov    -0x48(%rbp),%rdi
+    0.00 :   8c0a:   mov    $0x38,%esi
+    0.00 :   8c0f:   mov    0x10(%rdi),%rbx
+    0.00 :   8c13:   call   2370 <operator delete(void*, unsigned long)@plt>
+    0.00 :   8c18:   test   %rbx,%rbx
+    0.00 :   8c1b:   je     8c26 <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0x1b6>
+    0.00 :   8c1d:   mov    %rbx,-0x48(%rbp)
+    0.00 :   8c21:   jmp    8a8e <std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, OrderInfo> >*) [clone .isra.0]+0x1e>
+    0.00 :   8c26:   add    $0x28,%rsp
+    0.00 :   8c2a:   pop    %rbx
+    0.00 :   8c2b:   pop    %r12
+    2.70 :   8c2d:   pop    %r13
+    0.00 :   8c2f:   pop    %r14
+    0.00 :   8c31:   pop    %r15
+    0.00 :   8c33:   pop    %rbp
+    0.00 :   8c34:   ret

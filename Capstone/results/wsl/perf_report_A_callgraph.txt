@@ -1,0 +1,163 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 908  of event 'task-clock:uppp'
+# Event count (approx.): 227000000
+#
+# Overhead  Command     Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+# ........  ..........  ....................  ..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    28.41%  bench_perf  bench_perf            [.] void (anonymous namespace)::apply<BookA>(BookA&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]
+            |
+            ---_start
+               __libc_start_main
+               0x7d934e42a601
+               main
+               |          
+                --28.30%--int (anonymous namespace)::run_benchmark<BookA>(char, WorkloadSpec const&, (anonymous namespace)::BenchOptions const&) [clone .constprop.0]
+                          run_total_pass<BookA> (inlined)
+                          int (anonymous namespace)::run_benchmark<BookA>(char, WorkloadSpec const&, (anonymous namespace)::BenchOptions const&) [clone .constprop.0]
+                          |          
+                          |--23.57%--apply<BookA> (inlined)
+                          |          BookA::add_order(unsigned long, Side, double, long) (inlined)
+                          |          |          
+                          |          |--12.00%--void BookA::add_to_level<std::map<int, BookA::LevelData, std::less<int>, std::allocator<std::pair<int const, BookA::LevelData> > > >(std::map<int, BookA::LevelData, std::less<int>, std::allocator<std::pair<int const, BookA::LevelData> > >&, int, long) (inlined)
+                          |          |          |          
+                          |          |           --11.12%--std::map<int, BookA::LevelData, std::less<int>, std::allocator<std::pair<int const, BookA::LevelData> > >::operator[](int const&) (inlined)
+                          |          |                     |          
+                          |          |                      --10.68%--std::map<int, BookA::LevelData, std::less<int>, std::allocator<std::pair<int const, BookA::LevelData> > >::lower_bound(int const&) (inlined)
+                          |          |                                std::_Rb_tree<int, std::pair<int const, BookA::LevelData>, std::_Select1st<std::pair<int const, BookA::LevelData> >, std::less<int>, std::allocator<std::pair<int const, BookA::LevelData> > >::lower_bound(int const&) (inlined)
+                          |          |                                std::_Rb_tree<int, std::pair<int const, BookA::LevelData>, std::_Select1st<std::pair<int const, BookA::LevelData> >, std::less<int>, std::allocator<std::pair<int const, BookA::LevelData> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+                          |          |                                |          
+                          |          |                                 --9.14%--std::_Rb_tree<int, std::pair<int const, BookA::LevelData>, std::_Select1st<std::pair<int const, BookA::LevelData> >, std::less<int>, std::allocator<std::pair<int const, BookA::LevelData> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+                          |          |          
+                          |           --9.91%--void BookA::add_to_level<std::map<int, BookA::LevelData, std::greater<int>, std::allocator<std::pair<int const, BookA::LevelData> > > >(std::map<int, BookA::LevelData, std::greater<int>, std::allocator<std::pair<int const, BookA::LevelData> > >&, int, long) (inlined)
+                          |                     std::map<int, BookA::LevelData, std::greater<int>, std::allocator<std::pair<int const, BookA::LevelData> > >::operator[](int const&) (inlined)
+                          |                     std::map<int, BookA::LevelData, std::greater<int>, std::allocator<std::pair<int const, BookA::LevelData> > >::lower_bound(int const&) (inlined)
+                          |                     std::_Rb_tree<int, std::pair<int const, BookA::LevelData>, std::_Select1st<std::pair<int const, BookA::LevelData> >, std::greater<int>, std::allocator<std::pair<int const, BookA::LevelData> > >::lower_bound(int const&) (inlined)
+                          |                     |          
+                          |                      --9.80%--std::_Rb_tree<int, std::pair<int const, BookA::LevelData>, std::_Select1st<std::pair<int const, BookA::LevelData> >, std::greater<int>, std::allocator<std::pair<int const, BookA::LevelData> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+                          |                                |          
+                          |                                 --8.37%--std::_Rb_tree<int, std::pair<int const, BookA::LevelData>, std::_Select1st<std::pair<int const, BookA::LevelData> >, std::greater<int>, std::allocator<std::pair<int const, BookA::LevelData> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+                          |          
+                           --4.74%--void (anonymous namespace)::apply<BookA>(BookA&, Op const&, (anonymous namespace)::Checksum&) [clone .part.0]
+                                     |          
+                                      --4.30%--BookA::add_order(unsigned long, Side, double, long) (inlined)
+
+    26.21%  bench_perf  bench_perf            [.] BookA::cancel_order(unsigned long)
+            |
+            ---_start
+               __libc_start_main
+               0x7d934e42a601
+               main
+               |          
+               |--14.87%--BookA::cancel_order(unsigned long)
+               |          std::unordered_map<unsigned long, OrderInfo, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::find(unsigned long const&) (inlined)
+               |          std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderInfo>, std::allocator<std::pair<unsigned long const, OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) (inlined)
+               |          std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderInfo>, std::allocator<std::pair<unsigned long const, OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+               |          |          
+               |          |--10.79%--std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderInfo>, std::allocator<std::pair<unsigned long const, OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node(unsigned long, unsigned long const&, unsigned long) const (inlined)
+               |          |          |          
+               |          |           --6.72%--std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, OrderInfo>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_equals(unsigned long const&, unsigned long, std::__detail::_Hash_node_value<std::pair<unsigned long const, OrderInfo>, false> const&) const (inlined)
+               |          |                     std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, OrderInfo>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_key_equals(unsigned long const&, std::__detail::_Hash_node_value<std::pair<unsigned long const, OrderInfo>, false> const&) const (inlined)
+               |          |                     std::equal_to<unsigned long>::operator()(unsigned long const&, unsigned long const&) const (inlined)
+               |          |          
+               |           --4.07%--std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderInfo>, std::allocator<std::pair<unsigned long const, OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_bucket_index(unsigned long) const (inlined)
+               |                     std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, OrderInfo>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(unsigned long, unsigned long) const (inlined)
+               |                     std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+               |          
+                --11.34%--int (anonymous namespace)::run_benchmark<BookA>(char, WorkloadSpec const&, (anonymous namespace)::BenchOptions const&) [clone .constprop.0]
+                          run_total_pass<BookA> (inlined)
+                          int (anonymous namespace)::run_benchmark<BookA>(char, WorkloadSpec const&, (anonymous namespace)::BenchOptions const&) [clone .constprop.0]
+                          BookA::cancel_order(unsigned long)
+                          |          
+                          |--4.19%--std::unordered_map<unsigned long, OrderInfo, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::erase(std::__detail::_Node_iterator<std::pair<unsigned long const, OrderInfo>, false, false>) (inlined)
+                          |          std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderInfo>, std::allocator<std::pair<unsigned long const, OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::erase(std::__detail::_Node_iterator<std::pair<unsigned long const, OrderInfo>, false, false>) (inlined)
+                          |          std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderInfo>, std::allocator<std::pair<unsigned long const, OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::erase(std::__detail::_Node_const_iterator<std::pair<unsigned long const, OrderInfo>, false, false>) (inlined)
+                          |          |          
+                          |           --3.30%--std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderInfo>, std::allocator<std::pair<unsigned long const, OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_erase(unsigned long, std::__detail::_Hash_node_base*, std::__detail::_Hash_node<std::pair<unsigned long const, OrderInfo>, false>*) (inlined)
+                          |                     |          
+                          |                      --2.86%--std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderInfo>, std::allocator<std::pair<unsigned long const, OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_bucket_index(std::__detail::_Hash_node_value<std::pair<unsigned long const, OrderInfo>, false> const&) const (inlined)
+                          |                                std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, OrderInfo>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(std::__detail::_Hash_node_value<std::pair<unsigned long const, OrderInfo>, false> const&, unsigned long) const (inlined)
+                          |                                std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+                          |          
+                          |--3.74%--void BookA::remove_from_level<std::map<int, BookA::LevelData, std::greater<int>, std::allocator<std::pair<int const, BookA::LevelData> > > >(std::map<int, BookA::LevelData, std::greater<int>, std::allocator<std::pair<int const, BookA::LevelData> > >&, int, long) (inlined)
+                          |          |          
+                          |           --3.41%--std::map<int, BookA::LevelData, std::greater<int>, std::allocator<std::pair<int const, BookA::LevelData> > >::find(int const&) (inlined)
+                          |                     std::_Rb_tree<int, std::pair<int const, BookA::LevelData>, std::_Select1st<std::pair<int const, BookA::LevelData> >, std::greater<int>, std::allocator<std::pair<int const, BookA::LevelData> > >::find(int const&) (inlined)
+                          |                     |          
+                          |                      --3.08%--std::_Rb_tree<int, std::pair<int const, BookA::LevelData>, std::_Select1st<std::pair<int const, BookA::LevelData> >, std::greater<int>, std::allocator<std::pair<int const, BookA::LevelData> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+                          |                                |          
+                          |                                 --2.09%--std::_Rb_tree<int, std::pair<int const, BookA::LevelData>, std::_Select1st<std::pair<int const, BookA::LevelData> >, std::greater<int>, std::allocator<std::pair<int const, BookA::LevelData> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+                          |          
+                           --2.75%--void BookA::remove_from_level<std::map<int, BookA::LevelData, std::less<int>, std::allocator<std::pair<int const, BookA::LevelData> > > >(std::map<int, BookA::LevelData, std::less<int>, std::allocator<std::pair<int const, BookA::LevelData> > >&, int, long) (inlined)
+                                     std::map<int, BookA::LevelData, std::less<int>, std::allocator<std::pair<int const, BookA::LevelData> > >::find(int const&) (inlined)
+                                     std::_Rb_tree<int, std::pair<int const, BookA::LevelData>, std::_Select1st<std::pair<int const, BookA::LevelData> >, std::less<int>, std::allocator<std::pair<int const, BookA::LevelData> > >::find(int const&) (inlined)
+                                     |          
+                                      --2.31%--std::_Rb_tree<int, std::pair<int const, BookA::LevelData>, std::_Select1st<std::pair<int const, BookA::LevelData> >, std::less<int>, std::allocator<std::pair<int const, BookA::LevelData> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+
+    14.76%  bench_perf  bench_perf            [.] hash_workload(std::vector<Op, std::allocator<Op> > const&)
+            |
+            ---_start
+               __libc_start_main
+               0x7d934e42a601
+               main
+               int (anonymous namespace)::run_benchmark<BookA>(char, WorkloadSpec const&, (anonymous namespace)::BenchOptions const&) [clone .constprop.0]
+               int (anonymous namespace)::run_benchmark<BookA>(char, WorkloadSpec const&, (anonymous namespace)::BenchOptions const&) [clone .constprop.0]
+               hash_workload(std::vector<Op, std::allocator<Op> > const&)
+               |          
+               |--9.47%--operator() (inlined)
+               |          
+                --5.07%--hash_workload(std::vector<Op, std::allocator<Op> > const&)
+
+     7.05%  bench_perf  bench_perf            [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderInfo>, std::allocator<std::pair<unsigned long const, OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, OrderInfo>, false>*, unsigned long)
+            |
+            ---_start
+               __libc_start_main
+               0x7d934e42a601
+               main
+               int (anonymous namespace)::run_benchmark<BookA>(char, WorkloadSpec const&, (anonymous namespace)::BenchOptions const&) [clone .constprop.0]
+               run_total_pass<BookA> (inlined)
+               int (anonymous namespace)::run_benchmark<BookA>(char, WorkloadSpec const&, (anonymous namespace)::BenchOptions const&) [clone .constprop.0]
+               |          
+                --6.94%--apply<BookA> (inlined)
+                          BookA::add_order(unsigned long, Side, double, long) (inlined)
+                          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, OrderInfo>, false, false>, bool> std::unordered_map<unsigned long, OrderInfo, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, OrderInfo> > >::emplace<unsigned long&, OrderInfo>(unsigned long&, OrderInfo&&) (inlined)
+                          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, OrderInfo>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderInfo>, std::allocator<std::pair<unsigned long const, OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, OrderInfo>(unsigned long&, OrderInfo&&) (inlined)
+                          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, OrderInfo>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderInfo>, std::allocator<std::pair<unsigned long const, OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, OrderInfo>(unsigned long&, OrderInfo&&) (inlined)
+                          std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderInfo>, std::allocator<std::pair<unsigned long const, OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, OrderInfo>, false>*, unsigned long)
+                          |          
+                           --5.29%--std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderInfo>, std::allocator<std::pair<unsigned long const, OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, std::integral_constant<bool, true>) (inlined)
+                                     |          
+                                      --4.07%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, OrderInfo>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(std::__detail::_Hash_node_value<std::pair<unsigned long const, OrderInfo>, false> const&, unsigned long) const (inlined)
+                                                std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+
+     6.83%  bench_perf  bench_perf            [.] generate_workload(WorkloadSpec const&, unsigned long*)
+            |
+            ---_start
+               __libc_start_main
+               0x7d934e42a601
+               main
+               int (anonymous namespace)::run_benchmark<BookA>(char, WorkloadSpec const&, (anonymous namespace)::BenchOptions const&) [clone .constprop.0]
+               generate_workload(WorkloadSpec const&, unsigned long*)
+               |          
+                --2.42%--std::vector<Op, std::allocator<Op> >::push_back(Op&&) (inlined)
+                          Op& std::vector<Op, std::allocator<Op> >::emplace_back<Op>(Op&&) (inlined)
+
+     3.08%  bench_perf  bench_perf            [.] int (anonymous namespace)::run_benchmark<BookA>(char, WorkloadSpec const&, (anonymous namespace)::BenchOptions const&) [clone .constprop.0]
+            |
+            ---_start
+               __libc_start_main
+               0x7d934e42a601
+               main
+               int (anonymous namespace)::run_benchmark<BookA>(char, WorkloadSpec const&, (anonymous namespace)::BenchOptions const&) [clone .constprop.0]
+               |          
+                --2.86%--run_total_pass<BookA> (inlined)
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
