@@ -1,0 +1,15 @@
+
+ Performance counter stats for '/usr/bin/setpriv --reuid=1000 --regid=1000 --init-groups --no-new-privs /home/coder/orderbook-10222-20261016-mdg_dhky/project/build/bench --impl B --runs 1 --mode total' (5 runs):
+
+            267.37 msec task-clock:u              #    0.996 CPUs utilized            ( +-  0.15% )
+         842781844      cycles:u                  #    3.148 GHz                      ( +-  0.06% )
+         771322136      instructions:u            #    0.91  insn per cycle           ( +-  0.00% )
+         126107737      branches:u                #  470.992 M/sec                    ( +-  0.00% )
+          11019091      branch-misses:u           #    8.74% of all branches          ( +-  0.04% )
+            901103      cache-misses:u                                                ( +-  1.96% )
+          28326532      L1-dcache-load-misses                                         ( +-  0.03% )
+            951248      dTLB-load-misses                                              ( +-  1.60% )
+             22747      page-faults:u             #   84.956 K/sec                    ( +-  0.00% )
+
+          0.268514 +- 0.000488 seconds time elapsed  ( +-  0.18% )
+

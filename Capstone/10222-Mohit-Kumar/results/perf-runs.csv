@@ -1,0 +1,136 @@
+implementation,run,count,unit,event,event_runtime_ns,running_percent,metric,metric_unit
+A,1,402.58,msec,task-clock:u,402579791,100.00,0.998,CPUs utilized
+A,1,1327603081,,cycles:u,402760415,100.00,3.298,GHz
+A,1,1199836624,,instructions:u,402760415,100.00,0.90,insn per cycle
+A,1,266603901,,branches:u,402760415,100.00,662.239,M/sec
+A,1,12971842,,branch-misses:u,402760415,100.00,4.87,of all branches
+A,1,435348,,cache-misses:u,402760415,100.00,,
+A,1,15169352,,L1-dcache-load-misses,402760415,100.00,,
+A,1,938405,,dTLB-load-misses,402760415,100.00,,
+A,1,17028,,page-faults:u,402579791,100.00,42.297,K/sec
+A,2,401.79,msec,task-clock:u,401786907,100.00,0.998,CPUs utilized
+A,2,1325517305,,cycles:u,401943081,100.00,3.299,GHz
+A,2,1199836429,,instructions:u,401943081,100.00,0.91,insn per cycle
+A,2,266603873,,branches:u,401943081,100.00,663.545,M/sec
+A,2,12940808,,branch-misses:u,401943081,100.00,4.85,of all branches
+A,2,432098,,cache-misses:u,401943081,100.00,,
+A,2,15089661,,L1-dcache-load-misses,401943081,100.00,,
+A,2,944488,,dTLB-load-misses,401943081,100.00,,
+A,2,17028,,page-faults:u,401786907,100.00,42.381,K/sec
+A,3,408.75,msec,task-clock:u,408745587,100.00,0.998,CPUs utilized
+A,3,1348646533,,cycles:u,408858317,100.00,3.299,GHz
+A,3,1199836491,,instructions:u,408858317,100.00,0.89,insn per cycle
+A,3,266603890,,branches:u,408858317,100.00,652.249,M/sec
+A,3,12960810,,branch-misses:u,408858317,100.00,4.86,of all branches
+A,3,655911,,cache-misses:u,408858317,100.00,,
+A,3,15226031,,L1-dcache-load-misses,408858317,100.00,,
+A,3,944552,,dTLB-load-misses,408858317,100.00,,
+A,3,17027,,page-faults:u,408745587,100.00,41.657,K/sec
+A,4,400.00,msec,task-clock:u,399996005,100.00,0.998,CPUs utilized
+A,4,1317428079,,cycles:u,400199905,100.00,3.294,GHz
+A,4,1199835985,,instructions:u,400199905,100.00,0.91,insn per cycle
+A,4,266603828,,branches:u,400199905,100.00,666.516,M/sec
+A,4,12957852,,branch-misses:u,400199905,100.00,4.86,of all branches
+A,4,476348,,cache-misses:u,400199905,100.00,,
+A,4,15138759,,L1-dcache-load-misses,400199905,100.00,,
+A,4,940380,,dTLB-load-misses,400199905,100.00,,
+A,4,17028,,page-faults:u,399996005,100.00,42.570,K/sec
+A,5,401.07,msec,task-clock:u,401072196,100.00,0.998,CPUs utilized
+A,5,1322485246,,cycles:u,401191660,100.00,3.297,GHz
+A,5,1199836014,,instructions:u,401191660,100.00,0.91,insn per cycle
+A,5,266603825,,branches:u,401191660,100.00,664.728,M/sec
+A,5,12977144,,branch-misses:u,401191660,100.00,4.87,of all branches
+A,5,438910,,cache-misses:u,401191660,100.00,,
+A,5,15180554,,L1-dcache-load-misses,401191660,100.00,,
+A,5,944392,,dTLB-load-misses,401191660,100.00,,
+A,5,17027,,page-faults:u,401072196,100.00,42.454,K/sec
+B,1,268.23,msec,task-clock:u,268233609,100.00,0.997,CPUs utilized
+B,1,844291513,,cycles:u,268359132,100.00,3.148,GHz
+B,1,771322353,,instructions:u,268359132,100.00,0.91,insn per cycle
+B,1,126107760,,branches:u,268359132,100.00,470.142,M/sec
+B,1,11015544,,branch-misses:u,268359132,100.00,8.74,of all branches
+B,1,934996,,cache-misses:u,268359132,100.00,,
+B,1,28332619,,L1-dcache-load-misses,268359132,100.00,,
+B,1,1014192,,dTLB-load-misses,268359132,100.00,,
+B,1,22749,,page-faults:u,268233609,100.00,84.810,K/sec
+B,2,268.21,msec,task-clock:u,268206761,100.00,0.998,CPUs utilized
+B,2,844523797,,cycles:u,268303381,100.00,3.149,GHz
+B,2,771322452,,instructions:u,268303381,100.00,0.91,insn per cycle
+B,2,126107753,,branches:u,268303381,100.00,470.189,M/sec
+B,2,11025607,,branch-misses:u,268303381,100.00,8.74,of all branches
+B,2,936338,,cache-misses:u,268303381,100.00,,
+B,2,28291025,,L1-dcache-load-misses,268303381,100.00,,
+B,2,1024214,,dTLB-load-misses,268303381,100.00,,
+B,2,22748,,page-faults:u,268206761,100.00,84.815,K/sec
+B,3,268.12,msec,task-clock:u,268123235,100.00,0.997,CPUs utilized
+B,3,843724761,,cycles:u,268297023,100.00,3.147,GHz
+B,3,771322730,,instructions:u,268297023,100.00,0.91,insn per cycle
+B,3,126107799,,branches:u,268297023,100.00,470.335,M/sec
+B,3,11006151,,branch-misses:u,268297023,100.00,8.73,of all branches
+B,3,929958,,cache-misses:u,268297023,100.00,,
+B,3,28283963,,L1-dcache-load-misses,268297023,100.00,,
+B,3,1021578,,dTLB-load-misses,268297023,100.00,,
+B,3,22750,,page-faults:u,268123235,100.00,84.849,K/sec
+B,4,267.94,msec,task-clock:u,267939215,100.00,0.998,CPUs utilized
+B,4,843734363,,cycles:u,268014476,100.00,3.149,GHz
+B,4,771323253,,instructions:u,268014476,100.00,0.91,insn per cycle
+B,4,126107785,,branches:u,268014476,100.00,470.658,M/sec
+B,4,11008597,,branch-misses:u,268014476,100.00,8.73,of all branches
+B,4,929310,,cache-misses:u,268014476,100.00,,
+B,4,28273031,,L1-dcache-load-misses,268014476,100.00,,
+B,4,1019460,,dTLB-load-misses,268014476,100.00,,
+B,4,22746,,page-faults:u,267939215,100.00,84.892,K/sec
+B,5,268.11,msec,task-clock:u,268108638,100.00,0.997,CPUs utilized
+B,5,843688645,,cycles:u,268251093,100.00,3.147,GHz
+B,5,771322494,,instructions:u,268251093,100.00,0.91,insn per cycle
+B,5,126107754,,branches:u,268251093,100.00,470.361,M/sec
+B,5,11005756,,branch-misses:u,268251093,100.00,8.73,of all branches
+B,5,933883,,cache-misses:u,268251093,100.00,,
+B,5,28296579,,L1-dcache-load-misses,268251093,100.00,,
+B,5,982416,,dTLB-load-misses,268251093,100.00,,
+B,5,22748,,page-faults:u,268108638,100.00,84.846,K/sec
+C,1,191.34,msec,task-clock:u,191344255,100.00,0.996,CPUs utilized
+C,1,598678060,,cycles:u,191503575,100.00,3.129,GHz
+C,1,1110701890,,instructions:u,191503575,100.00,1.86,insn per cycle
+C,1,164473509,,branches:u,191503575,100.00,859.569,M/sec
+C,1,3067214,,branch-misses:u,191503575,100.00,1.86,of all branches
+C,1,320321,,cache-misses:u,191503575,100.00,,
+C,1,18751129,,L1-dcache-load-misses,191503575,100.00,,
+C,1,657578,,dTLB-load-misses,191503575,100.00,,
+C,1,16356,,page-faults:u,191344255,100.00,85.479,K/sec
+C,2,191.27,msec,task-clock:u,191268321,100.00,0.997,CPUs utilized
+C,2,598765332,,cycles:u,191371362,100.00,3.130,GHz
+C,2,1110701973,,instructions:u,191371362,100.00,1.85,insn per cycle
+C,2,164473354,,branches:u,191371362,100.00,859.909,M/sec
+C,2,3064806,,branch-misses:u,191371362,100.00,1.86,of all branches
+C,2,328631,,cache-misses:u,191371362,100.00,,
+C,2,18741985,,L1-dcache-load-misses,191371362,100.00,,
+C,2,660249,,dTLB-load-misses,191371362,100.00,,
+C,2,16352,,page-faults:u,191268321,100.00,85.492,K/sec
+C,3,191.56,msec,task-clock:u,191555193,100.00,0.996,CPUs utilized
+C,3,599319982,,cycles:u,191716134,100.00,3.129,GHz
+C,3,1110701807,,instructions:u,191716134,100.00,1.85,insn per cycle
+C,3,164473342,,branches:u,191716134,100.00,858.621,M/sec
+C,3,3065784,,branch-misses:u,191716134,100.00,1.86,of all branches
+C,3,331616,,cache-misses:u,191716134,100.00,,
+C,3,18760371,,L1-dcache-load-misses,191716134,100.00,,
+C,3,662659,,dTLB-load-misses,191716134,100.00,,
+C,3,16355,,page-faults:u,191555193,100.00,85.380,K/sec
+C,4,191.35,msec,task-clock:u,191353264,100.00,0.996,CPUs utilized
+C,4,598946908,,cycles:u,191470711,100.00,3.130,GHz
+C,4,1110701786,,instructions:u,191470711,100.00,1.85,insn per cycle
+C,4,164473329,,branches:u,191470711,100.00,859.527,M/sec
+C,4,3064040,,branch-misses:u,191470711,100.00,1.86,of all branches
+C,4,322937,,cache-misses:u,191470711,100.00,,
+C,4,18750204,,L1-dcache-load-misses,191470711,100.00,,
+C,4,661513,,dTLB-load-misses,191470711,100.00,,
+C,4,16354,,page-faults:u,191353264,100.00,85.465,K/sec
+C,5,191.39,msec,task-clock:u,191394710,100.00,0.997,CPUs utilized
+C,5,599122112,,cycles:u,191484486,100.00,3.130,GHz
+C,5,1110701368,,instructions:u,191484486,100.00,1.85,insn per cycle
+C,5,164473308,,branches:u,191484486,100.00,859.341,M/sec
+C,5,3053268,,branch-misses:u,191484486,100.00,1.86,of all branches
+C,5,348100,,cache-misses:u,191484486,100.00,,
+C,5,18751037,,L1-dcache-load-misses,191484486,100.00,,
+C,5,664514,,dTLB-load-misses,191484486,100.00,,
+C,5,16352,,page-faults:u,191394710,100.00,85.436,K/sec

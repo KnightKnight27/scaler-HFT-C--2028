@@ -1,0 +1,599 @@
+=== Implementation A: Self sample report ===
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 3K of event 'cpu-clock:u'
+# Event count (approx.): 3417417414
+#
+# Overhead  Symbol                                                                                                                                                                                                                                                                         Shared Object        IPC   [IPC Coverage]
+# ........  .............................................................................................................................................................................................................................................................................  ...................  ....................
+#
+    63.50%  [.] replay<ob::TreeBook>                                                                                                                                                                                                                                                       bench                -      -            
+    11.13%  [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_emplace_unique<unsigned long&, ob::Order>  bench                -      -            
+     6.74%  [.] std::_Rb_tree_rebalance_for_erase                                                                                                                                                                                                                                          libstdc++.so.6.0.28  -      -            
+     4.07%  [.] std::_Rb_tree_insert_and_rebalance                                                                                                                                                                                                                                         libstdc++.so.6.0.28  -      -            
+     3.78%  [.] 0x0000000000097d8f                                                                                                                                                                                                                                                         libc-2.31.so         -      -            
+     2.72%  [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase                                      bench                -      -            
+     2.67%  [.] malloc                                                                                                                                                                                                                                                                     libc-2.31.so         -      -            
+     1.52%  [.] ob::generate                                                                                                                                                                                                                                                               bench                -      -            
+     1.00%  [.] cfree                                                                                                                                                                                                                                                                      libc-2.31.so         -      -            
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
+
+=== Implementation A: Inclusive call graph ===
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 3K of event 'cpu-clock:u'
+# Event count (approx.): 3417417414
+#
+# Children      Self  Command  Shared Object        Symbol                                                                                                                                                                                                                                                                       
+# ........  ........  .......  ...................  .............................................................................................................................................................................................................................................................................
+#
+    92.30%     0.00%  bench    libc-2.31.so         [.] __libc_start_main
+            |
+            ---__libc_start_main
+               main
+               |          
+               |--90.33%--benchmark<ob::TreeBook>
+               |          |          
+               |          |--82.78%--replay<ob::TreeBook>
+               |          |          |          
+               |          |          |--10.98%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_emplace_unique<unsigned long&, ob::Order>
+               |          |          |          
+               |          |          |--4.04%--std::_Rb_tree_insert_and_rebalance
+               |          |          |          
+               |          |           --3.72%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |          |                     |          
+               |          |                      --3.66%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |          |                                |          
+               |          |                                 --3.60%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |          |                                           |          
+               |          |                                            --3.40%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |          |                                                      |          
+               |          |                                                       --3.19%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |          |                                                                 |          
+               |          |                                                                  --2.49%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |          |                                                                            |          
+               |          |                                                                             --2.05%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |          |                                                                                       |          
+               |          |                                                                                        --1.55%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |          |          
+               |           --6.74%--std::_Rb_tree_rebalance_for_erase
+               |          
+                --1.52%--ob::generate
+
+    92.30%     0.00%  bench    bench                [.] main
+            |
+            ---main
+               |          
+               |--90.33%--benchmark<ob::TreeBook>
+               |          |          
+               |          |--82.78%--replay<ob::TreeBook>
+               |          |          |          
+               |          |          |--10.98%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_emplace_unique<unsigned long&, ob::Order>
+               |          |          |          
+               |          |          |--4.04%--std::_Rb_tree_insert_and_rebalance
+               |          |          |          
+               |          |           --3.72%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |          |                     |          
+               |          |                      --3.66%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |          |                                |          
+               |          |                                 --3.60%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |          |                                           |          
+               |          |                                            --3.40%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |          |                                                      |          
+               |          |                                                       --3.19%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |          |                                                                 |          
+               |          |                                                                  --2.49%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |          |                                                                            |          
+               |          |                                                                             --2.05%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |          |                                                                                       |          
+               |          |                                                                                        --1.55%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |          |          
+               |           --6.74%--std::_Rb_tree_rebalance_for_erase
+               |          
+                --1.52%--ob::generate
+
+    90.33%     0.00%  bench    bench                [.] benchmark<ob::TreeBook>
+            |
+            ---benchmark<ob::TreeBook>
+               |          
+               |--82.78%--replay<ob::TreeBook>
+               |          |          
+               |          |--10.98%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_emplace_unique<unsigned long&, ob::Order>
+               |          |          
+               |          |--4.04%--std::_Rb_tree_insert_and_rebalance
+               |          |          
+               |           --3.72%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |                     |          
+               |                      --3.66%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |                                |          
+               |                                 --3.60%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |                                           |          
+               |                                            --3.40%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |                                                      |          
+               |                                                       --3.19%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |                                                                 |          
+               |                                                                  --2.49%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |                                                                            |          
+               |                                                                             --2.05%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |                                                                                       |          
+               |                                                                                        --1.55%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+               |          
+                --6.74%--std::_Rb_tree_rebalance_for_erase
+
+    82.78%    63.50%  bench    bench                [.] replay<ob::TreeBook>
+            |          
+            |--63.50%--__libc_start_main
+            |          main
+            |          benchmark<ob::TreeBook>
+            |          replay<ob::TreeBook>
+            |          
+             --19.27%--replay<ob::TreeBook>
+                       |          
+                       |--10.98%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_emplace_unique<unsigned long&, ob::Order>
+                       |          
+                       |--4.04%--std::_Rb_tree_insert_and_rebalance
+                       |          
+                        --3.72%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+                                  std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+                                  std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+                                  std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+                                  |          
+                                   --3.66%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+                                             |          
+                                              --3.60%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+                                                        |          
+                                                         --3.40%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+                                                                   |          
+                                                                    --3.19%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+                                                                              |          
+                                                                               --2.49%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+                                                                                         |          
+                                                                                          --2.05%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+                                                                                                    |          
+                                                                                                     --1.55%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+
+    11.13%    11.13%  bench    bench                [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_emplace_unique<unsigned long&, ob::Order>
+            |
+            ---__libc_start_main
+               main
+               benchmark<ob::TreeBook>
+               |          
+                --10.98%--replay<ob::TreeBook>
+                          std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_emplace_unique<unsigned long&, ob::Order>
+
+     6.74%     6.74%  bench    libstdc++.so.6.0.28  [.] std::_Rb_tree_rebalance_for_erase
+            |
+            ---__libc_start_main
+               main
+               benchmark<ob::TreeBook>
+               std::_Rb_tree_rebalance_for_erase
+
+     4.07%     4.07%  bench    libstdc++.so.6.0.28  [.] std::_Rb_tree_insert_and_rebalance
+            |
+            ---__libc_start_main
+               main
+               benchmark<ob::TreeBook>
+               |          
+                --4.04%--replay<ob::TreeBook>
+                          std::_Rb_tree_insert_and_rebalance
+
+     3.78%     3.78%  bench    libc-2.31.so         [.] 0x0000000000097d8f
+            |
+            ---0x7f96be53fd8f
+
+     3.78%     0.00%  bench    libc-2.31.so         [.] 0x00007f96be53fd8f
+            |
+            ---0x7f96be53fd8f
+
+     3.72%     2.72%  bench    bench                [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+            |          
+             --2.72%--__libc_start_main
+                       main
+                       benchmark<ob::TreeBook>
+                       replay<ob::TreeBook>
+                       std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+                       std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+                       std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+                       std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+                       |          
+                        --2.69%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+                                  |          
+                                   --2.67%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+                                             |          
+                                              --2.55%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+                                                        |          
+                                                         --2.46%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+                                                                   |          
+                                                                    --1.99%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+                                                                              |          
+                                                                               --1.70%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+                                                                                         |          
+                                                                                          --1.35%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase
+
+     2.67%     2.67%  bench    libc-2.31.so         [.] malloc
+            |          
+             --2.61%--malloc
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
+
+=== Implementation B: Self sample report ===
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'cpu-clock:u'
+# Event count (approx.): 1605605604
+#
+# Overhead  Symbol                                                                                                                                                                              Shared Object     IPC   [IPC Coverage]
+# ........  ..................................................................................................................................................................................  ................  ....................
+#
+    44.89%  [.] replay<ob::VectorBook>                                                                                                                                                          bench             -      -            
+    34.10%  [.] ob::VectorBook::add_order                                                                                                                                                       bench             -      -            
+    12.28%  [.] 0x000000000018b963                                                                                                                                                              libc-2.31.so      -      -            
+     2.87%  [.] ob::generate                                                                                                                                                                    bench             -      -            
+     1.31%  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()  bench             -      -            
+     0.62%  [.] 0x000000000018bc7a                                                                                                                                                              libc-2.31.so      -      -            
+     0.56%  [.] 0x000000000018bc81                                                                                                                                                              libc-2.31.so      -      -            
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
+
+=== Implementation B: Inclusive call graph ===
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'cpu-clock:u'
+# Event count (approx.): 1605605604
+#
+# Children      Self  Command  Shared Object     Symbol                                                                                                                                                                            
+# ........  ........  .......  ................  ..................................................................................................................................................................................
+#
+    99.88%     0.00%  bench    libc-2.31.so      [.] __libc_start_main
+            |
+            ---__libc_start_main
+               main
+               |          
+               |--95.70%--benchmark<ob::VectorBook>
+               |          |          
+               |          |--83.35%--replay<ob::VectorBook>
+               |          |          |          
+               |          |           --36.28%--ob::VectorBook::add_order
+               |          |          
+               |           --12.16%--0x7f5bb698f963
+               |          
+               |--2.87%--ob::generate
+               |          
+                --1.31%--std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+
+    99.88%     0.00%  bench    bench             [.] main
+            |
+            ---main
+               |          
+               |--95.70%--benchmark<ob::VectorBook>
+               |          |          
+               |          |--83.35%--replay<ob::VectorBook>
+               |          |          |          
+               |          |           --36.28%--ob::VectorBook::add_order
+               |          |          
+               |           --12.16%--0x7f5bb698f963
+               |          
+               |--2.87%--ob::generate
+               |          
+                --1.31%--std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+
+    95.70%     0.00%  bench    bench             [.] benchmark<ob::VectorBook>
+            |
+            ---benchmark<ob::VectorBook>
+               |          
+               |--83.35%--replay<ob::VectorBook>
+               |          |          
+               |           --36.28%--ob::VectorBook::add_order
+               |          
+                --12.16%--0x7f5bb698f963
+
+    83.35%    44.89%  bench    bench             [.] replay<ob::VectorBook>
+            |          
+            |--44.89%--__libc_start_main
+            |          main
+            |          benchmark<ob::VectorBook>
+            |          replay<ob::VectorBook>
+            |          
+             --38.47%--replay<ob::VectorBook>
+                       |          
+                        --36.28%--ob::VectorBook::add_order
+
+    36.47%    34.10%  bench    bench             [.] ob::VectorBook::add_order
+            |          
+            |--34.10%--__libc_start_main
+            |          main
+            |          benchmark<ob::VectorBook>
+            |          |          
+            |           --33.92%--replay<ob::VectorBook>
+            |                     ob::VectorBook::add_order
+            |          
+             --2.37%--ob::VectorBook::add_order
+
+    12.28%    12.28%  bench    libc-2.31.so      [.] 0x000000000018b963
+            |
+            ---__libc_start_main
+               main
+               benchmark<ob::VectorBook>
+               |          
+                --12.16%--0x7f5bb698f963
+
+    12.28%     0.00%  bench    libc-2.31.so      [.] 0x00007f5bb698f963
+            |
+            ---0x7f5bb698f963
+
+     2.87%     2.87%  bench    bench             [.] ob::generate
+            |
+            ---__libc_start_main
+               main
+               ob::generate
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
+
+=== Implementation C: Self sample report ===
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 981  of event 'cpu-clock:u'
+# Event count (approx.): 981981981
+#
+# Overhead  Symbol                                                                                                                                                                                                                                                                                                                                                                                                         Shared Object        IPC   [IPC Coverage]
+# ........  .............................................................................................................................................................................................................................................................................................................................................................................................................  ...................  ....................
+#
+    30.48%  [.] ob::InterleavedBook::add_order                                                                                                                                                                                                                                                                                                                                                                             bench                -      -            
+    26.61%  [.] replay<ob::InterleavedBook>                                                                                                                                                                                                                                                                                                                                                                                bench                -      -            
+     8.56%  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash    bench                -      -            
+     5.50%  [.] ob::generate                                                                                                                                                                                                                                                                                                                                                                                               bench                -      -            
+     3.47%  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable  bench                -      -            
+     3.36%  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::erase        bench                -      -            
+     2.55%  [.] 0x00000000000958c7                                                                                                                                                                                                                                                                                                                                                                                         libc-2.31.so         -      -            
+     1.83%  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()                                                                                                                                                                                                                             bench                -      -            
+     1.33%  [.] malloc                                                                                                                                                                                                                                                                                                                                                                                                     libc-2.31.so         -      -            
+     1.22%  [.] 0x00000000000968fa                                                                                                                                                                                                                                                                                                                                                                                         libc-2.31.so         -      -            
+     1.12%  [.] 0x00000000000958cd                                                                                                                                                                                                                                                                                                                                                                                         libc-2.31.so         -      -            
+     1.12%  [.] 0x00000000000959d6                                                                                                                                                                                                                                                                                                                                                                                         libc-2.31.so         -      -            
+     1.12%  [.] 0x0000000000095a28                                                                                                                                                                                                                                                                                                                                                                                         libc-2.31.so         -      -            
+     1.12%  [.] 0x0000000000095a52                                                                                                                                                                                                                                                                                                                                                                                         libc-2.31.so         -      -            
+     0.92%  [.] 0x0000000000095a67                                                                                                                                                                                                                                                                                                                                                                                         libc-2.31.so         -      -            
+     0.82%  [.] 0x0000000000002480                                                                                                                                                                                                                                                                                                                                                                                         bench                -      -            
+     0.71%  [.] cfree                                                                                                                                                                                                                                                                                                                                                                                                      libc-2.31.so         -      -            
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
+
+=== Implementation C: Inclusive call graph ===
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 981  of event 'cpu-clock:u'
+# Event count (approx.): 981981981
+#
+# Children      Self  Command  Shared Object        Symbol                                                                                                                                                                                                                                                                                                                                                                                                       
+# ........  ........  .......  ...................  .............................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    83.28%     0.00%  bench    libc-2.31.so         [.] __libc_start_main
+            |
+            ---__libc_start_main
+               main
+               |          
+               |--75.94%--benchmark<ob::InterleavedBook>
+               |          |          
+               |           --75.74%--replay<ob::InterleavedBook>
+               |                     |          
+               |                     |--39.45%--ob::InterleavedBook::add_order
+               |                     |          |          
+               |                     |           --8.56%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash
+               |                     |          
+               |                     |--3.47%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable
+               |                     |          
+               |                      --3.16%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::erase
+               |          
+               |--5.50%--ob::generate
+               |          
+                --1.83%--std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+
+    83.28%     0.00%  bench    bench                [.] main
+            |
+            ---main
+               |          
+               |--75.94%--benchmark<ob::InterleavedBook>
+               |          |          
+               |           --75.74%--replay<ob::InterleavedBook>
+               |                     |          
+               |                     |--39.45%--ob::InterleavedBook::add_order
+               |                     |          |          
+               |                     |           --8.56%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash
+               |                     |          
+               |                     |--3.47%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable
+               |                     |          
+               |                      --3.16%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::erase
+               |          
+               |--5.50%--ob::generate
+               |          
+                --1.83%--std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+
+    75.94%     0.00%  bench    bench                [.] benchmark<ob::InterleavedBook>
+            |
+            ---benchmark<ob::InterleavedBook>
+               |          
+                --75.74%--replay<ob::InterleavedBook>
+                          |          
+                          |--39.45%--ob::InterleavedBook::add_order
+                          |          |          
+                          |           --8.56%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash
+                          |          
+                          |--3.47%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable
+                          |          
+                           --3.16%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::erase
+
+    75.74%    26.61%  bench    bench                [.] replay<ob::InterleavedBook>
+            |          
+            |--49.13%--replay<ob::InterleavedBook>
+            |          |          
+            |          |--39.45%--ob::InterleavedBook::add_order
+            |          |          |          
+            |          |           --8.56%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash
+            |          |          
+            |          |--3.47%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable
+            |          |          
+            |           --3.16%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::erase
+            |          
+             --26.61%--__libc_start_main
+                       main
+                       benchmark<ob::InterleavedBook>
+                       replay<ob::InterleavedBook>
+
+    39.45%    30.48%  bench    bench                [.] ob::InterleavedBook::add_order
+            |          
+            |--30.48%--__libc_start_main
+            |          main
+            |          benchmark<ob::InterleavedBook>
+            |          replay<ob::InterleavedBook>
+            |          ob::InterleavedBook::add_order
+            |          
+             --8.97%--ob::InterleavedBook::add_order
+                       |          
+                        --8.56%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash
+
+     8.56%     8.56%  bench    bench                [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash
+            |
+            ---__libc_start_main
+               main
+               benchmark<ob::InterleavedBook>
+               replay<ob::InterleavedBook>
+               ob::InterleavedBook::add_order
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash
+
+     5.50%     5.50%  bench    bench                [.] ob::generate
+            |
+            ---__libc_start_main
+               main
+               ob::generate
+
+     3.47%     3.47%  bench    bench                [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable
+            |
+            ---__libc_start_main
+               main
+               benchmark<ob::InterleavedBook>
+               replay<ob::InterleavedBook>
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable
+
+     3.36%     3.36%  bench    bench                [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::erase
+            |
+            ---__libc_start_main
+               main
+               benchmark<ob::InterleavedBook>
+               |          
+                --3.16%--replay<ob::InterleavedBook>
+                          std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::erase
+
+     2.85%     0.00%  bench    [unknown]            [.] 0x0000000000000001
+            |
+            ---0x1
+               |          
+                --1.22%--0x7f39dda908fa
+
+     2.55%     2.55%  bench    libc-2.31.so         [.] 0x00000000000958c7
+            |
+            ---0x7f39dda8f8c7
+
+     2.55%     0.00%  bench    libc-2.31.so         [.] 0x00007f39dda8f8c7
+            |
+            ---0x7f39dda8f8c7
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
+
+=== Cache-event scope attributes (original verbose output) ===
+Using CPUID GenuineIntel-6-6A-6
+Control descriptor is not initialized
+------------------------------------------------------------
+perf_event_attr:
+  type                             3
+  size                             128
+  config                           0x10000
+  sample_type                      IDENTIFIER
+  read_format                      TOTAL_TIME_ENABLED|TOTAL_TIME_RUNNING
+  disabled                         1
+  inherit                          1
+  exclude_kernel                   1
+  exclude_hv                       1
+  enable_on_exec                   1
+  exclude_guest                    1
+------------------------------------------------------------
+sys_perf_event_open: pid 20655  cpu -1  group_fd -1  flags 0x8 = 3
+------------------------------------------------------------
+perf_event_attr:
+  type                             3
+  size                             128
+  config                           0x10003
+  sample_type                      IDENTIFIER
+  read_format                      TOTAL_TIME_ENABLED|TOTAL_TIME_RUNNING
+  disabled                         1
+  inherit                          1
+  exclude_kernel                   1
+  exclude_hv                       1
+  enable_on_exec                   1
+  exclude_guest                    1
+------------------------------------------------------------
+sys_perf_event_open: pid 20655  cpu -1  group_fd -1  flags 0x8 = 4
+L1-dcache-load-misses: 0: 13966 30814495 30814495
+dTLB-load-misses: 0: 325 30814495 30814495
+L1-dcache-load-misses: 13966 30814495 30814495
+dTLB-load-misses: 325 30814495 30814495
+
+ Performance counter stats for '/usr/bin/setpriv --reuid=1000 --regid=1000 --init-groups --no-new-privs /bin/true':
+
+             13966      L1-dcache-load-misses                                       
+               325      dTLB-load-misses                                            
+
+       0.031447280 seconds time elapsed
+
+       0.000000000 seconds user
+       0.031294000 seconds sys
+
+

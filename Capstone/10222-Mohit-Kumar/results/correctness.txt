@@ -1,0 +1,18 @@
+Layout tests: PASS (one buffer, opposite rank order, complete top pair in 64/128-byte lines)
+Edge tests: PASS (all designs)
+seed=42
+verified_operations=100000
+verified_operations=200000
+verified_operations=300000
+verified_operations=400000
+verified_operations=500000
+verified_operations=600000
+verified_operations=700000
+verified_operations=800000
+verified_operations=900000
+verified_operations=1000000
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+All implementations and independent reference agree after every operation (full depth).
+operations=1000000 adds=700818 cancels=199505 queries=99677 hash=4920528738431414721
