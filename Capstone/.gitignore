@@ -1,0 +1,21 @@
+# Binaries
+bench
+bench.exe
+*.o
+*.obj
+
+# Build directories
+build/
+bin/
+
+# Perf data and reports
+perf.data
+perf.data.old
+*.data
+*.data.old
+perf_report_*.txt
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
