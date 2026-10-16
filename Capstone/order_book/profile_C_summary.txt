@@ -1,0 +1,45 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 3K of event 'cpu_atom/cycles/P'
+# Event count (approx.): 740820985
+#
+# Overhead  Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 IPC   [IPC Coverage]
+# ........  .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................  ....................
+#
+    19.76%  [.] ArrayOrderBook::cancel_order(unsigned long)                                                                                                                                                                                                                                                                                                                                                                                                                                                        -      -            
+            |          
+             --19.74%--ArrayOrderBook::cancel_order(unsigned long)
+                       |          
+                       |--1.62%--0
+                       |          
+                        --1.28%--0x7ca8da003b20
+
+    12.60%  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, ArrayOrderBook::Order>, std::allocator<std::pair<unsigned long const, ArrayOrderBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)                               -      -            
+            |          
+             --12.57%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ArrayOrderBook::Order>, std::allocator<std::pair<unsigned long const, ArrayOrderBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+                       |          
+                       |--8.35%--0x55b55
+                       |          0x55b881ec5c50
+                       |          0x55b56
+                       |          |          
+                       |          |--6.85%--0x55b57
+                       |          |          0x55b58
+                       |          |          0x55b59
+                       |          |          0x55b5a
+                       |          |          0x55b5b
+                       |          |          0x55b5c
+                       |          |          0x55b5d
+                       |          |          0x55b5e
+                       |          |          0x55b5f
+                       |          |          0x55b60
+                       |          |          0x55b61
+                       |          |          0x55b62
+                       |          |          0x55b63
+                       |          |          0x55b64
+                       |          |          0x55b65
+                       |          |          0x55b66
+                       |          |          0x55b67
+                       |          |          0x55b69

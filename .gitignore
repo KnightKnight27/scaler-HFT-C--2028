@@ -1,0 +1,12 @@
+# Compiled order-book executables
+/Capstone/order_book/benchmark
+/Capstone/order_book/interface_test
+/Capstone/order_book/test_a
+/Capstone/order_book/test_b
+/Capstone/order_book/test_c
+/Capstone/order_book/test_all
+
+# Object files and compiled libraries
+*.o
+*.a
+*.so
