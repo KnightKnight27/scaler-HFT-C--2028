@@ -1,0 +1,27 @@
+Implementation A (std::map + unordered_map)
+1000000 operations, 5 runs, reporting the median
+
+  run 1: total 93.89 ms
+  run 2: total 122.45 ms
+  run 3: total 89.50 ms
+  run 4: total 88.31 ms
+  run 5: total 87.85 ms
+
+Total time        :    89.50 ms
+Timer overhead    :    12.99 ns (one Clock::now() pair, included below)
+ns / add_order    :    86.34   (minus timer: 73.34)
+ns / cancel_order :   148.78   (minus timer: 135.78)
+ns / get_bbo      :    13.85   (minus timer: 0.86)
+ns / get_bbo      :     0.52   (10M calls in a tight loop, no timer per call)
+ns / get_bids(10)+get_asks(10) :    87.85
+
+single-call latency in ns (timer included):
+                     p50      p99    p99.9        max
+  add_order           83      125      291    5287833
+  cancel_order       125      375      500      11167
+  get_bbo              0       42       42        250
+
+Final BBO:
+  Bid: 99.99 x 2724
+  Ask: 100.01 x 2111
+Checksum: 12797490362879580754

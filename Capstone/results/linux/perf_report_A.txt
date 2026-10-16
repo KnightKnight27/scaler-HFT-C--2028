@@ -1,0 +1,22 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 4K of event 'cpu-clock:pppH'
+# Event count (approx.): 1221000000
+#
+# Overhead  Command  Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                                   
+# ........  .......  .....................  .........................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    47.30%  bench    bench                  [.] BookA::add_order
+    24.77%  bench    bench                  [.] BookA::cancel_order
+     4.48%  bench    bench                  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, BookA::OrderInfo>, std::allocator<std::pair<unsigned long const, BookA::OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash
+     2.44%  bench    bench                  [.] run_total<BookA>
+     2.38%  bench    libc.so.6              [.] cfree
+     1.84%  bench    libc.so.6              [.] malloc
+     1.62%  bench    libc.so.6              [.] 0x000000000008eb74
+     1.21%  bench    libc.so.6              [.] 0x000000000008faac
+#
+# (Tip: Create an archive with symtabs to analyse on other machine: perf archive)
+#

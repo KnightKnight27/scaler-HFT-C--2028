@@ -1,0 +1,15 @@
+
+ Performance counter stats for '/tmp/tmp.8UFxCq2Str/bench --impl B --total-only --runs 1' (5 runs):
+
+            130.80 msec task-clock                       #    1.034 CPUs utilized            ( +-  1.26% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      cache-misses                                                
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      dTLB-load-misses                                            
+              8840      page-faults                      #   70.816 K/sec                    ( +-  0.20% )
+
+           0.12655 +- 0.00166 seconds time elapsed  ( +-  1.31% )
+

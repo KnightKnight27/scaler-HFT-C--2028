@@ -1,0 +1,9 @@
+macOS counters (Apple M4), median of 5 tries
+IPC uses 20 runs per process; page faults and memory use 1 run. 'none' is subtracted.
+
+impl         instr/run       cycles/run      IPC    page faults    peak mem MB
+A            659583666        408571270     1.61           2072           67.7
+B            891016143        405110113     2.20           2020           66.9
+C            152342466         43007670     3.54           1821           63.8
+
+raw none (workload only): instructions 398806555, cycles 141169408, page faults 2464, peak mem 35.4 MB

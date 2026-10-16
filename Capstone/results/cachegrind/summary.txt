@@ -1,0 +1,6 @@
+order book only (impl minus none), simulated by cachegrind
+
+impl           instr      data refs    D1 misses   LLd misses     branches  mispredicts  mispred%
+A          515946585      217359452      9006295      1180951     90252308      8778679     9.73%
+B          686989240      307260921      6495093      1030607    132232452      6330705     4.79%
+C          138285613       53641502      1147534       610579     22356430       942077     4.21%

@@ -1,0 +1,27 @@
+Implementation C (price array + bitmap + id-indexed orders)
+1000000 operations, 5 runs, reporting the median
+
+  run 1: total 13.92 ms
+  run 2: total 11.72 ms
+  run 3: total 11.23 ms
+  run 4: total 11.70 ms
+  run 5: total 11.51 ms
+
+Total time        :    11.70 ms
+Timer overhead    :    12.57 ns (one Clock::now() pair, included below)
+ns / add_order    :    16.29   (minus timer: 3.71)
+ns / cancel_order :    25.28   (minus timer: 12.70)
+ns / get_bbo      :    13.45   (minus timer: 0.87)
+ns / get_bbo      :     0.59   (10M calls in a tight loop, no timer per call)
+ns / get_bids(10)+get_asks(10) :   206.31
+
+single-call latency in ns (timer included):
+                     p50      p99    p99.9        max
+  add_order            0       42       42     329834
+  cancel_order         0       84      167       2667
+  get_bbo              0       42       42       6000
+
+Final BBO:
+  Bid: 99.99 x 2724
+  Ask: 100.01 x 2111
+Checksum: 12797490362879580754

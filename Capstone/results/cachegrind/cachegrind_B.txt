@@ -1,0 +1,28 @@
+==18== Cachegrind, a cache and branch-prediction profiler
+==18== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==18== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==18== Command: /tmp/tmp.wIfkdfIC0t/bench --impl B --total-only --runs 1
+==18== 
+==18== brk segment overflow in thread #1: can't grow to 0x484e000
+==18== (see section Limitations in user manual)
+==18== NOTE: further instances of this message will not be shown
+==18== 
+==18== I   refs:      922,569,507
+==18== I1  misses:            994
+==18== LLi misses:            988
+==18== I1  miss rate:        0.00%
+==18== LLi miss rate:        0.00%
+==18== 
+==18== D   refs:      410,693,792  (276,841,078 rd   + 133,852,714 wr)
+==18== D1  misses:      6,968,308  (  6,398,258 rd   +     570,050 wr)
+==18== LLd misses:      1,317,472  (    778,646 rd   +     538,826 wr)
+==18== D1  miss rate:         1.7% (        2.3%     +         0.4%  )
+==18== LLd miss rate:         0.3% (        0.3%     +         0.4%  )
+==18== 
+==18== LL refs:         6,969,302  (  6,399,252 rd   +     570,050 wr)
+==18== LL misses:       1,318,460  (    779,634 rd   +     538,826 wr)
+==18== LL miss rate:          0.1% (        0.1%     +         0.4%  )
+==18== 
+==18== Branches:      150,052,543  (143,328,639 cond +   6,723,904 ind)
+==18== Mispredicts:     7,055,943  (  7,055,724 cond +         219 ind)
+==18== Mispred rate:          4.7% (        4.9%     +         0.0%   )
