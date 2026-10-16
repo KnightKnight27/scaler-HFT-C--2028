@@ -1,0 +1,23 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 4K of event 'cpu-clock:pppH'
+# Event count (approx.): 1126000000
+#
+# Overhead  Command  Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                         
+# ........  .......  .....................  ...............................................................................................................................................................................................................................................................................................................................................
+#
+    43.18%  bench    bench                  [.] BookB::cancel_order
+    12.94%  bench    bench                  [.] BookB::add_order
+     6.24%  bench    libstdc++.so.6.0.30    [.] std::_Rb_tree_insert_and_rebalance
+     5.53%  bench    bench                  [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, BookB::OrderInfo>, std::_Select1st<std::pair<unsigned long const, BookB::OrderInfo> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, BookB::OrderInfo> > >::_M_erase
+     4.31%  bench    libstdc++.so.6.0.30    [.] std::_Rb_tree_rebalance_for_erase
+     2.95%  bench    bench                  [.] run_total<BookB>
+     2.46%  bench    libc.so.6              [.] 0x000000000008eb74
+     2.22%  bench    libc.so.6              [.] cfree
+     2.11%  bench    libc.so.6              [.] malloc
+#
+# (Tip: Boolean options have negative forms, e.g.: perf report --no-children)
+#

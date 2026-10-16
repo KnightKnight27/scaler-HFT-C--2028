@@ -1,0 +1,27 @@
+Implementation B (heap + lazy delete + std::map)
+1000000 operations, 5 runs, reporting the median
+
+  run 1: total 99.82 ms
+  run 2: total 95.81 ms
+  run 3: total 98.55 ms
+  run 4: total 92.16 ms
+  run 5: total 92.08 ms
+
+Total time        :    95.81 ms
+Timer overhead    :    12.94 ns (one Clock::now() pair, included below)
+ns / add_order    :    45.09   (minus timer: 32.15)
+ns / cancel_order :   275.40   (minus timer: 262.47)
+ns / get_bbo      :    14.21   (minus timer: 1.27)
+ns / get_bbo      :     1.69   (10M calls in a tight loop, no timer per call)
+ns / get_bids(10)+get_asks(10) :   609.04
+
+single-call latency in ns (timer included):
+                     p50      p99    p99.9        max
+  add_order           42       84      167      29292
+  cancel_order       208      833     1084      31042
+  get_bbo              0       42       42        417
+
+Final BBO:
+  Bid: 99.99 x 2724
+  Ask: 100.01 x 2111
+Checksum: 12797490362879580754

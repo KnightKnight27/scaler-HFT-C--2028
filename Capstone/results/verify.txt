@@ -1,0 +1,10 @@
+Running correctness test...
+(edge cases + benchmark workload (1000000 ops) + 2 thin-book workloads (500000 ops each).
+ BBO and top 10 levels checked after every op, full book every 1000 ops,
+ all compared against a simple reference book)
+
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+
+All implementations produce identical results.
