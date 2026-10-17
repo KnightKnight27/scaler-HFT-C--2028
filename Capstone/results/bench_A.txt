@@ -1,0 +1,15 @@
+  run 1: total 280.50 ms | add 178.3 ns | cancel 668.9 ns | bbo 25.3 ns
+  run 2: total 264.14 ms | add 158.1 ns | cancel 658.3 ns | bbo 25.5 ns
+  run 3: total 279.32 ms | add 163.5 ns | cancel 719.2 ns | bbo 25.4 ns
+  run 4: total 408.99 ms | add 259.9 ns | cancel 1015.7 ns | bbo 29.6 ns
+  run 5: total 494.01 ms | add 306.1 ns | cancel 1275.1 ns | bbo 32.0 ns
+Implementation A (std::map) (median of 5 runs, 1000000 ops)
+  Total time   : 280.50 ms
+  ns / add     : 178.3
+  ns / cancel  : 719.2
+  ns / BBO     : 25.5
+Final BBO:
+  Bid: 99.99 x 2573
+  Ask: 100.01 x 2525
+Checksum: 7537248685437943589
+

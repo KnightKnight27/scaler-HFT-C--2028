@@ -1,0 +1,7 @@
+    42.55%  bench                  [.] MapBook::cancel_order
+    31.37%  bench                  [.] MapBook::add_order
+     6.83%  bench                  [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, Order>, std::_Select1st<std::pair<unsigned long const, Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, Order> > >::_M_erase
+     4.67%  libstdc++.so.6.0.30    [.] std::_Rb_tree_rebalance_for_erase
+     4.26%  libstdc++.so.6.0.30    [.] std::_Rb_tree_insert_and_rebalance
+     2.02%  libc.so.6              [.] cfree
+     1.39%  bench                  [.] run_once<MapBook>

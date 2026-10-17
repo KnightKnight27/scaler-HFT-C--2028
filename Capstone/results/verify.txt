@@ -1,0 +1,13 @@
+Running correctness test...
+
+Edge case tests:
+  Implementation A: PASS
+  Implementation B: PASS
+  Implementation C: PASS
+
+Lockstep comparison (BBO + 10 bid levels + 10 ask levels after every op):
+  benchmark workload (1M ops, seed 42, full price range)   1000000 checks, 0 mismatches
+  narrow book (200k ops, seed 7, 20 ticks per side)        200000 checks, 0 mismatches
+  tiny book (200k ops, seed 99, 2 ticks per side)          200000 checks, 0 mismatches
+
+All implementations produce identical results.

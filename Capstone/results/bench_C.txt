@@ -1,0 +1,15 @@
+  run 1: total 43.28 ms | add 21.5 ns | cancel 43.7 ns | bbo 23.4 ns
+  run 2: total 42.31 ms | add 20.7 ns | cancel 45.4 ns | bbo 22.4 ns
+  run 3: total 40.91 ms | add 20.7 ns | cancel 36.4 ns | bbo 23.1 ns
+  run 4: total 40.17 ms | add 20.5 ns | cancel 34.3 ns | bbo 22.8 ns
+  run 5: total 40.22 ms | add 20.7 ns | cancel 32.7 ns | bbo 22.9 ns
+Implementation C (array + bitmap) (median of 5 runs, 1000000 ops)
+  Total time   : 40.91 ms
+  ns / add     : 20.7
+  ns / cancel  : 36.4
+  ns / BBO     : 22.9
+Final BBO:
+  Bid: 99.99 x 2573
+  Ask: 100.01 x 2525
+Checksum: 7537248685437943589
+

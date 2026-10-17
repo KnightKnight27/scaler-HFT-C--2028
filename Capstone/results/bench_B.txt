@@ -1,0 +1,15 @@
+  run 1: total 97.09 ms | add 48.2 ns | cancel 136.3 ns | bbo 28.0 ns
+  run 2: total 98.43 ms | add 51.2 ns | cancel 134.3 ns | bbo 28.3 ns
+  run 3: total 96.12 ms | add 50.4 ns | cancel 131.3 ns | bbo 28.1 ns
+  run 4: total 96.69 ms | add 50.4 ns | cancel 132.7 ns | bbo 28.0 ns
+  run 5: total 106.58 ms | add 53.9 ns | cancel 167.9 ns | bbo 29.0 ns
+Implementation B (heap + hash map) (median of 5 runs, 1000000 ops)
+  Total time   : 97.09 ms
+  ns / add     : 50.4
+  ns / cancel  : 134.3
+  ns / BBO     : 28.1
+Final BBO:
+  Bid: 99.99 x 2573
+  Ask: 100.01 x 2525
+Checksum: 7537248685437943589
+

@@ -1,0 +1,14 @@
+    16.99%   (deleted)         [.] 0x00000000000923d8
+    10.75%   (deleted)         [.] 0x000000000009d210
+     8.35%  bench              [.] HeapBook::add_order
+     8.27%  bench              [.] run_once<HeapBook>
+     2.93%  bench              [.] std::__adjust_heap<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, long, int, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> > >
+     2.63%  bench              [.] std::__detail::_Map_base<int, std::pair<int const, long>, std::allocator<std::pair<int const, long> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[]
+     2.56%   (deleted)         [.] 0x000000000008eb74
+     1.73%  bench              [.] std::__adjust_heap<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, long, int, __gnu_cxx::__ops::_Iter_comp_iter<std::less<int> > >
+     1.58%   (deleted)         [.] 0x000000000008faac
+     1.50%   (deleted)         [.] 0x000000000008fb48
+     1.35%  bench              [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node
+     1.28%  bench              [.] HeapBook::cancel_order
+     1.20%   (deleted)         [.] 0x000000000008fb4c
+     1.05%   (deleted)         [.] 0x000000000009d238

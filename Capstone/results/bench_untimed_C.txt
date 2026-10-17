@@ -1,0 +1,15 @@
+  run 1: total 11.80 ms | add 0.0 ns | cancel 0.0 ns | bbo 0.0 ns
+  run 2: total 14.02 ms | add 0.0 ns | cancel 0.0 ns | bbo 0.0 ns
+  run 3: total 16.13 ms | add 0.0 ns | cancel 0.0 ns | bbo 0.0 ns
+  run 4: total 22.32 ms | add 0.0 ns | cancel 0.0 ns | bbo 0.0 ns
+  run 5: total 17.50 ms | add 0.0 ns | cancel 0.0 ns | bbo 0.0 ns
+Implementation C (array + bitmap) (median of 5 runs, 1000000 ops)
+  Total time   : 16.13 ms
+  ns / add     : 0.0
+  ns / cancel  : 0.0
+  ns / BBO     : 0.0
+Final BBO:
+  Bid: 99.99 x 2573
+  Ask: 100.01 x 2525
+Checksum: 7537248685437943589
+
