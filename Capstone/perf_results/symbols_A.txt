@@ -1,0 +1,33 @@
+== by function (time inside that function incl. everything inlined into it) ==
+ 21.74%  OrderBookA::cancel_order
+ 19.83%  std::map::operator[]
+ 13.14%  libc: unlink_chunk.isra
+ 10.05%  [vdso] clock_gettime (steady_clock::now)
+  8.64%  std::__detail::_Map_base::operator[]
+  4.95%  OrderBookA::add_order
+  4.41%  libc: _int_free_merge_chunk
+  3.07%  OrderBookA::~OrderBookA
+  1.96%  libstdc++: std::__detail::_List_node_base::_M_hook
+  1.59%  std::_Rb_tree::_M_erase
+  1.27%  runOnce
+  1.15%  libc: _int_malloc
+  0.95%  libc: malloc
+  0.92%  ??
+  0.83%  libc: free
+
+== by innermost inlined function (the actual code that was running) ==
+ 17.14%  std::_Rb_tree::_S_right
+ 13.14%  libc: unlink_chunk.isra
+ 11.75%  std::__detail::_Mod_range_hashing::operator
+ 10.05%  [vdso] clock_gettime (steady_clock::now)
+  6.63%  std::_Hashtable::_M_find_before_node
+  5.58%  std::equal_to::operator
+  5.40%  std::_Rb_tree::_M_lower_bound
+  4.55%  std::__new_allocator::deallocate
+  4.41%  libc: _int_free_merge_chunk
+  1.96%  libstdc++: std::__detail::_List_node_base::_M_hook
+  1.94%  std::_Rb_tree::_S_left
+  1.32%  std::_Hashtable::_M_rehash
+  1.25%  std::map::operator[]
+  1.20%  OrderBookA::add_order
+  1.15%  libc: _int_malloc

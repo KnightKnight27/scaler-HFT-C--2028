@@ -1,0 +1,21 @@
+Implementation B (sorted vector levels + std::map ids)
+ops: 1000000  (add 700829, cancel 199496, bbo 99675, + get_bids/get_asks every 100 ops)
+runs: 5
+
+run 1: total 233.31 ms | add 162.62 ns | cancel 495.99 ns | bbo 17.68 ns
+run 2: total 237.46 ms | add 157.28 ns | cancel 531.51 ns | bbo 18.85 ns
+run 3: total 232.73 ms | add 156.19 ns | cancel 511.93 ns | bbo 21.24 ns
+run 4: total 228.91 ms | add 155.05 ns | cancel 499.10 ns | bbo 18.83 ns
+run 5: total 219.23 ms | add 150.00 ns | cancel 471.05 ns | bbo 17.98 ns
+
+Median of 5 runs:
+Total time (ms): 232.73
+ns / add:        156.19
+ns / cancel:     499.10
+ns / BBO:        18.83
+
+Final BBO:
+Bid: 99.99 x 3244
+Ask: 100.01 x 2193
+
+Checksum: 2516203052

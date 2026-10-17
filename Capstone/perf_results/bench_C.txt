@@ -1,0 +1,21 @@
+Implementation C (price indexed array + cached best + vector by id)
+ops: 1000000  (add 700829, cancel 199496, bbo 99675, + get_bids/get_asks every 100 ops)
+runs: 5
+
+run 1: total 57.65 ms | add 32.23 ns | cancel 71.67 ns | bbo 19.26 ns
+run 2: total 55.28 ms | add 28.86 ns | cancel 73.51 ns | bbo 18.43 ns
+run 3: total 52.64 ms | add 29.73 ns | cancel 63.89 ns | bbo 17.80 ns
+run 4: total 53.92 ms | add 29.51 ns | cancel 66.75 ns | bbo 18.94 ns
+run 5: total 54.22 ms | add 30.25 ns | cancel 65.48 ns | bbo 18.41 ns
+
+Median of 5 runs:
+Total time (ms): 54.22
+ns / add:        29.73
+ns / cancel:     66.75
+ns / BBO:        18.43
+
+Final BBO:
+Bid: 99.99 x 3244
+Ask: 100.01 x 2193
+
+Checksum: 2516203052
