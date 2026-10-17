@@ -1,0 +1,9 @@
+*.exe
+*.o
+.vscode/
+Capstone/24bcs10278_Mohammed_Fazil_Momin/bench
+Capstone/24bcs10278_Mohammed_Fazil_Momin/test_a
+Capstone/24bcs10278_Mohammed_Fazil_Momin/test_b
+Capstone/24bcs10278_Mohammed_Fazil_Momin/test_c
+Capstone/24bcs10278_Mohammed_Fazil_Momin/results/*.data
+Capstone/24bcs10278_Mohammed_Fazil_Momin/results/*.data.old

@@ -1,0 +1,81 @@
+== perf record C ==
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'task-clock:uppp'
+# Event count (approx.): 412000000
+#
+# Overhead  Command  Shared Object         Symbol                
+# ........  .......  ....................  ......................
+#
+    11.71%  bench    libc.so.6             [.] 0x00000000000b0f93
+            |
+            ---0x7eb010cb0f93
+               |          
+               |--8.19%--0x7eb010cb2175
+               |          0x7eb010cb2329
+               |          |          
+               |          |--3.09%--0x5d0817d54460
+               |          |          
+               |          |--2.85%--0x5d0817d543f0
+               |          |          
+               |           --1.82%--0x5d0817d54340
+               |          
+                --3.52%--0x7eb010cb2263
+                          0x7eb010cb2329
+                          |          
+                          |--1.33%--0x5d0817d54390
+                          |          
+                          |--1.09%--0x5d0817d543f0
+                          |          
+                           --0.67%--0x5d0817d54460
+
+     7.95%  bench    [vdso]                [.] 0x0000000000000ad5
+            |
+            ---0x7eb0112c8ad5
+               0x7eb010cf5a0d
+               0x7eb0110e90b7
+               |          
+               |--2.91%--0x5d0817d5184d
+               |          
+               |--2.73%--0x5d0817d5189f
+               |          
+               |--1.03%--0x5d0817d5190a
+               |          
+                --0.73%--0x5d0817d518c5
+
+     6.37%  bench    libc.so.6             [.] 0x00000000000b0f9d
+            |
+            ---0x7eb010cb0f9d
+               |          
+               |--3.76%--0x7eb010cb2175
+               |          0x7eb010cb2329
+               |          |          
+               |          |--1.94%--0x5d0817d543f0
+               |          |          
+               |           --1.40%--0x5d0817d54460
+               |          
+                --2.61%--0x7eb010cb2263
+                          0x7eb010cb2329
+                          |          
+                          |--0.85%--0x5d0817d54390
+                          |          
+                          |--0.79%--0x5d0817d54460
+                          |          
+                           --0.73%--0x5d0817d543f0
+
+     4.67%  bench    bench                 [.] 0x00000000000089d2
+            |
+            ---0x5d0817d559d2
+
+     3.58%  bench    bench                 [.] 0x000000000000b9dd
+            |
+            ---0x5d0817d589dd
+
+     3.40%  bench    bench                 [.] 0x00000000000089c3
+            |
+            ---0x5d0817d559c3
+
+     3.34%  bench    bench                 [.] 0x000000000000b488

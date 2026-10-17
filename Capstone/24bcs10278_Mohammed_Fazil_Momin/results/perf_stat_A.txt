@@ -1,0 +1,81 @@
+== perf stat A ==
+run 1: total 6948.05 ms, add 281.5 ns, cancel 535.7 ns, bbo 72.1 ns
+
+Implementation A, median of 1 runs over 1000000 operations
+Total time (ms): 6948.05
+ns / add:        281.5
+ns / cancel:     535.7
+ns / BBO:        72.1
+
+Final BBO:
+Bid: 99.99 x 2542
+Ask: 100.01 x 2355
+
+Checksum: 1491614064682522636
+run 1: total 6886.47 ms, add 276.8 ns, cancel 530.1 ns, bbo 73.1 ns
+
+Implementation A, median of 1 runs over 1000000 operations
+Total time (ms): 6886.47
+ns / add:        276.8
+ns / cancel:     530.1
+ns / BBO:        73.1
+
+Final BBO:
+Bid: 99.99 x 2542
+Ask: 100.01 x 2355
+
+Checksum: 1491614064682522636
+run 1: total 6905.49 ms, add 267.4 ns, cancel 532.6 ns, bbo 74.5 ns
+
+Implementation A, median of 1 runs over 1000000 operations
+Total time (ms): 6905.49
+ns / add:        267.4
+ns / cancel:     532.6
+ns / BBO:        74.5
+
+Final BBO:
+Bid: 99.99 x 2542
+Ask: 100.01 x 2355
+
+Checksum: 1491614064682522636
+run 1: total 6934.19 ms, add 270.3 ns, cancel 544.1 ns, bbo 75.6 ns
+
+Implementation A, median of 1 runs over 1000000 operations
+Total time (ms): 6934.19
+ns / add:        270.3
+ns / cancel:     544.1
+ns / BBO:        75.6
+
+Final BBO:
+Bid: 99.99 x 2542
+Ask: 100.01 x 2355
+
+Checksum: 1491614064682522636
+run 1: total 6899.76 ms, add 273.7 ns, cancel 534.6 ns, bbo 73.2 ns
+
+Implementation A, median of 1 runs over 1000000 operations
+Total time (ms): 6899.76
+ns / add:        273.7
+ns / cancel:     534.6
+ns / BBO:        73.2
+
+Final BBO:
+Bid: 99.99 x 2542
+Ask: 100.01 x 2355
+
+Checksum: 1491614064682522636
+
+ Performance counter stats for './bench --impl A --runs 1' (5 runs):
+
+        7003130953      task-clock:u                     #    0.999 CPUs utilized               ( +-  0.16% )
+   <not supported>      cycles:u                                                              
+   <not supported>      instructions:u                                                        
+   <not supported>      branches:u                                                            
+   <not supported>      branch-misses:u                                                       
+   <not supported>      cache-misses:u                                                        
+   <not supported>      L1-dcache-load-misses:u                                               
+   <not supported>      dTLB-load-misses:u                                                    
+             33297      page-faults:u                    #    4.755 K/sec                       ( +-  0.00% )
+
+            7.0075 +- 0.0113 seconds time elapsed  ( +-  0.16% )
+

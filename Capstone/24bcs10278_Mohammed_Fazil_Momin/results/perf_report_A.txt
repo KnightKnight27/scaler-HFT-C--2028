@@ -1,0 +1,81 @@
+== perf record A ==
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 28K of event 'task-clock:uppp'
+# Event count (approx.): 7123250000
+#
+# Overhead  Command  Shared Object         Symbol                
+# ........  .......  ....................  ......................
+#
+    14.85%  bench    bench                 [.] 0x000000000000a1e3
+            |
+            ---0x5886de30f1e3
+
+     5.44%  bench    bench                 [.] 0x000000000000a1f1
+            |
+            ---0x5886de30f1f1
+
+     3.16%  bench    bench                 [.] 0x0000000000007576
+            |
+            ---0x5886de30c576
+
+     2.74%  bench    bench                 [.] 0x000000000000a1e9
+            |
+            ---0x5886de30f1e9
+
+     2.56%  bench    bench                 [.] 0x000000000000758c
+            |
+            ---0x5886de30c58c
+
+     2.37%  bench    bench                 [.] 0x00000000000079f6
+            |
+            ---0x5886de30c9f6
+
+     2.35%  bench    bench                 [.] 0x00000000000079e7
+            |
+            ---0x5886de30c9e7
+
+     2.21%  bench    bench                 [.] 0x0000000000007a07
+            |
+            ---0x5886de30ca07
+
+     1.84%  bench    bench                 [.] 0x0000000000007567
+            |
+            ---0x5886de30c567
+
+     1.83%  bench    bench                 [.] 0x00000000000079e3
+            |
+            ---0x5886de30c9e3
+
+     1.75%  bench    bench                 [.] 0x0000000000007a00
+            |
+            ---0x5886de30ca00
+
+     1.71%  bench    bench                 [.] 0x00000000000079e0
+            |
+            ---0x5886de30c9e0
+
+     1.70%  bench    bench                 [.] 0x0000000000007560
+            |
+            ---0x5886de30c560
+
+     1.70%  bench    bench                 [.] 0x000000000000a3b9
+            |
+            ---0x5886de30f3b9
+
+     1.64%  bench    bench                 [.] 0x000000000000a664
+            |
+            ---0x5886de30f664
+
+     1.63%  bench    bench                 [.] 0x0000000000007583
+            |
+            ---0x5886de30c583
+
+     1.57%  bench    bench                 [.] 0x00000000000075c2
+            |
+            ---0x5886de30c5c2
+
+     1.56%  bench    bench                 [.] 0x000000000000a67d

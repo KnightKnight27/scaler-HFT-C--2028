@@ -1,0 +1,18 @@
+== bench A ==
+run 1: total 7024.78 ms, add 297.1 ns, cancel 565.0 ns, bbo 74.7 ns
+run 2: total 6901.06 ms, add 242.9 ns, cancel 523.2 ns, bbo 73.4 ns
+run 3: total 6844.23 ms, add 251.3 ns, cancel 517.0 ns, bbo 72.8 ns
+run 4: total 6902.76 ms, add 261.5 ns, cancel 521.8 ns, bbo 73.9 ns
+run 5: total 6895.11 ms, add 255.5 ns, cancel 538.8 ns, bbo 73.1 ns
+
+Implementation A, median of 5 runs over 1000000 operations
+Total time (ms): 6901.06
+ns / add:        255.5
+ns / cancel:     523.2
+ns / BBO:        73.4
+
+Final BBO:
+Bid: 99.99 x 2542
+Ask: 100.01 x 2355
+
+Checksum: 1491614064682522636
