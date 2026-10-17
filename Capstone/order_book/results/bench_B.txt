@@ -1,0 +1,18 @@
+Implementation B (priority_queue + lazy deletion)
+ops: 1000000, runs: 5
+
+run     total (ms)       ns/add      ns/cancel       ns/bbo
+1           129.73         98.5          248.3         34.1
+2            86.14         84.7          178.2         32.6
+3            76.95         82.5          169.2         32.6
+4            79.37         86.2          213.1         33.2
+5            78.54         86.9          208.3         33.6
+med          79.37         86.2          208.3         33.2
+
+(one empty steady_clock pair costs about 14.3 ns; it is included in each per-op number)
+
+Final BBO:
+Bid: 99.99 x 2522
+Ask: 100.01 x 2193
+
+Checksum: 3903379743227860554

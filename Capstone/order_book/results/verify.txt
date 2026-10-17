@@ -1,0 +1,16 @@
+Running correctness test...
+
+Unit tests A: PASS
+Unit tests B: PASS
+Unit tests C: PASS
+
+Random workloads (A is the reference):
+  benchmark workload (full price band): 1000000 operations compared, final book has 5000 bid levels and 5000 ask levels
+  narrow prices (levels empty and refill): 250000 operations compared, final book has 6 bid levels and 6 ask levels
+  narrow prices, mostly cancels: 250000 operations compared, final book has 0 bid levels and 1 ask levels
+
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+
+All implementations produce identical results.

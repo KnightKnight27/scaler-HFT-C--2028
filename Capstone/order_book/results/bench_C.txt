@@ -1,0 +1,18 @@
+Implementation C (price-indexed array + bitmap)
+ops: 1000000, runs: 5
+
+run     total (ms)       ns/add      ns/cancel       ns/bbo
+1            49.87        121.3          105.0         13.9
+2            36.75         89.4           81.1         14.0
+3            33.23         81.9           75.1         14.1
+4            32.14         89.6           82.0         14.1
+5            31.17         86.8           80.1         14.4
+med          33.23         89.4           81.1         14.1
+
+(one empty steady_clock pair costs about 13.6 ns; it is included in each per-op number)
+
+Final BBO:
+Bid: 99.99 x 2522
+Ask: 100.01 x 2193
+
+Checksum: 3903379743227860554

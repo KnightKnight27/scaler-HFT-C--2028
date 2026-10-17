@@ -1,0 +1,18 @@
+Implementation A (std::map)
+ops: 1000000, runs: 5
+
+run     total (ms)       ns/add      ns/cancel       ns/bbo
+1           293.80        203.3          647.5         15.9
+2           290.99        239.1          772.4         15.6
+3           307.42        252.4          787.9         15.8
+4           318.76        262.3          843.5         15.8
+5           345.90        265.6          853.8         15.9
+med         307.42        252.4          787.9         15.8
+
+(one empty steady_clock pair costs about 14.2 ns; it is included in each per-op number)
+
+Final BBO:
+Bid: 99.99 x 2522
+Ask: 100.01 x 2193
+
+Checksum: 3903379743227860554
