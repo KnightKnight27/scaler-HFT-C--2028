@@ -1,0 +1,138 @@
+========== DESIGN A ==========
+--- Run 1 ---
+Implementation: A
+Operations: 1000000
+Total time: 765.96 ms
+Adds: 699238, average: 625 ns/add
+Cancels: 200465, average: 806 ns/cancel
+BBO queries: 100297, average: 340 ns/query
+Final BBO: bid=99.99 qty=2609, ask=100.01 qty=2652
+Checksum: 256162273181
+--- Run 2 ---
+Implementation: A
+Operations: 1000000
+Total time: 757.38 ms
+Adds: 699238, average: 616 ns/add
+Cancels: 200465, average: 800 ns/cancel
+BBO queries: 100297, average: 337 ns/query
+Final BBO: bid=99.99 qty=2609, ask=100.01 qty=2652
+Checksum: 256162273181
+--- Run 3 ---
+Implementation: A
+Operations: 1000000
+Total time: 758.20 ms
+Adds: 699238, average: 617 ns/add
+Cancels: 200465, average: 799 ns/cancel
+BBO queries: 100297, average: 336 ns/query
+Final BBO: bid=99.99 qty=2609, ask=100.01 qty=2652
+Checksum: 256162273181
+--- Run 4 ---
+Implementation: A
+Operations: 1000000
+Total time: 817.21 ms
+Adds: 699238, average: 671 ns/add
+Cancels: 200465, average: 845 ns/cancel
+BBO queries: 100297, average: 357 ns/query
+Final BBO: bid=99.99 qty=2609, ask=100.01 qty=2652
+Checksum: 256162273181
+--- Run 5 ---
+Implementation: A
+Operations: 1000000
+Total time: 791.80 ms
+Adds: 699238, average: 652 ns/add
+Cancels: 200465, average: 835 ns/cancel
+BBO queries: 100297, average: 340 ns/query
+Final BBO: bid=99.99 qty=2609, ask=100.01 qty=2652
+Checksum: 256162273181
+========== DESIGN B ==========
+--- Run 1 ---
+Implementation: B
+Operations: 1000000
+Total time: 12077.76 ms
+Adds: 699238, average: 618 ns/add
+Cancels: 200465, average: 791 ns/cancel
+BBO queries: 100297, average: 106 ns/query
+Final BBO: bid=99.99 qty=2609, ask=100.01 qty=2652
+Checksum: 256162273181
+--- Run 2 ---
+Implementation: B
+Operations: 1000000
+Total time: 12031.05 ms
+Adds: 699238, average: 618 ns/add
+Cancels: 200465, average: 791 ns/cancel
+BBO queries: 100297, average: 105 ns/query
+Final BBO: bid=99.99 qty=2609, ask=100.01 qty=2652
+Checksum: 256162273181
+--- Run 3 ---
+Implementation: B
+Operations: 1000000
+Total time: 12167.47 ms
+Adds: 699238, average: 622 ns/add
+Cancels: 200465, average: 800 ns/cancel
+BBO queries: 100297, average: 106 ns/query
+Final BBO: bid=99.99 qty=2609, ask=100.01 qty=2652
+Checksum: 256162273181
+--- Run 4 ---
+Implementation: B
+Operations: 1000000
+Total time: 12178.32 ms
+Adds: 699238, average: 613 ns/add
+Cancels: 200465, average: 782 ns/cancel
+BBO queries: 100297, average: 106 ns/query
+Final BBO: bid=99.99 qty=2609, ask=100.01 qty=2652
+Checksum: 256162273181
+--- Run 5 ---
+Implementation: B
+Operations: 1000000
+Total time: 12293.79 ms
+Adds: 699238, average: 623 ns/add
+Cancels: 200465, average: 793 ns/cancel
+BBO queries: 100297, average: 109 ns/query
+Final BBO: bid=99.99 qty=2609, ask=100.01 qty=2652
+Checksum: 256162273181
+========== DESIGN C ==========
+--- Run 1 ---
+Implementation: C
+Operations: 1000000
+Total time: 942.33 ms
+Adds: 699238, average: 311 ns/add
+Cancels: 200465, average: 542 ns/cancel
+BBO queries: 100297, average: 5181 ns/query
+Final BBO: bid=99.99 qty=2609, ask=100.01 qty=2652
+Checksum: 256162273181
+--- Run 2 ---
+Implementation: C
+Operations: 1000000
+Total time: 932.50 ms
+Adds: 699238, average: 304 ns/add
+Cancels: 200465, average: 538 ns/cancel
+BBO queries: 100297, average: 5158 ns/query
+Final BBO: bid=99.99 qty=2609, ask=100.01 qty=2652
+Checksum: 256162273181
+--- Run 3 ---
+Implementation: C
+Operations: 1000000
+Total time: 940.52 ms
+Adds: 699238, average: 307 ns/add
+Cancels: 200465, average: 551 ns/cancel
+BBO queries: 100297, average: 5170 ns/query
+Final BBO: bid=99.99 qty=2609, ask=100.01 qty=2652
+Checksum: 256162273181
+--- Run 4 ---
+Implementation: C
+Operations: 1000000
+Total time: 942.99 ms
+Adds: 699238, average: 309 ns/add
+Cancels: 200465, average: 542 ns/cancel
+BBO queries: 100297, average: 5201 ns/query
+Final BBO: bid=99.99 qty=2609, ask=100.01 qty=2652
+Checksum: 256162273181
+--- Run 5 ---
+Implementation: C
+Operations: 1000000
+Total time: 944.37 ms
+Adds: 699238, average: 308 ns/add
+Cancels: 200465, average: 551 ns/cancel
+BBO queries: 100297, average: 5200 ns/query
+Final BBO: bid=99.99 qty=2609, ask=100.01 qty=2652
+Checksum: 256162273181
