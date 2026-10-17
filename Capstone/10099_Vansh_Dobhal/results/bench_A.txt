@@ -1,0 +1,17 @@
+run 1: total 193.31 ms | add 166.7 ns | cancel 280.1 ns | bbo 13.4 ns
+run 2: total 165.57 ms | add 140.7 ns | cancel 237.0 ns | bbo 13.3 ns
+run 3: total 171.39 ms | add 141.9 ns | cancel 263.3 ns | bbo 13.0 ns
+run 4: total 161.84 ms | add 135.4 ns | cancel 238.5 ns | bbo 13.0 ns
+run 5: total 161.69 ms | add 136.7 ns | cancel 232.6 ns | bbo 13.1 ns
+
+Implementation A (std::map + unordered_map), median of 5 runs (1000000 ops)
+Total time    : 165.57 ms
+ns / add      : 140.7
+ns / cancel   : 238.5
+ns / bbo      : 13.1
+
+Final BBO:
+Bid: 99.99 x 3244
+Ask: 100.01 x 2193
+
+Checksum: 522702630

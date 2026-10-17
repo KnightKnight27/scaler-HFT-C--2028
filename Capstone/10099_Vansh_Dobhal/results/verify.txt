@@ -1,0 +1,10 @@
+Running correctness test...
+
+Edge case tests : A ok, B ok, C ok
+Random workload : 1000000 ops, BBO + 10 levels each side compared after every op (1000000 checks)
+
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+
+All implementations produce identical results.
