@@ -1,0 +1,15 @@
+Implementation: B
+Seed: 42, operations: 1000000
+Adds: 700471, cancels: 199304, BBO queries: 100225
+Run 1: 391.941 ms, add 302.344 ns, cancel 803.523 ns, BBO 31.1275 ns, checksum 10326099508913568648
+Lifecycle run 1: 419.007 ms
+Run 2: 357.86 ms, add 274.307 ns, cancel 735.448 ns, BBO 29.5617 ns, checksum 10326099508913568648
+Lifecycle run 2: 383.325 ms
+Run 3: 397.411 ms, add 294.636 ns, cancel 860.277 ns, BBO 30.4911 ns, checksum 10326099508913568648
+Lifecycle run 3: 425.852 ms
+Run 4: 401.114 ms, add 298.04 ns, cancel 866.577 ns, BBO 30.4234 ns, checksum 10326099508913568648
+Lifecycle run 4: 431.371 ms
+Run 5: 393.02 ms, add 296.096 ns, cancel 830.595 ns, BBO 31.5467 ns, checksum 10326099508913568648
+Lifecycle run 5: 419.555 ms
+Median replay including construction/destruction: 419.555 ms
+Medians: 393.02 ms, add 296.096 ns, cancel 830.595 ns, BBO 30.4911 ns

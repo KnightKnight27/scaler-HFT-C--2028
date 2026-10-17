@@ -1,0 +1,147 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 587  of event 'cpu_core/cycles/'
+# Event count (approx.): 4489746022
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+# ........  .......  ....................  .......................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    44.76%  book     book                  [.] OrderBook::cancel_order(unsigned long long)
+            |          
+            |--37.88%--__gnu_cxx::__normal_iterator<Order*, std::vector<Order, std::allocator<Order> > > std::__lower_bound<__gnu_cxx::__normal_iterator<Order*, std::vector<Order, std::allocator<Order> > >, unsigned long long, bool (*)(Order const&, unsigned long long)>(__gnu_cxx::__normal_iterator<Order*, std::vector<Order, std::allocator<Order> > >, __gnu_cxx::__normal_iterator<Order*, std::vector<Order, std::allocator<Order> > >, unsigned long long const&, bool (*)(Order const&, unsigned long long)) (inlined)
+            |          __gnu_cxx::__normal_iterator<Order*, std::vector<Order, std::allocator<Order> > > std::lower_bound<__gnu_cxx::__normal_iterator<Order*, std::vector<Order, std::allocator<Order> > >, unsigned long long, bool (*)(Order const&, unsigned long long)>(__gnu_cxx::__normal_iterator<Order*, std::vector<Order, std::allocator<Order> > >, __gnu_cxx::__normal_iterator<Order*, std::vector<Order, std::allocator<Order> > >, unsigned long long const&, bool (*)(Order const&, unsigned long long)) (inlined)
+            |          OrderBook::cancel_order(unsigned long long)
+            |          main
+            |          __libc_start_call_main
+            |          __libc_start_main@@GLIBC_2.34
+            |          _start
+            |          
+            |--3.64%--__gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, int, bool (*)(Level const&, int)>(__gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, __gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, int const&, bool (*)(Level const&, int)) (inlined)
+            |          __gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, int, bool (*)(Level const&, int)>(__gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, __gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, int const&, bool (*)(Level const&, int)) (inlined)
+            |          OrderBook::cancel_order(unsigned long long)
+            |          main
+            |          __libc_start_call_main
+            |          __libc_start_main@@GLIBC_2.34
+            |          _start
+            |          
+             --1.36%--OrderBook::cancel_order(unsigned long long)
+                       main
+                       __libc_start_call_main
+                       __libc_start_main@@GLIBC_2.34
+                       _start
+
+    33.81%  book     book                  [.] OrderBook::add_order(unsigned long long, Side, int, long)
+            |          
+            |--14.80%--__gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, int, bool (*)(Level const&, int)>(__gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, __gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, int const&, bool (*)(Level const&, int)) (inlined)
+            |          __gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, int, bool (*)(Level const&, int)>(__gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, __gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, int const&, bool (*)(Level const&, int)) (inlined)
+            |          OrderBook::add_order(unsigned long long, Side, int, long)
+            |          void benchmark<OrderBook>(int, int)
+            |          main
+            |          __libc_start_call_main
+            |          __libc_start_main@@GLIBC_2.34
+            |          _start
+            |          
+            |--9.10%--__gnu_cxx::__normal_iterator<Order*, std::vector<Order, std::allocator<Order> > > std::__lower_bound<__gnu_cxx::__normal_iterator<Order*, std::vector<Order, std::allocator<Order> > >, unsigned long long, bool (*)(Order const&, unsigned long long)>(__gnu_cxx::__normal_iterator<Order*, std::vector<Order, std::allocator<Order> > >, __gnu_cxx::__normal_iterator<Order*, std::vector<Order, std::allocator<Order> > >, unsigned long long const&, bool (*)(Order const&, unsigned long long)) (inlined)
+            |          __gnu_cxx::__normal_iterator<Order*, std::vector<Order, std::allocator<Order> > > std::lower_bound<__gnu_cxx::__normal_iterator<Order*, std::vector<Order, std::allocator<Order> > >, unsigned long long, bool (*)(Order const&, unsigned long long)>(__gnu_cxx::__normal_iterator<Order*, std::vector<Order, std::allocator<Order> > >, __gnu_cxx::__normal_iterator<Order*, std::vector<Order, std::allocator<Order> > >, unsigned long long const&, bool (*)(Order const&, unsigned long long)) (inlined)
+            |          OrderBook::add_order(unsigned long long, Side, int, long)
+            |          void benchmark<OrderBook>(int, int)
+            |          main
+            |          __libc_start_call_main
+            |          __libc_start_main@@GLIBC_2.34
+            |          _start
+            |          
+            |--2.27%--OrderBook::add_order(unsigned long long, Side, int, long)
+            |          void benchmark<OrderBook>(int, int)
+            |          main
+            |          __libc_start_call_main
+            |          __libc_start_main@@GLIBC_2.34
+            |          _start
+            |          
+            |--1.76%--_ZN9__gnu_cxxmiIP5OrderEEDTmicldtfp_L_ZNKS_17__normal_iteratorIPKS1_St6vectorIS1_SaIS1_EEE4baseEvEEcldtfp0_4baseEERKS9_RKNS3_IT_S8_EE (inlined)
+            |          std::vector<Order, std::allocator<Order> >::insert(__gnu_cxx::__normal_iterator<Order const*, std::vector<Order, std::allocator<Order> > >, Order const&) (inlined)
+            |          OrderBook::add_order(unsigned long long, Side, int, long)
+            |          void benchmark<OrderBook>(int, int)
+            |          main
+            |          __libc_start_call_main
+            |          __libc_start_main@@GLIBC_2.34
+            |          _start
+            |          
+            |--1.57%--__gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >::operator++() (inlined)
+            |          __gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, int, bool (*)(Level const&, int)>(__gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, __gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, int const&, bool (*)(Level const&, int)) (inlined)
+            |          __gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, int, bool (*)(Level const&, int)>(__gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, __gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, int const&, bool (*)(Level const&, int)) (inlined)
+            |          OrderBook::add_order(unsigned long long, Side, int, long)
+            |          void benchmark<OrderBook>(int, int)
+            |          main
+            |          __libc_start_call_main
+            |          __libc_start_main@@GLIBC_2.34
+            |          _start
+            |          
+            |--1.23%--void std::__new_allocator<Order>::construct<Order, Order const&>(Order*, Order const&) (inlined)
+            |          void std::allocator_traits<std::allocator<Order> >::construct<Order, Order const&>(std::allocator<Order>&, Order*, Order const&) (inlined)
+            |          std::vector<Order, std::allocator<Order> >::insert(__gnu_cxx::__normal_iterator<Order const*, std::vector<Order, std::allocator<Order> > >, Order const&) (inlined)
+            |          OrderBook::add_order(unsigned long long, Side, int, long)
+            |          void benchmark<OrderBook>(int, int)
+            |          main
+            |          __libc_start_call_main
+            |          __libc_start_main@@GLIBC_2.34
+            |          _start
+            |          
+             --1.21%--std::vector<Order, std::allocator<Order> >::insert(__gnu_cxx::__normal_iterator<Order const*, std::vector<Order, std::allocator<Order> > >, Order const&) (inlined)
+                       OrderBook::add_order(unsigned long long, Side, int, long)
+                       void benchmark<OrderBook>(int, int)
+                       main
+                       __libc_start_call_main
+                       __libc_start_main@@GLIBC_2.34
+                       _start
+
+     6.97%  book     [vdso]                [.] 0x0000000000000a8c
+            |
+            ---0x7f88effd1a8c
+               clock_gettime@@GLIBC_2.17
+               std::chrono::_V2::steady_clock::now()
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     2.85%  book     libc.so.6             [.] __memmove_avx_unaligned_erms
+            |
+            ---__memmove_avx_unaligned_erms
+               |          
+                --2.41%--void benchmark<OrderBook>(int, int)
+                          main
+                          __libc_start_call_main
+                          __libc_start_main@@GLIBC_2.34
+                          _start
+
+     1.98%  book     book                  [.] make_workload(int)
+            |          
+             --1.32%--make_workload(int)
+                       __gnu_cxx::__normal_iterator<Operation*, std::vector<Operation, std::allocator<Operation> > >::__normal_iterator(Operation* const&) (inlined)
+                       std::vector<Operation, std::allocator<Operation> >::begin() (inlined)
+                       void benchmark<OrderBook>(int, int)
+                       main
+                       __libc_start_call_main
+                       __libc_start_main@@GLIBC_2.34
+                       _start
+
+     1.24%  book     [unknown]             [k] 0xffffffff93801280
+            |          
+             --1.03%--__memmove_avx_unaligned_erms
+
+     1.21%  book     book                  [.] void benchmark<OrderBook>(int, int)
+            |
+            ---void benchmark<OrderBook>(int, int)
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+
+
+#
+# (Tip: To show information about system the samples were collected on use perf report --header)
+#

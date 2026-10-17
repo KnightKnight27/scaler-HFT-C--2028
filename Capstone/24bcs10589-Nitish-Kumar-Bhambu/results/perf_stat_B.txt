@@ -1,0 +1,24 @@
+# started on Sat Oct 17 23:31:43 2026
+
+
+ Performance counter stats for './build/book --impl B --repeats 1' (5 runs):
+
+            500.26 msec task-clock:u                                                            ( +-  3.96% )
+     <not counted>      cpu_atom/cycles/u                                                       (0.00%)
+        1957220245      cpu_core/cycles/u                                                       ( +-  3.32% )
+     <not counted>      cpu_atom/instructions/u                                                 (0.00%)
+        1373354393      cpu_core/instructions/u                                                 ( +-  0.00% )
+     <not counted>      cpu_atom/branches/u                                                     (0.00%)
+         303686719      cpu_core/branches/u                                                     ( +-  0.00% )
+     <not counted>      cpu_atom/branch-misses/u                                                (0.00%)
+          17469847      cpu_core/branch-misses/u                                                ( +-  0.03% )
+     <not counted>      cpu_atom/cache-misses/u                                                 (0.00%)
+          12946050      cpu_core/cache-misses/u                                                 ( +-  7.57% )
+   <not supported>      cpu_atom/L1-dcache-load-misses/u                                      
+          17744320      cpu_core/L1-dcache-load-misses/u                                        ( +-  0.43% )
+     <not counted>      cpu_atom/dTLB-load-misses/u                                             (0.00%)
+           1432960      cpu_core/dTLB-load-misses/u                                             ( +-  1.78% )
+             26048      page-faults:u                                                           ( +-  0.00% )
+
+       0.503518587 +- 0.020343564 seconds time elapsed  ( +-  4.04% )
+

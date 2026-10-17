@@ -1,0 +1,5 @@
+build/
+book
+*.o
+perf.data*
+.idea/

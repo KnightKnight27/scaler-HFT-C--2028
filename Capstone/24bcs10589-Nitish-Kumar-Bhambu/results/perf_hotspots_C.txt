@@ -1,0 +1,26 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 378  of event 'cpu_core/cycles/'
+# Event count (approx.): 2970990227
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+# ........  .......  ....................  ............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    38.72%  book     book                  [.] RingOrderBook::cancel_order(unsigned long long)
+    12.11%  book     book                  [.] std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false>*, unsigned long)
+    10.91%  book     [vdso]                [.] 0x0000000000000a8c
+    10.23%  book     book                  [.] RingOrderBook::add_order(unsigned long long, Side, int, long)
+     4.41%  book     libc.so.6             [.] unlink_chunk.isra.0
+     3.23%  book     book                  [.] void benchmark<RingOrderBook>(int, int)
+     2.89%  book     book                  [.] make_workload(int)
+     1.92%  book     libc.so.6             [.] _int_free_merge_chunk
+     1.92%  book     libc.so.6             [.] _int_free_create_chunk
+     1.16%  book     libc.so.6             [.] _int_malloc
+
+
+#
+# (Tip: Show current config key-value pairs: perf config --list)
+#

@@ -1,0 +1,318 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 378  of event 'cpu_core/cycles/'
+# Event count (approx.): 2970990227
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+# ........  .......  ....................  ............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    38.72%  book     book                  [.] RingOrderBook::cancel_order(unsigned long long)
+            |          
+            |--12.88%--RingOrderBook::cancel_order(unsigned long long)
+            |          void benchmark<RingOrderBook>(int, int)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const (inlined)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const (inlined)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() (inlined)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() (inlined)
+            |          main
+            |          __libc_start_call_main
+            |          __libc_start_main@@GLIBC_2.34
+            |          _start
+            |          
+            |--9.59%--std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+            |          |          
+            |           --9.32%--std::__detail::_Hash_code_base<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::__detail::_Select1st, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(unsigned long, unsigned long) const (inlined)
+            |                     std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_bucket_index(unsigned long) const (inlined)
+            |                     std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long long>(unsigned long long const&) const (inlined)
+            |                     std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long long const&) const (inlined)
+            |                     std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long long const&) (inlined)
+            |                     std::unordered_map<unsigned long long, unsigned long, std::hash<unsigned long long>, std::equal_to<unsigned long long>, std::allocator<std::pair<unsigned long long const, unsigned long> > >::find(unsigned long long const&) (inlined)
+            |                     RingOrderBook::cancel_order(unsigned long long)
+            |                     void benchmark<RingOrderBook>(int, int)
+            |                     std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const (inlined)
+            |                     std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const (inlined)
+            |                     std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() (inlined)
+            |                     std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() (inlined)
+            |                     main
+            |                     __libc_start_call_main
+            |                     __libc_start_main@@GLIBC_2.34
+            |                     _start
+            |          
+            |--9.05%--std::equal_to<unsigned long long>::operator()(unsigned long long const&, unsigned long long const&) const (inlined)
+            |          bool std::__detail::_Hashtable_base<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_key_equals_tr<unsigned long long>(unsigned long long const&, std::__detail::_Hash_node_value<std::pair<unsigned long long const, unsigned long>, false> const&) const (inlined)
+            |          bool std::__detail::_Hashtable_base<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_equals_tr<unsigned long long>(unsigned long long const&, unsigned long, std::__detail::_Hash_node_value<std::pair<unsigned long long const, unsigned long>, false> const&) const (inlined)
+            |          std::__detail::_Hash_node_base* std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long long>(unsigned long, unsigned long long const&, unsigned long) const (inlined)
+            |          std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long long>(unsigned long long const&) const (inlined)
+            |          std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long long const&) const (inlined)
+            |          std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long long const&) (inlined)
+            |          std::unordered_map<unsigned long long, unsigned long, std::hash<unsigned long long>, std::equal_to<unsigned long long>, std::allocator<std::pair<unsigned long long const, unsigned long> > >::find(unsigned long long const&) (inlined)
+            |          RingOrderBook::cancel_order(unsigned long long)
+            |          void benchmark<RingOrderBook>(int, int)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const (inlined)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const (inlined)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() (inlined)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() (inlined)
+            |          main
+            |          __libc_start_call_main
+            |          __libc_start_main@@GLIBC_2.34
+            |          _start
+            |          
+             --6.11%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long long>(unsigned long, unsigned long long const&, unsigned long) const (inlined)
+                       std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long long>(unsigned long long const&) const (inlined)
+                       std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long long const&) const (inlined)
+                       std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long long const&) (inlined)
+                       std::unordered_map<unsigned long long, unsigned long, std::hash<unsigned long long>, std::equal_to<unsigned long long>, std::allocator<std::pair<unsigned long long const, unsigned long> > >::find(unsigned long long const&) (inlined)
+                       RingOrderBook::cancel_order(unsigned long long)
+                       void benchmark<RingOrderBook>(int, int)
+                       std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const (inlined)
+                       std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const (inlined)
+                       std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() (inlined)
+                       std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() (inlined)
+                       main
+                       __libc_start_call_main
+                       __libc_start_main@@GLIBC_2.34
+                       _start
+
+    12.11%  book     book                  [.] std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false>*, unsigned long)
+            |          
+            |--6.52%--std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+            |          std::__detail::_Hash_code_base<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::__detail::_Select1st, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(std::__detail::_Hash_node_value<std::pair<unsigned long long const, unsigned long>, false> const&, unsigned long) const (inlined)
+            |          std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, std::integral_constant<bool, true>) (inlined)
+            |          std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false>*, unsigned long)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long long const, unsigned long>, false, false>, bool> std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long long&, unsigned long&>(unsigned long long&, unsigned long&) (inlined)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long long const, unsigned long>, false, false>, bool> std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long long&, unsigned long&>(unsigned long long&, unsigned long&) (inlined)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long long const, unsigned long>, false, false>, bool> std::unordered_map<unsigned long long, unsigned long, std::hash<unsigned long long>, std::equal_to<unsigned long long>, std::allocator<std::pair<unsigned long long const, unsigned long> > >::emplace<unsigned long long&, unsigned long&>(unsigned long long&, unsigned long&) (inlined)
+            |          RingOrderBook::add_order(unsigned long long, Side, int, long)
+            |          void benchmark<RingOrderBook>(int, int)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const (inlined)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const (inlined)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() (inlined)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() (inlined)
+            |          main
+            |          __libc_start_call_main
+            |          __libc_start_main@@GLIBC_2.34
+            |          _start
+            |          
+            |--2.30%--std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, std::integral_constant<bool, true>) (inlined)
+            |          std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false>*, unsigned long)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long long const, unsigned long>, false, false>, bool> std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long long&, unsigned long&>(unsigned long long&, unsigned long&) (inlined)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long long const, unsigned long>, false, false>, bool> std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long long&, unsigned long&>(unsigned long long&, unsigned long&) (inlined)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long long const, unsigned long>, false, false>, bool> std::unordered_map<unsigned long long, unsigned long, std::hash<unsigned long long>, std::equal_to<unsigned long long>, std::allocator<std::pair<unsigned long long const, unsigned long> > >::emplace<unsigned long long&, unsigned long&>(unsigned long long&, unsigned long&) (inlined)
+            |          RingOrderBook::add_order(unsigned long long, Side, int, long)
+            |          void benchmark<RingOrderBook>(int, int)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const (inlined)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const (inlined)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() (inlined)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() (inlined)
+            |          main
+            |          __libc_start_call_main
+            |          __libc_start_main@@GLIBC_2.34
+            |          _start
+            |          
+            |--1.93%--std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_bucket_begin(unsigned long, std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false>*) (inlined)
+            |          std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false>*, unsigned long)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long long const, unsigned long>, false, false>, bool> std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long long&, unsigned long&>(unsigned long long&, unsigned long&) (inlined)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long long const, unsigned long>, false, false>, bool> std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long long&, unsigned long&>(unsigned long long&, unsigned long&) (inlined)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long long const, unsigned long>, false, false>, bool> std::unordered_map<unsigned long long, unsigned long, std::hash<unsigned long long>, std::equal_to<unsigned long long>, std::allocator<std::pair<unsigned long long const, unsigned long> > >::emplace<unsigned long long&, unsigned long&>(unsigned long long&, unsigned long&) (inlined)
+            |          RingOrderBook::add_order(unsigned long long, Side, int, long)
+            |          void benchmark<RingOrderBook>(int, int)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const (inlined)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const (inlined)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() (inlined)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() (inlined)
+            |          main
+            |          __libc_start_call_main
+            |          __libc_start_main@@GLIBC_2.34
+            |          _start
+            |          
+             --1.36%--std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false>*, unsigned long)
+
+    10.91%  book     [vdso]                [.] 0x0000000000000a8c
+            |
+            ---0x7fd17b068a8c
+               clock_gettime@@GLIBC_2.17
+               std::chrono::_V2::steady_clock::now()
+               std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const (inlined)
+               std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const (inlined)
+               std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() (inlined)
+               std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() (inlined)
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+    10.23%  book     book                  [.] RingOrderBook::add_order(unsigned long long, Side, int, long)
+            |          
+            |--3.86%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long long>(unsigned long, unsigned long long const&, unsigned long) const (inlined)
+            |          std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long long>(unsigned long long const&) const (inlined)
+            |          std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long long const&) const (inlined)
+            |          std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long long const&) (inlined)
+            |          std::unordered_map<unsigned long long, unsigned long, std::hash<unsigned long long>, std::equal_to<unsigned long long>, std::allocator<std::pair<unsigned long long const, unsigned long> > >::find(unsigned long long const&) (inlined)
+            |          RingOrderBook::add_order(unsigned long long, Side, int, long)
+            |          void benchmark<RingOrderBook>(int, int)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const (inlined)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const (inlined)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() (inlined)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() (inlined)
+            |          main
+            |          __libc_start_call_main
+            |          __libc_start_main@@GLIBC_2.34
+            |          _start
+            |          
+             --3.36%--RingOrderBook::add_order(unsigned long long, Side, int, long)
+                       void benchmark<RingOrderBook>(int, int)
+                       std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const (inlined)
+                       std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const (inlined)
+                       std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() (inlined)
+                       std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() (inlined)
+                       main
+                       __libc_start_call_main
+                       __libc_start_main@@GLIBC_2.34
+                       _start
+
+     4.41%  book     libc.so.6             [.] unlink_chunk.isra.0
+            |
+            ---unlink_chunk.isra.0
+               |          
+               |--2.44%--_int_free_merge_chunk
+               |          _int_free_chunk
+               |          std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false>*) (inlined)
+               |          std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+               |          std::unordered_map<unsigned long long, unsigned long, std::hash<unsigned long long>, std::equal_to<unsigned long long>, std::allocator<std::pair<unsigned long long const, unsigned long> > >::~unordered_map() (inlined)
+               |          RingOrderBook::~RingOrderBook() (inlined)
+               |          void benchmark<RingOrderBook>(int, int)
+               |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const (inlined)
+               |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const (inlined)
+               |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() (inlined)
+               |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() (inlined)
+               |          main
+               |          __libc_start_call_main
+               |          __libc_start_main@@GLIBC_2.34
+               |          _start
+               |          
+                --1.97%--_int_free_create_chunk
+                          _int_free_merge_chunk
+                          _int_free_chunk
+                          std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false>*) (inlined)
+                          std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+                          std::unordered_map<unsigned long long, unsigned long, std::hash<unsigned long long>, std::equal_to<unsigned long long>, std::allocator<std::pair<unsigned long long const, unsigned long> > >::~unordered_map() (inlined)
+                          RingOrderBook::~RingOrderBook() (inlined)
+                          void benchmark<RingOrderBook>(int, int)
+                          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const (inlined)
+                          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const (inlined)
+                          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() (inlined)
+                          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() (inlined)
+                          main
+                          __libc_start_call_main
+                          __libc_start_main@@GLIBC_2.34
+                          _start
+
+     3.23%  book     book                  [.] void benchmark<RingOrderBook>(int, int)
+            |          
+            |--2.18%--std::__new_allocator<std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false> >::deallocate(std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false>*, unsigned long) (inlined)
+            |          std::allocator_traits<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false> > >::deallocate(std::allocator<std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false> >&, std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false>*, unsigned long) (inlined)
+            |          std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false> > >::_M_deallocate_node_ptr(std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false>*) (inlined)
+            |          std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false> > >::_M_deallocate_node(std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false>*) (inlined)
+            |          std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false>*) (inlined)
+            |          std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+            |          std::unordered_map<unsigned long long, unsigned long, std::hash<unsigned long long>, std::equal_to<unsigned long long>, std::allocator<std::pair<unsigned long long const, unsigned long> > >::~unordered_map() (inlined)
+            |          RingOrderBook::~RingOrderBook() (inlined)
+            |          void benchmark<RingOrderBook>(int, int)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const (inlined)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const (inlined)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() (inlined)
+            |          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() (inlined)
+            |          main
+            |          __libc_start_call_main
+            |          __libc_start_main@@GLIBC_2.34
+            |          _start
+            |          
+             --1.05%--void benchmark<RingOrderBook>(int, int)
+                       std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const (inlined)
+                       std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const (inlined)
+                       std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() (inlined)
+                       std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() (inlined)
+                       main
+                       __libc_start_call_main
+                       __libc_start_main@@GLIBC_2.34
+                       _start
+
+     2.89%  book     book                  [.] make_workload(int)
+            |          
+             --1.82%--void std::__new_allocator<Operation>::construct<Operation, Operation const&>(Operation*, Operation const&) (inlined)
+                       void std::allocator_traits<std::allocator<Operation> >::construct<Operation, Operation const&>(std::allocator<Operation>&, Operation*, Operation const&) (inlined)
+                       std::vector<Operation, std::allocator<Operation> >::push_back(Operation const&) (inlined)
+                       make_workload(int)
+                       __gnu_cxx::__normal_iterator<Operation*, std::vector<Operation, std::allocator<Operation> > >::__normal_iterator(Operation* const&) (inlined)
+                       std::vector<Operation, std::allocator<Operation> >::begin() (inlined)
+                       void benchmark<RingOrderBook>(int, int)
+                       std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const (inlined)
+                       std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const (inlined)
+                       std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() (inlined)
+                       std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() (inlined)
+                       main
+                       __libc_start_call_main
+                       __libc_start_main@@GLIBC_2.34
+                       _start
+
+     1.92%  book     libc.so.6             [.] _int_free_merge_chunk
+            |
+            ---_int_free_merge_chunk
+               _int_free_chunk
+               std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false>*) (inlined)
+               std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+               std::unordered_map<unsigned long long, unsigned long, std::hash<unsigned long long>, std::equal_to<unsigned long long>, std::allocator<std::pair<unsigned long long const, unsigned long> > >::~unordered_map() (inlined)
+               RingOrderBook::~RingOrderBook() (inlined)
+               void benchmark<RingOrderBook>(int, int)
+               std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const (inlined)
+               std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const (inlined)
+               std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() (inlined)
+               std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() (inlined)
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     1.92%  book     libc.so.6             [.] _int_free_create_chunk
+            |
+            ---_int_free_create_chunk
+               |          
+                --1.36%--_int_free_merge_chunk
+                          _int_free_chunk
+                          std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long long const, unsigned long>, false>*) (inlined)
+                          std::_Hashtable<unsigned long long, std::pair<unsigned long long const, unsigned long>, std::allocator<std::pair<unsigned long long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long long>, std::hash<unsigned long long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+                          std::unordered_map<unsigned long long, unsigned long, std::hash<unsigned long long>, std::equal_to<unsigned long long>, std::allocator<std::pair<unsigned long long const, unsigned long> > >::~unordered_map() (inlined)
+                          RingOrderBook::~RingOrderBook() (inlined)
+                          void benchmark<RingOrderBook>(int, int)
+                          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const (inlined)
+                          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const (inlined)
+                          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() (inlined)
+                          std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() (inlined)
+                          main
+                          __libc_start_call_main
+                          __libc_start_main@@GLIBC_2.34
+                          _start
+
+     1.16%  book     libc.so.6             [.] _int_malloc
+            |
+            ---_int_malloc
+               __libc_malloc2
+               operator new(unsigned long)
+               void benchmark<RingOrderBook>(int, int)
+               std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const (inlined)
+               std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const (inlined)
+               std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() (inlined)
+               std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() (inlined)
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+
+
+#
+# (Tip: Show current config key-value pairs: perf config --list)
+#

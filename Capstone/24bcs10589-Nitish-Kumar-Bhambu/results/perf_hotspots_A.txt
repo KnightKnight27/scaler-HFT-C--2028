@@ -1,0 +1,23 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 587  of event 'cpu_core/cycles/'
+# Event count (approx.): 4489746022
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+# ........  .......  ....................  .......................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    44.76%  book     book                  [.] OrderBook::cancel_order(unsigned long long)
+    33.81%  book     book                  [.] OrderBook::add_order(unsigned long long, Side, int, long)
+     6.97%  book     [vdso]                [.] 0x0000000000000a8c
+     2.85%  book     libc.so.6             [.] __memmove_avx_unaligned_erms
+     1.98%  book     book                  [.] make_workload(int)
+     1.24%  book     [unknown]             [k] 0xffffffff93801280
+     1.21%  book     book                  [.] void benchmark<OrderBook>(int, int)
+
+
+#
+# (Tip: To show information about system the samples were collected on use perf report --header)
+#

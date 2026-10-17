@@ -1,0 +1,11 @@
+# started on Sat Oct 17 23:31:53 2026
+
+210.34;msec;task-clock:u;1.45%;208052379;100.00;;
+760937416;;cpu_core/cycles/u;1.39%;208052379;100.00;;
+885723534;;cpu_core/instructions/u;0.00%;208052379;100.00;;
+154346085;;cpu_core/branches/u;0.00%;208052379;100.00;;
+2183104;;cpu_core/branch-misses/u;0.03%;208052379;100.00;;
+6090218;;cpu_core/cache-misses/u;2.60%;208052379;100.00;;
+4732568;;cpu_core/L1-dcache-load-misses/u;0.32%;208052379;100.00;;
+527222;;cpu_core/dTLB-load-misses/u;0.66%;208052379;100.00;;
+27291;;page-faults:u;0.00%;208052379;100.00;;

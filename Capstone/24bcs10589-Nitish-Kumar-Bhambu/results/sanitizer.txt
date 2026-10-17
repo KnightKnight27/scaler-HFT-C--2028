@@ -1,0 +1,14 @@
+A: vector
+Best bid: 9950, quantity: 50
+Best ask: 10200, quantity: 16
+Correctness checks: PASS
+B: maps
+Best bid: 9950, quantity: 50
+Best ask: 10200, quantity: 16
+Correctness checks: PASS
+C: ring slot pool
+Best bid: 9950, quantity: 50
+Best ask: 10200, quantity: 16
+Correctness checks: PASS
+Ring capacity, slot reuse and wraparound checks: PASS
+Random comparison: PASS (seed 42, 5000 operations + drain, full depth after each)

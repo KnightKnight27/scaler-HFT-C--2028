@@ -1,0 +1,35 @@
+Implementation: C
+Seed: 42, operations: 1000000
+Adds: 700471, cancels: 199304, BBO queries: 100225
+Run 1: 126.494 ms, add 69.5143 ns, cancel 296.136 ns, BBO 25.492 ns, checksum 10326099508913568648
+Lifecycle run 1: 151.793 ms
+Median replay including construction/destruction: 151.793 ms
+Medians: 126.494 ms, add 69.5143 ns, cancel 296.136 ns, BBO 25.492 ns
+Implementation: C
+Seed: 42, operations: 1000000
+Adds: 700471, cancels: 199304, BBO queries: 100225
+Run 1: 134.542 ms, add 71.986 ns, cancel 327.678 ns, BBO 24.8626 ns, checksum 10326099508913568648
+Lifecycle run 1: 159.623 ms
+Median replay including construction/destruction: 159.623 ms
+Medians: 134.542 ms, add 71.986 ns, cancel 327.678 ns, BBO 24.8626 ns
+Implementation: C
+Seed: 42, operations: 1000000
+Adds: 700471, cancels: 199304, BBO queries: 100225
+Run 1: 141.348 ms, add 75.4631 ns, cancel 348.784 ns, BBO 25.6353 ns, checksum 10326099508913568648
+Lifecycle run 1: 167.403 ms
+Median replay including construction/destruction: 167.403 ms
+Medians: 141.348 ms, add 75.4631 ns, cancel 348.784 ns, BBO 25.6353 ns
+Implementation: C
+Seed: 42, operations: 1000000
+Adds: 700471, cancels: 199304, BBO queries: 100225
+Run 1: 129.739 ms, add 72.9639 ns, cancel 302.125 ns, BBO 24.6215 ns, checksum 10326099508913568648
+Lifecycle run 1: 153.981 ms
+Median replay including construction/destruction: 153.981 ms
+Medians: 129.739 ms, add 72.9639 ns, cancel 302.125 ns, BBO 24.6215 ns
+Implementation: C
+Seed: 42, operations: 1000000
+Adds: 700471, cancels: 199304, BBO queries: 100225
+Run 1: 133.369 ms, add 73.3015 ns, cancel 317.131 ns, BBO 25.4266 ns, checksum 10326099508913568648
+Lifecycle run 1: 157.161 ms
+Median replay including construction/destruction: 157.161 ms
+Medians: 133.369 ms, add 73.3015 ns, cancel 317.131 ns, BBO 25.4266 ns

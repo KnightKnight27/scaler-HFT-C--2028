@@ -1,0 +1,22 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'cpu_core/cycles/'
+# Event count (approx.): 8639277872
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+# ........  .......  ....................  .............................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    43.04%  book     book                  [.] MapOrderBook::add_order(unsigned long long, Side, int, long)
+    33.88%  book     book                  [.] MapOrderBook::cancel_order(unsigned long long)
+     4.17%  book     libstdc++.so.6.0.36   [.] std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+     3.61%  book     [vdso]                [.] 0x0000000000000a8c
+     2.58%  book     book                  [.] std::_Rb_tree<unsigned long long, std::pair<unsigned long long const, Order>, std::_Select1st<std::pair<unsigned long long const, Order> >, std::less<unsigned long long>, std::allocator<std::pair<unsigned long long const, Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long long const, Order> >*) [clone .isra.0]
+     2.41%  book     libc.so.6             [.] unlink_chunk.isra.0
+
+
+#
+# (Tip: To not record events from perf itself add --exclude-perf)
+#

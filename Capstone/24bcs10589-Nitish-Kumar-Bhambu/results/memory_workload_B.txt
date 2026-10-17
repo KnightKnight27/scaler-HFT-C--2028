@@ -1,0 +1,7 @@
+Implementation: B
+Seed: 42, operations: 1000000
+Adds: 700471, cancels: 199304, BBO queries: 100225
+Run 1: 350.27 ms, add 278.899 ns, cancel 681.649 ns, BBO 29.5965 ns, checksum 10326099508913568648
+Lifecycle run 1: 379.705 ms
+Median replay including construction/destruction: 379.705 ms
+Medians: 350.27 ms, add 278.899 ns, cancel 681.649 ns, BBO 29.5965 ns
