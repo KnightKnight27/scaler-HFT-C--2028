@@ -1,0 +1,15 @@
+Implementation C (fixed tick array), 1000000 ops, 5 runs
+empty timer interval median 0 ns (may round to zero at clock resolution; timed operation samples include timer cost)
+
+run 1 total 51.8 ms | add 25.8 ns (p99 42) | cancel 89.4 ns (p99 333) | bbo 14.8 ns (p99 42)
+run 2 total 50.2 ms | add 25.6 ns (p99 42) | cancel 81.1 ns (p99 333) | bbo 13.2 ns (p99 42)
+run 3 total 49.5 ms | add 24.8 ns (p99 42) | cancel 82.6 ns (p99 333) | bbo 13.5 ns (p99 42)
+run 4 total 53.5 ms | add 24.0 ns (p99 42) | cancel 103.0 ns (p99 334) | bbo 13.6 ns (p99 42)
+run 5 total 56.3 ms | add 23.5 ns (p99 83) | cancel 118.0 ns (p99 375) | bbo 14.2 ns (p99 42)
+
+MEDIAN total 51.8 ms | add 24.8 ns (p99 42.0) | cancel 89.4 ns (p99 333.0) | bbo 13.6 ns (p99 42.0)
+
+Final BBO:
+Bid: 99.99 x 2826
+Ask: 100.01 x 2307
+Checksum: 5616446185434

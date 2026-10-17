@@ -1,0 +1,100 @@
+macOS perf-mode benchmark results
+=================================
+Workload baseline: ./build/bench --impl none --perf
+Implementations: ./build/bench --impl A|B|C --perf
+Counters: xctrace CPU Counters; IPC context: /usr/bin/time -l
+
+============================================================
+Implementation none: --perf and /usr/bin/time -l
+============================================================
+Implementation none (workload generation only), 1000000 ops
+        0.01 real         0.01 user         0.00 sys
+            37797888  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                2491  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                  36  involuntary context switches
+           166464728  instructions retired
+            55190888  cycles elapsed
+            37323160  peak memory footprint
+
+============================================================
+Implementation A: --perf and /usr/bin/time -l
+============================================================
+Implementation A (single untimed run), 1000000 ops
+Checksum: 302894734
+        0.10 real         0.09 user         0.00 sys
+            81395712  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                5154  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                 131  involuntary context switches
+           652094122  instructions retired
+           443509935  cycles elapsed
+            80953800  peak memory footprint
+
+============================================================
+Implementation B: --perf and /usr/bin/time -l
+============================================================
+Implementation B (single untimed run), 1000000 ops
+Checksum: 302894734
+        0.08 real         0.07 user         0.00 sys
+            81199104  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                5142  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                 121  involuntary context switches
+           803522777  instructions retired
+           356002330  cycles elapsed
+            80757192  peak memory footprint
+
+============================================================
+Implementation C: --perf and /usr/bin/time -l
+============================================================
+Implementation C (single untimed run), 1000000 ops
+Checksum: 302894734
+        0.04 real         0.03 user         0.00 sys
+            81166336  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                5140  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                  55  involuntary context switches
+           573350670  instructions retired
+           193555498  cycles elapsed
+            80724424  peak memory footprint

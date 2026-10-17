@@ -1,0 +1,11 @@
+Docker Perf results:
+
+| metric | A: ordered map | B: sorted vector | C: fixed tick array |
+|---|---:|---:|---:|
+| Instruction references | 505,320,151 | 621,664,186 | 425,475,369 |
+| I1 cache misses | 567 | 380 | 194 |
+| Last-level instruction misses | 541 | 309 | 201 |
+| Data references | 218,674,721 | 240,291,244 | 179,432,204 |
+| D1 cache misses | 13,154,656 | 13,780,403 | 4,485,865 |
+| Last-level data misses | 7,197,068 | 4,106,355 | 3,850,396 |
+| Last-level cache misses | 7,197,609 | 4,106,664 | 3,850,597 |

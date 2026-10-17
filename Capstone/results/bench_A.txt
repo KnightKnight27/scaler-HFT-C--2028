@@ -1,0 +1,15 @@
+Implementation A (ordered map), 1000000 ops, 5 runs
+empty timer interval median 0 ns (may round to zero at clock resolution; timed operation samples include timer cost)
+
+run 1 total 100.5 ms | add 69.5 ns (p99 125) | cancel 179.6 ns (p99 417) | bbo 13.3 ns (p99 42)
+run 2 total 96.8 ms | add 68.6 ns (p99 125) | cancel 162.5 ns (p99 375) | bbo 13.6 ns (p99 42)
+run 3 total 95.0 ms | add 65.6 ns (p99 125) | cancel 164.9 ns (p99 417) | bbo 13.2 ns (p99 42)
+run 4 total 94.0 ms | add 65.7 ns (p99 125) | cancel 161.4 ns (p99 375) | bbo 13.1 ns (p99 42)
+run 5 total 91.3 ms | add 62.1 ns (p99 125) | cancel 161.2 ns (p99 417) | bbo 13.1 ns (p99 42)
+
+MEDIAN total 95.0 ms | add 65.7 ns (p99 125.0) | cancel 162.5 ns (p99 417.0) | bbo 13.2 ns (p99 42.0)
+
+Final BBO:
+Bid: 99.99 x 2826
+Ask: 100.01 x 2307
+Checksum: 5616446185434
