@@ -1,0 +1,86 @@
+Implementation A (std::map + unordered_map)
+Ops: 1000000   Runs: 5 (median reported)
+
+  Total time :     305.36 ms
+  ns / add   :     262.52
+  ns / cancel:     408.78
+  ns / bbo   :      35.97
+
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+
+Checksum: 8622340677121175029
+Implementation A (std::map + unordered_map)
+Ops: 1000000   Runs: 5 (median reported)
+
+  Total time :     306.13 ms
+  ns / add   :     262.37
+  ns / cancel:     413.46
+  ns / bbo   :      36.03
+
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+
+Checksum: 8622340677121175029
+Implementation A (std::map + unordered_map)
+Ops: 1000000   Runs: 5 (median reported)
+
+  Total time :     305.10 ms
+  ns / add   :     262.90
+  ns / cancel:     407.87
+  ns / bbo   :      36.38
+
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+
+Checksum: 8622340677121175029
+Implementation A (std::map + unordered_map)
+Ops: 1000000   Runs: 5 (median reported)
+
+  Total time :     308.64 ms
+  ns / add   :     264.44
+  ns / cancel:     410.94
+  ns / bbo   :      36.04
+
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+
+Checksum: 8622340677121175029
+Implementation A (std::map + unordered_map)
+Ops: 1000000   Runs: 5 (median reported)
+
+  Total time :     306.99 ms
+  ns / add   :     263.56
+  ns / cancel:     413.34
+  ns / bbo   :      36.54
+
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+
+Checksum: 8622340677121175029
+
+ Performance counter stats for './bench --impl A' (5 runs):
+
+     1,779,115,552      task-clock                       #    0.998 CPUs utilized               ( +-  0.21% )
+     3,056,129,101      cpu_atom/cycles/                 #    1.718 GHz                         ( +-  7.71% )  (0.02%)
+     3,884,675,131      cpu_core/cycles/                 #    2.183 GHz                         ( +-  0.19% )  (99.98%)
+     5,033,502,193      cpu_atom/instructions/           #    1.65  insn per cycle              ( +- 23.05% )  (0.02%)
+     4,083,964,575      cpu_core/instructions/           #    1.05  insn per cycle              ( +-  0.16% )  (99.98%)
+       697,139,701      cpu_atom/branches/               #  391.846 M/sec                       ( +- 17.28% )  (0.02%)
+       807,723,192      cpu_core/branches/               #  454.003 M/sec                       ( +-  0.03% )  (99.98%)
+        18,080,706      cpu_atom/branch-misses/          #    2.59% of all branches             ( +-  9.15% )  (0.02%)
+        39,573,041      cpu_core/branch-misses/          #    4.90% of all branches             ( +-  0.12% )  (99.98%)
+        30,858,593      cpu_atom/cache-misses/                                                  ( +-  9.81% )  (0.02%)
+        10,549,821      cpu_core/cache-misses/                                                  ( +-  1.21% )  (99.98%)
+   <not supported>      cpu_atom/L1-dcache-load-misses/
+        65,592,292      cpu_core/L1-dcache-load-misses/                                         ( +-  0.37% )  (99.98%)
+           771,284      cpu_atom/dTLB-load-misses/                                              ( +- 36.89% )  (0.02%)
+         3,500,261      cpu_core/dTLB-load-misses/                                              ( +-  1.16% )  (99.98%)
+            18,007      page-faults                      #   10.121 K/sec                       ( +-  0.00% )
+
+           1.78309 +- 0.00377 seconds time elapsed  ( +-  0.21% )

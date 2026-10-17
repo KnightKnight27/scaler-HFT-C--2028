@@ -1,0 +1,9 @@
+# build output
+bench
+*.o
+build/
+
+# perf raw captures (the readable reports in results/ are committed)
+perf.data
+perf.data.old
+results/*.data

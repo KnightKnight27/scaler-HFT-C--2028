@@ -1,0 +1,13 @@
+Implementation C (flat arrays + open-addressed orders)
+Ops: 1000000   Runs: 5 (median reported)
+
+  Total time :     165.69 ms
+  ns / add   :     150.49
+  ns / cancel:     105.96
+  ns / bbo   :      33.56
+
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+
+Checksum: 8622340677121175029

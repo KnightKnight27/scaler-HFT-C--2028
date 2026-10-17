@@ -1,0 +1,28 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 51  of event 'cpu_atom/cycles/P'
+# Event count (approx.): 13452755
+#
+# Children      Self  Command  Shared Object         Symbol
+# ........  ........  .......  ....................  .....................
+#
+    27.38%    10.86%  bench    bench                 [.] (anonymous namespace)::Op& std::vector<Op>::emplace_back<Op>(Op&&) [clone .isra.0]
+            |
+            ---std::vector<Op>::emplace_back<Op>(Op&&) [clone .isra.0]
+               |
+               |--9.45%--0xffffffffba600bb7
+               |          |
+               |          |--7.09%--0xffffffffbbb9bcff
+               |          |          0xffffffffba954212
+               |          |          0xffffffffbad0bc70  (kernel page-fault / copy_page path)
+               |          |
+               |           --2.36%--0xffffffffbbb9bd10
+
+Note: short run (~1.8 s) and heavy -O2 inlining of the book operations into the
+replay loop mean perf attributes most user time to the inlined frames and to the
+workload vector. Default sampling fell on the cpu_atom (E-core) PMU with only 51
+samples, so this call graph is indicative, not a precise breakdown. perf stat
+(cpu_core, ~100% coverage) is the reliable source for the counter numbers.

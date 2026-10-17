@@ -1,0 +1,28 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 32  of event 'cpu_atom/cycles/P'
+# Event count (approx.): 8678173
+#
+# Children      Self  Command  Shared Object         Symbol
+# ........  ........  .......  ....................  .....................
+#
+    32.17%    11.17%  bench    bench                 [.] (anonymous namespace)::Op& std::vector<Op>::emplace_back<Op>(Op&&) [clone .isra.0]
+            |
+            |--28.27%--std::vector<Op>::emplace_back<Op>(Op&&) [clone .isra.0]
+            |          |
+            |          |--17.73%--0xffffffffba600bb7
+            |          |          0xffffffffbbb9bcff
+            |          |          |
+            |          |          |--10.88%--0xffffffffba954212 (kernel page-fault path)
+            |          |
+            |           --3.27%--0xffffffffba600ef0
+            |
+             --3.90%--(anonymous namespace)::build_workload(unsigned long)
+                       0xffffffffba600b90
+
+Note: 32 samples only; same caveat as A. The user-space cost is dominated by the
+inlined cancel path (std::map order lookup + lazy heap cleanup), which perf stat
+confirms via the high instruction and branch counts for B.

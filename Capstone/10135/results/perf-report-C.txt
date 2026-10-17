@@ -1,0 +1,30 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 57  of event 'cpu_atom/cycles/P'
+# Event count (approx.): 17563738
+#
+# Children      Self  Command  Shared Object         Symbol
+# ........  ........  .......  ....................  .....................
+#
+    54.09%    15.21%  bench    bench                 [.] (anonymous namespace)::Op& std::vector<Op>::emplace_back<Op>(Op&&) [clone .isra.0]
+            |
+            ---std::vector<Op>::emplace_back<Op>(Op&&) [clone .isra.0]
+               |
+               |--27.00%--0xffffffffba600bb7
+               |          |
+               |          |--25.15%--0xffffffffbbb9bcff
+               |          |          0xffffffffba954212
+               |          |          |
+               |          |          |--19.41%--0xffffffffbad0b9ba (kernel first-touch / page-fault path)
+               |          |          |          |
+               |          |          |          |--15.66%--0xffffffffbad09d03
+               |          |          |          |          |
+               |          |          |          |           --9.82%--0xffffffffbad098cd
+
+Note: 57 samples. For C a visibly larger share of time sits in the kernel
+first-touch / page-fault path, which lines up with the 66,199 page-faults perf
+stat reports (the large flat arrays and 64K-slot order table are faulted in on
+first use). User-space book work is small enough that it is mostly inlined.

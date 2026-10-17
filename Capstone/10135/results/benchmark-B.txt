@@ -1,0 +1,13 @@
+Implementation B (priority_queue + lazy deletion)
+Ops: 1000000   Runs: 5 (median reported)
+
+  Total time :     310.94 ms
+  ns / add   :     194.15
+  ns / cancel:     622.57
+  ns / bbo   :      54.26
+
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+
+Checksum: 8622340677121175029
