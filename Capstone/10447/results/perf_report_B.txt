@@ -1,0 +1,80 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'cpu/cycles/P'
+# Event count (approx.): 1141533547
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+# ........  .......  ....................  ..........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    25.54%  bench    bench                 [.] Stats run<BookB, false>(std::vector<Op, std::allocator<Op> > const&, double) [clone .isra.0]
+            |          
+            |--17.76%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, Ord>, std::_Select1st<std::pair<unsigned long const, Ord> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, Ord> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+            |          std::_Rb_tree<unsigned long, std::pair<unsigned long const, Ord>, std::_Select1st<std::pair<unsigned long const, Ord> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, Ord> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+            |          std::_Rb_tree<unsigned long, std::pair<unsigned long const, Ord>, std::_Select1st<std::pair<unsigned long const, Ord> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, Ord> > >::find(unsigned long const&) (inlined)
+            |          std::map<unsigned long, Ord, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, Ord> > >::find(unsigned long const&) (inlined)
+            |          BookB::cancel_order(unsigned long) (inlined)
+            |          Stats run<BookB, false>(std::vector<Op, std::allocator<Op> > const&, double) (inlined)
+            |          void do_bench<BookB>(char const*, std::vector<Op, std::allocator<Op> > const&, int, bool)
+            |          bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) (inlined)
+            |          main
+            |          0x7f1787a27781
+            |          __libc_start_main
+            |          _start
+            |          
+            |--2.41%--Stats run<BookB, false>(std::vector<Op, std::allocator<Op> > const&, double) (inlined)
+            |          void do_bench<BookB>(char const*, std::vector<Op, std::allocator<Op> > const&, int, bool)
+            |          bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) (inlined)
+            |          main
+            |          0x7f1787a27781
+            |          __libc_start_main
+            |          _start
+            |          
+            |--2.23%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, Ord>, std::_Select1st<std::pair<unsigned long const, Ord> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, Ord> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+            |          std::_Rb_tree<unsigned long, std::pair<unsigned long const, Ord>, std::_Select1st<std::pair<unsigned long const, Ord> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, Ord> > >::find(unsigned long const&) (inlined)
+            |          std::map<unsigned long, Ord, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, Ord> > >::find(unsigned long const&) (inlined)
+            |          BookB::cancel_order(unsigned long) (inlined)
+            |          Stats run<BookB, false>(std::vector<Op, std::allocator<Op> > const&, double) (inlined)
+            |          void do_bench<BookB>(char const*, std::vector<Op, std::allocator<Op> > const&, int, bool)
+            |          bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) (inlined)
+            |          main
+            |          0x7f1787a27781
+            |          __libc_start_main
+            |          _start
+            |          
+            |--1.06%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, Ord>, std::_Select1st<std::pair<unsigned long const, Ord> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, Ord> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+            |          std::_Rb_tree<unsigned long, std::pair<unsigned long const, Ord>, std::_Select1st<std::pair<unsigned long const, Ord> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, Ord> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+            |          std::_Rb_tree<unsigned long, std::pair<unsigned long const, Ord>, std::_Select1st<std::pair<unsigned long const, Ord> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, Ord> > >::find(unsigned long const&) (inlined)
+            |          std::map<unsigned long, Ord, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, Ord> > >::find(unsigned long const&) (inlined)
+            |          BookB::cancel_order(unsigned long) (inlined)
+            |          Stats run<BookB, false>(std::vector<Op, std::allocator<Op> > const&, double) (inlined)
+            |          void do_bench<BookB>(char const*, std::vector<Op, std::allocator<Op> > const&, int, bool)
+            |          bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) (inlined)
+            |          main
+            |          0x7f1787a27781
+            |          __libc_start_main
+            |          _start
+            |          
+             --0.69%--std::vector<Op, std::allocator<Op> >::operator[](unsigned long) const (inlined)
+                       Stats run<BookB, false>(std::vector<Op, std::allocator<Op> > const&, double) (inlined)
+                       void do_bench<BookB>(char const*, std::vector<Op, std::allocator<Op> > const&, int, bool)
+                       bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) (inlined)
+                       main
+                       0x7f1787a27781
+                       __libc_start_main
+                       _start
+
+    17.75%  bench    bench                 [.] __gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, int, BookB::find(std::vector<Level, std::allocator<Level> >&, bool, int)::{lambda(Level const&, int)#1}>(__gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, __gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, int const&, BookB::find(std::vector<Level, std::allocator<Level> >&, bool, int)::{lambda(Level const&, int)#1}) [clone .isra.0]
+            |          
+            |--7.23%--__gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, int, BookB::find(std::vector<Level, std::allocator<Level> >&, bool, int)::{lambda(Level const&, int)#1}>(__gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, __gnu_cxx::__normal_iterator<Level*, std::vector<Level, std::allocator<Level> > >, int const&, BookB::find(std::vector<Level, std::allocator<Level> >&, bool, int)::{lambda(Level const&, int)#1}) (inlined)
+            |          |          
+            |          |--5.70%--Stats run<BookB, false>(std::vector<Op, std::allocator<Op> > const&, double) (inlined)
+            |          |          void do_bench<BookB>(char const*, std::vector<Op, std::allocator<Op> > const&, int, bool)
+            |          |          bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) (inlined)
+            |          |          main
+            |          |          0x7f1787a27781
+            |          |          __libc_start_main
+            |          |          _start
+            |          |          

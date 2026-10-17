@@ -1,0 +1,4 @@
+# build output + perf binary dumps
+bench
+*.data
+*.data.old

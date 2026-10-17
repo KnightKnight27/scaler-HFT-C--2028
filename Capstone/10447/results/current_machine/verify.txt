@@ -1,0 +1,10 @@
+Running correctness test...
+
+edge cases (empty book, unknown cancel, short depth, dup id...): ok
+1000000 ops compared (bbo after every op, top10 every 100, full book 200 times)
+
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+
+All implementations produce identical results.

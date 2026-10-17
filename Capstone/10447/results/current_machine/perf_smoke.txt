@@ -1,0 +1,11 @@
+
+ Performance counter stats for './bench --impl C --perf':
+
+            238.28 msec task-clock:u                                                          
+
+       0.241032317 seconds time elapsed
+
+       0.208078000 seconds user
+       0.027390000 seconds sys
+
+

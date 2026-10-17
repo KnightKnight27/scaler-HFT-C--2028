@@ -1,0 +1,8 @@
+BookC cached-best scan, 20000 rounds
+dense (1 gap): 53.9 ns/add+cancel, final bid 9998 x 1
+sparse (4999 gaps): 5309.4 ns/add+cancel, final bid 5000 x 1
+sparse/dense: 98.5x
+bitmap dense: 3.6 ns/reselect, final index 4998 (keep=99960000)
+bitmap sparse: 82.5 ns/reselect, final index 0 (keep=0)
+bitmap sparse/dense: 22.9x
+lesson: array lookup is great for the normal workload, but a sparse book can make cancelling the best level O(price levels). the bitmap is the next thing worth putting into a full BookC, but this little test only proves the price-search part.

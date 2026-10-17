@@ -1,0 +1,2 @@
+usage: ./bench --verify | --impl A|B|C [--runs N] [--perf] [--ops N]
+exit=1 (expected 1)

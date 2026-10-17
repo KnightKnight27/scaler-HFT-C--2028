@@ -1,0 +1,11 @@
+Implementation B (sorted vector + std::map), 100000 ops
+median of 3 runs (timer overhead 34.1 ns/op subtracted)
+  total          52.23 ms
+  ns / add       498.5
+  ns / cancel    788.8
+  ns / bbo        24.5
+Final BBO:
+Bid: 99.99 x 208
+Ask: 100.01 x 83
+
+Checksum: 5071305686

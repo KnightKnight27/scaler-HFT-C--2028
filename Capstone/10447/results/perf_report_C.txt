@@ -1,0 +1,80 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 636  of event 'cpu/cycles/P'
+# Event count (approx.): 261341703
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                               
+# ........  .......  ....................  .....................................................................................................................................................................................
+#
+    33.35%  bench    bench                 [.] make_workload(int)
+            |          
+            |--17.33%--std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()() (inlined)
+            |          make_workload(int)
+            |          bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) (inlined)
+            |          main
+            |          0x7f37de027781
+            |          __libc_start_main
+            |          _start
+            |          
+            |--11.31%--make_workload(int)
+            |          |          
+            |          |--10.67%--bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) (inlined)
+            |          |          main
+            |          |          0x7f37de027781
+            |          |          __libc_start_main
+            |          |          _start
+            |          |          
+            |           --0.63%--make_workload(int)
+            |                     bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) (inlined)
+            |                     main
+            |                     0x7f37de027781
+            |                     __libc_start_main
+            |                     _start
+            |          
+            |--3.92%--void std::__new_allocator<Op>::construct<Op, Op>(Op*, Op&&) (inlined)
+            |          void std::allocator_traits<std::allocator<Op> >::construct<Op, Op>(std::allocator<Op>&, Op*, Op&&) (inlined)
+            |          Op& std::vector<Op, std::allocator<Op> >::emplace_back<Op>(Op&&) (inlined)
+            |          std::vector<Op, std::allocator<Op> >::push_back(Op&&) (inlined)
+            |          make_workload(int)
+            |          bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) (inlined)
+            |          main
+            |          0x7f37de027781
+            |          __libc_start_main
+            |          _start
+            |          
+             --0.63%--Op& std::vector<Op, std::allocator<Op> >::emplace_back<Op>(Op&&) (inlined)
+                       std::vector<Op, std::allocator<Op> >::push_back(Op&&) (inlined)
+                       make_workload(int)
+                       bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) (inlined)
+                       main
+                       0x7f37de027781
+                       __libc_start_main
+                       _start
+
+    24.92%  bench    bench                 [.] BookC::add_order(unsigned long, Side, int, long)
+            |          
+            |--18.37%--BookC::insert(unsigned long, Ord const&) (inlined)
+            |          BookC::add_order(unsigned long, Side, int, long)
+            |          Stats run<BookC, false>(std::vector<Op, std::allocator<Op> > const&, double) (inlined)
+            |          void do_bench<BookC>(char const*, std::vector<Op, std::allocator<Op> > const&, int, bool)
+            |          main
+            |          0x7f37de027781
+            |          __libc_start_main
+            |          _start
+            |          
+            |--3.67%--BookC::add_order(unsigned long, Side, int, long)
+            |          |          
+            |          |--2.72%--Stats run<BookC, false>(std::vector<Op, std::allocator<Op> > const&, double) (inlined)
+            |          |          void do_bench<BookC>(char const*, std::vector<Op, std::allocator<Op> > const&, int, bool)
+            |          |          main
+            |          |          0x7f37de027781
+            |          |          __libc_start_main
+            |          |          _start
+            |          |          
+            |           --0.80%--void do_bench<BookC>(char const*, std::vector<Op, std::allocator<Op> > const&, int, bool)
+            |                     main
+            |                     0x7f37de027781
+            |                     __libc_start_main

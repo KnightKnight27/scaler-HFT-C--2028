@@ -1,0 +1,11 @@
+Implementation A (std::map + unordered_map), 1000000 ops
+median of 5 runs (timer overhead 34.3 ns/op subtracted)
+  total         438.19 ms
+  ns / add       459.3
+  ns / cancel    611.2
+  ns / bbo        28.5
+Final BBO:
+Bid: 99.99 x 2015
+Ask: 100.01 x 2522
+
+Checksum: 50015233975

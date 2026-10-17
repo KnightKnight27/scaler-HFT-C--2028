@@ -1,0 +1,11 @@
+Implementation C (price array + flat hash), 10000 ops
+median of 3 runs (timer overhead 35.7 ns/op subtracted)
+  total           0.71 ms
+  ns / add       140.3
+  ns / cancel     95.6
+  ns / bbo        27.0
+Final BBO:
+Bid: 99.99 x 1
+Ask: 100.02 x 34
+
+Checksum: 515456888
