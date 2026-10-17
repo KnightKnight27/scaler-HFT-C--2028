@@ -1,0 +1,16 @@
+    35.46%     0.00%  bench    [unknown]             [.] 0000000000000000
+            |
+            ---0
+               |          
+               |--11.26%--std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderRec>, std::allocator<std::pair<unsigned long const, OrderRec> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) [clone .isra.0]
+               |          
+               |--10.01%--OrderBookA::cancel_order(unsigned long)
+               |          
+               |--5.88%--OrderBookA::~OrderBookA()
+               |          __libc_free (inlined)
+               |          _int_free_maybe_consolidate
+               |          |          
+               |           --5.70%--malloc_consolidate
+               |                     |          
+               |                      --2.41%--unlink_chunk (inlined)
+               |          

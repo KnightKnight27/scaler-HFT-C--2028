@@ -1,0 +1,82 @@
+Implementation A  (1000000 ops, median of 5 runs)
+-----------------------------------------------
+Total time (ms) : 208.048
+ns / add_order  : 173.739
+ns / cancel     : 292.724
+ns / get_bbo    : 20.5045
+-----------------------------------------------
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+
+Checksum: 843022881
+Implementation A  (1000000 ops, median of 5 runs)
+-----------------------------------------------
+Total time (ms) : 199.368
+ns / add_order  : 168.21
+ns / cancel     : 287.788
+ns / get_bbo    : 20.7058
+-----------------------------------------------
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+
+Checksum: 843022881
+Implementation A  (1000000 ops, median of 5 runs)
+-----------------------------------------------
+Total time (ms) : 193.014
+ns / add_order  : 163.957
+ns / cancel     : 265.704
+ns / get_bbo    : 20.4309
+-----------------------------------------------
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+
+Checksum: 843022881
+Implementation A  (1000000 ops, median of 5 runs)
+-----------------------------------------------
+Total time (ms) : 194.506
+ns / add_order  : 164.333
+ns / cancel     : 271.742
+ns / get_bbo    : 20.4448
+-----------------------------------------------
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+
+Checksum: 843022881
+Implementation A  (1000000 ops, median of 5 runs)
+-----------------------------------------------
+Total time (ms) : 193.635
+ns / add_order  : 164.805
+ns / cancel     : 271.244
+ns / get_bbo    : 20.6341
+-----------------------------------------------
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+
+Checksum: 843022881
+
+ Performance counter stats for './bench --impl A' (5 runs):
+
+          1,160.35 msec task-clock:u                                                            ( +-  1.84% )
+     <not counted>      cpu_atom/cycles/u                                                       ( +- 61.73% )  (0.00%)
+     4,219,316,696      cpu_core/cycles/u                                                       ( +-  1.47% )
+     <not counted>      cpu_atom/instructions/u                                                 ( +- 62.75% )  (0.00%)
+     4,054,225,264      cpu_core/instructions/u                                                 ( +-  0.01% )
+     <not counted>      cpu_atom/branches/u                                                     ( +- 62.98% )  (0.00%)
+       791,112,211      cpu_core/branches/u                                                     ( +-  0.01% )
+     <not counted>      cpu_atom/branch-misses/u                                                ( +- 61.63% )  (0.00%)
+        39,812,980      cpu_core/branch-misses/u                                                ( +-  0.02% )
+     <not counted>      cpu_atom/cache-misses/u                                                 ( +- 62.01% )  (0.00%)
+        19,549,571      cpu_core/cache-misses/u                                                 ( +-  4.09% )
+   <not supported>      cpu_atom/L1-dcache-load-misses/u                                      
+        64,550,678      cpu_core/L1-dcache-load-misses/u                                        ( +-  0.10% )
+     <not counted>      cpu_atom/dTLB-load-misses/u                                             ( +- 61.34% )  (0.00%)
+         3,420,292      cpu_core/dTLB-load-misses/u                                             ( +-  1.10% )
+            18,297      page-faults:u                                                           ( +-  0.00% )
+
+       1.163280224 +- 0.021494415 seconds time elapsed  ( +-  1.85% )
+

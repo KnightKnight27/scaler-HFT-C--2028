@@ -1,0 +1,16 @@
+    58.75%     6.80%  bench    bench                 [.] run_once(IOrderBook&, std::vector<Op, std::allocator<Op> > const&)
+            |          
+            |--57.00%--run_once(IOrderBook&, std::vector<Op, std::allocator<Op> > const&)
+            |          |          
+            |          |--47.38%--std::chrono::_V2::steady_clock::now()
+            |          |          |          
+            |          |          |--40.55%--__clock_gettime (inlined)
+            |          |          |          |          
+            |          |          |          |--26.73%--0x7d72c708799b
+            |          |          |          |          
+            |          |          |          |--1.93%--0x7d72c70879d7
+            |          |          |          |          
+            |          |          |          |--1.67%--0x7d72c7087a15
+            |          |          |          |          
+            |          |          |          |--1.34%--0x7d72c70879d1
+            |          |          |          |          

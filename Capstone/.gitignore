@@ -1,0 +1,12 @@
+bench
+*.data
+perf.data*
+*.o
+NOTES.md
+
+# cmake build artifacts
+build/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
