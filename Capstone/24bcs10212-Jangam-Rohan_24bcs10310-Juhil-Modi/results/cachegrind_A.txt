@@ -1,0 +1,33 @@
+valgrind --tool=cachegrind --cache-sim=yes --branch-sim=yes ./bench --impl A --runs 1
+
+==20922== Cachegrind, a high-precision tracing profiler
+==20922== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==20922== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==20922== Command: ./bench --impl A --runs 1
+==20922==
+--20922-- warning: L3 cache found, using its data for the LL simulation.
+--20922-- warning: specified LL cache: line_size 64  assoc 12  total_size 18,874,368
+--20922-- warning: simulated LL cache: line_size 64  assoc 18  total_size 18,874,368
+==20922== brk segment overflow in thread #1: can't grow to 0x486d000
+==20922== (see section Limitations in user manual)
+==20922== NOTE: further instances of this message will not be shown
+==20922==
+==20922== I refs:        946,426,127
+==20922== I1  misses:          2,714
+==20922== LLi misses:          2,665
+==20922== I1  miss rate:        0.00%
+==20922== LLi miss rate:        0.00%
+==20922==
+==20922== D refs:        381,979,662  (239,521,825 rd   + 142,457,837 wr)
+==20922== D1  misses:     15,777,149  ( 13,583,676 rd   +   2,193,473 wr)
+==20922== LLd misses:      4,041,678  (  2,032,240 rd   +   2,009,438 wr)
+==20922== D1  miss rate:         4.1% (        5.7%     +         1.5%  )
+==20922== LLd miss rate:         1.1% (        0.8%     +         1.4%  )
+==20922==
+==20922== LL refs:        15,779,863  ( 13,586,390 rd   +   2,193,473 wr)
+==20922== LL misses:       4,044,343  (  2,034,905 rd   +   2,009,438 wr)
+==20922== LL miss rate:          0.3% (        0.2%     +         1.4%  )
+==20922==
+==20922== Branches:      134,872,973  (124,782,906 cond +  10,090,067 ind)
+==20922== Mispredicts:    10,484,559  (  9,582,909 cond +     901,650 ind)
+==20922== Mispred rate:          7.8% (        7.7%     +         8.9%   )

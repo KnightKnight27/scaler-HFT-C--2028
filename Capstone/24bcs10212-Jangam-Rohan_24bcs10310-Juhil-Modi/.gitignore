@@ -1,0 +1,6 @@
+build/
+cmake-build-*/
+/bench
+/bench.exe
+/bench_perf
+perf.data*

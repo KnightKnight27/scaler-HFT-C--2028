@@ -1,0 +1,28 @@
+perf record -g ./bench --impl C
+perf report --stdio --no-children -g none --percent-limit 0.5
+
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'task-clock:upppH'
+# Event count (approx.): 602500000
+#
+# Overhead  Command  Shared Object         Symbol
+# ........  .......  ....................  .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    40.21%  bench    [vdso]                [.] __vdso_clock_gettime
+    37.10%  bench    bench                 [.] Result run_once<ArrayOrderBook>(std::vector<Op, std::allocator<Op> > const&)
+     4.07%  bench    bench                 [.] make_workload(int, int, int, int, unsigned int)
+     3.36%  bench    libc.so.6             [.] __memmove_avx_unaligned_erms
+     2.49%  bench    libstdc++.so.6.0.33   [.] std::chrono::_V2::steady_clock::now()
+     2.03%  bench    libm.so.6             [.] __llround
+     1.95%  bench    bench                 [.] std::vector<ArrayOrderBook::Order, std::allocator<ArrayOrderBook::Order> >::_M_default_append(unsigned long)
+     1.58%  bench    libc.so.6             [.] clock_gettime@@GLIBC_2.17
+     1.33%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+     1.29%  bench    bench                 [.] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+     0.87%  bench    libstdc++.so.6.0.33   [.] clock_gettime@plt
+     0.62%  bench    bench                 [.] std::chrono::_V2::steady_clock::now()@plt
+#
+#

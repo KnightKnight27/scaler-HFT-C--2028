@@ -1,0 +1,15 @@
+
+ Performance counter stats for './bench --impl A' (5 runs):
+
+           1983.73 msec task-clock:u                     #    0.934 CPUs utilized               ( +-  2.90% )
+   <not supported>      cycles:u
+   <not supported>      instructions:u
+   <not supported>      branches:u
+   <not supported>      branch-misses:u
+   <not supported>      cache-misses:u
+   <not supported>      L1-dcache-load-misses:u
+   <not supported>      dTLB-load-misses:u
+             27534      page-faults:u                    #   13.880 K/sec                       ( +-  0.00% )
+
+            2.1238 +- 0.0640 seconds time elapsed  ( +-  3.02% )
+

@@ -1,0 +1,31 @@
+perf record -g ./bench --impl A
+perf report --stdio --no-children -g none --percent-limit 0.5
+
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 8K of event 'task-clock:upppH'
+# Event count (approx.): 2120000000
+#
+# Overhead  Command  Shared Object         Symbol
+# ........  .......  ....................  ...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    36.21%  bench    bench                 [.] Result run_once<MapOrderBook>(std::vector<Op, std::allocator<Op> > const&)
+    20.17%  bench    bench                 [.] MapOrderBook::cancel_order(unsigned long)
+    11.80%  bench    [vdso]                [.] __vdso_clock_gettime
+     6.25%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, MapOrderBook::Order>, std::allocator<std::pair<unsigned long const, MapOrderBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+     4.72%  bench    bench                 [.] std::__detail::_Map_base<unsigned long, std::pair<unsigned long const, MapOrderBook::Order>, std::allocator<std::pair<unsigned long const, MapOrderBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](unsigned long const&)
+     3.96%  bench    libc.so.6             [.] malloc_consolidate
+     3.73%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, MapOrderBook::Order>, std::allocator<std::pair<unsigned long const, MapOrderBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::erase(std::__detail::_Node_const_iterator<std::pair<unsigned long const, MapOrderBook::Order>, false, false>)
+     3.08%  bench    libc.so.6             [.] unlink_chunk.isra.0
+     1.13%  bench    bench                 [.] make_workload(int, int, int, int, unsigned int)
+     1.08%  bench    libc.so.6             [.] _int_free
+     0.94%  bench    libc.so.6             [.] _int_malloc
+     0.77%  bench    libc.so.6             [.] cfree@GLIBC_2.2.5
+     0.72%  bench    libc.so.6             [.] malloc
+     0.62%  bench    libstdc++.so.6.0.33   [.] std::chrono::_V2::steady_clock::now()
+     0.57%  bench    libm.so.6             [.] __llround
+#
+#

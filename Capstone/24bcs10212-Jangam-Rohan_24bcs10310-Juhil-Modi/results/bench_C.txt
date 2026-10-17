@@ -1,0 +1,19 @@
+Implementation C (price indexed array + vector of orders by id)
+
+run 1: 130.9 ms
+run 2: 106.1 ms
+run 3: 125.2 ms
+run 4: 115.8 ms
+run 5: 119.5 ms
+
+median of 5 runs
+Total time  : 119.5 ms
+ns / add    : 71.1 (p99 190)
+ns / cancel : 136.2 (p99 340)
+ns / bbo    : 45.5 (p99 90)
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2525
+
+Checksum: 491457988

@@ -1,0 +1,32 @@
+perf record -g ./bench --impl B
+perf report --stdio --no-children -g none --percent-limit 0.5
+
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 10K of event 'task-clock:upppH'
+# Event count (approx.): 2505250000
+#
+# Overhead  Command  Shared Object         Symbol
+# ........  .......  ....................  .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    35.27%  bench    bench                 [.] VectorOrderBook::cancel_order(unsigned long)
+    24.18%  bench    bench                 [.] VectorOrderBook::add_order(unsigned long, Side, double, long)
+     9.89%  bench    [vdso]                [.] __vdso_clock_gettime
+     6.38%  bench    libstdc++.so.6.0.33   [.] std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+     4.15%  bench    bench                 [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, VectorOrderBook::Order>, std::_Select1st<std::pair<unsigned long const, VectorOrderBook::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, VectorOrderBook::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, VectorOrderBook::Order> >*) [clone .isra.0]
+     3.37%  bench    bench                 [.] Result run_once<VectorOrderBook>(std::vector<Op, std::allocator<Op> > const&)
+     3.36%  bench    libc.so.6             [.] malloc_consolidate
+     2.53%  bench    libc.so.6             [.] unlink_chunk.isra.0
+     1.75%  bench    libstdc++.so.6.0.33   [.] std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+     1.72%  bench    libc.so.6             [.] __memmove_avx_unaligned_erms
+     1.08%  bench    bench                 [.] make_workload(int, int, int, int, unsigned int)
+     0.90%  bench    libc.so.6             [.] _int_free
+     0.74%  bench    libc.so.6             [.] cfree@GLIBC_2.2.5
+     0.61%  bench    libc.so.6             [.] _int_malloc
+     0.57%  bench    libm.so.6             [.] __llround
+     0.51%  bench    libstdc++.so.6.0.33   [.] std::chrono::_V2::steady_clock::now()
+#
+#

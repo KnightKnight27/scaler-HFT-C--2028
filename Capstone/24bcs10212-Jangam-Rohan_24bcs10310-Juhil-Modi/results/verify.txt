@@ -1,0 +1,13 @@
+Running correctness test...
+
+edge cases + band edges: A PASS, B PASS, C PASS
+
+mismatches vs A, checked after every op:
+  normal workload (1000000 ops, 70% add / 20% cancel / 10% bbo): B 0, C 0
+  tight workload  (200000 ops, 45% add / 50% cancel, 10 ticks wide): B 0, C 0
+
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+
+All implementations produce identical results.

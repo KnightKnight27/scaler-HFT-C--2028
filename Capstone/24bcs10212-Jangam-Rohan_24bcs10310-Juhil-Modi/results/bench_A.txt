@@ -1,0 +1,19 @@
+Implementation A (std::map levels + unordered_map orders)
+
+run 1: 371.9 ms
+run 2: 409.6 ms
+run 3: 347.2 ms
+run 4: 341.9 ms
+run 5: 353.1 ms
+
+median of 5 runs
+Total time  : 353.1 ms
+ns / add    : 283.6 (p99 560)
+ns / cancel : 547.2 (p99 1080)
+ns / bbo    : 52.1 (p99 110)
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2525
+
+Checksum: 491457988

@@ -1,0 +1,19 @@
+Implementation B (sorted vector levels + std::map orders)
+
+run 1: 471.1 ms
+run 2: 449.0 ms
+run 3: 403.3 ms
+run 4: 487.8 ms
+run 5: 408.1 ms
+
+median of 5 runs
+Total time  : 449.0 ms
+ns / add    : 246.6 (p99 560)
+ns / cancel : 1175.9 (p99 2360)
+ns / bbo    : 49.1 (p99 100)
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2525
+
+Checksum: 491457988

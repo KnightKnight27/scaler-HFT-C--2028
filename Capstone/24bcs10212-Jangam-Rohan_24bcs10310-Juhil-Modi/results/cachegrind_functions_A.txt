@@ -1,0 +1,60 @@
+--------------------------------------------------------------------------------
+-- Metadata
+--------------------------------------------------------------------------------
+Invocation:       /usr/bin/cg_annotate --show=Ir,D1mr,DLmr,Bc,Bcm --sort=D1mr /tmp/cg_A.out
+I1 cache:         32768 B, 64 B, 8-way associative
+D1 cache:         49152 B, 64 B, 12-way associative
+LL cache:         18874368 B, 64 B, 18-way associative
+Command:          ./bench --impl A --runs 1
+Events recorded:  Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw Bc Bcm Bi Bim
+Events shown:     Ir D1mr DLmr Bc Bcm
+Event sort order: D1mr
+Threshold:        0.1%
+Annotation:       on
+
+--------------------------------------------------------------------------------
+-- Summary
+--------------------------------------------------------------------------------
+Ir__________________ D1mr_______________ DLmr______________ Bc__________________ Bcm_______________
+
+946,426,127 (100.0%) 13,583,676 (100.0%) 2,032,240 (100.0%) 124,782,906 (100.0%) 9,582,909 (100.0%)  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+-- File:function summary
+--------------------------------------------------------------------------------
+  Ir________________________ D1mr____________________ DLmr__________________ Bc_______________________ Bcm_____________________  file:function
+
+<  91,407,242  (9.7%,  9.7%) 7,260,142 (53.4%, 53.4%)   7,873  (0.4%,  0.4%) 23,828,998 (19.1%, 19.1%) 6,559,184 (68.4%, 68.4%)  /usr/include/c++/13/bits/stl_tree.h:
+   70,213,443  (7.4%)        5,646,118 (41.6%)          6,161  (0.3%)        18,317,499 (14.7%)        5,099,096 (53.2%)           Result run_once<MapOrderBook>(std::vector<Op, std::allocator<Op> > const&)
+   20,431,556  (2.2%)        1,604,057 (11.8%)          1,710  (0.1%)         5,407,892  (4.3%)        1,449,578 (15.1%)           MapOrderBook::cancel_order(unsigned long)
+
+< 226,759,379 (24.0%, 33.6%) 1,779,498 (13.1%, 66.5%) 335,405 (16.5%, 16.9%) 34,688,178 (27.8%, 46.9%)   594,480  (6.2%, 74.7%)  ./malloc/./malloc/malloc.c:
+   29,741,022  (3.1%)          905,600  (6.7%)        204,719 (10.1%)         3,876,612  (3.1%)          301,133  (3.1%)           malloc_consolidate
+   11,004,651  (1.2%)          496,967  (3.7%)             84  (0.0%)         2,134,608  (1.7%)           42,930  (0.4%)           unlink_chunk.isra.0
+   54,711,771  (5.8%)          170,709  (1.3%)         83,539  (4.1%)         9,279,104  (7.4%)              115  (0.0%)           _int_free
+   22,802,987  (2.4%)          148,764  (1.1%)         46,956  (2.3%)         2,443,179  (2.0%)               25  (0.0%)           free
+   36,647,464  (3.9%)           56,821  (0.4%)             30  (0.0%)         6,211,955  (5.0%)          249,003  (2.6%)           malloc
+
+<  32,284,835  (3.4%, 37.0%) 1,249,607  (9.2%, 75.7%) 434,073 (21.4%, 38.3%)  1,532,651  (1.2%, 48.1%)     6,878  (0.1%, 74.7%)  /usr/include/c++/13/bits/hashtable_policy.h:
+    3,459,419  (0.4%)          628,872  (4.6%)        222,472 (10.9%)                 0                        0                   std::_Hashtable<unsigned long, std::pair<unsigned long const, MapOrderBook::Order>, std::allocator<std::pair<unsigned long const, MapOrderBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+    2,004,678  (0.2%)          367,764  (2.7%)        161,906  (8.0%)           501,169  (0.4%)                3  (0.0%)           Result run_once<MapOrderBook>(std::vector<Op, std::allocator<Op> > const&)
+    1,395,109  (0.1%)          175,261  (1.3%)         33,407  (1.6%)                 0                        0                   std::_Hashtable<unsigned long, std::pair<unsigned long const, MapOrderBook::Order>, std::allocator<std::pair<unsigned long const, MapOrderBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::erase(std::__detail::_Node_const_iterator<std::pair<unsigned long const, MapOrderBook::Order>, false, false>)
+   24,192,593  (2.6%)           71,722  (0.5%)         16,219  (0.8%)           825,976  (0.7%)                3  (0.0%)           std::__detail::_Map_base<unsigned long, std::pair<unsigned long const, MapOrderBook::Order>, std::allocator<std::pair<unsigned long const, MapOrderBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](unsigned long const&)
+
+<  51,580,794  (5.5%, 42.5%)   952,289  (7.0%, 82.8%) 406,252 (20.0%, 58.2%)  6,723,540  (5.4%, 53.5%) 1,346,554 (14.1%, 88.8%)  /home/lostdecimal/orderbook/bench.cpp:
+   31,982,541  (3.4%)          756,874  (5.6%)        362,565 (17.8%)         3,524,212  (2.8%)          515,077  (5.4%)           Result run_once<MapOrderBook>(std::vector<Op, std::allocator<Op> > const&)
+   19,597,990  (2.1%)          195,412  (1.4%)         43,684  (2.1%)         3,199,305  (2.6%)          831,463  (8.7%)           make_workload(int, int, int, int, unsigned int)
+
+<  42,413,012  (4.5%, 47.0%)   763,771  (5.6%, 88.4%) 133,006  (6.5%, 64.8%)  6,404,436  (5.1%, 58.6%)   252,947  (2.6%, 91.4%)  /usr/include/c++/13/bits/hashtable.h:
+    2,036,451  (0.2%)          396,866  (2.9%)         67,118  (3.3%)           411,012  (0.3%)                4  (0.0%)           MapOrderBook::cancel_order(unsigned long)
+    9,686,656  (1.0%)          197,654  (1.5%)         11,011  (0.5%)         2,075,661  (1.7%)               29  (0.0%)           std::_Hashtable<unsigned long, std::pair<unsigned long const, MapOrderBook::Order>, std::allocator<std::pair<unsigned long const, MapOrderBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+   22,791,693  (2.4%)          169,247  (1.2%)         54,874  (2.7%)         2,927,397  (2.3%)          245,993  (2.6%)           std::__detail::_Map_base<unsigned long, std::pair<unsigned long const, MapOrderBook::Order>, std::allocator<std::pair<unsigned long const, MapOrderBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](unsigned long const&)
+
+<   7,772,072  (0.8%, 47.8%)   729,508  (5.4%, 93.8%) 386,975 (19.0%, 83.8%)  2,685,336  (2.2%, 60.8%)    49,594  (0.5%, 91.9%)  ./string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:
+    7,771,253  (0.8%)          729,506  (5.4%)        386,974 (19.0%)         2,685,175  (2.2%)           49,520  (0.5%)           __memcpy_avx_unaligned_erms
+
+<   5,503,303  (0.6%, 48.4%)   291,817  (2.1%, 95.9%) 262,844 (12.9%, 96.8%)          0  (0.0%, 60.8%)         0  (0.0%, 91.9%)  /home/lostdecimal/orderbook/common.hpp:
+    3,401,890  (0.4%)          291,799  (2.1%)        262,841 (12.9%)                 0                        0                   Result run_once<MapOrderBook>(std::vector<Op, std::allocator<Op> > const&)
+
+<  88,169,569  (9.3%, 57.7%)   253,644  (1.9%, 97.8%)     180  (0.0%, 96.8%)  5,450,380  (4.4%, 65.2%)   208,900  (2.2%, 94.1%)  ???:
+    6,096,279  (0.6%)          121,297  (0.9%)              9  (0.0%)         1,428,771  (1.1%)          116,745  (1.2%)           std::_Rb_tree_decrement(std::_Rb_tree_node_base const*)
