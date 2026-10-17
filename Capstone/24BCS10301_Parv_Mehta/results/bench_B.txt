@@ -1,0 +1,25 @@
+=== Implementation B: price heap (lazy delete) + hashed levels, orders inside levels ===
+workload: 1000000 ops, seed 42  (adds 700829, cancels 199496, bbo queries 99675, depth(10) queries 10000), live orders at end 501333
+timer overhead: 24.5 ns per steady_clock pair (included in the per-op numbers below)
+
+  run   total(ms)    ns/add  ns/cancel    ns/bbo  ns/depth10
+    1       70.46      48.7      141.4      13.6      1208.3
+    2       69.39      40.9      113.9      13.2      1164.7
+    3       63.05      39.7      118.0      12.8      1131.3
+    4       65.27      41.1      119.8      12.9      1140.1
+    5       65.48      40.7      116.0      12.8      1147.4
+median      65.48      40.9      118.0      12.9      1147.4
+
+latency percentiles in ns (run 2):
+               p50      p90      p99    p99.9      max
+  add           41       42      208      333  3341625
+  cancel        84      209      333      417    19708
+  bbo            0       42       42       42     7666
+  depth10     1125     1291     1583     2625    18542
+
+Final BBO:
+  Bid: 99.99 x 1608
+  Ask: 100.01 x 2971
+Checksum: 12959556190523934793
+
+CSV,B,1000000,42,65.481,40.9,118.0,12.9,1147.4,41,208,333,84,333,417,0,42,42,12959556190523934793

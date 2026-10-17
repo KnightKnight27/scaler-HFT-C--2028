@@ -1,0 +1,25 @@
+=== Implementation C: flat arrays + two-level bitmap + open-addressing hash ===
+workload: 1000000 ops, seed 42  (adds 700829, cancels 199496, bbo queries 99675, depth(10) queries 10000), live orders at end 501333
+timer overhead: 24.7 ns per steady_clock pair (included in the per-op numbers below)
+
+  run   total(ms)    ns/add  ns/cancel    ns/bbo  ns/depth10
+    1       11.64      39.6       35.8      15.0       282.1
+    2       11.86      17.8       14.4      12.6       179.4
+    3       10.39      14.3       13.0      12.4       179.2
+    4       10.53      14.2       12.7      12.2       197.2
+    5       10.23      15.2       13.7      12.7       194.1
+median      10.53      15.2       13.7      12.6       194.1
+
+latency percentiles in ns (run 5):
+               p50      p90      p99    p99.9      max
+  add            0       42       42       84    17625
+  cancel         0       42       42       83    16875
+  bbo            0       42       42       42       84
+  depth10      167      250      292      416     6625
+
+Final BBO:
+  Bid: 99.99 x 1608
+  Ask: 100.01 x 2971
+Checksum: 12959556190523934793
+
+CSV,C,1000000,42,10.528,15.2,13.7,12.6,194.1,0,42,84,0,42,83,0,42,42,12959556190523934793

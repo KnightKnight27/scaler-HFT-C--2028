@@ -1,0 +1,46 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 4K of event 'cpu-clock'
+# Event count (approx.): 485500000
+#
+# Overhead  Command  Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                         
+# ........  .......  .....................  ...............................................................................................................................................................................................................................................................................................................................................................................................
+#
+    10.59%  bench    bench                  [.] HeapBook::remove_impl<HeapBook::SideBook<std::less<int> > >
+    10.26%  bench    libc.so.6              [.] _int_free
+     9.66%  bench    bench                  [.] HeapBook::remove_impl<HeapBook::SideBook<std::greater<int> > >
+     9.15%  bench    bench                  [.] HeapBook::cancel_order
+     7.46%  bench    bench                  [.] HeapBook::add_order
+     7.19%  bench    bench                  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, int>, std::allocator<std::pair<unsigned long const, int> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash
+     6.55%  bench    libc.so.6              [.] __memcpy_generic
+     5.42%  bench    libc.so.6              [.] malloc_consolidate
+     5.01%  bench    libc.so.6              [.] _int_malloc
+     3.95%  bench    bench                  [.] main
+     2.41%  bench    libc.so.6              [.] malloc
+     1.87%  bench    libc.so.6              [.] cfree@GLIBC_2.17
+     1.83%  bench    bench                  [.] std::__detail::_Map_base<int, std::pair<int const, HeapBook::LevelInfo>, std::allocator<std::pair<int const, HeapBook::LevelInfo> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[]
+     1.71%  bench    bench                  [.] HeapBook::add_impl<HeapBook::SideBook<std::greater<int> > >
+     1.61%  bench    bench                  [.] generate_workload
+     1.59%  bench    libc.so.6              [.] unlink_chunk.constprop.0
+     1.44%  bench    bench                  [.] HeapBook::add_impl<HeapBook::SideBook<std::less<int> > >
+     1.24%  bench    bench                  [.] std::__adjust_heap<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, long, int, __gnu_cxx::__ops::_Iter_comp_iter<std::less<int> > >
+     0.89%  bench    bench                  [.] std::__adjust_heap<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, long, int, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> > >
+     0.70%  bench    bench                  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+     0.66%  bench    libstdc++.so.6.0.30    [.] operator new
+     0.62%  bench    libm.so.6              [.] __lround
+     0.56%  bench    libstdc++.so.6.0.30    [.] malloc@plt
+     0.47%  bench    bench                  [.] lround@plt
+     0.43%  bench    libstdc++.so.6.0.30    [.] operator delete@plt
+     0.39%  bench    [kernel.kallsyms]      [k] el0_da
+     0.35%  bench    bench                  [.] operator delete@plt
+     0.35%  bench    bench                  [.] std::_Hashtable<int, std::pair<int const, HeapBook::LevelInfo>, std::allocator<std::pair<int const, HeapBook::LevelInfo> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find
+     0.35%  bench    bench                  [.] std::_Hashtable<int, std::pair<int const, HeapBook::LevelInfo>, std::allocator<std::pair<int const, HeapBook::LevelInfo> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find
+     0.35%  bench    bench                  [.] std::__detail::_Prime_rehash_policy::_M_need_rehash@plt
+
+
+#
+# (Tip: To see callchains in a more compact form: perf report -g folded)
+#

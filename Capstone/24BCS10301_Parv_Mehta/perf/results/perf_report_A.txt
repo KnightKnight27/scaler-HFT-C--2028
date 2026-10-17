@@ -1,0 +1,36 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 5K of event 'cpu-clock'
+# Event count (approx.): 546000000
+#
+# Overhead  Command  Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                               
+# ........  .......  .....................  .....................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    19.82%  bench    bench                  [.] MapBook::add_to_level<std::map<int, MapBook::LevelInfo, std::greater<int>, std::allocator<std::pair<int const, MapBook::LevelInfo> > > >
+    19.80%  bench    bench                  [.] MapBook::add_to_level<std::map<int, MapBook::LevelInfo, std::less<int>, std::allocator<std::pair<int const, MapBook::LevelInfo> > > >
+     9.65%  bench    bench                  [.] MapBook::remove_from_level<std::map<int, MapBook::LevelInfo, std::greater<int>, std::allocator<std::pair<int const, MapBook::LevelInfo> > > >
+     8.50%  bench    bench                  [.] MapBook::remove_from_level<std::map<int, MapBook::LevelInfo, std::less<int>, std::allocator<std::pair<int const, MapBook::LevelInfo> > > >
+     7.29%  bench    bench                  [.] MapBook::cancel_order
+     5.38%  bench    libc.so.6              [.] _int_free
+     5.00%  bench    bench                  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, MapBook::Order>, std::allocator<std::pair<unsigned long const, MapBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash
+     4.40%  bench    libc.so.6              [.] malloc_consolidate
+     3.66%  bench    bench                  [.] MapBook::add_order
+     2.20%  bench    bench                  [.] (anonymous namespace)::run_bench<MapBook>
+     1.59%  bench    bench                  [.] generate_workload
+     1.50%  bench    libc.so.6              [.] malloc
+     1.37%  bench    libc.so.6              [.] _int_malloc
+     1.25%  bench    libc.so.6              [.] cfree@GLIBC_2.17
+     1.21%  bench    libc.so.6              [.] unlink_chunk.constprop.0
+     0.57%  bench    bench                  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+     0.51%  bench    libm.so.6              [.] __lround
+     0.35%  bench    [kernel.kallsyms]      [k] el0_da
+     0.33%  bench    libstdc++.so.6.0.30    [.] malloc@plt
+     0.33%  bench    libstdc++.so.6.0.30    [.] operator delete@plt
+
+
+#
+# (Tip: To change sampling frequency to 100 Hz: perf record -F 100)
+#

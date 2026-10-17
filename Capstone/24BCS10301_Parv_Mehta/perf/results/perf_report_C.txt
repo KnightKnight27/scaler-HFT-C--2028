@@ -1,0 +1,52 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 954  of event 'cpu-clock'
+# Event count (approx.): 95400000
+#
+# Overhead  Command  Shared Object          Symbol                                                                                                                                                                             
+# ........  .......  .....................  ...................................................................................................................................................................................
+#
+    16.77%  bench    bench                  [.] (anonymous namespace)::run_workload<ArrayBook, false>
+    15.51%  bench    bench                  [.] ArrayBook::add_order
+    11.74%  bench    bench                  [.] ArrayBook::cancel_order
+     8.07%  bench    bench                  [.] generate_workload
+     7.44%  bench    bench                  [.] ArrayBook::OrderTable::insert
+     3.56%  bench    bench                  [.] ArrayBook::OrderTable::erase
+     2.83%  bench    bench                  [.] ArrayBook::SideLevels::add
+     2.83%  bench    bench                  [.] lround@plt
+     2.52%  bench    bench                  [.] std::vector<ArrayBook::OrderTable::Slot, std::allocator<ArrayBook::OrderTable::Slot> >::_M_fill_assign
+     2.31%  bench    bench                  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+     1.89%  bench    bench                  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand
+     1.68%  bench    bench                  [.] std::vector<Level, std::allocator<Level> >::_M_realloc_insert<Level>
+     1.57%  bench    [kernel.kallsyms]      [k] folio_batch_move_lru
+     1.47%  bench    [kernel.kallsyms]      [k] el0_da
+     1.36%  bench    bench                  [.] ArrayBook::SideLevels::remove
+     1.15%  bench    bench                  [.] ArrayBook::get_bids
+     1.15%  bench    libc.so.6              [.] _int_free
+     1.15%  bench    libm.so.6              [.] __lround
+     1.05%  bench    [kernel.kallsyms]      [k] memcg1_commit_charge
+     1.05%  bench    [kernel.kallsyms]      [k] percpu_counter_add_batch
+     0.84%  bench    bench                  [.] ArrayBook::SideLevels::highest_below
+     0.84%  bench    bench                  [.] ArrayBook::get_bbo
+     0.73%  bench    bench                  [.] (anonymous namespace)::fold_levels
+     0.73%  bench    bench                  [.] ArrayBook::get_asks
+     0.73%  bench    libc.so.6              [.] cfree@GLIBC_2.17
+     0.63%  bench    libc.so.6              [.] malloc
+     0.52%  bench    [kernel.kallsyms]      [k] folios_put_refs
+     0.52%  bench    [kernel.kallsyms]      [k] unmap_page_range
+     0.52%  bench    libc.so.6              [.] __memmove_generic
+     0.42%  bench    [kernel.kallsyms]      [k] mod_node_state
+     0.42%  bench    bench                  [.] (anonymous namespace)::fold_bbo
+     0.42%  bench    libstdc++.so.6.0.30    [.] malloc@plt
+     0.31%  bench    [kernel.kallsyms]      [k] mod_memcg_lruvec_state
+     0.31%  bench    bench                  [.] operator new@plt
+     0.31%  bench    libc.so.6              [.] __memcpy_generic
+     0.31%  bench    libstdc++.so.6.0.30    [.] free@plt
+
+
+#
+# (Tip: To show context switches in perf report sample context add --switch-events to perf record.)
+#

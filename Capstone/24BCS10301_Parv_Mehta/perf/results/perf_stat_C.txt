@@ -1,0 +1,75 @@
+=== Implementation C: flat arrays + two-level bitmap + open-addressing hash ===
+workload: 1000000 ops, seed 42  (adds 700829, cancels 199496, bbo queries 99675, depth(10) queries 10000), live orders at end 501333
+
+  run   total(ms)    ns/add  ns/cancel    ns/bbo  ns/depth10
+    1       16.07         -          -         -           -
+median      16.07   (62.2 M ops/s, loop timed as a whole, no per-op timers)
+
+Final BBO:
+  Bid: 99.99 x 1608
+  Ask: 100.01 x 2971
+Checksum: 12959556190523934793
+
+=== Implementation C: flat arrays + two-level bitmap + open-addressing hash ===
+workload: 1000000 ops, seed 42  (adds 700829, cancels 199496, bbo queries 99675, depth(10) queries 10000), live orders at end 501333
+
+  run   total(ms)    ns/add  ns/cancel    ns/bbo  ns/depth10
+    1       15.86         -          -         -           -
+median      15.86   (63.0 M ops/s, loop timed as a whole, no per-op timers)
+
+Final BBO:
+  Bid: 99.99 x 1608
+  Ask: 100.01 x 2971
+Checksum: 12959556190523934793
+
+=== Implementation C: flat arrays + two-level bitmap + open-addressing hash ===
+workload: 1000000 ops, seed 42  (adds 700829, cancels 199496, bbo queries 99675, depth(10) queries 10000), live orders at end 501333
+
+  run   total(ms)    ns/add  ns/cancel    ns/bbo  ns/depth10
+    1       14.34         -          -         -           -
+median      14.34   (69.7 M ops/s, loop timed as a whole, no per-op timers)
+
+Final BBO:
+  Bid: 99.99 x 1608
+  Ask: 100.01 x 2971
+Checksum: 12959556190523934793
+
+=== Implementation C: flat arrays + two-level bitmap + open-addressing hash ===
+workload: 1000000 ops, seed 42  (adds 700829, cancels 199496, bbo queries 99675, depth(10) queries 10000), live orders at end 501333
+
+  run   total(ms)    ns/add  ns/cancel    ns/bbo  ns/depth10
+    1       16.00         -          -         -           -
+median      16.00   (62.5 M ops/s, loop timed as a whole, no per-op timers)
+
+Final BBO:
+  Bid: 99.99 x 1608
+  Ask: 100.01 x 2971
+Checksum: 12959556190523934793
+
+=== Implementation C: flat arrays + two-level bitmap + open-addressing hash ===
+workload: 1000000 ops, seed 42  (adds 700829, cancels 199496, bbo queries 99675, depth(10) queries 10000), live orders at end 501333
+
+  run   total(ms)    ns/add  ns/cancel    ns/bbo  ns/depth10
+    1       13.51         -          -         -           -
+median      13.51   (74.0 M ops/s, loop timed as a whole, no per-op timers)
+
+Final BBO:
+  Bid: 99.99 x 1608
+  Ask: 100.01 x 2971
+Checksum: 12959556190523934793
+
+
+ Performance counter stats for 'build-linux/bench --impl C --timing total --ops 1000000' (5 runs):
+
+             35.07 msec task-clock                       #    0.958 CPUs utilized            ( +-  1.51% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      cache-misses                                                
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      dTLB-load-misses                                            
+             11013      page-faults                      #  305.665 K/sec                    ( +-  1.14% )
+
+          0.036603 +- 0.000571 seconds time elapsed  ( +-  1.56% )
+

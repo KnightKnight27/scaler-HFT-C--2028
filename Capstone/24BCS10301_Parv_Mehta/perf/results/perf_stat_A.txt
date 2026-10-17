@@ -1,0 +1,75 @@
+=== Implementation A: std::map levels + std::unordered_map orders ===
+workload: 1000000 ops, seed 42  (adds 700829, cancels 199496, bbo queries 99675, depth(10) queries 10000), live orders at end 501333
+
+  run   total(ms)    ns/add  ns/cancel    ns/bbo  ns/depth10
+    1       91.92         -          -         -           -
+median      91.92   (10.9 M ops/s, loop timed as a whole, no per-op timers)
+
+Final BBO:
+  Bid: 99.99 x 1608
+  Ask: 100.01 x 2971
+Checksum: 12959556190523934793
+
+=== Implementation A: std::map levels + std::unordered_map orders ===
+workload: 1000000 ops, seed 42  (adds 700829, cancels 199496, bbo queries 99675, depth(10) queries 10000), live orders at end 501333
+
+  run   total(ms)    ns/add  ns/cancel    ns/bbo  ns/depth10
+    1       96.34         -          -         -           -
+median      96.34   (10.4 M ops/s, loop timed as a whole, no per-op timers)
+
+Final BBO:
+  Bid: 99.99 x 1608
+  Ask: 100.01 x 2971
+Checksum: 12959556190523934793
+
+=== Implementation A: std::map levels + std::unordered_map orders ===
+workload: 1000000 ops, seed 42  (adds 700829, cancels 199496, bbo queries 99675, depth(10) queries 10000), live orders at end 501333
+
+  run   total(ms)    ns/add  ns/cancel    ns/bbo  ns/depth10
+    1      103.60         -          -         -           -
+median     103.60   (9.7 M ops/s, loop timed as a whole, no per-op timers)
+
+Final BBO:
+  Bid: 99.99 x 1608
+  Ask: 100.01 x 2971
+Checksum: 12959556190523934793
+
+=== Implementation A: std::map levels + std::unordered_map orders ===
+workload: 1000000 ops, seed 42  (adds 700829, cancels 199496, bbo queries 99675, depth(10) queries 10000), live orders at end 501333
+
+  run   total(ms)    ns/add  ns/cancel    ns/bbo  ns/depth10
+    1      100.71         -          -         -           -
+median     100.71   (9.9 M ops/s, loop timed as a whole, no per-op timers)
+
+Final BBO:
+  Bid: 99.99 x 1608
+  Ask: 100.01 x 2971
+Checksum: 12959556190523934793
+
+=== Implementation A: std::map levels + std::unordered_map orders ===
+workload: 1000000 ops, seed 42  (adds 700829, cancels 199496, bbo queries 99675, depth(10) queries 10000), live orders at end 501333
+
+  run   total(ms)    ns/add  ns/cancel    ns/bbo  ns/depth10
+    1       94.57         -          -         -           -
+median      94.57   (10.6 M ops/s, loop timed as a whole, no per-op timers)
+
+Final BBO:
+  Bid: 99.99 x 1608
+  Ask: 100.01 x 2971
+Checksum: 12959556190523934793
+
+
+ Performance counter stats for 'build-linux/bench --impl A --timing total --ops 1000000' (5 runs):
+
+            118.38 msec task-clock                       #    0.955 CPUs utilized            ( +-  2.05% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      cache-misses                                                
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      dTLB-load-misses                                            
+             13791      page-faults                      #  112.741 K/sec                    ( +-  1.17% )
+
+           0.12391 +- 0.00246 seconds time elapsed  ( +-  1.98% )
+

@@ -1,0 +1,20 @@
+Running correctness test...
+
+Edge cases (empty book, unknown cancel, double cancel, insufficient depth):
+  Implementation A: ok
+  Implementation B: ok
+  Implementation C: ok
+
+Random workload: 1000000 ops, seed 42 (adds 700829, cancels 199496, bbo 99675)
+  BBO compared after every op, depth(10) every 100 ops,
+  full book compared against a brute-force reference every 10000 ops and at the end.
+
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+
+All implementations produce identical results.
+Checksum (A = B = C): 12959556190523934793
+Final BBO:
+  Bid: 99.99 x 1608
+  Ask: 100.01 x 2971

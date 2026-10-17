@@ -1,0 +1,12 @@
+/bench
+/tests
+/build/
+/build-linux/
+*.o
+*.data
+*.data.old
+cachegrind.out.*
+.DS_Store
+*.dSYM/
+perf/results/*.out
+perf/results/perf_record_*.log
