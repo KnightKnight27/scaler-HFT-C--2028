@@ -1,0 +1,2 @@
+PASS help and 10 invalid argument cases
+PASS A/B/C instrumented+bulk, warmup, live cancels, depth count, checksum agreement

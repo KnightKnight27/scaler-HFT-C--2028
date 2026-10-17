@@ -1,0 +1,79 @@
+{
+  "values": {
+    "A": {
+      "total_ms": 752.665,
+      "ns_add": 647.651,
+      "ns_cancel": 900.632,
+      "ns_bbo": 119.974,
+      "IPC": 1.1955531580924867,
+      "branch_misses_pct": 4.098328098411152,
+      "L1-dcache-load-misses": 12925929.0,
+      "cache-misses": 7250501.0,
+      "page-faults": 8429.0
+    },
+    "B": {
+      "total_ms": 959.002,
+      "ns_add": 682.224,
+      "ns_cancel": 1814.171,
+      "ns_bbo": 110.162,
+      "IPC": 1.298168994356612,
+      "branch_misses_pct": 3.7155940927532725,
+      "L1-dcache-load-misses": 19726253.0,
+      "cache-misses": 10701205.0,
+      "page-faults": 11535.0
+    },
+    "C": {
+      "total_ms": 374.992,
+      "ns_add": 199.407,
+      "ns_cancel": 579.639,
+      "ns_bbo": 106.469,
+      "IPC": 1.845269678910703,
+      "branch_misses_pct": 1.0065686155390086,
+      "L1-dcache-load-misses": 4226036.0,
+      "cache-misses": 5485506.0,
+      "page-faults": 6615.0
+    }
+  },
+  "counter_sources": {
+    "cycles": "full",
+    "instructions": "full",
+    "branches": "full",
+    "branch-misses": "full",
+    "L1-dcache-load-misses": "full",
+    "cache-misses": "full",
+    "dTLB-load-misses": "full",
+    "page-faults": "full"
+  },
+  "raw_counter_means": {
+    "A": {
+      "cycles": 964666001.0,
+      "instructions": 1153309484.0,
+      "branches": 209214826.0,
+      "branch-misses": 8574310.0,
+      "L1-dcache-load-misses": 12925929.0,
+      "cache-misses": 7250501.0,
+      "dTLB-load-misses": 699087.0,
+      "page-faults": 8429.0
+    },
+    "B": {
+      "cycles": 1175949789.0,
+      "instructions": 1526581555.0,
+      "branches": 308335860.0,
+      "branch-misses": 11456509.0,
+      "L1-dcache-load-misses": 19726253.0,
+      "cache-misses": 10701205.0,
+      "dTLB-load-misses": 1166898.0,
+      "page-faults": 11535.0
+    },
+    "C": {
+      "cycles": 582359368.0,
+      "instructions": 1074610084.0,
+      "branches": 182630570.0,
+      "branch-misses": 1838302.0,
+      "L1-dcache-load-misses": 4226036.0,
+      "cache-misses": 5485506.0,
+      "dTLB-load-misses": 367913.0,
+      "page-faults": 6615.0
+    }
+  }
+}

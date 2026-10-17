@@ -1,0 +1,15 @@
+Final BBO (cents): bid=1:9999x2338 ask=1:10001x2909
+impl,mode,seed,ops,adds,cancels,bbo_queries,buy_adds,depth_calls,empty_fallbacks,trace_hash,successful_cancels,checksum,total_ms,ns_add,ns_cancel,ns_bbo
+C,instrumented,42,1000000,699318,200311,100371,350376,20000,0,14416990210762577260,200311,11460434319816070843,409.394,238.397,588.134,111.455
+Final BBO (cents): bid=1:9999x2338 ask=1:10001x2909
+impl,mode,seed,ops,adds,cancels,bbo_queries,buy_adds,depth_calls,empty_fallbacks,trace_hash,successful_cancels,checksum,total_ms,ns_add,ns_cancel,ns_bbo
+C,instrumented,42,1000000,699318,200311,100371,350376,20000,0,14416990210762577260,200311,11460434319816070843,438.482,250.306,642.841,126.387
+Final BBO (cents): bid=1:9999x2338 ask=1:10001x2909
+impl,mode,seed,ops,adds,cancels,bbo_queries,buy_adds,depth_calls,empty_fallbacks,trace_hash,successful_cancels,checksum,total_ms,ns_add,ns_cancel,ns_bbo
+C,instrumented,42,1000000,699318,200311,100371,350376,20000,0,14416990210762577260,200311,11460434319816070843,393.015,224.482,577.293,106.368
+Final BBO (cents): bid=1:9999x2338 ask=1:10001x2909
+impl,mode,seed,ops,adds,cancels,bbo_queries,buy_adds,depth_calls,empty_fallbacks,trace_hash,successful_cancels,checksum,total_ms,ns_add,ns_cancel,ns_bbo
+C,instrumented,42,1000000,699318,200311,100371,350376,20000,0,14416990210762577260,200311,11460434319816070843,376.678,215.925,556.189,100.208
+Final BBO (cents): bid=1:9999x2338 ask=1:10001x2909
+impl,mode,seed,ops,adds,cancels,bbo_queries,buy_adds,depth_calls,empty_fallbacks,trace_hash,successful_cancels,checksum,total_ms,ns_add,ns_cancel,ns_bbo
+C,instrumented,42,1000000,699318,200311,100371,350376,20000,0,14416990210762577260,200311,11460434319816070843,406.324,238.987,588.488,108.994

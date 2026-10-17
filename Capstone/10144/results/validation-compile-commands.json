@@ -1,0 +1,44 @@
+{
+  "build": [
+    {
+      "directory": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build",
+      "command": "/usr/bin/c++  -I/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/include -I/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src -O2 -DNDEBUG -std=c++17 -Wall -Wextra -Wpedantic -g -fno-omit-frame-pointer -o CMakeFiles/bench.dir/src/main.cpp.o -c /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src/main.cpp",
+      "file": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src/main.cpp",
+      "output": "CMakeFiles/bench.dir/src/main.cpp.o"
+    },
+    {
+      "directory": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build",
+      "command": "/usr/bin/c++  -I/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/include -I/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src -O2 -DNDEBUG -std=c++17 -Wall -Wextra -Wpedantic -g -fno-omit-frame-pointer -o CMakeFiles/bench.dir/src/verify.cpp.o -c /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src/verify.cpp",
+      "file": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src/verify.cpp",
+      "output": "CMakeFiles/bench.dir/src/verify.cpp.o"
+    }
+  ],
+  "build-debug": [
+    {
+      "directory": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build-debug",
+      "command": "/usr/bin/c++  -I/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/include -I/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src -O0 -g -std=c++17 -Wall -Wextra -Wpedantic -g -fno-omit-frame-pointer -o CMakeFiles/bench.dir/src/main.cpp.o -c /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src/main.cpp",
+      "file": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src/main.cpp",
+      "output": "CMakeFiles/bench.dir/src/main.cpp.o"
+    },
+    {
+      "directory": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build-debug",
+      "command": "/usr/bin/c++  -I/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/include -I/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src -O0 -g -std=c++17 -Wall -Wextra -Wpedantic -g -fno-omit-frame-pointer -o CMakeFiles/bench.dir/src/verify.cpp.o -c /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src/verify.cpp",
+      "file": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src/verify.cpp",
+      "output": "CMakeFiles/bench.dir/src/verify.cpp.o"
+    }
+  ],
+  "build-san": [
+    {
+      "directory": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build-san",
+      "command": "/usr/bin/c++  -I/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/include -I/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src -O2 -DNDEBUG -std=c++17 -Wall -Wextra -Wpedantic -g -fno-omit-frame-pointer -fsanitize=address,undefined -o CMakeFiles/bench.dir/src/main.cpp.o -c /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src/main.cpp",
+      "file": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src/main.cpp",
+      "output": "CMakeFiles/bench.dir/src/main.cpp.o"
+    },
+    {
+      "directory": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build-san",
+      "command": "/usr/bin/c++  -I/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/include -I/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src -O2 -DNDEBUG -std=c++17 -Wall -Wextra -Wpedantic -g -fno-omit-frame-pointer -fsanitize=address,undefined -o CMakeFiles/bench.dir/src/verify.cpp.o -c /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src/verify.cpp",
+      "file": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src/verify.cpp",
+      "output": "CMakeFiles/bench.dir/src/verify.cpp.o"
+    }
+  ]
+}

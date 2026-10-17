@@ -1,0 +1,14 @@
+PASS results/perf/stat-A-cache.stdout.txt: five single replays, identical trace/checksum, all cancels successful
+PASS results/perf/stat-A-full.stdout.txt: five single replays, identical trace/checksum, all cancels successful
+PASS results/perf/stat-A-hardware.stdout.txt: five single replays, identical trace/checksum, all cancels successful
+PASS results/perf/stat-A-software.stdout.txt: five single replays, identical trace/checksum, all cancels successful
+PASS results/perf/stat-B-cache.stdout.txt: five single replays, identical trace/checksum, all cancels successful
+PASS results/perf/stat-B-full.stdout.txt: five single replays, identical trace/checksum, all cancels successful
+PASS results/perf/stat-B-hardware.stdout.txt: five single replays, identical trace/checksum, all cancels successful
+PASS results/perf/stat-B-software.stdout.txt: five single replays, identical trace/checksum, all cancels successful
+PASS results/perf/stat-C-cache.stdout.txt: five single replays, identical trace/checksum, all cancels successful
+PASS results/perf/stat-C-full.stdout.txt: five single replays, identical trace/checksum, all cancels successful
+PASS results/perf/stat-C-hardware.stdout.txt: five single replays, identical trace/checksum, all cancels successful
+PASS results/perf/stat-C-software.stdout.txt: five single replays, identical trace/checksum, all cancels successful
+PASS all required and supplementary sample reports: zero lost samples
+PASS report: pdfinfo Pages=2; rendered both pages via pdftoppm and visually inspected, no clipped/overlapping text

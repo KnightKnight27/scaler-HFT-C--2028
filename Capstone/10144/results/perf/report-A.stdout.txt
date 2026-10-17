@@ -1,0 +1,1006 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 4K of event 'cpu_core/cycles/Pu'
+# Event count (approx.): 977285921
+#
+# Children      Self  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+# ........  ........  .......  ....................  .......................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    94.91%     0.00%  bench    [unknown]             [.] 0x75572f6478696873
+            |
+            ---0x75572f6478696873
+               0x7ffce70e5188
+               0x7f3107a27d0e
+               main
+               |          
+               |--76.37%--main::{lambda()#1}::operator()() const [clone .isra.0]
+               |          |          
+               |          |--62.75%--(anonymous namespace)::Result (anonymous namespace)::replay<ob::BookA>(ob::Trace const&, bool)
+               |          |          |          
+               |          |          |--37.92%--ob::BookA::add_order(unsigned long, ob::Side, int, long)
+               |          |          |          |          
+               |          |          |          |--26.84%--std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               |          |          |          |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --25.46%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                     |--16.10%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --3.03%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |          
+               |          |          |          |--7.69%--std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               |          |          |          |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               |          |          |          |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               |          |          |          |          |          
+               |          |          |          |          |--4.16%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false>*, unsigned long)
+               |          |          |          |          |          |          
+               |          |          |          |          |           --2.68%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, std::integral_constant<bool, true>) (inlined)
+               |          |          |          |          |                     |          
+               |          |          |          |          |                      --1.09%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&, unsigned long) const (inlined)
+               |          |          |          |          |                                std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --2.29%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+               |          |          |          |                     std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --1.70%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+               |          |          |          |          
+               |          |          |           --1.95%--std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::count(unsigned long const&) const (inlined)
+               |          |          |                     |          
+               |          |          |                      --1.85%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::count(unsigned long const&) const (inlined)
+               |          |          |                                std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) const (inlined)
+               |          |          |                                std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+               |          |          |                                std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+               |          |          |                                |          
+               |          |          |                                 --1.64%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+               |          |          |          
+               |          |          |--15.68%--ob::BookA::cancel_order(unsigned long) (inlined)
+               |          |          |          |          
+               |          |          |          |--7.93%--std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               |          |          |          |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --7.45%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --4.42%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |          
+               |          |          |           --6.96%--std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+               |          |          |                     std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) (inlined)
+               |          |          |                     |          
+               |          |          |                      --6.94%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+               |          |          |                                std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+               |          |          |                                |          
+               |          |          |                                |--4.82%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+               |          |          |                                |          |          
+               |          |          |                                |           --2.43%--bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_equals_tr<unsigned long>(unsigned long const&, unsigned long, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+               |          |          |                                |                     bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_key_equals_tr<unsigned long>(unsigned long const&, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+               |          |          |                                |                     std::equal_to<unsigned long>::operator()(unsigned long const&, unsigned long const&) const (inlined)
+               |          |          |                                |          
+               |          |          |                                 --2.00%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_bucket_index(unsigned long) const (inlined)
+               |          |          |                                           |          
+               |          |          |                                            --1.98%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(unsigned long, unsigned long) const (inlined)
+               |          |          |                                                      std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+               |          |          |          
+               |          |          |--1.76%--ob::consume(unsigned long&, ob::BBO const&) (inlined)
+               |          |          |          |          
+               |          |          |           --1.64%--ob::mix(unsigned long&, unsigned long) (inlined)
+               |          |          |          
+               |          |           --1.38%--ob::consume(unsigned long&, std::vector<ob::Level, std::allocator<ob::Level> > const&) (inlined)
+               |          |                     |          
+               |          |                      --1.31%--ob::mix(unsigned long&, unsigned long) (inlined)
+               |          |          
+               |           --11.03%--clock_gettime
+               |                     |          
+               |                      --10.10%--__vdso_clock_gettime
+               |          
+                --17.53%--ob::generate(unsigned long, unsigned long)
+                          |          
+                          |--12.67%--ob::mix(unsigned long&, unsigned long) (inlined)
+                          |          
+                           --3.03%--ob::bounded(std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>&, unsigned long) (inlined)
+                                     |          
+                                      --2.42%--std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()() (inlined)
+
+    94.91%     0.00%  bench    [unknown]             [.] 0x00007ffce70e5188
+            |
+            ---0x7ffce70e5188
+               0x7f3107a27d0e
+               main
+               |          
+               |--76.37%--main::{lambda()#1}::operator()() const [clone .isra.0]
+               |          |          
+               |          |--62.75%--(anonymous namespace)::Result (anonymous namespace)::replay<ob::BookA>(ob::Trace const&, bool)
+               |          |          |          
+               |          |          |--37.92%--ob::BookA::add_order(unsigned long, ob::Side, int, long)
+               |          |          |          |          
+               |          |          |          |--26.84%--std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               |          |          |          |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --25.46%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                     |--16.10%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --3.03%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |          
+               |          |          |          |--7.69%--std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               |          |          |          |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               |          |          |          |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               |          |          |          |          |          
+               |          |          |          |          |--4.16%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false>*, unsigned long)
+               |          |          |          |          |          |          
+               |          |          |          |          |           --2.68%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, std::integral_constant<bool, true>) (inlined)
+               |          |          |          |          |                     |          
+               |          |          |          |          |                      --1.09%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&, unsigned long) const (inlined)
+               |          |          |          |          |                                std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --2.29%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+               |          |          |          |                     std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --1.70%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+               |          |          |          |          
+               |          |          |           --1.95%--std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::count(unsigned long const&) const (inlined)
+               |          |          |                     |          
+               |          |          |                      --1.85%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::count(unsigned long const&) const (inlined)
+               |          |          |                                std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) const (inlined)
+               |          |          |                                std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+               |          |          |                                std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+               |          |          |                                |          
+               |          |          |                                 --1.64%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+               |          |          |          
+               |          |          |--15.68%--ob::BookA::cancel_order(unsigned long) (inlined)
+               |          |          |          |          
+               |          |          |          |--7.93%--std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               |          |          |          |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --7.45%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --4.42%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |          
+               |          |          |           --6.96%--std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+               |          |          |                     std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) (inlined)
+               |          |          |                     |          
+               |          |          |                      --6.94%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+               |          |          |                                std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+               |          |          |                                |          
+               |          |          |                                |--4.82%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+               |          |          |                                |          |          
+               |          |          |                                |           --2.43%--bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_equals_tr<unsigned long>(unsigned long const&, unsigned long, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+               |          |          |                                |                     bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_key_equals_tr<unsigned long>(unsigned long const&, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+               |          |          |                                |                     std::equal_to<unsigned long>::operator()(unsigned long const&, unsigned long const&) const (inlined)
+               |          |          |                                |          
+               |          |          |                                 --2.00%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_bucket_index(unsigned long) const (inlined)
+               |          |          |                                           |          
+               |          |          |                                            --1.98%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(unsigned long, unsigned long) const (inlined)
+               |          |          |                                                      std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+               |          |          |          
+               |          |          |--1.76%--ob::consume(unsigned long&, ob::BBO const&) (inlined)
+               |          |          |          |          
+               |          |          |           --1.64%--ob::mix(unsigned long&, unsigned long) (inlined)
+               |          |          |          
+               |          |           --1.38%--ob::consume(unsigned long&, std::vector<ob::Level, std::allocator<ob::Level> > const&) (inlined)
+               |          |                     |          
+               |          |                      --1.31%--ob::mix(unsigned long&, unsigned long) (inlined)
+               |          |          
+               |           --11.03%--clock_gettime
+               |                     |          
+               |                      --10.10%--__vdso_clock_gettime
+               |          
+                --17.53%--ob::generate(unsigned long, unsigned long)
+                          |          
+                          |--12.67%--ob::mix(unsigned long&, unsigned long) (inlined)
+                          |          
+                           --3.03%--ob::bounded(std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>&, unsigned long) (inlined)
+                                     |          
+                                      --2.42%--std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()() (inlined)
+
+    94.91%     0.00%  bench    libc.so.6             [.] 0x00007f3107a27d0e
+            |
+            ---0x7f3107a27d0e
+               main
+               |          
+               |--76.37%--main::{lambda()#1}::operator()() const [clone .isra.0]
+               |          |          
+               |          |--62.75%--(anonymous namespace)::Result (anonymous namespace)::replay<ob::BookA>(ob::Trace const&, bool)
+               |          |          |          
+               |          |          |--37.92%--ob::BookA::add_order(unsigned long, ob::Side, int, long)
+               |          |          |          |          
+               |          |          |          |--26.84%--std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               |          |          |          |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --25.46%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                     |--16.10%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --3.03%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |          
+               |          |          |          |--7.69%--std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               |          |          |          |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               |          |          |          |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               |          |          |          |          |          
+               |          |          |          |          |--4.16%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false>*, unsigned long)
+               |          |          |          |          |          |          
+               |          |          |          |          |           --2.68%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, std::integral_constant<bool, true>) (inlined)
+               |          |          |          |          |                     |          
+               |          |          |          |          |                      --1.09%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&, unsigned long) const (inlined)
+               |          |          |          |          |                                std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --2.29%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+               |          |          |          |                     std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --1.70%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+               |          |          |          |          
+               |          |          |           --1.95%--std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::count(unsigned long const&) const (inlined)
+               |          |          |                     |          
+               |          |          |                      --1.85%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::count(unsigned long const&) const (inlined)
+               |          |          |                                std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) const (inlined)
+               |          |          |                                std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+               |          |          |                                std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+               |          |          |                                |          
+               |          |          |                                 --1.64%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+               |          |          |          
+               |          |          |--15.68%--ob::BookA::cancel_order(unsigned long) (inlined)
+               |          |          |          |          
+               |          |          |          |--7.93%--std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               |          |          |          |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --7.45%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --4.42%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |          
+               |          |          |           --6.96%--std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+               |          |          |                     std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) (inlined)
+               |          |          |                     |          
+               |          |          |                      --6.94%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+               |          |          |                                std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+               |          |          |                                |          
+               |          |          |                                |--4.82%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+               |          |          |                                |          |          
+               |          |          |                                |           --2.43%--bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_equals_tr<unsigned long>(unsigned long const&, unsigned long, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+               |          |          |                                |                     bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_key_equals_tr<unsigned long>(unsigned long const&, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+               |          |          |                                |                     std::equal_to<unsigned long>::operator()(unsigned long const&, unsigned long const&) const (inlined)
+               |          |          |                                |          
+               |          |          |                                 --2.00%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_bucket_index(unsigned long) const (inlined)
+               |          |          |                                           |          
+               |          |          |                                            --1.98%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(unsigned long, unsigned long) const (inlined)
+               |          |          |                                                      std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+               |          |          |          
+               |          |          |--1.76%--ob::consume(unsigned long&, ob::BBO const&) (inlined)
+               |          |          |          |          
+               |          |          |           --1.64%--ob::mix(unsigned long&, unsigned long) (inlined)
+               |          |          |          
+               |          |           --1.38%--ob::consume(unsigned long&, std::vector<ob::Level, std::allocator<ob::Level> > const&) (inlined)
+               |          |                     |          
+               |          |                      --1.31%--ob::mix(unsigned long&, unsigned long) (inlined)
+               |          |          
+               |           --11.03%--clock_gettime
+               |                     |          
+               |                      --10.10%--__vdso_clock_gettime
+               |          
+                --17.53%--ob::generate(unsigned long, unsigned long)
+                          |          
+                          |--12.67%--ob::mix(unsigned long&, unsigned long) (inlined)
+                          |          
+                           --3.03%--ob::bounded(std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>&, unsigned long) (inlined)
+                                     |          
+                                      --2.42%--std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()() (inlined)
+
+    94.91%     0.00%  bench    bench                 [.] main
+            |
+            ---main
+               |          
+               |--76.37%--main::{lambda()#1}::operator()() const [clone .isra.0]
+               |          |          
+               |          |--62.75%--(anonymous namespace)::Result (anonymous namespace)::replay<ob::BookA>(ob::Trace const&, bool)
+               |          |          |          
+               |          |          |--37.92%--ob::BookA::add_order(unsigned long, ob::Side, int, long)
+               |          |          |          |          
+               |          |          |          |--26.84%--std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               |          |          |          |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --25.46%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                     |--16.10%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --3.03%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |          
+               |          |          |          |--7.69%--std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               |          |          |          |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               |          |          |          |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               |          |          |          |          |          
+               |          |          |          |          |--4.16%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false>*, unsigned long)
+               |          |          |          |          |          |          
+               |          |          |          |          |           --2.68%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, std::integral_constant<bool, true>) (inlined)
+               |          |          |          |          |                     |          
+               |          |          |          |          |                      --1.09%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&, unsigned long) const (inlined)
+               |          |          |          |          |                                std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --2.29%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+               |          |          |          |                     std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --1.70%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+               |          |          |          |          
+               |          |          |           --1.95%--std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::count(unsigned long const&) const (inlined)
+               |          |          |                     |          
+               |          |          |                      --1.85%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::count(unsigned long const&) const (inlined)
+               |          |          |                                std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) const (inlined)
+               |          |          |                                std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+               |          |          |                                std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+               |          |          |                                |          
+               |          |          |                                 --1.64%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+               |          |          |          
+               |          |          |--15.68%--ob::BookA::cancel_order(unsigned long) (inlined)
+               |          |          |          |          
+               |          |          |          |--7.93%--std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               |          |          |          |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --7.45%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --4.42%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |          
+               |          |          |           --6.96%--std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+               |          |          |                     std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) (inlined)
+               |          |          |                     |          
+               |          |          |                      --6.94%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+               |          |          |                                std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+               |          |          |                                |          
+               |          |          |                                |--4.82%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+               |          |          |                                |          |          
+               |          |          |                                |           --2.43%--bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_equals_tr<unsigned long>(unsigned long const&, unsigned long, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+               |          |          |                                |                     bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_key_equals_tr<unsigned long>(unsigned long const&, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+               |          |          |                                |                     std::equal_to<unsigned long>::operator()(unsigned long const&, unsigned long const&) const (inlined)
+               |          |          |                                |          
+               |          |          |                                 --2.00%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_bucket_index(unsigned long) const (inlined)
+               |          |          |                                           |          
+               |          |          |                                            --1.98%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(unsigned long, unsigned long) const (inlined)
+               |          |          |                                                      std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+               |          |          |          
+               |          |          |--1.76%--ob::consume(unsigned long&, ob::BBO const&) (inlined)
+               |          |          |          |          
+               |          |          |           --1.64%--ob::mix(unsigned long&, unsigned long) (inlined)
+               |          |          |          
+               |          |           --1.38%--ob::consume(unsigned long&, std::vector<ob::Level, std::allocator<ob::Level> > const&) (inlined)
+               |          |                     |          
+               |          |                      --1.31%--ob::mix(unsigned long&, unsigned long) (inlined)
+               |          |          
+               |           --11.03%--clock_gettime
+               |                     |          
+               |                      --10.10%--__vdso_clock_gettime
+               |          
+                --17.53%--ob::generate(unsigned long, unsigned long)
+                          |          
+                          |--12.67%--ob::mix(unsigned long&, unsigned long) (inlined)
+                          |          
+                           --3.03%--ob::bounded(std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>&, unsigned long) (inlined)
+                                     |          
+                                      --2.42%--std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()() (inlined)
+
+    76.37%     0.00%  bench    bench                 [.] main::{lambda()#1}::operator()() const [clone .isra.0]
+            |
+            ---main::{lambda()#1}::operator()() const [clone .isra.0]
+               |          
+               |--60.93%--0x5558c3c12723
+               |          |          
+               |          |--36.83%--0x5558c3c15a4c
+               |          |          |          
+               |          |          |--26.27%--0x5558c3c15a4c
+               |          |          |          0x5558c3c15a4c
+               |          |          |          |          
+               |          |          |           --24.96%--0x5558c3c15a4c
+               |          |          |                     |          
+               |          |          |                     |--15.82%--0x5558c3c15a4c
+               |          |          |                     |          
+               |          |          |                      --2.96%--0x5558c3c15a48
+               |          |          |          
+               |          |          |--7.50%--0x5558c3c15a94
+               |          |          |          0x5558c3c15a94
+               |          |          |          0x5558c3c15a94
+               |          |          |          |          
+               |          |          |          |--4.06%--0x5558c3c15864
+               |          |          |          |          |          
+               |          |          |          |           --2.66%--0x5558c3c15864
+               |          |          |          |                     |          
+               |          |          |          |                      --1.09%--0x5558c3c15859
+               |          |          |          |                                0x5558c3c15859
+               |          |          |          |          
+               |          |          |           --2.20%--0x5558c3c15a94
+               |          |          |                     0x5558c3c15a94
+               |          |          |                     |          
+               |          |          |                      --1.60%--0x5558c3c15a94
+               |          |          |          
+               |          |           --1.90%--0x5558c3c159e9
+               |          |                     |          
+               |          |                      --1.81%--0x5558c3c159e9
+               |          |                                0x5558c3c159e9
+               |          |                                0x5558c3c159e9
+               |          |                                0x5558c3c159e9
+               |          |                                |          
+               |          |                                 --1.60%--0x5558c3c159e9
+               |          |          
+               |          |--15.37%--0x5558c3c12723
+               |          |          |          
+               |          |          |--7.77%--0x5558c3c12723
+               |          |          |          0x5558c3c12723
+               |          |          |          |          
+               |          |          |           --7.31%--0x5558c3c12723
+               |          |          |                     |          
+               |          |          |                      --4.35%--0x5558c3c1272c
+               |          |          |          
+               |          |           --6.87%--0x5558c3c12684
+               |          |                     0x5558c3c12684
+               |          |                     |          
+               |          |                      --6.85%--0x5558c3c12684
+               |          |                                0x5558c3c12684
+               |          |                                |          
+               |          |                                |--4.75%--0x5558c3c12684
+               |          |                                |          |          
+               |          |                                |           --2.41%--0x5558c3c12684
+               |          |                                |                     0x5558c3c12684
+               |          |                                |                     0x5558c3c12684
+               |          |                                |          
+               |          |                                 --1.98%--0x5558c3c12675
+               |          |                                           |          
+               |          |                                            --1.95%--0x5558c3c12675
+               |          |                                                      0x5558c3c12675
+               |          |          
+               |          |--1.67%--0x5558c3c11e00
+               |          |          |          
+               |          |           --1.57%--0x5558c3c11e00
+               |          |          
+               |           --1.31%--0x5558c3c123a0
+               |                     |          
+               |                      --1.24%--0x5558c3c123a0
+               |          
+               |--11.03%--clock_gettime
+               |          |          
+               |           --10.10%--__vdso_clock_gettime
+               |          
+                --1.82%--(anonymous namespace)::Result (anonymous namespace)::replay<ob::BookA>(ob::Trace const&, bool)
+                          |          
+                           --1.09%--ob::BookA::add_order(unsigned long, ob::Side, int, long)
+
+    63.11%    21.53%  bench    bench                 [.] (anonymous namespace)::Result (anonymous namespace)::replay<ob::BookA>(ob::Trace const&, bool)
+            |          
+            |--41.58%--(anonymous namespace)::Result (anonymous namespace)::replay<ob::BookA>(ob::Trace const&, bool)
+            |          |          
+            |          |--36.83%--0x5558c3c15a4c
+            |          |          |          
+            |          |          |--26.27%--0x5558c3c15a4c
+            |          |          |          0x5558c3c15a4c
+            |          |          |          |          
+            |          |          |           --24.96%--0x5558c3c15a4c
+            |          |          |                     |          
+            |          |          |                     |--15.82%--0x5558c3c15a4c
+            |          |          |                     |          
+            |          |          |                      --2.96%--0x5558c3c15a48
+            |          |          |          
+            |          |          |--7.50%--0x5558c3c15a94
+            |          |          |          0x5558c3c15a94
+            |          |          |          0x5558c3c15a94
+            |          |          |          |          
+            |          |          |          |--4.06%--0x5558c3c15864
+            |          |          |          |          |          
+            |          |          |          |           --2.66%--0x5558c3c15864
+            |          |          |          |                     |          
+            |          |          |          |                      --1.09%--0x5558c3c15859
+            |          |          |          |                                0x5558c3c15859
+            |          |          |          |          
+            |          |          |           --2.20%--0x5558c3c15a94
+            |          |          |                     0x5558c3c15a94
+            |          |          |                     |          
+            |          |          |                      --1.60%--0x5558c3c15a94
+            |          |          |          
+            |          |           --1.90%--0x5558c3c159e9
+            |          |                     |          
+            |          |                      --1.81%--0x5558c3c159e9
+            |          |                                0x5558c3c159e9
+            |          |                                0x5558c3c159e9
+            |          |                                0x5558c3c159e9
+            |          |                                |          
+            |          |                                 --1.60%--0x5558c3c159e9
+            |          |          
+            |           --1.09%--ob::BookA::add_order(unsigned long, ob::Side, int, long)
+            |          
+             --21.51%--0x75572f6478696873
+                       0x7ffce70e5188
+                       0x7f3107a27d0e
+                       main
+                       main::{lambda()#1}::operator()() const [clone .isra.0]
+                       |          
+                        --20.63%--0x5558c3c12723
+                                  |          
+                                  |--15.35%--0x5558c3c12723
+                                  |          |          
+                                  |          |--7.77%--0x5558c3c12723
+                                  |          |          0x5558c3c12723
+                                  |          |          |          
+                                  |          |           --7.31%--0x5558c3c12723
+                                  |          |                     |          
+                                  |          |                      --4.35%--0x5558c3c1272c
+                                  |          |          
+                                  |           --6.85%--0x5558c3c12684
+                                  |                     0x5558c3c12684
+                                  |                     |          
+                                  |                      --6.82%--0x5558c3c12684
+                                  |                                0x5558c3c12684
+                                  |                                |          
+                                  |                                |--4.75%--0x5558c3c12684
+                                  |                                |          |          
+                                  |                                |           --2.41%--0x5558c3c12684
+                                  |                                |                     0x5558c3c12684
+                                  |                                |                     0x5558c3c12684
+                                  |                                |          
+                                  |                                 --1.95%--0x5558c3c12675
+                                  |                                           |          
+                                  |                                            --1.93%--0x5558c3c12675
+                                  |                                                      0x5558c3c12675
+                                  |          
+                                  |--1.67%--0x5558c3c11e00
+                                  |          |          
+                                  |           --1.57%--0x5558c3c11e00
+                                  |          
+                                   --1.31%--0x5558c3c123a0
+                                             |          
+                                              --1.24%--0x5558c3c123a0
+
+    38.29%    33.19%  bench    bench                 [.] ob::BookA::add_order(unsigned long, ob::Side, int, long)
+            |          
+            |--33.19%--0x75572f6478696873
+            |          0x7ffce70e5188
+            |          0x7f3107a27d0e
+            |          main
+            |          main::{lambda()#1}::operator()() const [clone .isra.0]
+            |          (anonymous namespace)::Result (anonymous namespace)::replay<ob::BookA>(ob::Trace const&, bool)
+            |          |          
+            |           --32.94%--ob::BookA::add_order(unsigned long, ob::Side, int, long)
+            |                     |          
+            |                     |--26.84%--std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+            |                     |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+            |                     |          |          
+            |                     |           --25.46%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+            |                     |                     |          
+            |                     |                     |--16.10%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+            |                     |                     |          
+            |                     |                      --3.03%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+            |                     |          
+            |                     |--2.73%--std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+            |                     |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+            |                     |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+            |                     |          |          
+            |                     |           --2.29%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+            |                     |                     std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+            |                     |                     |          
+            |                     |                      --1.70%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+            |                     |          
+            |                      --1.95%--std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::count(unsigned long const&) const (inlined)
+            |                                |          
+            |                                 --1.85%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::count(unsigned long const&) const (inlined)
+            |                                           std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) const (inlined)
+            |                                           std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+            |                                           std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+            |                                           |          
+            |                                            --1.64%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+            |          
+             --5.10%--ob::BookA::add_order(unsigned long, ob::Side, int, long)
+                       |          
+                        --4.96%--std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+                                  std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+                                  std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+                                  |          
+                                   --4.16%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false>*, unsigned long)
+                                             |          
+                                              --2.68%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, std::integral_constant<bool, true>) (inlined)
+                                                        |          
+                                                         --1.09%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&, unsigned long) const (inlined)
+                                                                   std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+
+    26.84%     0.00%  bench    bench                 [.] std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+            |
+            ---std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               |          
+                --25.46%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+                          |          
+                          |--16.10%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+                          |          
+                           --3.03%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+
+    26.84%     0.00%  bench    bench                 [.] std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+            |
+            ---std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               |          
+                --25.46%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+                          |          
+                          |--16.10%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+                          |          
+                           --3.03%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+
+    25.68%     0.00%  bench    bench                 [.] std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+            |
+            ---std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+               |          
+               |--16.15%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          
+                --3.13%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+
+    17.53%    17.53%  bench    bench                 [.] ob::generate(unsigned long, unsigned long)
+            |
+            ---0x75572f6478696873
+               0x7ffce70e5188
+               0x7f3107a27d0e
+               main
+               ob::generate(unsigned long, unsigned long)
+               |          
+               |--12.67%--ob::mix(unsigned long&, unsigned long) (inlined)
+               |          
+                --3.03%--ob::bounded(std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>&, unsigned long) (inlined)
+                          |          
+                           --2.42%--std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()() (inlined)
+
+    16.15%     0.00%  bench    bench                 [.] std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+            |
+            ---std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+
+    15.68%     0.00%  bench    bench                 [.] ob::BookA::cancel_order(unsigned long) (inlined)
+            |
+            ---ob::BookA::cancel_order(unsigned long) (inlined)
+               |          
+               |--7.93%--std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               |          |          
+               |           --7.45%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+               |                     |          
+               |                      --4.42%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          
+                --6.96%--std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+                          std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) (inlined)
+                          |          
+                           --6.94%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+                                     std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+                                     |          
+                                     |--4.82%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+                                     |          |          
+                                     |           --2.43%--bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_equals_tr<unsigned long>(unsigned long const&, unsigned long, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+                                     |                     bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_key_equals_tr<unsigned long>(unsigned long const&, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+                                     |                     std::equal_to<unsigned long>::operator()(unsigned long const&, unsigned long const&) const (inlined)
+                                     |          
+                                      --2.00%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_bucket_index(unsigned long) const (inlined)
+                                                |          
+                                                 --1.98%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(unsigned long, unsigned long) const (inlined)
+                                                           std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+
+    12.67%     0.00%  bench    bench                 [.] ob::mix(unsigned long&, unsigned long) (inlined)
+            |
+            ---ob::mix(unsigned long&, unsigned long) (inlined)
+
+    11.38%     0.61%  bench    libc.so.6             [.] clock_gettime
+            |          
+             --10.77%--clock_gettime
+                       |          
+                        --10.10%--__vdso_clock_gettime
+
+    10.65%    10.37%  bench    [vdso]                [.] __vdso_clock_gettime
+            |          
+             --10.34%--0x75572f6478696873
+                       0x7ffce70e5188
+                       0x7f3107a27d0e
+                       main
+                       main::{lambda()#1}::operator()() const [clone .isra.0]
+                       clock_gettime
+                       |          
+                        --10.08%--__vdso_clock_gettime
+
+     7.93%     0.00%  bench    bench                 [.] std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+            |
+            ---std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               |          
+                --7.45%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+                          |          
+                           --4.42%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+
+     7.93%     0.00%  bench    bench                 [.] std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+            |
+            ---std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+               |          
+                --7.45%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+                          |          
+                           --4.42%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+
+     7.69%     0.00%  bench    bench                 [.] std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+            |
+            ---std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               |          
+               |--4.16%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false>*, unsigned long)
+               |          |          
+               |           --2.68%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, std::integral_constant<bool, true>) (inlined)
+               |                     |          
+               |                      --1.09%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&, unsigned long) const (inlined)
+               |                                std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+               |          
+                --2.29%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+                          std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+                          |          
+                           --1.70%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+
+     7.69%     0.00%  bench    bench                 [.] std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+            |
+            ---std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               |          
+               |--4.16%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false>*, unsigned long)
+               |          |          
+               |           --2.68%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, std::integral_constant<bool, true>) (inlined)
+               |                     |          
+               |                      --1.09%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&, unsigned long) const (inlined)
+               |                                std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+               |          
+                --2.29%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+                          std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+                          |          
+                           --1.70%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+
+     7.69%     0.00%  bench    bench                 [.] std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+            |
+            ---std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               |          
+               |--4.16%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false>*, unsigned long)
+               |          |          
+               |           --2.68%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, std::integral_constant<bool, true>) (inlined)
+               |                     |          
+               |                      --1.09%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&, unsigned long) const (inlined)
+               |                                std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+               |          
+                --2.29%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+                          std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+                          |          
+                           --1.70%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+
+     7.45%     0.00%  bench    bench                 [.] std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+            |
+            ---std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+               |          
+                --4.42%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+
+     6.96%     0.00%  bench    bench                 [.] std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+            |
+            ---std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) (inlined)
+               |          
+                --6.94%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+                          std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+                          |          
+                          |--4.82%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+                          |          |          
+                          |           --2.43%--bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_equals_tr<unsigned long>(unsigned long const&, unsigned long, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+                          |                     bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_key_equals_tr<unsigned long>(unsigned long const&, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+                          |                     std::equal_to<unsigned long>::operator()(unsigned long const&, unsigned long const&) const (inlined)
+                          |          
+                           --2.00%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_bucket_index(unsigned long) const (inlined)
+                                     |          
+                                      --1.98%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(unsigned long, unsigned long) const (inlined)
+                                                std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+
+     6.96%     0.00%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) (inlined)
+            |
+            ---std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) (inlined)
+               |          
+                --6.94%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+                          std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+                          |          
+                          |--4.82%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+                          |          |          
+                          |           --2.43%--bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_equals_tr<unsigned long>(unsigned long const&, unsigned long, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+                          |                     bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_key_equals_tr<unsigned long>(unsigned long const&, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+                          |                     std::equal_to<unsigned long>::operator()(unsigned long const&, unsigned long const&) const (inlined)
+                          |          
+                           --2.00%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_bucket_index(unsigned long) const (inlined)
+                                     |          
+                                      --1.98%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(unsigned long, unsigned long) const (inlined)
+                                                std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+
+     6.94%     0.00%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+            |
+            ---std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+               |          
+               |--4.82%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+               |          |          
+               |           --2.43%--bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_equals_tr<unsigned long>(unsigned long const&, unsigned long, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+               |                     bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_key_equals_tr<unsigned long>(unsigned long const&, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+               |                     std::equal_to<unsigned long>::operator()(unsigned long const&, unsigned long const&) const (inlined)
+               |          
+                --2.00%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_bucket_index(unsigned long) const (inlined)
+                          |          
+                           --1.98%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(unsigned long, unsigned long) const (inlined)
+                                     std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+
+     6.94%     0.00%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+            |
+            ---std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+               |          
+               |--4.82%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+               |          |          
+               |           --2.43%--bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_equals_tr<unsigned long>(unsigned long const&, unsigned long, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+               |                     bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_key_equals_tr<unsigned long>(unsigned long const&, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+               |                     std::equal_to<unsigned long>::operator()(unsigned long const&, unsigned long const&) const (inlined)
+               |          
+                --2.00%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_bucket_index(unsigned long) const (inlined)
+                          |          
+                           --1.98%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(unsigned long, unsigned long) const (inlined)
+                                     std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+
+     4.82%     0.00%  bench    bench                 [.] std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+            |
+            ---std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+               |          
+                --2.43%--bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_equals_tr<unsigned long>(unsigned long const&, unsigned long, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+                          bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_key_equals_tr<unsigned long>(unsigned long const&, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+                          std::equal_to<unsigned long>::operator()(unsigned long const&, unsigned long const&) const (inlined)
+
+     4.42%     0.00%  bench    bench                 [.] std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+            |
+            ---std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+
+     4.41%     4.28%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false>*, unsigned long)
+            |          
+             --4.28%--0x75572f6478696873
+                       0x7ffce70e5188
+                       0x7f3107a27d0e
+                       main
+                       main::{lambda()#1}::operator()() const [clone .isra.0]
+                       (anonymous namespace)::Result (anonymous namespace)::replay<ob::BookA>(ob::Trace const&, bool)
+                       ob::BookA::add_order(unsigned long, ob::Side, int, long)
+                       std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+                       std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+                       std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+                       |          
+                        --4.09%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false>*, unsigned long)
+                                  |          
+                                   --2.68%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, std::integral_constant<bool, true>) (inlined)
+                                             |          
+                                              --1.09%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&, unsigned long) const (inlined)
+                                                        std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+
+     4.15%     0.00%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+            |
+            ---std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+               |          
+                --3.34%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+
+     4.15%     0.00%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+            |
+            ---std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+               |          
+                --3.34%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+
+     3.34%     0.00%  bench    bench                 [.] std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+            |
+            ---std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+
+     3.13%     0.00%  bench    bench                 [.] std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+            |
+            ---std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+
+     3.03%     0.00%  bench    bench                 [.] ob::bounded(std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>&, unsigned long) (inlined)
+            |          
+             --2.64%--ob::bounded(std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>&, unsigned long) (inlined)
+                       |          
+                        --2.13%--std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()() (inlined)
+
+     2.95%     0.00%  bench    bench                 [.] ob::mix(unsigned long&, unsigned long) (inlined)
+            |
+            ---ob::mix(unsigned long&, unsigned long) (inlined)
+
+     2.68%     0.00%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, std::integral_constant<bool, true>) (inlined)
+            |
+            ---std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, std::integral_constant<bool, true>) (inlined)
+               |          
+                --1.09%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&, unsigned long) const (inlined)
+                          std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+
+     2.43%     0.00%  bench    bench                 [.] bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_equals_tr<unsigned long>(unsigned long const&, unsigned long, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+            |
+            ---bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_equals_tr<unsigned long>(unsigned long const&, unsigned long, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+               bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_key_equals_tr<unsigned long>(unsigned long const&, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+               std::equal_to<unsigned long>::operator()(unsigned long const&, unsigned long const&) const (inlined)
+
+     2.43%     0.00%  bench    bench                 [.] bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_key_equals_tr<unsigned long>(unsigned long const&, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+            |
+            ---bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_key_equals_tr<unsigned long>(unsigned long const&, std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&) const (inlined)
+               std::equal_to<unsigned long>::operator()(unsigned long const&, unsigned long const&) const (inlined)
+
+     2.43%     0.00%  bench    bench                 [.] std::equal_to<unsigned long>::operator()(unsigned long const&, unsigned long const&) const (inlined)
+            |
+            ---std::equal_to<unsigned long>::operator()(unsigned long const&, unsigned long const&) const (inlined)
+
+     2.42%     0.00%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()() (inlined)
+            |
+            ---std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()() (inlined)
+
+     2.30%     0.00%  bench    libc.so.6             [.] 0x00007f3107abd6ef
+            |
+            ---0x7f3107abd6ef
+
+     2.02%     0.00%  bench    bench                 [.] std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+            |
+            ---std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+
+     2.00%     0.00%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_bucket_index(unsigned long) const (inlined)
+            |
+            ---std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_bucket_index(unsigned long) const (inlined)
+               |          
+                --1.98%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(unsigned long, unsigned long) const (inlined)
+                          std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+
+     1.98%     0.00%  bench    bench                 [.] std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(unsigned long, unsigned long) const (inlined)
+            |
+            ---std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(unsigned long, unsigned long) const (inlined)
+               std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+
+     1.95%     0.00%  bench    bench                 [.] std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::count(unsigned long const&) const (inlined)
+            |
+            ---std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::count(unsigned long const&) const (inlined)
+               |          
+                --1.85%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::count(unsigned long const&) const (inlined)
+                          std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) const (inlined)
+                          std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+                          std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+                          |          
+                           --1.64%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+
+     1.85%     0.00%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::count(unsigned long const&) const (inlined)
+            |
+            ---std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::count(unsigned long const&) const (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) const (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+               |          
+                --1.64%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+
+     1.85%     0.00%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) const (inlined)
+            |
+            ---std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) const (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+               |          
+                --1.64%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+
+     1.76%     0.00%  bench    bench                 [.] ob::consume(unsigned long&, ob::BBO const&) (inlined)
+            |
+            ---ob::consume(unsigned long&, ob::BBO const&) (inlined)
+               |          
+                --1.64%--ob::mix(unsigned long&, unsigned long) (inlined)
+
+     1.43%     1.13%  bench    libstdc++.so.6.0.36   [.] std::chrono::_V2::steady_clock::now()
+            |          
+             --1.13%--0x75572f6478696873
+                       0x7ffce70e5188
+                       0x7f3107a27d0e
+                       main
+                       main::{lambda()#1}::operator()() const [clone .isra.0]
+
+     1.38%     0.00%  bench    bench                 [.] ob::consume(unsigned long&, std::vector<ob::Level, std::allocator<ob::Level> > const&) (inlined)
+            |
+            ---ob::consume(unsigned long&, std::vector<ob::Level, std::allocator<ob::Level> > const&) (inlined)
+               |          
+                --1.31%--ob::mix(unsigned long&, unsigned long) (inlined)
+
+     1.14%     0.98%  bench    libc.so.6             [.] malloc
+     1.11%     0.00%  bench    bench                 [.] std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&, unsigned long) const (inlined)
+            |
+            ---std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, ob::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(std::__detail::_Hash_node_value<std::pair<unsigned long const, ob::Order>, false> const&, unsigned long) const (inlined)
+               std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+
+     1.11%     0.00%  bench    bench                 [.] std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+            |
+            ---std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

@@ -1,0 +1,25 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'cpu_core/cycles/Pu'
+# Event count (approx.): 433608713
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+# ........  .......  ....................  ..............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    38.24%  bench    bench                 [.] ob::generate(unsigned long, unsigned long)
+    17.36%  bench    bench                 [.] ob::BookC::cancel_order(unsigned long)
+    10.77%  bench    bench                 [.] (anonymous namespace)::Result (anonymous namespace)::replay<ob::BookC>(ob::Trace const&, bool)
+     6.79%  bench    bench                 [.] ob::BookC::add_order(unsigned long, ob::Side, int, long)
+     6.42%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false>*, unsigned long)
+     3.35%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::_M_gen_rand()
+     1.78%  bench    libc.so.6             [.] cfree
+     1.39%  bench    libc.so.6             [.] 0x00000000000ba75d
+     1.22%  bench    libc.so.6             [.] malloc
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

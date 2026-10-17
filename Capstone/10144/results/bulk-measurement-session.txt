@@ -1,0 +1,35 @@
+bulk run 1 A: 590.590 ms
+bulk run 1 B: 810.750 ms
+bulk run 1 C: 217.075 ms
+bulk run 2 B: 816.149 ms
+bulk run 2 C: 226.960 ms
+bulk run 2 A: 615.430 ms
+bulk run 3 C: 226.772 ms
+bulk run 3 A: 618.201 ms
+bulk run 3 B: 832.977 ms
+bulk run 4 A: 601.219 ms
+bulk run 4 B: 843.341 ms
+bulk run 4 C: 224.112 ms
+bulk run 5 B: 844.931 ms
+bulk run 5 C: 224.511 ms
+bulk run 5 A: 625.664 ms
+{
+  "A": {
+    "total_ms": 615.43,
+    "ns_add": 0.0,
+    "ns_cancel": 0.0,
+    "ns_bbo": 0.0
+  },
+  "B": {
+    "total_ms": 832.977,
+    "ns_add": 0.0,
+    "ns_cancel": 0.0,
+    "ns_bbo": 0.0
+  },
+  "C": {
+    "total_ms": 224.511,
+    "ns_add": 0.0,
+    "ns_cancel": 0.0,
+    "ns_bbo": 0.0
+  }
+}

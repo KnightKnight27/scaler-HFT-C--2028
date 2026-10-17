@@ -1,0 +1,6 @@
+# Preserve profiler and measurement output verbatim, including its whitespace.
+results/*.txt -whitespace
+results/*.csv -whitespace
+results/perf/*.txt -whitespace
+# The short report is a document, not a line-oriented diff.
+docs/*.pdf binary

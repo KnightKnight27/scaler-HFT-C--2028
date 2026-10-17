@@ -1,0 +1,8 @@
+PASS deterministic edges A/B/C: API, invalid input, uint64 extremes, overflow
+PASS all 10000 valid ticks + permuted drain, full depth and rebuilt ledger every step
+PASS bounded seeds 0,7,2026 (2000 each), sparse uint64 IDs, full depth every step
+PASS primary replay seed=42 ops=10000 trace_hash=7957577246439194368 adds=6989 cancels=1990 BBO=1021; BBO + top10 each step, full depth/rebuilt ledger each 10000 and final
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+All implementations and independent reference agree.

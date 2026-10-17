@@ -1,0 +1,12 @@
+
+ Performance counter stats for '/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build/bench --impl B' (5 runs):
+
+     <not counted>      cpu_atom/cache-misses/u                                                 (0.00%)
+          10700908      cpu_core/cache-misses/u                                                 ( +-  0.26% )
+   <not supported>      cpu_atom/L1-dcache-load-misses/u                                      
+          19714790      cpu_core/L1-dcache-load-misses/u                                        ( +-  0.23% )
+     <not counted>      cpu_atom/dTLB-load-misses/u                                             (0.00%)
+           1166390      cpu_core/dTLB-load-misses/u                                             ( +-  0.19% )
+
+       1.248372009 +- 0.006623379 seconds time elapsed  ( +-  0.53% )
+

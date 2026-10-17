@@ -1,0 +1,10 @@
+{
+  "CMakeLists.txt": "91e52a8a83594966a07b8d879c907736d5463e56235b0a33eaeabd90a2de2640",
+  "include/book_a.hpp": "0be83990a35baf013f9be27b1200680f0a8540d7750ad467784aa44c332eb2f7",
+  "include/book_b.hpp": "5149f00223bd5dc54afbfdf065f7e9b8263e0e678d60d064863e17ec9697d584",
+  "include/book_c.hpp": "45bff6bbc0552d834372b98a37cd9703f289d3768759febba70eca0ffc1711ba",
+  "include/types.hpp": "26eb1e6b597c66c06559853163dfae9f2d6cb47deecd446a78fb5bc393631f3e",
+  "src/main.cpp": "d174817763a8446ce2f3e8ae60b9fd0d8997c09ff9efe39cf0fe34fcca375b5a",
+  "src/verify.cpp": "bd61974d8a62410d94fa25432227cc12f60dd3bd17e9c44372b590d6d64f660d",
+  "src/workload.hpp": "c061dfcebd1b1e90c63aab300cdaa0820726bb5929281a9c4602fda4a283a58a"
+}

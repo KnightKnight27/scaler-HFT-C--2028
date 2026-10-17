@@ -1,0 +1,12 @@
+flat-report-A exit 0
+bulk-record-A exit 0
+bulk-report-A exit 0
+bulk-flat-A exit 0
+flat-report-B exit 0
+bulk-record-B exit 0
+bulk-report-B exit 0
+bulk-flat-B exit 0
+flat-report-C exit 0
+bulk-record-C exit 0
+bulk-report-C exit 0
+bulk-flat-C exit 0

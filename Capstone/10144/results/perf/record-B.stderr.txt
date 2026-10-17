@@ -1,0 +1,2 @@
+[ perf record: Woken up 4 times to write data ]
+[ perf record: Captured and wrote 0.565 MB /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/results/perf/perf-B.data (5201 samples) ]

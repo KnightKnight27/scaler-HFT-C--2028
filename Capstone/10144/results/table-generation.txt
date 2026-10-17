@@ -1,0 +1,16 @@
+| Metric | A | B | C |
+|---|---:|---:|---:|
+| Total time (ms) | 752.665 | 959.002 | 374.992 |
+| ns / add | 647.651 | 682.224 | 199.407 |
+| ns / cancel | 900.632 | 1,814.171 | 579.639 |
+| ns / BBO | 119.974 | 110.162 | 106.469 |
+| IPC | 1.196 | 1.298 | 1.845 |
+| Branch misses (%) | 4.098 | 3.716 | 1.007 |
+| L1-dcache-load-misses | 12,925,929.000 | 19,726,253.000 | 4,226,036.000 |
+| Cache misses | 7,250,501.000 | 10,701,205.000 | 5,485,506.000 |
+| Page faults | 8,429.000 | 11,535.000 | 6,615.000 |
+
+Timing rows: independent medians of five instrumented runs, seed42, 1M primary ops, CPU0, -O2; full raw runs are in instrumented-runs.csv. Counter rows: perf -r5 arithmetic means over full process lifetime, scaled by perf where multiplexed. IPC and branch % are ratios of the comparable mean counts (not means of per-run ratios). On the hybrid CPU only numeric cpu_core events are used; not-counted atom events are excluded. User-only event filtering and multiplexing are preserved in raw logs.
+
+Counter collection groups: cycles: full, instructions: full, branches: full, branch-misses: full, L1-dcache-load-misses: full, cache-misses: full, dTLB-load-misses: full, page-faults: full.
+

@@ -1,0 +1,22 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 4K of event 'cpu_core/cycles/Pu'
+# Event count (approx.): 977285921
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+# ........  .......  ....................  ..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    33.19%  bench    bench                 [.] ob::BookA::add_order(unsigned long, ob::Side, int, long)
+    21.53%  bench    bench                 [.] (anonymous namespace)::Result (anonymous namespace)::replay<ob::BookA>(ob::Trace const&, bool)
+    17.53%  bench    bench                 [.] ob::generate(unsigned long, unsigned long)
+    10.37%  bench    [vdso]                [.] __vdso_clock_gettime
+     4.28%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false>*, unsigned long)
+     1.13%  bench    libstdc++.so.6.0.36   [.] std::chrono::_V2::steady_clock::now()
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

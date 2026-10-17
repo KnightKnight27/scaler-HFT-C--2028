@@ -1,0 +1,14 @@
+
+ Performance counter stats for '/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build/bench --impl B' (5 runs):
+
+     <not counted>      cpu_atom/cycles/u                                                       (0.00%)
+        1158943332      cpu_core/cycles/u                                                       ( +-  0.13% )
+     <not counted>      cpu_atom/instructions/u                                                 (0.00%)
+        1526578248      cpu_core/instructions/u                                                 ( +-  0.00% )
+     <not counted>      cpu_atom/branches/u                                                     (0.00%)
+         308334896      cpu_core/branches/u                                                     ( +-  0.00% )
+     <not counted>      cpu_atom/branch-misses/u                                                (0.00%)
+          11454154      cpu_core/branch-misses/u                                                ( +-  0.06% )
+
+       1.268655681 +- 0.006012766 seconds time elapsed  ( +-  0.47% )
+

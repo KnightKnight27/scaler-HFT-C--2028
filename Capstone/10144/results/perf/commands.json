@@ -1,0 +1,116 @@
+[
+  {
+    "name": "version",
+    "command": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf --version",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:57:46.758656+00:00"
+  },
+  {
+    "name": "stat-A-full",
+    "command": "taskset -c 0 /home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf stat -r 5 -e task-clock,cycles,instructions,branches,branch-misses,cache-misses,L1-dcache-load-misses,dTLB-load-misses,page-faults /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build/bench --impl A",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:57:51.991019+00:00"
+  },
+  {
+    "name": "stat-A-hardware",
+    "command": "taskset -c 0 /home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf stat -r 5 -e cycles,instructions,branches,branch-misses /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build/bench --impl A",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:57:57.144781+00:00"
+  },
+  {
+    "name": "stat-A-cache",
+    "command": "taskset -c 0 /home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf stat -r 5 -e cache-misses,L1-dcache-load-misses,dTLB-load-misses /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build/bench --impl A",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:58:02.307410+00:00"
+  },
+  {
+    "name": "stat-A-software",
+    "command": "taskset -c 0 /home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf stat -r 5 -e task-clock,page-faults /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build/bench --impl A",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:58:07.476137+00:00"
+  },
+  {
+    "name": "record-A",
+    "command": "taskset -c 0 /home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf record -g -o /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/results/perf/perf-A.data -- /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build/bench --impl A",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:58:09.626366+00:00"
+  },
+  {
+    "name": "report-A",
+    "command": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf report --stdio --percent-limit 1 -i /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/results/perf/perf-A.data",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:58:24.689819+00:00"
+  },
+  {
+    "name": "stat-B-full",
+    "command": "taskset -c 0 /home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf stat -r 5 -e task-clock,cycles,instructions,branches,branch-misses,cache-misses,L1-dcache-load-misses,dTLB-load-misses,page-faults /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build/bench --impl B",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:58:31.200890+00:00"
+  },
+  {
+    "name": "stat-B-hardware",
+    "command": "taskset -c 0 /home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf stat -r 5 -e cycles,instructions,branches,branch-misses /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build/bench --impl B",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:58:37.606625+00:00"
+  },
+  {
+    "name": "stat-B-cache",
+    "command": "taskset -c 0 /home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf stat -r 5 -e cache-misses,L1-dcache-load-misses,dTLB-load-misses /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build/bench --impl B",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:58:43.906765+00:00"
+  },
+  {
+    "name": "stat-B-software",
+    "command": "taskset -c 0 /home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf stat -r 5 -e task-clock,page-faults /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build/bench --impl B",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:58:50.296367+00:00"
+  },
+  {
+    "name": "record-B",
+    "command": "taskset -c 0 /home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf record -g -o /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/results/perf/perf-B.data -- /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build/bench --impl B",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:58:51.701088+00:00"
+  },
+  {
+    "name": "report-B",
+    "command": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf report --stdio --percent-limit 1 -i /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/results/perf/perf-B.data",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:58:52.161674+00:00"
+  },
+  {
+    "name": "stat-C-full",
+    "command": "taskset -c 0 /home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf stat -r 5 -e task-clock,cycles,instructions,branches,branch-misses,cache-misses,L1-dcache-load-misses,dTLB-load-misses,page-faults /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build/bench --impl C",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:58:55.422585+00:00"
+  },
+  {
+    "name": "stat-C-hardware",
+    "command": "taskset -c 0 /home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf stat -r 5 -e cycles,instructions,branches,branch-misses /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build/bench --impl C",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:58:58.660885+00:00"
+  },
+  {
+    "name": "stat-C-cache",
+    "command": "taskset -c 0 /home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf stat -r 5 -e cache-misses,L1-dcache-load-misses,dTLB-load-misses /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build/bench --impl C",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:59:01.877723+00:00"
+  },
+  {
+    "name": "stat-C-software",
+    "command": "taskset -c 0 /home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf stat -r 5 -e task-clock,page-faults /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build/bench --impl C",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:59:05.068848+00:00"
+  },
+  {
+    "name": "record-C",
+    "command": "taskset -c 0 /home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf record -g -o /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/results/perf/perf-C.data -- /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build/bench --impl C",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:59:05.808480+00:00"
+  },
+  {
+    "name": "report-C",
+    "command": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf report --stdio --percent-limit 1 -i /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/results/perf/perf-C.data",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:59:06.199871+00:00"
+  }
+]

@@ -1,0 +1,35 @@
+instrumented run 1 A: 785.447 ms
+instrumented run 1 B: 959.002 ms
+instrumented run 1 C: 368.804 ms
+instrumented run 2 B: 949.510 ms
+instrumented run 2 C: 373.200 ms
+instrumented run 2 A: 748.464 ms
+instrumented run 3 C: 374.992 ms
+instrumented run 3 A: 752.665 ms
+instrumented run 3 B: 944.994 ms
+instrumented run 4 A: 773.712 ms
+instrumented run 4 B: 969.136 ms
+instrumented run 4 C: 379.287 ms
+instrumented run 5 B: 982.365 ms
+instrumented run 5 C: 379.589 ms
+instrumented run 5 A: 749.893 ms
+{
+  "A": {
+    "total_ms": 752.665,
+    "ns_add": 647.651,
+    "ns_cancel": 900.632,
+    "ns_bbo": 119.974
+  },
+  "B": {
+    "total_ms": 959.002,
+    "ns_add": 682.224,
+    "ns_cancel": 1814.171,
+    "ns_bbo": 110.162
+  },
+  "C": {
+    "total_ms": 374.992,
+    "ns_add": 199.407,
+    "ns_cancel": 579.639,
+    "ns_bbo": 106.469
+  }
+}

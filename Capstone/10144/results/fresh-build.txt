@@ -1,0 +1,55 @@
+UTC: 2026-10-17T08:48:15.988477+00:00
+
+$ cmake -S /tmp/order-book-10144-m2s8p1_1/source -B /tmp/order-book-10144-m2s8p1_1/build -DCMAKE_BUILD_TYPE=Release
+-- The CXX compiler identification is GNU 16.2.1
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/order-book-10144-m2s8p1_1/build
+exit_status=0
+
+$ cmake --build /tmp/order-book-10144-m2s8p1_1/build -j 2
+[ 66%] Building CXX object CMakeFiles/bench.dir/src/main.cpp.o
+[ 66%] Building CXX object CMakeFiles/bench.dir/src/verify.cpp.o
+[100%] Linking CXX executable bench
+[100%] Built target bench
+exit_status=0
+Actual compile command: /usr/bin/c++  -I/tmp/order-book-10144-m2s8p1_1/source/include -I/tmp/order-book-10144-m2s8p1_1/source/src -O2 -DNDEBUG -std=c++17 -Wall -Wextra -Wpedantic -g -fno-omit-frame-pointer -o CMakeFiles/bench.dir/src/main.cpp.o -c /tmp/order-book-10144-m2s8p1_1/source/src/main.cpp
+Actual compile command: /usr/bin/c++  -I/tmp/order-book-10144-m2s8p1_1/source/include -I/tmp/order-book-10144-m2s8p1_1/source/src -O2 -DNDEBUG -std=c++17 -Wall -Wextra -Wpedantic -g -fno-omit-frame-pointer -o CMakeFiles/bench.dir/src/verify.cpp.o -c /tmp/order-book-10144-m2s8p1_1/source/src/verify.cpp
+
+$ /tmp/order-book-10144-m2s8p1_1/build/bench --verify
+PASS deterministic edges A/B/C: API, invalid input, uint64 extremes, overflow
+PASS all 10000 valid ticks + permuted drain, full depth and rebuilt ledger every step
+PASS bounded seeds 0,7,2026 (2000 each), sparse uint64 IDs, full depth every step
+PASS primary replay seed=42 ops=1000000 trace_hash=14416990210762577260 adds=699318 cancels=200311 BBO=100371; BBO + top10 each step, full depth/rebuilt ledger each 10000 and final
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+All implementations and independent reference agree.
+exit_status=0
+
+$ /tmp/order-book-10144-m2s8p1_1/build/bench --verify --seed 123456 --ops 100000
+PASS deterministic edges A/B/C: API, invalid input, uint64 extremes, overflow
+PASS all 10000 valid ticks + permuted drain, full depth and rebuilt ledger every step
+PASS bounded seeds 0,7,2026 (2000 each), sparse uint64 IDs, full depth every step
+PASS primary replay seed=123456 ops=100000 trace_hash=234344299259792043 adds=70010 cancels=20093 BBO=9897; BBO + top10 each step, full depth/rebuilt ledger each 10000 and final
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+All implementations and independent reference agree.
+exit_status=0
+
+$ /usr/bin/python3 /tmp/order-book-10144-m2s8p1_1/source/scripts/check_float_rejection.py
+PASS: A/B/C reject double, float, long double price calls at compile time
+exit_status=0
+
+$ /usr/bin/python3 /tmp/order-book-10144-m2s8p1_1/source/scripts/smoke.py --bench /tmp/order-book-10144-m2s8p1_1/build/bench
+PASS help and 10 invalid argument cases
+PASS A/B/C instrumented+bulk, warmup, live cancels, depth count, checksum agreement
+exit_status=0
+
+PASS clean source-only out-of-tree build, both documented Release verify commands, API compile rejection, CLI + A/B/C benchmark smokes.

@@ -1,0 +1,74 @@
+[
+  {
+    "name": "flat-report-A",
+    "command": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf report --stdio --no-children --call-graph none --percent-limit 1 -i /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/results/perf/perf-A.data",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:59:40.926012+00:00"
+  },
+  {
+    "name": "bulk-record-A",
+    "command": "taskset -c 0 /home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf record -g -o /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/results/perf/bulk-A.data -- /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build/bench --impl A --mode bulk",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:59:41.951630+00:00"
+  },
+  {
+    "name": "bulk-report-A",
+    "command": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf report --stdio --percent-limit 1 -i /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/results/perf/bulk-A.data",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:59:42.391355+00:00"
+  },
+  {
+    "name": "bulk-flat-A",
+    "command": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf report --stdio --no-children --call-graph none --percent-limit 1 -i /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/results/perf/bulk-A.data",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:59:42.444115+00:00"
+  },
+  {
+    "name": "flat-report-B",
+    "command": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf report --stdio --no-children --call-graph none --percent-limit 1 -i /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/results/perf/perf-B.data",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:59:42.501225+00:00"
+  },
+  {
+    "name": "bulk-record-B",
+    "command": "taskset -c 0 /home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf record -g -o /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/results/perf/bulk-B.data -- /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build/bench --impl B --mode bulk",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:59:43.769105+00:00"
+  },
+  {
+    "name": "bulk-report-B",
+    "command": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf report --stdio --percent-limit 1 -i /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/results/perf/bulk-B.data",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:59:44.213226+00:00"
+  },
+  {
+    "name": "bulk-flat-B",
+    "command": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf report --stdio --no-children --call-graph none --percent-limit 1 -i /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/results/perf/bulk-B.data",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:59:44.266472+00:00"
+  },
+  {
+    "name": "flat-report-C",
+    "command": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf report --stdio --no-children --call-graph none --percent-limit 1 -i /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/results/perf/perf-C.data",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:59:44.318874+00:00"
+  },
+  {
+    "name": "bulk-record-C",
+    "command": "taskset -c 0 /home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf record -g -o /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/results/perf/bulk-C.data -- /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build/bench --impl C --mode bulk",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:59:44.906034+00:00"
+  },
+  {
+    "name": "bulk-report-C",
+    "command": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf report --stdio --percent-limit 1 -i /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/results/perf/bulk-C.data",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:59:45.261642+00:00"
+  },
+  {
+    "name": "bulk-flat-C",
+    "command": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/.local-tools/perf/usr/bin/perf report --stdio --no-children --call-graph none --percent-limit 1 -i /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/results/perf/bulk-C.data",
+    "exit_status": 0,
+    "date_utc": "2026-10-17T08:59:45.315123+00:00"
+  }
+]

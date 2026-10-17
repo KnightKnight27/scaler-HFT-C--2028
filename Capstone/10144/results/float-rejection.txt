@@ -1,0 +1,1 @@
+PASS: A/B/C reject double, float, long double price calls at compile time

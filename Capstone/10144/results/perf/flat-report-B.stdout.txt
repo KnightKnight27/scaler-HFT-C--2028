@@ -1,0 +1,25 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 5K of event 'cpu_core/cycles/Pu'
+# Event count (approx.): 1178712623
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                    
+# ........  .......  ....................  ..........................................................................................................................................................................................................................................................................................................................
+#
+    29.56%  bench    bench                 [.] ob::BookB::add_order(unsigned long, ob::Side, int, long)
+    28.65%  bench    bench                 [.] (anonymous namespace)::Result (anonymous namespace)::replay<ob::BookB>(ob::Trace const&, bool)
+    14.34%  bench    bench                 [.] ob::generate(unsigned long, unsigned long)
+     8.35%  bench    [vdso]                [.] __vdso_clock_gettime
+     3.65%  bench    libstdc++.so.6.0.36   [.] std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+     2.66%  bench    libstdc++.so.6.0.36   [.] std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+     1.64%  bench    bench                 [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) [clone .isra.0]
+     1.04%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::_M_gen_rand()
+     1.00%  bench    libc.so.6             [.] malloc
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

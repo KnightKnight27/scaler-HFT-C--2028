@@ -1,0 +1,8 @@
+
+ Performance counter stats for '/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build/bench --impl B' (5 runs):
+
+           1265.47 msec task-clock:u                                                            ( +-  0.55% )
+             11535      page-faults:u                                                           ( +-  0.00% )
+
+       1.271832050 +- 0.006862352 seconds time elapsed  ( +-  0.54% )
+

@@ -1,0 +1,10 @@
+date_utc: 2026-10-17T08:59:23.439232+00:00
+command: taskset -c 0 /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build/bench --impl C --mode bulk --warmup
+exit_status: 0
+STDOUT:
+Warmup checksum: 11460434319816070843
+Final BBO (cents): bid=1:9999x2338 ask=1:10001x2909
+impl,mode,seed,ops,adds,cancels,bbo_queries,buy_adds,depth_calls,empty_fallbacks,trace_hash,successful_cancels,checksum,total_ms,ns_add,ns_cancel,ns_bbo
+C,bulk,42,1000000,699318,200311,100371,350376,20000,0,14416990210762577260,200311,11460434319816070843,217.075,0.000,0.000,0.000
+
+STDERR:

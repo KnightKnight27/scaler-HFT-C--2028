@@ -1,0 +1,1077 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 5K of event 'cpu_core/cycles/Pu'
+# Event count (approx.): 1178712623
+#
+# Children      Self  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+# ........  ........  .......  ....................  ..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    95.68%     0.00%  bench    [unknown]             [.] 0x75572f6478696873
+            |
+            ---0x75572f6478696873
+               0x7ffcd6819188
+               0x7fb858027d0e
+               main
+               |          
+               |--80.19%--main::{lambda()#1}::operator()() const [clone .isra.0]
+               |          |          
+               |          |--66.00%--(anonymous namespace)::Result (anonymous namespace)::replay<ob::BookB>(ob::Trace const&, bool)
+               |          |          |          
+               |          |          |--29.55%--ob::BookB::add_order(unsigned long, ob::Side, int, long)
+               |          |          |          |          
+               |          |          |          |--10.38%--ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int) (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --10.25%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               |          |          |          |                     __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                     |--1.32%--void std::advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long) (inlined)
+               |          |          |          |                     |          void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+               |          |          |          |                     |          void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+               |          |          |          |                     |          __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator+=(long) (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --1.26%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator++() (inlined)
+               |          |          |          |          
+               |          |          |          |--10.21%--std::pair<std::_Rb_tree_iterator<std::pair<unsigned long const, ob::Order> >, bool> std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --9.14%--std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::lower_bound(unsigned long const&) (inlined)
+               |          |          |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::lower_bound(unsigned long const&) (inlined)
+               |          |          |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                     |--5.38%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --1.24%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |          
+               |          |          |           --7.54%--std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::count(unsigned long const&) const (inlined)
+               |          |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) const (inlined)
+               |          |          |                     |          
+               |          |          |                      --7.48%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+               |          |          |                                |          
+               |          |          |                                 --3.81%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          
+               |          |          |--23.85%--ob::BookB::cancel_order(unsigned long) (inlined)
+               |          |          |          |          
+               |          |          |          |--18.33%--std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+               |          |          |          |          std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --18.02%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                     |--14.05%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --1.10%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |          
+               |          |          |           --4.67%--ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int) (inlined)
+               |          |          |                     |          
+               |          |          |                      --4.44%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               |          |          |                                __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               |          |          |          
+               |          |          |--2.63%--ob::BookB::~BookB() (inlined)
+               |          |          |          std::vector<ob::Level, std::allocator<ob::Level> >::~vector() (inlined)
+               |          |          |          std::_Vector_base<ob::Level, std::allocator<ob::Level> >::~_Vector_base() (inlined)
+               |          |          |          |          
+               |          |          |           --2.27%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                     |          
+               |          |          |                      --2.25%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                |          
+               |          |          |                                 --2.23%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                           std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                           |          
+               |          |          |                                            --2.21%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                                      |          
+               |          |          |                                                       --2.19%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                                                 |          
+               |          |          |                                                                  --2.10%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                                                            |          
+               |          |          |                                                                             --1.90%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                                                                       |          
+               |          |          |                                                                                        --1.53%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |          
+               |          |          |--2.60%--std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+               |          |          |          
+               |          |          |--1.53%--ob::consume(unsigned long&, ob::BBO const&) (inlined)
+               |          |          |          ob::mix(unsigned long&, unsigned long) (inlined)
+               |          |          |          
+               |          |          |--1.38%--ob::consume(unsigned long&, std::vector<ob::Level, std::allocator<ob::Level> > const&) (inlined)
+               |          |          |          |          
+               |          |          |           --1.34%--ob::mix(unsigned long&, unsigned long) (inlined)
+               |          |          |          
+               |          |           --1.06%--malloc
+               |          |          
+               |          |--8.69%--clock_gettime
+               |          |          |          
+               |          |           --8.20%--__vdso_clock_gettime
+               |          |          
+               |           --3.67%--std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+               |          
+               |--14.34%--ob::generate(unsigned long, unsigned long)
+               |          |          
+               |          |--9.91%--ob::mix(unsigned long&, unsigned long) (inlined)
+               |          |          
+               |           --2.77%--ob::bounded(std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>&, unsigned long) (inlined)
+               |                     |          
+               |                      --2.20%--std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()() (inlined)
+               |          
+                --1.04%--std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::_M_gen_rand()
+
+    95.68%     0.00%  bench    [unknown]             [.] 0x00007ffcd6819188
+            |
+            ---0x7ffcd6819188
+               0x7fb858027d0e
+               main
+               |          
+               |--80.19%--main::{lambda()#1}::operator()() const [clone .isra.0]
+               |          |          
+               |          |--66.00%--(anonymous namespace)::Result (anonymous namespace)::replay<ob::BookB>(ob::Trace const&, bool)
+               |          |          |          
+               |          |          |--29.55%--ob::BookB::add_order(unsigned long, ob::Side, int, long)
+               |          |          |          |          
+               |          |          |          |--10.38%--ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int) (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --10.25%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               |          |          |          |                     __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                     |--1.32%--void std::advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long) (inlined)
+               |          |          |          |                     |          void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+               |          |          |          |                     |          void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+               |          |          |          |                     |          __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator+=(long) (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --1.26%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator++() (inlined)
+               |          |          |          |          
+               |          |          |          |--10.21%--std::pair<std::_Rb_tree_iterator<std::pair<unsigned long const, ob::Order> >, bool> std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --9.14%--std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::lower_bound(unsigned long const&) (inlined)
+               |          |          |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::lower_bound(unsigned long const&) (inlined)
+               |          |          |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                     |--5.38%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --1.24%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |          
+               |          |          |           --7.54%--std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::count(unsigned long const&) const (inlined)
+               |          |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) const (inlined)
+               |          |          |                     |          
+               |          |          |                      --7.48%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+               |          |          |                                |          
+               |          |          |                                 --3.81%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          
+               |          |          |--23.85%--ob::BookB::cancel_order(unsigned long) (inlined)
+               |          |          |          |          
+               |          |          |          |--18.33%--std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+               |          |          |          |          std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --18.02%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                     |--14.05%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --1.10%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |          
+               |          |          |           --4.67%--ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int) (inlined)
+               |          |          |                     |          
+               |          |          |                      --4.44%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               |          |          |                                __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               |          |          |          
+               |          |          |--2.63%--ob::BookB::~BookB() (inlined)
+               |          |          |          std::vector<ob::Level, std::allocator<ob::Level> >::~vector() (inlined)
+               |          |          |          std::_Vector_base<ob::Level, std::allocator<ob::Level> >::~_Vector_base() (inlined)
+               |          |          |          |          
+               |          |          |           --2.27%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                     |          
+               |          |          |                      --2.25%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                |          
+               |          |          |                                 --2.23%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                           std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                           |          
+               |          |          |                                            --2.21%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                                      |          
+               |          |          |                                                       --2.19%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                                                 |          
+               |          |          |                                                                  --2.10%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                                                            |          
+               |          |          |                                                                             --1.90%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                                                                       |          
+               |          |          |                                                                                        --1.53%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |          
+               |          |          |--2.60%--std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+               |          |          |          
+               |          |          |--1.53%--ob::consume(unsigned long&, ob::BBO const&) (inlined)
+               |          |          |          ob::mix(unsigned long&, unsigned long) (inlined)
+               |          |          |          
+               |          |          |--1.38%--ob::consume(unsigned long&, std::vector<ob::Level, std::allocator<ob::Level> > const&) (inlined)
+               |          |          |          |          
+               |          |          |           --1.34%--ob::mix(unsigned long&, unsigned long) (inlined)
+               |          |          |          
+               |          |           --1.06%--malloc
+               |          |          
+               |          |--8.69%--clock_gettime
+               |          |          |          
+               |          |           --8.20%--__vdso_clock_gettime
+               |          |          
+               |           --3.67%--std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+               |          
+               |--14.34%--ob::generate(unsigned long, unsigned long)
+               |          |          
+               |          |--9.91%--ob::mix(unsigned long&, unsigned long) (inlined)
+               |          |          
+               |           --2.77%--ob::bounded(std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>&, unsigned long) (inlined)
+               |                     |          
+               |                      --2.20%--std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()() (inlined)
+               |          
+                --1.04%--std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::_M_gen_rand()
+
+    95.68%     0.00%  bench    libc.so.6             [.] 0x00007fb858027d0e
+            |
+            ---0x7fb858027d0e
+               main
+               |          
+               |--80.19%--main::{lambda()#1}::operator()() const [clone .isra.0]
+               |          |          
+               |          |--66.00%--(anonymous namespace)::Result (anonymous namespace)::replay<ob::BookB>(ob::Trace const&, bool)
+               |          |          |          
+               |          |          |--29.55%--ob::BookB::add_order(unsigned long, ob::Side, int, long)
+               |          |          |          |          
+               |          |          |          |--10.38%--ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int) (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --10.25%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               |          |          |          |                     __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                     |--1.32%--void std::advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long) (inlined)
+               |          |          |          |                     |          void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+               |          |          |          |                     |          void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+               |          |          |          |                     |          __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator+=(long) (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --1.26%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator++() (inlined)
+               |          |          |          |          
+               |          |          |          |--10.21%--std::pair<std::_Rb_tree_iterator<std::pair<unsigned long const, ob::Order> >, bool> std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --9.14%--std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::lower_bound(unsigned long const&) (inlined)
+               |          |          |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::lower_bound(unsigned long const&) (inlined)
+               |          |          |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                     |--5.38%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --1.24%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |          
+               |          |          |           --7.54%--std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::count(unsigned long const&) const (inlined)
+               |          |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) const (inlined)
+               |          |          |                     |          
+               |          |          |                      --7.48%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+               |          |          |                                |          
+               |          |          |                                 --3.81%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          
+               |          |          |--23.85%--ob::BookB::cancel_order(unsigned long) (inlined)
+               |          |          |          |          
+               |          |          |          |--18.33%--std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+               |          |          |          |          std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --18.02%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                     |--14.05%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --1.10%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |          
+               |          |          |           --4.67%--ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int) (inlined)
+               |          |          |                     |          
+               |          |          |                      --4.44%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               |          |          |                                __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               |          |          |          
+               |          |          |--2.63%--ob::BookB::~BookB() (inlined)
+               |          |          |          std::vector<ob::Level, std::allocator<ob::Level> >::~vector() (inlined)
+               |          |          |          std::_Vector_base<ob::Level, std::allocator<ob::Level> >::~_Vector_base() (inlined)
+               |          |          |          |          
+               |          |          |           --2.27%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                     |          
+               |          |          |                      --2.25%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                |          
+               |          |          |                                 --2.23%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                           std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                           |          
+               |          |          |                                            --2.21%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                                      |          
+               |          |          |                                                       --2.19%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                                                 |          
+               |          |          |                                                                  --2.10%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                                                            |          
+               |          |          |                                                                             --1.90%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                                                                       |          
+               |          |          |                                                                                        --1.53%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |          
+               |          |          |--2.60%--std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+               |          |          |          
+               |          |          |--1.53%--ob::consume(unsigned long&, ob::BBO const&) (inlined)
+               |          |          |          ob::mix(unsigned long&, unsigned long) (inlined)
+               |          |          |          
+               |          |          |--1.38%--ob::consume(unsigned long&, std::vector<ob::Level, std::allocator<ob::Level> > const&) (inlined)
+               |          |          |          |          
+               |          |          |           --1.34%--ob::mix(unsigned long&, unsigned long) (inlined)
+               |          |          |          
+               |          |           --1.06%--malloc
+               |          |          
+               |          |--8.69%--clock_gettime
+               |          |          |          
+               |          |           --8.20%--__vdso_clock_gettime
+               |          |          
+               |           --3.67%--std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+               |          
+               |--14.34%--ob::generate(unsigned long, unsigned long)
+               |          |          
+               |          |--9.91%--ob::mix(unsigned long&, unsigned long) (inlined)
+               |          |          
+               |           --2.77%--ob::bounded(std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>&, unsigned long) (inlined)
+               |                     |          
+               |                      --2.20%--std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()() (inlined)
+               |          
+                --1.04%--std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::_M_gen_rand()
+
+    95.68%     0.00%  bench    bench                 [.] main
+            |
+            ---main
+               |          
+               |--80.19%--main::{lambda()#1}::operator()() const [clone .isra.0]
+               |          |          
+               |          |--66.00%--(anonymous namespace)::Result (anonymous namespace)::replay<ob::BookB>(ob::Trace const&, bool)
+               |          |          |          
+               |          |          |--29.55%--ob::BookB::add_order(unsigned long, ob::Side, int, long)
+               |          |          |          |          
+               |          |          |          |--10.38%--ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int) (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --10.25%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               |          |          |          |                     __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                     |--1.32%--void std::advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long) (inlined)
+               |          |          |          |                     |          void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+               |          |          |          |                     |          void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+               |          |          |          |                     |          __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator+=(long) (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --1.26%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator++() (inlined)
+               |          |          |          |          
+               |          |          |          |--10.21%--std::pair<std::_Rb_tree_iterator<std::pair<unsigned long const, ob::Order> >, bool> std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --9.14%--std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::lower_bound(unsigned long const&) (inlined)
+               |          |          |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::lower_bound(unsigned long const&) (inlined)
+               |          |          |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                     |--5.38%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --1.24%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |          
+               |          |          |           --7.54%--std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::count(unsigned long const&) const (inlined)
+               |          |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) const (inlined)
+               |          |          |                     |          
+               |          |          |                      --7.48%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+               |          |          |                                |          
+               |          |          |                                 --3.81%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          
+               |          |          |--23.85%--ob::BookB::cancel_order(unsigned long) (inlined)
+               |          |          |          |          
+               |          |          |          |--18.33%--std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+               |          |          |          |          std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --18.02%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                     |--14.05%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --1.10%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          |          
+               |          |          |           --4.67%--ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int) (inlined)
+               |          |          |                     |          
+               |          |          |                      --4.44%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               |          |          |                                __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               |          |          |          
+               |          |          |--2.63%--ob::BookB::~BookB() (inlined)
+               |          |          |          std::vector<ob::Level, std::allocator<ob::Level> >::~vector() (inlined)
+               |          |          |          std::_Vector_base<ob::Level, std::allocator<ob::Level> >::~_Vector_base() (inlined)
+               |          |          |          |          
+               |          |          |           --2.27%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                     |          
+               |          |          |                      --2.25%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                |          
+               |          |          |                                 --2.23%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                           std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                           |          
+               |          |          |                                            --2.21%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                                      |          
+               |          |          |                                                       --2.19%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                                                 |          
+               |          |          |                                                                  --2.10%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                                                            |          
+               |          |          |                                                                             --1.90%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |                                                                                       |          
+               |          |          |                                                                                        --1.53%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          |          
+               |          |          |--2.60%--std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+               |          |          |          
+               |          |          |--1.53%--ob::consume(unsigned long&, ob::BBO const&) (inlined)
+               |          |          |          ob::mix(unsigned long&, unsigned long) (inlined)
+               |          |          |          
+               |          |          |--1.38%--ob::consume(unsigned long&, std::vector<ob::Level, std::allocator<ob::Level> > const&) (inlined)
+               |          |          |          |          
+               |          |          |           --1.34%--ob::mix(unsigned long&, unsigned long) (inlined)
+               |          |          |          
+               |          |           --1.06%--malloc
+               |          |          
+               |          |--8.69%--clock_gettime
+               |          |          |          
+               |          |           --8.20%--__vdso_clock_gettime
+               |          |          
+               |           --3.67%--std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+               |          
+               |--14.34%--ob::generate(unsigned long, unsigned long)
+               |          |          
+               |          |--9.91%--ob::mix(unsigned long&, unsigned long) (inlined)
+               |          |          
+               |           --2.77%--ob::bounded(std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>&, unsigned long) (inlined)
+               |                     |          
+               |                      --2.20%--std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()() (inlined)
+               |          
+                --1.04%--std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::_M_gen_rand()
+
+    80.19%     0.00%  bench    bench                 [.] main::{lambda()#1}::operator()() const [clone .isra.0]
+            |
+            ---main::{lambda()#1}::operator()() const [clone .isra.0]
+               |          
+               |--66.00%--(anonymous namespace)::Result (anonymous namespace)::replay<ob::BookB>(ob::Trace const&, bool)
+               |          |          
+               |          |--29.55%--ob::BookB::add_order(unsigned long, ob::Side, int, long)
+               |          |          |          
+               |          |          |--10.38%--ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int) (inlined)
+               |          |          |          |          
+               |          |          |           --10.25%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               |          |          |                     __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               |          |          |                     |          
+               |          |          |                     |--1.32%--void std::advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long) (inlined)
+               |          |          |                     |          void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+               |          |          |                     |          void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+               |          |          |                     |          __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator+=(long) (inlined)
+               |          |          |                     |          
+               |          |          |                      --1.26%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator++() (inlined)
+               |          |          |          
+               |          |          |--10.21%--std::pair<std::_Rb_tree_iterator<std::pair<unsigned long const, ob::Order> >, bool> std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               |          |          |          |          
+               |          |          |           --9.14%--std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::lower_bound(unsigned long const&) (inlined)
+               |          |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::lower_bound(unsigned long const&) (inlined)
+               |          |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+               |          |          |                     |          
+               |          |          |                     |--5.38%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          |          |                     |          
+               |          |          |                      --1.24%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          
+               |          |           --7.54%--std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::count(unsigned long const&) const (inlined)
+               |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) const (inlined)
+               |          |                     |          
+               |          |                      --7.48%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+               |          |                                |          
+               |          |                                 --3.81%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          |          
+               |          |--23.85%--ob::BookB::cancel_order(unsigned long) (inlined)
+               |          |          |          
+               |          |          |--18.33%--std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+               |          |          |          std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+               |          |          |          |          
+               |          |          |           --18.02%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+               |          |          |                     |          
+               |          |          |                     |--14.05%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          |          |                     |          
+               |          |          |                      --1.10%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+               |          |          |          
+               |          |           --4.67%--ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int) (inlined)
+               |          |                     |          
+               |          |                      --4.44%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               |          |                                __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               |          |          
+               |          |--2.63%--ob::BookB::~BookB() (inlined)
+               |          |          std::vector<ob::Level, std::allocator<ob::Level> >::~vector() (inlined)
+               |          |          std::_Vector_base<ob::Level, std::allocator<ob::Level> >::~_Vector_base() (inlined)
+               |          |          |          
+               |          |           --2.27%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |                     |          
+               |          |                      --2.25%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |                                std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |                                |          
+               |          |                                 --2.23%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |                                           std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |                                           |          
+               |          |                                            --2.21%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |                                                      |          
+               |          |                                                       --2.19%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |                                                                 |          
+               |          |                                                                  --2.10%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |                                                                            |          
+               |          |                                                                             --1.90%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |                                                                                       |          
+               |          |                                                                                        --1.53%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          |          
+               |          |--2.60%--std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+               |          |          
+               |          |--1.53%--ob::consume(unsigned long&, ob::BBO const&) (inlined)
+               |          |          ob::mix(unsigned long&, unsigned long) (inlined)
+               |          |          
+               |          |--1.38%--ob::consume(unsigned long&, std::vector<ob::Level, std::allocator<ob::Level> > const&) (inlined)
+               |          |          |          
+               |          |           --1.34%--ob::mix(unsigned long&, unsigned long) (inlined)
+               |          |          
+               |           --1.06%--malloc
+               |          
+               |--8.69%--clock_gettime
+               |          |          
+               |           --8.20%--__vdso_clock_gettime
+               |          
+                --3.67%--std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+
+    66.33%    28.65%  bench    bench                 [.] (anonymous namespace)::Result (anonymous namespace)::replay<ob::BookB>(ob::Trace const&, bool)
+            |          
+            |--37.68%--(anonymous namespace)::Result (anonymous namespace)::replay<ob::BookB>(ob::Trace const&, bool)
+            |          |          
+            |          |--29.55%--ob::BookB::add_order(unsigned long, ob::Side, int, long)
+            |          |          |          
+            |          |          |--10.38%--ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int) (inlined)
+            |          |          |          |          
+            |          |          |           --10.25%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+            |          |          |                     __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+            |          |          |                     |          
+            |          |          |                     |--1.32%--void std::advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long) (inlined)
+            |          |          |                     |          void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+            |          |          |                     |          void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+            |          |          |                     |          __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator+=(long) (inlined)
+            |          |          |                     |          
+            |          |          |                      --1.26%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator++() (inlined)
+            |          |          |          
+            |          |          |--10.21%--std::pair<std::_Rb_tree_iterator<std::pair<unsigned long const, ob::Order> >, bool> std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+            |          |          |          |          
+            |          |          |           --9.14%--std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::lower_bound(unsigned long const&) (inlined)
+            |          |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::lower_bound(unsigned long const&) (inlined)
+            |          |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+            |          |          |                     |          
+            |          |          |                     |--5.38%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+            |          |          |                     |          
+            |          |          |                      --1.24%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+            |          |          |          
+            |          |           --7.54%--std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::count(unsigned long const&) const (inlined)
+            |          |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) const (inlined)
+            |          |                     |          
+            |          |                      --7.48%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+            |          |                                |          
+            |          |                                 --3.81%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+            |          |          
+            |          |--2.63%--ob::BookB::~BookB() (inlined)
+            |          |          std::vector<ob::Level, std::allocator<ob::Level> >::~vector() (inlined)
+            |          |          std::_Vector_base<ob::Level, std::allocator<ob::Level> >::~_Vector_base() (inlined)
+            |          |          |          
+            |          |           --2.27%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+            |          |                     |          
+            |          |                      --2.25%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+            |          |                                std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+            |          |                                |          
+            |          |                                 --2.23%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+            |          |                                           std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+            |          |                                           |          
+            |          |                                            --2.21%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+            |          |                                                      |          
+            |          |                                                       --2.19%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+            |          |                                                                 |          
+            |          |                                                                  --2.10%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+            |          |                                                                            |          
+            |          |                                                                             --1.90%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+            |          |                                                                                       |          
+            |          |                                                                                        --1.53%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+            |          |          
+            |           --2.60%--std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+            |          
+             --28.55%--0x75572f6478696873
+                       0x7ffcd6819188
+                       0x7fb858027d0e
+                       main
+                       main::{lambda()#1}::operator()() const [clone .isra.0]
+                       |          
+                        --28.32%--(anonymous namespace)::Result (anonymous namespace)::replay<ob::BookB>(ob::Trace const&, bool)
+                                  |          
+                                  |--23.79%--ob::BookB::cancel_order(unsigned long) (inlined)
+                                  |          |          
+                                  |          |--18.33%--std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+                                  |          |          std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+                                  |          |          |          
+                                  |          |           --18.02%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+                                  |          |                     |          
+                                  |          |                     |--14.05%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+                                  |          |                     |          
+                                  |          |                      --1.10%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+                                  |          |          
+                                  |           --4.67%--ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int) (inlined)
+                                  |                     |          
+                                  |                      --4.44%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+                                  |                                __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+                                  |          
+                                  |--1.53%--ob::consume(unsigned long&, ob::BBO const&) (inlined)
+                                  |          ob::mix(unsigned long&, unsigned long) (inlined)
+                                  |          
+                                   --1.38%--ob::consume(unsigned long&, std::vector<ob::Level, std::allocator<ob::Level> > const&) (inlined)
+                                             |          
+                                              --1.34%--ob::mix(unsigned long&, unsigned long) (inlined)
+
+    29.77%    29.56%  bench    bench                 [.] ob::BookB::add_order(unsigned long, ob::Side, int, long)
+            |          
+             --29.52%--0x75572f6478696873
+                       0x7ffcd6819188
+                       0x7fb858027d0e
+                       main
+                       main::{lambda()#1}::operator()() const [clone .isra.0]
+                       (anonymous namespace)::Result (anonymous namespace)::replay<ob::BookB>(ob::Trace const&, bool)
+                       |          
+                        --29.38%--ob::BookB::add_order(unsigned long, ob::Side, int, long)
+                                  |          
+                                  |--10.38%--ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int) (inlined)
+                                  |          |          
+                                  |           --10.25%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+                                  |                     __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+                                  |                     |          
+                                  |                     |--1.32%--void std::advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long) (inlined)
+                                  |                     |          void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+                                  |                     |          void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+                                  |                     |          __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator+=(long) (inlined)
+                                  |                     |          
+                                  |                      --1.26%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator++() (inlined)
+                                  |          
+                                  |--10.06%--std::pair<std::_Rb_tree_iterator<std::pair<unsigned long const, ob::Order> >, bool> std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+                                  |          |          
+                                  |           --9.14%--std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::lower_bound(unsigned long const&) (inlined)
+                                  |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::lower_bound(unsigned long const&) (inlined)
+                                  |                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+                                  |                     |          
+                                  |                     |--5.38%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+                                  |                     |          
+                                  |                      --1.24%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+                                  |          
+                                   --7.52%--std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::count(unsigned long const&) const (inlined)
+                                             std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) const (inlined)
+                                             |          
+                                              --7.46%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+                                                        |          
+                                                         --3.81%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+
+    23.85%     0.00%  bench    bench                 [.] ob::BookB::cancel_order(unsigned long) (inlined)
+            |
+            ---ob::BookB::cancel_order(unsigned long) (inlined)
+               |          
+               |--18.33%--std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+               |          std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+               |          |          
+               |           --18.02%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+               |                     |          
+               |                     |--14.05%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |                     |          
+               |                      --1.10%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+               |          
+                --4.67%--ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int) (inlined)
+                          |          
+                           --4.44%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+                                     __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+
+    18.33%     0.00%  bench    bench                 [.] std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+            |
+            ---std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+               std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+               |          
+                --18.02%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+                          |          
+                          |--14.05%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+                          |          
+                           --1.10%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+
+    18.33%     0.00%  bench    bench                 [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+            |
+            ---std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) (inlined)
+               |          
+                --18.02%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+                          |          
+                          |--14.05%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+                          |          
+                           --1.10%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+
+    18.02%     0.00%  bench    bench                 [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+            |
+            ---std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+               |          
+               |--14.05%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          
+                --1.10%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+
+    16.62%     0.00%  bench    bench                 [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+            |
+            ---std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+               |          
+               |--9.18%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          
+                --1.85%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+
+    14.34%    14.34%  bench    bench                 [.] ob::generate(unsigned long, unsigned long)
+            |
+            ---0x75572f6478696873
+               0x7ffcd6819188
+               0x7fb858027d0e
+               main
+               ob::generate(unsigned long, unsigned long)
+               |          
+               |--9.91%--ob::mix(unsigned long&, unsigned long) (inlined)
+               |          
+                --2.77%--ob::bounded(std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>&, unsigned long) (inlined)
+                          |          
+                           --2.20%--std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()() (inlined)
+
+    14.05%     0.00%  bench    bench                 [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+            |
+            ---std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+
+    10.38%     0.00%  bench    bench                 [.] ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int) (inlined)
+            |
+            ---ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int) (inlined)
+               |          
+                --10.25%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+                          __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+                          |          
+                          |--1.32%--void std::advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long) (inlined)
+                          |          void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+                          |          void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+                          |          __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator+=(long) (inlined)
+                          |          
+                           --1.26%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator++() (inlined)
+
+    10.25%     0.00%  bench    bench                 [.] __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+            |
+            ---__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               |          
+               |--1.32%--void std::advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long) (inlined)
+               |          void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+               |          void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+               |          __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator+=(long) (inlined)
+               |          
+                --1.26%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator++() (inlined)
+
+    10.25%     0.00%  bench    bench                 [.] __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+            |
+            ---__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               |          
+               |--1.32%--void std::advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long) (inlined)
+               |          void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+               |          void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+               |          __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator+=(long) (inlined)
+               |          
+                --1.26%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator++() (inlined)
+
+    10.21%     0.00%  bench    bench                 [.] std::pair<std::_Rb_tree_iterator<std::pair<unsigned long const, ob::Order> >, bool> std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+            |
+            ---std::pair<std::_Rb_tree_iterator<std::pair<unsigned long const, ob::Order> >, bool> std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               |          
+                --9.14%--std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::lower_bound(unsigned long const&) (inlined)
+                          std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::lower_bound(unsigned long const&) (inlined)
+                          std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+                          |          
+                          |--5.38%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+                          |          
+                           --1.24%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+
+     9.91%     0.00%  bench    bench                 [.] ob::mix(unsigned long&, unsigned long) (inlined)
+            |
+            ---ob::mix(unsigned long&, unsigned long) (inlined)
+
+     9.18%     0.00%  bench    bench                 [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+            |
+            ---std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+
+     9.14%     0.00%  bench    bench                 [.] std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::lower_bound(unsigned long const&) (inlined)
+            |
+            ---std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::lower_bound(unsigned long const&) (inlined)
+               std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::lower_bound(unsigned long const&) (inlined)
+               std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+               |          
+               |--5.38%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          
+                --1.24%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+
+     9.14%     0.00%  bench    bench                 [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::lower_bound(unsigned long const&) (inlined)
+            |
+            ---std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::lower_bound(unsigned long const&) (inlined)
+               std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+               |          
+               |--5.38%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+               |          
+                --1.24%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+
+     9.12%     0.56%  bench    libc.so.6             [.] clock_gettime
+            |          
+             --8.56%--clock_gettime
+                       |          
+                        --8.20%--__vdso_clock_gettime
+
+     8.58%     8.35%  bench    [vdso]                [.] __vdso_clock_gettime
+            |          
+             --8.35%--0x75572f6478696873
+                       0x7ffcd6819188
+                       0x7fb858027d0e
+                       main
+                       main::{lambda()#1}::operator()() const [clone .isra.0]
+                       clock_gettime
+                       |          
+                        --8.20%--__vdso_clock_gettime
+
+     7.54%     0.00%  bench    bench                 [.] std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::count(unsigned long const&) const (inlined)
+            |
+            ---std::map<unsigned long, ob::Order, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::count(unsigned long const&) const (inlined)
+               std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) const (inlined)
+               |          
+                --7.48%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+                          |          
+                           --3.81%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+
+     7.54%     0.00%  bench    bench                 [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) const (inlined)
+            |
+            ---std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::find(unsigned long const&) const (inlined)
+               |          
+                --7.48%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, unsigned long const&) const (inlined)
+                          |          
+                           --3.81%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+
+     4.67%     0.00%  bench    bench                 [.] ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int) (inlined)
+            |
+            ---ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int) (inlined)
+               |          
+                --4.44%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+                          __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+
+     4.44%     0.00%  bench    bench                 [.] __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+            |
+            ---__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+               __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+
+     4.44%     0.00%  bench    bench                 [.] __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+            |
+            ---__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::BookB::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+
+     3.73%     3.65%  bench    libstdc++.so.6.0.36   [.] std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+            |          
+             --3.65%--0x75572f6478696873
+                       0x7ffcd6819188
+                       0x7fb858027d0e
+                       main
+                       main::{lambda()#1}::operator()() const [clone .isra.0]
+                       |          
+                        --3.60%--std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+
+     2.88%     0.00%  bench    bench                 [.] ob::mix(unsigned long&, unsigned long) (inlined)
+            |
+            ---ob::mix(unsigned long&, unsigned long) (inlined)
+
+     2.77%     0.00%  bench    bench                 [.] ob::bounded(std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>&, unsigned long) (inlined)
+            |
+            ---ob::bounded(std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>&, unsigned long) (inlined)
+               |          
+                --2.20%--std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()() (inlined)
+
+     2.66%     2.66%  bench    libstdc++.so.6.0.36   [.] std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+            |
+            ---0x75572f6478696873
+               0x7ffcd6819188
+               0x7fb858027d0e
+               main
+               main::{lambda()#1}::operator()() const [clone .isra.0]
+               (anonymous namespace)::Result (anonymous namespace)::replay<ob::BookB>(ob::Trace const&, bool)
+               |          
+                --2.60%--std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+
+     2.63%     0.00%  bench    bench                 [.] ob::BookB::~BookB() (inlined)
+            |
+            ---ob::BookB::~BookB() (inlined)
+               std::vector<ob::Level, std::allocator<ob::Level> >::~vector() (inlined)
+               std::_Vector_base<ob::Level, std::allocator<ob::Level> >::~_Vector_base() (inlined)
+               |          
+                --2.27%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                          |          
+                           --2.25%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                     |          
+                                      --2.23%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                |          
+                                                 --2.21%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                           |          
+                                                            --2.19%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                                      |          
+                                                                       --2.10%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                                                 |          
+                                                                                  --1.90%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                                                            |          
+                                                                                             --1.53%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+
+     2.63%     0.00%  bench    bench                 [.] std::vector<ob::Level, std::allocator<ob::Level> >::~vector() (inlined)
+            |
+            ---std::vector<ob::Level, std::allocator<ob::Level> >::~vector() (inlined)
+               std::_Vector_base<ob::Level, std::allocator<ob::Level> >::~_Vector_base() (inlined)
+               |          
+                --2.27%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                          |          
+                           --2.25%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                     |          
+                                      --2.23%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                |          
+                                                 --2.21%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                           |          
+                                                            --2.19%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                                      |          
+                                                                       --2.10%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                                                 |          
+                                                                                  --1.90%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                                                            |          
+                                                                                             --1.53%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+
+     2.63%     0.00%  bench    bench                 [.] std::_Vector_base<ob::Level, std::allocator<ob::Level> >::~_Vector_base() (inlined)
+            |
+            ---std::_Vector_base<ob::Level, std::allocator<ob::Level> >::~_Vector_base() (inlined)
+               |          
+                --2.27%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                          |          
+                           --2.25%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                     |          
+                                      --2.23%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                |          
+                                                 --2.21%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                           |          
+                                                            --2.19%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                                      |          
+                                                                       --2.10%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                                                 |          
+                                                                                  --1.90%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                                                            |          
+                                                                                             --1.53%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+
+     2.27%     0.00%  bench    bench                 [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+            |
+            ---std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+               |          
+                --2.25%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                          std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                          |          
+                           --2.23%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                     |          
+                                      --2.21%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                |          
+                                                 --2.19%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                           |          
+                                                            --2.10%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                                      |          
+                                                                       --1.90%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                                                 |          
+                                                                                  --1.53%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+
+     2.20%     0.00%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()() (inlined)
+            |
+            ---std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::operator()() (inlined)
+
+     2.20%     0.00%  bench    libc.so.6             [.] 0x00007fb8580bd6ef
+            |
+            ---0x7fb8580bd6ef
+
+     1.85%     0.00%  bench    bench                 [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+            |
+            ---std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+
+     1.64%     1.64%  bench    bench                 [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) [clone .isra.0]
+            |
+            ---0x75572f6478696873
+               0x7ffcd6819188
+               0x7fb858027d0e
+               main
+               main::{lambda()#1}::operator()() const [clone .isra.0]
+               (anonymous namespace)::Result (anonymous namespace)::replay<ob::BookB>(ob::Trace const&, bool)
+               ob::BookB::~BookB() (inlined)
+               std::vector<ob::Level, std::allocator<ob::Level> >::~vector() (inlined)
+               std::_Vector_base<ob::Level, std::allocator<ob::Level> >::~_Vector_base() (inlined)
+               |          
+                --1.63%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                          |          
+                           --1.61%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                     std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                     |          
+                                      --1.59%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                |          
+                                                 --1.57%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                           |          
+                                                            --1.55%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                                      |          
+                                                                       --1.48%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+                                                                                 |          
+                                                                                  --1.28%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+
+     1.53%     0.00%  bench    bench                 [.] ob::consume(unsigned long&, ob::BBO const&) (inlined)
+            |
+            ---ob::consume(unsigned long&, ob::BBO const&) (inlined)
+               ob::mix(unsigned long&, unsigned long) (inlined)
+
+     1.53%     0.00%  bench    bench                 [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+            |
+            ---std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) (inlined)
+
+     1.38%     0.00%  bench    bench                 [.] ob::consume(unsigned long&, std::vector<ob::Level, std::allocator<ob::Level> > const&) (inlined)
+            |
+            ---ob::consume(unsigned long&, std::vector<ob::Level, std::allocator<ob::Level> > const&) (inlined)
+               |          
+                --1.34%--ob::mix(unsigned long&, unsigned long) (inlined)
+
+     1.32%     0.00%  bench    bench                 [.] void std::advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long) (inlined)
+            |
+            ---void std::advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long) (inlined)
+               void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+               void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+               __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator+=(long) (inlined)
+
+     1.32%     0.00%  bench    bench                 [.] void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+            |
+            ---void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+               void std::__advance<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, long>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >&, long, std::random_access_iterator_tag) (inlined)
+               __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator+=(long) (inlined)
+
+     1.32%     0.00%  bench    bench                 [.] __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator+=(long) (inlined)
+            |
+            ---__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator+=(long) (inlined)
+
+     1.26%     0.00%  bench    bench                 [.] __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator++() (inlined)
+            |
+            ---__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >::operator++() (inlined)
+
+     1.25%     1.00%  bench    libc.so.6             [.] malloc
+            |          
+             --1.00%--0x75572f6478696873
+                       0x7ffcd6819188
+                       0x7fb858027d0e
+                       main
+                       main::{lambda()#1}::operator()() const [clone .isra.0]
+                       (anonymous namespace)::Result (anonymous namespace)::replay<ob::BookB>(ob::Trace const&, bool)
+
+     1.10%     0.00%  bench    bench                 [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+            |
+            ---std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_S_left(std::_Rb_tree_node_base*) (inlined)
+
+     1.04%     1.04%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::_M_gen_rand()
+            |
+            ---0x75572f6478696873
+               0x7ffcd6819188
+               0x7fb858027d0e
+               main
+               std::mersenne_twister_engine<unsigned long, 64ul, 312ul, 156ul, 31ul, 13043109905998158313ul, 29ul, 6148914691236517205ul, 17ul, 8202884508482404352ul, 37ul, 18444473444759240704ul, 43ul, 6364136223846793005ul>::_M_gen_rand()
+
+     1.00%     0.85%  bench    libc.so.6             [.] cfree
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

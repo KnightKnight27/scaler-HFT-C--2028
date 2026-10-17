@@ -1,0 +1,36 @@
+{
+  "date_utc": "2026-10-17T08:59:40.714224+00:00",
+  "platform": "Linux-7.2.9-2-cachyos-x86_64-with-glibc2.44",
+  "cpu_affinity": 0,
+  "mode": "bulk",
+  "seed": 42,
+  "ops": 1000000,
+  "repetitions": 5,
+  "final_bbo": "Final BBO (cents): bid=1:9999x2338 ask=1:10001x2909",
+  "warmup": "identical trace, separate fresh book each process",
+  "source_sha256": {
+    "CMakeLists.txt": "91e52a8a83594966a07b8d879c907736d5463e56235b0a33eaeabd90a2de2640",
+    "include/book_a.hpp": "0be83990a35baf013f9be27b1200680f0a8540d7750ad467784aa44c332eb2f7",
+    "include/book_b.hpp": "5149f00223bd5dc54afbfdf065f7e9b8263e0e678d60d064863e17ec9697d584",
+    "include/book_c.hpp": "45bff6bbc0552d834372b98a37cd9703f289d3768759febba70eca0ffc1711ba",
+    "include/types.hpp": "26eb1e6b597c66c06559853163dfae9f2d6cb47deecd446a78fb5bc393631f3e",
+    "src/main.cpp": "d174817763a8446ce2f3e8ae60b9fd0d8997c09ff9efe39cf0fe34fcca375b5a",
+    "src/verify.cpp": "bd61974d8a62410d94fa25432227cc12f60dd3bd17e9c44372b590d6d64f660d",
+    "src/workload.hpp": "c061dfcebd1b1e90c63aab300cdaa0820726bb5929281a9c4602fda4a283a58a"
+  },
+  "binary_sha256": "e4b5fa50ce904a007bdaddd9e90295aafd0a9943b0d9ae5b18562a6a55b02e3d",
+  "compile_commands": [
+    {
+      "directory": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build",
+      "command": "/usr/bin/c++  -I/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/include -I/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src -O2 -DNDEBUG -std=c++17 -Wall -Wextra -Wpedantic -g -fno-omit-frame-pointer -o CMakeFiles/bench.dir/src/main.cpp.o -c /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src/main.cpp",
+      "file": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src/main.cpp",
+      "output": "CMakeFiles/bench.dir/src/main.cpp.o"
+    },
+    {
+      "directory": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/build",
+      "command": "/usr/bin/c++  -I/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/include -I/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src -O2 -DNDEBUG -std=c++17 -Wall -Wextra -Wpedantic -g -fno-omit-frame-pointer -o CMakeFiles/bench.dir/src/verify.cpp.o -c /home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src/verify.cpp",
+      "file": "/home/rushixd/Wurk/Scaler/Cpp/Final-Project/order-book-submission/Capstone/10144/src/verify.cpp",
+      "output": "CMakeFiles/bench.dir/src/verify.cpp.o"
+    }
+  ]
+}
