@@ -1,0 +1,34 @@
+# Build output and direct-compile executables
+build*/
+CMakeFiles/
+CMakeCache.txt
+*.o
+*.obj
+*.a
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.out
+/spsc_queue
+/spsc_queue_test
+
+# Local editor files and caches
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+__pycache__/
+*.py[cod]
+
+# Profiler and coverage output; results/*.csv remains tracked
+*.data
+*.data.old
+*.gcda
+*.gcno
+*.profraw
+*.profdata
