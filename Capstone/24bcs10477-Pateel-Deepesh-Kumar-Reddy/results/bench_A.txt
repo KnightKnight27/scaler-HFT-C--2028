@@ -1,0 +1,11 @@
+Building workload (1000000 ops, seed 42)...
+Implementation: A
+Total time (ms):   290.09
+ns / add:          229.7
+ns / cancel:       516.8
+ns / BBO:          32.6
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: 2472007972
+

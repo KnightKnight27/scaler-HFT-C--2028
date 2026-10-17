@@ -1,0 +1,43 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 774  of event 'cpu_atom/cycles/Pu'
+# Event count (approx.): 204811044
+#
+# Overhead  Command  Shared Object        Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+# ........  .......  ...................  ......................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    34.69%  bench    bench                [.] OrderBookA::add_order(unsigned long, Side, int, long)
+    23.75%  bench    bench                [.] OrderBookA::cancel_order(unsigned long)
+     9.91%  bench    [vdso]               [.] __vdso_clock_gettime
+     8.59%  bench    bench                [.] main
+     3.00%  bench    libc.so.6            [.] 0x00000000000a4f2d
+     2.88%  bench    libc.so.6            [.] 0x00000000000a4ff8
+     2.18%  bench    libc.so.6            [.] 0x00000000000a61c1
+     1.62%  bench    libc.so.6            [.] 0x00000000000a4f37
+     1.32%  bench    libstdc++.so.6.0.36  [.] std::chrono::_V2::steady_clock::now()
+     1.29%  bench    libc.so.6            [.] cfree
+     1.26%  bench    libc.so.6            [.] 0x00000000000a6204
+     1.13%  bench    bench                [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, Order>, false>*, unsigned long)
+
+
+# Samples: 7K of event 'cpu_core/cycles/Pu'
+# Event count (approx.): 4562672160
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+# ........  .......  ....................  ......................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    30.98%  bench    bench                 [.] OrderBookA::cancel_order(unsigned long)
+    30.51%  bench    bench                 [.] OrderBookA::add_order(unsigned long, Side, int, long)
+    11.13%  bench    [vdso]                [.] __vdso_clock_gettime
+     8.28%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, Order>, false>*, unsigned long)
+     3.77%  bench    bench                 [.] main
+     1.75%  bench    libc.so.6             [.] 0x00000000000a4f2d
+     1.50%  bench    bench                 [.] build_workload(int, unsigned int)
+
+
+#
+# (Tip: Use --symfs <dir>[,layout] if your symbol files are in non-standard locations.)
+#

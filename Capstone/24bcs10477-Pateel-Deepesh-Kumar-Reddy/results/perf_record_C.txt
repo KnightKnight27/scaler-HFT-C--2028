@@ -1,0 +1,37 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 152  of event 'cpu_atom/cycles/Pu'
+# Event count (approx.): 40359833
+#
+# Overhead  Command  Shared Object        Symbol                                                                                              
+# ........  .......  ...................  ....................................................................................................
+#
+    60.95%  bench    [vdso]               [.] __vdso_clock_gettime
+    32.08%  bench    bench                [.] RunResult run<OrderBookC>(std::vector<Op, std::allocator<Op> > const&, int) [clone .constprop.0]
+     3.66%  bench    libstdc++.so.6.0.36  [.] std::chrono::_V2::steady_clock::now()
+     2.02%  bench    libc.so.6            [.] clock_gettime
+
+
+# Samples: 2K of event 'cpu_core/cycles/Pu'
+# Event count (approx.): 1238458505
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+# ........  .......  ....................  .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    44.94%  bench    bench                 [.] RunResult run<OrderBookC>(std::vector<Op, std::allocator<Op> > const&, int) [clone .constprop.0]
+    35.98%  bench    [vdso]                [.] __vdso_clock_gettime
+     6.04%  bench    bench                 [.] build_workload(int, unsigned int)
+     3.98%  bench    libstdc++.so.6.0.36   [.] std::chrono::_V2::steady_clock::now()
+     2.20%  bench    libc.so.6             [.] clock_gettime
+     1.48%  bench    bench                 [.] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+     1.22%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+     1.07%  bench    bench                 [.] build_workload(int, unsigned int)::{lambda()#1}::operator()() const [clone .isra.0]
+     1.05%  bench    [unknown]             [k] 0xffffffff9a601988
+
+
+#
+# (Tip: Use --symfs <dir>[,layout] if your symbol files are in non-standard locations.)
+#
