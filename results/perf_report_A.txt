@@ -1,0 +1,273 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 8K of event 'cycles:u'
+# Event count (approx.): 8990000000
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+# ........  .......  ....................  ......................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    38.54%  bench    bench                 [.] MapOrderBook::add_order(unsigned long, Side, int, long)
+            |          
+            |--21.55%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+            |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+            |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::lower_bound(int const&) (inlined)
+            |          std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::lower_bound(int const&) (inlined)
+            |          std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::operator[](int const&) (inlined)
+            |          MapOrderBook::add_order(unsigned long, Side, int, long)
+            |          void (anonymous namespace)::benchmark<MapOrderBook>(Workload const&, char, int, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [clone .constprop.0]
+            |          benchmark<MapOrderBook> (inlined)
+            |          main
+            |          0x7fe351427781
+            |          __libc_start_main
+            |          _start
+            |          
+            |--8.70%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+            |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::lower_bound(int const&) (inlined)
+            |          std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::lower_bound(int const&) (inlined)
+            |          std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::operator[](int const&) (inlined)
+            |          MapOrderBook::add_order(unsigned long, Side, int, long)
+            |          void (anonymous namespace)::benchmark<MapOrderBook>(Workload const&, char, int, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [clone .constprop.0]
+            |          benchmark<MapOrderBook> (inlined)
+            |          main
+            |          0x7fe351427781
+            |          __libc_start_main
+            |          _start
+            |          
+            |--2.56%--std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+            |          |          
+            |           --1.68%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(std::__detail::_Hash_node_value<std::pair<unsigned long const, Order>, false> const&, unsigned long) const (inlined)
+            |                     std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_bucket_index(std::__detail::_Hash_node_value<std::pair<unsigned long const, Order>, false> const&) const (inlined)
+            |                     std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+            |                     std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+            |                     std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+            |                     std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, Order>(unsigned long&, Order&&) (inlined)
+            |                     std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, Order>(unsigned long&, Order&&) (inlined)
+            |                     std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, Order>, false, false>, bool> std::unordered_map<unsigned long, Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, Order> > >::emplace<unsigned long&, Order>(unsigned long&, Order&&) (inlined)
+            |                     MapOrderBook::add_order(unsigned long, Side, int, long)
+            |                     void (anonymous namespace)::benchmark<MapOrderBook>(Workload const&, char, int, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [clone .constprop.0]
+            |                     benchmark<MapOrderBook> (inlined)
+            |                     main
+            |                     0x7fe351427781
+            |                     __libc_start_main
+            |                     _start
+            |          
+            |--1.69%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+            |          std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+            |          std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, Order>(unsigned long&, Order&&) (inlined)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, Order>(unsigned long&, Order&&) (inlined)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, Order>, false, false>, bool> std::unordered_map<unsigned long, Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, Order> > >::emplace<unsigned long&, Order>(unsigned long&, Order&&) (inlined)
+            |          MapOrderBook::add_order(unsigned long, Side, int, long)
+            |          void (anonymous namespace)::benchmark<MapOrderBook>(Workload const&, char, int, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [clone .constprop.0]
+            |          benchmark<MapOrderBook> (inlined)
+            |          main
+            |          0x7fe351427781
+            |          __libc_start_main
+            |          _start
+            |          
+            |--1.66%--std::equal_to<unsigned long>::operator()(unsigned long const&, unsigned long const&) const (inlined)
+            |          bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_key_equals_tr<unsigned long>(unsigned long const&, std::__detail::_Hash_node_value<std::pair<unsigned long const, Order>, false> const&) const (inlined)
+            |          bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_equals_tr<unsigned long>(unsigned long const&, unsigned long, std::__detail::_Hash_node_value<std::pair<unsigned long const, Order>, false> const&) const (inlined)
+            |          std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+            |          std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+            |          std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, Order>(unsigned long&, Order&&) (inlined)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, Order>(unsigned long&, Order&&) (inlined)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, Order>, false, false>, bool> std::unordered_map<unsigned long, Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, Order> > >::emplace<unsigned long&, Order>(unsigned long&, Order&&) (inlined)
+            |          MapOrderBook::add_order(unsigned long, Side, int, long)
+            |          void (anonymous namespace)::benchmark<MapOrderBook>(Workload const&, char, int, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [clone .constprop.0]
+            |          benchmark<MapOrderBook> (inlined)
+            |          main
+            |          0x7fe351427781
+            |          __libc_start_main
+            |          _start
+            |          
+             --1.31%--std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::operator[](int const&) (inlined)
+                       MapOrderBook::add_order(unsigned long, Side, int, long)
+                       void (anonymous namespace)::benchmark<MapOrderBook>(Workload const&, char, int, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [clone .constprop.0]
+                       benchmark<MapOrderBook> (inlined)
+                       main
+                       0x7fe351427781
+                       __libc_start_main
+                       _start
+
+    30.23%  bench    bench                 [.] MapOrderBook::cancel_order(unsigned long)
+            |          
+            |--7.66%--std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+            |          |          
+            |          |--4.82%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(unsigned long, unsigned long) const (inlined)
+            |          |          std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_bucket_index(unsigned long) const (inlined)
+            |          |          std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+            |          |          std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+            |          |          std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) (inlined)
+            |          |          std::unordered_map<unsigned long, Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, Order> > >::find(unsigned long const&) (inlined)
+            |          |          MapOrderBook::cancel_order(unsigned long)
+            |          |          main
+            |          |          0x7fe351427781
+            |          |          __libc_start_main
+            |          |          _start
+            |          |          
+            |           --2.85%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(std::__detail::_Hash_node_value<std::pair<unsigned long const, Order>, false> const&, unsigned long) const (inlined)
+            |                     std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_bucket_index(std::__detail::_Hash_node_value<std::pair<unsigned long const, Order>, false> const&) const (inlined)
+            |                     |          
+            |                      --2.81%--std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_erase(unsigned long, std::__detail::_Hash_node_base*, std::__detail::_Hash_node<std::pair<unsigned long const, Order>, false>*) (inlined)
+            |                                std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::erase(std::__detail::_Node_const_iterator<std::pair<unsigned long const, Order>, false, false>) (inlined)
+            |                                std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::erase(std::__detail::_Node_iterator<std::pair<unsigned long const, Order>, false, false>) (inlined)
+            |                                std::unordered_map<unsigned long, Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, Order> > >::erase(std::__detail::_Node_iterator<std::pair<unsigned long const, Order>, false, false>) (inlined)
+            |                                MapOrderBook::cancel_order(unsigned long)
+            |                                replay<MapOrderBook, false> (inlined)
+            |                                benchmark<MapOrderBook> (inlined)
+            |                                main
+            |                                0x7fe351427781
+            |                                __libc_start_main
+            |                                _start
+            |          
+            |--6.23%--std::equal_to<unsigned long>::operator()(unsigned long const&, unsigned long const&) const (inlined)
+            |          bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_key_equals_tr<unsigned long>(unsigned long const&, std::__detail::_Hash_node_value<std::pair<unsigned long const, Order>, false> const&) const (inlined)
+            |          bool std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_equals_tr<unsigned long>(unsigned long const&, unsigned long, std::__detail::_Hash_node_value<std::pair<unsigned long const, Order>, false> const&) const (inlined)
+            |          std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+            |          std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+            |          std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+            |          std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) (inlined)
+            |          std::unordered_map<unsigned long, Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, Order> > >::find(unsigned long const&) (inlined)
+            |          MapOrderBook::cancel_order(unsigned long)
+            |          main
+            |          0x7fe351427781
+            |          __libc_start_main
+            |          _start
+            |          
+            |--6.18%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+            |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+            |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+            |          std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+            |          MapOrderBook::cancel_order(unsigned long)
+            |          replay<MapOrderBook, false> (inlined)
+            |          benchmark<MapOrderBook> (inlined)
+            |          main
+            |          0x7fe351427781
+            |          __libc_start_main
+            |          _start
+            |          
+            |--5.22%--std::__detail::_Hash_node_base* std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node_tr<unsigned long>(unsigned long, unsigned long const&, unsigned long) const (inlined)
+            |          std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate_tr<unsigned long>(unsigned long const&) const (inlined)
+            |          std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+            |          std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) (inlined)
+            |          std::unordered_map<unsigned long, Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, Order> > >::find(unsigned long const&) (inlined)
+            |          MapOrderBook::cancel_order(unsigned long)
+            |          main
+            |          0x7fe351427781
+            |          __libc_start_main
+            |          _start
+            |          
+             --3.10%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, int const&) const (inlined)
+                       std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+                       std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+                       MapOrderBook::cancel_order(unsigned long)
+                       replay<MapOrderBook, false> (inlined)
+                       benchmark<MapOrderBook> (inlined)
+                       main
+                       0x7fe351427781
+                       __libc_start_main
+                       _start
+
+    11.57%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, Order>, false>*, unsigned long)
+            |          
+            |--7.64%--std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+            |          std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(std::__detail::_Hash_node_value<std::pair<unsigned long const, Order>, false> const&, unsigned long) const (inlined)
+            |          |          
+            |           --7.53%--std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, std::integral_constant<bool, true>) (inlined)
+            |                     std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, Order>, false>*, unsigned long)
+            |                     std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, Order>(unsigned long&, Order&&) (inlined)
+            |                     std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, Order>(unsigned long&, Order&&) (inlined)
+            |                     std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, Order>, false, false>, bool> std::unordered_map<unsigned long, Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, Order> > >::emplace<unsigned long&, Order>(unsigned long&, Order&&) (inlined)
+            |                     MapOrderBook::add_order(unsigned long, Side, int, long)
+            |                     void (anonymous namespace)::benchmark<MapOrderBook>(Workload const&, char, int, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [clone .constprop.0]
+            |                     benchmark<MapOrderBook> (inlined)
+            |                     main
+            |                     0x7fe351427781
+            |                     __libc_start_main
+            |                     _start
+            |          
+            |--1.95%--std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_bucket_begin(unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, Order>, false>*) (inlined)
+            |          std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, Order>, false>*, unsigned long)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, Order>(unsigned long&, Order&&) (inlined)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, Order>(unsigned long&, Order&&) (inlined)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, Order>, false, false>, bool> std::unordered_map<unsigned long, Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, Order> > >::emplace<unsigned long&, Order>(unsigned long&, Order&&) (inlined)
+            |          MapOrderBook::add_order(unsigned long, Side, int, long)
+            |          void (anonymous namespace)::benchmark<MapOrderBook>(Workload const&, char, int, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [clone .constprop.0]
+            |          benchmark<MapOrderBook> (inlined)
+            |          main
+            |          0x7fe351427781
+            |          __libc_start_main
+            |          _start
+            |          
+             --1.47%--std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, std::integral_constant<bool, true>) (inlined)
+                       std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, Order>, false>*, unsigned long)
+                       std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, Order>(unsigned long&, Order&&) (inlined)
+                       std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, Order>(unsigned long&, Order&&) (inlined)
+                       std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, Order>, false, false>, bool> std::unordered_map<unsigned long, Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, Order> > >::emplace<unsigned long&, Order>(unsigned long&, Order&&) (inlined)
+                       MapOrderBook::add_order(unsigned long, Side, int, long)
+                       void (anonymous namespace)::benchmark<MapOrderBook>(Workload const&, char, int, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [clone .constprop.0]
+                       benchmark<MapOrderBook> (inlined)
+                       main
+                       0x7fe351427781
+                       __libc_start_main
+                       _start
+
+     4.91%  bench    bench                 [.] void (anonymous namespace)::benchmark<MapOrderBook>(Workload const&, char, int, bool, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [clone .constprop.0]
+            |          
+            |--3.08%--std::__new_allocator<std::__detail::_Hash_node<std::pair<unsigned long const, Order>, false> >::deallocate(std::__detail::_Hash_node<std::pair<unsigned long const, Order>, false>*, unsigned long) (inlined)
+            |          std::allocator_traits<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, Order>, false> > >::deallocate(std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, Order>, false> >&, std::__detail::_Hash_node<std::pair<unsigned long const, Order>, false>*, unsigned long) (inlined)
+            |          std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, Order>, false> > >::_M_deallocate_node_ptr(std::__detail::_Hash_node<std::pair<unsigned long const, Order>, false>*) (inlined)
+            |          std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, Order>, false> > >::_M_deallocate_node(std::__detail::_Hash_node<std::pair<unsigned long const, Order>, false>*) (inlined)
+            |          std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, Order>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long const, Order>, false>*) (inlined)
+            |          std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+            |          std::unordered_map<unsigned long, Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, Order> > >::~unordered_map() (inlined)
+            |          MapOrderBook::~MapOrderBook() (inlined)
+            |          replay<MapOrderBook, false> (inlined)
+            |          benchmark<MapOrderBook> (inlined)
+            |          main
+            |          0x7fe351427781
+            |          __libc_start_main
+            |          _start
+            |          
+             --1.59%--replay<MapOrderBook, false> (inlined)
+                       |          
+                        --1.32%--benchmark<MapOrderBook> (inlined)
+                                  main
+                                  0x7fe351427781
+                                  __libc_start_main
+                                  _start
+
+     2.32%  bench    bench                 [.] generate_workload(unsigned long, unsigned int)
+            |          
+             --1.41%--generate_workload(unsigned long, unsigned int)
+
+     1.77%  bench    libc.so.6             [.] 0x00000000000a4ef1
+            |
+            ---0x7fe3514a4ef1
+               |          
+                --1.05%--0x7fe3514a61e8
+                          std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, Order>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long const, Order>, false>*) (inlined)
+                          std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+                          std::unordered_map<unsigned long, Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, Order> > >::~unordered_map() (inlined)
+                          MapOrderBook::~MapOrderBook() (inlined)
+                          replay<MapOrderBook, false> (inlined)
+                          benchmark<MapOrderBook> (inlined)
+                          main
+                          0x7fe351427781
+                          __libc_start_main
+                          _start
+
+     1.03%  bench    libc.so.6             [.] cfree
+            |
+            ---cfree
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

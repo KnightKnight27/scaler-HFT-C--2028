@@ -1,0 +1,9 @@
+Seed=42 operations=20000 adds=13978 cancels=3964 BBO_queries=2058 depth_pairs=200
+Workload hash=1677728844147052800
+Running edge cases, all-price sweep and tombstone churn...
+Comparing BBO and ALL active levels after every random operation...
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+Independent recomputing oracle (first 1000 operations): PASS
+All implementations produce identical results.

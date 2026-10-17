@@ -1,0 +1,17 @@
+Command: /home/lner/Documents/High c++/.tools/perf/usr/bin/perf stat -r 5 -e task-clock,cycles:u,instructions:u,branches:u,branch-misses:u,cache-misses:u,L1-dcache-load-misses:u,dTLB-load-misses:u,page-faults -- /home/lner/Documents/High c++/bench --impl C --profile --runs 1
+
+
+ Performance counter stats for '/home/lner/Documents/High c++/bench --impl C --profile --runs 1' (5 runs):
+
+            107.73 msec task-clock:u                                                            ( +-  0.30% )
+         433770821      cycles:u                                                                ( +-  0.19% )  (70.58%)
+         626799000      instructions:u                                                          ( +-  0.80% )  (70.83%)
+          83349511      branches:u                                                              ( +-  0.26% )  (71.76%)
+           2747266      branch-misses:u                                                         ( +-  1.65% )  (72.42%)
+           5266276      cache-misses:u                                                          ( +-  1.91% )  (72.41%)
+           8781201      L1-dcache-load-misses:u                                                 ( +-  0.69% )  (71.46%)
+             11495      dTLB-load-misses:u                                                      ( +-  5.69% )  (70.55%)
+              3439      page-faults:u                                                           ( +-  0.01% )
+
+       0.108475634 +- 0.000324449 seconds time elapsed  ( +-  0.30% )
+

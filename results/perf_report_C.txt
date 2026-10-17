@@ -1,0 +1,124 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'cycles:u'
+# Event count (approx.): 2674000000
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                               
+# ........  .......  ....................  .....................................................................................................................................................................................
+#
+    66.23%  bench    bench                 [.] ArrayOrderBook::insert(unsigned long, Order const&)
+            |          
+             --63.95%--ArrayOrderBook::insert(unsigned long, Order const&)
+                       |          
+                       |--55.16%--ArrayOrderBook::add_order(unsigned long, Side, int, long)
+                       |          (anonymous namespace)::Result (anonymous namespace)::replay<ArrayOrderBook, false>(Workload const&)
+                       |          main
+                       |          main
+                       |          0x7f027ba27781
+                       |          __libc_start_main
+                       |          _start
+                       |          
+                        --8.45%--ArrayOrderBook::rebuild(unsigned long)
+                                  ArrayOrderBook::add_order(unsigned long, Side, int, long)
+                                  (anonymous namespace)::Result (anonymous namespace)::replay<ArrayOrderBook, false>(Workload const&)
+                                  main
+                                  main
+                                  0x7f027ba27781
+                                  __libc_start_main
+                                  _start
+
+     9.35%  bench    bench                 [.] ArrayOrderBook::locate(unsigned long) const
+            |          
+             --8.53%--ArrayOrderBook::locate(unsigned long) const
+                       (anonymous namespace)::Result (anonymous namespace)::replay<ArrayOrderBook, false>(Workload const&)
+                       main
+                       main
+                       0x7f027ba27781
+                       __libc_start_main
+                       _start
+
+     7.63%  bench    bench                 [.] generate_workload(unsigned long, unsigned int)
+            |          
+            |--4.79%--generate_workload(unsigned long, unsigned int)
+            |          |          
+            |          |--2.99%--generate_workload(unsigned long, unsigned int)
+            |          |          std::ostream::operator<<(std::ios_base& (*)(std::ios_base&)) (inlined)
+            |          |          main
+            |          |          0x7f027ba27781
+            |          |          __libc_start_main
+            |          |          _start
+            |          |          
+            |           --1.80%--std::ostream::operator<<(std::ios_base& (*)(std::ios_base&)) (inlined)
+            |                     main
+            |                     0x7f027ba27781
+            |                     __libc_start_main
+            |                     _start
+            |          
+             --2.24%--digest (inlined)
+                       generate_workload(unsigned long, unsigned int)
+                       std::ostream::operator<<(std::ios_base& (*)(std::ios_base&)) (inlined)
+                       main
+                       0x7f027ba27781
+                       __libc_start_main
+                       _start
+
+     2.58%  bench    bench                 [.] (anonymous namespace)::Result (anonymous namespace)::replay<ArrayOrderBook, false>(Workload const&)
+            |          
+             --2.21%--(anonymous namespace)::Result (anonymous namespace)::replay<ArrayOrderBook, false>(Workload const&)
+                       |          
+                        --2.17%--main
+                                  main
+                                  0x7f027ba27781
+                                  __libc_start_main
+                                  _start
+
+     2.09%  bench    bench                 [.] ArrayOrderBook::PriceSide::subtract(int, long, bool)
+            |
+            ---ArrayOrderBook::PriceSide::subtract(int, long, bool)
+               (anonymous namespace)::Result (anonymous namespace)::replay<ArrayOrderBook, false>(Workload const&)
+               main
+               main
+               0x7f027ba27781
+               __libc_start_main
+               _start
+
+     1.72%  bench    bench                 [.] ArrayOrderBook::add_order(unsigned long, Side, int, long)
+            |          
+             --1.61%--ArrayOrderBook::add_order(unsigned long, Side, int, long)
+                       |          
+                        --1.57%--(anonymous namespace)::Result (anonymous namespace)::replay<ArrayOrderBook, false>(Workload const&)
+                                  main
+                                  main
+                                  0x7f027ba27781
+                                  __libc_start_main
+                                  _start
+
+     1.31%  bench    bench                 [.] ArrayOrderBook::PriceSide::next(int, bool) const
+     1.31%  bench    bench                 [.] ArrayOrderBook::rebuild(unsigned long)
+            |
+            ---ArrayOrderBook::rebuild(unsigned long)
+               ArrayOrderBook::add_order(unsigned long, Side, int, long)
+               (anonymous namespace)::Result (anonymous namespace)::replay<ArrayOrderBook, false>(Workload const&)
+               main
+               main
+               0x7f027ba27781
+               __libc_start_main
+               _start
+
+     1.27%  bench    bench                 [.] ArrayOrderBook::PriceSide::add(int, long, bool)
+            |
+            ---ArrayOrderBook::PriceSide::add(int, long, bool)
+               main
+               main
+               0x7f027ba27781
+               __libc_start_main
+               _start
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

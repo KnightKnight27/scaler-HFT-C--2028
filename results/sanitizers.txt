@@ -1,0 +1,11 @@
+Test project /home/lner/Documents/High c++/build-sanitize
+    Start 1: correctness
+1/3 Test #1: correctness ......................   Passed    6.99 sec
+    Start 2: correctness_seed_0
+2/3 Test #2: correctness_seed_0 ...............   Passed    0.68 sec
+    Start 3: correctness_seed_2026
+3/3 Test #3: correctness_seed_2026 ............   Passed    0.71 sec
+
+100% tests passed out of 3
+
+Total Test time (real) =   8.39 sec

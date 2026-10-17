@@ -1,0 +1,2 @@
+[ perf record: Woken up 19 times to write data ]
+[ perf record: Captured and wrote 0.897 MB /home/lner/Documents/High c++/build/perf_B.data ]

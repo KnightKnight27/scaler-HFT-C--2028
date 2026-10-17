@@ -1,0 +1,9 @@
+{
+  "platform": "Linux-7.2.10-arch1-1-x86_64-with-glibc2.44",
+  "cpu_affinity": 0,
+  "compiler": "g++ (GCC) 16.2.1 20260810",
+  "operations": 1000000,
+  "seed": 42,
+  "runs": 5,
+  "order": "ABC, BCA, CAB, ABC, BCA"
+}
