@@ -1,0 +1,11 @@
+ 24.09% bench bench [.] RunResult run_once(std::vector > const&)
+ 13.01% bench bench [.] std::__detail::_Map_base, std::allocator >, std::__detail::_Select1st, std::equal_to, std::hash,
+ 7.92% bench [vdso] [.] 0x0000000000000997
+ 7.23% bench bench [.] std::_Hashtable, std::allocator >, std::__detail::_Select1st, std::equal_to, std::hash, std::__de
+ 6.25% bench libc.so.6 [.] malloc_consolidate
+ 4.99% bench bench [.] std::pair, false, false>, bool> std::_Hashtable, std::allocator >, std::__detail::_Select1st, std
+ 3.49% bench libc.so.6 [.] __memmove_avx_unaligned_erms
+ 3.20% bench libc.so.6 [.] unlink_chunk.isra.0
+ 2.96% bench libc.so.6 [.] _int_free
+ 2.59% bench libc.so.6 [.] _int_malloc
+ 2.21% bench bench [.] std::_Hashtable, std::allocator >, std::__detail::_Select1st, std::equal_to, std::hash, std::__de
