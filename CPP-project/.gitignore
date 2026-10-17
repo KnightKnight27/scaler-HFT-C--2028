@@ -1,0 +1,5 @@
+# Binary outputs
+bench
+bench.exe
+*.o
+*.out
