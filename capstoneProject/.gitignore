@@ -1,0 +1,6 @@
+*.exe
+*.o
+*.obj
+build/
+.vscode/
+.system_generated/
