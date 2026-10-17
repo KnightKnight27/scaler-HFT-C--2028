@@ -1,0 +1,12 @@
+
+# Compiled binaries
+*.exe
+*.o
+*.obj
+
+# Build output
+build/
+cmake-build-*/
+
+# IDE files
+.vscode/
