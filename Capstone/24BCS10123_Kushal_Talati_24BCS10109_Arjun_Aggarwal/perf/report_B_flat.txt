@@ -1,0 +1,40 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 337  of event 'task-clock:ppp'
+# Event count (approx.): 84250000
+#
+# Overhead  Command  Shared Object      Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+# ........  .......  .................  ...........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    17.80%  bench    bench              [.] RunResult run<OrderBookHeap>(Workload const&, bool)
+    10.09%  bench    bench              [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderRec>, std::allocator<std::pair<unsigned long const, OrderRec> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+     7.72%  bench     (deleted)         [.] 0x0000000000096628
+     5.34%  bench    bench              [.] OrderBookHeap::add_order(unsigned long, Side, double, long)
+     4.45%  bench     (deleted)         [.] 0x00000000000a1a40
+     3.26%  bench    bench              [.] gen_workload(unsigned long, unsigned int)
+     2.08%  bench    bench              [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderRec>, std::allocator<std::pair<unsigned long const, OrderRec> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, OrderRec>, false>*, unsigned long)
+     2.08%  bench    bench              [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderRec>, std::allocator<std::pair<unsigned long const, OrderRec> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::erase(std::__detail::_Node_const_iterator<std::pair<unsigned long const, OrderRec>, false, false>)
+     1.78%  bench     (deleted)         [.] 0x0000000000092ae4
+     1.78%  bench    bench              [.] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+     1.78%  bench    bench              [.] std::_Hashtable<int, std::pair<int const, long>, std::allocator<std::pair<int const, long> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(int const&) [clone .isra.0]
+     1.78%  bench    bench              [.] std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, OrderRec>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderRec>, std::allocator<std::pair<unsigned long const, OrderRec> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace<unsigned long&, OrderRec>(std::integral_constant<bool, true>, unsigned long&, OrderRec&&) [clone .isra.0]
+     1.48%  bench     (deleted)         [.] 0x0000000000092a04
+     1.48%  bench     (deleted)         [.] 0x0000000000096dac
+     1.48%  bench    bench              [.] void std::__adjust_heap<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, long, int, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, long, long, int, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> >) [clone .isra.0]
+     1.19%  bench     (deleted)         [.] 0x0000000000094220
+     1.19%  bench    [kernel.kallsyms]  [k] el0_da
+     0.89%  bench     (deleted)         [.] 0x0000000000092a88
+     0.89%  bench     (deleted)         [.] 0x00000000000941b8
+     0.89%  bench     (deleted)         [.] 0x00000000000964ac
+     0.89%  bench     (deleted)         [.] 0x00000000000964d0
+     0.89%  bench     (deleted)         [.] 0x0000000000096500
+     0.89%  bench    [kernel.kallsyms]  [k] charge_memcg
+     0.89%  bench    bench              [.] fold_bbo(unsigned long, BBO const&)
+     0.89%  bench    bench              [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand()
+     0.59%  bench     (deleted)         [.] 0x00000000000928d0
+     0.59%  bench     (deleted)         [.] 0x00000000000928e0
+     0.59%  bench     (deleted)         [.] 0x0000000000092a48
+     0.59%  bench     (deleted)         [.] 0x0000000000092ab4

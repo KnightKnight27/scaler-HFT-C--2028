@@ -1,0 +1,80 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 550  of event 'task-clock:ppp'
+# Event count (approx.): 137500000
+#
+# Overhead  Command  Shared Object        Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+# ........  .......  ...................  ...........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    34.55%  bench    bench                [.] OrderBookMap::add_order(unsigned long, Side, double, long)
+            |
+            ---OrderBookMap::add_order(unsigned long, Side, double, long)
+               RunResult run<OrderBookMap>(Workload const&, bool)
+               main
+               0xffff8a0b84c4
+               __libc_start_main
+               _start
+
+    26.73%  bench    bench                [.] OrderBookMap::cancel_order(unsigned long)
+            |
+            ---OrderBookMap::cancel_order(unsigned long)
+               RunResult run<OrderBookMap>(Workload const&, bool)
+               main
+               0xffff8a0b84c4
+               __libc_start_main
+               _start
+
+     5.64%  bench    libc.so.6            [.] cfree
+            |
+            ---cfree
+               |          
+                --5.45%--std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderRec>, std::allocator<std::pair<unsigned long const, OrderRec> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable()
+                          RunResult run<OrderBookMap>(Workload const&, bool)
+                          main
+                          0xffff8a0b84c4
+                          __libc_start_main
+                          _start
+
+     4.91%  bench    bench                [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderRec>, std::allocator<std::pair<unsigned long const, OrderRec> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+            |
+            ---std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderRec>, std::allocator<std::pair<unsigned long const, OrderRec> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderRec>, std::allocator<std::pair<unsigned long const, OrderRec> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, OrderRec>, false>*, unsigned long)
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, OrderRec>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderRec>, std::allocator<std::pair<unsigned long const, OrderRec> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace<unsigned long&, OrderRec>(std::integral_constant<bool, true>, unsigned long&, OrderRec&&) [clone .isra.0]
+               OrderBookMap::add_order(unsigned long, Side, double, long)
+               RunResult run<OrderBookMap>(Workload const&, bool)
+               main
+               0xffff8a0b84c4
+               __libc_start_main
+               _start
+
+     2.36%  bench    bench                [.] RunResult run<OrderBookMap>(Workload const&, bool)
+            |
+            ---RunResult run<OrderBookMap>(Workload const&, bool)
+               main
+               0xffff8a0b84c4
+               __libc_start_main
+               _start
+
+     2.36%  bench    bench                [.] gen_workload(unsigned long, unsigned int)
+            |
+            ---gen_workload(unsigned long, unsigned int)
+               main
+               0xffff8a0b84c4
+               __libc_start_main
+               _start
+
+     2.00%  bench    bench                [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+            |
+            ---std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+               |          
+                --1.82%--int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+                          gen_workload(unsigned long, unsigned int)
+                          main
+                          0xffff8a0b84c4
+                          __libc_start_main
+                          _start
+
+     1.82%  bench    bench                [.] std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, OrderRec>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderRec>, std::allocator<std::pair<unsigned long const, OrderRec> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace<unsigned long&, OrderRec>(std::integral_constant<bool, true>, unsigned long&, OrderRec&&) [clone .isra.0]

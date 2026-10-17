@@ -1,0 +1,29 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 79  of event 'task-clock:ppp'
+# Event count (approx.): 19750000
+#
+# Overhead  Command  Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+# ........  .......  .....................  .......................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    16.46%  bench    bench                  [.] OrderBookArray::add_order(unsigned long, Side, double, long)
+    15.19%  bench    bench                  [.] RunResult run<OrderBookArray>(Workload const&, bool)
+    13.92%  bench    [kernel.kallsyms]      [k] __pi_clear_page
+    13.92%  bench    bench                  [.] OrderBookArray::cancel_order(unsigned long)
+    11.39%  bench    bench                  [.] gen_workload(unsigned long, unsigned int)
+     8.86%  bench    bench                  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+     7.59%  bench    bench                  [.] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+     3.80%  bench    bench                  [.] llround@plt
+     1.27%  bench     (deleted)             [.] 0x0000000000039dec
+     1.27%  bench     (deleted)             [.] 0x0000000000039df0
+     1.27%  bench    [kernel.kallsyms]      [k] __mod_memcg_lruvec_state
+     1.27%  bench    [kernel.kallsyms]      [k] __rmqueue_pcplist
+     1.27%  bench    [kernel.kallsyms]      [k] get_page_from_freelist
+     1.27%  bench    bench                  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand()
+     1.27%  bench    ld-linux-aarch64.so.1  [.] 0x000000000000ce74
+#
+# (Cannot load tips.txt file, please install perf!)
+#

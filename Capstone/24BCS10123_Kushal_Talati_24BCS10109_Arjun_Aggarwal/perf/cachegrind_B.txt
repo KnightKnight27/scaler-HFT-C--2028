@@ -1,0 +1,28 @@
+==3878== Cachegrind, a high-precision tracing profiler
+==3878== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==3878== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==3878== Command: ./bench --impl B --runs 1 --notime
+==3878== 
+==3878== brk segment overflow in thread #1: can't grow to 0x4851000
+==3878== (see section Limitations in user manual)
+==3878== NOTE: further instances of this message will not be shown
+==3878== 
+==3878== I refs:        1,470,388,546
+==3878== I1  misses:            2,042
+==3878== LLi misses:            2,038
+==3878== I1  miss rate:          0.00%
+==3878== LLi miss rate:          0.00%
+==3878== 
+==3878== D refs:          670,576,491  (399,388,770 rd   + 271,187,721 wr)
+==3878== D1  misses:       17,203,627  ( 15,185,537 rd   +   2,018,090 wr)
+==3878== LLd misses:        4,390,366  (  2,790,647 rd   +   1,599,719 wr)
+==3878== D1  miss rate:           2.6% (        3.8%     +         0.7%  )
+==3878== LLd miss rate:           0.7% (        0.7%     +         0.6%  )
+==3878== 
+==3878== LL refs:          17,205,669  ( 15,187,579 rd   +   2,018,090 wr)
+==3878== LL misses:         4,392,404  (  2,792,685 rd   +   1,599,719 wr)
+==3878== LL miss rate:            0.2% (        0.1%     +         0.6%  )
+==3878== 
+==3878== Branches:        182,510,357  (171,340,398 cond +  11,169,959 ind)
+==3878== Mispredicts:       5,280,482  (  5,200,024 cond +      80,458 ind)
+==3878== Mispred rate:            2.9% (        3.0%     +         0.7%   )

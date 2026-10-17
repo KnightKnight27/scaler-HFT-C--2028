@@ -1,0 +1,7 @@
+uname: Linux 6.12.54-linuxkit aarch64
+CPU implementer	: 0x61
+cpus: 6
+PRETTY_NAME="Ubuntu 24.04.5 LTS"
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+perf version 6.8.12
+perf_event_paranoid: 2

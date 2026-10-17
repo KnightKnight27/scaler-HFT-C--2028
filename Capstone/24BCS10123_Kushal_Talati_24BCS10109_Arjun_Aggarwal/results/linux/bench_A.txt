@@ -1,0 +1,11 @@
+impl A  ops=1000000 seed=42  (adds 700471, cancels 199303, bbo 100226, depth pairs 10000, degraded cancels 0)
+clock overhead per timed call: 20.8 ns
+warm-up run done (not timed)
+run 1: total 539.0 ms | add 405.5 ns | cancel 1046.9 ns | bbo 58.6 ns | depth 496.5 ns | p99 add 1375 cancel 2667 bbo 209 depth 1375
+run 2: total 266.0 ms | add 194.6 ns | cancel 483.2 ns | bbo 42.0 ns | depth 185.1 ns | p99 add 459 cancel 1458 bbo 84 depth 750
+run 3: total 284.2 ms | add 207.0 ns | cancel 524.2 ns | bbo 43.6 ns | depth 205.2 ns | p99 add 834 cancel 1875 bbo 125 depth 1042
+run 4: total 475.7 ms | add 370.4 ns | cancel 885.8 ns | bbo 52.7 ns | depth 368.8 ns | p99 add 1417 cancel 2750 bbo 208 depth 1417
+run 5: total 272.4 ms | add 196.2 ns | cancel 510.6 ns | bbo 41.8 ns | depth 189.2 ns | p99 add 500 cancel 1500 bbo 83 depth 708
+median: total 284.2 ms | add 207.0 ns | cancel 524.2 ns | bbo 43.6 ns | depth 205.2 ns | p99 add 834 cancel 1875 bbo 125 depth 1042
+Final BBO: Bid: 99.99 x 2722 / Ask: 100.01 x 2525
+Checksum: 0x6f57ef156858a32e

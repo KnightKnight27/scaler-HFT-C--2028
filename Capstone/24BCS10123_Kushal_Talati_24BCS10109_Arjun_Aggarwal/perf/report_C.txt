@@ -1,0 +1,80 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 79  of event 'task-clock:ppp'
+# Event count (approx.): 19750000
+#
+# Overhead  Command  Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+# ........  .......  .....................  .......................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    16.46%  bench    bench                  [.] OrderBookArray::add_order(unsigned long, Side, double, long)
+            |
+            ---OrderBookArray::add_order(unsigned long, Side, double, long)
+               RunResult run<OrderBookArray>(Workload const&, bool)
+               main
+               0xffff842a84c4
+               0xffff842a8598
+               _start
+
+    15.19%  bench    bench                  [.] RunResult run<OrderBookArray>(Workload const&, bool)
+            |
+            ---RunResult run<OrderBookArray>(Workload const&, bool)
+               main
+               0xffff842a84c4
+               0xffff842a8598
+               _start
+
+    13.92%  bench    [kernel.kallsyms]      [k] __pi_clear_page
+            |
+            ---__pi_clear_page
+               do_huge_pmd_anonymous_page
+               __handle_mm_fault
+               handle_mm_fault
+               do_page_fault
+               do_translation_fault
+               do_mem_abort
+               el0_da
+               el0t_64_sync_handler
+               el0t_64_sync
+               RunResult run<OrderBookArray>(Workload const&, bool)
+               main
+               0xffff842a84c4
+               0xffff842a8598
+               _start
+
+    13.92%  bench    bench                  [.] OrderBookArray::cancel_order(unsigned long)
+            |
+            ---OrderBookArray::cancel_order(unsigned long)
+               RunResult run<OrderBookArray>(Workload const&, bool)
+               main
+               0xffff842a84c4
+               0xffff842a8598
+               _start
+
+    11.39%  bench    bench                  [.] gen_workload(unsigned long, unsigned int)
+            |
+            ---gen_workload(unsigned long, unsigned int)
+               main
+               0xffff842a84c4
+               0xffff842a8598
+               _start
+
+     8.86%  bench    bench                  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+            |
+            ---std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+               int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+               gen_workload(unsigned long, unsigned int)
+               main
+               0xffff842a84c4
+               0xffff842a8598
+               _start
+
+     7.59%  bench    bench                  [.] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+            |
+            ---int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+               gen_workload(unsigned long, unsigned int)
+               main
+               0xffff842a84c4
+               0xffff842a8598

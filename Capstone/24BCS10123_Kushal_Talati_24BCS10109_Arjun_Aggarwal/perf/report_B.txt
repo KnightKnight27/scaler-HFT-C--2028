@@ -1,0 +1,80 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 337  of event 'task-clock:ppp'
+# Event count (approx.): 84250000
+#
+# Overhead  Command  Shared Object      Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+# ........  .......  .................  ...........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    17.80%  bench    bench              [.] RunResult run<OrderBookHeap>(Workload const&, bool)
+            |
+            ---RunResult run<OrderBookHeap>(Workload const&, bool)
+               main
+               0xffffbd4284c4
+               0xffffbd428598
+               _start
+
+    10.09%  bench    bench              [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderRec>, std::allocator<std::pair<unsigned long const, OrderRec> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+            |
+            ---std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderRec>, std::allocator<std::pair<unsigned long const, OrderRec> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderRec>, std::allocator<std::pair<unsigned long const, OrderRec> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, OrderRec>, false>*, unsigned long)
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, OrderRec>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderRec>, std::allocator<std::pair<unsigned long const, OrderRec> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace<unsigned long&, OrderRec>(std::integral_constant<bool, true>, unsigned long&, OrderRec&&) [clone .isra.0]
+               OrderBookHeap::add_order(unsigned long, Side, double, long)
+               RunResult run<OrderBookHeap>(Workload const&, bool)
+               main
+               0xffffbd4284c4
+               0xffffbd428598
+               _start
+
+     7.72%  bench     (deleted)         [.] 0x0000000000096628
+            |
+            ---0xffffbd496628
+               0xffffbd75afdf
+               0xffffbd75afe0
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, OrderRec>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderRec>, std::allocator<std::pair<unsigned long const, OrderRec> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace<unsigned long&, OrderRec>(std::integral_constant<bool, true>, unsigned long&, OrderRec&&) [clone .isra.0]
+               OrderBookHeap::add_order(unsigned long, Side, double, long)
+               RunResult run<OrderBookHeap>(Workload const&, bool)
+               main
+               0xffffbd4284c4
+               0xffffbd428598
+               _start
+
+     5.34%  bench    bench              [.] OrderBookHeap::add_order(unsigned long, Side, double, long)
+            |
+            ---OrderBookHeap::add_order(unsigned long, Side, double, long)
+               |          
+               |--4.75%--RunResult run<OrderBookHeap>(Workload const&, bool)
+               |          main
+               |          0xffffbd4284c4
+               |          0xffffbd428598
+               |          _start
+               |          
+                --0.59%--main
+                          0xffffbd4284c4
+                          0xffffbd428598
+                          _start
+
+     4.45%  bench     (deleted)         [.] 0x00000000000a1a40
+            |
+            ---0xffffbd4a1a40
+               |          
+               |--2.67%--std::vector<Level, std::allocator<Level> > OrderBookHeap::walk<std::priority_queue<int, std::vector<int, std::allocator<int> >, std::less<int> > >(std::priority_queue<int, std::vector<int, std::allocator<int> >, std::less<int> > const&, std::unordered_map<int, long, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, long> > > const&, int)
+               |          RunResult run<OrderBookHeap>(Workload const&, bool)
+               |          main
+               |          0xffffbd4284c4
+               |          0xffffbd428598
+               |          _start
+               |          
+                --1.78%--std::vector<Level, std::allocator<Level> > OrderBookHeap::walk<std::priority_queue<int, std::vector<int, std::allocator<int> >, std::greater<int> > >(std::priority_queue<int, std::vector<int, std::allocator<int> >, std::greater<int> > const&, std::unordered_map<int, long, std::hash<int>, std::equal_to<int>, std::allocator<std::pair<int const, long> > > const&, int)
+                          RunResult run<OrderBookHeap>(Workload const&, bool)
+                          main
+                          0xffffbd4284c4
+                          0xffffbd428598
+                          _start
+
+     3.26%  bench    bench              [.] gen_workload(unsigned long, unsigned int)
+            |
+            ---gen_workload(unsigned long, unsigned int)
