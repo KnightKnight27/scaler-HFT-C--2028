@@ -2,7 +2,11 @@
 
 This project implements a single-instrument resting order book in three different ways and compares their latency. There is no matching or trade generation. Quantities at the same price are aggregated.
 
-**Student details:** TODO — add SST email and roll number before submitting the PR.
+Name :- Shrival Kumar 
+
+Email :- shrival.24bcs10254@sst.scaler.com 
+
+Roll no. :- 24BCS10254
 
 The implementations are intentionally kept in three separate source/header pairs:
 
