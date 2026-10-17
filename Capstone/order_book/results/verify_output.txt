@@ -1,0 +1,22 @@
+Running correctness test...
+
+sizeof(Order) = 16 bytes
+
+edge case tests: A ok, B ok, C ok
+
+random workload: 1000000 ops, seed 42
+checking bbo after every op, top 10 levels every 100 ops, full book every 10000 ops
+
+bbo checks done: 1000000
+mismatches vs A: B = 0, C = 0
+total qty wrong: A = 0, B = 0, C = 0
+
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+
+Final BBO:
+Bid: 99.99 x 3244
+Ask: 100.01 x 2193
+
+All implementations produce identical results.

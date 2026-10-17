@@ -1,0 +1,81 @@
+Implementation A (std::map)
+ops: 1000000, seed: 42, runs: 5
+
+run 1: total 338.54 ms | add 212.8 ns | cancel 747.9 ns | bbo 28.7 ns
+run 2: total 329.91 ms | add 209.1 ns | cancel 733.5 ns | bbo 28.5 ns
+run 3: total 330.95 ms | add 208.7 ns | cancel 739.3 ns | bbo 28.7 ns
+run 4: total 338.70 ms | add 209.3 ns | cancel 776.6 ns | bbo 28.9 ns
+run 5: total 379.28 ms | add 232.3 ns | cancel 878.0 ns | bbo 29.5 ns
+
+median of 5 runs
+total time (ms)      : 338.54
+ns / add             : 209.3
+ns / cancel          : 747.9
+ns / bbo             : 28.7
+ns / depth query     : 561.7   (get_bids(10) + get_asks(10))
+p99 add / cancel / bbo (ns) : 334 / 1875 / 42
+max cancel (ns)      : 53791
+timer overhead       : 26.7 ns per now() pair (included in the numbers above)
+
+Final BBO:
+Bid: 99.99 x 3244
+Ask: 100.01 x 2193
+
+Checksum: 64516457004
+
+-----------------
+
+Implementation B (priority_queue + lazy deletion)
+ops: 1000000, seed: 42, runs: 5
+
+run 1: total 162.89 ms | add 88.7 ns | cancel 221.6 ns | bbo 28.0 ns
+run 2: total 153.88 ms | add 87.4 ns | cancel 189.0 ns | bbo 27.8 ns
+run 3: total 151.42 ms | add 83.7 ns | cancel 191.2 ns | bbo 27.7 ns
+run 4: total 150.25 ms | add 84.8 ns | cancel 180.2 ns | bbo 27.7 ns
+run 5: total 162.05 ms | add 93.1 ns | cancel 204.5 ns | bbo 28.1 ns
+
+median of 5 runs
+total time (ms)      : 153.88
+ns / add             : 87.4
+ns / cancel          : 191.2
+ns / bbo             : 27.8
+ns / depth query     : 2334.5   (get_bids(10) + get_asks(10))
+p99 add / cancel / bbo (ns) : 250 / 667 / 42
+max cancel (ns)      : 31458
+timer overhead       : 27.6 ns per now() pair (included in the numbers above)
+
+Final BBO:
+Bid: 99.99 x 3244
+Ask: 100.01 x 2193
+
+Checksum: 64516457004
+
+-----------------
+
+Implementation C (flat price array + order pool)
+ops: 1000000, seed: 42, runs: 5
+
+run 1: total 74.22 ms | add 33.1 ns | cancel 64.9 ns | bbo 28.6 ns
+run 2: total 69.32 ms | add 31.6 ns | cancel 53.8 ns | bbo 28.5 ns
+run 3: total 70.19 ms | add 31.5 ns | cancel 56.5 ns | bbo 28.6 ns
+run 4: total 68.00 ms | add 31.6 ns | cancel 49.7 ns | bbo 28.4 ns
+run 5: total 66.91 ms | add 31.4 ns | cancel 45.3 ns | bbo 28.4 ns
+
+median of 5 runs
+total time (ms)      : 69.32
+ns / add             : 31.6
+ns / cancel          : 53.8
+ns / bbo             : 28.5
+ns / depth query     : 469.2   (get_bids(10) + get_asks(10))
+p99 add / cancel / bbo (ns) : 42 / 333 / 42
+max cancel (ns)      : 14375
+timer overhead       : 26.5 ns per now() pair (included in the numbers above)
+
+Final BBO:
+Bid: 99.99 x 3244
+Ask: 100.01 x 2193
+
+Checksum: 64516457004
+
+-----------------
+

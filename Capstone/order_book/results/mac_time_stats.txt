@@ -1,0 +1,24 @@
+impl A
+        0.69 real         0.44 user         0.01 sys
+            66256896  maximum resident set size
+                4192  page reclaims
+                   1  page faults
+          1601309103  instructions retired
+           878899211  cycles elapsed
+
+impl B
+        0.28 real         0.26 user         0.01 sys
+            72187904  maximum resident set size
+                4550  page reclaims
+                   1  page faults
+          1518015053  instructions retired
+           551197414  cycles elapsed
+
+impl C
+        0.16 real         0.15 user         0.00 sys
+            50479104  maximum resident set size
+                3224  page reclaims
+                   1  page faults
+           859778705  instructions retired
+           312657361  cycles elapsed
+

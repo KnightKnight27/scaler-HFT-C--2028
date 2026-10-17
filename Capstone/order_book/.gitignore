@@ -1,0 +1,5 @@
+bench
+*.dSYM/
+perf.data*
+results/*.data
+results/*.data.old
