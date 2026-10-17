@@ -1,0 +1,21 @@
+
+ Performance counter stats for './build-native/bench --impl C' (5 runs):
+
+          1,670.58 msec task-clock                                                              ( +-  2.58% )
+     2,294,772,217      cpu_atom/cycles/                                                        ( +-  5.62% )  (0.66%)
+     3,186,740,084      cpu_core/cycles/                                                        ( +-  1.97% )  (99.34%)
+     2,449,252,160      cpu_atom/instructions/                                                  ( +- 11.34% )  (0.66%)
+     3,337,106,365      cpu_core/instructions/                                                  ( +-  2.00% )  (99.34%)
+       378,994,307      cpu_atom/branches/                                                      ( +-  8.14% )  (0.66%)
+       545,806,105      cpu_core/branches/                                                      ( +-  2.00% )  (99.34%)
+         9,929,354      cpu_atom/branch-misses/                                                 ( +-  9.20% )  (0.66%)
+        12,687,482      cpu_core/branch-misses/                                                 ( +-  1.76% )  (99.34%)
+        26,918,510      cpu_atom/cache-misses/                                                  ( +- 11.92% )  (0.66%)
+        34,026,954      cpu_core/cache-misses/                                                  ( +-  3.05% )  (99.34%)
+   <not supported>      cpu_atom/L1-dcache-load-misses/
+        24,307,276      cpu_core/L1-dcache-load-misses/                                         ( +-  2.24% )  (99.34%)
+         1,660,643      cpu_atom/dTLB-load-misses/                                              ( +- 18.92% )  (0.66%)
+         2,363,691      cpu_core/dTLB-load-misses/                                              ( +-  2.12% )  (99.34%)
+            88,682      page-faults                                                             ( +-  0.00% )
+
+       1.675801681 +- 0.044171707 seconds time elapsed  ( +-  2.64% )
