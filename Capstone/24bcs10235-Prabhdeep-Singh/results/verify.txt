@@ -1,0 +1,9 @@
+Running correctness test...
+
+320003 comparisons on 1000000 random operations, 0 mismatch(es)
+
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+
+All implementations produce identical results.

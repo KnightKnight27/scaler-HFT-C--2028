@@ -1,0 +1,65 @@
+
+=== Implementation C (median of 5 runs) ===
+Total time:   75.92 ms
+ns / add:     69.16
+ns / cancel:  49.50
+ns / bbo:     12.98
+Final BBO:
+  Bid: 99.99 x 1981
+  Ask: 100.01 x 2573
+Checksum:     4500407928
+
+=== Implementation C (median of 5 runs) ===
+Total time:   75.26 ms
+ns / add:     67.90
+ns / cancel:  49.26
+ns / bbo:     12.97
+Final BBO:
+  Bid: 99.99 x 1981
+  Ask: 100.01 x 2573
+Checksum:     4500407928
+
+=== Implementation C (median of 5 runs) ===
+Total time:   73.89 ms
+ns / add:     66.53
+ns / cancel:  48.16
+ns / bbo:     13.34
+Final BBO:
+  Bid: 99.99 x 1981
+  Ask: 100.01 x 2573
+Checksum:     4500407928
+
+=== Implementation C (median of 5 runs) ===
+Total time:   74.13 ms
+ns / add:     66.57
+ns / cancel:  48.51
+ns / bbo:     12.93
+Final BBO:
+  Bid: 99.99 x 1981
+  Ask: 100.01 x 2573
+Checksum:     4500407928
+
+=== Implementation C (median of 5 runs) ===
+Total time:   72.39 ms
+ns / add:     64.97
+ns / cancel:  46.40
+ns / bbo:     13.10
+Final BBO:
+  Bid: 99.99 x 1981
+  Ask: 100.01 x 2573
+Checksum:     4500407928
+
+ Performance counter stats for './bench --impl C' (5 runs):
+
+            379.32 msec task-clock                       #    0.970 CPUs utilized            ( +-  1.02% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      cache-misses                                                
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      dTLB-load-misses                                            
+              6904      page-faults                      #   17.679 K/sec                    ( +-  2.34% )
+
+           0.39120 +- 0.00389 seconds time elapsed  ( +-  0.99% )
+

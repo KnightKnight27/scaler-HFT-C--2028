@@ -1,0 +1,86 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 753  of event 'cpu-clock:pppH'
+# Event count (approx.): 188250000
+#
+# Overhead  Command  Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                            
+# ........  .......  .....................  ..................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    30.15%  bench    bench                  [.] OrderBookA::add_order
+            |
+            ---OrderBookA::add_order
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+    24.70%  bench    bench                  [.] OrderBookA::cancel_order
+            |
+            ---OrderBookA::cancel_order
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+    21.51%  bench    [vdso]                 [.] __kernel_clock_gettime
+            |
+            ---__kernel_clock_gettime
+               clock_gettime@@GLIBC_2.17
+               std::chrono::_V2::steady_clock::now
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     3.59%  bench    bench                  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookA::OrderInfo>, std::allocator<std::pair<unsigned long const, OrderBookA::OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash
+            |
+            ---std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookA::OrderInfo>, std::allocator<std::pair<unsigned long const, OrderBookA::OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash
+               std::__detail::_Map_base<unsigned long, std::pair<unsigned long const, OrderBookA::OrderInfo>, std::allocator<std::pair<unsigned long const, OrderBookA::OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[]
+               OrderBookA::add_order
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     3.05%  bench    libc.so.6              [.] _int_free
+            |
+            ---_int_free
+               |          
+                --2.92%--cfree@GLIBC_2.17
+                          |          
+                           --2.79%--main
+                                     __libc_start_call_main
+                                     __libc_start_main@@GLIBC_2.34
+                                     _start
+
+     2.66%  bench    libc.so.6              [.] malloc_consolidate
+            |
+            ---malloc_consolidate
+               |          
+                --1.99%--_int_free
+                          cfree@GLIBC_2.17
+                          main
+                          __libc_start_call_main
+                          __libc_start_main@@GLIBC_2.34
+                          _start
+
+     1.73%  bench    libc.so.6              [.] _int_malloc
+            |
+            ---_int_malloc
+               malloc
+               operator new
+               std::__detail::_Map_base<unsigned long, std::pair<unsigned long const, OrderBookA::OrderInfo>, std::allocator<std::pair<unsigned long const, OrderBookA::OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[]
+               OrderBookA::add_order
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

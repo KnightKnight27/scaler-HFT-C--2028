@@ -1,0 +1,28 @@
+
+=== Implementation C (median of 5 runs) ===
+Total time:   41.46 ms
+ns / add:     28.67
+ns / cancel:  20.84
+ns / bbo:     12.73
+Final BBO:
+  Bid: 99.99 x 2592
+  Ask: 100.01 x 2551
+Checksum:     4502018310
+        0.25 real         0.23 user         0.00 sys
+            86048768  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                5420  page reclaims
+                  10  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                  41  involuntary context switches
+          2613971182  instructions retired
+          1076324353  cycles elapsed
+            85606784  peak memory footprint

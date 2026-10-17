@@ -1,0 +1,65 @@
+
+=== Implementation B (median of 5 runs) ===
+Total time:   2466.39 ms
+ns / add:     53.65
+ns / cancel:  152.68
+ns / bbo:     18.22
+Final BBO:
+  Bid: 99.99 x 1981
+  Ask: 100.01 x 2573
+Checksum:     4500407928
+
+=== Implementation B (median of 5 runs) ===
+Total time:   2548.05 ms
+ns / add:     61.96
+ns / cancel:  226.80
+ns / bbo:     18.90
+Final BBO:
+  Bid: 99.99 x 1981
+  Ask: 100.01 x 2573
+Checksum:     4500407928
+
+=== Implementation B (median of 5 runs) ===
+Total time:   2602.38 ms
+ns / add:     68.01
+ns / cancel:  272.65
+ns / bbo:     19.78
+Final BBO:
+  Bid: 99.99 x 1981
+  Ask: 100.01 x 2573
+Checksum:     4500407928
+
+=== Implementation B (median of 5 runs) ===
+Total time:   2564.12 ms
+ns / add:     61.59
+ns / cancel:  225.61
+ns / bbo:     18.68
+Final BBO:
+  Bid: 99.99 x 1981
+  Ask: 100.01 x 2573
+Checksum:     4500407928
+
+=== Implementation B (median of 5 runs) ===
+Total time:   2532.50 ms
+ns / add:     54.90
+ns / cancel:  171.93
+ns / bbo:     18.67
+Final BBO:
+  Bid: 99.99 x 1981
+  Ask: 100.01 x 2573
+Checksum:     4500407928
+
+ Performance counter stats for './bench --impl B' (5 runs):
+
+          12609.83 msec task-clock                       #    0.984 CPUs utilized            ( +-  0.73% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      cache-misses                                                
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      dTLB-load-misses                                            
+              8463      page-faults                      #  660.320 /sec                     ( +-  2.96% )
+
+           12.8194 +- 0.0927 seconds time elapsed  ( +-  0.72% )
+
