@@ -1,0 +1,61 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 387  of event 'cpu-clock:pppH'
+# Event count (approx.): 96750000
+#
+# Overhead  Command  Shared Object        Symbol                                                                                                                                                                                                                  
+# ........  .......  ...................  ........................................................................................................................................................................................................................
+#
+    80.10%  bench    [vdso]               [.] __kernel_clock_gettime
+            |
+            ---__kernel_clock_gettime
+               clock_gettime@@GLIBC_2.17
+               std::chrono::_V2::steady_clock::now
+               run_bench<OrderBookC>
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     6.20%  bench    bench                [.] OrderBookC::add_order
+            |
+            ---OrderBookC::add_order
+               run_bench<OrderBookC>
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     2.58%  bench    bench                [.] run_bench<OrderBookC>
+            |
+            ---run_bench<OrderBookC>
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     2.33%  bench    bench                [.] OrderBookC::cancel_order
+            |
+            ---OrderBookC::cancel_order
+               run_bench<OrderBookC>
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     1.55%  bench    bench                [.] generate_workload
+            |
+            ---generate_workload
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

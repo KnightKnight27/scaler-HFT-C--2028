@@ -1,0 +1,28 @@
+
+=== Implementation A (median of 5 runs) ===
+Total time:   112.12 ms
+ns / add:     81.64
+ns / cancel:  184.94
+ns / bbo:     13.84
+Final BBO:
+  Bid: 99.99 x 2592
+  Ask: 100.01 x 2551
+Checksum:     4502018310
+        0.67 real         0.66 user         0.01 sys
+            73105408  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                4839  page reclaims
+                   9  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                 153  involuntary context switches
+          5259525727  instructions retired
+          2889915557  cycles elapsed
+            72696192  peak memory footprint

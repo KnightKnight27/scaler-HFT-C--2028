@@ -1,0 +1,65 @@
+
+=== Implementation A (median of 5 runs) ===
+Total time:   132.37 ms
+ns / add:     99.84
+ns / cancel:  218.60
+ns / bbo:     13.25
+Final BBO:
+  Bid: 99.99 x 1981
+  Ask: 100.01 x 2573
+Checksum:     4500407928
+
+=== Implementation A (median of 5 runs) ===
+Total time:   128.66 ms
+ns / add:     100.76
+ns / cancel:  197.82
+ns / bbo:     13.26
+Final BBO:
+  Bid: 99.99 x 1981
+  Ask: 100.01 x 2573
+Checksum:     4500407928
+
+=== Implementation A (median of 5 runs) ===
+Total time:   126.77 ms
+ns / add:     95.57
+ns / cancel:  207.08
+ns / bbo:     13.35
+Final BBO:
+  Bid: 99.99 x 1981
+  Ask: 100.01 x 2573
+Checksum:     4500407928
+
+=== Implementation A (median of 5 runs) ===
+Total time:   129.19 ms
+ns / add:     101.07
+ns / cancel:  198.65
+ns / bbo:     13.17
+Final BBO:
+  Bid: 99.99 x 1981
+  Ask: 100.01 x 2573
+Checksum:     4500407928
+
+=== Implementation A (median of 5 runs) ===
+Total time:   144.90 ms
+ns / add:     106.54
+ns / cancel:  256.82
+ns / bbo:     13.62
+Final BBO:
+  Bid: 99.99 x 1981
+  Ask: 100.01 x 2573
+Checksum:     4500407928
+
+ Performance counter stats for './bench --impl A' (5 runs):
+
+            876.08 msec task-clock                       #    1.157 CPUs utilized            ( +-  3.52% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      cache-misses                                                
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      dTLB-load-misses                                            
+              9519      page-faults                      #   12.586 K/sec                    ( +-  2.01% )
+
+            0.7574 +- 0.0308 seconds time elapsed  ( +-  4.06% )
+

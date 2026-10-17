@@ -1,0 +1,138 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 12K of event 'cpu-clock:pppH'
+# Event count (approx.): 3144000000
+#
+# Overhead  Command  Shared Object        Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                            
+# ........  .......  ...................  ..................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    30.45%  bench    bench                [.] OrderBookB::get_asks
+            |
+            ---OrderBookB::get_asks
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+    27.86%  bench    bench                [.] OrderBookB::get_bids
+            |
+            ---OrderBookB::get_bids
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+    20.88%  bench    bench                [.] std::__introsort_loop<__gnu_cxx::__normal_iterator<std::pair<int, long>*, std::vector<std::pair<int, long>, std::allocator<std::pair<int, long> > > >, long, __gnu_cxx::__ops::_Iter_less_iter>
+            |
+            ---std::__introsort_loop<__gnu_cxx::__normal_iterator<std::pair<int, long>*, std::vector<std::pair<int, long>, std::allocator<std::pair<int, long> > > >, long, __gnu_cxx::__ops::_Iter_less_iter>
+               |          
+               |--17.48%--std::__introsort_loop<__gnu_cxx::__normal_iterator<std::pair<int, long>*, std::vector<std::pair<int, long>, std::allocator<std::pair<int, long> > > >, long, __gnu_cxx::__ops::_Iter_less_iter>
+               |          |          
+               |          |--13.62%--std::__introsort_loop<__gnu_cxx::__normal_iterator<std::pair<int, long>*, std::vector<std::pair<int, long>, std::allocator<std::pair<int, long> > > >, long, __gnu_cxx::__ops::_Iter_less_iter>
+               |          |          |          
+               |          |          |--9.80%--std::__introsort_loop<__gnu_cxx::__normal_iterator<std::pair<int, long>*, std::vector<std::pair<int, long>, std::allocator<std::pair<int, long> > > >, long, __gnu_cxx::__ops::_Iter_less_iter>
+               |          |          |          |          
+               |          |          |          |--6.58%--std::__introsort_loop<__gnu_cxx::__normal_iterator<std::pair<int, long>*, std::vector<std::pair<int, long>, std::allocator<std::pair<int, long> > > >, long, __gnu_cxx::__ops::_Iter_less_iter>
+               |          |          |          |          |          
+               |          |          |          |          |--3.57%--std::__introsort_loop<__gnu_cxx::__normal_iterator<std::pair<int, long>*, std::vector<std::pair<int, long>, std::allocator<std::pair<int, long> > > >, long, __gnu_cxx::__ops::_Iter_less_iter>
+               |          |          |          |          |          |          
+               |          |          |          |          |          |--1.93%--OrderBookB::get_asks
+               |          |          |          |          |          |          main
+               |          |          |          |          |          |          __libc_start_call_main
+               |          |          |          |          |          |          __libc_start_main@@GLIBC_2.34
+               |          |          |          |          |          |          _start
+               |          |          |          |          |          |          
+               |          |          |          |          |           --1.64%--std::__introsort_loop<__gnu_cxx::__normal_iterator<std::pair<int, long>*, std::vector<std::pair<int, long>, std::allocator<std::pair<int, long> > > >, long, __gnu_cxx::__ops::_Iter_less_iter>
+               |          |          |          |          |          
+               |          |          |          |           --3.01%--OrderBookB::get_asks
+               |          |          |          |                     main
+               |          |          |          |                     __libc_start_call_main
+               |          |          |          |                     __libc_start_main@@GLIBC_2.34
+               |          |          |          |                     _start
+               |          |          |          |          
+               |          |          |           --3.21%--OrderBookB::get_asks
+               |          |          |                     main
+               |          |          |                     __libc_start_call_main
+               |          |          |                     __libc_start_main@@GLIBC_2.34
+               |          |          |                     _start
+               |          |          |          
+               |          |           --3.82%--OrderBookB::get_asks
+               |          |                     main
+               |          |                     __libc_start_call_main
+               |          |                     __libc_start_main@@GLIBC_2.34
+               |          |                     _start
+               |          |          
+               |           --3.86%--OrderBookB::get_asks
+               |                     main
+               |                     __libc_start_call_main
+               |                     __libc_start_main@@GLIBC_2.34
+               |                     _start
+               |          
+                --3.40%--OrderBookB::get_asks
+                          main
+                          __libc_start_call_main
+                          __libc_start_main@@GLIBC_2.34
+                          _start
+
+    16.11%  bench    bench                [.] std::__introsort_loop<__gnu_cxx::__normal_iterator<std::pair<int, long>*, std::vector<std::pair<int, long>, std::allocator<std::pair<int, long> > > >, long, __gnu_cxx::__ops::_Iter_comp_iter<OrderBookB::get_bids(int) const::{lambda(auto:1&, auto:2&)#1}> >
+            |
+            ---std::__introsort_loop<__gnu_cxx::__normal_iterator<std::pair<int, long>*, std::vector<std::pair<int, long>, std::allocator<std::pair<int, long> > > >, long, __gnu_cxx::__ops::_Iter_comp_iter<OrderBookB::get_bids(int) const::{lambda(auto:1&, auto:2&)#1}> >
+               |          
+               |--12.78%--std::__introsort_loop<__gnu_cxx::__normal_iterator<std::pair<int, long>*, std::vector<std::pair<int, long>, std::allocator<std::pair<int, long> > > >, long, __gnu_cxx::__ops::_Iter_comp_iter<OrderBookB::get_bids(int) const::{lambda(auto:1&, auto:2&)#1}> >
+               |          |          
+               |          |--10.50%--std::__introsort_loop<__gnu_cxx::__normal_iterator<std::pair<int, long>*, std::vector<std::pair<int, long>, std::allocator<std::pair<int, long> > > >, long, __gnu_cxx::__ops::_Iter_comp_iter<OrderBookB::get_bids(int) const::{lambda(auto:1&, auto:2&)#1}> >
+               |          |          |          
+               |          |          |--7.26%--std::__introsort_loop<__gnu_cxx::__normal_iterator<std::pair<int, long>*, std::vector<std::pair<int, long>, std::allocator<std::pair<int, long> > > >, long, __gnu_cxx::__ops::_Iter_comp_iter<OrderBookB::get_bids(int) const::{lambda(auto:1&, auto:2&)#1}> >
+               |          |          |          |          
+               |          |          |          |--4.88%--std::__introsort_loop<__gnu_cxx::__normal_iterator<std::pair<int, long>*, std::vector<std::pair<int, long>, std::allocator<std::pair<int, long> > > >, long, __gnu_cxx::__ops::_Iter_comp_iter<OrderBookB::get_bids(int) const::{lambda(auto:1&, auto:2&)#1}> >
+               |          |          |          |          |          
+               |          |          |          |          |--2.99%--std::__introsort_loop<__gnu_cxx::__normal_iterator<std::pair<int, long>*, std::vector<std::pair<int, long>, std::allocator<std::pair<int, long> > > >, long, __gnu_cxx::__ops::_Iter_comp_iter<OrderBookB::get_bids(int) const::{lambda(auto:1&, auto:2&)#1}> >
+               |          |          |          |          |          
+               |          |          |          |           --1.89%--OrderBookB::get_bids
+               |          |          |          |                     main
+               |          |          |          |                     __libc_start_call_main
+               |          |          |          |                     __libc_start_main@@GLIBC_2.34
+               |          |          |          |                     _start
+               |          |          |          |          
+               |          |          |           --2.38%--OrderBookB::get_bids
+               |          |          |                     main
+               |          |          |                     __libc_start_call_main
+               |          |          |                     __libc_start_main@@GLIBC_2.34
+               |          |          |                     _start
+               |          |          |          
+               |          |           --3.24%--OrderBookB::get_bids
+               |          |                     main
+               |          |                     __libc_start_call_main
+               |          |                     __libc_start_main@@GLIBC_2.34
+               |          |                     _start
+               |          |          
+               |           --2.27%--OrderBookB::get_bids
+               |                     main
+               |                     __libc_start_call_main
+               |                     __libc_start_main@@GLIBC_2.34
+               |                     _start
+               |          
+                --3.33%--OrderBookB::get_bids
+                          main
+                          __libc_start_call_main
+                          __libc_start_main@@GLIBC_2.34
+                          _start
+
+     2.66%  bench    [vdso]               [.] __kernel_clock_gettime
+            |
+            ---__kernel_clock_gettime
+               clock_gettime@@GLIBC_2.17
+               std::chrono::_V2::steady_clock::now
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
