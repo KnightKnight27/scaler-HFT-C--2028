@@ -1,0 +1,33 @@
+== by function (time inside that function incl. everything inlined into it) ==
+ 34.33%  OrderBookB::cancel_order
+ 18.96%  OrderBookB::addToLevel
+ 10.82%  [vdso] clock_gettime (steady_clock::now)
+ 10.82%  OrderBookB::add_order
+  6.09%  libstdc++: std::_Rb_tree_rebalance_for_erase
+  3.17%  std::_Rb_tree::_M_erase
+  2.44%  libstdc++: std::_Rb_tree_insert_and_rebalance
+  2.00%  libc: unlink_chunk.isra
+  1.61%  runOnce
+  1.51%  libc: _int_free_merge_chunk
+  1.10%  libc: __memmove_avx_unaligned_erms
+  1.07%  makeWorkload
+  1.05%  ??
+  1.04%  libc: free
+  0.93%  libstdc++: std::chrono::_V2::steady_clock::now
+
+== by innermost inlined function (the actual code that was running) ==
+ 32.43%  std::_Rb_tree::_S_right
+ 20.46%  OrderBookB::findPos
+ 10.82%  [vdso] clock_gettime (steady_clock::now)
+  6.09%  libstdc++: std::_Rb_tree_rebalance_for_erase
+  5.38%  std::_Rb_tree::_M_lower_bound
+  2.57%  std::_Rb_tree::_M_erase
+  2.44%  libstdc++: std::_Rb_tree_insert_and_rebalance
+  2.00%  libc: unlink_chunk.isra
+  1.88%  OrderBookB::addToLevel
+  1.51%  libc: _int_free_merge_chunk
+  1.34%  runOnce
+  1.10%  std::_Rb_tree::_S_left
+  1.10%  libc: __memmove_avx_unaligned_erms
+  1.05%  ??
+  1.04%  libc: free

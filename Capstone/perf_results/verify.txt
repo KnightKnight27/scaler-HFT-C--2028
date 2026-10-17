@@ -1,0 +1,14 @@
+Running correctness test...
+
+Basic tests (empty book, unknown cancel, double cancel, short depth)...
+Random workload: 1000000 ops, seed 42, comparing after every op...
+
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+
+All implementations produce identical results.
+
+Final BBO:
+Bid: 99.99 x 3244
+Ask: 100.01 x 2193

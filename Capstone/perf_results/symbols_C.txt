@@ -1,0 +1,33 @@
+== by function (time inside that function incl. everything inlined into it) ==
+ 43.93%  [vdso] clock_gettime (steady_clock::now)
+ 18.07%  OrderBookC::cancel_order
+  8.25%  OrderBookC::add_order
+  7.58%  runOnce
+  4.22%  makeWorkload
+  3.86%  libc: __memmove_avx_unaligned_erms
+  2.60%  libstdc++: std::chrono::_V2::steady_clock::now
+  2.53%  ??
+  2.39%  std::vector::_M_default_append
+  1.45%  runBench
+  1.30%  libstdc++: clock_gettime@plt
+  0.69%  OrderBookC::get_bbo
+  0.63%  libc: malloc
+  0.62%  libc: clock_gettime
+  0.56%  std::mersenne_twister_engine::_M_gen_rand
+
+== by innermost inlined function (the actual code that was running) ==
+ 43.93%  [vdso] clock_gettime (steady_clock::now)
+ 17.79%  OrderBookC::cancel_order
+  6.32%  OrderBookC::add_order
+  5.66%  runOnce
+  3.86%  libc: __memmove_avx_unaligned_erms
+  2.60%  libstdc++: std::chrono::_V2::steady_clock::now
+  2.53%  ??
+  2.39%  void std::__fill_a1
+  2.13%  makeWorkload
+  1.46%  std::mersenne_twister_engine::operator
+  1.45%  runBench
+  1.30%  libstdc++: clock_gettime@plt
+  0.90%  std::vector::size
+  0.89%  priceOk
+  0.82%  std::common_type::type std::chrono::operator-

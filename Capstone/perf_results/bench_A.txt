@@ -1,0 +1,21 @@
+Implementation A (std::map levels + list per level + unordered_map ids)
+ops: 1000000  (add 700829, cancel 199496, bbo 99675, + get_bids/get_asks every 100 ops)
+runs: 5
+
+run 1: total 237.54 ms | add 205.83 ns | cancel 362.20 ns | bbo 19.18 ns
+run 2: total 234.39 ms | add 193.93 ns | cancel 382.61 ns | bbo 20.10 ns
+run 3: total 198.00 ms | add 164.21 ns | cancel 319.22 ns | bbo 17.18 ns
+run 4: total 218.52 ms | add 180.01 ns | cancel 357.64 ns | bbo 19.32 ns
+run 5: total 220.36 ms | add 182.39 ns | cancel 359.17 ns | bbo 19.08 ns
+
+Median of 5 runs:
+Total time (ms): 220.36
+ns / add:        182.39
+ns / cancel:     359.17
+ns / BBO:        19.18
+
+Final BBO:
+Bid: 99.99 x 3244
+Ask: 100.01 x 2193
+
+Checksum: 2516203052
