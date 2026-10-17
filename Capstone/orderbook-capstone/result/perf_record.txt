@@ -1,0 +1,96 @@
+=== PERF RECORD / REPORT IMPLEMENTATION A ===
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'task-clock'
+# Event count (approx.): 1166166165
+#
+# Overhead  Command  Shared Object        Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+# ........  .......  ...................  .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    36.57%  bench    bench                [.] OrderBookA::add_order(unsigned long, Side, double, long)
+    29.61%  bench    bench                [.] OrderBookA::cancel_order(unsigned long)
+    12.45%  bench    [vdso]               [.] __vdso_clock_gettime
+     4.03%  bench    bench                [.] BenchmarkMetrics run_single_benchmark<OrderBookA>(std::vector<WorkloadOp, std::allocator<WorkloadOp> > const&)
+     2.40%  bench    libc.so.6            [.] 0x00000000000b0f93
+     1.29%  bench    bench                [.] generate_workload(unsigned long)
+     1.03%  bench    libm.so.6            [.] llroundf32x
+     0.86%  bench    [kernel.kallsyms]    [k] do_user_addr_fault
+     0.86%  bench    libc.so.6            [.] 0x00000000000b0f9d
+     0.77%  bench    libstdc++.so.6.0.35  [.] std::chrono::_V2::steady_clock::now()
+     0.69%  bench    bench                [.] std::chrono::_V2::steady_clock::now()@plt
+     0.60%  bench    libc.so.6            [.] cfree
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
+
+=== PERF RECORD / REPORT IMPLEMENTATION B ===
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'task-clock'
+# Event count (approx.): 1038038037
+#
+# Overhead  Command  Shared Object        Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+# ........  .......  ...................  .......................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    40.31%  bench    bench                [.] OrderBookB::insert_order_slot(unsigned long, Side, int, long)
+    17.84%  bench    bench                [.] OrderBookB::cancel_order(unsigned long)
+    14.56%  bench    [vdso]               [.] __vdso_clock_gettime
+     5.98%  bench    [kernel.kallsyms]    [k] do_user_addr_fault
+     5.11%  bench    bench                [.] OrderBookB::add_order(unsigned long, Side, double, long)
+     1.64%  bench    bench                [.] BenchmarkMetrics run_single_benchmark<OrderBookB>(std::vector<WorkloadOp, std::allocator<WorkloadOp> > const&)
+     1.25%  bench    [kernel.kallsyms]    [k] _raw_spin_unlock_irqrestore
+     1.16%  bench    [kernel.kallsyms]    [k] charge_memcg
+     1.16%  bench    bench                [.] std::chrono::_V2::steady_clock::now()@plt
+     0.96%  bench    bench                [.] generate_workload(unsigned long)
+     0.87%  bench    libstdc++.so.6.0.35  [.] std::chrono::_V2::steady_clock::now()
+     0.77%  bench    libm.so.6            [.] llroundf32x
+     0.68%  bench    libc.so.6            [.] clock_gettime
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
+
+=== PERF RECORD / REPORT IMPLEMENTATION C ===
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 378  of event 'task-clock'
+# Event count (approx.): 378378378
+#
+# Overhead  Command  Shared Object        Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+# ........  .......  ...................  ..........................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    35.71%  bench    [vdso]               [.] __vdso_clock_gettime
+    28.57%  bench    bench                [.] OrderBookC::cancel_order(unsigned long)
+     7.94%  bench    bench                [.] OrderBookC::add_order(unsigned long, Side, double, long)
+     5.29%  bench    bench                [.] BenchmarkMetrics run_single_benchmark<OrderBookC>(std::vector<WorkloadOp, std::allocator<WorkloadOp> > const&)
+     4.50%  bench    bench                [.] generate_workload(unsigned long)
+     2.91%  bench    bench                [.] std::chrono::_V2::steady_clock::now()@plt
+     1.85%  bench    [kernel.kallsyms]    [k] do_user_addr_fault
+     1.85%  bench    bench                [.] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+     1.59%  bench    libc.so.6            [.] clock_gettime
+     1.59%  bench    libm.so.6            [.] llroundf32x
+     1.32%  bench    libstdc++.so.6.0.35  [.] std::chrono::_V2::steady_clock::now()
+     1.06%  bench    [kernel.kallsyms]    [k] _raw_spin_unlock_irqrestore
+     0.79%  bench    [kernel.kallsyms]    [k] try_charge_memcg
+     0.53%  bench    [kernel.kallsyms]    [k] clear_page_erms
+     0.53%  bench    bench                [.] OrderBookC::get_bbo() const
+     0.53%  bench    bench                [.] long std::uniform_int_distribution<long>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<long>::param_type const&) [clone .isra.0]
+     0.53%  bench    libc.so.6            [.] 0x0000000000198554
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
+
