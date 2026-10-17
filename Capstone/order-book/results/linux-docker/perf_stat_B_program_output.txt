@@ -1,0 +1,45 @@
+Implementation B (sorted vectors + binary search), one pass for perf
+Total time: 157.93 ms
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2515
+
+Checksum: 0xeb883e677224c78a
+Peak memory (RSS) of this process: 38.6 MiB
+Implementation B (sorted vectors + binary search), one pass for perf
+Total time: 155.27 ms
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2515
+
+Checksum: 0xeb883e677224c78a
+Peak memory (RSS) of this process: 37.8 MiB
+Implementation B (sorted vectors + binary search), one pass for perf
+Total time: 139.26 ms
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2515
+
+Checksum: 0xeb883e677224c78a
+Peak memory (RSS) of this process: 38.7 MiB
+Implementation B (sorted vectors + binary search), one pass for perf
+Total time: 131.92 ms
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2515
+
+Checksum: 0xeb883e677224c78a
+Peak memory (RSS) of this process: 38.7 MiB
+Implementation B (sorted vectors + binary search), one pass for perf
+Total time: 136.35 ms
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2515
+
+Checksum: 0xeb883e677224c78a
+Peak memory (RSS) of this process: 38.4 MiB

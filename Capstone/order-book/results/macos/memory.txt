@@ -1,0 +1,4 @@
+none: Peak memory (RSS) of this process: 31.3 MiB
+A: Peak memory (RSS) of this process: 57.1 MiB
+B: Peak memory (RSS) of this process: 42.2 MiB
+C: Peak memory (RSS) of this process: 47.4 MiB

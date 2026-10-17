@@ -1,0 +1,11 @@
+Linux 2edfe85bba6f 7.0.12-linuxkit #1 SMP PREEMPT_DYNAMIC Thu Aug 27 10:55:53 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+
+CPU(s):                                  12
+Model name:                              Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz
+Thread(s) per core:                      1
+L1d cache:                               384 KiB (12 instances)
+L2 cache:                                3 MiB (12 instances)
+L3 cache:                                12 MiB (1 instance)
+
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+perf version 6.8.12

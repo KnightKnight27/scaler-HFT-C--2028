@@ -1,0 +1,38 @@
+Order book benchmark
+  workload: 1000000 operations, seed 42
+            700471 add_order, 199305 cancel_order, 100224 get_bbo
+            plus get_bids(10) and get_asks(10) after every 100 operations (10000 times)
+            at most 501168 orders resting at the same time
+  runs:     5 per implementation, median reported
+  method:   pass 1 runs the workload with one clock read at each end (total ms,
+            IPC, page faults); pass 2 runs it again on a fresh book and times
+            every call with steady_clock (ns per call). get_bbo is quicker than
+            a clock read, so 'bbo loop' also times 1000000 calls in a row on the
+            book left by pass 1
+  timer:    40.3 ns per pair of steady_clock::now() calls, subtracted from
+            the per-call times
+
+Implementation B: sorted vectors + binary search
+
+  run     total ms   add ns  cancel ns   bbo ns   bbo loop  depth ns    IPC  page faults
+  1         150.23    100.5      339.2     10.4       3.37     324.5   0.62         2788
+  2         142.26     99.8      351.0      8.9       3.27     332.7   0.64            0
+  3         230.25     98.8      308.0      9.0       5.64     310.8   0.60            0
+  4         124.72    157.0      418.2      8.5       3.55     311.2   0.67            0
+  5         120.68    164.0      850.2     16.3       2.76     618.4   0.67            0
+  median    142.26    100.5      351.0      9.0       3.37     324.5   0.64            0
+
+  Latency per call in ns (median over runs, clock overhead removed)
+               mean      p50      p90      p99    p99.9       max
+  add         100.5       88      123      324     1091     85362
+  cancel      351.0      284      540      923     1968     60608
+  get_bbo       9.0        8       14       24       71     42245
+  depth       324.5      293      346      756     2275     39071
+  (depth = one get_bids(10) plus one get_asks(10))
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2515
+
+Checksum: 0xeb883e677224c78a
+Peak memory (RSS) of this process: 42.2 MiB

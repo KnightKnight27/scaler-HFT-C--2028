@@ -1,0 +1,277 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 5K of event 'task-clock:ppp'
+# Event count (approx.): 542500000
+#
+# Children      Self  Command  Shared Object         Symbol                                                                                                                                                                                                                                       
+# ........  ........  .......  ....................  .............................................................................................................................................................................................................................................
+#
+    99.69%     0.00%  bench    bench                 [.] _start
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               |          
+                --99.67%--main
+                          |          
+                          |--75.56%--unsigned long (anonymous namespace)::run_plain<MapOrderBook>(MapOrderBook&, Workload const&)
+                          |          |          
+                          |          |--46.38%--MapOrderBook::add_order(unsigned long, Side, double, long)
+                          |          |          |          
+                          |          |           --7.02%--operator new(unsigned long)
+                          |          |                     |          
+                          |          |                      --6.64%--malloc
+                          |          |                                |          
+                          |          |                                 --5.05%--_int_malloc
+                          |          |          
+                          |           --25.00%--MapOrderBook::cancel_order(unsigned long)
+                          |          
+                          |--15.39%--std::default_delete<MapOrderBook>::operator()(MapOrderBook*) const [clone .part.0]
+                          |          |          
+                          |           --11.41%--cfree@GLIBC_2.2.5
+                          |                     |          
+                          |                      --9.31%--_int_free_maybe_consolidate
+                          |                                |          
+                          |                                 --9.20%--malloc_consolidate
+                          |                                           |          
+                          |                                            --4.39%--unlink_chunk.isra.0
+                          |          
+                           --6.05%--generate_workload(WorkloadConfig const&)
+
+    99.69%     0.00%  bench    libc.so.6             [.] __libc_start_main@@GLIBC_2.34
+            |
+            ---__libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               |          
+                --99.67%--main
+                          |          
+                          |--75.56%--unsigned long (anonymous namespace)::run_plain<MapOrderBook>(MapOrderBook&, Workload const&)
+                          |          |          
+                          |          |--46.38%--MapOrderBook::add_order(unsigned long, Side, double, long)
+                          |          |          |          
+                          |          |           --7.02%--operator new(unsigned long)
+                          |          |                     |          
+                          |          |                      --6.64%--malloc
+                          |          |                                |          
+                          |          |                                 --5.05%--_int_malloc
+                          |          |          
+                          |           --25.00%--MapOrderBook::cancel_order(unsigned long)
+                          |          
+                          |--15.39%--std::default_delete<MapOrderBook>::operator()(MapOrderBook*) const [clone .part.0]
+                          |          |          
+                          |           --11.41%--cfree@GLIBC_2.2.5
+                          |                     |          
+                          |                      --9.31%--_int_free_maybe_consolidate
+                          |                                |          
+                          |                                 --9.20%--malloc_consolidate
+                          |                                           |          
+                          |                                            --4.39%--unlink_chunk.isra.0
+                          |          
+                           --6.05%--generate_workload(WorkloadConfig const&)
+
+    99.69%     0.00%  bench    libc.so.6             [.] __libc_start_call_main
+            |
+            ---__libc_start_call_main
+               |          
+                --99.67%--main
+                          |          
+                          |--75.56%--unsigned long (anonymous namespace)::run_plain<MapOrderBook>(MapOrderBook&, Workload const&)
+                          |          |          
+                          |          |--46.38%--MapOrderBook::add_order(unsigned long, Side, double, long)
+                          |          |          |          
+                          |          |           --7.02%--operator new(unsigned long)
+                          |          |                     |          
+                          |          |                      --6.64%--malloc
+                          |          |                                |          
+                          |          |                                 --5.05%--_int_malloc
+                          |          |          
+                          |           --25.00%--MapOrderBook::cancel_order(unsigned long)
+                          |          
+                          |--15.39%--std::default_delete<MapOrderBook>::operator()(MapOrderBook*) const [clone .part.0]
+                          |          |          
+                          |           --11.41%--cfree@GLIBC_2.2.5
+                          |                     |          
+                          |                      --9.31%--_int_free_maybe_consolidate
+                          |                                |          
+                          |                                 --9.20%--malloc_consolidate
+                          |                                           |          
+                          |                                            --4.39%--unlink_chunk.isra.0
+                          |          
+                           --6.05%--generate_workload(WorkloadConfig const&)
+
+    99.67%     0.00%  bench    bench                 [.] main
+            |
+            ---main
+               |          
+               |--75.56%--unsigned long (anonymous namespace)::run_plain<MapOrderBook>(MapOrderBook&, Workload const&)
+               |          |          
+               |          |--46.38%--MapOrderBook::add_order(unsigned long, Side, double, long)
+               |          |          |          
+               |          |           --7.02%--operator new(unsigned long)
+               |          |                     |          
+               |          |                      --6.64%--malloc
+               |          |                                |          
+               |          |                                 --5.05%--_int_malloc
+               |          |          
+               |           --25.00%--MapOrderBook::cancel_order(unsigned long)
+               |          
+               |--15.39%--std::default_delete<MapOrderBook>::operator()(MapOrderBook*) const [clone .part.0]
+               |          |          
+               |           --11.41%--cfree@GLIBC_2.2.5
+               |                     |          
+               |                      --9.31%--_int_free_maybe_consolidate
+               |                                |          
+               |                                 --9.20%--malloc_consolidate
+               |                                           |          
+               |                                            --4.39%--unlink_chunk.isra.0
+               |          
+                --6.05%--generate_workload(WorkloadConfig const&)
+
+    75.56%     1.53%  bench    bench                 [.] unsigned long (anonymous namespace)::run_plain<MapOrderBook>(MapOrderBook&, Workload const&)
+            |          
+             --74.03%--unsigned long (anonymous namespace)::run_plain<MapOrderBook>(MapOrderBook&, Workload const&)
+                       |          
+                       |--46.38%--MapOrderBook::add_order(unsigned long, Side, double, long)
+                       |          |          
+                       |           --7.02%--operator new(unsigned long)
+                       |                     |          
+                       |                      --6.64%--malloc
+                       |                                |          
+                       |                                 --5.05%--_int_malloc
+                       |          
+                        --25.00%--MapOrderBook::cancel_order(unsigned long)
+
+    46.40%    38.86%  bench    bench                 [.] MapOrderBook::add_order(unsigned long, Side, double, long)
+            |          
+            |--38.86%--_start
+            |          __libc_start_main@@GLIBC_2.34
+            |          __libc_start_call_main
+            |          main
+            |          |          
+            |           --38.84%--unsigned long (anonymous namespace)::run_plain<MapOrderBook>(MapOrderBook&, Workload const&)
+            |                     MapOrderBook::add_order(unsigned long, Side, double, long)
+            |          
+             --7.54%--MapOrderBook::add_order(unsigned long, Side, double, long)
+                       |          
+                        --7.02%--operator new(unsigned long)
+                                  |          
+                                   --6.64%--malloc
+                                             |          
+                                              --5.05%--_int_malloc
+
+    25.07%    24.29%  bench    bench                 [.] MapOrderBook::cancel_order(unsigned long)
+            |          
+             --24.29%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       |          
+                        --24.22%--unsigned long (anonymous namespace)::run_plain<MapOrderBook>(MapOrderBook&, Workload const&)
+                                  MapOrderBook::cancel_order(unsigned long)
+
+    15.39%     3.78%  bench    bench                 [.] std::default_delete<MapOrderBook>::operator()(MapOrderBook*) const [clone .part.0]
+            |          
+            |--11.61%--std::default_delete<MapOrderBook>::operator()(MapOrderBook*) const [clone .part.0]
+            |          |          
+            |           --11.41%--cfree@GLIBC_2.2.5
+            |                     |          
+            |                      --9.31%--_int_free_maybe_consolidate
+            |                                |          
+            |                                 --9.20%--malloc_consolidate
+            |                                           |          
+            |                                            --4.39%--unlink_chunk.isra.0
+            |          
+             --3.78%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       std::default_delete<MapOrderBook>::operator()(MapOrderBook*) const [clone .part.0]
+
+    12.28%     1.47%  bench    libc.so.6             [.] cfree@GLIBC_2.2.5
+            |          
+             --10.80%--cfree@GLIBC_2.2.5
+                       |          
+                        --9.31%--_int_free_maybe_consolidate
+                                  |          
+                                   --9.20%--malloc_consolidate
+                                             |          
+                                              --4.39%--unlink_chunk.isra.0
+
+     9.31%     0.00%  bench    libc.so.6             [.] _int_free_maybe_consolidate
+            |
+            ---_int_free_maybe_consolidate
+               |          
+                --9.20%--malloc_consolidate
+                          |          
+                           --4.39%--unlink_chunk.isra.0
+
+     9.20%     4.81%  bench    libc.so.6             [.] malloc_consolidate
+            |          
+            |--4.81%--_start
+            |          __libc_start_main@@GLIBC_2.34
+            |          __libc_start_call_main
+            |          main
+            |          std::default_delete<MapOrderBook>::operator()(MapOrderBook*) const [clone .part.0]
+            |          cfree@GLIBC_2.2.5
+            |          _int_free_maybe_consolidate
+            |          malloc_consolidate
+            |          
+             --4.39%--malloc_consolidate
+                       unlink_chunk.isra.0
+
+     7.67%     0.88%  bench    libstdc++.so.6.0.33   [.] operator new(unsigned long)
+            |          
+             --6.78%--operator new(unsigned long)
+                       |          
+                        --6.75%--malloc
+                                  |          
+                                   --5.09%--_int_malloc
+
+     6.89%     1.71%  bench    libc.so.6             [.] malloc
+            |          
+             --5.18%--malloc
+                       |          
+                        --5.09%--_int_malloc
+
+     6.05%     3.71%  bench    bench                 [.] generate_workload(WorkloadConfig const&)
+            |          
+             --3.71%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       generate_workload(WorkloadConfig const&)
+
+     5.12%     2.45%  bench    libc.so.6             [.] _int_malloc
+     4.50%     4.50%  bench    libc.so.6             [.] unlink_chunk.isra.0
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               std::default_delete<MapOrderBook>::operator()(MapOrderBook*) const [clone .part.0]
+               cfree@GLIBC_2.2.5
+               _int_free_maybe_consolidate
+               |          
+                --4.39%--malloc_consolidate
+                          unlink_chunk.isra.0
+
+     3.47%     0.00%  bench    [kernel.kallsyms]     [k] asm_exc_page_fault
+            |
+            ---asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+
+     3.47%     0.00%  bench    [kernel.kallsyms]     [k] exc_page_fault
+            |
+            ---exc_page_fault
+               do_user_addr_fault
+
+     3.47%     0.96%  bench    [kernel.kallsyms]     [k] do_user_addr_fault
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

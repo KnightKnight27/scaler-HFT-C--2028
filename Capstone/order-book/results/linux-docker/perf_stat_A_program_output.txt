@@ -1,0 +1,45 @@
+Implementation A (std::map levels + std::unordered_map orders), one pass for perf
+Total time: 326.06 ms
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2515
+
+Checksum: 0xeb883e677224c78a
+Peak memory (RSS) of this process: 54.0 MiB
+Implementation A (std::map levels + std::unordered_map orders), one pass for perf
+Total time: 288.35 ms
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2515
+
+Checksum: 0xeb883e677224c78a
+Peak memory (RSS) of this process: 54.0 MiB
+Implementation A (std::map levels + std::unordered_map orders), one pass for perf
+Total time: 277.35 ms
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2515
+
+Checksum: 0xeb883e677224c78a
+Peak memory (RSS) of this process: 54.1 MiB
+Implementation A (std::map levels + std::unordered_map orders), one pass for perf
+Total time: 335.15 ms
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2515
+
+Checksum: 0xeb883e677224c78a
+Peak memory (RSS) of this process: 54.1 MiB
+Implementation A (std::map levels + std::unordered_map orders), one pass for perf
+Total time: 333.78 ms
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2515
+
+Checksum: 0xeb883e677224c78a
+Peak memory (RSS) of this process: 53.9 MiB

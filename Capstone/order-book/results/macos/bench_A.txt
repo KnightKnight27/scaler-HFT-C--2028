@@ -1,0 +1,38 @@
+Order book benchmark
+  workload: 1000000 operations, seed 42
+            700471 add_order, 199305 cancel_order, 100224 get_bbo
+            plus get_bids(10) and get_asks(10) after every 100 operations (10000 times)
+            at most 501168 orders resting at the same time
+  runs:     5 per implementation, median reported
+  method:   pass 1 runs the workload with one clock read at each end (total ms,
+            IPC, page faults); pass 2 runs it again on a fresh book and times
+            every call with steady_clock (ns per call). get_bbo is quicker than
+            a clock read, so 'bbo loop' also times 1000000 calls in a row on the
+            book left by pass 1
+  timer:    42.7 ns per pair of steady_clock::now() calls, subtracted from
+            the per-call times
+
+Implementation A: std::map levels + std::unordered_map orders
+
+  run     total ms   add ns  cancel ns   bbo ns   bbo loop  depth ns    IPC  page faults
+  1         263.19    254.1      451.5      9.6       3.39     495.1   0.72         6458
+  2         261.97    258.3      448.6     10.6       3.38     478.7   0.75         4742
+  3         253.73    255.6      454.4      9.4       3.34     456.1   0.76         4867
+  4         260.13    233.2      409.8      7.9       3.32     419.7   0.75         4648
+  5         283.87    261.2      488.7      9.9       3.85     473.0   0.70         4607
+  median    261.97    255.6      451.5      9.6       3.38     473.0   0.75         4742
+
+  Latency per call in ns (median over runs, clock overhead removed)
+               mean      p50      p90      p99    p99.9       max
+  add         255.6      227      317      585     2506    100158
+  cancel      451.5      426      620      949     1854     52235
+  get_bbo       9.6        8       13       22       46     20629
+  depth       473.0      341      440     2554     7370     24069
+  (depth = one get_bids(10) plus one get_asks(10))
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2515
+
+Checksum: 0xeb883e677224c78a
+Peak memory (RSS) of this process: 62.5 MiB

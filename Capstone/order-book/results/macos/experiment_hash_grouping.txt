@@ -1,0 +1,15 @@
+Implementation C, first version (plain Fibonacci hashing of the whole id) against the
+final version (ids grouped four to a cache line). Both binaries: -O2, same machine.
+Each line is the median row of one './bench --impl C --runs 5'; the variants alternate.
+
+variant           total ms   add ns  cancel ns   bbo ns  depth ns    IPC  page faults
+plain            49.80     99.6       97.7     14.8     348.4   0.76            0
+grouped          45.60     33.9       96.0      5.7     306.4   0.88            0
+plain            51.89    101.4       99.1     14.2     351.2   0.74            0
+grouped          39.84     31.9       94.7      4.1     301.7   0.97            3
+plain            47.71    100.9       98.8     15.3     347.3   0.79            0
+grouped          40.63     36.2      100.8      8.8     309.1   0.95            0
+plain            47.76    101.2       97.9     14.4     340.5   0.80            0
+grouped          57.28     63.5      164.3     16.2     450.6   0.75            0
+plain            50.37     99.3       95.6      6.0     357.1   0.76            0
+grouped          47.61     38.7      115.2      7.8     348.3   0.87            0

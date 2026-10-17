@@ -1,0 +1,105 @@
+Order book benchmark
+  workload: 1000000 operations, seed 42
+            700471 add_order, 199305 cancel_order, 100224 get_bbo
+            plus get_bids(10) and get_asks(10) after every 100 operations (10000 times)
+            at most 501168 orders resting at the same time
+  runs:     5 per implementation, median reported
+  method:   pass 1 runs the workload with one clock read at each end (total ms,
+            IPC, page faults); pass 2 runs it again on a fresh book and times
+            every call with steady_clock (ns per call). get_bbo is quicker than
+            a clock read, so 'bbo loop' also times 1000000 calls in a row on the
+            book left by pass 1
+  timer:    25.4 ns per pair of steady_clock::now() calls, subtracted from
+            the per-call times
+            with --impl all the runs are interleaved (A B C, A B C, ...) so that
+            background load and CPU heat affect every implementation equally
+
+Implementation A: std::map levels + std::unordered_map orders
+
+  run     total ms   add ns  cancel ns   bbo ns   bbo loop  depth ns    IPC  page faults
+  1         283.23    253.2      468.0      7.6       3.84     364.1    n/a         6029
+  2         259.64    233.8      437.9      5.4       3.46     314.4    n/a            0
+  3         238.54    234.4      439.2      6.0       3.36     303.0    n/a            0
+  4         242.22    227.6      419.0      4.9       3.37     314.8    n/a            0
+  5         242.76    236.6      436.6      6.2       3.41     322.6    n/a            0
+  median    242.76    234.4      437.9      6.0       3.41     314.8    n/a            0
+
+  Latency per call in ns (median over runs, clock overhead removed)
+               mean      p50      p90      p99    p99.9       max
+  add         234.4      214      269      389      827    137911
+  cancel      437.9      402      550      823     6913    134062
+  get_bbo       6.0        4        8       17       49     34593
+  depth       314.8      276      338      694     2238     46373
+  (depth = one get_bids(10) plus one get_asks(10))
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2515
+
+Checksum: 0xeb883e677224c78a
+
+Implementation B: sorted vectors + binary search
+
+  run     total ms   add ns  cancel ns   bbo ns   bbo loop  depth ns    IPC  page faults
+  1         150.67     91.6      289.6      1.4       2.83     169.7    n/a          115
+  2         151.74     98.7      302.5      2.4       3.34     185.6    n/a            0
+  3         147.74     94.1      296.5      3.1       3.26     172.6    n/a            0
+  4         140.13     98.4      309.6      3.3       3.30     186.0    n/a            0
+  5         144.03     92.3      289.7      1.4       3.30     179.4    n/a            0
+  median    147.74     94.1      296.5      2.4       3.30     179.4    n/a            0
+
+  Latency per call in ns (median over runs, clock overhead removed)
+               mean      p50      p90      p99    p99.9       max
+  add          94.1       81      112      287     1021     94819
+  cancel      296.5      247      400      683     1532    108390
+  get_bbo       2.4        1        5       12       22     29234
+  depth       179.4      160      191      363      853     40280
+  (depth = one get_bids(10) plus one get_asks(10))
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2515
+
+Checksum: 0xeb883e677224c78a
+
+Implementation C: price-indexed array + bitmap + open-addressing hash table
+
+  run     total ms   add ns  cancel ns   bbo ns   bbo loop  depth ns    IPC  page faults
+  1          37.63     32.2       92.4      0.8       2.93     175.3    n/a            0
+  2          45.58     41.8      106.6      7.2       3.78     213.0    n/a            0
+  3          43.46     40.8       96.1      4.5       3.89     200.5    n/a            0
+  4          41.48     43.9      107.2      8.9       4.75     213.4    n/a            0
+  5          41.39     42.6      103.6      4.8       3.84     228.3    n/a            0
+  median     41.48     41.8      103.6      4.8       3.84     213.0    n/a            0
+
+  Latency per call in ns (median over runs, clock overhead removed)
+               mean      p50      p90      p99    p99.9       max
+  add          41.8       22       92      155      428     62841
+  cancel      103.6       95      124      389      486    104975
+  get_bbo       4.8        4        6       10       20     39097
+  depth       213.0      192      206      447      840     40809
+  (depth = one get_bids(10) plus one get_asks(10))
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2515
+
+Checksum: 0xeb883e677224c78a
+
+==========================================================================
+Summary, median of the runs above
+
+                                    A            B            C
+  total ms                     242.76       147.74        41.48
+  ns / add_order                234.4         94.1         41.8
+  ns / cancel_order             437.9        296.5        103.6
+  ns / get_bbo                    6.0          2.4          4.8
+  ns / get_bbo (loop)            3.41         3.30         3.84
+  ns / depth query              314.8        179.4        213.0
+  p99 ns add_order                389          287          155
+  p99 ns cancel_order             823          683          389
+  p99.9 ns add_order              827         1021          428
+  p99.9 ns cancel_order          6913         1532          486
+  page faults (pass 1)              0            0            0
+
+  Checksums match: every implementation returned the same results

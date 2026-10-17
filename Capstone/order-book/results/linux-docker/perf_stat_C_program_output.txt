@@ -1,0 +1,45 @@
+Implementation C (price-indexed array + bitmap + open-addressing hash table), one pass for perf
+Total time: 42.32 ms
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2515
+
+Checksum: 0xeb883e677224c78a
+Peak memory (RSS) of this process: 42.6 MiB
+Implementation C (price-indexed array + bitmap + open-addressing hash table), one pass for perf
+Total time: 42.64 ms
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2515
+
+Checksum: 0xeb883e677224c78a
+Peak memory (RSS) of this process: 42.7 MiB
+Implementation C (price-indexed array + bitmap + open-addressing hash table), one pass for perf
+Total time: 42.09 ms
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2515
+
+Checksum: 0xeb883e677224c78a
+Peak memory (RSS) of this process: 42.6 MiB
+Implementation C (price-indexed array + bitmap + open-addressing hash table), one pass for perf
+Total time: 43.65 ms
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2515
+
+Checksum: 0xeb883e677224c78a
+Peak memory (RSS) of this process: 42.5 MiB
+Implementation C (price-indexed array + bitmap + open-addressing hash table), one pass for perf
+Total time: 71.07 ms
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2515
+
+Checksum: 0xeb883e677224c78a
+Peak memory (RSS) of this process: 42.7 MiB

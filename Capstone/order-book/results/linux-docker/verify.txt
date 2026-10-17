@@ -1,0 +1,24 @@
+Running correctness test...
+
+1. Edge cases: empty book, unknown and repeated cancels, short depth, invalid
+   input, unusual ids, every price level filled and then emptied
+   A: 50 of 50 checks passed
+   B: 50 of 50 checks passed
+   C: 50 of 50 checks passed
+   C's hash table against std::unordered_map: PASS (400000 random operations)
+
+2. Random workloads, run through A, B, C and a brute-force reference book
+   (an array of quantities scanned on every query). After every operation the
+   return value, BBO and top 10 bid and ask levels are compared; every 10000
+   operations and at the end, every price level on both sides.
+   - benchmark workload, seed 42: 1000000 operations (700471 add, 199305 cancel, 100224 BBO)
+      the workload used by the benchmark
+   - churn workload, seed 7: 306078 operations (150070 add, 150070 cancel, 5938 BBO)
+      50% add / 48% cancel, then every remaining order cancelled: a thin book where
+      levels are created and emptied all the time
+
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+
+All implementations produce identical results.

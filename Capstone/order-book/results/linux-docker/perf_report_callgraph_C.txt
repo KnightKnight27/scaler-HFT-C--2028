@@ -1,0 +1,193 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'task-clock:ppp'
+# Event count (approx.): 138200000
+#
+# Children      Self  Command  Shared Object         Symbol                                                                                                                                                                                                                                       
+# ........  ........  .......  ....................  .............................................................................................................................................................................................................................................
+#
+    98.77%     0.00%  bench    bench                 [.] _start
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               |          
+                --98.55%--main
+                          |          
+                          |--45.08%--unsigned long (anonymous namespace)::run_plain<ArrayOrderBook>(ArrayOrderBook&, Workload const&)
+                          |          |          
+                          |          |--32.20%--ArrayOrderBook::add_order(unsigned long, Side, double, long)
+                          |          |          
+                          |           --5.21%--ArrayOrderBook::cancel_order(unsigned long)
+                          |          
+                          |--27.79%--generate_workload(WorkloadConfig const&)
+                          |          |          
+                          |           --3.26%--std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+                          |          
+                          |--16.64%--ArrayOrderBook::cancel_order(unsigned long)
+                          |          
+                           --5.72%--std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+
+    98.77%     0.00%  bench    libc.so.6             [.] __libc_start_main@@GLIBC_2.34
+            |
+            ---__libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               |          
+                --98.55%--main
+                          |          
+                          |--45.08%--unsigned long (anonymous namespace)::run_plain<ArrayOrderBook>(ArrayOrderBook&, Workload const&)
+                          |          |          
+                          |          |--32.20%--ArrayOrderBook::add_order(unsigned long, Side, double, long)
+                          |          |          
+                          |           --5.21%--ArrayOrderBook::cancel_order(unsigned long)
+                          |          
+                          |--27.79%--generate_workload(WorkloadConfig const&)
+                          |          |          
+                          |           --3.26%--std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+                          |          
+                          |--16.64%--ArrayOrderBook::cancel_order(unsigned long)
+                          |          
+                           --5.72%--std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+
+    98.77%     0.00%  bench    libc.so.6             [.] __libc_start_call_main
+            |
+            ---__libc_start_call_main
+               |          
+                --98.55%--main
+                          |          
+                          |--45.08%--unsigned long (anonymous namespace)::run_plain<ArrayOrderBook>(ArrayOrderBook&, Workload const&)
+                          |          |          
+                          |          |--32.20%--ArrayOrderBook::add_order(unsigned long, Side, double, long)
+                          |          |          
+                          |           --5.21%--ArrayOrderBook::cancel_order(unsigned long)
+                          |          
+                          |--27.79%--generate_workload(WorkloadConfig const&)
+                          |          |          
+                          |           --3.26%--std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+                          |          
+                          |--16.64%--ArrayOrderBook::cancel_order(unsigned long)
+                          |          
+                           --5.72%--std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+
+    98.55%     0.00%  bench    bench                 [.] main
+            |
+            ---main
+               |          
+               |--45.08%--unsigned long (anonymous namespace)::run_plain<ArrayOrderBook>(ArrayOrderBook&, Workload const&)
+               |          |          
+               |          |--32.20%--ArrayOrderBook::add_order(unsigned long, Side, double, long)
+               |          |          
+               |           --5.21%--ArrayOrderBook::cancel_order(unsigned long)
+               |          
+               |--27.79%--generate_workload(WorkloadConfig const&)
+               |          |          
+               |           --3.26%--std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+               |          
+               |--16.64%--ArrayOrderBook::cancel_order(unsigned long)
+               |          
+                --5.72%--std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+
+    45.08%     4.78%  bench    bench                 [.] unsigned long (anonymous namespace)::run_plain<ArrayOrderBook>(ArrayOrderBook&, Workload const&)
+            |          
+            |--40.30%--unsigned long (anonymous namespace)::run_plain<ArrayOrderBook>(ArrayOrderBook&, Workload const&)
+            |          |          
+            |          |--32.20%--ArrayOrderBook::add_order(unsigned long, Side, double, long)
+            |          |          
+            |           --5.21%--ArrayOrderBook::cancel_order(unsigned long)
+            |          
+             --4.78%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       unsigned long (anonymous namespace)::run_plain<ArrayOrderBook>(ArrayOrderBook&, Workload const&)
+
+    32.34%    32.20%  bench    bench                 [.] ArrayOrderBook::add_order(unsigned long, Side, double, long)
+            |          
+             --32.20%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       |          
+                        --32.05%--unsigned long (anonymous namespace)::run_plain<ArrayOrderBook>(ArrayOrderBook&, Workload const&)
+                                  ArrayOrderBook::add_order(unsigned long, Side, double, long)
+
+    27.79%    17.37%  bench    bench                 [.] generate_workload(WorkloadConfig const&)
+            |          
+            |--17.37%--_start
+            |          __libc_start_main@@GLIBC_2.34
+            |          __libc_start_call_main
+            |          main
+            |          generate_workload(WorkloadConfig const&)
+            |          
+             --10.42%--generate_workload(WorkloadConfig const&)
+                       |          
+                        --3.26%--std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+
+    21.85%    21.78%  bench    bench                 [.] ArrayOrderBook::cancel_order(unsigned long)
+            |          
+             --21.78%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       |          
+                       |--16.57%--ArrayOrderBook::cancel_order(unsigned long)
+                       |          
+                        --5.21%--unsigned long (anonymous namespace)::run_plain<ArrayOrderBook>(ArrayOrderBook&, Workload const&)
+                                  ArrayOrderBook::cancel_order(unsigned long)
+
+     8.97%     8.97%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               |          
+               |--5.72%--std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+               |          
+                --3.26%--generate_workload(WorkloadConfig const&)
+                          std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+
+     4.78%     1.59%  bench    [kernel.kallsyms]     [k] do_user_addr_fault
+            |          
+             --3.18%--do_user_addr_fault
+                       handle_mm_fault
+                       |          
+                        --3.11%--__handle_mm_fault
+
+     4.78%     0.00%  bench    [kernel.kallsyms]     [k] asm_exc_page_fault
+            |
+            ---asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               |          
+                --3.18%--handle_mm_fault
+                          |          
+                           --3.11%--__handle_mm_fault
+
+     4.78%     0.00%  bench    [kernel.kallsyms]     [k] exc_page_fault
+            |
+            ---exc_page_fault
+               do_user_addr_fault
+               |          
+                --3.18%--handle_mm_fault
+                          |          
+                           --3.11%--__handle_mm_fault
+
+     3.18%     0.00%  bench    [kernel.kallsyms]     [k] handle_mm_fault
+            |
+            ---handle_mm_fault
+               |          
+                --3.11%--__handle_mm_fault
+
+     3.11%     0.07%  bench    [kernel.kallsyms]     [k] __handle_mm_fault
+            |          
+             --3.04%--__handle_mm_fault
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

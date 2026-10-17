@@ -1,0 +1,155 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 3K of event 'task-clock:ppp'
+# Event count (approx.): 331400000
+#
+# Children      Self  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                   
+# ........  ........  .......  ....................  .........................................................................................................................................................................................................................................................................................................................................
+#
+    99.34%     0.00%  bench    bench                 [.] _start
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               |          
+                --99.31%--main
+                          |          
+                          |--82.56%--unsigned long (anonymous namespace)::run_plain<SortedVectorOrderBook>(SortedVectorOrderBook&, Workload const&)
+                          |          |          
+                          |          |--31.96%--SortedVectorOrderBook::find_order(unsigned long)
+                          |          |          
+                          |          |--17.41%--__gnu_cxx::__normal_iterator<SortedVectorOrderBook::LevelEntry*, std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> > > SortedVectorOrderBook::find_level<std::less<int> >(std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> >&, int)
+                          |          |          
+                          |          |--16.66%--__gnu_cxx::__normal_iterator<SortedVectorOrderBook::LevelEntry*, std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> > > SortedVectorOrderBook::find_level<std::greater<int> >(std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> >&, int)
+                          |          |          
+                          |           --10.83%--SortedVectorOrderBook::add_order(unsigned long, Side, double, long)
+                          |          
+                           --13.28%--generate_workload(WorkloadConfig const&)
+
+    99.34%     0.00%  bench    libc.so.6             [.] __libc_start_main@@GLIBC_2.34
+            |
+            ---__libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               |          
+                --99.31%--main
+                          |          
+                          |--82.56%--unsigned long (anonymous namespace)::run_plain<SortedVectorOrderBook>(SortedVectorOrderBook&, Workload const&)
+                          |          |          
+                          |          |--31.96%--SortedVectorOrderBook::find_order(unsigned long)
+                          |          |          
+                          |          |--17.41%--__gnu_cxx::__normal_iterator<SortedVectorOrderBook::LevelEntry*, std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> > > SortedVectorOrderBook::find_level<std::less<int> >(std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> >&, int)
+                          |          |          
+                          |          |--16.66%--__gnu_cxx::__normal_iterator<SortedVectorOrderBook::LevelEntry*, std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> > > SortedVectorOrderBook::find_level<std::greater<int> >(std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> >&, int)
+                          |          |          
+                          |           --10.83%--SortedVectorOrderBook::add_order(unsigned long, Side, double, long)
+                          |          
+                           --13.28%--generate_workload(WorkloadConfig const&)
+
+    99.34%     0.00%  bench    libc.so.6             [.] __libc_start_call_main
+            |
+            ---__libc_start_call_main
+               |          
+                --99.31%--main
+                          |          
+                          |--82.56%--unsigned long (anonymous namespace)::run_plain<SortedVectorOrderBook>(SortedVectorOrderBook&, Workload const&)
+                          |          |          
+                          |          |--31.96%--SortedVectorOrderBook::find_order(unsigned long)
+                          |          |          
+                          |          |--17.41%--__gnu_cxx::__normal_iterator<SortedVectorOrderBook::LevelEntry*, std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> > > SortedVectorOrderBook::find_level<std::less<int> >(std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> >&, int)
+                          |          |          
+                          |          |--16.66%--__gnu_cxx::__normal_iterator<SortedVectorOrderBook::LevelEntry*, std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> > > SortedVectorOrderBook::find_level<std::greater<int> >(std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> >&, int)
+                          |          |          
+                          |           --10.83%--SortedVectorOrderBook::add_order(unsigned long, Side, double, long)
+                          |          
+                           --13.28%--generate_workload(WorkloadConfig const&)
+
+    99.31%     0.00%  bench    bench                 [.] main
+            |
+            ---main
+               |          
+               |--82.56%--unsigned long (anonymous namespace)::run_plain<SortedVectorOrderBook>(SortedVectorOrderBook&, Workload const&)
+               |          |          
+               |          |--31.96%--SortedVectorOrderBook::find_order(unsigned long)
+               |          |          
+               |          |--17.41%--__gnu_cxx::__normal_iterator<SortedVectorOrderBook::LevelEntry*, std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> > > SortedVectorOrderBook::find_level<std::less<int> >(std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> >&, int)
+               |          |          
+               |          |--16.66%--__gnu_cxx::__normal_iterator<SortedVectorOrderBook::LevelEntry*, std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> > > SortedVectorOrderBook::find_level<std::greater<int> >(std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> >&, int)
+               |          |          
+               |           --10.83%--SortedVectorOrderBook::add_order(unsigned long, Side, double, long)
+               |          
+                --13.28%--generate_workload(WorkloadConfig const&)
+
+    82.56%     2.81%  bench    bench                 [.] unsigned long (anonymous namespace)::run_plain<SortedVectorOrderBook>(SortedVectorOrderBook&, Workload const&)
+            |          
+             --79.75%--unsigned long (anonymous namespace)::run_plain<SortedVectorOrderBook>(SortedVectorOrderBook&, Workload const&)
+                       |          
+                       |--31.96%--SortedVectorOrderBook::find_order(unsigned long)
+                       |          
+                       |--17.41%--__gnu_cxx::__normal_iterator<SortedVectorOrderBook::LevelEntry*, std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> > > SortedVectorOrderBook::find_level<std::less<int> >(std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> >&, int)
+                       |          
+                       |--16.66%--__gnu_cxx::__normal_iterator<SortedVectorOrderBook::LevelEntry*, std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> > > SortedVectorOrderBook::find_level<std::greater<int> >(std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> >&, int)
+                       |          
+                        --10.83%--SortedVectorOrderBook::add_order(unsigned long, Side, double, long)
+
+    31.96%    31.74%  bench    bench                 [.] SortedVectorOrderBook::find_order(unsigned long)
+            |          
+             --31.74%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       unsigned long (anonymous namespace)::run_plain<SortedVectorOrderBook>(SortedVectorOrderBook&, Workload const&)
+                       SortedVectorOrderBook::find_order(unsigned long)
+
+    17.41%    17.32%  bench    bench                 [.] __gnu_cxx::__normal_iterator<SortedVectorOrderBook::LevelEntry*, std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> > > SortedVectorOrderBook::find_level<std::less<int> >(std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> >&, int)
+            |          
+             --17.32%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       unsigned long (anonymous namespace)::run_plain<SortedVectorOrderBook>(SortedVectorOrderBook&, Workload const&)
+                       __gnu_cxx::__normal_iterator<SortedVectorOrderBook::LevelEntry*, std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> > > SortedVectorOrderBook::find_level<std::less<int> >(std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> >&, int)
+
+    16.66%    16.51%  bench    bench                 [.] __gnu_cxx::__normal_iterator<SortedVectorOrderBook::LevelEntry*, std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> > > SortedVectorOrderBook::find_level<std::greater<int> >(std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> >&, int)
+            |          
+             --16.51%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       unsigned long (anonymous namespace)::run_plain<SortedVectorOrderBook>(SortedVectorOrderBook&, Workload const&)
+                       __gnu_cxx::__normal_iterator<SortedVectorOrderBook::LevelEntry*, std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> > > SortedVectorOrderBook::find_level<std::greater<int> >(std::vector<SortedVectorOrderBook::LevelEntry, std::allocator<SortedVectorOrderBook::LevelEntry> >&, int)
+
+    13.28%     8.63%  bench    bench                 [.] generate_workload(WorkloadConfig const&)
+            |          
+            |--8.63%--_start
+            |          __libc_start_main@@GLIBC_2.34
+            |          __libc_start_call_main
+            |          main
+            |          generate_workload(WorkloadConfig const&)
+            |          
+             --4.65%--generate_workload(WorkloadConfig const&)
+
+    10.95%     8.72%  bench    bench                 [.] SortedVectorOrderBook::add_order(unsigned long, Side, double, long)
+            |          
+             --8.72%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       |          
+                        --8.60%--unsigned long (anonymous namespace)::run_plain<SortedVectorOrderBook>(SortedVectorOrderBook&, Workload const&)
+                                  SortedVectorOrderBook::add_order(unsigned long, Side, double, long)
+
+     3.80%     3.74%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+            |          
+             --3.74%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

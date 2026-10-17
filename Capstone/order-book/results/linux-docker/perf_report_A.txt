@@ -1,0 +1,32 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 5K of event 'task-clock:ppp'
+# Event count (approx.): 542500000
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                       
+# ........  .......  ....................  .............................................................................................................................................................................................................................................
+#
+    38.86%  bench    bench                 [.] MapOrderBook::add_order(unsigned long, Side, double, long)
+    24.29%  bench    bench                 [.] MapOrderBook::cancel_order(unsigned long)
+     4.81%  bench    libc.so.6             [.] malloc_consolidate
+     4.50%  bench    libc.so.6             [.] unlink_chunk.isra.0
+     3.78%  bench    bench                 [.] std::default_delete<MapOrderBook>::operator()(MapOrderBook*) const [clone .part.0]
+     3.71%  bench    bench                 [.] generate_workload(WorkloadConfig const&)
+     2.45%  bench    libc.so.6             [.] _int_malloc
+     1.88%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+     1.71%  bench    libc.so.6             [.] malloc
+     1.53%  bench    bench                 [.] unsigned long (anonymous namespace)::run_plain<MapOrderBook>(MapOrderBook&, Workload const&)
+     1.53%  bench    libc.so.6             [.] _int_free
+     1.47%  bench    libc.so.6             [.] cfree@GLIBC_2.2.5
+     0.96%  bench    [kernel.kallsyms]     [k] do_user_addr_fault
+     0.88%  bench    libstdc++.so.6.0.33   [.] operator new(unsigned long)
+     0.79%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand()
+     0.74%  bench    libstdc++.so.6.0.33   [.] std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

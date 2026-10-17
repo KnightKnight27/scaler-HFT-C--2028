@@ -1,0 +1,2 @@
+[ perf record: Woken up 3 times to write data ]
+[ perf record: Captured and wrote 0.573 MB results/linux-docker/perf_A.data (5425 samples) ]

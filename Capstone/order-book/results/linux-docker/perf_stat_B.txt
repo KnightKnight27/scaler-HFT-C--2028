@@ -1,0 +1,17 @@
+# started on Tue Oct 13 14:26:32 2026
+
+
+ Performance counter stats for 'build-linux/bench --impl B --perf' (5 runs):
+
+            181.05 msec task-clock                       #    0.990 CPUs utilized               ( +-  4.08% )
+   <not supported>      cycles                                                                
+   <not supported>      instructions                                                          
+   <not supported>      branches                                                              
+   <not supported>      branch-misses                                                         
+   <not supported>      cache-misses                                                          
+   <not supported>      L1-dcache-load-misses                                                 
+   <not supported>      dTLB-load-misses                                                      
+              2248      page-faults                      #   12.417 K/sec                       ( +-  6.85% )
+
+           0.18293 +- 0.00754 seconds time elapsed  ( +-  4.12% )
+
