@@ -1,0 +1,25 @@
+# started on Fri Oct 16 09:40:09 2026
+#with mono 
+808.57,msec,task-clock:u,808574611,100.00,,
+2829909250,,cpu_core/cycles/u,808574611,100.00,,
+2913533254,,cpu_core/instructions/u,808574611,100.00,,
+486860561,,cpu_core/branches/u,808574611,100.00,,
+25462493,,cpu_core/branch-misses/u,808574611,100.00,,
+2037404,,cpu_core/cache-misses/u,808574611,100.00,,
+42172538,,cpu_core/L1-dcache-load-misses/u,808574611,100.00,,
+1515038,,cpu_core/dTLB-load-misses/u,808574611,100.00,,
+48604,,page-faults:u,808574611,100.00,,
+
+
+
+# started on Fri Oct 16 08:40:47 2026
+#without mono
+909.49,msec,task-clock:u,909485885,100.00,,
+3199612627,,cpu_core/cycles/u,909485885,100.00,,
+3498698764,,cpu_core/instructions/u,909485885,100.00,,
+629253123,,cpu_core/branches/u,909485885,100.00,,
+28395208,,cpu_core/branch-misses/u,909485885,100.00,,
+3337878,,cpu_core/cache-misses/u,909485885,100.00,,
+46438924,,cpu_core/L1-dcache-load-misses/u,909485885,100.00,,
+2087398,,cpu_core/dTLB-load-misses/u,909485885,100.00,,
+44223,,page-faults:u,909485885,100.00,,
