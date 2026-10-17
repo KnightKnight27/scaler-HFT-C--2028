@@ -1,0 +1,17 @@
+# started on Sat Oct 17 17:40:13 2026
+
+
+ Performance counter stats for './bench --impl C --profile' (5 runs):
+
+             57.27 msec task-clock                       #    0.956 CPUs utilized            ( +-  2.63% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      cache-misses                                                
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      dTLB-load-misses                                            
+             25305      page-faults                      #  427.219 K/sec                    ( +-  0.00% )
+
+           0.05993 +- 0.00150 seconds time elapsed  ( +-  2.51% )
+

@@ -1,0 +1,127 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'task-clock:u'
+# Event count (approx.): 186518650
+#
+# Overhead  Command  Shared Object          Symbol                                                                                                                                                                                                                                            
+# ........  .......  .....................  ..................................................................................................................................................................................................................................................
+#
+    38.34%  bench    bench                  [.] MapBook::cancel_order
+            |
+            ---MapBook::cancel_order
+               run_once<MapBook>
+               benchmark<MapBook>
+               main
+               0xf8a3f0767744
+               __libc_start_main
+               _start
+
+    34.42%  bench    bench                  [.] MapBook::add_order
+            |
+            ---MapBook::add_order
+               run_once<MapBook>
+               benchmark<MapBook>
+               main
+               0xf8a3f0767744
+               __libc_start_main
+               _start
+
+     5.20%  bench    libstdc++.so.6.0.30    [.] std::_Rb_tree_insert_and_rebalance
+            |
+            ---std::_Rb_tree_insert_and_rebalance
+               MapBook::add_order
+               run_once<MapBook>
+               benchmark<MapBook>
+               main
+               0xf8a3f0767744
+               __libc_start_main
+               _start
+
+     3.38%  bench    bench                  [.] make_workload
+            |
+            ---make_workload
+               main
+               0xf8a3f0767744
+               __libc_start_main
+               _start
+
+     3.27%  bench    bench                  [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, Order>, std::_Select1st<std::pair<unsigned long const, Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, Order> > >::_M_erase
+            |
+            ---std::_Rb_tree<unsigned long, std::pair<unsigned long const, Order>, std::_Select1st<std::pair<unsigned long const, Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, Order> > >::_M_erase
+               |          
+               |--1.88%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, Order>, std::_Select1st<std::pair<unsigned long const, Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, Order> > >::_M_erase
+               |          |          
+               |           --1.82%--run_once<MapBook>
+               |                     benchmark<MapBook>
+               |                     main
+               |                     0xf8a3f0767744
+               |                     __libc_start_main
+               |                     _start
+               |          
+                --1.39%--run_once<MapBook>
+                          benchmark<MapBook>
+                          main
+                          0xf8a3f0767744
+                          __libc_start_main
+                          _start
+
+     2.52%  bench    libstdc++.so.6.0.30    [.] std::_Rb_tree_rebalance_for_erase
+            |
+            ---std::_Rb_tree_rebalance_for_erase
+               MapBook::cancel_order
+               run_once<MapBook>
+               benchmark<MapBook>
+               main
+               0xf8a3f0767744
+               __libc_start_main
+               _start
+
+     1.50%  bench    bench                  [.] run_once<MapBook>
+            |
+            ---run_once<MapBook>
+               benchmark<MapBook>
+               main
+               0xf8a3f0767744
+               __libc_start_main
+               _start
+
+     1.45%  bench    bench                  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+            |
+            ---std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+               make_workload
+               main
+               0xf8a3f0767744
+               __libc_start_main
+               _start
+
+     1.34%  bench    bench                  [.] main
+            |
+            ---main
+               0xf8a3f0767744
+               __libc_start_main
+               _start
+
+     1.18%  bench    libc.so.6              [.] malloc
+            |
+            ---malloc
+               operator new
+
+     1.13%  bench    bench                  [.] validate
+            |
+            ---validate
+               MapBook::add_order
+               run_once<MapBook>
+               benchmark<MapBook>
+               main
+               0xf8a3f0767744
+               __libc_start_main
+               _start
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

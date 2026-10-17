@@ -1,0 +1,9 @@
+Seed: 42; operations: 1000000; add: 700829; cancel: 199496; BBO: 99675; depth calls per side: 10000
+trial,total_ms,ns_add,ns_cancel,ns_bbo,checksum
+1,48.212,0.000,0.000,0.000,4466782172639580222
+Implementation C profile replay
+Total time (ms): 48.212
+Final BBO (integer ticks):
+Bid: 9999 x 3244
+Ask: 10001 x 2193
+Checksum: 4466782172639580222

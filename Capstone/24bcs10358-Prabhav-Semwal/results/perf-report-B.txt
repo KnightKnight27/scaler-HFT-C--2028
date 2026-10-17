@@ -1,0 +1,138 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'task-clock:u'
+# Event count (approx.): 102510250
+#
+# Overhead  Command  Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                             
+# ........  .......  .....................  ...................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    30.54%  bench    bench                  [.] VectorBook::add_order
+            |
+            ---VectorBook::add_order
+               run_once<VectorBook>
+               benchmark<VectorBook>
+               main
+               0xf811fea47744
+               __libc_start_main
+               _start
+
+    24.68%  bench    bench                  [.] VectorBook::cancel_order
+            |
+            ---VectorBook::cancel_order
+               run_once<VectorBook>
+               benchmark<VectorBook>
+               main
+               0xf811fea47744
+               __libc_start_main
+               _start
+
+     6.34%  bench    bench                  [.] make_workload
+            |
+            ---make_workload
+               main
+               0xf811fea47744
+               __libc_start_main
+               _start
+
+     5.27%  bench    bench                  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash
+            |
+            ---std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash
+               VectorBook::add_order
+               run_once<VectorBook>
+               benchmark<VectorBook>
+               main
+               0xf811fea47744
+               __libc_start_main
+               _start
+
+     3.61%  bench    bench                  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+            |
+            ---std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+               make_workload
+               main
+               0xf811fea47744
+               __libc_start_main
+               _start
+
+     3.12%  bench    bench                  [.] run_once<VectorBook>
+            |
+            ---run_once<VectorBook>
+               benchmark<VectorBook>
+               main
+               0xf811fea47744
+               __libc_start_main
+               _start
+
+     2.93%  bench    bench                  [.] validate
+            |
+            ---validate
+               VectorBook::add_order
+               run_once<VectorBook>
+               benchmark<VectorBook>
+               main
+               0xf811fea47744
+               __libc_start_main
+               _start
+
+     2.73%  bench    libc.so.6              [.] malloc
+            |
+            ---malloc
+               operator new
+               |          
+                --2.63%--VectorBook::add_order
+                          run_once<VectorBook>
+                          benchmark<VectorBook>
+                          main
+                          0xf811fea47744
+                          __libc_start_main
+                          _start
+
+     2.34%  bench    bench                  [.] main
+            |
+            ---main
+               0xf811fea47744
+               __libc_start_main
+               _start
+
+     2.15%  bench    libc.so.6              [.] 0x000000000009d2b0
+            |
+            ---0xf811feabd2b0
+               VectorBook::add_order
+               run_once<VectorBook>
+               benchmark<VectorBook>
+               main
+               0xf811fea47744
+               __libc_start_main
+               _start
+
+     1.76%  bench    libc.so.6              [.] cfree
+            |
+            ---cfree
+               |          
+                --1.17%--run_once<VectorBook>
+                          benchmark<VectorBook>
+                          main
+                          0xf811fea47744
+                          __libc_start_main
+                          _start
+
+     1.46%  bench    libc.so.6              [.] 0x000000000008eb74
+            |
+            ---0xf811feaaeb74
+               0xf811feab0214
+               cfree
+               run_once<VectorBook>
+               benchmark<VectorBook>
+               main
+               0xf811fea47744
+               __libc_start_main
+               _start
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

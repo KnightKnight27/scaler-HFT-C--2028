@@ -1,0 +1,2 @@
+[ perf record: Woken up 1 times to write data ]
+[ perf record: Captured and wrote 0.067 MB /tmp/prabhav-perf-C.data (529 samples) ]

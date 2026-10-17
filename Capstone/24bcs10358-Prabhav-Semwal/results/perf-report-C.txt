@@ -1,0 +1,169 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 529  of event 'task-clock:u'
+# Event count (approx.): 52905290
+#
+# Overhead  Command  Shared Object          Symbol                                                                                                                                                                             
+# ........  .......  .....................  ...................................................................................................................................................................................
+#
+    38.37%  bench    bench                  [.] FlatOrders::find
+            |
+            ---FlatOrders::find
+               |          
+               |--34.78%--FlatOrders::insert
+               |          |          
+               |          |--30.43%--ArrayBook::add_order
+               |          |          run_once<ArrayBook>
+               |          |          benchmark<ArrayBook>
+               |          |          main
+               |          |          0xf95aa2617744
+               |          |          __libc_start_main
+               |          |          _start
+               |          |          
+               |           --4.35%--FlatOrders::grow
+               |                     FlatOrders::insert
+               |                     ArrayBook::add_order
+               |                     run_once<ArrayBook>
+               |                     benchmark<ArrayBook>
+               |                     main
+               |                     0xf95aa2617744
+               |                     __libc_start_main
+               |                     _start
+               |          
+                --3.59%--ArrayBook::cancel_order
+                          run_once<ArrayBook>
+                          benchmark<ArrayBook>
+                          main
+                          0xf95aa2617744
+                          __libc_start_main
+                          _start
+
+    13.80%  bench    bench                  [.] make_workload
+            |
+            ---make_workload
+               main
+               0xf95aa2617744
+               __libc_start_main
+               _start
+
+     6.43%  bench    bench                  [.] validate
+            |
+            ---validate
+               ArrayBook::add_order
+               run_once<ArrayBook>
+               benchmark<ArrayBook>
+               main
+               0xf95aa2617744
+               __libc_start_main
+               _start
+
+     6.24%  bench    bench                  [.] ArrayBook::change
+            |
+            ---ArrayBook::change
+               |          
+               |--4.54%--ArrayBook::cancel_order
+               |          run_once<ArrayBook>
+               |          benchmark<ArrayBook>
+               |          main
+               |          0xf95aa2617744
+               |          __libc_start_main
+               |          _start
+               |          
+                --1.70%--ArrayBook::add_order
+                          run_once<ArrayBook>
+                          benchmark<ArrayBook>
+                          main
+                          0xf95aa2617744
+                          __libc_start_main
+                          _start
+
+     5.86%  bench    bench                  [.] main
+            |
+            ---main
+               0xf95aa2617744
+               __libc_start_main
+               _start
+
+     5.67%  bench    bench                  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+            |
+            ---std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+               make_workload
+               main
+               0xf95aa2617744
+               __libc_start_main
+               _start
+
+     5.29%  bench    bench                  [.] FlatOrders::grow
+            |
+            ---FlatOrders::grow
+               FlatOrders::insert
+               ArrayBook::add_order
+               run_once<ArrayBook>
+               benchmark<ArrayBook>
+               main
+               0xf95aa2617744
+               __libc_start_main
+               _start
+
+     4.35%  bench    bench                  [.] FlatOrders::insert
+            |
+            ---FlatOrders::insert
+               |          
+               |--2.46%--ArrayBook::add_order
+               |          run_once<ArrayBook>
+               |          benchmark<ArrayBook>
+               |          main
+               |          0xf95aa2617744
+               |          __libc_start_main
+               |          _start
+               |          
+                --1.89%--FlatOrders::grow
+                          FlatOrders::insert
+                          ArrayBook::add_order
+                          run_once<ArrayBook>
+                          benchmark<ArrayBook>
+                          main
+                          0xf95aa2617744
+                          __libc_start_main
+                          _start
+
+     4.16%  bench    bench                  [.] run_once<ArrayBook>
+            |
+            ---run_once<ArrayBook>
+               benchmark<ArrayBook>
+               main
+               0xf95aa2617744
+               __libc_start_main
+               _start
+
+     2.27%  bench    libc.so.6              [.] 0x000000000009e654
+            |
+            ---0xf95aa268e654
+               FlatOrders::grow
+               FlatOrders::insert
+               ArrayBook::add_order
+               run_once<ArrayBook>
+               benchmark<ArrayBook>
+               main
+               0xf95aa2617744
+               __libc_start_main
+               _start
+
+     2.08%  bench    bench                  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand
+            |
+            ---std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand
+               std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+               make_workload
+               main
+               0xf95aa2617744
+               __libc_start_main
+               _start
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

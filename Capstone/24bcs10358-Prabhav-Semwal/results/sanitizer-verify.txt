@@ -1,0 +1,9 @@
+Seed: 42; operations: 1000000; add: 700829; cancel: 199496; BBO: 99675; depth calls per side: 10000
+Running correctness test...
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+All implementations produce identical results.
+Checked 1000000 operations; BBO and top-10 after every operation,
+full depth every 10000 operations and at the end.
+Edge cases and independent full-depth reference test: PASS

@@ -1,0 +1,45 @@
+Seed: 42; operations: 1000000; add: 700829; cancel: 199496; BBO: 99675; depth calls per side: 10000
+trial,total_ms,ns_add,ns_cancel,ns_bbo,checksum
+1,139.307,0.000,0.000,0.000,4466782172639580222
+Implementation A profile replay
+Total time (ms): 139.307
+Final BBO (integer ticks):
+Bid: 9999 x 3244
+Ask: 10001 x 2193
+Checksum: 4466782172639580222
+Seed: 42; operations: 1000000; add: 700829; cancel: 199496; BBO: 99675; depth calls per side: 10000
+trial,total_ms,ns_add,ns_cancel,ns_bbo,checksum
+1,134.468,0.000,0.000,0.000,4466782172639580222
+Implementation A profile replay
+Total time (ms): 134.468
+Final BBO (integer ticks):
+Bid: 9999 x 3244
+Ask: 10001 x 2193
+Checksum: 4466782172639580222
+Seed: 42; operations: 1000000; add: 700829; cancel: 199496; BBO: 99675; depth calls per side: 10000
+trial,total_ms,ns_add,ns_cancel,ns_bbo,checksum
+1,136.638,0.000,0.000,0.000,4466782172639580222
+Implementation A profile replay
+Total time (ms): 136.638
+Final BBO (integer ticks):
+Bid: 9999 x 3244
+Ask: 10001 x 2193
+Checksum: 4466782172639580222
+Seed: 42; operations: 1000000; add: 700829; cancel: 199496; BBO: 99675; depth calls per side: 10000
+trial,total_ms,ns_add,ns_cancel,ns_bbo,checksum
+1,135.846,0.000,0.000,0.000,4466782172639580222
+Implementation A profile replay
+Total time (ms): 135.846
+Final BBO (integer ticks):
+Bid: 9999 x 3244
+Ask: 10001 x 2193
+Checksum: 4466782172639580222
+Seed: 42; operations: 1000000; add: 700829; cancel: 199496; BBO: 99675; depth calls per side: 10000
+trial,total_ms,ns_add,ns_cancel,ns_bbo,checksum
+1,144.224,0.000,0.000,0.000,4466782172639580222
+Implementation A profile replay
+Total time (ms): 144.224
+Final BBO (integer ticks):
+Bid: 9999 x 3244
+Ask: 10001 x 2193
+Checksum: 4466782172639580222
