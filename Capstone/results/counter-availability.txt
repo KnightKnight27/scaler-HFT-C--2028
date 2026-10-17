@@ -1,0 +1,9 @@
+task-clock: available
+cycles: available
+instructions: available
+branches: available
+branch-misses: available
+cache-misses: available
+L1-dcache-load-misses: available
+dTLB-load-misses: available
+page-faults: available

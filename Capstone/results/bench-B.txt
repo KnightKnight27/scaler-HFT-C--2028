@@ -1,0 +1,14 @@
+Seed: 42
+Implementation B (timed mode)
+Operations: 1000000 (add 700746, cancel 199278, BBO 99976)
+Depth queries per side: 10000
+Run 1: 673.93 ms; add 399.90; cancel 1647.61; BBO 58.36 ns; checksum 2736274959807530309
+Run 2: 639.34 ms; add 350.11; cancel 1642.02; BBO 62.35 ns; checksum 2736274959807530309
+Run 3: 822.70 ms; add 439.31; cancel 2211.59; BBO 70.66 ns; checksum 2736274959807530309
+Run 4: 837.36 ms; add 452.98; cancel 2187.42; BBO 103.13 ns; checksum 2736274959807530309
+Run 5: 712.78 ms; add 387.51; cancel 1862.63; BBO 70.06 ns; checksum 2736274959807530309
+Final BBO: bid 99.99 x 2826, ask 100.01 x 2307
+Median total: 712.78 ms
+Median ns/add: 399.90
+Median ns/cancel: 1862.63
+Median ns/BBO: 70.06
