@@ -1,0 +1,12 @@
+Experiment (not part of the submitted code): Implementation C with the
+OrderMap hash changed from Fibonacci hashing to identity (id & mask).
+Benchmark IDs are sequential, so identity hashing makes consecutive adds
+write to consecutive slots instead of random cache lines.
+
+$ ./bench_ident --impl C        (same machine, same workload, median of 5)
+  Total time        : 34.10 ms      (submitted C: ~41-44 ms)
+  ns / add_order    : 31.2          (submitted C: ~104-121 ns)
+  ns / cancel_order : 87.6          (submitted C: ~100-116 ns)
+  ns / get_bbo      : 34.2
+  ns / get_bids|asks(10): 92.1
+Checksum: 16195615379729332828      (identical -> same results)

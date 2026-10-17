@@ -1,0 +1,15 @@
+Running correctness test...
+
+Edge cases (empty book, unknown/double cancel, depth, bands):
+  A: PASS
+  B: PASS
+  C: PASS
+
+Random workload: 1000000 ops, 1000000 per-op comparisons, 100 full-book comparisons
+Final live orders: 501168, bid levels: 5000, ask levels: 5000
+
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+
+All implementations produce identical results.

@@ -1,0 +1,15 @@
+    32.49%  [.] HeapOrderBook::cancel_order(unsigned long)
+    11.00%  [.] HeapOrderBook::add_order(unsigned long, Side, double, long)
+    10.83%  [.] std::__detail::_Map_base<int, std::pair<int const, long>, std::allocator<std::pair<int const, long> >, std::__detail::_
+     8.57%  [.] __vdso_clock_gettime
+     6.54%  [.] std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+     3.65%  [.] std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+     3.49%  [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, OrderInfo>, std::_Select1st<std::pair<unsigned long const, 
+     2.11%  [.] 0x0000000000189087
+     1.96%  [.] std::_Hashtable<int, std::pair<int const, long>, std::allocator<std::pair<int const, long> >, std::__detail::_Select1st
+     1.76%  [.] (anonymous namespace)::RunResult (anonymous namespace)::run_once<HeapOrderBook>(std::vector<Op, std::allocator<Op> > co
+     1.54%  [.] 0x00000000000a9bdd
+     1.47%  [.] HeapOrderBook::top_levels(HeapOrderBook::Half const&, int)
+     1.25%  [.] malloc
+     0.96%  [.] cfree
+     0.90%  [.] std::_Hashtable<int, std::pair<int const, long>, std::allocator<std::pair<int const, long> >, std::__detail::_Select1st

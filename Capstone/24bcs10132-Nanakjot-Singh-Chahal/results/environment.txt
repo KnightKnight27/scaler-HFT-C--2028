@@ -1,0 +1,11 @@
+$ uname -a
+Linux Legion 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+
+CPU(s):                               32
+Model name:                           Intel(R) Core(TM) i9-14900HX
+L1d cache:                            768 KiB (16 instances)
+L2 cache:                             32 MiB (16 instances)
+L3 cache:                             36 MiB (1 instance)
+
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+perf version 6.8.12 (Ubuntu linux-tools-6.8.0-147, run under WSL2)

@@ -1,0 +1,16 @@
+I refs:        2,799,636,848
+I1  misses:            2,702
+LLi misses:            2,639
+I1  miss rate:          0.00%
+LLi miss rate:          0.00%
+D refs:        2,354,120,852  (1,332,321,501 rd   + 1,021,799,351 wr)
+D1  misses:       43,057,607  (   35,089,058 rd   +     7,968,549 wr)
+LLd misses:        2,531,780  (    1,248,266 rd   +     1,283,514 wr)
+D1  miss rate:           1.8% (          2.6%     +           0.8%  )
+LLd miss rate:           0.1% (          0.1%     +           0.1%  )
+LL refs:          43,060,309  (   35,091,760 rd   +     7,968,549 wr)
+LL misses:         2,534,419  (    1,250,905 rd   +     1,283,514 wr)
+LL miss rate:            0.0% (          0.0%     +           0.1%  )
+Branches:      1,106,033,243  (1,086,334,895 cond +    19,698,348 ind)
+Mispredicts:      18,042,294  (   16,978,788 cond +     1,063,506 ind)
+Mispred rate:            1.6% (          1.6%     +           5.4%   )
