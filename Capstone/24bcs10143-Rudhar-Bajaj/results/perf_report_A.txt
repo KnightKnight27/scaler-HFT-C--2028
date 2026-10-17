@@ -1,0 +1,28 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 10K of event 'cpu-clock'
+# Event count (approx.): 546300000
+#
+# Overhead  Command     Shared Object          Symbol                                                                                                 
+#
+    33.02%  bench_prof  bench_prof             [.] BookA::add_order(unsigned long, Side, double, long)
+    28.18%  bench_prof  bench_prof             [.] BookA::cancel_order(unsigned long)
+     7.49%  bench_prof  bench_prof             [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, BookA::Order>, std::allocator<std::pa
+     6.53%  bench_prof  libc.so.6              [.] cfree@GLIBC_2.17
+     5.89%  bench_prof  libc.so.6              [.] malloc_consolidate
+     2.66%  bench_prof  libc.so.6              [.] _int_free
+     2.12%  bench_prof  bench_prof             [.] make_workload(WorkloadConfig const&)
+     1.78%  bench_prof  libstdc++.so.6.0.33    [.] operator delete(void*)
+     1.69%  bench_prof  bench_prof             [.] RunResult run_once<BookA>(std::vector<Op, std::allocator<Op> > const&, bool)
+     1.43%  bench_prof  libc.so.6              [.] _int_malloc
+     1.35%  bench_prof  [kernel.kallsyms]      [k] __pi_clear_page
+     1.03%  bench_prof  libc.so.6              [.] malloc
+     1.03%  bench_prof  libc.so.6              [.] unlink_chunk.isra.0
+     0.98%  bench_prof  bench_prof             [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 429496729
+     0.51%  bench_prof  libstdc++.so.6.0.33    [.] operator new(unsigned long)
+#
+# (Cannot load tips.txt file, please install perf!)
+#

@@ -1,0 +1,31 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 16K of event 'cpu-clock'
+# Event count (approx.): 817950000
+#
+# Overhead  Command     Shared Object          Symbol                                                                                                 
+#
+    49.98%  bench_prof  bench_prof             [.] BookB::cancel_order(unsigned long)
+    10.50%  bench_prof  bench_prof             [.] BookB::add_order(unsigned long, Side, double, long)
+     4.52%  bench_prof  libstdc++.so.6.0.33    [.] std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_
+     4.47%  bench_prof  bench_prof             [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, BookB::Order>, std::_Select1st<std::pai
+     4.22%  bench_prof  libc.so.6              [.] malloc
+     3.64%  bench_prof  libstdc++.so.6.0.33    [.] std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+     2.72%  bench_prof  libc.so.6              [.] __memcpy_generic
+     2.71%  bench_prof  libc.so.6              [.] malloc_consolidate
+     2.40%  bench_prof  bench_prof             [.] RunResult run_once<BookB>(std::vector<Op, std::allocator<Op> > const&, bool)
+     1.79%  bench_prof  libc.so.6              [.] _int_malloc
+     1.64%  bench_prof  libc.so.6              [.] _int_free
+     1.50%  bench_prof  bench_prof             [.] std::__detail::_Map_base<int, std::pair<int const, BookB::LevelB>, std::allocator<std::pair<int con
+     1.12%  bench_prof  libc.so.6              [.] cfree@GLIBC_2.17
+     0.94%  bench_prof  bench_prof             [.] make_workload(WorkloadConfig const&)
+     0.75%  bench_prof  bench_prof             [.] void std::__adjust_heap<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >
+     0.74%  bench_prof  bench_prof             [.] void std::__adjust_heap<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >
+     0.65%  bench_prof  libc.so.6              [.] unlink_chunk.isra.0
+     0.58%  bench_prof  libstdc++.so.6.0.33    [.] operator new(unsigned long)
+#
+# (Cannot load tips.txt file, please install perf!)
+#

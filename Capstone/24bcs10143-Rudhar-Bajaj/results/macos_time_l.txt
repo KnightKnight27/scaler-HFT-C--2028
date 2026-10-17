@@ -1,0 +1,13 @@
+macOS /usr/bin/time -l, ./bench --impl X --runs 1 --total-only (median-ish of 3 shown per impl)
+impl none  page reclaims(minor faults)   2494  major faults 1  max RSS   36.1 MB  instructions 212475501  cycles 101883006  IPC 2.09
+impl none  page reclaims(minor faults)   2492  major faults 1  max RSS   36.1 MB  instructions 210079826  cycles 70706161  IPC 2.97
+impl none  page reclaims(minor faults)   2492  major faults 1  max RSS   36.1 MB  instructions 210480383  cycles 69757920  IPC 3.02
+impl A     page reclaims(minor faults)   4571  major faults 1  max RSS   68.5 MB  instructions 897484848  cycles 665544678  IPC 1.35
+impl A     page reclaims(minor faults)   4570  major faults 1  max RSS   68.5 MB  instructions 894059190  cycles 707079680  IPC 1.26
+impl A     page reclaims(minor faults)   4567  major faults 1  max RSS   68.5 MB  instructions 894051246  cycles 699061326  IPC 1.28
+impl B     page reclaims(minor faults)   5622  major faults 1  max RSS   56.2 MB  instructions 1232247357  cycles 1169114688  IPC 1.05
+impl B     page reclaims(minor faults)   4525  major faults 11  max RSS   68.0 MB  instructions 1184227433  cycles 711130831  IPC 1.67
+impl B     page reclaims(minor faults)   4537  major faults 1  max RSS   68.0 MB  instructions 1186950164  cycles 827088900  IPC 1.44
+impl C     page reclaims(minor faults)   3528  major faults 1  max RSS   52.3 MB  instructions 349886235  cycles 205302798  IPC 1.70
+impl C     page reclaims(minor faults)   3529  major faults 1  max RSS   52.3 MB  instructions 352627550  cycles 198680097  IPC 1.77
+impl C     page reclaims(minor faults)   3529  major faults 1  max RSS   52.3 MB  instructions 349482629  cycles 181460616  IPC 1.93

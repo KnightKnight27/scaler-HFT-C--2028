@@ -1,0 +1,68 @@
+===== cachegrind ./bench --impl none --runs 1 --total-only =====
+I refs:        168,846,105
+I1  misses:          1,630
+LLi misses:          1,626
+I1  miss rate:        0.00%
+LLi miss rate:        0.00%
+D refs:         62,427,002  (35,510,424 rd   + 26,916,578 wr)
+D1  misses:      1,273,033  (   703,286 rd   +    569,747 wr)
+LLd misses:      1,085,566  (   516,293 rd   +    569,273 wr)
+D1  miss rate:         2.0% (       2.0%     +        2.1%  )
+LLd miss rate:         1.7% (       1.5%     +        2.1%  )
+LL refs:         1,274,663  (   704,916 rd   +    569,747 wr)
+LL misses:       1,087,192  (   517,919 rd   +    569,273 wr)
+LL miss rate:          0.5% (       0.3%     +        2.1%  )
+Branches:       13,467,115  (13,465,719 cond +      1,396 ind)
+Mispredicts:       869,954  (   869,624 cond +        330 ind)
+Mispred rate:          6.5% (       6.5%     +       23.6%   )
+===== cachegrind ./bench --impl A --runs 1 --total-only =====
+I refs:        671,612,951
+I1  misses:          2,003
+LLi misses:          1,999
+I1  miss rate:        0.00%
+LLi miss rate:        0.00%
+D refs:        281,019,911  (186,999,291 rd   + 94,020,620 wr)
+D1  misses:     11,465,420  ( 10,160,735 rd   +  1,304,685 wr)
+LLd misses:      3,306,740  (  2,110,958 rd   +  1,195,782 wr)
+D1  miss rate:         4.1% (        5.4%     +        1.4%  )
+LLd miss rate:         1.2% (        1.1%     +        1.3%  )
+LL refs:        11,467,423  ( 10,162,738 rd   +  1,304,685 wr)
+LL misses:       3,308,739  (  2,112,957 rd   +  1,195,782 wr)
+LL miss rate:          0.3% (        0.2%     +        1.3%  )
+Branches:      100,768,843  ( 95,062,799 cond +  5,706,044 ind)
+Mispredicts:     9,773,163  (  9,772,804 cond +        359 ind)
+Mispred rate:          9.7% (       10.3%     +        0.0%   )
+===== cachegrind ./bench --impl B --runs 1 --total-only =====
+I refs:        878,916,625
+I1  misses:          2,038
+LLi misses:          2,034
+I1  miss rate:        0.00%
+LLi miss rate:        0.00%
+D refs:        401,826,936  (272,856,192 rd   + 128,970,744 wr)
+D1  misses:     11,106,878  (  9,789,098 rd   +   1,317,780 wr)
+LLd misses:      2,956,262  (  1,867,016 rd   +   1,089,246 wr)
+D1  miss rate:         2.8% (        3.6%     +         1.0%  )
+LLd miss rate:         0.7% (        0.7%     +         0.8%  )
+LL refs:        11,108,916  (  9,791,136 rd   +   1,317,780 wr)
+LL misses:       2,958,296  (  1,869,050 rd   +   1,089,246 wr)
+LL miss rate:          0.2% (        0.2%     +         0.8%  )
+Branches:      146,889,247  (141,104,394 cond +   5,784,853 ind)
+Mispredicts:     7,308,077  (  7,307,719 cond +         358 ind)
+Mispred rate:          5.0% (        5.2%     +         0.0%   )
+===== cachegrind ./bench --impl C --runs 1 --total-only =====
+I refs:        288,661,000
+I1  misses:          1,912
+LLi misses:          1,908
+I1  miss rate:        0.00%
+LLi miss rate:        0.00%
+D refs:        114,108,783  (68,164,770 rd   + 45,944,013 wr)
+D1  misses:      3,448,021  ( 2,614,153 rd   +    833,868 wr)
+LLd misses:      2,488,662  ( 1,655,269 rd   +    833,393 wr)
+D1  miss rate:         3.0% (       3.8%     +        1.8%  )
+LLd miss rate:         2.2% (       2.4%     +        1.8%  )
+LL refs:         3,449,933  ( 2,616,065 rd   +    833,868 wr)
+LL misses:       2,490,570  ( 1,657,177 rd   +    833,393 wr)
+LL miss rate:          0.6% (       0.5%     +        1.8%  )
+Branches:       29,250,388  (28,047,985 cond +  1,202,403 ind)
+Mispredicts:     1,674,806  ( 1,674,456 cond +        350 ind)
+Mispred rate:          5.7% (       6.0%     +        0.0%   )

@@ -1,0 +1,16 @@
+Running correctness test...
+
+Edge cases (empty book, unknown/double cancel, insufficient depth, invalid input):
+  A: ok   B: ok   C: ok
+
+Lockstep comparison of A, B and C on identical random workloads:
+  benchmark workload (seed 42)        1010000 ops,  1010000 BBO +   20000 top-10 compares, 5000 bid levels left: agree
+  narrow band, cancel-heavy (seed 7)   303000 ops,   303000 BBO +  303000 top-10 compares,   12 bid levels left: agree
+  scrambled ids (seed 2026)            303000 ops,   303000 BBO +   33000 top-10 compares, 5000 bid levels left: agree
+  drain to empty (seed 99)             202000 ops,   202000 BBO +  202000 top-10 compares,    2 bid levels left: agree
+
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+
+All implementations produce identical results.

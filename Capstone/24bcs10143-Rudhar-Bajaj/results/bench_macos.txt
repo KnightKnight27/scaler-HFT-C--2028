@@ -1,0 +1,30 @@
+Workload: 1000000 ops, seed 42 -> 700471 add, 199305 cancel, 100224 get_bbo, 10000 get_bids+get_asks(10)
+steady_clock: resolution 41.0 ns, now()+now() pair 28.6 ns (included in every per-op number)
+
+Implementation A (std::map + unordered_map)  (median of 5 runs)
+  total time            :   145.26 ms
+  ns / add_order        :    112.0
+  ns / cancel_order     :    338.8
+  ns / get_bbo          :     16.5   (block of 1M calls: 1.92 ns)
+  ns / get_bids+asks(10):    147.0
+  final BBO             : bid 99.99 x 2722 | ask 100.01 x 2515
+  checksum              : fb65302f2675591e
+
+Implementation B (heaps + lazy delete)  (median of 5 runs)
+  total time            :   151.27 ms
+  ns / add_order        :     41.4
+  ns / cancel_order     :    495.8
+  ns / get_bbo          :     15.3   (block of 1M calls: 2.91 ns)
+  ns / get_bids+asks(10):   1108.3
+  final BBO             : bid 99.99 x 2722 | ask 100.01 x 2515
+  checksum              : fb65302f2675591e
+
+Implementation C (tick array + bitmap + own hash)  (median of 5 runs)
+  total time            :    14.59 ms
+  ns / add_order        :     38.7
+  ns / cancel_order     :     32.9
+  ns / get_bbo          :     15.7   (block of 1M calls: 1.92 ns)
+  ns / get_bids+asks(10):    106.6
+  final BBO             : bid 99.99 x 2722 | ask 100.01 x 2515
+  checksum              : fb65302f2675591e
+

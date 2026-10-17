@@ -1,0 +1,26 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'cpu-clock'
+# Event count (approx.): 116750000
+#
+# Overhead  Command     Shared Object          Symbol                                                                                                 
+#
+    32.51%  bench_prof  bench_prof             [.] BookC::add_order(unsigned long, Side, double, long)
+    16.27%  bench_prof  [kernel.kallsyms]      [k] __pi_clear_page
+    16.15%  bench_prof  bench_prof             [.] RunResult run_once<BookC>(std::vector<Op, std::allocator<Op> > const&, bool)
+    10.45%  bench_prof  bench_prof             [.] make_workload(WorkloadConfig const&)
+     5.57%  bench_prof  bench_prof             [.] BookC::cancel_order(unsigned long)
+     4.71%  bench_prof  bench_prof             [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 429496729
+     2.87%  bench_prof  libm.so.6              [.] __llround
+     1.63%  bench_prof  bench_prof             [.] BookC::get_bids(int) const
+     1.50%  bench_prof  bench_prof             [.] std::vector<OrderTable::Slot, std::allocator<OrderTable::Slot> >::_M_fill_assign(unsigned long, Ord
+     1.46%  bench_prof  bench_prof             [.] main
+     1.28%  bench_prof  bench_prof             [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 429496729
+     0.99%  bench_prof  bench_prof             [.] llround@plt
+     0.51%  bench_prof  bench_prof             [.] BookC::get_asks(int) const
+#
+# (Cannot load tips.txt file, please install perf!)
+#

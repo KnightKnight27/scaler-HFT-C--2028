@@ -1,0 +1,64 @@
+===== perf stat -r 5 ./bench --impl none --runs 1 --total-only =====
+
+ Performance counter stats for './bench --impl none --runs 1 --total-only' (5 runs):
+
+             24.02 msec task-clock                       #    0.985 CPUs utilized               ( +- 14.63% )
+   <not supported>      cycles                                                                
+   <not supported>      instructions                                                          
+   <not supported>      branches                                                              
+   <not supported>      branch-misses                                                         
+   <not supported>      cache-misses                                                          
+   <not supported>      L1-dcache-load-misses                                                 
+   <not supported>      dTLB-load-misses                                                      
+               802      page-faults                      #   33.387 K/sec                       ( +- 13.84% )
+
+           0.02438 +- 0.00351 seconds time elapsed  ( +- 14.40% )
+
+===== perf stat -r 5 ./bench --impl A --runs 1 --total-only =====
+
+ Performance counter stats for './bench --impl A --runs 1 --total-only' (5 runs):
+
+            164.46 msec task-clock                       #    0.995 CPUs utilized               ( +-  4.11% )
+   <not supported>      cycles                                                                
+   <not supported>      instructions                                                          
+   <not supported>      branches                                                              
+   <not supported>      branch-misses                                                         
+   <not supported>      cache-misses                                                          
+   <not supported>      L1-dcache-load-misses                                                 
+   <not supported>      dTLB-load-misses                                                      
+              7211      page-faults                      #   43.847 K/sec                       ( +-  3.30% )
+
+           0.16531 +- 0.00675 seconds time elapsed  ( +-  4.08% )
+
+===== perf stat -r 5 ./bench --impl B --runs 1 --total-only =====
+
+ Performance counter stats for './bench --impl B --runs 1 --total-only' (5 runs):
+
+            239.54 msec task-clock                       #    0.993 CPUs utilized               ( +- 11.96% )
+   <not supported>      cycles                                                                
+   <not supported>      instructions                                                          
+   <not supported>      branches                                                              
+   <not supported>      branch-misses                                                         
+   <not supported>      cache-misses                                                          
+   <not supported>      L1-dcache-load-misses                                                 
+   <not supported>      dTLB-load-misses                                                      
+              9024      page-faults                      #   37.672 K/sec                       ( +-  1.06% )
+
+            0.2412 +- 0.0289 seconds time elapsed  ( +- 12.00% )
+
+===== perf stat -r 5 ./bench --impl C --runs 1 --total-only =====
+
+ Performance counter stats for './bench --impl C --runs 1 --total-only' (5 runs):
+
+             43.93 msec task-clock                       #    0.994 CPUs utilized               ( +-  6.27% )
+   <not supported>      cycles                                                                
+   <not supported>      instructions                                                          
+   <not supported>      branches                                                              
+   <not supported>      branch-misses                                                         
+   <not supported>      cache-misses                                                          
+   <not supported>      L1-dcache-load-misses                                                 
+   <not supported>      dTLB-load-misses                                                      
+               935      page-faults                      #   21.282 K/sec                       ( +-  2.23% )
+
+           0.04422 +- 0.00276 seconds time elapsed  ( +-  6.25% )
+
