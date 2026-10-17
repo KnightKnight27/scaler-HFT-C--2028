@@ -1,0 +1,17 @@
+run 1: total 218.83 ms | add 159.1 ns | cancel 442.1 ns | bbo 12.7 ns
+run 2: total 214.72 ms | add 147.5 ns | cancel 463.2 ns | bbo 12.8 ns
+run 3: total 221.92 ms | add 146.7 ns | cancel 501.9 ns | bbo 12.8 ns
+run 4: total 216.03 ms | add 146.8 ns | cancel 472.0 ns | bbo 12.7 ns
+run 5: total 221.80 ms | add 147.7 ns | cancel 497.5 ns | bbo 12.8 ns
+
+Implementation B (sorted vector + std::map ids), median of 5 runs (1000000 ops)
+Total time    : 218.83 ms
+ns / add      : 147.5
+ns / cancel   : 472.0
+ns / bbo      : 12.8
+
+Final BBO:
+Bid: 99.99 x 3244
+Ask: 100.01 x 2193
+
+Checksum: 522702630

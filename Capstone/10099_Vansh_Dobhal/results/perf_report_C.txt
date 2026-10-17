@@ -1,0 +1,25 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 298  of event 'cpu_core/cycles/P'
+# Event count (approx.): 331047162
+#
+# Overhead  Symbol                                                                                                                                              
+# ........  ....................................................................................................................................................
+#
+    29.49%  [.] __vdso_clock_gettime                                                                                                                            
+    20.59%  [.] Result run_once<ArrayBook>(std::vector<Op, std::allocator<Op> > const&)                                                                         
+    15.39%  [.] make_workload()                                                                                                                                 
+     5.35%  [k] clear_page_erms                                                                                                                                 
+     5.03%  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 1
+     4.39%  [.] 0x0000000000176707                                                                                                                              
+     3.08%  [.] std::chrono::_V2::steady_clock::now()                                                                                                           
+     1.72%  [.] std::vector<ArrayBook::Order, std::allocator<ArrayBook::Order> >::_M_default_append(unsigned long)                                              
+     1.30%  [k] __rcu_read_lock                                                                                                                                 
+
+
+#
+# (Tip: If you prefer Intel style assembly, try: perf annotate -M intel)
+#

@@ -1,0 +1,17 @@
+run 1: total 52.05 ms | add 32.8 ns | cancel 51.9 ns | bbo 12.7 ns
+run 2: total 53.48 ms | add 32.5 ns | cancel 59.8 ns | bbo 12.7 ns
+run 3: total 51.28 ms | add 32.5 ns | cancel 49.3 ns | bbo 12.6 ns
+run 4: total 52.09 ms | add 33.5 ns | cancel 49.7 ns | bbo 12.6 ns
+run 5: total 52.36 ms | add 32.6 ns | cancel 54.4 ns | bbo 12.8 ns
+
+Implementation C (tick array + cached best + id vector), median of 5 runs (1000000 ops)
+Total time    : 52.09 ms
+ns / add      : 32.6
+ns / cancel   : 51.9
+ns / bbo      : 12.7
+
+Final BBO:
+Bid: 99.99 x 3244
+Ask: 100.01 x 2193
+
+Checksum: 522702630

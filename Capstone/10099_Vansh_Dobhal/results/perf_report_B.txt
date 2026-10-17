@@ -1,0 +1,29 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'cpu_core/cycles/P'
+# Event count (approx.): 1216755215
+#
+# Overhead  Symbol                                                                                                                                              
+# ........  ....................................................................................................................................................
+#
+    21.12%  [.] VectorBook::cancel_order(unsigned long)                                                                                                         
+    15.13%  [.] Result run_once<VectorBook>(std::vector<Op, std::allocator<Op> > const&)                                                                        
+     9.66%  [.] __gnu_cxx::__normal_iterator<VectorBook::PriceLevel*, std::vector<VectorBook::PriceLevel, std::allocator<VectorBook::PriceLevel> > > std::__lowe
+     9.10%  [.] __vdso_clock_gettime                                                                                                                            
+     7.08%  [.] std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)                                                           
+     7.06%  [.] __gnu_cxx::__normal_iterator<VectorBook::PriceLevel*, std::vector<VectorBook::PriceLevel, std::allocator<VectorBook::PriceLevel> > > std::__lowe
+     4.83%  [.] make_workload()                                                                                                                                 
+     2.14%  [.] std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)                          
+     2.05%  [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, VectorBook::Order>, std::_Select1st<std::pair<unsigned long const, VectorBook::Order
+     1.39%  [.] cfree                                                                                                                                           
+     1.21%  [.] std::chrono::_V2::steady_clock::now()                                                                                                           
+     1.12%  [.] VectorBook::add_qty(std::vector<VectorBook::PriceLevel, std::allocator<VectorBook::PriceLevel> >&, int, long, bool)                             
+     1.11%  [.] std::_Rb_tree_iterator<std::pair<unsigned long const, VectorBook::Order> > std::_Rb_tree<unsigned long, std::pair<unsigned long const, VectorBoo
+
+
+#
+# (Tip: If you prefer Intel style assembly, try: perf annotate -M intel)
+#

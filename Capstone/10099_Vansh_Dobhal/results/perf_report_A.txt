@@ -1,0 +1,26 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 842  of event 'cpu_core/cycles/P'
+# Event count (approx.): 950689306
+#
+# Overhead  Symbol                                                                                                                                              
+# ........  ....................................................................................................................................................
+#
+    21.65%  [.] MapBook::cancel_order(unsigned long)                                                                                                            
+    17.36%  [.] Result run_once<MapBook>(std::vector<Op, std::allocator<Op> > const&)                                                                           
+    13.17%  [.] std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::operator[](int const&)                                       
+     9.93%  [.] __vdso_clock_gettime                                                                                                                            
+     6.91%  [.] std::__detail::_Map_base<unsigned long, std::pair<unsigned long const, MapBook::Order>, std::allocator<std::pair<unsigned long const, MapBook::O
+     5.62%  [.] make_workload()                                                                                                                                 
+     3.11%  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, MapBook::Order>, std::allocator<std::pair<unsigned long const, MapBook::Order> >, 
+     1.53%  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 1
+     1.32%  [.] cfree                                                                                                                                           
+     1.20%  [.] operator new(unsigned long)                                                                                                                     
+
+
+#
+# (Tip: If you prefer Intel style assembly, try: perf annotate -M intel)
+#
