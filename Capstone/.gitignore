@@ -1,0 +1,15 @@
+# Build artifacts
+build/
+bin/
+*.o
+*.out
+bench
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+*~
+
+# Perf data
+perf.data*
