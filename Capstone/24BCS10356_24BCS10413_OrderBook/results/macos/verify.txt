@@ -1,0 +1,12 @@
+Running correctness test...
+
+Edge cases (empty book, unknown/double cancel, insufficient depth, invalid input):
+  A: PASS   B: PASS   C: PASS
+Lock-step workload comparison (1010000 ops, BBO + 10-level depth compared after every op):
+Benchmark checksums: A=6207609776843994971 B=6207609776843994971 C=6207609776843994971
+
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+
+All implementations produce identical results.

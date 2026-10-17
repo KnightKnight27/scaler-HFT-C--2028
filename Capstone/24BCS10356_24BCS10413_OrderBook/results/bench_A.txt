@@ -1,0 +1,21 @@
+Implementation A  (1000000 ops: 700471 add, 199303 cancel, 100226 bbo, +10000 depth queries; 5 runs)
+  run 1: total 218.55 ms | add 193.9 ns | cancel 446.3 ns | bbo 34.4 ns | depth(10+10) 196.8 ns
+  run 2: total 203.68 ms | add 194.5 ns | cancel 455.8 ns | bbo 33.9 ns | depth(10+10) 201.0 ns
+  run 3: total 202.14 ms | add 196.8 ns | cancel 490.8 ns | bbo 33.9 ns | depth(10+10) 200.5 ns
+  run 4: total 208.33 ms | add 197.7 ns | cancel 499.3 ns | bbo 33.9 ns | depth(10+10) 204.8 ns
+  run 5: total 204.11 ms | add 195.0 ns | cancel 478.7 ns | bbo 34.2 ns | depth(10+10) 204.3 ns
+
+Median of 5 runs (impl A):          raw      net of timer overhead
+  Total time        :     204.11 ms   (uninstrumented pass, 1010000 ops)
+  ns / add_order    :      195.0        131.8
+  ns / cancel_order :      478.7        415.6
+  ns / get_bbo      :       33.9          0.0   (per-call timing; below timer resolution)
+  ns / get_bbo burst:       4.62              (1M back-to-back calls on final book)
+  ns / depth query  :      201.0        137.8   (get_bids(10) + get_asks(10))
+  timer overhead    :       63.2 ns per steady_clock::now() pair
+
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+
+Checksum: 9406903409647291425

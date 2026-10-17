@@ -1,0 +1,11 @@
+Linux 7.0.0-38-generic x86_64
+CPU(s):                                  12
+Model name:                              AMD Ryzen 5 5600H with Radeon Graphics
+CPU(s) scaling MHz:                      85%
+L1d cache:                               192 KiB (6 instances)
+L2 cache:                                3 MiB (6 instances)
+L3 cache:                                16 MiB (1 instance)
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+governor: powersave
+pinning: taskset -c 3
+commit: 13f571c

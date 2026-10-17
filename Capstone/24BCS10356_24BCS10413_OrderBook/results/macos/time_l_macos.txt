@@ -1,0 +1,16 @@
+# macOS 26.5.1, Apple M3, battery + Low Power Mode, VM running in background
+== A
+Implementation A (--perf: single pass, 1010000 ops): 143.40 ms
+            69844992  maximum resident set size
+                4415  page reclaims
+                   6  page faults
+== B
+Implementation B (--perf: single pass, 1010000 ops): 335.39 ms
+            79511552  maximum resident set size
+                5010  page reclaims
+                   1  page faults
+== C
+Implementation C (--perf: single pass, 1010000 ops): 28.43 ms
+            70451200  maximum resident set size
+                4456  page reclaims
+                   1  page faults

@@ -1,0 +1,31 @@
+Implementation C  (1000000 ops: 700471 add, 199303 cancel, 100226 bbo, +10000 depth queries; 5 runs)
+  run 1: total 34.96 ms | add 122.4 ns | cancel 103.8 ns | bbo 23.5 ns | depth(10+10) 146.6 ns | bbo burst 2.21 ns
+  run 2: total 37.19 ms | add 122.2 ns | cancel 101.1 ns | bbo 23.5 ns | depth(10+10) 148.0 ns | bbo burst 2.20 ns
+  run 3: total 35.72 ms | add 123.3 ns | cancel 111.3 ns | bbo 23.6 ns | depth(10+10) 148.1 ns | bbo burst 2.19 ns
+  run 4: total 37.88 ms | add 120.9 ns | cancel 99.5 ns | bbo 23.3 ns | depth(10+10) 145.9 ns | bbo burst 2.25 ns
+  run 5: total 36.56 ms | add 122.1 ns | cancel 102.4 ns | bbo 23.6 ns | depth(10+10) 147.1 ns | bbo burst 2.23 ns
+
+Median of 5 runs (impl C):          raw   net of timer cost
+  Total time        :      36.56 ms   (uninstrumented pass, 1010000 ops)
+  ns / add_order    :      122.2         98.5
+  ns / cancel_order :      102.4         78.7
+  ns / get_bbo      :       23.5          0.0   (per-call timing; near timer resolution)
+  ns / get_bbo burst:       2.21              (1M back-to-back calls on final book, timed as a block)
+  ns / depth query  :      147.1        123.4   (get_bids(10) + get_asks(10))
+  timer cost        :       23.7 ns   (mean empty timed interval; subtracted for "net")
+
+Per-call latency percentiles, ns (raw, timer cost included; median of 5 runs):
+                      p50      p90      p99    p99.9        max
+  add_order           120      141      381      611      13415
+  cancel_order        110      141      401      591       8135
+  get_bbo              20       30       31       41       5831
+  depth (10+10)       141      151      180      431       5190
+  timer only           20       30       31       31      11762
+
+Page faults (run 1): workload generation 6899 | book construction 8194 | timed loop 0
+
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+
+Checksum: 9406903409647291425

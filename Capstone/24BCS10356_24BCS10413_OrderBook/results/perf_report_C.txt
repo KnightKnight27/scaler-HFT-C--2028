@@ -1,0 +1,120 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 475  of event 'armv8_pmuv3_0/cycles/P'
+# Event count (approx.): 269440029
+#
+# Overhead  Command  Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+# ........  .......  .....................  .......................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    34.84%  bench    bench                  [.] OrderBookC::add_order(unsigned long, Side, int, long)
+            |          
+            |--33.30%--OrderBookC::table_insert(unsigned long, int, int) (inlined)
+            |          OrderBookC::add_order(unsigned long, Side, int, long)
+            |          int run_perf<OrderBookC>(char const*, Workload const&) [clone .constprop.0]
+            |          main
+            |          0xedd4db6a84c4
+            |          __libc_start_main
+            |          _start
+            |          
+             --1.32%--OrderBookC::add_order(unsigned long, Side, int, long)
+                       |          
+                        --0.88%--int run_perf<OrderBookC>(char const*, Workload const&) [clone .constprop.0]
+                                  main
+                                  0xedd4db6a84c4
+                                  __libc_start_main
+                                  _start
+
+    15.62%  bench    bench                  [.] make_workload(unsigned long, unsigned int)
+            |          
+            |--9.31%--make_workload(unsigned long, unsigned int)
+            |          main
+            |          0xedd4db6a84c4
+            |          __libc_start_main
+            |          _start
+            |          
+            |--4.13%--void std::__new_allocator<Op>::construct<Op, Op const&>(Op*, Op const&) (inlined)
+            |          void std::allocator_traits<std::allocator<Op> >::construct<Op, Op const&>(std::allocator<Op>&, Op*, Op const&) (inlined)
+            |          std::vector<Op, std::allocator<Op> >::push_back(Op const&) (inlined)
+            |          make_workload(unsigned long, unsigned int)
+            |          main
+            |          0xedd4db6a84c4
+            |          __libc_start_main
+            |          _start
+            |          
+            |--1.09%--int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) (inlined)
+            |          make_workload(unsigned long, unsigned int)
+            |          main
+            |          0xedd4db6a84c4
+            |          __libc_start_main
+            |          _start
+            |          
+             --0.66%--std::vector<Op, std::allocator<Op> >::push_back(Op const&) (inlined)
+                       make_workload(unsigned long, unsigned int)
+                       main
+                       0xedd4db6a84c4
+                       __libc_start_main
+                       _start
+
+     7.50%  bench    bench                  [.] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+            |          
+            |--4.26%--unsigned int std::uniform_int_distribution<int>::_S_nd<unsigned long, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>, unsigned int>(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, unsigned int) (inlined)
+            |          int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+            |          |          
+            |          |--3.25%--make_workload(unsigned long, unsigned int)
+            |          |          main
+            |          |          0xedd4db6a84c4
+            |          |          __libc_start_main
+            |          |          _start
+            |          |          
+            |           --1.01%--int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) (inlined)
+            |                     make_workload(unsigned long, unsigned int)
+            |                     main
+            |                     0xedd4db6a84c4
+            |                     __libc_start_main
+            |                     _start
+            |          
+             --3.23%--int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+                       |          
+                       |--1.69%--int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) (inlined)
+                       |          make_workload(unsigned long, unsigned int)
+                       |          main
+                       |          0xedd4db6a84c4
+                       |          __libc_start_main
+                       |          _start
+                       |          
+                        --1.10%--make_workload(unsigned long, unsigned int)
+                                  main
+                                  0xedd4db6a84c4
+                                  __libc_start_main
+                                  _start
+
+     7.26%  bench    bench                  [.] OrderBookC::cancel_order(unsigned long)
+            |          
+            |--6.39%--OrderBookC::table_erase(unsigned long, int&, int&) (inlined)
+            |          OrderBookC::cancel_order(unsigned long)
+            |          int run_perf<OrderBookC>(char const*, Workload const&) [clone .constprop.0]
+            |          main
+            |          0xedd4db6a84c4
+            |          __libc_start_main
+            |          _start
+            |          
+             --0.88%--OrderBookC::cancel_order(unsigned long)
+                       int run_perf<OrderBookC>(char const*, Workload const&) [clone .constprop.0]
+                       main
+                       0xedd4db6a84c4
+                       __libc_start_main
+                       _start
+
+     3.95%  bench    bench                  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+            |
+            ---std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+               |          
+                --3.07%--unsigned int std::uniform_int_distribution<int>::_S_nd<unsigned long, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>, unsigned int>(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, unsigned int) (inlined)
+                          int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+                          |          
+                          |--1.76%--int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) (inlined)
+                          |          make_workload(unsigned long, unsigned int)
+                          |          main

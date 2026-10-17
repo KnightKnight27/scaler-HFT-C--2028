@@ -1,0 +1,120 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'armv8_pmuv3_0/cycles/P'
+# Event count (approx.): 770481056
+#
+# Overhead  Command  Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+# ........  .......  .....................  .......................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    34.96%  bench    bench                  [.] OrderBookA::add_order(unsigned long, Side, int, long)
+            |          
+            |--12.09%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+            |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<int const, long> >*, std::_Rb_tree_node_base*, int const&) (inlined)
+            |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::lower_bound(int const&) (inlined)
+            |          std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::lower_bound(int const&) (inlined)
+            |          std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::operator[](int const&) (inlined)
+            |          OrderBookA::add_order(unsigned long, Side, int, long)
+            |          run_perf<OrderBookA> (inlined)
+            |          main
+            |          0xf2fc447584c4
+            |          __libc_start_main
+            |          _start
+            |          
+            |--10.41%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::greater<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+            |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::greater<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<int const, long> >*, std::_Rb_tree_node_base*, int const&) (inlined)
+            |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::greater<int>, std::allocator<std::pair<int const, long> > >::lower_bound(int const&) (inlined)
+            |          std::map<int, long, std::greater<int>, std::allocator<std::pair<int const, long> > >::lower_bound(int const&) (inlined)
+            |          std::map<int, long, std::greater<int>, std::allocator<std::pair<int const, long> > >::operator[](int const&) (inlined)
+            |          OrderBookA::add_order(unsigned long, Side, int, long)
+            |          run_perf<OrderBookA> (inlined)
+            |          main
+            |          0xf2fc447584c4
+            |          __libc_start_main
+            |          _start
+            |          
+            |--4.15%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::greater<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<int const, long> >*, std::_Rb_tree_node_base*, int const&) (inlined)
+            |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::greater<int>, std::allocator<std::pair<int const, long> > >::lower_bound(int const&) (inlined)
+            |          std::map<int, long, std::greater<int>, std::allocator<std::pair<int const, long> > >::lower_bound(int const&) (inlined)
+            |          std::map<int, long, std::greater<int>, std::allocator<std::pair<int const, long> > >::operator[](int const&) (inlined)
+            |          OrderBookA::add_order(unsigned long, Side, int, long)
+            |          run_perf<OrderBookA> (inlined)
+            |          main
+            |          0xf2fc447584c4
+            |          __libc_start_main
+            |          _start
+            |          
+            |--3.71%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<int const, long> >*, std::_Rb_tree_node_base*, int const&) (inlined)
+            |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::lower_bound(int const&) (inlined)
+            |          std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::lower_bound(int const&) (inlined)
+            |          std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::operator[](int const&) (inlined)
+            |          OrderBookA::add_order(unsigned long, Side, int, long)
+            |          run_perf<OrderBookA> (inlined)
+            |          main
+            |          0xf2fc447584c4
+            |          __libc_start_main
+            |          _start
+            |          
+            |--1.89%--OrderBookA::add_order(unsigned long, Side, int, long)
+            |          run_perf<OrderBookA> (inlined)
+            |          main
+            |          0xf2fc447584c4
+            |          __libc_start_main
+            |          _start
+            |          
+            |--1.06%--std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::operator[](int const&) (inlined)
+            |          OrderBookA::add_order(unsigned long, Side, int, long)
+            |          run_perf<OrderBookA> (inlined)
+            |          main
+            |          0xf2fc447584c4
+            |          __libc_start_main
+            |          _start
+            |          
+            |--0.91%--std::map<int, long, std::greater<int>, std::allocator<std::pair<int const, long> > >::operator[](int const&) (inlined)
+            |          OrderBookA::add_order(unsigned long, Side, int, long)
+            |          run_perf<OrderBookA> (inlined)
+            |          main
+            |          0xf2fc447584c4
+            |          __libc_start_main
+            |          _start
+            |          
+             --0.60%--valid_order(Side, int, long) (inlined)
+                       OrderBookA::add_order(unsigned long, Side, int, long)
+                       run_perf<OrderBookA> (inlined)
+                       main
+                       0xf2fc447584c4
+                       __libc_start_main
+                       _start
+
+    25.25%  bench    bench                  [.] OrderBookA::cancel_order(unsigned long)
+            |          
+            |--16.26%--OrderBookA::cancel_order(unsigned long)
+            |          run_perf<OrderBookA> (inlined)
+            |          main
+            |          0xf2fc447584c4
+            |          __libc_start_main
+            |          _start
+            |          
+            |--2.71%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::greater<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+            |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::greater<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<int const, long> >*, std::_Rb_tree_node_base*, int const&) (inlined)
+            |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::greater<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+            |          std::map<int, long, std::greater<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+            |          void OrderBookA::erase_from<std::map<int, long, std::greater<int>, std::allocator<std::pair<int const, long> > > >(std::map<int, long, std::greater<int>, std::allocator<std::pair<int const, long> > >&, int, long) (inlined)
+            |          OrderBookA::cancel_order(unsigned long)
+            |          run_perf<OrderBookA> (inlined)
+            |          main
+            |          0xf2fc447584c4
+            |          __libc_start_main
+            |          _start
+            |          
+            |--2.49%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_S_right(std::_Rb_tree_node_base*) (inlined)
+            |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::_M_lower_bound(std::_Rb_tree_node<std::pair<int const, long> >*, std::_Rb_tree_node_base*, int const&) (inlined)
+            |          std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+            |          std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::find(int const&) (inlined)
+            |          void OrderBookA::erase_from<std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > > >(std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >&, int, long) (inlined)
+            |          OrderBookA::cancel_order(unsigned long)
+            |          run_perf<OrderBookA> (inlined)
+            |          main
+            |          0xf2fc447584c4

@@ -1,0 +1,9 @@
+CPU(s):                                  2
+Model name:                              Neoverse-V1
+L1d cache:                               128 KiB (2 instances)
+L2 cache:                                2 MiB (2 instances)
+L3 cache:                                32 MiB (1 instance)
+7.0.0-1014-aws
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+perf version 7.0.14
+instance: c7g.large (AWS Graviton3), region ap-south-1, Ubuntu 24.04

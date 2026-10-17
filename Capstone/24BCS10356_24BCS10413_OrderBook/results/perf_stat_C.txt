@@ -1,0 +1,40 @@
+Implementation C (--perf: single pass, 1010000 ops): 48.56 ms
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: 9406903409647291425
+Implementation C (--perf: single pass, 1010000 ops): 47.83 ms
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: 9406903409647291425
+Implementation C (--perf: single pass, 1010000 ops): 48.65 ms
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: 9406903409647291425
+Implementation C (--perf: single pass, 1010000 ops): 47.93 ms
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: 9406903409647291425
+Implementation C (--perf: single pass, 1010000 ops): 47.69 ms
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: 9406903409647291425
+
+ Performance counter stats for './bench --impl C --perf' (5 runs):
+
+            108.81 msec task-clock                                                              ( +-  0.28% )
+         267452857      cycles                                                                  ( +-  0.26% )  (42.42%)
+         438755509      instructions                                                            ( +-  0.28% )  (43.32%)
+          69684402      branches                                                                ( +-  0.15% )  (44.23%)
+           1841457      branch-misses                                                           ( +-  0.91% )  (28.96%)
+           3265732      cache-misses                                                            ( +-  0.85% )  (28.02%)
+           3309602      L1-dcache-load-misses                                                   ( +-  0.49% )  (27.72%)
+           2336504      dTLB-load-misses                                                        ( +-  1.14% )  (27.75%)
+             15223      page-faults                                                             ( +-  0.00% )
+
+       0.109596579 +- 0.000313743 seconds time elapsed  ( +-  0.29% )
+
