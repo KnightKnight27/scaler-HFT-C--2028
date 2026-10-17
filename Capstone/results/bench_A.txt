@@ -1,0 +1,18 @@
+Implementation A, 1000000 ops, 5 runs
+run 1: total 310.79 ms | add 244.7 ns | cancel 551.9 ns | bbo 23.3 ns
+run 2: total 264.57 ms | add 198.3 ns | cancel 490.8 ns | bbo 18.0 ns
+run 3: total 274.64 ms | add 195.2 ns | cancel 547.5 ns | bbo 18.7 ns
+run 4: total 282.91 ms | add 212.7 ns | cancel 516.0 ns | bbo 19.5 ns
+run 5: total 276.65 ms | add 206.8 ns | cancel 519.3 ns | bbo 22.7 ns
+
+Median:
+  total time  : 276.65 ms
+  ns / add    : 206.8
+  ns / cancel : 519.3
+  ns / bbo    : 19.5
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2525
+
+Checksum: 491457988

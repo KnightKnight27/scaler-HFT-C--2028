@@ -1,0 +1,24 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'task-clock:uppp'
+# Event count (approx.): 379500000
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+# ........  .......  ....................  .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    30.43%  bench    bench                 [.] BookA::cancel_order(unsigned long)
+    27.73%  bench    bench                 [.] BookA::add_order(unsigned long, Side, double, long)
+     9.09%  bench    bench                 [.] std::__detail::_Map_base<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](unsigned long const&)
+     8.04%  bench    [vdso]                [.] __vdso_clock_gettime
+     4.55%  bench    bench                 [.] make_ops(int)
+     3.49%  bench    bench                 [.] Result run_once<BookA>(std::vector<Op, std::allocator<Op> > const&)
+     3.29%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) const
+     2.50%  bench    libc.so.6             [.] 0x00000000000b0f93
+     1.32%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+     1.25%  bench    bench                 [.] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+#
+# (Cannot load tips.txt file, please install perf!)
+#

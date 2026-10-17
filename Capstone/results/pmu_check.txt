@@ -1,0 +1,17 @@
+$ uname -r
+6.18.33.2-microsoft-standard-WSL2
+
+$ dmesg | grep "Performance Events"
+[    0.133294] Performance Events: unsupported CPU family 6 model 186 no PMU driver, software events only.
+
+$ ls /sys/bus/event_source/devices/
+breakpoint
+kprobe
+msr
+power
+software
+tracepoint
+uprobe
+
+$ perf list hw
+(end of perf list hw)

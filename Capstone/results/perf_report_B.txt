@@ -1,0 +1,25 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'task-clock:uppp'
+# Event count (approx.): 400250000
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+# ........  .......  ....................  ...........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    38.73%  bench    bench                 [.] BookB::cancel_order(unsigned long)
+    12.12%  bench    bench                 [.] BookB::add_to(std::vector<PriceLevel, std::allocator<PriceLevel> >&, int, long, bool) [clone .isra.0]
+    11.74%  bench    bench                 [.] Result run_once<BookB>(std::vector<Op, std::allocator<Op> > const&)
+     7.93%  bench    [vdso]                [.] __vdso_clock_gettime
+     7.18%  bench    libstdc++.so.6.0.35   [.] std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+     3.87%  bench    bench                 [.] make_ops(int)
+     3.19%  bench    bench                 [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, Order>, std::_Select1st<std::pair<unsigned long const, Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, Order> >*) [clone .isra.0]
+     1.69%  bench    libc.so.6             [.] 0x00000000000b0f93
+     1.56%  bench    libstdc++.so.6.0.35   [.] std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+     1.19%  bench    bench                 [.] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+     1.12%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+#
+# (Cannot load tips.txt file, please install perf!)
+#
