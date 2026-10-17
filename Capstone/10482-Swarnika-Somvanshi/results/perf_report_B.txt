@@ -1,0 +1,40 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 428  of event 'cpu_core/cycles/P'
+# Event count (approx.): 872160998
+#
+# Overhead  Command  Shared Object        Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+# ........  .......  ...................  .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    34.01%  bench    bench                [.] RunResult run_once<OrderBookB>(std::vector<Op, std::allocator<Op> > const&)
+    19.82%  bench    bench                [.] OrderBookB::SideBook::add(int, long)
+     6.71%  bench    [vdso]               [.] 0x0000000000000997
+     4.38%  bench    bench                [.] generate_workload(int, unsigned int)
+     2.79%  bench    libc.so.6            [.] __memmove_avx_unaligned_erms
+     2.02%  bench    bench                [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+     1.77%  bench    bench                [.] make_stats(std::vector<unsigned int, std::allocator<unsigned int> >&)
+     1.75%  bench    bench                [.] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+     1.27%  bench    [vdso]               [.] 0x00000000000009e5
+     1.20%  bench    [unknown]            [k] 0xffffffffadd7ffba
+     1.16%  bench    libc.so.6            [.] clock_gettime@@GLIBC_2.17
+     1.16%  bench    bench                [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand()
+     1.12%  bench    [unknown]            [k] 0xffffffffaec7d84e
+     0.98%  bench    libstdc++.so.6.0.33  [.] std::chrono::_V2::steady_clock::now()
+     0.97%  bench    [vdso]               [.] 0x0000000000000a1f
+     0.93%  bench    [unknown]            [k] 0xffffffffadd3f5b3
+     0.76%  bench    [unknown]            [k] 0xffffffffade01c60
+     0.72%  bench    [vdso]               [.] 0x0000000000000a08
+     0.51%  bench    [vdso]               [.] __vdso_clock_gettime
+     0.51%  bench    [vdso]               [.] 0x0000000000000a0f
+     0.50%  bench    [vdso]               [.] 0x0000000000000a28
+     0.49%  bench    libstdc++.so.6.0.33  [.] clock_gettime@plt
+     0.46%  bench    [unknown]            [k] 0xffffffffadd47c09
+     0.44%  bench    [unknown]            [k] 0xffffffffad601268
+     0.37%  bench    [unknown]            [k] 0xffffffffadd7f41b
+     0.26%  bench    [unknown]            [k] 0xffffffffade0969b
+     0.26%  bench    [vdso]               [.] 0x00000000000009a3
+     0.26%  bench    [unknown]            [k] 0xffffffffada88fc5
+     0.26%  bench    [unknown]            [k] 0xffffffffae19f467

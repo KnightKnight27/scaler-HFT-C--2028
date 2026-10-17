@@ -1,0 +1,24 @@
+# started on Sat Oct 17 17:05:57 2026
+
+
+ Performance counter stats for './bench --impl C' (5 runs):
+
+          1,549.50 msec task-clock                                                              ( +-  2.07% )
+     <not counted>      cpu_atom/cycles/                                                        (0.00%)
+     1,581,508,947      cpu_core/cycles/                                                        ( +-  1.22% )
+     <not counted>      cpu_atom/instructions/                                                  (0.00%)
+     2,309,673,893      cpu_core/instructions/                                                  ( +-  0.15% )
+     <not counted>      cpu_atom/branches/                                                      (0.00%)
+       379,722,963      cpu_core/branches/                                                      ( +-  0.18% )
+     <not counted>      cpu_atom/branch-misses/                                                 (0.00%)
+         7,060,972      cpu_core/branch-misses/                                                 ( +-  2.41% )
+     <not counted>      cpu_atom/cache-misses/                                                  (0.00%)
+        11,653,197      cpu_core/cache-misses/                                                  ( +-  0.82% )
+   <not supported>      cpu_atom/L1-dcache-load-misses/                                       
+         8,942,226      cpu_core/L1-dcache-load-misses/                                         ( +-  1.53% )
+     <not counted>      cpu_atom/dTLB-load-misses/                                              (0.00%)
+           437,758      cpu_core/dTLB-load-misses/                                              ( +-  4.29% )
+            59,409      page-faults                                                             ( +-  0.00% )
+
+       1.560529972 +- 0.032296098 seconds time elapsed  ( +-  2.07% )
+

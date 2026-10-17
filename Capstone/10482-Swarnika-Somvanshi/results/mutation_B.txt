@@ -1,0 +1,30 @@
+# Mutation B: before() always compares a < b, so ask levels are sorted the wrong way
+# File: implem_b.h
+# Original: bool before(int a, int b) const { return is_bid ? a < b : a > b; }
+# Broken:   bool before(int a, int b) const { return a < b; }
+# (output below is from ./test run on the BROKEN copy)
+
+Running small-case tests...
+  A small tests:
+    all passed
+  B small tests:
+    FAILED: asks should be ordered best (lowest) first
+    FAILED: BBO at the edges of the price range
+  C small tests:
+    all passed
+
+Running workload comparisons (BBO and top-10 depth checked after every op)...
+  1,000,000 ops, full price band (the benchmark workload)
+    mismatches: A=0  B=1999978  C=0
+  200,000 ops, cancel-heavy, 10-tick band near the mid price
+    mismatches: A=0  B=399938  C=0
+  200,000 ops, cancel-heavy, 10-tick band at the range edges (5000 / 15000)
+    mismatches: A=0  B=399976  C=0
+
+Results:
+Implementation A: PASS
+Implementation B: FAIL  (2799892 mismatches, first at op 11)
+Implementation C: PASS
+Some implementations FAILED.
+
+# exit code: 1

@@ -1,0 +1,5 @@
+A: MEDIAN total 333.2ms | add 289.8ns (p99 432) | cancel 454.3ns (p99 906) | bbo 27.8ns (p99 37)
+Final BBO:
+  Bid: 99.99 x 2722
+  Ask: 100.01 x 2525
+Checksum: 75482931624

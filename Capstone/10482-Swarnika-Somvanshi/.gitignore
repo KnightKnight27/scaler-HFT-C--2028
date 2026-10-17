@@ -1,0 +1,17 @@
+# compiled programs
+test
+bench
+
+# perf recordings (large; the readable reports in results/ are kept)
+*.data
+*.data.old
+
+# backups and scratch files
+*.bak
+*.o
+old_backup/
+
+# editor files
+.vscode/
+*~
+*.swp

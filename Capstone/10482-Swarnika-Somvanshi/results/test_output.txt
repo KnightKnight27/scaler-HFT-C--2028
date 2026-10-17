@@ -1,0 +1,21 @@
+Running small-case tests...
+  A small tests:
+    all passed
+  B small tests:
+    all passed
+  C small tests:
+    all passed
+
+Running workload comparisons (BBO and top-10 depth checked after every op)...
+  1,000,000 ops, full price band (the benchmark workload)
+    mismatches: A=0  B=0  C=0
+  200,000 ops, cancel-heavy, 10-tick band near the mid price
+    mismatches: A=0  B=0  C=0
+  200,000 ops, cancel-heavy, 10-tick band at the range edges (5000 / 15000)
+    mismatches: A=0  B=0  C=0
+
+Results:
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+All implementations produce identical results.

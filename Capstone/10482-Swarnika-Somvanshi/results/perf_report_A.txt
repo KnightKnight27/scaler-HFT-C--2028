@@ -1,0 +1,40 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'cpu_core/cycles/P'
+# Event count (approx.): 1310785150
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+# ........  .......  ....................  .......................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    31.48%  bench    bench                 [.] RunResult run_once<OrderBookA>(std::vector<Op, std::allocator<Op> > const&)
+    19.62%  bench    bench                 [.] OrderBookA::cancel_order(unsigned long)
+     5.78%  bench    [vdso]                [.] 0x0000000000000997
+     4.71%  bench    bench                 [.] std::__detail::_Map_base<unsigned long, std::pair<unsigned long const, OrderBookA::Order>, std::allocator<std::pair<unsigned long const, OrderBookA::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](unsigned long const&)
+     3.94%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookA::Order>, std::allocator<std::pair<unsigned long const, OrderBookA::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+     3.19%  bench    libc.so.6             [.] malloc_consolidate
+     2.96%  bench    bench                 [.] generate_workload(int, unsigned int)
+     2.39%  bench    libc.so.6             [.] unlink_chunk.isra.0
+     2.17%  bench    bench                 [.] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+     1.64%  bench    libc.so.6             [.] _int_malloc
+     1.40%  bench    bench                 [.] make_stats(std::vector<unsigned int, std::allocator<unsigned int> >&)
+     1.33%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+     1.28%  bench    libc.so.6             [.] malloc
+     1.20%  bench    libc.so.6             [.] _int_free
+     1.04%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand()
+     0.79%  bench    libstdc++.so.6.0.33   [.] std::chrono::_V2::steady_clock::now()
+     0.66%  bench    [unknown]             [k] 0xffffffffaec7d84e
+     0.54%  bench    libc.so.6             [.] __memset_avx2_unaligned_erms
+     0.49%  bench    [unknown]             [k] 0xffffffffadd5d2bb
+     0.47%  bench    libc.so.6             [.] clock_gettime@@GLIBC_2.17
+     0.42%  bench    [vdso]                [.] 0x0000000000000a0f
+     0.40%  bench    [vdso]                [.] 0x00000000000009d1
+     0.33%  bench    libstdc++.so.6.0.33   [.] std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const
+     0.32%  bench    [vdso]                [.] 0x0000000000000a08
+     0.29%  bench    libc.so.6             [.] cfree@GLIBC_2.2.5
+     0.29%  bench    [unknown]             [k] 0xffffffffad601268
+     0.27%  bench    libc.so.6             [.] __memmove_avx_unaligned_erms
+     0.24%  bench    [vdso]                [.] 0x0000000000000947
+     0.24%  bench    [vdso]                [.] 0x0000000000000950
