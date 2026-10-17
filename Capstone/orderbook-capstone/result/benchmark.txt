@@ -1,0 +1,33 @@
+==========================================================
+Benchmark Implementation : Impl A (std::map + std::unordered_map) (5-Run Median)
+----------------------------------------------------------
+Total Workload Time      : 186.64 ms
+Avg add_order Latency    : 136.84 ns
+Avg cancel_order Latency : 333.90 ns
+Avg get_bbo Latency      : 21.32 ns
+Avg get_bids/asks(10)    : 135.23 ns
+Final BBO                : Bid 99.99 x 2722 | Ask 100.01 x 2525
+Anti-DCE Checksum        : 267280187
+==========================================================
+==========================================================
+Benchmark Implementation : Impl B (Flat Sorted Vector + Open-Addressing Hash) (5-Run Median)
+----------------------------------------------------------
+Total Workload Time      : 169.51 ms
+Avg add_order Latency    : 152.94 ns
+Avg cancel_order Latency : 194.71 ns
+Avg get_bbo Latency      : 19.39 ns
+Avg get_bids/asks(10)    : 72.36 ns
+Final BBO                : Bid 99.99 x 2722 | Ask 100.01 x 2525
+Anti-DCE Checksum        : 267280187
+==========================================================
+==========================================================
+Benchmark Implementation : Impl C (Direct Array + 64-bit Hardware Bitset + Direct Pool) (5-Run Median)
+----------------------------------------------------------
+Total Workload Time      : 59.65 ms
+Avg add_order Latency    : 27.39 ns
+Avg cancel_order Latency : 83.70 ns
+Avg get_bbo Latency      : 19.62 ns
+Avg get_bids/asks(10)    : 76.91 ns
+Final BBO                : Bid 99.99 x 2722 | Ask 100.01 x 2525
+Anti-DCE Checksum        : 267280187
+==========================================================
