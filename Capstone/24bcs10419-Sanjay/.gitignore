@@ -1,0 +1,19 @@
+# Build artifacts
+*.exe
+*.obj
+*.o
+*.a
+*.pdb
+*.ilk
+build/
+bin/
+
+# Perf results
+perf_results/*.data
+perf_results/*.old
+
+# IDE & OS
+.vscode/
+.vs/
+.DS_Store
+Thumbs.db
