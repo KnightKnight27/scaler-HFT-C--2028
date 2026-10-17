@@ -1,0 +1,407 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'cpu/cycles/P'
+# Event count (approx.): 1636263512
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+# ........  .......  ....................  .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    20.49%  bench    [vdso]                [.] 0x0000000000000a06
+            |
+            ---0x7f4df12f4a09
+               __clock_gettime (inlined)
+               std::chrono::_V2::steady_clock::now()
+               (anonymous namespace)::BenchResult (anonymous namespace)::runOnce<OrderBookC>(std::vector<(anonymous namespace)::WorkloadOp, std::allocator<(anonymous namespace)::WorkloadOp> > const&)
+               |          
+               |--0.75%--0x2fa
+               |          
+               |--0.72%--0x884
+               |          
+               |--0.64%--0x807
+               |          
+               |--0.56%--0x455
+               |          
+               |--0.53%--0x925
+               |          
+                --0.53%--0x82
+
+    11.46%  bench    bench                 [.] OrderBookC::cancel_order(unsigned long)
+            |          
+             --11.42%--OrderBookC::cancel_order(unsigned long)
+                       |          
+                       |--0.60%--0x6e8
+                       |          
+                        --0.60%--0x925
+
+     6.47%  bench    bench                 [.] OrderBookC::add_order(unsigned long, Side, double, long)
+            |
+            ---OrderBookC::add_order(unsigned long, Side, double, long)
+
+     5.83%  bench    bench                 [.] std::vector<OrderBookC::OrderSlot, std::allocator<OrderBookC::OrderSlot> >::_M_default_append(unsigned long)
+            |          
+            |--3.76%--std::vector<OrderBookC::OrderSlot, std::allocator<OrderBookC::OrderSlot> >::_M_default_append(unsigned long)
+            |          
+             --2.07%--asm_exc_page_fault
+                       std::vector<OrderBookC::OrderSlot, std::allocator<OrderBookC::OrderSlot> >::_M_default_append(unsigned long)
+
+     4.73%  bench    bench                 [.] (anonymous namespace)::BenchResult (anonymous namespace)::runOnce<OrderBookC>(std::vector<(anonymous namespace)::WorkloadOp, std::allocator<(anonymous namespace)::WorkloadOp> > const&)
+            |          
+            |--3.12%--(anonymous namespace)::BenchResult (anonymous namespace)::runOnce<OrderBookC>(std::vector<(anonymous namespace)::WorkloadOp, std::allocator<(anonymous namespace)::WorkloadOp> > const&)
+            |          
+             --1.41%--std::chrono::_V2::steady_clock::now()@plt
+
+     4.58%  bench    bench                 [.] (anonymous namespace)::generateWorkload(unsigned long, unsigned int) [clone .constprop.0]
+            |          
+             --4.13%--(anonymous namespace)::generateWorkload(unsigned long, unsigned int) [clone .constprop.0]
+
+     3.27%  bench    libstdc++.so.6.0.35   [.] std::chrono::_V2::steady_clock::now()
+            |          
+            |--2.63%--std::chrono::_V2::steady_clock::now()
+            |          |          
+            |           --2.41%--(anonymous namespace)::BenchResult (anonymous namespace)::runOnce<OrderBookC>(std::vector<(anonymous namespace)::WorkloadOp, std::allocator<(anonymous namespace)::WorkloadOp> > const&)
+            |          
+             --0.56%--(anonymous namespace)::BenchResult (anonymous namespace)::runOnce<OrderBookC>(std::vector<(anonymous namespace)::WorkloadOp, std::allocator<(anonymous namespace)::WorkloadOp> > const&)
+
+     2.22%  bench    [vdso]                [.] 0x0000000000000a09
+            |
+            ---0x7f4df12f4a0b
+               __clock_gettime (inlined)
+               std::chrono::_V2::steady_clock::now()
+               (anonymous namespace)::BenchResult (anonymous namespace)::runOnce<OrderBookC>(std::vector<(anonymous namespace)::WorkloadOp, std::allocator<(anonymous namespace)::WorkloadOp> > const&)
+
+     2.18%  bench    [kernel.kallsyms]     [k] kernel_init_pages
+            |
+            ---kernel_init_pages
+               |          
+                --2.14%--post_alloc_hook
+                          get_page_from_freelist
+                          __alloc_frozen_pages_noprof
+                          alloc_pages_mpol
+                          |          
+                           --2.11%--vma_alloc_folio_noprof
+                                     alloc_anon_folio
+                                     do_anonymous_page
+                                     handle_pte_fault
+                                     __handle_mm_fault
+                                     handle_mm_fault
+                                     do_user_addr_fault
+                                     exc_page_fault
+                                     asm_exc_page_fault
+                                     |          
+                                      --1.65%--std::vector<OrderBookC::OrderSlot, std::allocator<OrderBookC::OrderSlot> >::_M_default_append(unsigned long)
+
+     2.03%  bench    [vdso]                [.] 0x0000000000000a3b
+            |
+            ---0x7f4df12f4a3f
+               __clock_gettime (inlined)
+               std::chrono::_V2::steady_clock::now()
+               (anonymous namespace)::BenchResult (anonymous namespace)::runOnce<OrderBookC>(std::vector<(anonymous namespace)::WorkloadOp, std::allocator<(anonymous namespace)::WorkloadOp> > const&)
+
+     1.99%  bench    libc.so.6             [.] clock_gettime@@GLIBC_2.17
+            |          
+            |--1.28%--__clock_gettime (inlined)
+            |          |          
+            |           --0.90%--(anonymous namespace)::BenchResult (anonymous namespace)::runOnce<OrderBookC>(std::vector<(anonymous namespace)::WorkloadOp, std::allocator<(anonymous namespace)::WorkloadOp> > const&)
+            |          
+             --0.64%--std::chrono::_V2::steady_clock::now()
+                       (anonymous namespace)::BenchResult (anonymous namespace)::runOnce<OrderBookC>(std::vector<(anonymous namespace)::WorkloadOp, std::allocator<(anonymous namespace)::WorkloadOp> > const&)
+
+     1.96%  bench    [kernel.kallsyms]     [k] native_irq_return_iret
+            |          
+             --1.50%--std::vector<OrderBookC::OrderSlot, std::allocator<OrderBookC::OrderSlot> >::_M_default_append(unsigned long)
+
+     1.31%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand()
+            |
+            ---std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand()
+
+     1.24%  bench    [vdso]                [.] 0x0000000000000a42
+            |
+            ---0x7f4df12f4a45
+               __clock_gettime (inlined)
+               std::chrono::_V2::steady_clock::now()
+               (anonymous namespace)::BenchResult (anonymous namespace)::runOnce<OrderBookC>(std::vector<(anonymous namespace)::WorkloadOp, std::allocator<(anonymous namespace)::WorkloadOp> > const&)
+
+     0.98%  bench    [vdso]                [.] 0x0000000000000a17
+            |
+            ---0x7f4df12f4a1a
+               __clock_gettime (inlined)
+               std::chrono::_V2::steady_clock::now()
+               (anonymous namespace)::BenchResult (anonymous namespace)::runOnce<OrderBookC>(std::vector<(anonymous namespace)::WorkloadOp, std::allocator<(anonymous namespace)::WorkloadOp> > const&)
+
+     0.98%  bench    [kernel.kallsyms]     [k] rmqueue_bulk
+            |
+            ---rmqueue_bulk
+               __rmqueue_pcplist
+               rmqueue_pcplist
+               rmqueue.isra.0
+               get_page_from_freelist
+               __alloc_frozen_pages_noprof
+               alloc_pages_mpol
+               vma_alloc_folio_noprof
+               alloc_anon_folio
+               do_anonymous_page
+               handle_pte_fault
+               __handle_mm_fault
+               handle_mm_fault
+               do_user_addr_fault
+               exc_page_fault
+               asm_exc_page_fault
+               |          
+                --0.83%--std::vector<OrderBookC::OrderSlot, std::allocator<OrderBookC::OrderSlot> >::_M_default_append(unsigned long)
+
+     0.90%  bench    [vdso]                [.] 0x00000000000009b4
+            |
+            ---0x7f4df12f49b7
+               __clock_gettime (inlined)
+               std::chrono::_V2::steady_clock::now()
+               (anonymous namespace)::BenchResult (anonymous namespace)::runOnce<OrderBookC>(std::vector<(anonymous namespace)::WorkloadOp, std::allocator<(anonymous namespace)::WorkloadOp> > const&)
+
+     0.87%  bench    [kernel.kallsyms]     [k] __rcu_read_lock
+            |          
+             --0.83%--__rcu_read_lock
+                       |          
+                        --0.64%--alloc_anon_folio
+                                  do_anonymous_page
+                                  handle_pte_fault
+                                  __handle_mm_fault
+                                  handle_mm_fault
+                                  do_user_addr_fault
+                                  exc_page_fault
+                                  asm_exc_page_fault
+
+     0.83%  bench    [kernel.kallsyms]     [k] rmqueue.isra.0
+            |
+            ---rmqueue.isra.0
+               |          
+                --0.75%--get_page_from_freelist
+                          __alloc_frozen_pages_noprof
+                          alloc_pages_mpol
+                          vma_alloc_folio_noprof
+                          alloc_anon_folio
+                          do_anonymous_page
+                          handle_pte_fault
+                          __handle_mm_fault
+                          handle_mm_fault
+                          do_user_addr_fault
+                          exc_page_fault
+                          asm_exc_page_fault
+                          |          
+                           --0.60%--std::vector<OrderBookC::OrderSlot, std::allocator<OrderBookC::OrderSlot> >::_M_default_append(unsigned long)
+
+     0.82%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+            |          
+             --0.79%--std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+
+     0.79%  bench    bench                 [.] OrderBookC::ensureOrderCapacity(unsigned long)
+            |          
+             --0.60%--OrderBookC::ensureOrderCapacity(unsigned long)
+
+     0.75%  bench    [vdso]                [.] __vdso_clock_gettime
+            |
+            ---0x7f4df12f49b0
+               std::chrono::_V2::steady_clock::now()
+               (anonymous namespace)::BenchResult (anonymous namespace)::runOnce<OrderBookC>(std::vector<(anonymous namespace)::WorkloadOp, std::allocator<(anonymous namespace)::WorkloadOp> > const&)
+
+     0.71%  bench    [kernel.kallsyms]     [k] mod_memcg_lruvec_state
+            |
+            ---mod_memcg_lruvec_state
+
+     0.68%  bench    [vdso]                [.] 0x0000000000000a57
+            |
+            ---0x7f4df12f4a6e
+               __clock_gettime (inlined)
+               std::chrono::_V2::steady_clock::now()
+               (anonymous namespace)::BenchResult (anonymous namespace)::runOnce<OrderBookC>(std::vector<(anonymous namespace)::WorkloadOp, std::allocator<(anonymous namespace)::WorkloadOp> > const&)
+
+     0.68%  bench    [vdso]                [.] 0x00000000000009ec
+            |
+            ---0x7f4df12f49ef
+               __clock_gettime (inlined)
+               std::chrono::_V2::steady_clock::now()
+               (anonymous namespace)::BenchResult (anonymous namespace)::runOnce<OrderBookC>(std::vector<(anonymous namespace)::WorkloadOp, std::allocator<(anonymous namespace)::WorkloadOp> > const&)
+
+     0.68%  bench    [vdso]                [.] 0x00000000000009d9
+            |
+            ---0x7f4df12f49db
+               __clock_gettime (inlined)
+               std::chrono::_V2::steady_clock::now()
+               (anonymous namespace)::BenchResult (anonymous namespace)::runOnce<OrderBookC>(std::vector<(anonymous namespace)::WorkloadOp, std::allocator<(anonymous namespace)::WorkloadOp> > const&)
+
+     0.66%  bench    bench                 [.] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+            |          
+             --0.62%--int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+
+     0.64%  bench    [vdso]                [.] 0x0000000000000a26
+            |
+            ---0x7f4df12f4a29
+               __clock_gettime (inlined)
+               std::chrono::_V2::steady_clock::now()
+               (anonymous namespace)::BenchResult (anonymous namespace)::runOnce<OrderBookC>(std::vector<(anonymous namespace)::WorkloadOp, std::allocator<(anonymous namespace)::WorkloadOp> > const&)
+
+     0.64%  bench    [vdso]                [.] 0x00000000000009d0
+            |
+            ---0x7f4df12f49d2
+               __clock_gettime (inlined)
+               std::chrono::_V2::steady_clock::now()
+               (anonymous namespace)::BenchResult (anonymous namespace)::runOnce<OrderBookC>(std::vector<(anonymous namespace)::WorkloadOp, std::allocator<(anonymous namespace)::WorkloadOp> > const&)
+
+     0.60%  bench    [vdso]                [.] 0x0000000000000a79
+            |
+            ---0x7f4df12f4a7b
+               __clock_gettime (inlined)
+               std::chrono::_V2::steady_clock::now()
+               (anonymous namespace)::BenchResult (anonymous namespace)::runOnce<OrderBookC>(std::vector<(anonymous namespace)::WorkloadOp, std::allocator<(anonymous namespace)::WorkloadOp> > const&)
+
+     0.59%  bench    [kernel.kallsyms]     [k] sync_regs
+            |
+            ---sync_regs
+
+     0.56%  bench    [kernel.kallsyms]     [k] lru_gen_add_folio
+            |
+            ---lru_gen_add_folio
+               |          
+                --0.53%--lru_add
+                          folio_batch_move_lru
+                          __folio_batch_add_and_move
+                          folio_add_lru
+                          folio_add_lru_vma
+                          do_anonymous_page
+                          handle_pte_fault
+                          __handle_mm_fault
+                          handle_mm_fault
+                          do_user_addr_fault
+                          exc_page_fault
+                          asm_exc_page_fault
+
+     0.56%  bench    [kernel.kallsyms]     [k] zap_present_ptes.constprop.0
+            |
+            ---zap_present_ptes.constprop.0
+               zap_pte_range
+               zap_pmd_range.isra.0
+               unmap_page_range
+               unmap_single_vma
+               unmap_vmas
+               unmap_region
+               vms_complete_munmap_vmas
+               do_vmi_align_munmap
+
+     0.53%  bench    [vdso]                [.] 0x00000000000009ba
+            |
+            ---0x7f4df12f49be
+               __clock_gettime (inlined)
+               std::chrono::_V2::steady_clock::now()
+               (anonymous namespace)::BenchResult (anonymous namespace)::runOnce<OrderBookC>(std::vector<(anonymous namespace)::WorkloadOp, std::allocator<(anonymous namespace)::WorkloadOp> > const&)
+
+     0.49%  bench    [vdso]                [.] 0x0000000000000a00
+     0.45%  bench    [vdso]                [.] 0x0000000000000a87
+     0.45%  bench    [kernel.kallsyms]     [k] __free_one_page
+     0.41%  bench    [vdso]                [.] 0x0000000000000a7f
+     0.41%  bench    [kernel.kallsyms]     [k] __rmqueue_pcplist
+     0.41%  bench    [kernel.kallsyms]     [k] __handle_mm_fault
+     0.41%  bench    [kernel.kallsyms]     [k] __raw_spin_lock_irqsave
+     0.41%  bench    [vdso]                [.] 0x0000000000000a93
+     0.41%  bench    [kernel.kallsyms]     [k] lru_gen_del_folio.constprop.0
+     0.41%  bench    [kernel.kallsyms]     [k] get_page_from_freelist
+     0.38%  bench    libstdc++.so.6.0.35   [.] clock_gettime@plt
+     0.38%  bench    bench                 [.] OrderBookC::get_bbo() const
+     0.38%  bench    [kernel.kallsyms]     [k] asm_exc_page_fault
+     0.34%  bench    bench                 [.] std::chrono::_V2::steady_clock::now()@plt
+     0.34%  bench    [kernel.kallsyms]     [k] do_user_addr_fault
+     0.34%  bench    [kernel.kallsyms]     [k] its_return_thunk
+     0.30%  bench    [kernel.kallsyms]     [k] lock_vma_under_rcu
+     0.30%  bench    [kernel.kallsyms]     [k] __alloc_frozen_pages_noprof
+     0.26%  bench    [kernel.kallsyms]     [k] try_charge_memcg
+     0.26%  bench    [kernel.kallsyms]     [k] rmqueue_pcplist
+     0.26%  bench    [kernel.kallsyms]     [k] error_entry
+     0.26%  bench    [kernel.kallsyms]     [k] do_anonymous_page
+     0.26%  bench    [kernel.kallsyms]     [k] __mod_zone_page_state
+     0.23%  bench    bench                 [.] OrderBookC::get_bids(int) const
+     0.23%  bench    bench                 [.] OrderBookC::get_asks(int) const
+     0.23%  bench    bench                 [.] long std::uniform_int_distribution<long>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<long>::param_type const&) [clone .isra.0]
+     0.23%  bench    [kernel.kallsyms]     [k] __css_rstat_updated
+     0.23%  bench    [kernel.kallsyms]     [k] _raw_spin_trylock
+     0.19%  bench    [kernel.kallsyms]     [k] lruvec_stat_mod_folio
+     0.19%  bench    [kernel.kallsyms]     [k] __next_zones_zonelist
+     0.19%  bench    [kernel.kallsyms]     [k] free_unref_folios
+     0.18%  bench    [kernel.kallsyms]     [k] mas_walk
+     0.15%  bench    [vdso]                [.] 0x00000000000009b9
+     0.15%  bench    libc.so.6             [.] malloc
+     0.15%  bench    [kernel.kallsyms]     [k] arch_exit_to_user_mode_prepare.isra.0
+     0.15%  bench    [kernel.kallsyms]     [k] pte_offset_map_rw_nolock
+     0.15%  bench    [kernel.kallsyms]     [k] free_pages_and_swap_cache
+     0.15%  bench    [kernel.kallsyms]     [k] handle_mm_fault
+     0.15%  bench    [kernel.kallsyms]     [k] policy_nodemask
+     0.15%  bench    [kernel.kallsyms]     [k] __nr_to_section
+     0.15%  bench    libc.so.6             [.] __memmove_avx_unaligned_erms
+     0.11%  bench    [kernel.kallsyms]     [k] percpu_counter_add_batch
+     0.11%  bench    [kernel.kallsyms]     [k] lru_add
+     0.11%  bench    [kernel.kallsyms]     [k] folio_batch_move_lru
+     0.11%  bench    [kernel.kallsyms]     [k] get_mem_cgroup_from_mm
+     0.11%  bench    [kernel.kallsyms]     [k] charge_memcg
+     0.11%  bench    [vdso]                [.] 0x00000000000009c2
+     0.11%  bench    [kernel.kallsyms]     [k] pte_offset_map_lock
+     0.11%  bench    [kernel.kallsyms]     [k] __mem_cgroup_charge
+     0.11%  bench    [kernel.kallsyms]     [k] mod_node_page_state
+     0.11%  bench    [kernel.kallsyms]     [k] kthread_blkcg
+     0.11%  bench    [kernel.kallsyms]     [k] _raw_spin_unlock
+     0.11%  bench    [kernel.kallsyms]     [k] free_frozen_page_commit.isra.0
+     0.11%  bench    [kernel.kallsyms]     [k] post_alloc_hook
+     0.11%  bench    [kernel.kallsyms]     [k] folios_put_refs
+     0.11%  bench    [kernel.kallsyms]     [k] __pte_offset_map
+     0.11%  bench    [kernel.kallsyms]     [k] blk_cgroup_congested
+     0.11%  bench    [kernel.kallsyms]     [k] error_return
+     0.10%  bench    [kernel.kallsyms]     [k] __folio_batch_add_and_move
+     0.08%  bench    [vdso]                [.] 0x0000000000000a1e
+     0.08%  bench    [vdso]                [.] 0x00000000000009dd
+     0.08%  bench    libstdc++.so.6.0.35   [.] operator new(unsigned long)
+     0.08%  bench    [vdso]                [.] 0x0000000000000a2d
+     0.08%  bench    [kernel.kallsyms]     [k] find_suitable_fallback
+     0.08%  bench    [kernel.kallsyms]     [k] alloc_anon_folio
+     0.08%  bench    [kernel.kallsyms]     [k] exc_page_fault
+     0.08%  bench    [kernel.kallsyms]     [k] folio_remove_rmap_ptes
+     0.08%  bench    bench                 [.] unsigned long std::uniform_int_distribution<unsigned long>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<unsigned long>::param_type const&) [clone .isra.0]
+     0.08%  bench    [kernel.kallsyms]     [k] _raw_spin_lock
+     0.08%  bench    [kernel.kallsyms]     [k] pte_mkwrite
+     0.08%  bench    [kernel.kallsyms]     [k] uncharge_folio
+     0.08%  bench    [kernel.kallsyms]     [k] __page_cache_release.part.0
+     0.08%  bench    [kernel.kallsyms]     [k] __rcu_read_unlock
+     0.05%  bench    [kernel.kallsyms]     [k] zap_pte_range
+     0.04%  bench    ld-linux-x86-64.so.2  [.] do_lookup_x
+     0.04%  bench    [kernel.kallsyms]     [k] __vmf_anon_prepare
+     0.04%  bench    [vdso]                [.] 0x0000000000000a3f
+     0.04%  bench    [kernel.kallsyms]     [k] count_memcg_events
+     0.04%  bench    [kernel.kallsyms]     [k] __folio_mod_stat
+     0.04%  bench    [vdso]                [.] 0x0000000000000a7b
+     0.04%  bench    [kernel.kallsyms]     [k] pfn_pte
+     0.04%  bench    [vdso]                [.] 0x00000000000009f9
+     0.04%  bench    [vdso]                [.] 0x00000000000009ef
+     0.04%  bench    [kernel.kallsyms]     [k] _raw_spin_unlock_irqrestore
+     0.04%  bench    [kernel.kallsyms]     [k] alloc_pages_mpol
+     0.04%  bench    [kernel.kallsyms]     [k] handle_pte_fault
+     0.04%  bench    [kernel.kallsyms]     [k] __pte
+     0.04%  bench    [kernel.kallsyms]     [k] thp_vma_allowable_orders.constprop.0
+     0.04%  bench    [kernel.kallsyms]     [k] mod_lruvec_state
+     0.04%  bench    [kernel.kallsyms]     [k] zap_pmd_range.isra.0
+     0.04%  bench    [kernel.kallsyms]     [k] __irqentry_text_end
+     0.04%  bench    [kernel.kallsyms]     [k] irqentry_enter
+     0.04%  bench    [kernel.kallsyms]     [k] folio_add_new_anon_rmap
+     0.04%  bench    [kernel.kallsyms]     [k] __pkru_allows_pkey
+     0.04%  bench    [kernel.kallsyms]     [k] fpregs_assert_state_consistent
+     0.04%  bench    [kernel.kallsyms]     [k] arch_exit_to_user_mode_prepare.isra.0
+     0.04%  bench    [kernel.kallsyms]     [k] folio_add_lru
+     0.04%  bench    libc.so.6             [.] __strchrnul_ifunc@plt
+     0.04%  bench    [kernel.kallsyms]     [k] __tlb_batch_free_encoded_pages
+     0.04%  bench    [kernel.kallsyms]     [k] folio_mapping
+     0.02%  bench    bench                 [.] std::vector<Level, std::allocator<Level> >::reserve(unsigned long)
+     0.02%  bench    ld-linux-x86-64.so.2  [.] _dl_relocate_object_no_relro
+     0.01%  bench    [kernel.kallsyms]     [k] __anon_vma_prepare
+     0.01%  bench    [kernel.kallsyms]     [k] __lookup_mnt
+     0.01%  bench    [kernel.kallsyms]     [k] can_vma_merge_right
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

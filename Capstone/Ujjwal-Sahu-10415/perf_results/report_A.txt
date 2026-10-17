@@ -1,0 +1,282 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 11K of event 'cpu/cycles/P'
+# Event count (approx.): 7187742512
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+# ........  .......  ....................  ..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    30.68%  bench    bench                 [.] OrderBookA::add_order(unsigned long, Side, double, long)
+            |          
+             --30.50%--OrderBookA::add_order(unsigned long, Side, double, long)
+
+    15.90%  bench    bench                 [.] OrderBookA::cancel_order(unsigned long)
+            |          
+             --15.89%--OrderBookA::cancel_order(unsigned long)
+                       |          
+                        --14.48%--0
+
+     9.96%  bench    libc.so.6             [.] unlink_chunk.isra.0
+            |          
+             --9.93%--unlink_chunk (inlined)
+                       |          
+                        --9.83%--_int_free_create_chunk (inlined)
+                                  _int_free_merge_chunk
+                                  _int_free_chunk
+                                  |          
+                                  |--5.09%--std::_Rb_tree<int, std::pair<int const, OrderBookA::PriceLevel>, std::_Select1st<std::pair<int const, OrderBookA::PriceLevel> >, std::less<int>, std::allocator<std::pair<int const, OrderBookA::PriceLevel> > >::_M_erase(std::_Rb_tree_node<std::pair<int const, OrderBookA::PriceLevel> >*) [clone .isra.0]
+                                  |          
+                                   --4.72%--std::_Rb_tree<int, std::pair<int const, OrderBookA::PriceLevel>, std::_Select1st<std::pair<int const, OrderBookA::PriceLevel> >, std::greater<int>, std::allocator<std::pair<int const, OrderBookA::PriceLevel> > >::_M_erase(std::_Rb_tree_node<std::pair<int const, OrderBookA::PriceLevel> >*) [clone .isra.0]
+
+     6.88%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookA::OrderLocation>, std::allocator<std::pair<unsigned long const, OrderBookA::OrderLocation> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookA::OrderLocation>, false>*, unsigned long)
+            |          
+             --6.87%--std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookA::OrderLocation>, std::allocator<std::pair<unsigned long const, OrderBookA::OrderLocation> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookA::OrderLocation>, false>*, unsigned long)
+
+     4.84%  bench    libc.so.6             [.] _int_free_merge_chunk
+            |          
+            |--3.43%--_int_free_merge_chunk
+            |          |          
+            |           --3.35%--_int_free_chunk
+            |                     |          
+            |                     |--1.34%--std::_Rb_tree<int, std::pair<int const, OrderBookA::PriceLevel>, std::_Select1st<std::pair<int const, OrderBookA::PriceLevel> >, std::greater<int>, std::allocator<std::pair<int const, OrderBookA::PriceLevel> > >::_M_erase(std::_Rb_tree_node<std::pair<int const, OrderBookA::PriceLevel> >*) [clone .isra.0]
+            |                     |          
+            |                     |--1.34%--std::_Rb_tree<int, std::pair<int const, OrderBookA::PriceLevel>, std::_Select1st<std::pair<int const, OrderBookA::PriceLevel> >, std::less<int>, std::allocator<std::pair<int const, OrderBookA::PriceLevel> > >::_M_erase(std::_Rb_tree_node<std::pair<int const, OrderBookA::PriceLevel> >*) [clone .isra.0]
+            |                     |          
+            |                      --0.67%--main
+            |                                0
+            |          
+             --1.33%--_int_free_create_chunk (inlined)
+                       _int_free_merge_chunk
+                       _int_free_chunk
+                       |          
+                        --0.63%--main
+                                  0
+
+     4.68%  bench    [vdso]                [.] 0x0000000000000a06
+            |
+            ---0x72f660ea7a09
+               __clock_gettime (inlined)
+               std::chrono::_V2::steady_clock::now()
+               main
+               0
+
+     3.49%  bench    bench                 [.] main
+            |          
+             --3.07%--main
+                       0
+
+     2.18%  bench    libc.so.6             [.] _int_malloc
+            |          
+             --2.00%--_int_malloc
+                       |          
+                        --1.89%--__libc_malloc2
+                                  operator new(unsigned long)
+                                  OrderBookA::add_order(unsigned long, Side, double, long)
+
+     1.75%  bench    bench                 [.] std::_Rb_tree<int, std::pair<int const, OrderBookA::PriceLevel>, std::_Select1st<std::pair<int const, OrderBookA::PriceLevel> >, std::less<int>, std::allocator<std::pair<int const, OrderBookA::PriceLevel> > >::_M_erase(std::_Rb_tree_node<std::pair<int const, OrderBookA::PriceLevel> >*) [clone .isra.0]
+            |
+            ---std::_Rb_tree<int, std::pair<int const, OrderBookA::PriceLevel>, std::_Select1st<std::pair<int const, OrderBookA::PriceLevel> >, std::less<int>, std::allocator<std::pair<int const, OrderBookA::PriceLevel> > >::_M_erase(std::_Rb_tree_node<std::pair<int const, OrderBookA::PriceLevel> >*) [clone .isra.0]
+
+     1.67%  bench    libc.so.6             [.] malloc
+            |          
+            |--0.86%--__libc_malloc (inlined)
+            |          |          
+            |           --0.85%--OrderBookA::add_order(unsigned long, Side, double, long)
+            |          
+             --0.59%--tcache_get_n (inlined)
+                       tcache_get (inlined)
+                       __libc_malloc (inlined)
+                       |          
+                        --0.55%--OrderBookA::add_order(unsigned long, Side, double, long)
+
+     1.60%  bench    libstdc++.so.6.0.35   [.] std::__detail::_List_node_base::_M_hook(std::__detail::_List_node_base*)
+            |
+            ---std::__detail::_List_node_base::_M_hook(std::__detail::_List_node_base*)
+
+     1.56%  bench    libc.so.6             [.] cfree@GLIBC_2.2.5
+            |          
+             --1.35%--__libc_free (inlined)
+                       |          
+                        --0.69%--0
+
+     1.28%  bench    bench                 [.] (anonymous namespace)::generateWorkload(unsigned long, unsigned int) [clone .constprop.0]
+            |          
+             --1.17%--(anonymous namespace)::generateWorkload(unsigned long, unsigned int) [clone .constprop.0]
+
+     1.13%  bench    bench                 [.] std::_Rb_tree<int, std::pair<int const, OrderBookA::PriceLevel>, std::_Select1st<std::pair<int const, OrderBookA::PriceLevel> >, std::greater<int>, std::allocator<std::pair<int const, OrderBookA::PriceLevel> > >::_M_erase(std::_Rb_tree_node<std::pair<int const, OrderBookA::PriceLevel> >*) [clone .isra.0]
+            |
+            ---std::_Rb_tree<int, std::pair<int const, OrderBookA::PriceLevel>, std::_Select1st<std::pair<int const, OrderBookA::PriceLevel> >, std::greater<int>, std::allocator<std::pair<int const, OrderBookA::PriceLevel> > >::_M_erase(std::_Rb_tree_node<std::pair<int const, OrderBookA::PriceLevel> >*) [clone .isra.0]
+
+     0.85%  bench    libstdc++.so.6.0.35   [.] operator new(unsigned long)
+            |          
+             --0.75%--operator new(unsigned long)
+
+     0.74%  bench    libstdc++.so.6.0.35   [.] std::__detail::_List_node_base::_M_unhook()
+            |
+            ---std::__detail::_List_node_base::_M_unhook()
+               0
+
+     0.60%  bench    libstdc++.so.6.0.35   [.] std::chrono::_V2::steady_clock::now()
+     0.58%  bench    [vdso]                [.] 0x0000000000000a3b
+            |
+            ---0x72f660ea7a3f
+               __clock_gettime (inlined)
+               std::chrono::_V2::steady_clock::now()
+               main
+               0
+
+     0.57%  bench    libc.so.6             [.] _int_free_chunk
+     0.48%  bench    libc.so.6             [.] _int_free_maybe_trim
+     0.44%  bench    libc.so.6             [.] clock_gettime@@GLIBC_2.17
+     0.41%  bench    [vdso]                [.] 0x0000000000000a09
+     0.41%  bench    libc.so.6             [.] __libc_malloc2
+     0.32%  bench    libstdc++.so.6.0.35   [.] std::_Rb_tree_increment(std::_Rb_tree_node_base*)
+     0.27%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+     0.25%  bench    bench                 [.] OrderBookA::get_bbo() const
+     0.25%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand()
+     0.20%  bench    [vdso]                [.] 0x0000000000000a42
+     0.19%  bench    libstdc++.so.6.0.35   [.] operator delete(void*)@plt
+     0.17%  bench    [kernel.kallsyms]     [k] native_irq_return_iret
+     0.17%  bench    bench                 [.] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+     0.17%  bench    [vdso]                [.] 0x0000000000000a00
+     0.16%  bench    libstdc++.so.6.0.35   [.] malloc@plt
+     0.15%  bench    libstdc++.so.6.0.35   [.] clock_gettime@plt
+     0.15%  bench    [vdso]                [.] 0x0000000000000a87
+     0.15%  bench    [kernel.kallsyms]     [k] kernel_init_pages
+     0.15%  bench    bench                 [.] OrderBookA::get_asks(int) const
+     0.13%  bench    bench                 [.] OrderBookA::get_bids(int) const
+     0.13%  bench    [vdso]                [.] 0x0000000000000a57
+     0.12%  bench    [vdso]                [.] 0x0000000000000a17
+     0.12%  bench    libstdc++.so.6.0.35   [.] std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const
+     0.12%  bench    [vdso]                [.] __vdso_clock_gettime
+     0.12%  bench    [vdso]                [.] 0x0000000000000a79
+     0.12%  bench    libstdc++.so.6.0.35   [.] operator delete(void*)
+     0.12%  bench    bench                 [.] operator new(unsigned long)@plt
+     0.12%  bench    libc.so.6             [.] __memset_avx2_unaligned_erms
+     0.11%  bench    bench                 [.] std::chrono::_V2::steady_clock::now()@plt
+     0.11%  bench    bench                 [.] operator delete(void*, unsigned long)@plt
+     0.10%  bench    [vdso]                [.] 0x0000000000000a26
+     0.10%  bench    [vdso]                [.] 0x00000000000009d9
+     0.09%  bench    [vdso]                [.] 0x0000000000000a93
+     0.09%  bench    libc.so.6             [.] alloc_perturb
+     0.09%  bench    [vdso]                [.] 0x00000000000009b4
+     0.09%  bench    [vdso]                [.] 0x0000000000000a7f
+     0.09%  bench    [vdso]                [.] 0x00000000000009ec
+     0.09%  bench    libstdc++.so.6.0.35   [.] free@plt
+     0.09%  bench    libstdc++.so.6.0.35   [.] operator delete(void*, unsigned long)
+     0.08%  bench    [vdso]                [.] 0x00000000000009ba
+     0.08%  bench    bench                 [.] std::__detail::_List_node_base::_M_hook(std::__detail::_List_node_base*)@plt
+     0.08%  bench    [kernel.kallsyms]     [k] rmqueue_bulk
+     0.08%  bench    [kernel.kallsyms]     [k] __rmqueue_pcplist
+     0.07%  bench    [vdso]                [.] 0x00000000000009b9
+     0.07%  bench    bench                 [.] std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const@plt
+     0.06%  bench    bench                 [.] std::__detail::_List_node_base::_M_unhook()@plt
+     0.06%  bench    [vdso]                [.] 0x00000000000009d0
+     0.06%  bench    [kernel.kallsyms]     [k] rmqueue.isra.0
+     0.06%  bench    [kernel.kallsyms]     [k] lock_vma_under_rcu
+     0.05%  bench    [kernel.kallsyms]     [k] blk_cgroup_congested
+     0.05%  bench    bench                 [.] long std::uniform_int_distribution<long>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<long>::param_type const&) [clone .isra.0]
+     0.05%  bench    [kernel.kallsyms]     [k] __rcu_read_lock
+     0.05%  bench    libstdc++.so.6.0.35   [.] std::_Rb_tree_decrement(std::_Rb_tree_node_base*)
+     0.05%  bench    [kernel.kallsyms]     [k] lru_gen_add_folio
+     0.05%  bench    [kernel.kallsyms]     [k] __handle_mm_fault
+     0.04%  bench    [kernel.kallsyms]     [k] try_charge_memcg
+     0.04%  bench    [kernel.kallsyms]     [k] get_mem_cgroup_from_mm
+     0.04%  bench    [vdso]                [.] 0x00000000000009f9
+     0.04%  bench    [kernel.kallsyms]     [k] zap_present_ptes.constprop.0
+     0.04%  bench    [kernel.kallsyms]     [k] do_user_addr_fault
+     0.03%  bench    [kernel.kallsyms]     [k] __raw_spin_lock_irqsave
+     0.03%  bench    bench                 [.] std::vector<Level, std::allocator<Level> >::reserve(unsigned long)
+     0.03%  bench    [vdso]                [.] 0x0000000000000a2d
+     0.03%  bench    [kernel.kallsyms]     [k] _raw_spin_trylock
+     0.03%  bench    [kernel.kallsyms]     [k] sync_regs
+     0.03%  bench    libstdc++.so.6.0.35   [.] std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+     0.03%  bench    [kernel.kallsyms]     [k] mod_memcg_lruvec_state
+     0.03%  bench    [kernel.kallsyms]     [k] get_page_from_freelist
+     0.03%  bench    [kernel.kallsyms]     [k] its_return_thunk
+     0.03%  bench    [kernel.kallsyms]     [k] handle_mm_fault
+     0.03%  bench    bench                 [.] std::_Rb_tree_increment(std::_Rb_tree_node_base*)@plt
+     0.03%  bench    [kernel.kallsyms]     [k] folio_add_lru
+     0.03%  bench    [kernel.kallsyms]     [k] arch_exit_to_user_mode_prepare.isra.0
+     0.03%  bench    libstdc++.so.6.0.35   [.] std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+     0.03%  bench    [kernel.kallsyms]     [k] __free_one_page
+     0.02%  bench    [kernel.kallsyms]     [k] __alloc_frozen_pages_noprof
+     0.02%  bench    [kernel.kallsyms]     [k] mas_walk
+     0.02%  bench    [vdso]                [.] 0x0000000000000a1e
+     0.02%  bench    [kernel.kallsyms]     [k] folio_add_new_anon_rmap
+     0.02%  bench    [kernel.kallsyms]     [k] pfn_pte
+     0.02%  bench    libc.so.6             [.] __memmove_avx_unaligned_erms
+     0.02%  bench    [vdso]                [.] 0x0000000000000a8a
+     0.02%  bench    [kernel.kallsyms]     [k] exc_page_fault
+     0.02%  bench    [kernel.kallsyms]     [k] _raw_spin_unlock
+     0.02%  bench    [kernel.kallsyms]     [k] __next_zones_zonelist
+     0.02%  bench    [kernel.kallsyms]     [k] mod_node_page_state
+     0.02%  bench    [kernel.kallsyms]     [k] vma_prepare
+     0.02%  bench    [kernel.kallsyms]     [k] __css_rstat_updated
+     0.02%  bench    [vdso]                [.] 0x0000000000000a7b
+     0.02%  bench    [kernel.kallsyms]     [k] lru_gen_del_folio.constprop.0
+     0.02%  bench    [kernel.kallsyms]     [k] free_pcppages_bulk
+     0.02%  bench    [kernel.kallsyms]     [k] do_anonymous_page
+     0.02%  bench    [kernel.kallsyms]     [k] charge_memcg
+     0.02%  bench    [kernel.kallsyms]     [k] tick_do_update_jiffies64
+     0.02%  bench    ld-linux-x86-64.so.2  [.] do_lookup_x
+     0.01%  bench    [vdso]                [.] 0x00000000000009c2
+     0.01%  bench    [kernel.kallsyms]     [k] post_alloc_hook
+     0.01%  bench    [kernel.kallsyms]     [k] _raw_spin_unlock_irqrestore
+     0.01%  bench    [kernel.kallsyms]     [k] policy_nodemask
+     0.01%  bench    [kernel.kallsyms]     [k] native_queued_spin_lock_slowpath
+     0.01%  bench    [kernel.kallsyms]     [k] __mem_cgroup_charge
+     0.01%  bench    [vdso]                [.] 0x00000000000009e9
+     0.01%  bench    [kernel.kallsyms]     [k] __pkru_allows_pkey
+     0.01%  bench    [kernel.kallsyms]     [k] psi_group_change
+     0.01%  bench    [kernel.kallsyms]     [k] set_ptes.isra.0
+     0.01%  bench    [vdso]                [.] 0x0000000000000a81
+     0.01%  bench    [kernel.kallsyms]     [k] folio_batch_move_lru
+     0.01%  bench    [kernel.kallsyms]     [k] __irqentry_text_end
+     0.01%  bench    [kernel.kallsyms]     [k] alloc_anon_folio
+     0.01%  bench    [kernel.kallsyms]     [k] get_vma_policy
+     0.01%  bench    [kernel.kallsyms]     [k] vma_alloc_folio_noprof
+     0.01%  bench    libstdc++.so.6.0.35   [.] std::__detail::_Prime_rehash_policy::_M_next_bkt(unsigned long) const
+     0.01%  bench    [kernel.kallsyms]     [k] _raw_spin_lock
+     0.01%  bench    [kernel.kallsyms]     [k] _raw_spin_lock_irqsave
+     0.01%  bench    [kernel.kallsyms]     [k] count_memcg_events
+     0.01%  bench    [vdso]                [.] 0x00000000000009db
+     0.01%  bench    [vdso]                [.] 0x0000000000000a8d
+     0.01%  bench    [kernel.kallsyms]     [k] clear_bhb_loop
+     0.01%  bench    [kernel.kallsyms]     [k] folios_put_refs
+     0.01%  bench    [kernel.kallsyms]     [k] __folio_batch_add_and_move
+     0.01%  bench    [kernel.kallsyms]     [k] free_unref_folios
+     0.01%  bench    [kernel.kallsyms]     [k] free_frozen_page_commit.isra.0
+     0.01%  bench    [kernel.kallsyms]     [k] x64_sys_call
+     0.01%  bench    [kernel.kallsyms]     [k] rmqueue_pcplist
+     0.01%  bench    [kernel.kallsyms]     [k] free_pages_and_swap_cache
+     0.01%  bench    [kernel.kallsyms]     [k] uncharge_folio
+     0.01%  bench    [kernel.kallsyms]     [k] __page_cache_release.part.0
+     0.01%  bench    [kernel.kallsyms]     [k] pte_val
+     0.01%  bench    libc.so.6             [.] __mpn_mul
+     0.01%  bench    [kernel.kallsyms]     [k] arch_vma_name
+     0.01%  bench    [kernel.kallsyms]     [k] pud_val
+     0.01%  bench    bench                 [.] unsigned long std::uniform_int_distribution<unsigned long>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<unsigned long>::param_type const&) [clone .isra.0]
+     0.01%  bench    [kvm]                 [k] pvclock_gtod_notify
+     0.01%  bench    [kernel.kallsyms]     [k] __memcg_slab_post_alloc_hook
+     0.01%  bench    [kernel.kallsyms]     [k] sched_clock_cpu
+     0.01%  bench    [kernel.kallsyms]     [k] native_write_msr
+     0.01%  bench    [kernel.kallsyms]     [k] timerqueue_del
+     0.01%  bench    [kernel.kallsyms]     [k] lruvec_stat_mod_folio
+     0.01%  bench    [kernel.kallsyms]     [k] mod_lruvec_state
+     0.01%  bench    [kernel.kallsyms]     [k] update_cfs_group
+     0.01%  bench    [kernel.kallsyms]     [k] irqentry_exit
+     0.00%  bench    ld-linux-x86-64.so.2  [.] _dl_lookup_symbol_x
+     0.00%  bench    [kernel.kallsyms]     [k] vma_interval_tree_insert
+     0.00%  bench    [kernel.kallsyms]     [k] mas_nomem
+     0.00%  bench    [kernel.kallsyms]     [k] dput.part.0
+     0.00%  bench    [kernel.kallsyms]     [k] __account_obj_stock
+     0.00%  bench    [kernel.kallsyms]     [k] __memcg_slab_free_hook
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

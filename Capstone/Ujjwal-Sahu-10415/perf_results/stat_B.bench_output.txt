@@ -1,0 +1,50 @@
+Implementation B -- median of 5 runs (1000000 ops each)
+  Total time : 262.18 ms
+  ns / add   : 216.97
+  ns / cancel: 340.47
+  ns / BBO   : 64.27
+
+Final BBO:
+  Bid: 99.99 x 2497
+  Ask: 100.01 x 2378
+Checksum: 502225807
+Implementation B -- median of 5 runs (1000000 ops each)
+  Total time : 256.92 ms
+  ns / add   : 209.04
+  ns / cancel: 340.01
+  ns / BBO   : 65.16
+
+Final BBO:
+  Bid: 99.99 x 2497
+  Ask: 100.01 x 2378
+Checksum: 502225807
+Implementation B -- median of 5 runs (1000000 ops each)
+  Total time : 245.40 ms
+  ns / add   : 202.44
+  ns / cancel: 307.48
+  ns / BBO   : 64.45
+
+Final BBO:
+  Bid: 99.99 x 2497
+  Ask: 100.01 x 2378
+Checksum: 502225807
+Implementation B -- median of 5 runs (1000000 ops each)
+  Total time : 246.73 ms
+  ns / add   : 202.79
+  ns / cancel: 312.05
+  ns / BBO   : 64.89
+
+Final BBO:
+  Bid: 99.99 x 2497
+  Ask: 100.01 x 2378
+Checksum: 502225807
+Implementation B -- median of 5 runs (1000000 ops each)
+  Total time : 248.38 ms
+  ns / add   : 205.63
+  ns / cancel: 309.61
+  ns / BBO   : 64.66
+
+Final BBO:
+  Bid: 99.99 x 2497
+  Ask: 100.01 x 2378
+Checksum: 502225807

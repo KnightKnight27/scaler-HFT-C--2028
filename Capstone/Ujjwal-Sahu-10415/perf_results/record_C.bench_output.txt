@@ -1,0 +1,12 @@
+Implementation C -- median of 5 runs (1000000 ops each)
+  Total time : 113.41 ms
+  ns / add   : 79.98
+  ns / cancel: 108.59
+  ns / BBO   : 33.64
+
+Final BBO:
+  Bid: 99.99 x 2497
+  Ask: 100.01 x 2378
+Checksum: 502225807
+[ perf record: Woken up 1 times to write data ]
+[ perf record: Captured and wrote 0.270 MB perf_results/record_C.data (2670 samples) ]
