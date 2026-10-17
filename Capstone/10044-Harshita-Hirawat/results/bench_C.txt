@@ -1,0 +1,15 @@
+Implementation C (one price indexed array), 1000000 ops, 5 runs
+timer overhead ~27 ns per op (included in the numbers)
+
+run 1  total 89.7ms | add 34 ns (p99 57) | cancel 123 ns (p99 598) | bbo 47 ns (p99 66)
+run 2  total 90.1ms | add 34 ns (p99 56) | cancel 124 ns (p99 608) | bbo 47 ns (p99 65)
+run 3  total 93.1ms | add 35 ns (p99 57) | cancel 137 ns (p99 643) | bbo 47 ns (p99 63)
+run 4  total 90.1ms | add 34 ns (p99 51) | cancel 125 ns (p99 632) | bbo 47 ns (p99 53)
+run 5  total 91.8ms | add 35 ns (p99 52) | cancel 132 ns (p99 634) | bbo 47 ns (p99 54)
+
+MEDIAN  total 90.1ms | add 34 ns (p99 56) | cancel 125 ns (p99 632) | bbo 47 ns (p99 63)
+
+Final BBO:
+Bid: 99.99 x 1981
+Ask: 100.01 x 2573
+Checksum: 12504287800

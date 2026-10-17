@@ -1,0 +1,37 @@
+Warning:
+Kernel address maps (/proc/{kallsyms,modules}) were restricted.
+
+Check /proc/sys/kernel/kptr_restrict before running 'perf record'.
+
+As no suitable kallsyms nor vmlinux was found, kernel samples
+can't be resolved.
+
+Samples in kernel modules can't be resolved as well.
+
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'cpu_core/cycles/P'
+# Event count (approx.): 1332323048
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+# ........  .......  ....................  .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    17.30%  bench    bench                 [.] PQBook::cancel_order(unsigned long)
+    16.55%  bench    bench                 [.] std::__detail::_Map_base<long, std::pair<long const, long>, std::allocator<std::pair<long const, long> >, std::__detail::_Select1st, std::equal_to<long>, std::hash<long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](long const&)
+     9.32%  bench    bench                 [.] void std::__introsort_loop<__gnu_cxx::__normal_iterator<long long*, std::vector<long long, std::allocator<long long> > >, long, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<long long*, std::vector<long long, std::allocator<long long> > >, __gnu_cxx::__normal_iterator<long long*, std::vector<long long, std::allocator<long long> > >, long, __gnu_cxx::__ops::_Iter_less_iter) [clone .isra.0]
+     5.89%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, PQBook::Order>, std::allocator<std::pair<unsigned long const, PQBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+     5.76%  bench    libc.so.6             [.] __memmove_avx_unaligned_erms
+     5.35%  bench    bench                 [.] Result runOnce<PQBook>(std::vector<Op, std::allocator<Op> > const&, BBO&)
+     4.24%  bench    [vdso]                [.] 0x0000000000000b00
+     4.04%  bench    bench                 [.] makeWorkload(int)
+     2.70%  bench    bench                 [.] std::__detail::_Map_base<unsigned long, std::pair<unsigned long const, PQBook::Order>, std::allocator<std::pair<unsigned long const, PQBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](unsigned long const&)
+     2.61%  bench    libc.so.6             [.] unlink_chunk.isra.0
+     2.45%  bench    libc.so.6             [.] malloc_consolidate
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

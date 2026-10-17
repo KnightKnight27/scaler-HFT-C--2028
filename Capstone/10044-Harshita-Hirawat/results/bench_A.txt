@@ -1,0 +1,15 @@
+Implementation A (priority queue + lazy deletion), 1000000 ops, 5 runs
+timer overhead ~29 ns per op (included in the numbers)
+
+run 1  total 372.9ms | add 216 ns (p99 683) | cancel 541 ns (p99 1743) | bbo 110 ns (p99 187)
+run 2  total 334.7ms | add 193 ns (p99 473) | cancel 497 ns (p99 1439) | bbo 103 ns (p99 170)
+run 3  total 340.3ms | add 199 ns (p99 636) | cancel 508 ns (p99 2006) | bbo 101 ns (p99 161)
+run 4  total 339.0ms | add 195 ns (p99 585) | cancel 533 ns (p99 1970) | bbo 102 ns (p99 163)
+run 5  total 401.2ms | add 244 ns (p99 917) | cancel 634 ns (p99 2204) | bbo 112 ns (p99 199)
+
+MEDIAN  total 340.3ms | add 199 ns (p99 636) | cancel 533 ns (p99 1970) | bbo 103 ns (p99 170)
+
+Final BBO:
+Bid: 99.99 x 1981
+Ask: 100.01 x 2573
+Checksum: 12504287800

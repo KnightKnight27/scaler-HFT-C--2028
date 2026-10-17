@@ -1,0 +1,15 @@
+Implementation B (sorted vector + branchless search), 1000000 ops, 5 runs
+timer overhead ~27 ns per op (included in the numbers)
+
+run 1  total 357.9ms | add 262 ns (p99 1156) | cancel 637 ns (p99 2581) | bbo 52 ns (p99 86)
+run 2  total 362.2ms | add 253 ns (p99 861) | cancel 684 ns (p99 2528) | bbo 54 ns (p99 88)
+run 3  total 369.6ms | add 268 ns (p99 996) | cancel 690 ns (p99 2564) | bbo 54 ns (p99 86)
+run 4  total 309.7ms | add 224 ns (p99 744) | cancel 561 ns (p99 1939) | bbo 51 ns (p99 69)
+run 5  total 309.2ms | add 220 ns (p99 763) | cancel 571 ns (p99 2407) | bbo 51 ns (p99 77)
+
+MEDIAN  total 357.9ms | add 253 ns (p99 861) | cancel 637 ns (p99 2528) | bbo 52 ns (p99 86)
+
+Final BBO:
+Bid: 99.99 x 1981
+Ask: 100.01 x 2573
+Checksum: 12504287800
