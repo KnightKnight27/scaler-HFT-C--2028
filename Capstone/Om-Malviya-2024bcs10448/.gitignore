@@ -1,0 +1,6 @@
+build/
+bench
+*.o
+*.data
+perf_*.data
+prof_*.txt
