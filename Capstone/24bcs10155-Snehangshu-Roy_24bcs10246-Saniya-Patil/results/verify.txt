@@ -1,0 +1,18 @@
+Running correctness test...
+
+1. edge cases (empty book, bad prices/qty, unknown/double cancel, depth, emptied levels): ok
+2. C's OrderTable vs std::unordered_map, 9 x 200000 random inserts/erases: ok
+3. random workloads, A, B, C and a brute force book side by side, compared after every op
+   (5% of cancels go to unknown or already cancelled ids)
+   a) normal 70/20/10 mix: 200000 ops (add 140191, cancel 39805, bbo 20004), seed 7
+   b) thin book, 45% add / 45% cancel: 200000 ops (add 90067, cancel 89931, bbo 20002), seed 8
+   c) random 64 bit ids: 200000 ops (add 140170, cancel 39925, bbo 19905), seed 9
+   d) random ids, thin book, only 20 ticks per side: 200000 ops (add 89674, cancel 90430, bbo 19896), seed 10
+4. the benchmark workload itself (1M ops, seed 42), compared after every op like in 3
+   checksum: A=13740035995088966065 B=13740035995088966065 C=13740035995088966065 (match)
+
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+
+All implementations produce identical results.

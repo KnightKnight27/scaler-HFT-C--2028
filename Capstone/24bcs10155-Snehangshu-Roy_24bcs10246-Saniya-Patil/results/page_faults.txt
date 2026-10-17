@@ -1,0 +1,9 @@
+### page faults (perf stat -r 5 average), --runs 1 vs --runs 5
+A  --runs 1: 19608   --runs 5: 19611
+B  --runs 1: 18789   --runs 5: 18789
+C  --runs 1: 25152   --runs 5: 25154
+
+### --runs 5 again with MALLOC_MMAP_THRESHOLD_=67108864 MALLOC_TRIM_THRESHOLD_=1073741824
+A  15372
+B  15943
+C  16161

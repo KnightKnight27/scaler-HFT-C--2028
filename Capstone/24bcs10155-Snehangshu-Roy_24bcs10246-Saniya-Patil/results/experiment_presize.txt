@@ -1,0 +1,17 @@
+### C as submitted (table starts at 2^16 slots and doubles, ends at 2^20 = 16 MB)
+median of 5 runs:
+  total time      33.38 ms  (33.4 ns per op, untimed loop)
+  ns / add         59.4  (raw 78.9)
+  ns / cancel      34.2  (raw 53.8)
+  ns / bbo         1.63  (raw 2.85, timed in batches of 16 calls)
+            787.13 msec task-clock                       #    0.997 CPUs utilized               ( +-  2.55% )
+             25155      page-faults                      #   31.958 K/sec                       ( +-  0.00% )
+
+### C built with -DORDER_TABLE_INIT_CAP=2097152 (2^21 slots = 32 MB from the start)
+median of 5 runs:
+  total time      44.92 ms  (44.9 ns per op, untimed loop)
+  ns / add        104.3  (raw 122.4)
+  ns / cancel      87.0  (raw 105.0)
+  ns / bbo         1.50  (raw 2.62, timed in batches of 16 calls)
+           1280.18 msec task-clock                       #    0.998 CPUs utilized               ( +-  1.18% )
+            100959      page-faults                      #   78.863 K/sec                       ( +-  0.00% )

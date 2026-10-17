@@ -1,0 +1,22 @@
+Implementation B (priority_queue + lazy delete)
+ops: 1000000 (add 700471, cancel 199303, bbo 100226), seed 42, runs 5
+steady_clock::now() overhead: 19.3 ns
+
+run 1: total   160.77 ms | raw add   96.1 ns | cancel  500.8 ns | bbo  4.29 ns
+run 2: total   183.80 ms | raw add   90.4 ns | cancel  413.4 ns | bbo  4.24 ns
+run 3: total   127.64 ms | raw add  109.3 ns | cancel  676.1 ns | bbo  4.49 ns
+run 4: total   131.17 ms | raw add   90.2 ns | cancel  426.5 ns | bbo  4.25 ns
+run 5: total   135.67 ms | raw add   90.5 ns | cancel  490.5 ns | bbo  4.22 ns
+
+median of 5 runs:
+  total time     135.67 ms  (135.7 ns per op, untimed loop)
+  ns / add         71.2  (raw 90.5)
+  ns / cancel     471.2  (raw 490.5)
+  ns / bbo         3.04  (raw 4.25, timed in batches of 16 calls)
+
+Final BBO:
+Bid: 99.99 x 1981
+Ask: 100.01 x 2573
+Live orders: 501168
+
+Checksum: 13740035995088966065

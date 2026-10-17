@@ -1,0 +1,173 @@
+### self time (perf report --no-children)
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'cycles:P'
+# Event count (approx.): 3539666772
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+# ........  .......  ....................  .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    29.28%  bench    [vdso]                [.] __vdso_clock_gettime
+    23.19%  bench    bench                 [.] OrderTable::insert(unsigned long, int, int)
+    11.06%  bench    bench                 [.] RunResult run_once<ArrayBook>(std::vector<Op, std::allocator<Op> > const&)
+     7.01%  bench    bench                 [.] unsigned long play<ArrayBook>(ArrayBook&, std::vector<Op, std::allocator<Op> > const&)
+     6.42%  bench    bench                 [.] ArrayBook::cancel_order(unsigned long)
+     4.72%  bench    libstdc++.so.6.0.33   [.] std::chrono::_V2::steady_clock::now()
+     3.19%  bench    bench                 [.] std::vector<OrderTable::Slot, std::allocator<OrderTable::Slot> >::_M_fill_assign(unsigned long, OrderTable::Slot const&)
+     1.39%  bench    libm.so.6             [.] llroundf32x
+     1.01%  bench    bench                 [.] make_workload(unsigned long, unsigned int, WorkloadOptions const&)
+     0.82%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+     0.75%  bench    bench                 [.] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+     0.65%  bench    bench                 [.] llround@plt
+     0.64%  bench    [kernel.kallsyms]     [k] __mod_memcg_lruvec_state
+     0.58%  bench    bench                 [.] std::chrono::_V2::steady_clock::now()@plt
+     0.58%  bench    [kernel.kallsyms]     [k] __mod_zone_page_state
+     0.50%  bench    [kernel.kallsyms]     [k] __this_cpu_preempt_check
+#
+# (Cannot load tips.txt file, please install perf!)
+#
+
+### including children, with call graph (perf report --children)
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'cycles:P'
+# Event count (approx.): 3539666772
+#
+# Children      Self  Command  Shared Object                                        Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+# ........  ........  .......  ...................................................  .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    99.27%     0.00%  bench    bench                                                [.] _start
+            |
+            ---_start
+    99.27%     0.00%  bench    libc.so.6                                            [.] __libc_start_main
+            |
+            ---__libc_start_main
+               _start
+    99.24%     0.00%  bench    libc.so.6                                            [.] 0x0000710678f211ca
+            |
+            ---0x710678f211ca
+               __libc_start_main
+               _start
+    99.24%     0.00%  bench    bench                                                [.] main
+            |
+            ---main
+               0x710678f211ca
+               __libc_start_main
+               _start
+    99.24%     0.30%  bench    bench                                                [.] int run_bench<ArrayBook>(char const*, unsigned long, unsigned int, int)
+            |
+            ---int run_bench<ArrayBook>(char const*, unsigned long, unsigned int, int)
+               main
+               0x710678f211ca
+               __libc_start_main
+               _start
+    82.38%    11.06%  bench    bench                                                [.] RunResult run_once<ArrayBook>(std::vector<Op, std::allocator<Op> > const&)
+            |
+            ---RunResult run_once<ArrayBook>(std::vector<Op, std::allocator<Op> > const&)
+               int run_bench<ArrayBook>(char const*, unsigned long, unsigned int, int)
+               main
+               0x710678f211ca
+               __libc_start_main
+               _start
+    34.17%     4.72%  bench    libstdc++.so.6.0.33                                  [.] std::chrono::_V2::steady_clock::now()
+            |
+            ---std::chrono::_V2::steady_clock::now()
+               |          
+                --31.27%--RunResult run_once<ArrayBook>(std::vector<Op, std::allocator<Op> > const&)
+                          int run_bench<ArrayBook>(char const*, unsigned long, unsigned int, int)
+                          main
+                          0x710678f211ca
+                          __libc_start_main
+                          _start
+    29.73%    23.19%  bench    bench                                                [.] OrderTable::insert(unsigned long, int, int)
+            |
+            ---OrderTable::insert(unsigned long, int, int)
+               |          
+               |--13.63%--unsigned long play<ArrayBook>(ArrayBook&, std::vector<Op, std::allocator<Op> > const&)
+               |          |          
+               |           --11.88%--RunResult run_once<ArrayBook>(std::vector<Op, std::allocator<Op> > const&)
+               |                     int run_bench<ArrayBook>(char const*, unsigned long, unsigned int, int)
+               |                     main
+               |                     0x710678f211ca
+               |                     __libc_start_main
+               |                     _start
+               |          
+                --12.77%--RunResult run_once<ArrayBook>(std::vector<Op, std::allocator<Op> > const&)
+                          int run_bench<ArrayBook>(char const*, unsigned long, unsigned int, int)
+                          main
+                          0x710678f211ca
+                          __libc_start_main
+                          _start
+    29.52%     0.38%  bench    libc.so.6                                            [.] clock_gettime
+            |
+            ---clock_gettime
+               |          
+                --29.21%--std::chrono::_V2::steady_clock::now()
+                          |          
+                           --26.83%--RunResult run_once<ArrayBook>(std::vector<Op, std::allocator<Op> > const&)
+                                     int run_bench<ArrayBook>(char const*, unsigned long, unsigned int, int)
+                                     main
+                                     0x710678f211ca
+                                     __libc_start_main
+                                     _start
+    29.34%    29.28%  bench    [vdso]                                               [.] __vdso_clock_gettime
+            |
+            ---__vdso_clock_gettime
+               |          
+                --29.14%--clock_gettime
+                          std::chrono::_V2::steady_clock::now()
+                          |          
+                           --26.76%--RunResult run_once<ArrayBook>(std::vector<Op, std::allocator<Op> > const&)
+                                     int run_bench<ArrayBook>(char const*, unsigned long, unsigned int, int)
+                                     main
+                                     0x710678f211ca
+                                     __libc_start_main
+                                     _start
+    23.27%     7.01%  bench    bench                                                [.] unsigned long play<ArrayBook>(ArrayBook&, std::vector<Op, std::allocator<Op> > const&)
+            |
+            ---unsigned long play<ArrayBook>(ArrayBook&, std::vector<Op, std::allocator<Op> > const&)
+               |          
+                --20.19%--RunResult run_once<ArrayBook>(std::vector<Op, std::allocator<Op> > const&)
+                          int run_bench<ArrayBook>(char const*, unsigned long, unsigned int, int)
+                          main
+                          0x710678f211ca
+                          __libc_start_main
+                          _start
+     6.47%     3.19%  bench    bench                                                [.] std::vector<OrderTable::Slot, std::allocator<OrderTable::Slot> >::_M_fill_assign(unsigned long, OrderTable::Slot const&)
+            |
+            ---std::vector<OrderTable::Slot, std::allocator<OrderTable::Slot> >::_M_fill_assign(unsigned long, OrderTable::Slot const&)
+               |          
+                --6.34%--OrderTable::insert(unsigned long, int, int)
+     6.42%     6.42%  bench    bench                                                [.] ArrayBook::cancel_order(unsigned long)
+            |
+            ---ArrayBook::cancel_order(unsigned long)
+     5.78%     0.10%  bench    [kernel.kallsyms]                                    [k] asm_exc_page_fault
+            |
+            ---asm_exc_page_fault
+     5.75%     1.01%  bench    bench                                                [.] make_workload(unsigned long, unsigned int, WorkloadOptions const&)
+            |
+            ---make_workload(unsigned long, unsigned int, WorkloadOptions const&)
+               int run_bench<ArrayBook>(char const*, unsigned long, unsigned int, int)
+               main
+               0x710678f211ca
+               __libc_start_main
+               _start
+     5.72%     0.17%  bench    [kernel.kallsyms]                                    [k] exc_page_fault
+            |
+            ---exc_page_fault
+               |          
+                --5.68%--asm_exc_page_fault
+     5.22%     0.03%  bench    [kernel.kallsyms]                                    [k] do_user_addr_fault
+            |
+            ---do_user_addr_fault
+               exc_page_fault
+               asm_exc_page_fault
+#
+# (Cannot load tips.txt file, please install perf!)
+#

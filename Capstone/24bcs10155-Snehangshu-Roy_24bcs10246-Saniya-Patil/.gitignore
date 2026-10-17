@@ -1,0 +1,6 @@
+bench
+bench_asan
+*.o
+perf.data
+perf.data.old
+bench_presized

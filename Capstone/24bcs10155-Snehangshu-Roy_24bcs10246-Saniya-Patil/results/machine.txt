@@ -1,0 +1,10 @@
+CPU(s):                               32
+Model name:                           AMD Ryzen 9 8940HX with Radeon Graphics
+Thread(s) per core:                   2
+L1d cache:                            512 KiB (16 instances)
+L1i cache:                            512 KiB (16 instances)
+L2 cache:                             16 MiB (16 instances)
+L3 cache:                             32 MiB (1 instance)
+6.6.87.2-microsoft-standard-WSL2
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+perf version 6.8.12
