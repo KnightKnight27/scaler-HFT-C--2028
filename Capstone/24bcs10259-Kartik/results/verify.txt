@@ -1,0 +1,9 @@
+Running correctness test...
+
+Checked 1000000 operations (BBO + 10 levels each side after every op)
+
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+
+All implementations produce identical results.

@@ -1,0 +1,28 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'armv8_pmuv3_0/cycles/P'
+# Event count (approx.): 1491552453
+#
+# Overhead  Command  Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+# ........  .......  .....................  .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    24.44%  bench    [vdso]                 [.] 0x0000000000000584
+    16.09%  bench    bench                  [.] Result run_once<OrderBookC>(std::vector<Op, std::allocator<Op> > const&)
+    15.89%  bench    [vdso]                 [.] 0x0000000000000574
+     5.40%  bench    [vdso]                 [.] 0x0000000000000568
+     5.25%  bench    [vdso]                 [.] 0x0000000000000594
+     4.42%  bench    [vdso]                 [.] 0x0000000000000578
+     3.87%  bench    bench                  [.] make_workload(int, unsigned int)
+     2.75%  bench    libstdc++.so.6.0.33    [.] std::chrono::_V2::steady_clock::now()
+     2.70%  bench    libc.so.6              [.] clock_gettime
+     2.35%  bench    bench                  [.] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+     1.57%  bench    [vdso]                 [.] 0x00000000000005b4
+     1.22%  bench    [unknown]              [k] 0xffffd00f70ceaa1c
+     1.13%  bench    libc.so.6              [.] malloc
+     1.08%  bench    [vdso]                 [.] __kernel_clock_gettime
+#
+# (Cannot load tips.txt file, please install perf!)
+#

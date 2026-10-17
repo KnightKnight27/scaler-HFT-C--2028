@@ -1,0 +1,30 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 6K of event 'armv8_pmuv3_0/cycles/P'
+# Event count (approx.): 4418228011
+#
+# Overhead  Command  Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+# ........  .......  .....................  ...............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    29.71%  bench    bench                  [.] OrderBookB::cancel_order(unsigned long)
+    13.98%  bench    bench                  [.] __gnu_cxx::__normal_iterator<OrderBookB::PriceLevel*, std::vector<OrderBookB::PriceLevel, std::allocator<OrderBookB::PriceLevel> > > std::__lower_bound<__gnu_cxx::__normal_iterator<OrderBookB::PriceLevel*, std::vector<OrderBookB::PriceLevel, std::allocator<OrderBookB::PriceLevel> > >, int, __gnu_cxx::__ops::_Iter_comp_val<bool (*)(OrderBookB::PriceLevel const&, int)> >(__gnu_cxx::__normal_iterator<OrderBookB::PriceLevel*, std::vector<OrderBookB::PriceLevel, std::allocator<OrderBookB::PriceLevel> > >, __gnu_cxx::__normal_iterator<OrderBookB::PriceLevel*, std::vector<OrderBookB::PriceLevel, std::allocator<OrderBookB::PriceLevel> > >, int const&, __gnu_cxx::__ops::_Iter_comp_val<bool (*)(OrderBookB::PriceLevel const&, int)>)
+     8.70%  bench    [vdso]                 [.] 0x0000000000000584
+     5.70%  bench    bench                  [.] OrderBookB::ask_less(OrderBookB::PriceLevel const&, int)
+     5.68%  bench    [vdso]                 [.] 0x0000000000000574
+     5.30%  bench    bench                  [.] Result run_once<OrderBookB>(std::vector<Op, std::allocator<Op> > const&)
+     5.10%  bench    bench                  [.] OrderBookB::bid_less(OrderBookB::PriceLevel const&, int)
+     2.87%  bench    bench                  [.] OrderBookB::add_order(unsigned long, Side, double, long)
+     1.97%  bench    [vdso]                 [.] 0x0000000000000568
+     1.50%  bench    [vdso]                 [.] 0x0000000000000594
+     1.47%  bench    [vdso]                 [.] 0x0000000000000578
+     1.22%  bench    libstdc++.so.6.0.33    [.] std::chrono::_V2::steady_clock::now()
+     1.21%  bench    libc.so.6              [.] clock_gettime
+     1.17%  bench    libc.so.6              [.] 0x00000000000a1afc
+     1.09%  bench    libc.so.6              [.] 0x00000000000a1b08
+     1.05%  bench    [unknown]              [k] 0xffffd00f70ceaa1c
+#
+# (Cannot load tips.txt file, please install perf!)
+#

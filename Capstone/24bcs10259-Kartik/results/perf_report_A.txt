@@ -1,0 +1,30 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 7K of event 'armv8_pmuv3_0/cycles/P'
+# Event count (approx.): 5471759029
+#
+# Overhead  Command  Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+# ........  .......  .....................  .............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    20.75%  bench    bench                  [.] OrderBookA::cancel_order(unsigned long)
+    17.19%  bench    bench                  [.] Result run_once<OrderBookA>(std::vector<Op, std::allocator<Op> > const&)
+    12.66%  bench    bench                  [.] std::map<int, long, std::greater<int>, std::allocator<std::pair<int const, long> > >::operator[](int const&)
+     7.27%  bench    [vdso]                 [.] 0x0000000000000584
+     4.85%  bench    [vdso]                 [.] 0x0000000000000574
+     3.58%  bench    bench                  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookA::Order>, std::allocator<std::pair<unsigned long const, OrderBookA::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable()
+     3.42%  bench    bench                  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookA::Order>, std::allocator<std::pair<unsigned long const, OrderBookA::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::erase(std::__detail::_Node_const_iterator<std::pair<unsigned long const, OrderBookA::Order>, false, false>)
+     2.72%  bench    bench                  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookA::Order>, std::allocator<std::pair<unsigned long const, OrderBookA::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) const [clone .isra.0]
+     1.77%  bench    bench                  [.] std::__detail::_Map_base<unsigned long, std::pair<unsigned long const, OrderBookA::Order>, std::allocator<std::pair<unsigned long const, OrderBookA::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](unsigned long const&)
+     1.70%  bench    [vdso]                 [.] 0x0000000000000568
+     1.60%  bench    libc.so.6              [.] 0x00000000000928e4
+     1.28%  bench    libc.so.6              [.] malloc
+     1.21%  bench    libc.so.6              [.] 0x00000000000941d8
+     1.15%  bench    [vdso]                 [.] 0x0000000000000578
+     1.12%  bench    [vdso]                 [.] 0x0000000000000594
+     1.01%  bench    libc.so.6              [.] cfree
+#
+# (Cannot load tips.txt file, please install perf!)
+#

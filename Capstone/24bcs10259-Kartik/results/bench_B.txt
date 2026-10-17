@@ -1,0 +1,18 @@
+  run 1: total 295.62 ms
+  run 2: total 294.95 ms
+  run 3: total 291.56 ms
+  run 4: total 299.15 ms
+  run 5: total 293.62 ms
+
+Implementation B (median of 5 runs, 1000000 ops)
+Total time        : 294.95 ms
+ns / add_order    : 172.1
+ns / cancel_order : 637.8
+ns / get_bbo      : 31.1
+ns / depth query  : 433.2  (get_bids(10) + get_asks(10))
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2525
+
+Checksum: 491457988
