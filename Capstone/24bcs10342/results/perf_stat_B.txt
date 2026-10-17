@@ -1,0 +1,50 @@
+Implementation B (sorted std::vector levels + sorted-by-id order vector)
+Operations: 1000000   Seed: 42   Runs: 1 (median reported)
+Total time:         353.16 ms
+Final BBO:
+  Bid: 99.99 x 2015
+  Ask: 100.01 x 2522
+Checksum: 2504230024183926013
+Implementation B (sorted std::vector levels + sorted-by-id order vector)
+Operations: 1000000   Seed: 42   Runs: 1 (median reported)
+Total time:         396.08 ms
+Final BBO:
+  Bid: 99.99 x 2015
+  Ask: 100.01 x 2522
+Checksum: 2504230024183926013
+Implementation B (sorted std::vector levels + sorted-by-id order vector)
+Operations: 1000000   Seed: 42   Runs: 1 (median reported)
+Total time:         379.70 ms
+Final BBO:
+  Bid: 99.99 x 2015
+  Ask: 100.01 x 2522
+Checksum: 2504230024183926013
+Implementation B (sorted std::vector levels + sorted-by-id order vector)
+Operations: 1000000   Seed: 42   Runs: 1 (median reported)
+Total time:         413.58 ms
+Final BBO:
+  Bid: 99.99 x 2015
+  Ask: 100.01 x 2522
+Checksum: 2504230024183926013
+Implementation B (sorted std::vector levels + sorted-by-id order vector)
+Operations: 1000000   Seed: 42   Runs: 1 (median reported)
+Total time:         421.23 ms
+Final BBO:
+  Bid: 99.99 x 2015
+  Ask: 100.01 x 2522
+Checksum: 2504230024183926013
+
+ Performance counter stats for './bench --impl B --runs 1 --no-breakdown' (5 runs):
+
+            598.45 msec task-clock:u              #    1.066 CPUs utilized            ( +-  2.58% )
+         739446860      cycles:u                  #    1.325 GHz                      ( +-  1.42% )  (84.54%)
+         536505730      instructions:u            #    0.75  insn per cycle           ( +-  0.37% )  (85.50%)
+          78517240      branches:u                #  140.710 M/sec                    ( +-  0.11% )  (86.03%)
+          11749424      branch-misses:u           #   14.98% of all branches          ( +-  0.36% )  (85.28%)
+          21042089      cache-misses:u                                                ( +-  0.80% )  (86.32%)
+          37473087      L1-dcache-load-misses:u                                       ( +-  0.53% )  (86.50%)
+           1527532      dTLB-load-misses:u                                            ( +-  2.41% )  (85.83%)
+             13525      page-faults:u             #   24.238 K/sec                    ( +-  0.00% )
+
+            0.5615 +- 0.0143 seconds time elapsed  ( +-  2.55% )
+

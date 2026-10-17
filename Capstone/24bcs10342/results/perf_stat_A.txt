@@ -1,0 +1,50 @@
+Implementation A (std::map levels + std::unordered_map orders)
+Operations: 1000000   Seed: 42   Runs: 1 (median reported)
+Total time:         527.02 ms
+Final BBO:
+  Bid: 99.99 x 2015
+  Ask: 100.01 x 2522
+Checksum: 2504230024183926013
+Implementation A (std::map levels + std::unordered_map orders)
+Operations: 1000000   Seed: 42   Runs: 1 (median reported)
+Total time:         511.89 ms
+Final BBO:
+  Bid: 99.99 x 2015
+  Ask: 100.01 x 2522
+Checksum: 2504230024183926013
+Implementation A (std::map levels + std::unordered_map orders)
+Operations: 1000000   Seed: 42   Runs: 1 (median reported)
+Total time:         496.71 ms
+Final BBO:
+  Bid: 99.99 x 2015
+  Ask: 100.01 x 2522
+Checksum: 2504230024183926013
+Implementation A (std::map levels + std::unordered_map orders)
+Operations: 1000000   Seed: 42   Runs: 1 (median reported)
+Total time:         476.36 ms
+Final BBO:
+  Bid: 99.99 x 2015
+  Ask: 100.01 x 2522
+Checksum: 2504230024183926013
+Implementation A (std::map levels + std::unordered_map orders)
+Operations: 1000000   Seed: 42   Runs: 1 (median reported)
+Total time:         481.73 ms
+Final BBO:
+  Bid: 99.99 x 2015
+  Ask: 100.01 x 2522
+Checksum: 2504230024183926013
+
+ Performance counter stats for './bench --impl A --runs 1 --no-breakdown' (5 runs):
+
+            697.00 msec task-clock:u              #    0.943 CPUs utilized            ( +-  1.59% )
+        1000913324      cycles:u                  #    1.374 GHz                      ( +-  0.55% )  (85.76%)
+         740815484      instructions:u            #    0.74  insn per cycle           ( +-  0.12% )  (85.73%)
+         135985126      branches:u                #  186.719 M/sec                    ( +-  0.33% )  (85.73%)
+          10343768      branch-misses:u           #    7.54% of all branches          ( +-  0.34% )  (85.69%)
+           9590431      cache-misses:u                                                ( +-  1.12% )  (85.71%)
+          19040412      L1-dcache-load-misses:u                                       ( +-  0.55% )  (85.71%)
+           1003948      dTLB-load-misses:u                                            ( +-  1.87% )  (85.66%)
+             15379      page-faults:u             #   21.117 K/sec                    ( +-  0.00% )
+
+            0.7395 +- 0.0116 seconds time elapsed  ( +-  1.56% )
+

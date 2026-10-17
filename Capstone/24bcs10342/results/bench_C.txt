@@ -1,0 +1,11 @@
+Implementation C (price-indexed array + cached BBO + pooled orders + open-addressing hash)
+Operations: 1000000   Seed: 42   Runs: 5 (median reported)
+Total time:         139.70 ms
+ns / add_order:     197.2
+ns / cancel_order:  249.2
+ns / get_bbo:       2.4
+(timer overhead subtracted: 29.5 ns per clock::now() pair)
+Final BBO:
+  Bid: 99.99 x 2015
+  Ask: 100.01 x 2522
+Checksum: 2504230024183926013

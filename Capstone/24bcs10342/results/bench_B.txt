@@ -1,0 +1,11 @@
+Implementation B (sorted std::vector levels + sorted-by-id order vector)
+Operations: 1000000   Seed: 42   Runs: 5 (median reported)
+Total time:         350.12 ms
+ns / add_order:     105.0
+ns / cancel_order:  555.0
+ns / get_bbo:       0.0
+(timer overhead subtracted: 57.3 ns per clock::now() pair)
+Final BBO:
+  Bid: 99.99 x 2015
+  Ask: 100.01 x 2522
+Checksum: 2504230024183926013

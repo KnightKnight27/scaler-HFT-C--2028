@@ -1,0 +1,11 @@
+Implementation A (std::map levels + std::unordered_map orders)
+Operations: 1000000   Seed: 42   Runs: 5 (median reported)
+Total time:         426.64 ms
+ns / add_order:     380.3
+ns / cancel_order:  722.9
+ns / get_bbo:       1.2
+(timer overhead subtracted: 54.4 ns per clock::now() pair)
+Final BBO:
+  Bid: 99.99 x 2015
+  Ask: 100.01 x 2522
+Checksum: 2504230024183926013

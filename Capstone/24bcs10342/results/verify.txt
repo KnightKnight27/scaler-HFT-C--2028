@@ -1,0 +1,7 @@
+Running correctness test...
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+(200000 operations incl. invalid cancels, 781219 comparisons: BBO, depth-10 bids/asks, full-book, cancel/add results)
+
+All implementations produce identical results.

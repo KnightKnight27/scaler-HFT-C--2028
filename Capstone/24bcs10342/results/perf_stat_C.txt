@@ -1,0 +1,50 @@
+Implementation C (price-indexed array + cached BBO + pooled orders + open-addressing hash)
+Operations: 1000000   Seed: 42   Runs: 1 (median reported)
+Total time:         250.10 ms
+Final BBO:
+  Bid: 99.99 x 2015
+  Ask: 100.01 x 2522
+Checksum: 2504230024183926013
+Implementation C (price-indexed array + cached BBO + pooled orders + open-addressing hash)
+Operations: 1000000   Seed: 42   Runs: 1 (median reported)
+Total time:         234.23 ms
+Final BBO:
+  Bid: 99.99 x 2015
+  Ask: 100.01 x 2522
+Checksum: 2504230024183926013
+Implementation C (price-indexed array + cached BBO + pooled orders + open-addressing hash)
+Operations: 1000000   Seed: 42   Runs: 1 (median reported)
+Total time:         212.82 ms
+Final BBO:
+  Bid: 99.99 x 2015
+  Ask: 100.01 x 2522
+Checksum: 2504230024183926013
+Implementation C (price-indexed array + cached BBO + pooled orders + open-addressing hash)
+Operations: 1000000   Seed: 42   Runs: 1 (median reported)
+Total time:         267.73 ms
+Final BBO:
+  Bid: 99.99 x 2015
+  Ask: 100.01 x 2522
+Checksum: 2504230024183926013
+Implementation C (price-indexed array + cached BBO + pooled orders + open-addressing hash)
+Operations: 1000000   Seed: 42   Runs: 1 (median reported)
+Total time:         228.26 ms
+Final BBO:
+  Bid: 99.99 x 2015
+  Ask: 100.01 x 2522
+Checksum: 2504230024183926013
+
+ Performance counter stats for './bench --impl C --runs 1 --no-breakdown' (5 runs):
+
+            397.25 msec task-clock:u              #    0.957 CPUs utilized            ( +-  3.60% )
+         381173382      cycles:u                  #    0.927 GHz                      ( +-  2.26% )  (85.23%)
+         429267129      instructions:u            #    1.12  insn per cycle           ( +-  0.89% )  (85.76%)
+          54478204      branches:u                #  132.499 M/sec                    ( +-  0.63% )  (85.83%)
+           3565654      branch-misses:u           #    6.57% of all branches          ( +-  0.50% )  (85.80%)
+           2570117      cache-misses:u                                                ( +-  1.54% )  (85.83%)
+           5480858      L1-dcache-load-misses:u                                       ( +-  1.67% )  (85.79%)
+            810594      dTLB-load-misses:u                                            ( +-  1.66% )  (85.76%)
+             21538      page-faults:u             #   52.384 K/sec                    ( +-  0.00% )
+
+            0.4149 +- 0.0140 seconds time elapsed  ( +-  3.38% )
+
