@@ -1,0 +1,9 @@
+    23.67%  bench    [vdso]                [.] 0x0000000000000c48
+    22.91%  bench    bench                 [.] RunResult run_once<ArrayBook>(std::vector<Op, std::allocator<Op> > const&)
+     9.94%  bench    bench                 [.] std::vector<Order, std::allocator<Order> >::_M_fill_insert(__gnu_cxx::__normal_iterator<Order*, std::vector<Order, std::allocator<Order> > >, unsigned long, Order const&)
+     4.20%  bench    bench                 [.] make_workload(int, unsigned int)
+     3.71%  bench    libstdc++.so.6.0.33   [.] std::chrono::_V2::steady_clock::now()
+     2.69%  bench    libc.so.6             [.] clock_gettime@@GLIBC_2.17
+     2.27%  bench    [vdso]                [.] 0x0000000000000c99
+     1.94%  bench    [vdso]                [.] 0x0000000000000c7d
+     1.82%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()

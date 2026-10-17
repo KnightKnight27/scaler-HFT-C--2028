@@ -1,0 +1,8 @@
+taskset -c 0 perf stat -e page-faults ./bench --impl X --runs R
+
+impl  runs=1   runs=5
+A     21825    21824
+B     19326    20730
+C     16015    24216
+
+./bench --impl C --runs 1 --ops 1   ->  155 page faults (program start only)

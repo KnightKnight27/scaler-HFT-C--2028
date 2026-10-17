@@ -1,0 +1,14 @@
+    13.76%  bench    bench                 [.] RunResult run_once<HeapBook>(std::vector<Op, std::allocator<Op> > const&)
+    12.70%  bench    bench                 [.] std::__detail::_Map_base<unsigned long, std::pair<unsigned long const, HeapBook::LevelInfo>, std::allocator<std::pair<unsigned long const, HeapBook::LevelInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](unsigned long const&)
+    11.09%  bench    [vdso]                [.] 0x0000000000000c48
+     9.05%  bench    libc.so.6             [.] __memmove_avx_unaligned_erms
+     5.38%  bench    bench                 [.] HeapBook::add_order(unsigned long, Side, unsigned long, long)
+     4.91%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+     3.58%  bench    libc.so.6             [.] malloc_consolidate
+     3.44%  bench    bench                 [.] std::__detail::_Map_base<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](unsigned long const&)
+     3.36%  bench    libc.so.6             [.] unlink_chunk.isra.0
+     2.87%  bench    libc.so.6             [.] _int_malloc
+     2.69%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::erase(std::__detail::_Node_const_iterator<std::pair<unsigned long const, Order>, false, false>)
+     2.19%  bench    libc.so.6             [.] _int_free
+     1.69%  bench    bench                 [.] make_workload(int, unsigned int)
+     1.61%  bench    libstdc++.so.6.0.33   [.] std::chrono::_V2::steady_clock::now()
