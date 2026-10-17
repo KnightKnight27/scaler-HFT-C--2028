@@ -1,0 +1,6 @@
+RUNNING CORRECTNESS CHECK
+
+Implementation A (Map):   PASS
+Implementation B (PQ):    PASS
+Implementation C (Array): PASS
+All implementations produce identical results.
