@@ -1,0 +1,111 @@
+Actual perf report excerpt; line ends trimmed; symbols over 240 characters abbreviated with ... .
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 503  of event 'cycles:u'
+# Event count (approx.): 2364717063
+#
+# Children      Self  Command  Shared Object         Symbol
+# ........  ........  .......  ....................  ........................................................................................................................................................................................... ...
+#
+    99.96%     0.00%  bench    bench                 [.] _start
+            |
+            ---_start
+               __libc_start_main
+               0x7f1ba522a601
+               |
+                --98.89%--main
+                          |
+                          |--46.29%--(anonymous namespace)::replay(orderbook::OrderBook&, std::vector<(anonymous namespace)::Op, std::allocator<(anonymous namespace)::Op> > const&, bool)
+                          |          |
+                          |          |--22.00%--orderbook::OrderBookC::add_order(orderbook::Order const&)
+                          |          |          |
+                          |          |          |--6.75%--std::_Hashtable<unsigned long, std::pair<unsigned long const, orderbook::OrderBookC::Locator>, std::allocator<std::pair<unsigned long const, orderbook::OrderBookC::Locator> >, std::_ ...
+                          |          |          |          |
+                          |          |          |           --5.83%--std::_Hashtable<unsigned long, std::pair<unsigned long const, orderbook::OrderBookC::Locator>, std::allocator<std::pair<unsigned long const, orderbook::OrderBookC::Locator ...
+                          |          |          |                     |
+                          |          |          |                      --4.87%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, orderbook::OrderBookC::Locator>, std::__detail::_Select1st, std::hash<unsigned long ...
+                          |          |          |                                std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+                          |          |          |
+                          |          |          |--5.66%--std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, orderbook::OrderBookC::Locator>, false, false>, bool> std::unordered_map<unsigned long, orderbook::OrderBookC:: ...
+                          |          |          |          |
+                          |          |          |           --5.44%--std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, orderbook::OrderBookC::Locator>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsig ...
+                          |          |          |                     std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, orderbook::OrderBookC::Locator>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsi ...
+                          |          |          |                     |
+                          |          |          |                     |--3.13%--std::_Hashtable<unsigned long, std::pair<unsigned long const, orderbook::OrderBookC::Locator>, std::allocator<std::pair<unsigned long const, orderbook::OrderBoo ...
+                          |          |          |                     |          std::_Hashtable<unsigned long, std::pair<unsigned long const, orderbook::OrderBookC::Locator>, std::allocator<std::pair<unsigned long const, orderbook::OrderBo ...
+                          |          |          |                     |          |
+                          |          |          |                     |           --1.93%--std::_Hashtable<unsigned long, std::pair<unsigned long const, orderbook::OrderBookC::Locator>, std::allocator<std::pair<unsigned long const, orderboo ...
+                          |          |          |                     |                     std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, orderbook::OrderBookC::Locator>, std::__detail::_Select1st, std::hash<u ...
+                          |          |          |                     |                     std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+                          |          |          |                     |
+                          |          |          |                      --2.30%--std::__detail::_Hash_node<std::pair<unsigned long const, orderbook::OrderBookC::Locator>, false>* std::__detail::_Hashtable_alloc<std::allocator<std::__detail:: ...
+                          |          |          |                                |
+                          |          |          |                                 --2.08%--void std::allocator_traits<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, orderbook::OrderBookC::Locator>, false> > >::const ...
+                          |          |          |                                           void std::__new_allocator<std::__detail::_Hash_node<std::pair<unsigned long const, orderbook::OrderBookC::Locator>, false> >::construct<std::pair<un ...
+                          |          |          |                                           std::pair<unsigned long const, orderbook::OrderBookC::Locator>::pair<unsigned long const&, orderbook::OrderBookC::Locator, true>(unsigned long const ...
+                          |          |          |
+                          |          |          |--3.84%--std::pair<std::__detail::_Node_iterator<unsigned long, true, false>, bool> std::_Hashtable<unsigned long, unsigned long, std::allocator<unsigned long>, std::__detail::_Identity, std: ...
+                          |          |          |          |
+                          |          |          |          |--2.02%--std::_Hashtable<unsigned long, unsigned long, std::allocator<unsigned long>, std::__detail::_Identity, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detai ...
+                          |          |          |          |          |
+                          |          |          |          |           --1.03%--std::_Hashtable<unsigned long, unsigned long, std::allocator<unsigned long>, std::__detail::_Identity, std::equal_to<unsigned long>, std::hash<unsigned long>, s ...
+                          |          |          |          |                     std::__detail::_Hash_code_base<unsigned long, unsigned long, std::__detail::_Identity, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__deta ...
+                          |          |          |          |                     std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+                          |          |          |          |
+                          |          |          |           --1.22%--std::__detail::_Hash_node<unsigned long, false>* std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<unsigned long, false> > >::_M_allocate_node<unsig ...
+                          |          |          |                     void std::allocator_traits<std::allocator<std::__detail::_Hash_node<unsigned long, false> > >::construct<unsigned long, unsigned long const&>(std::allocator<std::__detail ...
+                          |          |          |                     void std::__new_allocator<std::__detail::_Hash_node<unsigned long, false> >::construct<unsigned long, unsigned long const&>(unsigned long*, unsigned long const&) (inlined ...
+                          |          |          |                     operator new(unsigned long)
+                          |          |          |
+                          |          |           --1.05%--std::unordered_set<unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<unsigned long> >::find(unsigned long const&) (inlined)
+                          |          |
+                          |          |--10.79%--orderbook::OrderBookC::cancel_order(unsigned long)
+                          |          |          |
+                          |          |           --8.92%--std::unordered_map<unsigned long, orderbook::OrderBookC::Locator, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, orderbook::Ord ...
+                          |          |                     std::_Hashtable<unsigned long, std::pair<unsigned long const, orderbook::OrderBookC::Locator>, std::allocator<std::pair<unsigned long const, orderbook::OrderBookC::Locator> >, std:: ...
+                          |          |                     std::_Hashtable<unsigned long, std::pair<unsigned long const, orderbook::OrderBookC::Locator>, std::allocator<std::pair<unsigned long const, orderbook::OrderBookC::Locator> >, std:: ...
+                          |          |                     |
+                          |          |                     |--6.43%--std::_Hashtable<unsigned long, std::pair<unsigned long const, orderbook::OrderBookC::Locator>, std::allocator<std::pair<unsigned long const, orderbook::OrderBookC::Locator ...
+                          |          |                     |          |
+                          |          |                     |           --3.33%--std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, orderbook::OrderBookC::Locator>, std::__detail::_Select1st, std::equal_to<unsigned  ...
+                          |          |                     |                     std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, orderbook::OrderBookC::Locator>, std::__detail::_Select1st, std::equal_to<unsigned ...
+                          |          |                     |                     std::equal_to<unsigned long>::operator()(unsigned long const&, unsigned long const&) const (inlined)
+                          |          |                     |
+                          |          |                      --2.50%--std::_Hashtable<unsigned long, std::pair<unsigned long const, orderbook::OrderBookC::Locator>, std::allocator<std::pair<unsigned long const, orderbook::OrderBookC::Locator ...
+                          |          |                                std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, orderbook::OrderBookC::Locator>, std::__detail::_Select1st, std::hash<unsigned long>, std::__ ...
+                          |          |                                std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+                          |          |
+                          |          |--3.51%--nanoseconds (inlined)
+                          |          |          std::chrono::duration<double, std::ratio<1l, 1000000000l> >::duration<long, std::ratio<1l, 1000000000l>, void>(std::chrono::duration<long, std::ratio<1l, 1000000000l> > const&) (inlined)
+                          |          |          std::enable_if<std::chrono::__is_duration<std::chrono::duration<double, std::ratio<1l, 1000000000l> > >::value, std::chrono::duration<double, std::ratio<1l, 1000000000l> > >::type std::chrono: ...
+                          |          |          std::chrono::duration<double, std::ratio<1l, 1000000000l> > std::chrono::__duration_cast_impl<std::chrono::duration<double, std::ratio<1l, 1000000000l> >, std::ratio<1l, 1l>, double, true, tru ...
+                          |          |          |
+                          |          |           --2.89%--std::chrono::_V2::steady_clock::now()
+                          |          |                     clock_gettime
+                          |          |                     __vdso_clock_gettime
+                          |          |
+                          |          |--2.25%--std::chrono::_V2::steady_clock::now()
+                          |          |          clock_gettime
+                          |          |          |
+                          |          |           --2.09%--__vdso_clock_gettime
+                          |          |
+                          |          |--2.01%--std::__detail::_List_node_base::_M_unhook()
+                          |          |
+                          |           --1.69%--std::__detail::_List_node_base::_M_hook(std::__detail::_List_node_base*)
+                          |
+                          |--26.72%--main
+                          |          |
+                          |           --25.83%--orderbook::OrderBookC::~OrderBookC()
+                          |                     orderbook::OrderBookC::~OrderBookC()
+                          |                     |
+                          |                     |--14.19%--std::array<orderbook::OrderBookC::Level, 5000ul>::~array() (inlined)
+                          |                     |          orderbook::OrderBookC::Level::~Level() (inlined)
+                          |                     |          std::__cxx11::list<orderbook::Order, std::allocator<orderbook::Order> >::~list() (inlined)
+                          |                     |          std::__cxx11::_List_base<orderbook::Order, std::allocator<orderbook::Order> >::~_List_base() (inlined)
+                          |                     |          std::__cxx11::_List_base<orderbook::Order, std::allocator<orderbook::Order> >::_M_clear() (inlined)
+                          |                     |          |
+                          |                     |           --13.60%--0x7f1ba52b2329
+                          |                     |                     |

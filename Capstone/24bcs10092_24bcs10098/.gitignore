@@ -1,0 +1,9 @@
+/build*/
+/CMakeUserPresets.json
+*.o
+*.obj
+*.exe
+*.a
+*.so
+/Testing/
+/perf.data*
