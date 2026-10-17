@@ -1,0 +1,30 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 592  of event 'cpu_core/cycles/P'
+# Event count (approx.): 247250171
+#
+# Overhead  Command  Shared Object         Symbol                                                             
+# ........  .......  ....................  ...................................................................
+#
+    23.46%  bench    bench                 [.] make_workload(int, int)
+    22.86%  bench    bench                 [.] OrderTable::insert(unsigned long, Order const&)
+     7.05%  bench    bench                 [.] ArrayBook::cancel_order(unsigned long)
+     6.13%  bench    bench                 [.] void run_benchmark<ArrayBook>(char const*, char const*, std::ve
+     5.81%  bench    bench                 [.] RunResult run_once<ArrayBook>(std::vector<Op, std::allocator<Op
+     3.10%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul,
+     1.93%  bench    [kernel.kallsyms]     [k] rmqueue_bulk
+     1.93%  bench    [kernel.kallsyms]     [k] sync_regs
+     1.78%  bench    bench                 [.] ArrayBook::ArrayBook()
+     1.77%  bench    [kernel.kallsyms]     [k] do_anonymous_page
+     1.42%  bench    [kernel.kallsyms]     [k] _raw_spin_lock
+     1.41%  bench    [kernel.kallsyms]     [k] __rmqueue_pcplist
+     1.29%  bench    [kernel.kallsyms]     [k] zap_present_ptes.constprop.0
+     1.16%  bench    bench                 [.] ArrayBook::get_asks(int) const
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

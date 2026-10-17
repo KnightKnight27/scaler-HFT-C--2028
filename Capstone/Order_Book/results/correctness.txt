@@ -1,0 +1,19 @@
+Running correctness test...
+
+Edge cases (empty book, unknown cancel, short depth, bad input):
+  A: PASS
+  B: PASS
+  C: PASS
+
+Random workload: 1000000 ops, seed 42. Every op goes to A, B and C and the results are compared
+(BBO after every op, top 10 levels every 100 ops, the whole book every 5000 ops).
+A is also checked against a naive reference for the first 50000 ops.
+
+Cancels of unknown / already cancelled ids tried: 39899
+Live orders at the end: A=501333 B=501333 C=501333
+
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+
+All implementations produce identical results.

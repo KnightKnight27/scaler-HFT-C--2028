@@ -1,0 +1,22 @@
+
+ Performance counter stats for './bench --gen-only' (5 runs):
+
+             54.88 msec task-clock                                                              ( +-  9.11% )
+     <not counted>      cpu_atom/cycles/                                                        (0.00%)
+       119,784,496      cpu_core/cycles/                                                        ( +-  9.29% )
+     <not counted>      cpu_atom/instructions/                                                  (0.00%)
+       220,025,373      cpu_core/instructions/                                                  ( +-  0.11% )
+     <not counted>      cpu_atom/branches/                                                      (0.00%)
+        20,560,691      cpu_core/branches/                                                      ( +-  0.25% )
+     <not counted>      cpu_atom/branch-misses/                                                 (0.00%)
+           812,441      cpu_core/branch-misses/                                                 ( +-  0.15% )
+     <not counted>      cpu_atom/cache-misses/                                                  (0.00%)
+           627,756      cpu_core/cache-misses/                                                  ( +-  5.39% )
+   <not supported>      cpu_atom/L1-dcache-load-misses/                                       
+           457,528      cpu_core/L1-dcache-load-misses/                                         ( +- 24.81% )
+     <not counted>      cpu_atom/dTLB-load-misses/                                              (0.00%)
+            11,925      cpu_core/dTLB-load-misses/                                              ( +- 53.28% )
+             8,011      page-faults                                                             ( +-  0.00% )
+
+       0.055777034 +- 0.005017317 seconds time elapsed  ( +-  9.00% )
+

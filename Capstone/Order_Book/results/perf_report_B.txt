@@ -1,0 +1,30 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'cpu_core/cycles/P'
+# Event count (approx.): 1057633637
+#
+# Overhead  Command  Shared Object         Symbol                                                             
+# ........  .......  ....................  ...................................................................
+#
+    35.79%  bench    bench                 [.] VectorBook::cancel_order(unsigned long)
+    14.64%  bench    bench                 [.] VectorBook::add_order(unsigned long, Side, int, long) [clone .p
+    11.53%  bench    bench                 [.] RunResult run_once<VectorBook>(std::vector<Op, std::allocator<O
+     5.93%  bench    bench                 [.] make_workload(int, int)
+     5.10%  bench    libstdc++.so.6.0.35   [.] std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std
+     2.54%  bench    libc.so.6             [.] _int_malloc
+     2.53%  bench    bench                 [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, Ord
+     1.99%  bench    libstdc++.so.6.0.35   [.] std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_bas
+     1.87%  bench    bench                 [.] std::_Rb_tree_iterator<std::pair<unsigned long const, Order> > 
+     1.86%  bench    libc.so.6             [.] unlink_chunk.isra.0
+     1.84%  bench    libc.so.6             [.] __memmove_avx_unaligned_erms
+     1.51%  bench    bench                 [.] void run_benchmark<VectorBook>(char const*, char const*, std::v
+     1.45%  bench    libc.so.6             [.] cfree@GLIBC_2.2.5
+     1.39%  bench    libc.so.6             [.] _int_free_merge_chunk
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

@@ -1,0 +1,16 @@
+Implementation B: sorted std::vector + std::map
+Operations: 1000000 (700829 add, 199496 cancel, 99675 bbo) + 10000 depth queries, seed 42
+Runs: 5, median reported
+
+Total time        : 430.48 ms   (430.5 ns per op on average)
+ns / add_order    : 274.4
+ns / cancel_order : 1210.8
+ns / get_bbo      : 16.6
+ns / depth query  : 291.5   (get_bids(10) + get_asks(10))
+(timer overhead of 33.3 ns per call already subtracted)
+
+Final BBO:
+  Bid: 99.99 x 1608
+  Ask: 100.01 x 2808
+Live orders: 501333
+Checksum: 17175048581270136155

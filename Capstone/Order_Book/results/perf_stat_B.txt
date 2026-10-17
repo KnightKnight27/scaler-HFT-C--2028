@@ -1,0 +1,22 @@
+
+ Performance counter stats for 'bench --impl B --runs 1 --total-only' (5 runs):
+
+            612.07 msec task-clock                                                              ( +-  2.59% )
+     <not counted>      cpu_atom/cycles/                                                        (0.00%)
+     1,055,331,990      cpu_core/cycles/                                                        ( +-  0.66% )
+     <not counted>      cpu_atom/instructions/                                                  (0.00%)
+     1,004,702,874      cpu_core/instructions/                                                  ( +-  0.03% )
+     <not counted>      cpu_atom/branches/                                                      (0.00%)
+       196,072,913      cpu_core/branches/                                                      ( +-  0.03% )
+     <not counted>      cpu_atom/branch-misses/                                                 (0.00%)
+        12,938,538      cpu_core/branch-misses/                                                 ( +-  0.04% )
+     <not counted>      cpu_atom/cache-misses/                                                  (0.00%)
+         7,225,460      cpu_core/cache-misses/                                                  ( +-  2.37% )
+   <not supported>      cpu_atom/L1-dcache-load-misses/                                       
+        18,666,260      cpu_core/L1-dcache-load-misses/                                         ( +-  0.68% )
+     <not counted>      cpu_atom/dTLB-load-misses/                                              (0.00%)
+           877,737      cpu_core/dTLB-load-misses/                                              ( +-  0.10% )
+            15,856      page-faults                                                             ( +-  0.00% )
+
+       0.617101595 +- 0.016002014 seconds time elapsed  ( +-  2.59% )
+
