@@ -1,0 +1,22 @@
+
+ Performance counter stats for './build-native/bench --impl A' (5 runs):
+
+          2,124.65 msec task-clock                                                              ( +-  0.43% )
+     3,594,325,595      cpu_atom/cycles/                                                        ( +-  5.83% )  (0.84%)
+     4,447,005,329      cpu_core/cycles/                                                        ( +-  0.38% )  (99.16%)
+     4,396,986,390      cpu_atom/instructions/                                                  ( +-  9.39% )  (0.84%)
+     3,987,425,388      cpu_core/instructions/                                                  ( +-  0.08% )  (99.16%)
+       662,250,991      cpu_atom/branches/                                                      ( +-  7.27% )  (0.84%)
+       806,189,984      cpu_core/branches/                                                      ( +-  0.08% )  (99.16%)
+        24,594,581      cpu_atom/branch-misses/                                                 ( +-  9.35% )  (0.84%)
+        40,215,480      cpu_core/branch-misses/                                                 ( +-  0.11% )  (99.16%)
+        17,719,568      cpu_atom/cache-misses/                                                  ( +-  4.98% )  (0.84%)
+        26,279,035      cpu_core/cache-misses/                                                  ( +-  1.45% )  (99.16%)
+   <not supported>      cpu_atom/L1-dcache-load-misses/                                       
+        63,330,895      cpu_core/L1-dcache-load-misses/                                         ( +-  0.14% )  (99.16%)
+         1,429,021      cpu_atom/dTLB-load-misses/                                              ( +- 16.14% )  (0.84%)
+         2,960,510      cpu_core/dTLB-load-misses/                                              ( +-  0.41% )  (99.16%)
+            16,358      page-faults                                                             ( +-  0.00% )
+
+       2.132729713 +- 0.009493787 seconds time elapsed  ( +-  0.45% )
+

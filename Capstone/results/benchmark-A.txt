@@ -1,0 +1,12 @@
+Implementation A
+Operations: 1000000
+Runs: 5 (median reported)
+Total time (ms): 392.45
+ns / add: 324.64
+ns / cancel: 619.28
+ns / BBO: 75.65
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2525
+Checksum: 10658993729413417588

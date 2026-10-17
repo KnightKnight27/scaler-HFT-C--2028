@@ -1,0 +1,37 @@
+Software sampling command used in the Linux container:
+
+  perf record -e cpu-clock -g -o perf.data ./build-linux/bench --impl <A|B|C>
+  perf report --stdio --no-children -g none --sort symbol --percent-limit 1
+
+Implementation A (1,214 samples)
+  26.44%  MapOrderBook::add_order
+  22.16%  MapOrderBook::cancel_order
+  20.35%  __kernel_clock_gettime
+   4.70%  __pi_clear_page
+   4.04%  unordered_map::_M_rehash
+   1.73%  main
+   1.57%  free
+   1.32%  malloc
+
+Implementation B (1,794 samples)
+  24.25%  IndexedOrderBook::cancel_order
+  16.11%  __kernel_clock_gettime
+   9.92%  std::set<int, less<int>>::insert path
+   9.14%  std::set<int, greater<int>>::insert path
+   4.57%  IndexedOrderBook::add_order
+   3.57%  __pi_clear_page
+   3.29%  std::_Rb_tree_insert_and_rebalance
+   2.73%  std::_Rb_tree_rebalance_for_erase
+
+Implementation C (940 samples)
+  37.66%  __kernel_clock_gettime
+  30.11%  ArrayOrderBook::OrderTable::insert
+   5.11%  __pi_clear_page
+   3.72%  ArrayOrderBook::cancel_order
+   2.98%  ArrayOrderBook::OrderTable::find
+   2.02%  vector::_M_fill_assign
+   1.60%  ArrayOrderBook::OrderTable::rehash
+   1.60%  price_to_ticks
+
+Hardware event counting was unavailable in Docker Desktop's ARM64 Linux VM, so
+cpu-clock (a software sampling event) was used for the call profiles.
