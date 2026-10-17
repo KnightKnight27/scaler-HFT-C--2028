@@ -1,0 +1,25 @@
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Build directories & binaries
+build/
+build*/
+bin/
+lib/
+*.o
+*.obj
+*.a
+*.so
+*.dll
+*.exe
+
+# Temporary and backup files
+*.tmp
+*~
