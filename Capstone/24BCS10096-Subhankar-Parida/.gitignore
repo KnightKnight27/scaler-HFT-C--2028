@@ -1,0 +1,6 @@
+bench
+*.data
+*.data.old
+cachegrind.out.*
+*.o
+results/
