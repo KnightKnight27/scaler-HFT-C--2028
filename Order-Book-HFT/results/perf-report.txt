@@ -1,0 +1,1962 @@
+Implementation A
+================================
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 4K of event 'task-clock:ppp'
+# Event count (approx.): 1036250000
+#
+# Children      Self  Command  Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+# ........  ........  .......  .....................  ............................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    99.98%     0.00%  bench    bench                  [.] _start
+            |
+            ---_start
+               __libc_start_main
+               0xffff977584c4
+               main
+               |          
+               |--98.29%--void benchmark<ob::MapBook>(ob::Workload const&, int, bool)
+               |          |          
+               |           --98.12%--Result replay<ob::MapBook>(ob::Workload const&, bool)
+               |                     |          
+               |                     |--45.04%--ob::MapBook::add_order(unsigned long, ob::Side, int, long)
+               |                     |          |          
+               |                     |           --7.82%--std::_Rb_tree_iterator<std::pair<unsigned long const, ob::Order> > std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_emplace_hint_unique<unsigned long&, ob::Order>(std::_Rb_tree_const_iterator<std::pair<unsigned long const, ob::Order> >, unsigned long&, ob::Order&&)
+               |                     |                     |          
+               |                     |                     |--4.85%--std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+               |                     |                     |          
+               |                     |                      --2.03%--operator new(unsigned long)
+               |                     |                                |          
+               |                     |                                 --1.79%--malloc
+               |                     |          
+               |                     |--43.31%--ob::MapBook::cancel_order(unsigned long)
+               |                     |          |          
+               |                     |           --5.74%--std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+               |                     |          
+               |                      --7.91%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) [clone .isra.0]
+               |                                |          
+               |                                 --6.18%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) [clone .isra.0]
+               |                                           |          
+               |                                            --1.16%--cfree
+               |          
+                --1.54%--ob::make_workload(unsigned long, unsigned int)
+
+    99.98%     0.00%  bench    libc.so.6              [.] __libc_start_main
+            |
+            ---__libc_start_main
+               0xffff977584c4
+               main
+               |          
+               |--98.29%--void benchmark<ob::MapBook>(ob::Workload const&, int, bool)
+               |          |          
+               |           --98.12%--Result replay<ob::MapBook>(ob::Workload const&, bool)
+               |                     |          
+               |                     |--45.04%--ob::MapBook::add_order(unsigned long, ob::Side, int, long)
+               |                     |          |          
+               |                     |           --7.82%--std::_Rb_tree_iterator<std::pair<unsigned long const, ob::Order> > std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_emplace_hint_unique<unsigned long&, ob::Order>(std::_Rb_tree_const_iterator<std::pair<unsigned long const, ob::Order> >, unsigned long&, ob::Order&&)
+               |                     |                     |          
+               |                     |                     |--4.85%--std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+               |                     |                     |          
+               |                     |                      --2.03%--operator new(unsigned long)
+               |                     |                                |          
+               |                     |                                 --1.79%--malloc
+               |                     |          
+               |                     |--43.31%--ob::MapBook::cancel_order(unsigned long)
+               |                     |          |          
+               |                     |           --5.74%--std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+               |                     |          
+               |                      --7.91%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) [clone .isra.0]
+               |                                |          
+               |                                 --6.18%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) [clone .isra.0]
+               |                                           |          
+               |                                            --1.16%--cfree
+               |          
+                --1.54%--ob::make_workload(unsigned long, unsigned int)
+
+    99.98%     0.00%  bench    libc.so.6              [.] 0x0000ffff977584c4
+            |
+            ---0xffff977584c4
+               main
+               |          
+               |--98.29%--void benchmark<ob::MapBook>(ob::Workload const&, int, bool)
+               |          |          
+               |           --98.12%--Result replay<ob::MapBook>(ob::Workload const&, bool)
+               |                     |          
+               |                     |--45.04%--ob::MapBook::add_order(unsigned long, ob::Side, int, long)
+               |                     |          |          
+               |                     |           --7.82%--std::_Rb_tree_iterator<std::pair<unsigned long const, ob::Order> > std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_emplace_hint_unique<unsigned long&, ob::Order>(std::_Rb_tree_const_iterator<std::pair<unsigned long const, ob::Order> >, unsigned long&, ob::Order&&)
+               |                     |                     |          
+               |                     |                     |--4.85%--std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+               |                     |                     |          
+               |                     |                      --2.03%--operator new(unsigned long)
+               |                     |                                |          
+               |                     |                                 --1.79%--malloc
+               |                     |          
+               |                     |--43.31%--ob::MapBook::cancel_order(unsigned long)
+               |                     |          |          
+               |                     |           --5.74%--std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+               |                     |          
+               |                      --7.91%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) [clone .isra.0]
+               |                                |          
+               |                                 --6.18%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) [clone .isra.0]
+               |                                           |          
+               |                                            --1.16%--cfree
+               |          
+                --1.54%--ob::make_workload(unsigned long, unsigned int)
+
+    99.98%     0.00%  bench    bench                  [.] main
+            |
+            ---main
+               |          
+               |--98.29%--void benchmark<ob::MapBook>(ob::Workload const&, int, bool)
+               |          |          
+               |           --98.12%--Result replay<ob::MapBook>(ob::Workload const&, bool)
+               |                     |          
+               |                     |--45.04%--ob::MapBook::add_order(unsigned long, ob::Side, int, long)
+               |                     |          |          
+               |                     |           --7.82%--std::_Rb_tree_iterator<std::pair<unsigned long const, ob::Order> > std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_emplace_hint_unique<unsigned long&, ob::Order>(std::_Rb_tree_const_iterator<std::pair<unsigned long const, ob::Order> >, unsigned long&, ob::Order&&)
+               |                     |                     |          
+               |                     |                     |--4.85%--std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+               |                     |                     |          
+               |                     |                      --2.03%--operator new(unsigned long)
+               |                     |                                |          
+               |                     |                                 --1.79%--malloc
+               |                     |          
+               |                     |--43.31%--ob::MapBook::cancel_order(unsigned long)
+               |                     |          |          
+               |                     |           --5.74%--std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+               |                     |          
+               |                      --7.91%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) [clone .isra.0]
+               |                                |          
+               |                                 --6.18%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) [clone .isra.0]
+               |                                           |          
+               |                                            --1.16%--cfree
+               |          
+                --1.54%--ob::make_workload(unsigned long, unsigned int)
+
+    98.29%     0.00%  bench    bench                  [.] void benchmark<ob::MapBook>(ob::Workload const&, int, bool)
+            |
+            ---void benchmark<ob::MapBook>(ob::Workload const&, int, bool)
+               |          
+                --98.12%--Result replay<ob::MapBook>(ob::Workload const&, bool)
+                          |          
+                          |--45.04%--ob::MapBook::add_order(unsigned long, ob::Side, int, long)
+                          |          |          
+                          |           --7.82%--std::_Rb_tree_iterator<std::pair<unsigned long const, ob::Order> > std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_emplace_hint_unique<unsigned long&, ob::Order>(std::_Rb_tree_const_iterator<std::pair<unsigned long const, ob::Order> >, unsigned long&, ob::Order&&)
+                          |                     |          
+                          |                     |--4.85%--std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+                          |                     |          
+                          |                      --2.03%--operator new(unsigned long)
+                          |                                |          
+                          |                                 --1.79%--malloc
+                          |          
+                          |--43.31%--ob::MapBook::cancel_order(unsigned long)
+                          |          |          
+                          |           --5.74%--std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+                          |          
+                           --7.91%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) [clone .isra.0]
+                                     |          
+                                      --6.18%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) [clone .isra.0]
+                                                |          
+                                                 --1.16%--cfree
+
+    98.12%     1.38%  bench    bench                  [.] Result replay<ob::MapBook>(ob::Workload const&, bool)
+            |          
+            |--96.74%--Result replay<ob::MapBook>(ob::Workload const&, bool)
+            |          |          
+            |          |--45.04%--ob::MapBook::add_order(unsigned long, ob::Side, int, long)
+            |          |          |          
+            |          |           --7.82%--std::_Rb_tree_iterator<std::pair<unsigned long const, ob::Order> > std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_emplace_hint_unique<unsigned long&, ob::Order>(std::_Rb_tree_const_iterator<std::pair<unsigned long const, ob::Order> >, unsigned long&, ob::Order&&)
+            |          |                     |          
+            |          |                     |--4.85%--std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+            |          |                     |          
+            |          |                      --2.03%--operator new(unsigned long)
+            |          |                                |          
+            |          |                                 --1.79%--malloc
+            |          |          
+            |          |--43.31%--ob::MapBook::cancel_order(unsigned long)
+            |          |          |          
+            |          |           --5.74%--std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+            |          |          
+            |           --7.91%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) [clone .isra.0]
+            |                     |          
+            |                      --6.18%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) [clone .isra.0]
+            |                                |          
+            |                                 --1.16%--cfree
+            |          
+             --1.38%--_start
+                       __libc_start_main
+                       0xffff977584c4
+                       main
+                       void benchmark<ob::MapBook>(ob::Workload const&, int, bool)
+                       Result replay<ob::MapBook>(ob::Workload const&, bool)
+
+    45.21%    36.98%  bench    bench                  [.] ob::MapBook::add_order(unsigned long, ob::Side, int, long)
+            |          
+            |--36.98%--_start
+            |          __libc_start_main
+            |          0xffff977584c4
+            |          main
+            |          void benchmark<ob::MapBook>(ob::Workload const&, int, bool)
+            |          |          
+            |           --36.82%--Result replay<ob::MapBook>(ob::Workload const&, bool)
+            |                     ob::MapBook::add_order(unsigned long, ob::Side, int, long)
+            |          
+             --8.23%--ob::MapBook::add_order(unsigned long, ob::Side, int, long)
+                       |          
+                        --7.82%--std::_Rb_tree_iterator<std::pair<unsigned long const, ob::Order> > std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_emplace_hint_unique<unsigned long&, ob::Order>(std::_Rb_tree_const_iterator<std::pair<unsigned long const, ob::Order> >, unsigned long&, ob::Order&&)
+                                  |          
+                                  |--4.85%--std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+                                  |          
+                                   --2.03%--operator new(unsigned long)
+                                             |          
+                                              --1.79%--malloc
+
+    43.31%    37.10%  bench    bench                  [.] ob::MapBook::cancel_order(unsigned long)
+            |          
+            |--37.10%--_start
+            |          __libc_start_main
+            |          0xffff977584c4
+            |          main
+            |          void benchmark<ob::MapBook>(ob::Workload const&, int, bool)
+            |          Result replay<ob::MapBook>(ob::Workload const&, bool)
+            |          ob::MapBook::cancel_order(unsigned long)
+            |          
+             --6.20%--ob::MapBook::cancel_order(unsigned long)
+                       |          
+                        --5.74%--std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+
+     7.91%     5.84%  bench    bench                  [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) [clone .isra.0]
+            |          
+            |--5.84%--_start
+            |          __libc_start_main
+            |          0xffff977584c4
+            |          main
+            |          void benchmark<ob::MapBook>(ob::Workload const&, int, bool)
+            |          Result replay<ob::MapBook>(ob::Workload const&, bool)
+            |          std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) [clone .isra.0]
+            |          |          
+            |           --4.78%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) [clone .isra.0]
+            |          
+             --2.07%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) [clone .isra.0]
+                       |          
+                        --1.40%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, ob::Order> >*) [clone .isra.0]
+                                  |          
+                                   --1.16%--cfree
+
+     7.82%     0.80%  bench    bench                  [.] std::_Rb_tree_iterator<std::pair<unsigned long const, ob::Order> > std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_emplace_hint_unique<unsigned long&, ob::Order>(std::_Rb_tree_const_iterator<std::pair<unsigned long const, ob::Order> >, unsigned long&, ob::Order&&)
+            |          
+             --7.02%--std::_Rb_tree_iterator<std::pair<unsigned long const, ob::Order> > std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_emplace_hint_unique<unsigned long&, ob::Order>(std::_Rb_tree_const_iterator<std::pair<unsigned long const, ob::Order> >, unsigned long&, ob::Order&&)
+                       |          
+                       |--4.85%--std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+                       |          
+                        --2.03%--operator new(unsigned long)
+                                  |          
+                                   --1.79%--malloc
+
+     5.74%     5.72%  bench    libstdc++.so.6.0.33    [.] std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+            |          
+             --5.72%--_start
+                       __libc_start_main
+                       0xffff977584c4
+                       main
+                       void benchmark<ob::MapBook>(ob::Workload const&, int, bool)
+                       Result replay<ob::MapBook>(ob::Workload const&, bool)
+                       ob::MapBook::cancel_order(unsigned long)
+                       std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+
+     5.02%     5.02%  bench    libstdc++.so.6.0.33    [.] std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+            |
+            ---_start
+               __libc_start_main
+               0xffff977584c4
+               main
+               void benchmark<ob::MapBook>(ob::Workload const&, int, bool)
+               Result replay<ob::MapBook>(ob::Workload const&, bool)
+               ob::MapBook::add_order(unsigned long, ob::Side, int, long)
+               |          
+                --4.85%--std::_Rb_tree_iterator<std::pair<unsigned long const, ob::Order> > std::_Rb_tree<unsigned long, std::pair<unsigned long const, ob::Order>, std::_Select1st<std::pair<unsigned long const, ob::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::_M_emplace_hint_unique<unsigned long&, ob::Order>(std::_Rb_tree_const_iterator<std::pair<unsigned long const, ob::Order> >, unsigned long&, ob::Order&&)
+                          std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+
+     2.24%     0.97%  bench    libc.so.6              [.] cfree
+            |          
+             --1.28%--cfree
+
+     2.22%     0.19%  bench    libstdc++.so.6.0.33    [.] operator new(unsigned long)
+            |          
+             --2.03%--operator new(unsigned long)
+                       |          
+                        --1.88%--malloc
+
+     1.88%     0.75%  bench    libc.so.6              [.] malloc
+            |          
+             --1.13%--malloc
+
+     1.54%     0.80%  bench    bench                  [.] ob::make_workload(unsigned long, unsigned int)
+     1.04%     0.00%  bench    [unknown]              [.] 0xffff8000800115a0
+            |
+            ---0xffff8000800115a0
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
+
+
+Implementation B
+================================
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'task-clock:ppp'
+# Event count (approx.): 460250000
+#
+# Children      Self  Command  Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+# ........  ........  .......  .....................  .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    99.95%     0.00%  bench    bench                  [.] _start
+            |
+            ---_start
+               __libc_start_main
+               0xffff98e884c4
+               main
+               |          
+               |--96.09%--void benchmark<ob::VectorBook>(ob::Workload const&, int, bool)
+               |          |          
+               |           --95.71%--Result replay<ob::VectorBook>(ob::Workload const&, bool)
+               |                     |          
+               |                     |--46.06%--ob::VectorBook::add_order(unsigned long, ob::Side, int, long)
+               |                     |          |          
+               |                     |          |--32.54%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}> >(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}>) [clone .isra.0]
+               |                     |          |          
+               |                     |          |--5.65%--operator new(unsigned long)
+               |                     |          |          |          
+               |                     |          |           --5.00%--malloc
+               |                     |          |                     |          
+               |                     |          |                      --1.25%--0xffff98ef5968
+               |                     |          |          
+               |                     |           --2.55%--0xffff98f01b08
+               |                     |          
+               |                     |--36.56%--ob::VectorBook::cancel_order(unsigned long)
+               |                     |          |          
+               |                     |          |--33.68%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}> >(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}>) [clone .isra.0]
+               |                     |          |          
+               |                     |           --1.25%--0xffff98f01a50
+               |                     |          
+               |                     |--5.11%--std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable()
+               |                     |          |          
+               |                     |           --4.13%--cfree
+               |                     |          
+               |                      --4.62%--cfree
+               |                                |          
+               |                                 --4.35%--0xffff98ef3d98
+               |                                           |          
+               |                                            --1.85%--0xffff98ef2ae4
+               |          
+                --3.53%--ob::make_workload(unsigned long, unsigned int)
+                          |          
+                           --1.09%--0xffff8000800115a0
+                                     0xffff8000814c33d0
+
+    99.95%     0.00%  bench    libc.so.6              [.] __libc_start_main
+            |
+            ---__libc_start_main
+               0xffff98e884c4
+               main
+               |          
+               |--96.09%--void benchmark<ob::VectorBook>(ob::Workload const&, int, bool)
+               |          |          
+               |           --95.71%--Result replay<ob::VectorBook>(ob::Workload const&, bool)
+               |                     |          
+               |                     |--46.06%--ob::VectorBook::add_order(unsigned long, ob::Side, int, long)
+               |                     |          |          
+               |                     |          |--32.54%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}> >(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}>) [clone .isra.0]
+               |                     |          |          
+               |                     |          |--5.65%--operator new(unsigned long)
+               |                     |          |          |          
+               |                     |          |           --5.00%--malloc
+               |                     |          |                     |          
+               |                     |          |                      --1.25%--0xffff98ef5968
+               |                     |          |          
+               |                     |           --2.55%--0xffff98f01b08
+               |                     |          
+               |                     |--36.56%--ob::VectorBook::cancel_order(unsigned long)
+               |                     |          |          
+               |                     |          |--33.68%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}> >(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}>) [clone .isra.0]
+               |                     |          |          
+               |                     |           --1.25%--0xffff98f01a50
+               |                     |          
+               |                     |--5.11%--std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable()
+               |                     |          |          
+               |                     |           --4.13%--cfree
+               |                     |          
+               |                      --4.62%--cfree
+               |                                |          
+               |                                 --4.35%--0xffff98ef3d98
+               |                                           |          
+               |                                            --1.85%--0xffff98ef2ae4
+               |          
+                --3.53%--ob::make_workload(unsigned long, unsigned int)
+                          |          
+                           --1.09%--0xffff8000800115a0
+                                     0xffff8000814c33d0
+
+    99.95%     0.00%  bench    libc.so.6              [.] 0x0000ffff98e884c4
+            |
+            ---0xffff98e884c4
+               main
+               |          
+               |--96.09%--void benchmark<ob::VectorBook>(ob::Workload const&, int, bool)
+               |          |          
+               |           --95.71%--Result replay<ob::VectorBook>(ob::Workload const&, bool)
+               |                     |          
+               |                     |--46.06%--ob::VectorBook::add_order(unsigned long, ob::Side, int, long)
+               |                     |          |          
+               |                     |          |--32.54%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}> >(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}>) [clone .isra.0]
+               |                     |          |          
+               |                     |          |--5.65%--operator new(unsigned long)
+               |                     |          |          |          
+               |                     |          |           --5.00%--malloc
+               |                     |          |                     |          
+               |                     |          |                      --1.25%--0xffff98ef5968
+               |                     |          |          
+               |                     |           --2.55%--0xffff98f01b08
+               |                     |          
+               |                     |--36.56%--ob::VectorBook::cancel_order(unsigned long)
+               |                     |          |          
+               |                     |          |--33.68%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}> >(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}>) [clone .isra.0]
+               |                     |          |          
+               |                     |           --1.25%--0xffff98f01a50
+               |                     |          
+               |                     |--5.11%--std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable()
+               |                     |          |          
+               |                     |           --4.13%--cfree
+               |                     |          
+               |                      --4.62%--cfree
+               |                                |          
+               |                                 --4.35%--0xffff98ef3d98
+               |                                           |          
+               |                                            --1.85%--0xffff98ef2ae4
+               |          
+                --3.53%--ob::make_workload(unsigned long, unsigned int)
+                          |          
+                           --1.09%--0xffff8000800115a0
+                                     0xffff8000814c33d0
+
+    99.95%     0.00%  bench    bench                  [.] main
+            |
+            ---main
+               |          
+               |--96.09%--void benchmark<ob::VectorBook>(ob::Workload const&, int, bool)
+               |          |          
+               |           --95.71%--Result replay<ob::VectorBook>(ob::Workload const&, bool)
+               |                     |          
+               |                     |--46.06%--ob::VectorBook::add_order(unsigned long, ob::Side, int, long)
+               |                     |          |          
+               |                     |          |--32.54%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}> >(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}>) [clone .isra.0]
+               |                     |          |          
+               |                     |          |--5.65%--operator new(unsigned long)
+               |                     |          |          |          
+               |                     |          |           --5.00%--malloc
+               |                     |          |                     |          
+               |                     |          |                      --1.25%--0xffff98ef5968
+               |                     |          |          
+               |                     |           --2.55%--0xffff98f01b08
+               |                     |          
+               |                     |--36.56%--ob::VectorBook::cancel_order(unsigned long)
+               |                     |          |          
+               |                     |          |--33.68%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}> >(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}>) [clone .isra.0]
+               |                     |          |          
+               |                     |           --1.25%--0xffff98f01a50
+               |                     |          
+               |                     |--5.11%--std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable()
+               |                     |          |          
+               |                     |           --4.13%--cfree
+               |                     |          
+               |                      --4.62%--cfree
+               |                                |          
+               |                                 --4.35%--0xffff98ef3d98
+               |                                           |          
+               |                                            --1.85%--0xffff98ef2ae4
+               |          
+                --3.53%--ob::make_workload(unsigned long, unsigned int)
+                          |          
+                           --1.09%--0xffff8000800115a0
+                                     0xffff8000814c33d0
+
+    96.09%     0.00%  bench    bench                  [.] void benchmark<ob::VectorBook>(ob::Workload const&, int, bool)
+            |
+            ---void benchmark<ob::VectorBook>(ob::Workload const&, int, bool)
+               |          
+                --95.71%--Result replay<ob::VectorBook>(ob::Workload const&, bool)
+                          |          
+                          |--46.06%--ob::VectorBook::add_order(unsigned long, ob::Side, int, long)
+                          |          |          
+                          |          |--32.54%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}> >(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}>) [clone .isra.0]
+                          |          |          
+                          |          |--5.65%--operator new(unsigned long)
+                          |          |          |          
+                          |          |           --5.00%--malloc
+                          |          |                     |          
+                          |          |                      --1.25%--0xffff98ef5968
+                          |          |          
+                          |           --2.55%--0xffff98f01b08
+                          |          
+                          |--36.56%--ob::VectorBook::cancel_order(unsigned long)
+                          |          |          
+                          |          |--33.68%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}> >(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}>) [clone .isra.0]
+                          |          |          
+                          |           --1.25%--0xffff98f01a50
+                          |          
+                          |--5.11%--std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable()
+                          |          |          
+                          |           --4.13%--cfree
+                          |          
+                           --4.62%--cfree
+                                     |          
+                                      --4.35%--0xffff98ef3d98
+                                                |          
+                                                 --1.85%--0xffff98ef2ae4
+
+    95.71%     2.55%  bench    bench                  [.] Result replay<ob::VectorBook>(ob::Workload const&, bool)
+            |          
+            |--93.16%--Result replay<ob::VectorBook>(ob::Workload const&, bool)
+            |          |          
+            |          |--46.06%--ob::VectorBook::add_order(unsigned long, ob::Side, int, long)
+            |          |          |          
+            |          |          |--32.54%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}> >(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}>) [clone .isra.0]
+            |          |          |          
+            |          |          |--5.65%--operator new(unsigned long)
+            |          |          |          |          
+            |          |          |           --5.00%--malloc
+            |          |          |                     |          
+            |          |          |                      --1.25%--0xffff98ef5968
+            |          |          |          
+            |          |           --2.55%--0xffff98f01b08
+            |          |          
+            |          |--36.56%--ob::VectorBook::cancel_order(unsigned long)
+            |          |          |          
+            |          |          |--33.68%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}> >(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}>) [clone .isra.0]
+            |          |          |          
+            |          |           --1.25%--0xffff98f01a50
+            |          |          
+            |          |--5.11%--std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable()
+            |          |          |          
+            |          |           --4.13%--cfree
+            |          |          
+            |           --4.62%--cfree
+            |                     |          
+            |                      --4.35%--0xffff98ef3d98
+            |                                |          
+            |                                 --1.85%--0xffff98ef2ae4
+            |          
+             --2.55%--_start
+                       __libc_start_main
+                       0xffff98e884c4
+                       main
+                       void benchmark<ob::VectorBook>(ob::Workload const&, int, bool)
+                       Result replay<ob::VectorBook>(ob::Workload const&, bool)
+
+    66.21%    66.16%  bench    bench                  [.] __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}> >(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}>) [clone .isra.0]
+            |          
+             --66.16%--_start
+                       __libc_start_main
+                       0xffff98e884c4
+                       main
+                       void benchmark<ob::VectorBook>(ob::Workload const&, int, bool)
+                       Result replay<ob::VectorBook>(ob::Workload const&, bool)
+                       |          
+                       |--33.68%--ob::VectorBook::cancel_order(unsigned long)
+                       |          __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}> >(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}>) [clone .isra.0]
+                       |          
+                        --32.48%--ob::VectorBook::add_order(unsigned long, ob::Side, int, long)
+                                  __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}> >(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}>) [clone .isra.0]
+
+    46.44%     4.35%  bench    bench                  [.] ob::VectorBook::add_order(unsigned long, ob::Side, int, long)
+            |          
+            |--42.10%--ob::VectorBook::add_order(unsigned long, ob::Side, int, long)
+            |          |          
+            |          |--32.54%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}> >(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}>) [clone .isra.0]
+            |          |          
+            |          |--5.65%--operator new(unsigned long)
+            |          |          |          
+            |          |           --5.00%--malloc
+            |          |                     |          
+            |          |                      --1.25%--0xffff98ef5968
+            |          |          
+            |           --2.55%--0xffff98f01b08
+            |          
+             --4.35%--_start
+                       __libc_start_main
+                       0xffff98e884c4
+                       main
+                       void benchmark<ob::VectorBook>(ob::Workload const&, int, bool)
+                       |          
+                        --3.97%--Result replay<ob::VectorBook>(ob::Workload const&, bool)
+                                  ob::VectorBook::add_order(unsigned long, ob::Side, int, long)
+
+    36.56%     0.54%  bench    bench                  [.] ob::VectorBook::cancel_order(unsigned long)
+            |          
+             --36.01%--ob::VectorBook::cancel_order(unsigned long)
+                       |          
+                       |--33.68%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}> >(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::locate(std::vector<ob::Level, std::allocator<ob::Level> >&, int, ob::Side)::{lambda(ob::Level const&, int)#1}>) [clone .isra.0]
+                       |          
+                        --1.25%--0xffff98f01a50
+
+     9.72%     2.72%  bench    libc.so.6              [.] cfree
+            |          
+            |--7.01%--cfree
+            |          |          
+            |           --4.35%--0xffff98ef3d98
+            |                     |          
+            |                      --1.85%--0xffff98ef2ae4
+            |          
+             --2.72%--_start
+                       __libc_start_main
+                       0xffff98e884c4
+                       main
+                       void benchmark<ob::VectorBook>(ob::Workload const&, int, bool)
+                       Result replay<ob::VectorBook>(ob::Workload const&, bool)
+                       |          
+                        --2.34%--std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable()
+                                  cfree
+
+     5.92%     0.60%  bench    libstdc++.so.6.0.33    [.] operator new(unsigned long)
+            |          
+             --5.32%--operator new(unsigned long)
+                       |          
+                        --5.00%--malloc
+                                  |          
+                                   --1.25%--0xffff98ef5968
+
+     5.11%     0.11%  bench    bench                  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable()
+            |          
+             --5.00%--std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable()
+                       |          
+                        --4.13%--cfree
+
+     5.00%     1.41%  bench    libc.so.6              [.] malloc
+            |          
+            |--3.59%--malloc
+            |          |          
+            |           --1.25%--0xffff98ef5968
+            |          
+             --1.41%--_start
+                       __libc_start_main
+                       0xffff98e884c4
+                       main
+                       void benchmark<ob::VectorBook>(ob::Workload const&, int, bool)
+                       Result replay<ob::VectorBook>(ob::Workload const&, bool)
+                       ob::VectorBook::add_order(unsigned long, ob::Side, int, long)
+                       operator new(unsigned long)
+                       malloc
+
+     4.35%     0.00%  bench    libc.so.6              [.] 0x0000ffff98ef3d98
+            |
+            ---0xffff98ef3d98
+               |          
+                --1.85%--0xffff98ef2ae4
+
+     3.53%     1.47%  bench    bench                  [.] ob::make_workload(unsigned long, unsigned int)
+            |          
+            |--2.06%--ob::make_workload(unsigned long, unsigned int)
+            |          |          
+            |           --1.09%--0xffff8000800115a0
+            |                     0xffff8000814c33d0
+            |          
+             --1.47%--_start
+                       __libc_start_main
+                       0xffff98e884c4
+                       main
+                       ob::make_workload(unsigned long, unsigned int)
+
+     3.20%     0.00%  bench    [unknown]              [.] 0xffff8000800115a0
+            |
+            ---0xffff8000800115a0
+               |          
+                --2.82%--0xffff8000814c33d0
+                          |          
+                           --2.39%--0xffff8000814c2ab4
+                                     0xffff800080046870
+                                     0xffff8000814d6678
+                                     0xffff8000814d6048
+                                     |          
+                                      --2.23%--0xffff800080325eb8
+
+     2.82%     0.00%  bench    [unknown]              [.] 0xffff8000814c33d0
+            |
+            ---0xffff8000814c33d0
+               |          
+                --2.39%--0xffff8000814c2ab4
+                          0xffff800080046870
+                          0xffff8000814d6678
+                          0xffff8000814d6048
+                          |          
+                           --2.23%--0xffff800080325eb8
+
+     2.55%     2.55%  bench    libc.so.6              [.] 0x00000000000a1b08
+            |
+            ---_start
+               __libc_start_main
+               0xffff98e884c4
+               main
+               void benchmark<ob::VectorBook>(ob::Workload const&, int, bool)
+               Result replay<ob::VectorBook>(ob::Workload const&, bool)
+               ob::VectorBook::add_order(unsigned long, ob::Side, int, long)
+               0xffff98f01b08
+
+     2.55%     0.00%  bench    libc.so.6              [.] 0x0000ffff98f01b08
+            |
+            ---0xffff98f01b08
+
+     2.39%     0.00%  bench    [unknown]              [.] 0xffff8000814c2ab4
+            |
+            ---0xffff8000814c2ab4
+               0xffff800080046870
+               0xffff8000814d6678
+               0xffff8000814d6048
+               |          
+                --2.23%--0xffff800080325eb8
+
+     2.39%     0.00%  bench    [unknown]              [.] 0xffff800080046870
+            |
+            ---0xffff800080046870
+               0xffff8000814d6678
+               0xffff8000814d6048
+               |          
+                --2.23%--0xffff800080325eb8
+
+     2.39%     0.00%  bench    [unknown]              [.] 0xffff8000814d6678
+            |
+            ---0xffff8000814d6678
+               0xffff8000814d6048
+               |          
+                --2.23%--0xffff800080325eb8
+
+     2.39%     0.00%  bench    [unknown]              [.] 0xffff8000814d6048
+            |
+            ---0xffff8000814d6048
+               |          
+                --2.23%--0xffff800080325eb8
+
+     2.23%     0.00%  bench    [unknown]              [.] 0xffff800080325eb8
+            |
+            ---0xffff800080325eb8
+
+     1.85%     1.85%  bench    libc.so.6              [.] 0x0000000000092ae4
+            |
+            ---_start
+               __libc_start_main
+               0xffff98e884c4
+               main
+               void benchmark<ob::VectorBook>(ob::Workload const&, int, bool)
+               Result replay<ob::VectorBook>(ob::Workload const&, bool)
+               cfree
+               0xffff98ef3d98
+               0xffff98ef2ae4
+
+     1.85%     0.00%  bench    libc.so.6              [.] 0x0000ffff98ef2ae4
+            |
+            ---0xffff98ef2ae4
+
+     1.25%     0.00%  bench    libc.so.6              [.] 0x0000ffff98ef5968
+            |
+            ---0xffff98ef5968
+
+     1.25%     1.25%  bench    libc.so.6              [.] 0x00000000000a1a50
+            |
+            ---_start
+               __libc_start_main
+               0xffff98e884c4
+               main
+               void benchmark<ob::VectorBook>(ob::Workload const&, int, bool)
+               Result replay<ob::VectorBook>(ob::Workload const&, bool)
+               ob::VectorBook::cancel_order(unsigned long)
+               0xffff98f01a50
+
+     1.25%     0.00%  bench    libc.so.6              [.] 0x0000ffff98f01a50
+            |
+            ---0xffff98f01a50
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
+
+
+Implementation C
+================================
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'task-clock:ppp'
+# Event count (approx.): 337250000
+#
+# Children      Self  Command  Shared Object          Symbol                                                                                                                                                                               
+# ........  ........  .......  .....................  .....................................................................................................................................................................................
+#
+    99.93%     0.00%  bench    bench                  [.] _start
+            |
+            ---_start
+               __libc_start_main
+               |          
+                --99.85%--0xffff8c0b84c4
+                          main
+                          |          
+                          |--94.59%--void benchmark<ob::ArrayBook>(ob::Workload const&, int, bool)
+                          |          |          
+                          |           --93.85%--Result replay<ob::ArrayBook>(ob::Workload const&, bool)
+                          |                     |          
+                          |                     |--9.12%--std::vector<ob::OrderTable::Slot, std::allocator<ob::OrderTable::Slot> >::_M_default_append(unsigned long)
+                          |                     |          |          
+                          |                     |           --8.90%--0xffff8c132e80
+                          |                     |                     |          
+                          |                     |                      --7.19%--0xffff8000800115a0
+                          |                     |                                0xffff8000814c33d0
+                          |                     |                                |          
+                          |                     |                                |--5.49%--0xffff8000814c2ab4
+                          |                     |                                |          |          
+                          |                     |                                |           --5.41%--0xffff800080046870
+                          |                     |                                |                     0xffff8000814d6678
+                          |                     |                                |                     |          
+                          |                     |                                |                      --5.19%--0xffff8000814d6048
+                          |                     |                                |                                |          
+                          |                     |                                |                                 --4.82%--0xffff800080325eb8
+                          |                     |                                |                                           |          
+                          |                     |                                |                                           |--2.08%--0xffff800080325724
+                          |                     |                                |                                           |          |          
+                          |                     |                                |                                           |           --1.56%--0xffff8000803b4b04
+                          |                     |                                |                                           |                     0xffff8000803b3538
+                          |                     |                                |                                           |                     |          
+                          |                     |                                |                                           |                      --1.48%--0xffff8000803a9fc0
+                          |                     |                                |                                           |          
+                          |                     |                                |                                            --1.19%--0xffff8000803258e0
+                          |                     |                                |                                                      0xffff8000802d0a60
+                          |                     |                                |                                                      |          
+                          |                     |                                |                                                       --1.11%--0xffff8000802cec84
+                          |                     |                                |                                                                 0xffff8000802ceb84
+                          |                     |                                |                                                                 |          
+                          |                     |                                |                                                                  --1.04%--0xffff8000802ce460
+                          |                     |                                |          
+                          |                     |                                 --1.63%--0xffff8000814c2aac
+                          |                     |          
+                          |                     |--8.15%--ob::ArrayBook::cancel_order(unsigned long)
+                          |                     |          
+                          |                     |--2.52%--cfree
+                          |                     |          |          
+                          |                     |           --2.22%--__munmap
+                          |                     |                     0xffff8000800115a0
+                          |                     |                     0xffff8000814c33a0
+                          |                     |                     0xffff8000814c23c0
+                          |                     |                     0xffff80008003ed74
+                          |                     |                     0xffff80008003ecb8
+                          |                     |                     0xffff80008032a040
+                          |                     |                     0xffff80008034b684
+                          |                     |                     0xffff800080349978
+                          |                     |                     0xffff8000803498ac
+                          |                     |                     0xffff80008034851c
+                          |                     |                     |          
+                          |                     |                     |--1.19%--0xffff8000803483bc
+                          |                     |                     |          0xffff80008031d6e4
+                          |                     |                     |          0xffff80008031d638
+                          |                     |                     |          
+                          |                     |                      --1.04%--0xffff8000803483e8
+                          |                     |                                0xffff80008032e728
+                          |                     |                                0xffff80008032daf4
+                          |                     |                                0xffff800080371c28
+                          |                     |          
+                          |                      --2.22%--ob::OrderTable::insert(unsigned long, ob::Order)
+                          |          
+                           --4.82%--ob::make_workload(unsigned long, unsigned int)
+                                     |          
+                                     |--1.70%--std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+                                     |          
+                                      --1.56%--0xffff8000800115a0
+                                                0xffff8000814c33d0
+                                                |          
+                                                 --1.33%--0xffff8000814c2ab4
+                                                           0xffff800080046870
+                                                           0xffff8000814d6678
+                                                           0xffff8000814d6048
+                                                           |          
+                                                            --1.26%--0xffff800080325eb8
+
+    99.93%     0.00%  bench    libc.so.6              [.] __libc_start_main
+            |
+            ---__libc_start_main
+               |          
+                --99.85%--0xffff8c0b84c4
+                          main
+                          |          
+                          |--94.59%--void benchmark<ob::ArrayBook>(ob::Workload const&, int, bool)
+                          |          |          
+                          |           --93.85%--Result replay<ob::ArrayBook>(ob::Workload const&, bool)
+                          |                     |          
+                          |                     |--9.12%--std::vector<ob::OrderTable::Slot, std::allocator<ob::OrderTable::Slot> >::_M_default_append(unsigned long)
+                          |                     |          |          
+                          |                     |           --8.90%--0xffff8c132e80
+                          |                     |                     |          
+                          |                     |                      --7.19%--0xffff8000800115a0
+                          |                     |                                0xffff8000814c33d0
+                          |                     |                                |          
+                          |                     |                                |--5.49%--0xffff8000814c2ab4
+                          |                     |                                |          |          
+                          |                     |                                |           --5.41%--0xffff800080046870
+                          |                     |                                |                     0xffff8000814d6678
+                          |                     |                                |                     |          
+                          |                     |                                |                      --5.19%--0xffff8000814d6048
+                          |                     |                                |                                |          
+                          |                     |                                |                                 --4.82%--0xffff800080325eb8
+                          |                     |                                |                                           |          
+                          |                     |                                |                                           |--2.08%--0xffff800080325724
+                          |                     |                                |                                           |          |          
+                          |                     |                                |                                           |           --1.56%--0xffff8000803b4b04
+                          |                     |                                |                                           |                     0xffff8000803b3538
+                          |                     |                                |                                           |                     |          
+                          |                     |                                |                                           |                      --1.48%--0xffff8000803a9fc0
+                          |                     |                                |                                           |          
+                          |                     |                                |                                            --1.19%--0xffff8000803258e0
+                          |                     |                                |                                                      0xffff8000802d0a60
+                          |                     |                                |                                                      |          
+                          |                     |                                |                                                       --1.11%--0xffff8000802cec84
+                          |                     |                                |                                                                 0xffff8000802ceb84
+                          |                     |                                |                                                                 |          
+                          |                     |                                |                                                                  --1.04%--0xffff8000802ce460
+                          |                     |                                |          
+                          |                     |                                 --1.63%--0xffff8000814c2aac
+                          |                     |          
+                          |                     |--8.15%--ob::ArrayBook::cancel_order(unsigned long)
+                          |                     |          
+                          |                     |--2.52%--cfree
+                          |                     |          |          
+                          |                     |           --2.22%--__munmap
+                          |                     |                     0xffff8000800115a0
+                          |                     |                     0xffff8000814c33a0
+                          |                     |                     0xffff8000814c23c0
+                          |                     |                     0xffff80008003ed74
+                          |                     |                     0xffff80008003ecb8
+                          |                     |                     0xffff80008032a040
+                          |                     |                     0xffff80008034b684
+                          |                     |                     0xffff800080349978
+                          |                     |                     0xffff8000803498ac
+                          |                     |                     0xffff80008034851c
+                          |                     |                     |          
+                          |                     |                     |--1.19%--0xffff8000803483bc
+                          |                     |                     |          0xffff80008031d6e4
+                          |                     |                     |          0xffff80008031d638
+                          |                     |                     |          
+                          |                     |                      --1.04%--0xffff8000803483e8
+                          |                     |                                0xffff80008032e728
+                          |                     |                                0xffff80008032daf4
+                          |                     |                                0xffff800080371c28
+                          |                     |          
+                          |                      --2.22%--ob::OrderTable::insert(unsigned long, ob::Order)
+                          |          
+                           --4.82%--ob::make_workload(unsigned long, unsigned int)
+                                     |          
+                                     |--1.70%--std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+                                     |          
+                                      --1.56%--0xffff8000800115a0
+                                                0xffff8000814c33d0
+                                                |          
+                                                 --1.33%--0xffff8000814c2ab4
+                                                           0xffff800080046870
+                                                           0xffff8000814d6678
+                                                           0xffff8000814d6048
+                                                           |          
+                                                            --1.26%--0xffff800080325eb8
+
+    99.85%     0.00%  bench    libc.so.6              [.] 0x0000ffff8c0b84c4
+            |
+            ---0xffff8c0b84c4
+               main
+               |          
+               |--94.59%--void benchmark<ob::ArrayBook>(ob::Workload const&, int, bool)
+               |          |          
+               |           --93.85%--Result replay<ob::ArrayBook>(ob::Workload const&, bool)
+               |                     |          
+               |                     |--9.12%--std::vector<ob::OrderTable::Slot, std::allocator<ob::OrderTable::Slot> >::_M_default_append(unsigned long)
+               |                     |          |          
+               |                     |           --8.90%--0xffff8c132e80
+               |                     |                     |          
+               |                     |                      --7.19%--0xffff8000800115a0
+               |                     |                                0xffff8000814c33d0
+               |                     |                                |          
+               |                     |                                |--5.49%--0xffff8000814c2ab4
+               |                     |                                |          |          
+               |                     |                                |           --5.41%--0xffff800080046870
+               |                     |                                |                     0xffff8000814d6678
+               |                     |                                |                     |          
+               |                     |                                |                      --5.19%--0xffff8000814d6048
+               |                     |                                |                                |          
+               |                     |                                |                                 --4.82%--0xffff800080325eb8
+               |                     |                                |                                           |          
+               |                     |                                |                                           |--2.08%--0xffff800080325724
+               |                     |                                |                                           |          |          
+               |                     |                                |                                           |           --1.56%--0xffff8000803b4b04
+               |                     |                                |                                           |                     0xffff8000803b3538
+               |                     |                                |                                           |                     |          
+               |                     |                                |                                           |                      --1.48%--0xffff8000803a9fc0
+               |                     |                                |                                           |          
+               |                     |                                |                                            --1.19%--0xffff8000803258e0
+               |                     |                                |                                                      0xffff8000802d0a60
+               |                     |                                |                                                      |          
+               |                     |                                |                                                       --1.11%--0xffff8000802cec84
+               |                     |                                |                                                                 0xffff8000802ceb84
+               |                     |                                |                                                                 |          
+               |                     |                                |                                                                  --1.04%--0xffff8000802ce460
+               |                     |                                |          
+               |                     |                                 --1.63%--0xffff8000814c2aac
+               |                     |          
+               |                     |--8.15%--ob::ArrayBook::cancel_order(unsigned long)
+               |                     |          
+               |                     |--2.52%--cfree
+               |                     |          |          
+               |                     |           --2.22%--__munmap
+               |                     |                     0xffff8000800115a0
+               |                     |                     0xffff8000814c33a0
+               |                     |                     0xffff8000814c23c0
+               |                     |                     0xffff80008003ed74
+               |                     |                     0xffff80008003ecb8
+               |                     |                     0xffff80008032a040
+               |                     |                     0xffff80008034b684
+               |                     |                     0xffff800080349978
+               |                     |                     0xffff8000803498ac
+               |                     |                     0xffff80008034851c
+               |                     |                     |          
+               |                     |                     |--1.19%--0xffff8000803483bc
+               |                     |                     |          0xffff80008031d6e4
+               |                     |                     |          0xffff80008031d638
+               |                     |                     |          
+               |                     |                      --1.04%--0xffff8000803483e8
+               |                     |                                0xffff80008032e728
+               |                     |                                0xffff80008032daf4
+               |                     |                                0xffff800080371c28
+               |                     |          
+               |                      --2.22%--ob::OrderTable::insert(unsigned long, ob::Order)
+               |          
+                --4.82%--ob::make_workload(unsigned long, unsigned int)
+                          |          
+                          |--1.70%--std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+                          |          
+                           --1.56%--0xffff8000800115a0
+                                     0xffff8000814c33d0
+                                     |          
+                                      --1.33%--0xffff8000814c2ab4
+                                                0xffff800080046870
+                                                0xffff8000814d6678
+                                                0xffff8000814d6048
+                                                |          
+                                                 --1.26%--0xffff800080325eb8
+
+    99.85%     0.00%  bench    bench                  [.] main
+            |
+            ---main
+               |          
+               |--94.59%--void benchmark<ob::ArrayBook>(ob::Workload const&, int, bool)
+               |          |          
+               |           --93.85%--Result replay<ob::ArrayBook>(ob::Workload const&, bool)
+               |                     |          
+               |                     |--9.12%--std::vector<ob::OrderTable::Slot, std::allocator<ob::OrderTable::Slot> >::_M_default_append(unsigned long)
+               |                     |          |          
+               |                     |           --8.90%--0xffff8c132e80
+               |                     |                     |          
+               |                     |                      --7.19%--0xffff8000800115a0
+               |                     |                                0xffff8000814c33d0
+               |                     |                                |          
+               |                     |                                |--5.49%--0xffff8000814c2ab4
+               |                     |                                |          |          
+               |                     |                                |           --5.41%--0xffff800080046870
+               |                     |                                |                     0xffff8000814d6678
+               |                     |                                |                     |          
+               |                     |                                |                      --5.19%--0xffff8000814d6048
+               |                     |                                |                                |          
+               |                     |                                |                                 --4.82%--0xffff800080325eb8
+               |                     |                                |                                           |          
+               |                     |                                |                                           |--2.08%--0xffff800080325724
+               |                     |                                |                                           |          |          
+               |                     |                                |                                           |           --1.56%--0xffff8000803b4b04
+               |                     |                                |                                           |                     0xffff8000803b3538
+               |                     |                                |                                           |                     |          
+               |                     |                                |                                           |                      --1.48%--0xffff8000803a9fc0
+               |                     |                                |                                           |          
+               |                     |                                |                                            --1.19%--0xffff8000803258e0
+               |                     |                                |                                                      0xffff8000802d0a60
+               |                     |                                |                                                      |          
+               |                     |                                |                                                       --1.11%--0xffff8000802cec84
+               |                     |                                |                                                                 0xffff8000802ceb84
+               |                     |                                |                                                                 |          
+               |                     |                                |                                                                  --1.04%--0xffff8000802ce460
+               |                     |                                |          
+               |                     |                                 --1.63%--0xffff8000814c2aac
+               |                     |          
+               |                     |--8.15%--ob::ArrayBook::cancel_order(unsigned long)
+               |                     |          
+               |                     |--2.52%--cfree
+               |                     |          |          
+               |                     |           --2.22%--__munmap
+               |                     |                     0xffff8000800115a0
+               |                     |                     0xffff8000814c33a0
+               |                     |                     0xffff8000814c23c0
+               |                     |                     0xffff80008003ed74
+               |                     |                     0xffff80008003ecb8
+               |                     |                     0xffff80008032a040
+               |                     |                     0xffff80008034b684
+               |                     |                     0xffff800080349978
+               |                     |                     0xffff8000803498ac
+               |                     |                     0xffff80008034851c
+               |                     |                     |          
+               |                     |                     |--1.19%--0xffff8000803483bc
+               |                     |                     |          0xffff80008031d6e4
+               |                     |                     |          0xffff80008031d638
+               |                     |                     |          
+               |                     |                      --1.04%--0xffff8000803483e8
+               |                     |                                0xffff80008032e728
+               |                     |                                0xffff80008032daf4
+               |                     |                                0xffff800080371c28
+               |                     |          
+               |                      --2.22%--ob::OrderTable::insert(unsigned long, ob::Order)
+               |          
+                --4.82%--ob::make_workload(unsigned long, unsigned int)
+                          |          
+                          |--1.70%--std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+                          |          
+                           --1.56%--0xffff8000800115a0
+                                     0xffff8000814c33d0
+                                     |          
+                                      --1.33%--0xffff8000814c2ab4
+                                                0xffff800080046870
+                                                0xffff8000814d6678
+                                                0xffff8000814d6048
+                                                |          
+                                                 --1.26%--0xffff800080325eb8
+
+    94.59%     0.00%  bench    bench                  [.] void benchmark<ob::ArrayBook>(ob::Workload const&, int, bool)
+            |
+            ---void benchmark<ob::ArrayBook>(ob::Workload const&, int, bool)
+               |          
+                --93.85%--Result replay<ob::ArrayBook>(ob::Workload const&, bool)
+                          |          
+                          |--9.12%--std::vector<ob::OrderTable::Slot, std::allocator<ob::OrderTable::Slot> >::_M_default_append(unsigned long)
+                          |          |          
+                          |           --8.90%--0xffff8c132e80
+                          |                     |          
+                          |                      --7.19%--0xffff8000800115a0
+                          |                                0xffff8000814c33d0
+                          |                                |          
+                          |                                |--5.49%--0xffff8000814c2ab4
+                          |                                |          |          
+                          |                                |           --5.41%--0xffff800080046870
+                          |                                |                     0xffff8000814d6678
+                          |                                |                     |          
+                          |                                |                      --5.19%--0xffff8000814d6048
+                          |                                |                                |          
+                          |                                |                                 --4.82%--0xffff800080325eb8
+                          |                                |                                           |          
+                          |                                |                                           |--2.08%--0xffff800080325724
+                          |                                |                                           |          |          
+                          |                                |                                           |           --1.56%--0xffff8000803b4b04
+                          |                                |                                           |                     0xffff8000803b3538
+                          |                                |                                           |                     |          
+                          |                                |                                           |                      --1.48%--0xffff8000803a9fc0
+                          |                                |                                           |          
+                          |                                |                                            --1.19%--0xffff8000803258e0
+                          |                                |                                                      0xffff8000802d0a60
+                          |                                |                                                      |          
+                          |                                |                                                       --1.11%--0xffff8000802cec84
+                          |                                |                                                                 0xffff8000802ceb84
+                          |                                |                                                                 |          
+                          |                                |                                                                  --1.04%--0xffff8000802ce460
+                          |                                |          
+                          |                                 --1.63%--0xffff8000814c2aac
+                          |          
+                          |--8.15%--ob::ArrayBook::cancel_order(unsigned long)
+                          |          
+                          |--2.52%--cfree
+                          |          |          
+                          |           --2.22%--__munmap
+                          |                     0xffff8000800115a0
+                          |                     0xffff8000814c33a0
+                          |                     0xffff8000814c23c0
+                          |                     0xffff80008003ed74
+                          |                     0xffff80008003ecb8
+                          |                     0xffff80008032a040
+                          |                     0xffff80008034b684
+                          |                     0xffff800080349978
+                          |                     0xffff8000803498ac
+                          |                     0xffff80008034851c
+                          |                     |          
+                          |                     |--1.19%--0xffff8000803483bc
+                          |                     |          0xffff80008031d6e4
+                          |                     |          0xffff80008031d638
+                          |                     |          
+                          |                      --1.04%--0xffff8000803483e8
+                          |                                0xffff80008032e728
+                          |                                0xffff80008032daf4
+                          |                                0xffff800080371c28
+                          |          
+                           --2.22%--ob::OrderTable::insert(unsigned long, ob::Order)
+
+    93.85%    71.09%  bench    bench                  [.] Result replay<ob::ArrayBook>(ob::Workload const&, bool)
+            |          
+            |--71.09%--_start
+            |          __libc_start_main
+            |          0xffff8c0b84c4
+            |          main
+            |          void benchmark<ob::ArrayBook>(ob::Workload const&, int, bool)
+            |          Result replay<ob::ArrayBook>(ob::Workload const&, bool)
+            |          
+             --22.76%--Result replay<ob::ArrayBook>(ob::Workload const&, bool)
+                       |          
+                       |--9.12%--std::vector<ob::OrderTable::Slot, std::allocator<ob::OrderTable::Slot> >::_M_default_append(unsigned long)
+                       |          |          
+                       |           --8.90%--0xffff8c132e80
+                       |                     |          
+                       |                      --7.19%--0xffff8000800115a0
+                       |                                0xffff8000814c33d0
+                       |                                |          
+                       |                                |--5.49%--0xffff8000814c2ab4
+                       |                                |          |          
+                       |                                |           --5.41%--0xffff800080046870
+                       |                                |                     0xffff8000814d6678
+                       |                                |                     |          
+                       |                                |                      --5.19%--0xffff8000814d6048
+                       |                                |                                |          
+                       |                                |                                 --4.82%--0xffff800080325eb8
+                       |                                |                                           |          
+                       |                                |                                           |--2.08%--0xffff800080325724
+                       |                                |                                           |          |          
+                       |                                |                                           |           --1.56%--0xffff8000803b4b04
+                       |                                |                                           |                     0xffff8000803b3538
+                       |                                |                                           |                     |          
+                       |                                |                                           |                      --1.48%--0xffff8000803a9fc0
+                       |                                |                                           |          
+                       |                                |                                            --1.19%--0xffff8000803258e0
+                       |                                |                                                      0xffff8000802d0a60
+                       |                                |                                                      |          
+                       |                                |                                                       --1.11%--0xffff8000802cec84
+                       |                                |                                                                 0xffff8000802ceb84
+                       |                                |                                                                 |          
+                       |                                |                                                                  --1.04%--0xffff8000802ce460
+                       |                                |          
+                       |                                 --1.63%--0xffff8000814c2aac
+                       |          
+                       |--8.15%--ob::ArrayBook::cancel_order(unsigned long)
+                       |          
+                       |--2.52%--cfree
+                       |          |          
+                       |           --2.22%--__munmap
+                       |                     0xffff8000800115a0
+                       |                     0xffff8000814c33a0
+                       |                     0xffff8000814c23c0
+                       |                     0xffff80008003ed74
+                       |                     0xffff80008003ecb8
+                       |                     0xffff80008032a040
+                       |                     0xffff80008034b684
+                       |                     0xffff800080349978
+                       |                     0xffff8000803498ac
+                       |                     0xffff80008034851c
+                       |                     |          
+                       |                     |--1.19%--0xffff8000803483bc
+                       |                     |          0xffff80008031d6e4
+                       |                     |          0xffff80008031d638
+                       |                     |          
+                       |                      --1.04%--0xffff8000803483e8
+                       |                                0xffff80008032e728
+                       |                                0xffff80008032daf4
+                       |                                0xffff800080371c28
+                       |          
+                        --2.22%--ob::OrderTable::insert(unsigned long, ob::Order)
+
+    11.42%     0.00%  bench    [unknown]              [.] 0xffff8000800115a0
+            |
+            ---0xffff8000800115a0
+               |          
+               |--8.75%--0xffff8000814c33d0
+               |          |          
+               |          |--6.82%--0xffff8000814c2ab4
+               |          |          |          
+               |          |           --6.75%--0xffff800080046870
+               |          |                     0xffff8000814d6678
+               |          |                     |          
+               |          |                      --6.52%--0xffff8000814d6048
+               |          |                                |          
+               |          |                                 --6.08%--0xffff800080325eb8
+               |          |                                           |          
+               |          |                                           |--2.82%--0xffff800080325724
+               |          |                                           |          |          
+               |          |                                           |           --2.30%--0xffff8000803b4b04
+               |          |                                           |                     0xffff8000803b3538
+               |          |                                           |                     |          
+               |          |                                           |                      --2.15%--0xffff8000803a9fc0
+               |          |                                           |          
+               |          |                                            --1.41%--0xffff8000803258e0
+               |          |                                                      0xffff8000802d0a60
+               |          |                                                      |          
+               |          |                                                       --1.26%--0xffff8000802cec84
+               |          |                                                                 0xffff8000802ceb84
+               |          |                                                                 |          
+               |          |                                                                  --1.19%--0xffff8000802ce460
+               |          |          
+               |           --1.85%--0xffff8000814c2aac
+               |          
+                --2.67%--0xffff8000814c33a0
+                          0xffff8000814c23c0
+                          0xffff80008003ed74
+                          0xffff80008003ecb8
+                          0xffff80008032a040
+                          0xffff80008034b684
+                          0xffff800080349978
+                          0xffff8000803498ac
+                          0xffff80008034851c
+                          |          
+                          |--1.41%--0xffff8000803483bc
+                          |          0xffff80008031d6e4
+                          |          0xffff80008031d638
+                          |          
+                           --1.26%--0xffff8000803483e8
+                                     0xffff80008032e728
+                                     0xffff80008032daf4
+                                     0xffff800080371c28
+
+     9.12%     0.00%  bench    bench                  [.] std::vector<ob::OrderTable::Slot, std::allocator<ob::OrderTable::Slot> >::_M_default_append(unsigned long)
+            |
+            ---std::vector<ob::OrderTable::Slot, std::allocator<ob::OrderTable::Slot> >::_M_default_append(unsigned long)
+               |          
+                --8.90%--0xffff8c132e80
+                          |          
+                           --7.19%--0xffff8000800115a0
+                                     0xffff8000814c33d0
+                                     |          
+                                     |--5.49%--0xffff8000814c2ab4
+                                     |          |          
+                                     |           --5.41%--0xffff800080046870
+                                     |                     0xffff8000814d6678
+                                     |                     |          
+                                     |                      --5.19%--0xffff8000814d6048
+                                     |                                |          
+                                     |                                 --4.82%--0xffff800080325eb8
+                                     |                                           |          
+                                     |                                           |--2.08%--0xffff800080325724
+                                     |                                           |          |          
+                                     |                                           |           --1.56%--0xffff8000803b4b04
+                                     |                                           |                     0xffff8000803b3538
+                                     |                                           |                     |          
+                                     |                                           |                      --1.48%--0xffff8000803a9fc0
+                                     |                                           |          
+                                     |                                            --1.19%--0xffff8000803258e0
+                                     |                                                      0xffff8000802d0a60
+                                     |                                                      |          
+                                     |                                                       --1.11%--0xffff8000802cec84
+                                     |                                                                 0xffff8000802ceb84
+                                     |                                                                 |          
+                                     |                                                                  --1.04%--0xffff8000802ce460
+                                     |          
+                                      --1.63%--0xffff8000814c2aac
+
+     8.90%     0.00%  bench    libc.so.6              [.] 0x0000ffff8c132e80
+            |
+            ---0xffff8c132e80
+               |          
+                --7.19%--0xffff8000800115a0
+                          0xffff8000814c33d0
+                          |          
+                          |--5.49%--0xffff8000814c2ab4
+                          |          |          
+                          |           --5.41%--0xffff800080046870
+                          |                     0xffff8000814d6678
+                          |                     |          
+                          |                      --5.19%--0xffff8000814d6048
+                          |                                |          
+                          |                                 --4.82%--0xffff800080325eb8
+                          |                                           |          
+                          |                                           |--2.08%--0xffff800080325724
+                          |                                           |          |          
+                          |                                           |           --1.56%--0xffff8000803b4b04
+                          |                                           |                     0xffff8000803b3538
+                          |                                           |                     |          
+                          |                                           |                      --1.48%--0xffff8000803a9fc0
+                          |                                           |          
+                          |                                            --1.19%--0xffff8000803258e0
+                          |                                                      0xffff8000802d0a60
+                          |                                                      |          
+                          |                                                       --1.11%--0xffff8000802cec84
+                          |                                                                 0xffff8000802ceb84
+                          |                                                                 |          
+                          |                                                                  --1.04%--0xffff8000802ce460
+                          |          
+                           --1.63%--0xffff8000814c2aac
+
+     8.75%     0.00%  bench    [unknown]              [.] 0xffff8000814c33d0
+            |
+            ---0xffff8000814c33d0
+               |          
+               |--6.82%--0xffff8000814c2ab4
+               |          |          
+               |           --6.75%--0xffff800080046870
+               |                     0xffff8000814d6678
+               |                     |          
+               |                      --6.52%--0xffff8000814d6048
+               |                                |          
+               |                                 --6.08%--0xffff800080325eb8
+               |                                           |          
+               |                                           |--2.82%--0xffff800080325724
+               |                                           |          |          
+               |                                           |           --2.30%--0xffff8000803b4b04
+               |                                           |                     0xffff8000803b3538
+               |                                           |                     |          
+               |                                           |                      --2.15%--0xffff8000803a9fc0
+               |                                           |          
+               |                                            --1.41%--0xffff8000803258e0
+               |                                                      0xffff8000802d0a60
+               |                                                      |          
+               |                                                       --1.26%--0xffff8000802cec84
+               |                                                                 0xffff8000802ceb84
+               |                                                                 |          
+               |                                                                  --1.19%--0xffff8000802ce460
+               |          
+                --1.85%--0xffff8000814c2aac
+
+     8.15%     8.08%  bench    bench                  [.] ob::ArrayBook::cancel_order(unsigned long)
+            |          
+             --8.08%--_start
+                       __libc_start_main
+                       0xffff8c0b84c4
+                       main
+                       void benchmark<ob::ArrayBook>(ob::Workload const&, int, bool)
+                       Result replay<ob::ArrayBook>(ob::Workload const&, bool)
+                       ob::ArrayBook::cancel_order(unsigned long)
+
+     6.82%     0.00%  bench    [unknown]              [.] 0xffff8000814c2ab4
+            |
+            ---0xffff8000814c2ab4
+               |          
+                --6.75%--0xffff800080046870
+                          0xffff8000814d6678
+                          |          
+                           --6.52%--0xffff8000814d6048
+                                     |          
+                                      --6.08%--0xffff800080325eb8
+                                                |          
+                                                |--2.82%--0xffff800080325724
+                                                |          |          
+                                                |           --2.30%--0xffff8000803b4b04
+                                                |                     0xffff8000803b3538
+                                                |                     |          
+                                                |                      --2.15%--0xffff8000803a9fc0
+                                                |          
+                                                 --1.41%--0xffff8000803258e0
+                                                           0xffff8000802d0a60
+                                                           |          
+                                                            --1.26%--0xffff8000802cec84
+                                                                      0xffff8000802ceb84
+                                                                      |          
+                                                                       --1.19%--0xffff8000802ce460
+
+     6.75%     0.00%  bench    [unknown]              [.] 0xffff800080046870
+            |
+            ---0xffff800080046870
+               0xffff8000814d6678
+               |          
+                --6.52%--0xffff8000814d6048
+                          |          
+                           --6.08%--0xffff800080325eb8
+                                     |          
+                                     |--2.82%--0xffff800080325724
+                                     |          |          
+                                     |           --2.30%--0xffff8000803b4b04
+                                     |                     0xffff8000803b3538
+                                     |                     |          
+                                     |                      --2.15%--0xffff8000803a9fc0
+                                     |          
+                                      --1.41%--0xffff8000803258e0
+                                                0xffff8000802d0a60
+                                                |          
+                                                 --1.26%--0xffff8000802cec84
+                                                           0xffff8000802ceb84
+                                                           |          
+                                                            --1.19%--0xffff8000802ce460
+
+     6.75%     0.00%  bench    [unknown]              [.] 0xffff8000814d6678
+            |
+            ---0xffff8000814d6678
+               |          
+                --6.52%--0xffff8000814d6048
+                          |          
+                           --6.08%--0xffff800080325eb8
+                                     |          
+                                     |--2.82%--0xffff800080325724
+                                     |          |          
+                                     |           --2.30%--0xffff8000803b4b04
+                                     |                     0xffff8000803b3538
+                                     |                     |          
+                                     |                      --2.15%--0xffff8000803a9fc0
+                                     |          
+                                      --1.41%--0xffff8000803258e0
+                                                0xffff8000802d0a60
+                                                |          
+                                                 --1.26%--0xffff8000802cec84
+                                                           0xffff8000802ceb84
+                                                           |          
+                                                            --1.19%--0xffff8000802ce460
+
+     6.52%     0.00%  bench    [unknown]              [.] 0xffff8000814d6048
+            |
+            ---0xffff8000814d6048
+               |          
+                --6.08%--0xffff800080325eb8
+                          |          
+                          |--2.82%--0xffff800080325724
+                          |          |          
+                          |           --2.30%--0xffff8000803b4b04
+                          |                     0xffff8000803b3538
+                          |                     |          
+                          |                      --2.15%--0xffff8000803a9fc0
+                          |          
+                           --1.41%--0xffff8000803258e0
+                                     0xffff8000802d0a60
+                                     |          
+                                      --1.26%--0xffff8000802cec84
+                                                0xffff8000802ceb84
+                                                |          
+                                                 --1.19%--0xffff8000802ce460
+
+     6.08%     0.00%  bench    [unknown]              [.] 0xffff800080325eb8
+            |
+            ---0xffff800080325eb8
+               |          
+               |--2.82%--0xffff800080325724
+               |          |          
+               |           --2.30%--0xffff8000803b4b04
+               |                     0xffff8000803b3538
+               |                     |          
+               |                      --2.15%--0xffff8000803a9fc0
+               |          
+                --1.41%--0xffff8000803258e0
+                          0xffff8000802d0a60
+                          |          
+                           --1.26%--0xffff8000802cec84
+                                     0xffff8000802ceb84
+                                     |          
+                                      --1.19%--0xffff8000802ce460
+
+     4.82%     1.56%  bench    bench                  [.] ob::make_workload(unsigned long, unsigned int)
+            |          
+            |--3.26%--ob::make_workload(unsigned long, unsigned int)
+            |          |          
+            |          |--1.70%--std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+            |          |          
+            |           --1.56%--0xffff8000800115a0
+            |                     0xffff8000814c33d0
+            |                     |          
+            |                      --1.33%--0xffff8000814c2ab4
+            |                                0xffff800080046870
+            |                                0xffff8000814d6678
+            |                                0xffff8000814d6048
+            |                                |          
+            |                                 --1.26%--0xffff800080325eb8
+            |          
+             --1.56%--_start
+                       __libc_start_main
+                       0xffff8c0b84c4
+                       main
+                       ob::make_workload(unsigned long, unsigned int)
+
+     2.97%     0.07%  bench    libc.so.6              [.] cfree
+            |          
+             --2.89%--cfree
+                       |          
+                        --2.67%--__munmap
+                                  0xffff8000800115a0
+                                  0xffff8000814c33a0
+                                  0xffff8000814c23c0
+                                  0xffff80008003ed74
+                                  0xffff80008003ecb8
+                                  0xffff80008032a040
+                                  0xffff80008034b684
+                                  0xffff800080349978
+                                  0xffff8000803498ac
+                                  0xffff80008034851c
+                                  |          
+                                  |--1.41%--0xffff8000803483bc
+                                  |          0xffff80008031d6e4
+                                  |          0xffff80008031d638
+                                  |          
+                                   --1.26%--0xffff8000803483e8
+                                             0xffff80008032e728
+                                             0xffff80008032daf4
+                                             0xffff800080371c28
+
+     2.97%     2.97%  bench    bench                  [.] ob::OrderTable::insert(unsigned long, ob::Order)
+            |
+            ---_start
+               __libc_start_main
+               0xffff8c0b84c4
+               main
+               void benchmark<ob::ArrayBook>(ob::Workload const&, int, bool)
+               |          
+                --2.22%--Result replay<ob::ArrayBook>(ob::Workload const&, bool)
+                          ob::OrderTable::insert(unsigned long, ob::Order)
+
+     2.82%     0.00%  bench    [unknown]              [.] 0xffff800080325724
+            |
+            ---0xffff800080325724
+               |          
+                --2.30%--0xffff8000803b4b04
+                          0xffff8000803b3538
+                          |          
+                           --2.15%--0xffff8000803a9fc0
+
+     2.67%     0.00%  bench    libc.so.6              [.] __munmap
+            |
+            ---__munmap
+               0xffff8000800115a0
+               0xffff8000814c33a0
+               0xffff8000814c23c0
+               0xffff80008003ed74
+               0xffff80008003ecb8
+               0xffff80008032a040
+               0xffff80008034b684
+               0xffff800080349978
+               0xffff8000803498ac
+               0xffff80008034851c
+               |          
+               |--1.41%--0xffff8000803483bc
+               |          0xffff80008031d6e4
+               |          0xffff80008031d638
+               |          
+                --1.26%--0xffff8000803483e8
+                          0xffff80008032e728
+                          0xffff80008032daf4
+                          0xffff800080371c28
+
+     2.67%     0.00%  bench    [unknown]              [.] 0xffff8000814c33a0
+            |
+            ---0xffff8000814c33a0
+               0xffff8000814c23c0
+               0xffff80008003ed74
+               0xffff80008003ecb8
+               0xffff80008032a040
+               0xffff80008034b684
+               0xffff800080349978
+               0xffff8000803498ac
+               0xffff80008034851c
+               |          
+               |--1.41%--0xffff8000803483bc
+               |          0xffff80008031d6e4
+               |          0xffff80008031d638
+               |          
+                --1.26%--0xffff8000803483e8
+                          0xffff80008032e728
+                          0xffff80008032daf4
+                          0xffff800080371c28
+
+     2.67%     0.00%  bench    [unknown]              [.] 0xffff8000814c23c0
+            |
+            ---0xffff8000814c23c0
+               0xffff80008003ed74
+               0xffff80008003ecb8
+               0xffff80008032a040
+               0xffff80008034b684
+               0xffff800080349978
+               0xffff8000803498ac
+               0xffff80008034851c
+               |          
+               |--1.41%--0xffff8000803483bc
+               |          0xffff80008031d6e4
+               |          0xffff80008031d638
+               |          
+                --1.26%--0xffff8000803483e8
+                          0xffff80008032e728
+                          0xffff80008032daf4
+                          0xffff800080371c28
+
+     2.67%     0.00%  bench    [unknown]              [.] 0xffff80008003ed74
+            |
+            ---0xffff80008003ed74
+               0xffff80008003ecb8
+               0xffff80008032a040
+               0xffff80008034b684
+               0xffff800080349978
+               0xffff8000803498ac
+               0xffff80008034851c
+               |          
+               |--1.41%--0xffff8000803483bc
+               |          0xffff80008031d6e4
+               |          0xffff80008031d638
+               |          
+                --1.26%--0xffff8000803483e8
+                          0xffff80008032e728
+                          0xffff80008032daf4
+                          0xffff800080371c28
+
+     2.67%     0.00%  bench    [unknown]              [.] 0xffff80008003ecb8
+            |
+            ---0xffff80008003ecb8
+               0xffff80008032a040
+               0xffff80008034b684
+               0xffff800080349978
+               0xffff8000803498ac
+               0xffff80008034851c
+               |          
+               |--1.41%--0xffff8000803483bc
+               |          0xffff80008031d6e4
+               |          0xffff80008031d638
+               |          
+                --1.26%--0xffff8000803483e8
+                          0xffff80008032e728
+                          0xffff80008032daf4
+                          0xffff800080371c28
+
+     2.67%     0.00%  bench    [unknown]              [.] 0xffff80008032a040
+            |
+            ---0xffff80008032a040
+               0xffff80008034b684
+               0xffff800080349978
+               0xffff8000803498ac
+               0xffff80008034851c
+               |          
+               |--1.41%--0xffff8000803483bc
+               |          0xffff80008031d6e4
+               |          0xffff80008031d638
+               |          
+                --1.26%--0xffff8000803483e8
+                          0xffff80008032e728
+                          0xffff80008032daf4
+                          0xffff800080371c28
+
+     2.67%     0.00%  bench    [unknown]              [.] 0xffff80008034b684
+            |
+            ---0xffff80008034b684
+               0xffff800080349978
+               0xffff8000803498ac
+               0xffff80008034851c
+               |          
+               |--1.41%--0xffff8000803483bc
+               |          0xffff80008031d6e4
+               |          0xffff80008031d638
+               |          
+                --1.26%--0xffff8000803483e8
+                          0xffff80008032e728
+                          0xffff80008032daf4
+                          0xffff800080371c28
+
+     2.67%     0.00%  bench    [unknown]              [.] 0xffff800080349978
+            |
+            ---0xffff800080349978
+               0xffff8000803498ac
+               0xffff80008034851c
+               |          
+               |--1.41%--0xffff8000803483bc
+               |          0xffff80008031d6e4
+               |          0xffff80008031d638
+               |          
+                --1.26%--0xffff8000803483e8
+                          0xffff80008032e728
+                          0xffff80008032daf4
+                          0xffff800080371c28
+
+     2.67%     0.00%  bench    [unknown]              [.] 0xffff8000803498ac
+            |
+            ---0xffff8000803498ac
+               0xffff80008034851c
+               |          
+               |--1.41%--0xffff8000803483bc
+               |          0xffff80008031d6e4
+               |          0xffff80008031d638
+               |          
+                --1.26%--0xffff8000803483e8
+                          0xffff80008032e728
+                          0xffff80008032daf4
+                          0xffff800080371c28
+
+     2.67%     0.00%  bench    [unknown]              [.] 0xffff80008034851c
+            |
+            ---0xffff80008034851c
+               |          
+               |--1.41%--0xffff8000803483bc
+               |          0xffff80008031d6e4
+               |          0xffff80008031d638
+               |          
+                --1.26%--0xffff8000803483e8
+                          0xffff80008032e728
+                          0xffff80008032daf4
+                          0xffff800080371c28
+
+     2.30%     0.15%  bench    [unknown]              [.] 0xffff8000803b3538
+            |          
+             --2.15%--0xffff8000803b3538
+                       0xffff8000803a9fc0
+
+     2.30%     0.00%  bench    [unknown]              [.] 0xffff8000803b4b04
+            |
+            ---0xffff8000803b4b04
+               0xffff8000803b3538
+               |          
+                --2.15%--0xffff8000803a9fc0
+
+     2.15%     2.15%  bench    [unknown]              [k] 0xffff8000803a9fc0
+            |
+            ---_start
+               __libc_start_main
+               0xffff8c0b84c4
+               main
+               |          
+                --1.48%--void benchmark<ob::ArrayBook>(ob::Workload const&, int, bool)
+                          Result replay<ob::ArrayBook>(ob::Workload const&, bool)
+                          std::vector<ob::OrderTable::Slot, std::allocator<ob::OrderTable::Slot> >::_M_default_append(unsigned long)
+                          0xffff8c132e80
+                          0xffff8000800115a0
+                          0xffff8000814c33d0
+                          0xffff8000814c2ab4
+                          0xffff800080046870
+                          0xffff8000814d6678
+                          0xffff8000814d6048
+                          0xffff800080325eb8
+                          0xffff800080325724
+                          0xffff8000803b4b04
+                          0xffff8000803b3538
+                          0xffff8000803a9fc0
+
+     1.85%     1.78%  bench    [unknown]              [k] 0xffff8000814c2aac
+            |          
+             --1.78%--_start
+                       __libc_start_main
+                       0xffff8c0b84c4
+                       main
+                       |          
+                        --1.56%--void benchmark<ob::ArrayBook>(ob::Workload const&, int, bool)
+                                  Result replay<ob::ArrayBook>(ob::Workload const&, bool)
+                                  std::vector<ob::OrderTable::Slot, std::allocator<ob::OrderTable::Slot> >::_M_default_append(unsigned long)
+                                  0xffff8c132e80
+                                  0xffff8000800115a0
+                                  0xffff8000814c33d0
+                                  0xffff8000814c2aac
+
+     1.70%     1.26%  bench    bench                  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+            |          
+             --1.26%--_start
+                       __libc_start_main
+                       0xffff8c0b84c4
+                       main
+                       ob::make_workload(unsigned long, unsigned int)
+                       std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+
+     1.63%     1.63%  bench    libc.so.6              [.] 0x00000000000a2e80
+            |
+            ---_start
+               __libc_start_main
+               0xffff8c0b84c4
+               main
+               void benchmark<ob::ArrayBook>(ob::Workload const&, int, bool)
+               Result replay<ob::ArrayBook>(ob::Workload const&, bool)
+               std::vector<ob::OrderTable::Slot, std::allocator<ob::OrderTable::Slot> >::_M_default_append(unsigned long)
+               0xffff8c132e80
+
+     1.41%     0.00%  bench    [unknown]              [.] 0xffff8000803483bc
+            |
+            ---0xffff8000803483bc
+               0xffff80008031d6e4
+               0xffff80008031d638
+
+     1.41%     0.00%  bench    [unknown]              [.] 0xffff80008031d6e4
+            |
+            ---0xffff80008031d6e4
+               0xffff80008031d638
+
+     1.41%     0.00%  bench    [unknown]              [.] 0xffff80008031d638
+            |
+            ---0xffff80008031d638
+
+     1.41%     0.00%  bench    [unknown]              [.] 0xffff8000803258e0
+            |
+            ---0xffff8000803258e0
+               0xffff8000802d0a60
+               |          
+                --1.26%--0xffff8000802cec84
+                          0xffff8000802ceb84
+                          |          
+                           --1.19%--0xffff8000802ce460
+
+     1.41%     0.00%  bench    [unknown]              [.] 0xffff8000802d0a60
+            |
+            ---0xffff8000802d0a60
+               |          
+                --1.26%--0xffff8000802cec84
+                          0xffff8000802ceb84
+                          |          
+                           --1.19%--0xffff8000802ce460
+
+     1.26%     0.00%  bench    [unknown]              [.] 0xffff8000803483e8
+            |
+            ---0xffff8000803483e8
+               0xffff80008032e728
+               0xffff80008032daf4
+               0xffff800080371c28
+
+     1.26%     0.00%  bench    [unknown]              [.] 0xffff80008032e728
+            |
+            ---0xffff80008032e728
+               0xffff80008032daf4
+               0xffff800080371c28
+
+     1.26%     0.00%  bench    [unknown]              [.] 0xffff80008032daf4
+            |
+            ---0xffff80008032daf4
+               0xffff800080371c28
+
+     1.26%     0.00%  bench    [unknown]              [.] 0xffff800080371c28
+            |
+            ---0xffff800080371c28
+
+     1.26%     0.00%  bench    [unknown]              [.] 0xffff8000802cec84
+            |
+            ---0xffff8000802cec84
+               0xffff8000802ceb84
+               |          
+                --1.19%--0xffff8000802ce460
+
+     1.26%     0.00%  bench    [unknown]              [.] 0xffff8000802ceb84
+            |
+            ---0xffff8000802ceb84
+               |          
+                --1.19%--0xffff8000802ce460
+
+     1.19%     1.19%  bench    [unknown]              [k] 0xffff8000802ce460
+            |
+            ---_start
+               __libc_start_main
+               0xffff8c0b84c4
+               main
+               |          
+                --1.04%--void benchmark<ob::ArrayBook>(ob::Workload const&, int, bool)
+                          Result replay<ob::ArrayBook>(ob::Workload const&, bool)
+                          std::vector<ob::OrderTable::Slot, std::allocator<ob::OrderTable::Slot> >::_M_default_append(unsigned long)
+                          0xffff8c132e80
+                          0xffff8000800115a0
+                          0xffff8000814c33d0
+                          0xffff8000814c2ab4
+                          0xffff800080046870
+                          0xffff8000814d6678
+                          0xffff8000814d6048
+                          0xffff800080325eb8
+                          0xffff8000803258e0
+                          0xffff8000802d0a60
+                          0xffff8000802cec84
+                          0xffff8000802ceb84
+                          0xffff8000802ce460
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

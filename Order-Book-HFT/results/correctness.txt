@@ -1,0 +1,24 @@
+Operations: 1000000 Seed: 42
+Add: 700818 Cancel: 199505 BBO: 99677 Depth pairs: 10000
+Peak live orders: 501313
+Workload checksum: 2352251615799209157
+Implementation A edge cases: PASS
+Implementation B edge cases: PASS
+Implementation C edge cases: PASS
+Flat table collisions, growth, deletion and churn: PASS
+Verified 100000 operations
+Verified 200000 operations
+Verified 300000 operations
+Verified 400000 operations
+Verified 500000 operations
+Verified 600000 operations
+Verified 700000 operations
+Verified 800000 operations
+Verified 900000 operations
+Verified 1000000 operations
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+All implementations produce identical results after every operation.
+Compared complete bid/ask depth, BBO, prices, quantities and cancellation results.
+Checksum: 10960379378034558822

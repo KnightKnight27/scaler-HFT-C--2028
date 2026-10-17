@@ -1,0 +1,55 @@
+Implementation A
+================================
+
+ Performance counter stats for './build/linux/bench --impl A --runs 1 --total-only' (5 runs):
+
+            183.09 msec task-clock                       #    0.985 CPUs utilized               ( +-  1.63% )
+   <not supported>      cycles                                                                
+   <not supported>      instructions                                                          
+   <not supported>      branches                                                              
+   <not supported>      branch-misses                                                         
+   <not supported>      cache-misses                                                          
+   <not supported>      L1-dcache-load-misses                                                 
+   <not supported>      dTLB-load-misses                                                      
+             16386      page-faults                      #   89.496 K/sec                       ( +-  0.00% )
+
+           0.18581 +- 0.00297 seconds time elapsed  ( +-  1.60% )
+
+
+
+Implementation B
+================================
+
+ Performance counter stats for './build/linux/bench --impl B --runs 1 --total-only' (5 runs):
+
+            113.14 msec task-clock                       #    0.985 CPUs utilized               ( +-  0.76% )
+   <not supported>      cycles                                                                
+   <not supported>      instructions                                                          
+   <not supported>      branches                                                              
+   <not supported>      branch-misses                                                         
+   <not supported>      cache-misses                                                          
+   <not supported>      L1-dcache-load-misses                                                 
+   <not supported>      dTLB-load-misses                                                      
+             14795      page-faults                      #  130.773 K/sec                       ( +-  1.54% )
+
+          0.114858 +- 0.000881 seconds time elapsed  ( +-  0.77% )
+
+
+
+Implementation C
+================================
+
+ Performance counter stats for './build/linux/bench --impl C --runs 1 --total-only' (5 runs):
+
+             81.07 msec task-clock                       #    0.990 CPUs utilized               ( +-  1.95% )
+   <not supported>      cycles                                                                
+   <not supported>      instructions                                                          
+   <not supported>      branches                                                              
+   <not supported>      branch-misses                                                         
+   <not supported>      cache-misses                                                          
+   <not supported>      L1-dcache-load-misses                                                 
+   <not supported>      dTLB-load-misses                                                      
+             15790      page-faults                      #  194.763 K/sec                       ( +-  0.79% )
+
+           0.08191 +- 0.00168 seconds time elapsed  ( +-  2.05% )
+

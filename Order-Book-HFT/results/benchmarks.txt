@@ -1,0 +1,67 @@
+Implementation A
+================================
+Operations: 1000000 Seed: 42
+Add: 700818 Cancel: 199505 BBO: 99677 Depth pairs: 10000
+Peak live orders: 501313
+Workload checksum: 2352251615799209157
+Implementation: A Runs: 5
+Trial 1: total_ms=155.345 ns/add=124.375 ns/cancel=452.526 ns/BBO=17.874
+Trial 2: total_ms=181.163 ns/add=154.236 ns/cancel=543.957 ns/BBO=17.545
+Trial 3: total_ms=223.142 ns/add=187.534 ns/cancel=670.264 ns/BBO=17.779
+Trial 4: total_ms=251.602 ns/add=193.916 ns/cancel=661.355 ns/BBO=17.583
+Trial 5: total_ms=254.360 ns/add=194.205 ns/cancel=641.452 ns/BBO=17.877
+Median total time (ms): 223.142
+Median ns/add: 187.534
+Median ns/cancel: 641.452
+Median ns/BBO: 17.779
+Median empty clock interval (ns, not subtracted): 0.000
+Mean empty clock interval (ns, not subtracted): 14.487
+Smallest positive empty interval (ns): 41.000
+Final BBO: Bid: 99.99 x 2747 Ask: 100.01 x 2018
+Checksum: 10960379378034558822
+
+
+Implementation B
+================================
+Operations: 1000000 Seed: 42
+Add: 700818 Cancel: 199505 BBO: 99677 Depth pairs: 10000
+Peak live orders: 501313
+Workload checksum: 2352251615799209157
+Implementation: B Runs: 5
+Trial 1: total_ms=82.385 ns/add=73.232 ns/cancel=187.873 ns/BBO=18.389
+Trial 2: total_ms=75.873 ns/add=70.807 ns/cancel=193.972 ns/BBO=18.504
+Trial 3: total_ms=77.702 ns/add=73.000 ns/cancel=212.540 ns/BBO=18.888
+Trial 4: total_ms=75.931 ns/add=71.282 ns/cancel=203.162 ns/BBO=18.926
+Trial 5: total_ms=77.424 ns/add=72.069 ns/cancel=190.686 ns/BBO=19.037
+Median total time (ms): 77.424
+Median ns/add: 72.069
+Median ns/cancel: 193.972
+Median ns/BBO: 18.888
+Median empty clock interval (ns, not subtracted): 0.000
+Mean empty clock interval (ns, not subtracted): 14.423
+Smallest positive empty interval (ns): 41.000
+Final BBO: Bid: 99.99 x 2747 Ask: 100.01 x 2018
+Checksum: 10960379378034558822
+
+
+Implementation C
+================================
+Operations: 1000000 Seed: 42
+Add: 700818 Cancel: 199505 BBO: 99677 Depth pairs: 10000
+Peak live orders: 501313
+Workload checksum: 2352251615799209157
+Implementation: C Runs: 5
+Trial 1: total_ms=51.071 ns/add=126.831 ns/cancel=81.777 ns/BBO=18.756
+Trial 2: total_ms=53.269 ns/add=127.077 ns/cancel=82.650 ns/BBO=19.055
+Trial 3: total_ms=52.339 ns/add=126.359 ns/cancel=75.300 ns/BBO=18.756
+Trial 4: total_ms=50.165 ns/add=116.657 ns/cancel=74.398 ns/BBO=18.689
+Trial 5: total_ms=51.404 ns/add=117.263 ns/cancel=72.317 ns/BBO=18.546
+Median total time (ms): 51.404
+Median ns/add: 126.359
+Median ns/cancel: 75.300
+Median ns/BBO: 18.756
+Median empty clock interval (ns, not subtracted): 0.000
+Mean empty clock interval (ns, not subtracted): 15.240
+Smallest positive empty interval (ns): 41.000
+Final BBO: Bid: 99.99 x 2747 Ask: 100.01 x 2018
+Checksum: 10960379378034558822
