@@ -1,0 +1,598 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 11K of event 'task-clock:ppp'
+# Event count (approx.): 2977500000
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+# ........  .......  ....................  .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    15.42%  bench    bench                 [.] std::vector<OrderNode, std::allocator<OrderNode> >::_M_default_append(unsigned long)
+            |
+            ---std::vector<OrderNode, std::allocator<OrderNode> >::_M_default_append(unsigned long)
+
+    10.35%  bench    [kernel.kallsyms]     [k] do_user_addr_fault
+            |
+            ---do_user_addr_fault
+               |          
+                --10.34%--exc_page_fault
+                          asm_exc_page_fault
+                          |          
+                          |--7.43%--std::vector<OrderNode, std::allocator<OrderNode> >::_M_default_append(unsigned long)
+                          |          
+                           --2.70%--__memset_avx2_unaligned_erms
+
+    10.12%  bench    bench                 [.] void benchmark<LowLatencyOrderBook>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<Operation, std::allocator<Operation> > const&)
+            |
+            ---void benchmark<LowLatencyOrderBook>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<Operation, std::allocator<Operation> > const&)
+               |          
+               |--4.65%--0
+               |          
+               |--0.81%--0x60557f0a12b8
+               |          0
+               |          
+               |--0.81%--0x60557f0a12e0
+               |          0x4036ebc169c23b79
+               |          
+               |--0.78%--0x60557f0a1d38
+               |          0x4036ebc169c23b79
+               |          
+                --0.76%--0x25
+                          0x43206e6f69746174
+
+     7.94%  bench    [kernel.kallsyms]     [k] _raw_spin_unlock_irqrestore
+            |
+            ---_raw_spin_unlock_irqrestore
+               |          
+               |--3.69%--folio_batch_move_lru
+               |          folio_add_lru
+               |          folio_add_lru_vma
+               |          do_anonymous_page
+               |          handle_pte_fault
+               |          __handle_mm_fault
+               |          handle_mm_fault
+               |          do_user_addr_fault
+               |          exc_page_fault
+               |          asm_exc_page_fault
+               |          |          
+               |           --3.18%--std::vector<OrderNode, std::allocator<OrderNode> >::_M_default_append(unsigned long)
+               |          
+               |--2.46%--release_pages
+               |          free_pages_and_swap_cache
+               |          tlb_batch_pages_flush
+               |          |          
+               |           --2.18%--tlb_flush_mmu
+               |                     zap_pte_range
+               |                     zap_pmd_range.isra.0
+               |                     unmap_page_range
+               |                     unmap_single_vma
+               |                     unmap_vmas
+               |                     unmap_region
+               |                     do_vmi_align_munmap
+               |                     do_vmi_munmap
+               |                     __vm_munmap
+               |                     __x64_sys_munmap
+               |                     x64_sys_call
+               |                     do_syscall_64
+               |                     entry_SYSCALL_64_after_hwframe
+               |                     __munmap
+               |                     |          
+               |                      --2.17%--void benchmark<LowLatencyOrderBook>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<Operation, std::allocator<Operation> > const&)
+               |          
+               |--1.10%--free_pcppages_bulk
+               |          free_unref_page_commit
+               |          free_unref_page_list
+               |          release_pages
+               |          free_pages_and_swap_cache
+               |          tlb_batch_pages_flush
+               |          |          
+               |           --1.02%--tlb_flush_mmu
+               |                     zap_pte_range
+               |                     zap_pmd_range.isra.0
+               |                     unmap_page_range
+               |                     unmap_single_vma
+               |                     unmap_vmas
+               |                     unmap_region
+               |                     do_vmi_align_munmap
+               |                     do_vmi_munmap
+               |                     __vm_munmap
+               |                     __x64_sys_munmap
+               |                     x64_sys_call
+               |                     do_syscall_64
+               |                     entry_SYSCALL_64_after_hwframe
+               |                     __munmap
+               |                     |          
+               |                      --1.00%--void benchmark<LowLatencyOrderBook>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<Operation, std::allocator<Operation> > const&)
+               |          
+                --0.67%--rmqueue_bulk
+                          __rmqueue_pcplist
+                          rmqueue
+                          get_page_from_freelist
+                          __alloc_pages
+                          alloc_pages_mpol
+                          vma_alloc_folio
+                          alloc_anon_folio
+                          do_anonymous_page
+                          handle_pte_fault
+                          __handle_mm_fault
+                          handle_mm_fault
+                          do_user_addr_fault
+                          exc_page_fault
+                          asm_exc_page_fault
+                          |          
+                           --0.58%--std::vector<OrderNode, std::allocator<OrderNode> >::_M_default_append(unsigned long)
+
+     7.83%  bench    [kernel.kallsyms]     [k] clear_page_erms
+            |
+            ---clear_page_erms
+               get_page_from_freelist
+               __alloc_pages
+               alloc_pages_mpol
+               |          
+                --7.78%--vma_alloc_folio
+                          alloc_anon_folio
+                          do_anonymous_page
+                          handle_pte_fault
+                          __handle_mm_fault
+                          handle_mm_fault
+                          do_user_addr_fault
+                          exc_page_fault
+                          asm_exc_page_fault
+                          |          
+                          |--6.41%--std::vector<OrderNode, std::allocator<OrderNode> >::_M_default_append(unsigned long)
+                          |          
+                           --1.23%--__memset_avx2_unaligned_erms
+
+     3.79%  bench    bench                 [.] LowLatencyOrderBook::cancel_order(unsigned long)
+            |
+            ---LowLatencyOrderBook::cancel_order(unsigned long)
+
+     2.95%  bench    [kernel.kallsyms]     [k] do_anonymous_page
+            |
+            ---do_anonymous_page
+               |          
+                --2.92%--handle_pte_fault
+                          __handle_mm_fault
+                          handle_mm_fault
+                          do_user_addr_fault
+                          exc_page_fault
+                          asm_exc_page_fault
+                          |          
+                           --2.54%--std::vector<OrderNode, std::allocator<OrderNode> >::_M_default_append(unsigned long)
+
+     2.85%  bench    [kernel.kallsyms]     [k] __handle_mm_fault
+            |
+            ---__handle_mm_fault
+               handle_mm_fault
+               do_user_addr_fault
+               exc_page_fault
+               asm_exc_page_fault
+               |          
+                --2.44%--std::vector<OrderNode, std::allocator<OrderNode> >::_M_default_append(unsigned long)
+
+     2.33%  bench    libc.so.6             [.] __memset_avx2_unaligned_erms
+            |
+            ---__memset_avx2_unaligned_erms
+
+     1.94%  bench    [kernel.kallsyms]     [k] zap_pte_range
+            |
+            ---zap_pte_range
+               zap_pmd_range.isra.0
+               unmap_page_range
+               unmap_single_vma
+               unmap_vmas
+               unmap_region
+               do_vmi_align_munmap
+               do_vmi_munmap
+               __vm_munmap
+               __x64_sys_munmap
+               x64_sys_call
+               do_syscall_64
+               entry_SYSCALL_64_after_hwframe
+               __munmap
+               |          
+                --1.88%--void benchmark<LowLatencyOrderBook>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<Operation, std::allocator<Operation> > const&)
+
+     1.82%  bench    [kernel.kallsyms]     [k] mem_cgroup_commit_charge
+            |
+            ---mem_cgroup_commit_charge
+               |          
+                --1.75%--__mem_cgroup_charge
+                          do_anonymous_page
+                          handle_pte_fault
+                          __handle_mm_fault
+                          handle_mm_fault
+                          do_user_addr_fault
+                          exc_page_fault
+                          asm_exc_page_fault
+                          |          
+                           --1.43%--std::vector<OrderNode, std::allocator<OrderNode> >::_M_default_append(unsigned long)
+
+     1.74%  bench    [kernel.kallsyms]     [k] handle_mm_fault
+            |
+            ---handle_mm_fault
+               |          
+                --1.66%--do_user_addr_fault
+                          exc_page_fault
+                          asm_exc_page_fault
+                          |          
+                           --1.41%--std::vector<OrderNode, std::allocator<OrderNode> >::_M_default_append(unsigned long)
+
+     1.62%  bench    [kernel.kallsyms]     [k] __lruvec_stat_mod_folio
+            |
+            ---__lruvec_stat_mod_folio
+               |          
+               |--0.58%--folio_add_new_anon_rmap
+               |          do_anonymous_page
+               |          handle_pte_fault
+               |          __handle_mm_fault
+               |          handle_mm_fault
+               |          do_user_addr_fault
+               |          exc_page_fault
+               |          asm_exc_page_fault
+               |          |          
+               |           --0.52%--std::vector<OrderNode, std::allocator<OrderNode> >::_M_default_append(unsigned long)
+               |          
+                --0.55%--do_anonymous_page
+                          handle_pte_fault
+                          __handle_mm_fault
+                          handle_mm_fault
+                          do_user_addr_fault
+                          exc_page_fault
+                          asm_exc_page_fault
+
+     1.18%  bench    [kernel.kallsyms]     [k] count_memcg_events.constprop.0
+            |
+            ---count_memcg_events.constprop.0
+               |          
+                --0.97%--handle_mm_fault
+                          do_user_addr_fault
+                          exc_page_fault
+                          asm_exc_page_fault
+                          |          
+                           --0.78%--std::vector<OrderNode, std::allocator<OrderNode> >::_M_default_append(unsigned long)
+
+     1.18%  bench    [kernel.kallsyms]     [k] blk_cgroup_congested
+            |
+            ---blk_cgroup_congested
+               |          
+                --1.15%--__folio_throttle_swaprate
+                          do_anonymous_page
+                          handle_pte_fault
+                          __handle_mm_fault
+                          handle_mm_fault
+                          do_user_addr_fault
+                          exc_page_fault
+                          asm_exc_page_fault
+                          |          
+                           --0.97%--std::vector<OrderNode, std::allocator<OrderNode> >::_M_default_append(unsigned long)
+
+     1.18%  bench    [kernel.kallsyms]     [k] handle_pte_fault
+            |
+            ---handle_pte_fault
+               |          
+                --1.05%--__handle_mm_fault
+                          handle_mm_fault
+                          do_user_addr_fault
+                          exc_page_fault
+                          asm_exc_page_fault
+                          |          
+                           --0.88%--std::vector<OrderNode, std::allocator<OrderNode> >::_M_default_append(unsigned long)
+
+     0.97%  bench    [kernel.kallsyms]     [k] mas_walk
+            |
+            ---mas_walk
+               |          
+                --0.91%--lock_vma_under_rcu
+                          do_user_addr_fault
+                          exc_page_fault
+                          asm_exc_page_fault
+                          |          
+                           --0.76%--std::vector<OrderNode, std::allocator<OrderNode> >::_M_default_append(unsigned long)
+
+     0.92%  bench    [kernel.kallsyms]     [k] __alloc_pages
+            |
+            ---__alloc_pages
+               |          
+                --0.87%--alloc_pages_mpol
+                          vma_alloc_folio
+                          alloc_anon_folio
+                          do_anonymous_page
+                          handle_pte_fault
+                          __handle_mm_fault
+                          handle_mm_fault
+                          do_user_addr_fault
+                          exc_page_fault
+                          asm_exc_page_fault
+                          |          
+                           --0.78%--std::vector<OrderNode, std::allocator<OrderNode> >::_M_default_append(unsigned long)
+
+     0.91%  bench    bench                 [.] generate_workload()
+            |
+            ---generate_workload()
+
+     0.88%  bench    [kernel.kallsyms]     [k] get_page_from_freelist
+            |
+            ---get_page_from_freelist
+               |          
+                --0.85%--__alloc_pages
+                          alloc_pages_mpol
+                          |          
+                           --0.84%--vma_alloc_folio
+                                     alloc_anon_folio
+                                     do_anonymous_page
+                                     handle_pte_fault
+                                     __handle_mm_fault
+                                     handle_mm_fault
+                                     do_user_addr_fault
+                                     exc_page_fault
+                                     asm_exc_page_fault
+                                     |          
+                                      --0.69%--std::vector<OrderNode, std::allocator<OrderNode> >::_M_default_append(unsigned long)
+
+     0.84%  bench    [kernel.kallsyms]     [k] rmqueue
+            |
+            ---rmqueue
+               |          
+                --0.78%--get_page_from_freelist
+                          __alloc_pages
+                          alloc_pages_mpol
+                          vma_alloc_folio
+                          alloc_anon_folio
+                          do_anonymous_page
+                          handle_pte_fault
+                          __handle_mm_fault
+                          handle_mm_fault
+                          do_user_addr_fault
+                          exc_page_fault
+                          asm_exc_page_fault
+                          |          
+                           --0.69%--std::vector<OrderNode, std::allocator<OrderNode> >::_M_default_append(unsigned long)
+
+     0.81%  bench    [kernel.kallsyms]     [k] get_mem_cgroup_from_mm
+            |
+            ---get_mem_cgroup_from_mm
+               |          
+                --0.76%--__mem_cgroup_charge
+                          do_anonymous_page
+                          handle_pte_fault
+                          __handle_mm_fault
+                          handle_mm_fault
+                          do_user_addr_fault
+                          exc_page_fault
+                          asm_exc_page_fault
+                          |          
+                           --0.69%--std::vector<OrderNode, std::allocator<OrderNode> >::_M_default_append(unsigned long)
+
+     0.79%  bench    [kernel.kallsyms]     [k] __pte_offset_map_lock
+            |
+            ---__pte_offset_map_lock
+               |          
+                --0.69%--do_anonymous_page
+                          handle_pte_fault
+                          __handle_mm_fault
+                          handle_mm_fault
+                          do_user_addr_fault
+                          exc_page_fault
+                          asm_exc_page_fault
+                          |          
+                           --0.60%--std::vector<OrderNode, std::allocator<OrderNode> >::_M_default_append(unsigned long)
+
+     0.76%  bench    [kernel.kallsyms]     [k] srso_alias_safe_ret
+            |
+            ---srso_alias_safe_ret
+
+     0.74%  bench    [kernel.kallsyms]     [k] lock_vma_under_rcu
+            |
+            ---lock_vma_under_rcu
+               |          
+                --0.73%--do_user_addr_fault
+                          exc_page_fault
+                          asm_exc_page_fault
+                          |          
+                           --0.60%--std::vector<OrderNode, std::allocator<OrderNode> >::_M_default_append(unsigned long)
+
+     0.72%  bench    [kernel.kallsyms]     [k] __mod_node_page_state
+            |
+            ---__mod_node_page_state
+               |          
+                --0.66%--__mod_lruvec_state
+                          __lruvec_stat_mod_folio
+                          |          
+                           --0.50%--folio_add_new_anon_rmap
+                                     do_anonymous_page
+                                     handle_pte_fault
+                                     __handle_mm_fault
+                                     handle_mm_fault
+                                     do_user_addr_fault
+                                     exc_page_fault
+                                     asm_exc_page_fault
+
+     0.69%  bench    [kernel.kallsyms]     [k] __mod_memcg_lruvec_state
+            |
+            ---__mod_memcg_lruvec_state
+               |          
+                --0.61%--__mod_lruvec_state
+                          __lruvec_stat_mod_folio
+
+     0.69%  bench    [kernel.kallsyms]     [k] folio_add_new_anon_rmap
+            |
+            ---folio_add_new_anon_rmap
+               |          
+                --0.56%--do_anonymous_page
+                          handle_pte_fault
+                          __handle_mm_fault
+                          handle_mm_fault
+                          do_user_addr_fault
+                          exc_page_fault
+                          asm_exc_page_fault
+
+     0.68%  bench    [kernel.kallsyms]     [k] __next_zones_zonelist
+            |
+            ---__next_zones_zonelist
+
+     0.68%  bench    [kernel.kallsyms]     [k] free_unref_page_list
+            |
+            ---free_unref_page_list
+               |          
+                --0.67%--release_pages
+                          |          
+                           --0.65%--free_pages_and_swap_cache
+                                     tlb_batch_pages_flush
+                                     |          
+                                      --0.60%--tlb_flush_mmu
+                                                zap_pte_range
+                                                zap_pmd_range.isra.0
+                                                unmap_page_range
+                                                unmap_single_vma
+                                                unmap_vmas
+                                                unmap_region
+                                                do_vmi_align_munmap
+                                                do_vmi_munmap
+                                                __vm_munmap
+                                                __x64_sys_munmap
+                                                x64_sys_call
+                                                do_syscall_64
+                                                entry_SYSCALL_64_after_hwframe
+                                                __munmap
+                                                |          
+                                                 --0.58%--void benchmark<LowLatencyOrderBook>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<Operation, std::allocator<Operation> > const&)
+
+     0.60%  bench    [kernel.kallsyms]     [k] __rmqueue_pcplist
+            |
+            ---__rmqueue_pcplist
+               |          
+                --0.54%--rmqueue
+                          get_page_from_freelist
+                          __alloc_pages
+                          alloc_pages_mpol
+                          |          
+                           --0.53%--vma_alloc_folio
+                                     alloc_anon_folio
+                                     do_anonymous_page
+                                     handle_pte_fault
+                                     __handle_mm_fault
+                                     handle_mm_fault
+                                     do_user_addr_fault
+                                     exc_page_fault
+                                     asm_exc_page_fault
+
+     0.55%  bench    [kernel.kallsyms]     [k] folio_add_lru
+            |
+            ---folio_add_lru
+               |          
+                --0.53%--folio_add_lru_vma
+                          do_anonymous_page
+                          handle_pte_fault
+                          __handle_mm_fault
+                          handle_mm_fault
+                          do_user_addr_fault
+                          exc_page_fault
+                          asm_exc_page_fault
+
+     0.49%  bench    [kernel.kallsyms]     [k] get_vma_policy
+     0.47%  bench    [kernel.kallsyms]     [k] alloc_anon_folio
+     0.46%  bench    [kernel.kallsyms]     [k] pte_offset_map_nolock
+     0.44%  bench    [kernel.kallsyms]     [k] __mem_cgroup_charge
+     0.43%  bench    [kernel.kallsyms]     [k] percpu_counter_add_batch
+     0.37%  bench    [kernel.kallsyms]     [k] alloc_pages_mpol
+     0.37%  bench    [kernel.kallsyms]     [k] set_ptes.constprop.0
+     0.36%  bench    [kernel.kallsyms]     [k] policy_nodemask
+     0.36%  bench    [kernel.kallsyms]     [k] post_alloc_hook
+     0.35%  bench    [kernel.kallsyms]     [k] folio_remove_rmap_ptes
+     0.34%  bench    [kernel.kallsyms]     [k] __mod_lruvec_state
+     0.33%  bench    [kernel.kallsyms]     [k] free_swap_cache
+     0.32%  bench    [kernel.kallsyms]     [k] __pte_offset_map
+     0.32%  bench    [kernel.kallsyms]     [k] _raw_spin_lock
+     0.32%  bench    [kernel.kallsyms]     [k] free_unref_page_prepare
+     0.32%  bench    [kernel.kallsyms]     [k] vma_alloc_folio
+     0.31%  bench    [kernel.kallsyms]     [k] _raw_spin_trylock
+     0.30%  bench    [kernel.kallsyms]     [k] pud_val
+     0.29%  bench    [kernel.kallsyms]     [k] down_read_trylock
+     0.27%  bench    [kernel.kallsyms]     [k] __raw_callee_save___pv_queued_spin_unlock
+     0.26%  bench    [kernel.kallsyms]     [k] get_pfnblock_flags_mask
+     0.26%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+     0.25%  bench    [kernel.kallsyms]     [k] __folio_throttle_swaprate
+     0.25%  bench    [kernel.kallsyms]     [k] queued_spin_unlock
+     0.24%  bench    [kernel.kallsyms]     [k] try_charge_memcg
+     0.24%  bench    [kernel.kallsyms]     [k] access_error
+     0.24%  bench    [kernel.kallsyms]     [k] up_read
+     0.22%  bench    [kernel.kallsyms]     [k] consume_stock
+     0.22%  bench    [kernel.kallsyms]     [k] free_unref_page_commit
+     0.22%  bench    libm.so.6             [.] __llround
+     0.19%  bench    [kernel.kallsyms]     [k] pte_mkwrite
+     0.18%  bench    [kernel.kallsyms]     [k] folio_add_lru_vma
+     0.18%  bench    [kernel.kallsyms]     [k] should_fail_alloc_page
+     0.17%  bench    [kernel.kallsyms]     [k] cond_accept_memory
+     0.15%  bench    [kernel.kallsyms]     [k] __mem_cgroup_uncharge_list
+     0.15%  bench    [kernel.kallsyms]     [k] kthread_blkcg
+     0.15%  bench    [kernel.kallsyms]     [k] release_pages
+     0.15%  bench    [kernel.kallsyms]     [k] srso_alias_return_thunk
+     0.15%  bench    [kernel.kallsyms]     [k] uncharge_folio
+     0.13%  bench    [kernel.kallsyms]     [k] __cond_resched
+     0.13%  bench    [kernel.kallsyms]     [k] pmd_val
+     0.13%  bench    [kernel.kallsyms]     [k] rcu_all_qs
+     0.13%  bench    [kernel.kallsyms]     [k] cgroup_rstat_updated
+     0.13%  bench    [kernel.kallsyms]     [k] free_pages_and_swap_cache
+     0.13%  bench    [kernel.kallsyms]     [k] mksaveddirty_shift
+     0.12%  bench    [kernel.kallsyms]     [k] __tlb_remove_page_size
+     0.12%  bench    [kernel.kallsyms]     [k] vm_normal_page
+     0.11%  bench    [kernel.kallsyms]     [k] page_mapcount
+     0.11%  bench    bench                 [.] llround@plt
+     0.10%  bench    [kernel.kallsyms]     [k] p4d_offset
+     0.08%  bench    [kernel.kallsyms]     [k] folio_prep_large_rmappable
+     0.08%  bench    bench                 [.] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+     0.06%  bench    [kernel.kallsyms]     [k] handle_softirqs
+     0.06%  bench    [kernel.kallsyms]     [k] page_counter_try_charge
+     0.06%  bench    [kernel.kallsyms]     [k] trace_rss_stat
+     0.05%  bench    [kernel.kallsyms]     [k] exc_page_fault
+     0.05%  bench    [kernel.kallsyms]     [k] folio_batch_move_lru
+     0.05%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand()
+     0.04%  bench    [kernel.kallsyms]     [k] pfn_pte
+     0.04%  bench    bench                 [.] std::vector<Level, std::allocator<Level> >::reserve(unsigned long)
+     0.03%  bench    [kernel.kallsyms]     [k] lruvec_stat_mod_folio.constprop.0
+     0.03%  bench    [kernel.kallsyms]     [k] mm_counter
+     0.03%  bench    bench                 [.] unsigned long std::uniform_int_distribution<unsigned long>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<unsigned long>::param_type const&) [clone .isra.0]
+     0.03%  bench    [kernel.kallsyms]     [k] arch_check_zapped_pte
+     0.03%  bench    [kernel.kallsyms]     [k] folio_lruvec_lock_irqsave
+     0.03%  bench    [kernel.kallsyms]     [k] mem_cgroup_from_task
+     0.03%  bench    [kernel.kallsyms]     [k] propagate_protected_usage
+     0.03%  bench    libc.so.6             [.] __memmove_avx_unaligned_erms
+     0.03%  bench    libc.so.6             [.] _int_free
+     0.02%  bench    [kernel.kallsyms]     [k] __raw_spin_lock_irqsave
+     0.02%  bench    [kernel.kallsyms]     [k] irqentry_exit_to_user_mode
+     0.02%  bench    [kernel.kallsyms]     [k] native_set_pte
+     0.02%  bench    [kernel.kallsyms]     [k] vmbus_on_event
+     0.02%  bench    bench                 [.] long std::uniform_int_distribution<long>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<long>::param_type const&) [clone .isra.0]
+     0.02%  bench    libc.so.6             [.] malloc
+     0.01%  bench    [kernel.kallsyms]     [k] ___pte_free_tlb
+     0.01%  bench    [kernel.kallsyms]     [k] __anon_vma_prepare
+     0.01%  bench    [kernel.kallsyms]     [k] __nf_conntrack_find_get
+     0.01%  bench    [kernel.kallsyms]     [k] __schedule
+     0.01%  bench    [kernel.kallsyms]     [k] _find_first_bit
+     0.01%  bench    [kernel.kallsyms]     [k] anon_vma_clone
+     0.01%  bench    [kernel.kallsyms]     [k] anon_vma_interval_tree_remove
+     0.01%  bench    [kernel.kallsyms]     [k] finish_task_switch.isra.0
+     0.01%  bench    [kernel.kallsyms]     [k] free_unref_page
+     0.01%  bench    [kernel.kallsyms]     [k] ip_finish_output2
+     0.01%  bench    [kernel.kallsyms]     [k] mast_fill_bnode
+     0.01%  bench    [kernel.kallsyms]     [k] mlock_drain_local
+     0.01%  bench    [kernel.kallsyms]     [k] mod_memcg_state
+     0.01%  bench    [kernel.kallsyms]     [k] next_uptodate_folio
+     0.01%  bench    [kernel.kallsyms]     [k] ovl_path_lowerdata
+     0.01%  bench    [kernel.kallsyms]     [k] page_counter_uncharge
+     0.01%  bench    [kernel.kallsyms]     [k] pmd_install
+     0.01%  bench    [kernel.kallsyms]     [k] scsi_device_unbusy
+     0.01%  bench    [kernel.kallsyms]     [k] zap_pmd_range.isra.0
+     0.01%  bench    ld-linux-x86-64.so.2  [.] _dl_lookup_symbol_x
+     0.01%  bench    ld-linux-x86-64.so.2  [.] strcmp
+     0.01%  bench    libc.so.6             [.] sysmalloc_mmap.isra.0
+     0.01%  bench    libstdc++.so.6.0.33   [.] malloc@plt
+     0.01%  bench    libstdc++.so.6.0.33   [.] std::ostream& std::ostream::_M_insert<double>(double)
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
