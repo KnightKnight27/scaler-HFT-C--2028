@@ -1,0 +1,11 @@
+Seed: 42
+Implementation C (perf mode)
+Operations: 1000000 (add 700746, cancel 199278, BBO 99976)
+Depth queries per side: 10000
+Run 1: 322.13 ms; checksum 2736274959807530309
+Run 2: 317.83 ms; checksum 2736274959807530309
+Run 3: 312.79 ms; checksum 2736274959807530309
+Run 4: 300.92 ms; checksum 2736274959807530309
+Run 5: 290.59 ms; checksum 2736274959807530309
+Final BBO: bid 99.99 x 2826, ask 100.01 x 2307
+Median total: 312.79 ms

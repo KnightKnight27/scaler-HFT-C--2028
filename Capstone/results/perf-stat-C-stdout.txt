@@ -1,0 +1,55 @@
+Seed: 42
+Implementation C (perf mode)
+Operations: 1000000 (add 700746, cancel 199278, BBO 99976)
+Depth queries per side: 10000
+Run 1: 279.53 ms; checksum 2736274959807530309
+Run 2: 255.65 ms; checksum 2736274959807530309
+Run 3: 271.03 ms; checksum 2736274959807530309
+Run 4: 275.66 ms; checksum 2736274959807530309
+Run 5: 240.70 ms; checksum 2736274959807530309
+Final BBO: bid 99.99 x 2826, ask 100.01 x 2307
+Median total: 271.03 ms
+Seed: 42
+Implementation C (perf mode)
+Operations: 1000000 (add 700746, cancel 199278, BBO 99976)
+Depth queries per side: 10000
+Run 1: 310.06 ms; checksum 2736274959807530309
+Run 2: 358.59 ms; checksum 2736274959807530309
+Run 3: 424.80 ms; checksum 2736274959807530309
+Run 4: 295.42 ms; checksum 2736274959807530309
+Run 5: 285.41 ms; checksum 2736274959807530309
+Final BBO: bid 99.99 x 2826, ask 100.01 x 2307
+Median total: 310.06 ms
+Seed: 42
+Implementation C (perf mode)
+Operations: 1000000 (add 700746, cancel 199278, BBO 99976)
+Depth queries per side: 10000
+Run 1: 558.41 ms; checksum 2736274959807530309
+Run 2: 284.58 ms; checksum 2736274959807530309
+Run 3: 228.80 ms; checksum 2736274959807530309
+Run 4: 257.05 ms; checksum 2736274959807530309
+Run 5: 248.68 ms; checksum 2736274959807530309
+Final BBO: bid 99.99 x 2826, ask 100.01 x 2307
+Median total: 257.05 ms
+Seed: 42
+Implementation C (perf mode)
+Operations: 1000000 (add 700746, cancel 199278, BBO 99976)
+Depth queries per side: 10000
+Run 1: 256.66 ms; checksum 2736274959807530309
+Run 2: 220.00 ms; checksum 2736274959807530309
+Run 3: 238.78 ms; checksum 2736274959807530309
+Run 4: 282.66 ms; checksum 2736274959807530309
+Run 5: 261.66 ms; checksum 2736274959807530309
+Final BBO: bid 99.99 x 2826, ask 100.01 x 2307
+Median total: 256.66 ms
+Seed: 42
+Implementation C (perf mode)
+Operations: 1000000 (add 700746, cancel 199278, BBO 99976)
+Depth queries per side: 10000
+Run 1: 292.95 ms; checksum 2736274959807530309
+Run 2: 242.34 ms; checksum 2736274959807530309
+Run 3: 218.55 ms; checksum 2736274959807530309
+Run 4: 242.46 ms; checksum 2736274959807530309
+Run 5: 243.77 ms; checksum 2736274959807530309
+Final BBO: bid 99.99 x 2826, ask 100.01 x 2307
+Median total: 242.46 ms
