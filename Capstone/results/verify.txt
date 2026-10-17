@@ -1,0 +1,14 @@
+Running correctness test (seed=42, 1000000 ops)...
+
+  edge cases A: PASS
+  edge cases B: PASS
+  edge cases C: PASS
+  workload A vs B: PASS (1000000 ops)
+  workload A vs C: PASS (1000000 ops)
+  workload B vs C: PASS (1000000 ops)
+
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+
+All implementations produce identical results.

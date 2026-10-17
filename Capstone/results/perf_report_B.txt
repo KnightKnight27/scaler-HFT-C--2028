@@ -1,0 +1,322 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'task-clock:ppp'
+# Event count (approx.): 346500000
+#
+# Overhead  Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 IPC   [IPC Coverage]
+# ........  .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................  ....................
+#
+    20.42%  [.] ob::BookVec::cancel_order(unsigned long)                                                                                                                                                                                                                                                                                                                                                                                                                                                           -      -            
+            |
+            ---RunResult run_once<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+               void bench_impl<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&, int, char const*)
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+    15.37%  [.] ob::BookVec::add_order(unsigned long, ob::Side, int, long)                                                                                                                                                                                                                                                                                                                                                                                                                                         -      -            
+            |
+            ---RunResult run_once<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+               void bench_impl<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&, int, char const*)
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+    13.49%  [.] 0x0000000000000b5c                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+            |
+            ---clock_gettime@@GLIBC_2.17
+               std::chrono::_V2::steady_clock::now()
+               RunResult run_once<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+               void bench_impl<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&, int, char const*)
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     6.20%  [.] ob::make_workload(unsigned long, unsigned int)                                                                                                                                                                                                                                                                                                                                                                                                                                                     -      -            
+            |
+            ---main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     5.05%  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::BookVec::Order>, std::allocator<std::pair<unsigned long const, ob::BookVec::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)                                     -      -            
+            |
+            ---std::__detail::_Map_base<unsigned long, std::pair<unsigned long const, ob::BookVec::Order>, std::allocator<std::pair<unsigned long const, ob::BookVec::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](unsigned long const&)
+               ob::BookVec::add_order(unsigned long, ob::Side, int, long)
+               RunResult run_once<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+               void bench_impl<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&, int, char const*)
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     4.98%  [.] std::__detail::_Map_base<unsigned long, std::pair<unsigned long const, ob::BookVec::Order>, std::allocator<std::pair<unsigned long const, ob::BookVec::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](unsigned long const&)                                     -      -            
+            |          
+             --4.83%--ob::BookVec::add_order(unsigned long, ob::Side, int, long)
+                       RunResult run_once<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+                       void bench_impl<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&, int, char const*)
+                       main
+                       __libc_start_call_main
+                       __libc_start_main@@GLIBC_2.34
+                       _start
+
+     4.83%  [.] RunResult run_once<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&)                                                                                                                                                                                                                                                                                                                                                                                                               -      -            
+            |
+            ---void bench_impl<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&, int, char const*)
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     2.45%  [.] malloc_consolidate                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+            |
+            ---_int_free_maybe_consolidate
+               cfree@GLIBC_2.2.5
+               RunResult run_once<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+               void bench_impl<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&, int, char const*)
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     2.24%  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()                                                                                                                                                                                                                                                                                                                   -      -            
+            |          
+            |--1.23%--ob::make_workload(unsigned long, unsigned int)
+            |          main
+            |          __libc_start_call_main
+            |          __libc_start_main@@GLIBC_2.34
+            |          _start
+            |          
+             --0.87%--int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+                       ob::make_workload(unsigned long, unsigned int)
+                       main
+                       __libc_start_call_main
+                       __libc_start_main@@GLIBC_2.34
+                       _start
+
+     1.95%  [.] __memmove_avx_unaligned_erms                                                                                                                                                                                                                                                                                                                                                                                                                                                                       -      -            
+            |          
+             --1.52%--ob::BookVec::add_order(unsigned long, ob::Side, int, long)
+                       RunResult run_once<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+                       void bench_impl<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&, int, char const*)
+                       main
+                       __libc_start_call_main
+                       __libc_start_main@@GLIBC_2.34
+                       _start
+
+     1.80%  [.] unlink_chunk.isra.0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                -      -            
+            |          
+             --1.73%--malloc_consolidate
+                       _int_free_maybe_consolidate
+                       cfree@GLIBC_2.2.5
+                       RunResult run_once<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+                       void bench_impl<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&, int, char const*)
+                       main
+                       __libc_start_call_main
+                       __libc_start_main@@GLIBC_2.34
+                       _start
+
+     1.73%  [.] _int_malloc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        -      -            
+            |
+            ---malloc
+               operator new(unsigned long)
+               std::__detail::_Map_base<unsigned long, std::pair<unsigned long const, ob::BookVec::Order>, std::allocator<std::pair<unsigned long const, ob::BookVec::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](unsigned long const&)
+               ob::BookVec::add_order(unsigned long, ob::Side, int, long)
+               RunResult run_once<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+               void bench_impl<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&, int, char const*)
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     1.73%  [k] do_user_addr_fault                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+            |
+            ---exc_page_fault
+               asm_exc_page_fault
+               |          
+               |--0.72%--ob::make_workload(unsigned long, unsigned int)
+               |          main
+               |          __libc_start_call_main
+               |          __libc_start_main@@GLIBC_2.34
+               |          _start
+               |          
+                --0.58%--__memset_avx2_unaligned_erms
+                          std::__detail::_Map_base<unsigned long, std::pair<unsigned long const, ob::BookVec::Order>, std::allocator<std::pair<unsigned long const, ob::BookVec::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](unsigned long const&)
+                          ob::BookVec::add_order(unsigned long, ob::Side, int, long)
+                          RunResult run_once<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+                          void bench_impl<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&, int, char const*)
+                          main
+                          __libc_start_call_main
+                          __libc_start_main@@GLIBC_2.34
+                          _start
+
+     1.73%  [.] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]                                -      -            
+            |          
+             --1.66%--ob::make_workload(unsigned long, unsigned int)
+                       main
+                       __libc_start_call_main
+                       __libc_start_main@@GLIBC_2.34
+                       _start
+
+     1.01%  [.] _int_free                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          -      -            
+            |
+            ---cfree@GLIBC_2.2.5
+               |          
+                --0.72%--RunResult run_once<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+                          void bench_impl<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&, int, char const*)
+                          main
+                          __libc_start_call_main
+                          __libc_start_main@@GLIBC_2.34
+                          _start
+
+     1.01%  [.] std::chrono::_V2::steady_clock::now()                                                                                                                                                                                                                                                                                                                                                                                                                                                              -      -            
+            |          
+             --0.94%--RunResult run_once<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+                       void bench_impl<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&, int, char const*)
+                       main
+                       __libc_start_call_main
+                       __libc_start_main@@GLIBC_2.34
+                       _start
+
+     0.87%  [.] malloc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             -      -            
+            |          
+             --0.72%--operator new(unsigned long)
+                       |          
+                        --0.58%--std::__detail::_Map_base<unsigned long, std::pair<unsigned long const, ob::BookVec::Order>, std::allocator<std::pair<unsigned long const, ob::BookVec::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](unsigned long const&)
+                                  ob::BookVec::add_order(unsigned long, ob::Side, int, long)
+                                  RunResult run_once<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+                                  void bench_impl<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&, int, char const*)
+                                  main
+                                  __libc_start_call_main
+                                  __libc_start_main@@GLIBC_2.34
+                                  _start
+
+     0.79%  [.] cfree@GLIBC_2.2.5                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  -      -            
+            |          
+             --0.72%--RunResult run_once<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+                       void bench_impl<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&, int, char const*)
+                       main
+                       __libc_start_call_main
+                       __libc_start_main@@GLIBC_2.34
+                       _start
+
+     0.79%  [k] clear_page_erms                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    -      -            
+            |
+            ---get_page_from_freelist
+               __alloc_pages
+               alloc_pages_mpol
+               |          
+                --0.72%--vma_alloc_folio
+                          alloc_anon_folio
+                          do_anonymous_page
+                          handle_pte_fault
+                          __handle_mm_fault
+                          handle_mm_fault
+                          do_user_addr_fault
+                          exc_page_fault
+                          asm_exc_page_fault
+
+     0.72%  [k] _raw_spin_unlock_irqrestore                                                                                                                                                                                                                                                                                                                                                                                                                                                                        -      -            
+     0.58%  [.] clock_gettime@@GLIBC_2.17                                                                                                                                                                                                                                                                                                                                                                                                                                                                          -      -            
+            |
+            ---RunResult run_once<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+               void bench_impl<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&, int, char const*)
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     0.51%  [.] 0x0000000000000b88                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+            |
+            ---clock_gettime@@GLIBC_2.17
+               std::chrono::_V2::steady_clock::now()
+               RunResult run_once<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+               void bench_impl<ob::BookVec>(std::vector<ob::Op, std::allocator<ob::Op> > const&, int, char const*)
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     0.43%  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand()                                                                                                                                                                                                                                                                                                                  -      -            
+     0.36%  [k] mas_walk                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           -      -            
+     0.36%  [.] 0x0000000000000b68                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+     0.29%  [.] __memset_avx2_unaligned_erms                                                                                                                                                                                                                                                                                                                                                                                                                                                                       -      -            
+     0.29%  [k] handle_mm_fault                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    -      -            
+     0.29%  [k] mem_cgroup_commit_charge                                                                                                                                                                                                                                                                                                                                                                                                                                                                           -      -            
+     0.29%  [.] std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const                                                                                                                                                                                                                                                                                                                                                                                             -      -            
+     0.29%  [.] 0x0000000000000bde                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+     0.22%  [k] __lruvec_stat_mod_folio                                                                                                                                                                                                                                                                                                                                                                                                                                                                            -      -            
+     0.22%  [k] get_mem_cgroup_from_mm                                                                                                                                                                                                                                                                                                                                                                                                                                                                             -      -            
+     0.22%  [k] handle_pte_fault                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   -      -            
+     0.22%  [.] operator new(unsigned long)                                                                                                                                                                                                                                                                                                                                                                                                                                                                        -      -            
+     0.22%  [k] pte_offset_map_nolock                                                                                                                                                                                                                                                                                                                                                                                                                                                                              -      -            
+     0.22%  [.] 0x0000000000000b42                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+     0.22%  [.] 0x0000000000000b7a                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+     0.22%  [.] 0x0000000000000ba1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+     0.22%  [.] 0x0000000000000bcd                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+     0.14%  [k] __mod_memcg_lruvec_state                                                                                                                                                                                                                                                                                                                                                                                                                                                                           -      -            
+     0.14%  [k] __rmqueue_pcplist                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  -      -            
+     0.14%  [k] alloc_pages_mpol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   -      -            
+     0.14%  [k] folio_add_lru                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      -      -            
+     0.14%  [k] get_pfnblock_flags_mask                                                                                                                                                                                                                                                                                                                                                                                                                                                                            -      -            
+     0.14%  [k] get_vma_policy                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     -      -            
+     0.14%  [.] operator delete(void*)                                                                                                                                                                                                                                                                                                                                                                                                                                                                             -      -            
+     0.14%  [k] queued_spin_unlock                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+     0.14%  [k] rmqueue                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            -      -            
+     0.14%  [k] srso_alias_safe_ret                                                                                                                                                                                                                                                                                                                                                                                                                                                                                -      -            
+     0.14%  [.] void std::vector<ob::Level, std::allocator<ob::Level> >::_M_realloc_insert<ob::Level const&>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, ob::Level const&)                                                                                                                                                                                                                                                                                      -      -            
+     0.14%  [k] zap_pte_range                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      -      -            
+     0.14%  [.] 0x0000000000000af6                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+     0.14%  [.] 0x0000000000000b38                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+     0.14%  [.] 0x0000000000000b53                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+     0.14%  [.] 0x0000000000000b62                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+     0.14%  [.] 0x0000000000000b9b                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+     0.07%  [k] __alloc_pages                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      -      -            
+     0.07%  [k] __cond_resched                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     -      -            
+     0.07%  [k] __handle_mm_fault                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  -      -            
+     0.07%  [.] __log1p_ifunc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      -      -            
+     0.07%  [k] __mod_node_page_state                                                                                                                                                                                                                                                                                                                                                                                                                                                                              -      -            
+     0.07%  [k] __raw_callee_save___pv_queued_spin_unlock                                                                                                                                                                                                                                                                                                                                                                                                                                                          -      -            
+     0.07%  [.] __vdso_clock_gettime                                                                                                                                                                                                                                                                                                                                                                                                                                                                               -      -            
+     0.07%  [.] _dl_relocate_object                                                                                                                                                                                                                                                                                                                                                                                                                                                                                -      -            
+     0.07%  [k] _raw_spin_lock                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     -      -            
+     0.07%  [k] _raw_spin_trylock                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  -      -            
+     0.07%  [k] blk_cgroup_congested                                                                                                                                                                                                                                                                                                                                                                                                                                                                               -      -            
+     0.07%  [.] clock_gettime@plt                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  -      -            
+     0.07%  [k] count_memcg_events.constprop.0                                                                                                                                                                                                                                                                                                                                                                                                                                                                     -      -            
+     0.07%  [k] folio_add_new_anon_rmap                                                                                                                                                                                                                                                                                                                                                                                                                                                                            -      -            
+     0.07%  [k] free_unref_page_prepare                                                                                                                                                                                                                                                                                                                                                                                                                                                                            -      -            
+     0.07%  [k] lock_vma_under_rcu                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+     0.07%  [k] mas_wr_store_entry.isra.0                                                                                                                                                                                                                                                                                                                                                                                                                                                                          -      -            
+     0.07%  [.] operator delete(void*, unsigned long)@plt                                                                                                                                                                                                                                                                                                                                                                                                                                                          -      -            
+     0.07%  [.] operator new(unsigned long)@plt                                                                                                                                                                                                                                                                                                                                                                                                                                                                    -      -            
+     0.07%  [k] pte_mkwrite                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        -      -            
+     0.07%  [k] release_pages                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      -      -            
+     0.07%  [k] srso_alias_return_thunk                                                                                                                                                                                                                                                                                                                                                                                                                                                                            -      -            
+     0.07%  [k] syscall_trace_enter                                                                                                                                                                                                                                                                                                                                                                                                                                                                                -      -            
+     0.07%  [.] unsigned long std::uniform_int_distribution<unsigned long>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<unsigned long>::param_type const&) [clone .isra.0]  -      -            
+     0.07%  [k] vm_normal_page                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     -      -            
+     0.07%  [k] vma_alloc_folio                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    -      -            
+     0.07%  [k] vma_complete                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       -      -            
+     0.07%  [.] 0x0000000000000af8                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+     0.07%  [.] 0x0000000000000afc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+     0.07%  [.] 0x0000000000000b04                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+     0.07%  [.] 0x0000000000000b07                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+     0.07%  [.] 0x0000000000000b12                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+     0.07%  [.] 0x0000000000000b1b                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+     0.07%  [.] 0x0000000000000b35                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+     0.07%  [.] 0x0000000000000b46                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+     0.07%  [.] 0x0000000000000b65                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+     0.07%  [.] 0x0000000000000b6c                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+     0.07%  [.] 0x0000000000000b81                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -            
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

@@ -1,0 +1,60 @@
+impl=B runs=5 ops=1000000 (median of runs)
+  total_ms  241.1
+  ns/add    178.3
+  ns/cancel 400.8
+  ns/bbo    32.6
+  ns/depth  345.1
+  final bid: has=1 px=99.99 qty=2668
+  final ask: has=1 px=100.01 qty=2486
+  checksum 483587156
+impl=B runs=5 ops=1000000 (median of runs)
+  total_ms  263.6
+  ns/add    195.2
+  ns/cancel 414.9
+  ns/bbo    34.3
+  ns/depth  355.9
+  final bid: has=1 px=99.99 qty=2668
+  final ask: has=1 px=100.01 qty=2486
+  checksum 483587156
+impl=B runs=5 ops=1000000 (median of runs)
+  total_ms  179.3
+  ns/add    145.6
+  ns/cancel 214.6
+  ns/bbo    31.3
+  ns/depth  299.6
+  final bid: has=1 px=99.99 qty=2668
+  final ask: has=1 px=100.01 qty=2486
+  checksum 483587156
+impl=B runs=5 ops=1000000 (median of runs)
+  total_ms  254.2
+  ns/add    192.0
+  ns/cancel 424.9
+  ns/bbo    35.6
+  ns/depth  330.3
+  final bid: has=1 px=99.99 qty=2668
+  final ask: has=1 px=100.01 qty=2486
+  checksum 483587156
+impl=B runs=5 ops=1000000 (median of runs)
+  total_ms  248.0
+  ns/add    196.0
+  ns/cancel 377.1
+  ns/bbo    32.6
+  ns/depth  345.2
+  final bid: has=1 px=99.99 qty=2668
+  final ask: has=1 px=100.01 qty=2486
+  checksum 483587156
+
+ Performance counter stats for './build/bench --impl B' (5 runs):
+
+           1399.47 msec task-clock                       #    0.982 CPUs utilized               ( +-  4.25% )
+   <not supported>      cycles                                                                
+   <not supported>      instructions                                                          
+   <not supported>      branches                                                              
+   <not supported>      branch-misses                                                         
+   <not supported>      cache-misses                                                          
+   <not supported>      L1-dcache-load-misses                                                 
+   <not supported>      dTLB-load-misses                                                      
+             16623      page-faults                      #   11.878 K/sec                       ( +-  0.00% )
+
+            1.4251 +- 0.0647 seconds time elapsed  ( +-  4.54% )
+

@@ -1,0 +1,9 @@
+impl=C runs=5 ops=1000000 (median of runs)
+  total_ms  114.6
+  ns/add    74.8
+  ns/cancel 126.8
+  ns/bbo    32.0
+  ns/depth  322.0
+  final bid: has=1 px=99.99 qty=2668
+  final ask: has=1 px=100.01 qty=2486
+  checksum 483587156

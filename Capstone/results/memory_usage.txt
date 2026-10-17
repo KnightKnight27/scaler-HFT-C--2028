@@ -1,0 +1,6 @@
+impl=A
+	Maximum resident set size (kbytes): 56080
+impl=B
+	Maximum resident set size (kbytes): 55648
+impl=C
+	Maximum resident set size (kbytes): 57648
