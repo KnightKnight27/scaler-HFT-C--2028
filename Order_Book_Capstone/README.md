@@ -28,7 +28,7 @@ This project implements, verifies, benchmarks, and profiles three distinct singl
 ### Build & Run Commands
 ```bash
 # Build
-g++ -std=c++17 -O3 -march=native -g -Iinclude src/main.cpp -o bench
+g++ -std=c++17 -O2 src/main.cpp -o bench
 
 # Verify Correctness
 ./bench --verify
