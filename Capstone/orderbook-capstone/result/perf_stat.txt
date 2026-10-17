@@ -1,0 +1,216 @@
+=== PERF STAT IMPLEMENTATION A ===
+==========================================================
+Benchmark Implementation : Impl A (std::map + std::unordered_map) (5-Run Median)
+----------------------------------------------------------
+Total Workload Time      : 197.75 ms
+Avg add_order Latency    : 143.62 ns
+Avg cancel_order Latency : 362.26 ns
+Avg get_bbo Latency      : 21.16 ns
+Avg get_bids/asks(10)    : 137.50 ns
+Final BBO                : Bid 99.99 x 2722 | Ask 100.01 x 2525
+Anti-DCE Checksum        : 267280187
+==========================================================
+==========================================================
+Benchmark Implementation : Impl A (std::map + std::unordered_map) (5-Run Median)
+----------------------------------------------------------
+Total Workload Time      : 195.38 ms
+Avg add_order Latency    : 141.02 ns
+Avg cancel_order Latency : 355.18 ns
+Avg get_bbo Latency      : 20.72 ns
+Avg get_bids/asks(10)    : 134.96 ns
+Final BBO                : Bid 99.99 x 2722 | Ask 100.01 x 2525
+Anti-DCE Checksum        : 267280187
+==========================================================
+==========================================================
+Benchmark Implementation : Impl A (std::map + std::unordered_map) (5-Run Median)
+----------------------------------------------------------
+Total Workload Time      : 196.89 ms
+Avg add_order Latency    : 145.12 ns
+Avg cancel_order Latency : 364.52 ns
+Avg get_bbo Latency      : 20.57 ns
+Avg get_bids/asks(10)    : 137.19 ns
+Final BBO                : Bid 99.99 x 2722 | Ask 100.01 x 2525
+Anti-DCE Checksum        : 267280187
+==========================================================
+==========================================================
+Benchmark Implementation : Impl A (std::map + std::unordered_map) (5-Run Median)
+----------------------------------------------------------
+Total Workload Time      : 195.50 ms
+Avg add_order Latency    : 146.62 ns
+Avg cancel_order Latency : 356.72 ns
+Avg get_bbo Latency      : 21.54 ns
+Avg get_bids/asks(10)    : 148.77 ns
+Final BBO                : Bid 99.99 x 2722 | Ask 100.01 x 2525
+Anti-DCE Checksum        : 267280187
+==========================================================
+==========================================================
+Benchmark Implementation : Impl A (std::map + std::unordered_map) (5-Run Median)
+----------------------------------------------------------
+Total Workload Time      : 190.51 ms
+Avg add_order Latency    : 137.41 ns
+Avg cancel_order Latency : 343.00 ns
+Avg get_bbo Latency      : 20.51 ns
+Avg get_bids/asks(10)    : 135.21 ns
+Final BBO                : Bid 99.99 x 2722 | Ask 100.01 x 2525
+Anti-DCE Checksum        : 267280187
+==========================================================
+
+ Performance counter stats for './bench --impl A' (5 runs):
+
+           1133.52 msec task-clock                                                              ( +-  0.89% )
+   <not supported>      cycles                                                                
+   <not supported>      instructions                                                          
+   <not supported>      branches                                                              
+   <not supported>      branch-misses                                                         
+   <not supported>      cache-misses                                                          
+   <not supported>      L1-dcache-load-misses                                                 
+   <not supported>      dTLB-load-misses                                                      
+             19092      page-faults                                                             ( +-  0.00% )
+
+       1.143717884 +- 0.009800597 seconds time elapsed  ( +-  0.86% )
+
+
+=== PERF STAT IMPLEMENTATION B ===
+==========================================================
+Benchmark Implementation : Impl B (Flat Sorted Vector + Open-Addressing Hash) (5-Run Median)
+----------------------------------------------------------
+Total Workload Time      : 170.39 ms
+Avg add_order Latency    : 153.01 ns
+Avg cancel_order Latency : 199.34 ns
+Avg get_bbo Latency      : 19.14 ns
+Avg get_bids/asks(10)    : 73.62 ns
+Final BBO                : Bid 99.99 x 2722 | Ask 100.01 x 2525
+Anti-DCE Checksum        : 267280187
+==========================================================
+==========================================================
+Benchmark Implementation : Impl B (Flat Sorted Vector + Open-Addressing Hash) (5-Run Median)
+----------------------------------------------------------
+Total Workload Time      : 171.14 ms
+Avg add_order Latency    : 154.64 ns
+Avg cancel_order Latency : 197.99 ns
+Avg get_bbo Latency      : 19.79 ns
+Avg get_bids/asks(10)    : 70.03 ns
+Final BBO                : Bid 99.99 x 2722 | Ask 100.01 x 2525
+Anti-DCE Checksum        : 267280187
+==========================================================
+==========================================================
+Benchmark Implementation : Impl B (Flat Sorted Vector + Open-Addressing Hash) (5-Run Median)
+----------------------------------------------------------
+Total Workload Time      : 183.37 ms
+Avg add_order Latency    : 166.98 ns
+Avg cancel_order Latency : 215.56 ns
+Avg get_bbo Latency      : 20.17 ns
+Avg get_bids/asks(10)    : 82.51 ns
+Final BBO                : Bid 99.99 x 2722 | Ask 100.01 x 2525
+Anti-DCE Checksum        : 267280187
+==========================================================
+==========================================================
+Benchmark Implementation : Impl B (Flat Sorted Vector + Open-Addressing Hash) (5-Run Median)
+----------------------------------------------------------
+Total Workload Time      : 177.92 ms
+Avg add_order Latency    : 160.40 ns
+Avg cancel_order Latency : 207.34 ns
+Avg get_bbo Latency      : 20.80 ns
+Avg get_bids/asks(10)    : 81.76 ns
+Final BBO                : Bid 99.99 x 2722 | Ask 100.01 x 2525
+Anti-DCE Checksum        : 267280187
+==========================================================
+==========================================================
+Benchmark Implementation : Impl B (Flat Sorted Vector + Open-Addressing Hash) (5-Run Median)
+----------------------------------------------------------
+Total Workload Time      : 197.04 ms
+Avg add_order Latency    : 181.52 ns
+Avg cancel_order Latency : 229.90 ns
+Avg get_bbo Latency      : 19.75 ns
+Avg get_bids/asks(10)    : 81.15 ns
+Final BBO                : Bid 99.99 x 2722 | Ask 100.01 x 2525
+Anti-DCE Checksum        : 267280187
+==========================================================
+
+ Performance counter stats for './bench --impl B' (5 runs):
+
+           1065.73 msec task-clock                                                              ( +-  1.92% )
+   <not supported>      cycles                                                                
+   <not supported>      instructions                                                          
+   <not supported>      branches                                                              
+   <not supported>      branch-misses                                                         
+   <not supported>      cache-misses                                                          
+   <not supported>      L1-dcache-load-misses                                                 
+   <not supported>      dTLB-load-misses                                                      
+             90918      page-faults                                                             ( +-  0.00% )
+
+       1.075273019 +- 0.021900481 seconds time elapsed  ( +-  2.04% )
+
+
+=== PERF STAT IMPLEMENTATION C ===
+==========================================================
+Benchmark Implementation : Impl C (Direct Array + 64-bit Hardware Bitset + Direct Pool) (5-Run Median)
+----------------------------------------------------------
+Total Workload Time      : 64.18 ms
+Avg add_order Latency    : 27.71 ns
+Avg cancel_order Latency : 106.21 ns
+Avg get_bbo Latency      : 20.03 ns
+Avg get_bids/asks(10)    : 80.92 ns
+Final BBO                : Bid 99.99 x 2722 | Ask 100.01 x 2525
+Anti-DCE Checksum        : 267280187
+==========================================================
+==========================================================
+Benchmark Implementation : Impl C (Direct Array + 64-bit Hardware Bitset + Direct Pool) (5-Run Median)
+----------------------------------------------------------
+Total Workload Time      : 65.00 ms
+Avg add_order Latency    : 27.89 ns
+Avg cancel_order Latency : 107.46 ns
+Avg get_bbo Latency      : 20.31 ns
+Avg get_bids/asks(10)    : 84.61 ns
+Final BBO                : Bid 99.99 x 2722 | Ask 100.01 x 2525
+Anti-DCE Checksum        : 267280187
+==========================================================
+==========================================================
+Benchmark Implementation : Impl C (Direct Array + 64-bit Hardware Bitset + Direct Pool) (5-Run Median)
+----------------------------------------------------------
+Total Workload Time      : 61.98 ms
+Avg add_order Latency    : 27.72 ns
+Avg cancel_order Latency : 98.79 ns
+Avg get_bbo Latency      : 20.06 ns
+Avg get_bids/asks(10)    : 81.75 ns
+Final BBO                : Bid 99.99 x 2722 | Ask 100.01 x 2525
+Anti-DCE Checksum        : 267280187
+==========================================================
+==========================================================
+Benchmark Implementation : Impl C (Direct Array + 64-bit Hardware Bitset + Direct Pool) (5-Run Median)
+----------------------------------------------------------
+Total Workload Time      : 59.97 ms
+Avg add_order Latency    : 27.75 ns
+Avg cancel_order Latency : 88.30 ns
+Avg get_bbo Latency      : 20.14 ns
+Avg get_bids/asks(10)    : 77.33 ns
+Final BBO                : Bid 99.99 x 2722 | Ask 100.01 x 2525
+Anti-DCE Checksum        : 267280187
+==========================================================
+==========================================================
+Benchmark Implementation : Impl C (Direct Array + 64-bit Hardware Bitset + Direct Pool) (5-Run Median)
+----------------------------------------------------------
+Total Workload Time      : 61.44 ms
+Avg add_order Latency    : 27.42 ns
+Avg cancel_order Latency : 97.95 ns
+Avg get_bbo Latency      : 20.10 ns
+Avg get_bids/asks(10)    : 80.66 ns
+Final BBO                : Bid 99.99 x 2722 | Ask 100.01 x 2525
+Anti-DCE Checksum        : 267280187
+==========================================================
+
+ Performance counter stats for './bench --impl C' (5 runs):
+
+            370.86 msec task-clock                                                              ( +-  1.93% )
+   <not supported>      cycles                                                                
+   <not supported>      instructions                                                          
+   <not supported>      branches                                                              
+   <not supported>      branch-misses                                                         
+   <not supported>      cache-misses                                                          
+   <not supported>      L1-dcache-load-misses                                                 
+   <not supported>      dTLB-load-misses                                                      
+             17157      page-faults                                                             ( +-  0.00% )
+
+       0.395488877 +- 0.010627961 seconds time elapsed  ( +-  2.69% )
+
+

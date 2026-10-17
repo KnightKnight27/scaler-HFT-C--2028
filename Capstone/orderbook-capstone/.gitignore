@@ -1,0 +1,15 @@
+# Compiled binaries & object files
+/bench
+/src/*.o
+*.o
+
+# Perf profiling outputs
+result/perf_*.data
+result/perf_*.data.old
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# VS Code workspace settings (optional)
+.vscode/
