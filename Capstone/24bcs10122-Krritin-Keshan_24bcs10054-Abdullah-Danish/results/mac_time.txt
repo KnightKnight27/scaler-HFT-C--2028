@@ -1,0 +1,455 @@
+Implementation A (std::map + std::list)
+total: 149.41 ms
+Final BBO:
+Bid: 99.99 x 2522
+Ask: 100.01 x 2193
+Checksum: 4459131921
+        0.19 real         0.17 user         0.01 sys
+            89505792  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                5618  page reclaims
+                  12  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                   5  involuntary context switches
+          1270087776  instructions retired
+           710257210  cycles elapsed
+            89162136  peak memory footprint
+Implementation A (std::map + std::list)
+total: 153.64 ms
+Final BBO:
+Bid: 99.99 x 2522
+Ask: 100.01 x 2193
+Checksum: 4459131921
+        0.20 real         0.18 user         0.01 sys
+            89505792  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                5629  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                   4  involuntary context switches
+          1267991245  instructions retired
+           753111566  cycles elapsed
+            89178544  peak memory footprint
+Implementation A (std::map + std::list)
+total: 145.40 ms
+Final BBO:
+Bid: 99.99 x 2522
+Ask: 100.01 x 2193
+Checksum: 4459131921
+        0.19 real         0.18 user         0.01 sys
+            89505792  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                5629  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                   5  involuntary context switches
+          1262815001  instructions retired
+           719865013  cycles elapsed
+            89178544  peak memory footprint
+Implementation A (std::map + std::list)
+total: 137.40 ms
+Final BBO:
+Bid: 99.99 x 2522
+Ask: 100.01 x 2193
+Checksum: 4459131921
+        0.17 real         0.16 user         0.00 sys
+            89522176  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                5630  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                   4  involuntary context switches
+          1256696392  instructions retired
+           699363365  cycles elapsed
+            89194928  peak memory footprint
+Implementation A (std::map + std::list)
+total: 140.65 ms
+Final BBO:
+Bid: 99.99 x 2522
+Ask: 100.01 x 2193
+Checksum: 4459131921
+        0.18 real         0.17 user         0.00 sys
+            89505792  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                5629  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                   4  involuntary context switches
+          1260976752  instructions retired
+           678575155  cycles elapsed
+            89178544  peak memory footprint
+Implementation B (priority_queue + lazy deletion)
+total: 112.24 ms
+Final BBO:
+Bid: 99.99 x 2522
+Ask: 100.01 x 2193
+Checksum: 4459131921
+        0.13 real         0.13 user         0.00 sys
+            75071488  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                4748  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                   3  involuntary context switches
+          1135431481  instructions retired
+           546823620  cycles elapsed
+            74727832  peak memory footprint
+Implementation B (priority_queue + lazy deletion)
+total: 120.84 ms
+Final BBO:
+Bid: 99.99 x 2522
+Ask: 100.01 x 2193
+Checksum: 4459131921
+        0.14 real         0.13 user         0.00 sys
+            74874880  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                4736  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                   3  involuntary context switches
+          1136086129  instructions retired
+           551094460  cycles elapsed
+            74531224  peak memory footprint
+Implementation B (priority_queue + lazy deletion)
+total: 120.89 ms
+Final BBO:
+Bid: 99.99 x 2522
+Ask: 100.01 x 2193
+Checksum: 4459131921
+        0.14 real         0.13 user         0.00 sys
+            75153408  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                4753  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                   5  involuntary context switches
+          1135249402  instructions retired
+           555472128  cycles elapsed
+            74809752  peak memory footprint
+Implementation B (priority_queue + lazy deletion)
+total: 118.39 ms
+Final BBO:
+Bid: 99.99 x 2522
+Ask: 100.01 x 2193
+Checksum: 4459131921
+        0.14 real         0.13 user         0.00 sys
+            74956800  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                4741  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                   4  involuntary context switches
+          1140814940  instructions retired
+           577984865  cycles elapsed
+            74613144  peak memory footprint
+Implementation B (priority_queue + lazy deletion)
+total: 122.56 ms
+Final BBO:
+Bid: 99.99 x 2522
+Ask: 100.01 x 2193
+Checksum: 4459131921
+        0.15 real         0.14 user         0.00 sys
+            75153408  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                4753  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                   5  involuntary context switches
+          1135439797  instructions retired
+           560229878  cycles elapsed
+            74809752  peak memory footprint
+Implementation C (array indexed by price)
+total: 14.90 ms
+Final BBO:
+Bid: 99.99 x 2522
+Ask: 100.01 x 2193
+Checksum: 4459131921
+        0.03 real         0.02 user         0.00 sys
+            61734912  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                3933  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                   4  involuntary context switches
+           340843650  instructions retired
+           112694837  cycles elapsed
+            61374848  peak memory footprint
+Implementation C (array indexed by price)
+total: 14.94 ms
+Final BBO:
+Bid: 99.99 x 2522
+Ask: 100.01 x 2193
+Checksum: 4459131921
+        0.03 real         0.02 user         0.00 sys
+            61734912  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                3933  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                   3  involuntary context switches
+           342523052  instructions retired
+           114069707  cycles elapsed
+            61374848  peak memory footprint
+Implementation C (array indexed by price)
+total: 14.88 ms
+Final BBO:
+Bid: 99.99 x 2522
+Ask: 100.01 x 2193
+Checksum: 4459131921
+        0.03 real         0.02 user         0.00 sys
+            61767680  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                3935  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                   4  involuntary context switches
+           341747893  instructions retired
+           114267333  cycles elapsed
+            61407616  peak memory footprint
+Implementation C (array indexed by price)
+total: 14.54 ms
+Final BBO:
+Bid: 99.99 x 2522
+Ask: 100.01 x 2193
+Checksum: 4459131921
+        0.03 real         0.02 user         0.00 sys
+            61734912  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                3933  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                   4  involuntary context switches
+           341125538  instructions retired
+           111669113  cycles elapsed
+            61374848  peak memory footprint
+Implementation C (array indexed by price)
+total: 14.08 ms
+Final BBO:
+Bid: 99.99 x 2522
+Ask: 100.01 x 2193
+Checksum: 4459131921
+        0.03 real         0.02 user         0.00 sys
+            61734912  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                3933  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                   4  involuntary context switches
+           341049547  instructions retired
+           111252693  cycles elapsed
+            61374848  peak memory footprint
+workload only: 1000000 ops, 700829 adds
+        0.01 real         0.01 user         0.00 sys
+            41648128  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                2707  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                   5  involuntary context switches
+           157448252  instructions retired
+            61560903  cycles elapsed
+            41288064  peak memory footprint
+workload only: 1000000 ops, 700829 adds
+        0.01 real         0.01 user         0.00 sys
+            41664512  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                2708  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                   5  involuntary context switches
+           158031775  instructions retired
+            60834661  cycles elapsed
+            41304448  peak memory footprint
+workload only: 1000000 ops, 700829 adds
+        0.01 real         0.01 user         0.00 sys
+            41680896  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                2709  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                   4  involuntary context switches
+           157794751  instructions retired
+            61487977  cycles elapsed
+            41320832  peak memory footprint
+workload only: 1000000 ops, 700829 adds
+        0.01 real         0.01 user         0.00 sys
+            41664512  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                2708  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                   5  involuntary context switches
+           157811396  instructions retired
+            61773330  cycles elapsed
+            41304448  peak memory footprint
+workload only: 1000000 ops, 700829 adds
+        0.01 real         0.01 user         0.00 sys
+            41680896  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                2709  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                   3  involuntary context switches
+           157832149  instructions retired
+            61514008  cycles elapsed
+            41320832  peak memory footprint

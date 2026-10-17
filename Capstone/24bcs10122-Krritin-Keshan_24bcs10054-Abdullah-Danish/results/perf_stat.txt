@@ -1,0 +1,61 @@
+Linux 6.12.76-linuxkit aarch64, perf version 6.1.187, g++ (Debian 12.2.0-14+deb12u1) 12.2.0
+
+ Performance counter stats for '/tmp/bench --impl A --perf' (5 runs):
+
+            250.60 msec task-clock                       #    1.020 CPUs utilized            ( +-  1.03% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      cache-misses                                                
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      dTLB-load-misses                                            
+             14033      page-faults                      #   57.352 K/sec                    ( +-  0.92% )
+
+           0.24580 +- 0.00257 seconds time elapsed  ( +-  1.04% )
+
+
+ Performance counter stats for '/tmp/bench --impl B --perf' (5 runs):
+
+            136.37 msec task-clock                       #    0.974 CPUs utilized            ( +-  1.32% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      cache-misses                                                
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      dTLB-load-misses                                            
+              9708      page-faults                      #   69.780 K/sec                    ( +-  1.05% )
+
+           0.13998 +- 0.00180 seconds time elapsed  ( +-  1.29% )
+
+
+ Performance counter stats for '/tmp/bench --impl C --perf' (5 runs):
+
+             25.22 msec task-clock                       #    0.980 CPUs utilized            ( +-  0.97% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      cache-misses                                                
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      dTLB-load-misses                                            
+              4789      page-faults                      #  187.901 K/sec                    ( +-  1.11% )
+
+          0.025731 +- 0.000253 seconds time elapsed  ( +-  0.98% )
+
+
+ Performance counter stats for '/tmp/bench --impl none --perf' (5 runs):
+
+             13.71 msec task-clock                       #    0.946 CPUs utilized            ( +-  3.07% )
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      cache-misses                                                
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      dTLB-load-misses                                            
+              2257      page-faults                      #  158.232 K/sec                    ( +-  4.32% )
+
+          0.014483 +- 0.000425 seconds time elapsed  ( +-  2.93% )
+

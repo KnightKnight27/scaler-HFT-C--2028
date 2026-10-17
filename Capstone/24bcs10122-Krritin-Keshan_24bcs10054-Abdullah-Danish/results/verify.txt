@@ -1,0 +1,15 @@
+Running correctness test...
+
+edge cases: A ok, B ok, C ok
+workload 1: 1000000 ops, seed 42, 70% add / 20% cancel, full price range (same as the benchmark)
+workload 2: 200000 ops, seed 42, 40% add / 50% cancel, prices within 20 ticks of the mid
+            (book stays small, best levels keep getting empty, sometimes a whole side is empty)
+after every op B and C are compared with A: cancel result, bbo, top 10 bids and asks
+(full book every 10000 ops)
+mismatches: B 0, C 0
+
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+
+All implementations produce identical results.

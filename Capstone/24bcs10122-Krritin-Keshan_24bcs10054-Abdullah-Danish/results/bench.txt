@@ -1,0 +1,50 @@
+Apple M3 Pro, macOS 26.3, Apple clang version 17.0.0 (clang-1700.0.13.5)
+
+Implementation A (std::map + std::list)
+1000000 ops: 700829 add, 199496 cancel, 99675 bbo, get_bids(10) + get_asks(10) every 100 ops, seed 42
+
+run 1:  total  147.96 ms | add  120.1 ns | cancel  283.7 ns | bbo  18.8 ns
+run 2:  total  138.39 ms | add  111.3 ns | cancel  249.7 ns | bbo  17.3 ns
+run 3:  total  134.06 ms | add  110.8 ns | cancel  252.2 ns | bbo  17.8 ns
+run 4:  total  135.09 ms | add  109.9 ns | cancel  236.9 ns | bbo  18.2 ns
+run 5:  total  135.08 ms | add  111.0 ns | cancel  242.5 ns | bbo  18.1 ns
+median: total  135.09 ms | add  111.0 ns | cancel  249.7 ns | bbo  18.1 ns
+one clock read costs 14.0 ns, it is included in add / cancel / bbo
+
+Final BBO:
+Bid: 99.99 x 2522
+Ask: 100.01 x 2193
+Checksum: 4459131921
+
+Implementation B (priority_queue + lazy deletion)
+1000000 ops: 700829 add, 199496 cancel, 99675 bbo, get_bids(10) + get_asks(10) every 100 ops, seed 42
+
+run 1:  total  119.86 ms | add   65.3 ns | cancel  278.5 ns | bbo  15.8 ns
+run 2:  total  117.45 ms | add   62.9 ns | cancel  321.7 ns | bbo  15.9 ns
+run 3:  total  117.60 ms | add   60.7 ns | cancel  282.9 ns | bbo  15.1 ns
+run 4:  total  111.79 ms | add   60.6 ns | cancel  274.3 ns | bbo  15.0 ns
+run 5:  total  113.37 ms | add   60.9 ns | cancel  291.7 ns | bbo  15.1 ns
+median: total  117.45 ms | add   60.9 ns | cancel  282.9 ns | bbo  15.1 ns
+one clock read costs 14.3 ns, it is included in add / cancel / bbo
+
+Final BBO:
+Bid: 99.99 x 2522
+Ask: 100.01 x 2193
+Checksum: 4459131921
+
+Implementation C (array indexed by price)
+1000000 ops: 700829 add, 199496 cancel, 99675 bbo, get_bids(10) + get_asks(10) every 100 ops, seed 42
+
+run 1:  total   14.39 ms | add   17.4 ns | cancel   28.9 ns | bbo  15.9 ns
+run 2:  total   12.84 ms | add   16.3 ns | cancel   23.7 ns | bbo  15.8 ns
+run 3:  total   12.08 ms | add   16.4 ns | cancel   21.1 ns | bbo  15.9 ns
+run 4:  total   12.65 ms | add   16.4 ns | cancel   24.1 ns | bbo  15.9 ns
+run 5:  total   12.16 ms | add   16.4 ns | cancel   20.5 ns | bbo  15.9 ns
+median: total   12.65 ms | add   16.4 ns | cancel   23.7 ns | bbo  15.9 ns
+one clock read costs 14.2 ns, it is included in add / cancel / bbo
+
+Final BBO:
+Bid: 99.99 x 2522
+Ask: 100.01 x 2193
+Checksum: 4459131921
+

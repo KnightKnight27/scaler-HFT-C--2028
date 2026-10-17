@@ -1,0 +1,371 @@
+=============== Implementation A
+# To display the perf.data header info, please use --header/--header-only options.
+#
+# comm: bench
+#
+# Total Lost Samples: 0
+#
+# Samples: 9K of event 'cpu-clock:pppH'
+# Event count (approx.): 2294500000
+#
+# Overhead  Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                              
+# ........  .....................  ....................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    27.41%  bench                  [.] MapOrderBook::add_order
+            |
+            ---MapOrderBook::add_order
+               runUntimed<MapOrderBook>
+               bench<MapOrderBook>
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+    20.96%  libc.so.6              [.] _int_free
+            |
+            ---_int_free
+               |          
+                --20.20%--cfree@GLIBC_2.17
+                          |          
+                          |--14.04%--cfree@GLIBC_2.17
+                          |          |          
+                          |          |--10.08%--std::_Rb_tree<int, std::pair<int const, MapOrderBook::PriceLevel>, std::_Select1st<std::pair<int const, MapOrderBook::PriceLevel> >, std::less<int>, std::allocator<std::pair<int const, MapOrderBook::PriceLevel> > >::_M_erase
+                          |          |          |          
+                          |          |           --9.90%--runUntimed<MapOrderBook>
+                          |          |                     bench<MapOrderBook>
+                          |          |                     main
+                          |          |                     __libc_start_call_main
+                          |          |                     __libc_start_main@@GLIBC_2.34
+                          |          |                     _start
+                          |          |          
+                          |           --3.44%--runUntimed<MapOrderBook>
+                          |                     bench<MapOrderBook>
+                          |                     main
+                          |                     __libc_start_call_main
+                          |                     __libc_start_main@@GLIBC_2.34
+                          |                     _start
+                          |          
+                           --4.28%--std::_Rb_tree<int, std::pair<int const, MapOrderBook::PriceLevel>, std::_Select1st<std::pair<int const, MapOrderBook::PriceLevel> >, std::less<int>, std::allocator<std::pair<int const, MapOrderBook::PriceLevel> > >::_M_erase
+                                     |          
+                                      --4.14%--runUntimed<MapOrderBook>
+                                                bench<MapOrderBook>
+                                                main
+                                                __libc_start_call_main
+                                                __libc_start_main@@GLIBC_2.34
+                                                _start
+
+    19.56%  bench                  [.] MapOrderBook::cancel_order
+            |
+            ---MapOrderBook::cancel_order
+               runOp<MapOrderBook>
+               runUntimed<MapOrderBook>
+               bench<MapOrderBook>
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     5.45%  bench                  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, MapOrderBook::OrderRef>, std::allocator<std::pair<unsigned long const, MapOrderBook::OrderRef> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash
+            |
+            ---std::_Hashtable<unsigned long, std::pair<unsigned long const, MapOrderBook::OrderRef>, std::allocator<std::pair<unsigned long const, MapOrderBook::OrderRef> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash
+               std::__detail::_Map_base<unsigned long, std::pair<unsigned long const, MapOrderBook::OrderRef>, std::allocator<std::pair<unsigned long const, MapOrderBook::OrderRef> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[]
+               MapOrderBook::add_order
+               runUntimed<MapOrderBook>
+               bench<MapOrderBook>
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     5.12%  bench                  [.] std::_Rb_tree<int, std::pair<int const, MapOrderBook::PriceLevel>, std::_Select1st<std::pair<int const, MapOrderBook::PriceLevel> >, std::less<int>, std::allocator<std::pair<int const, MapOrderBook::PriceLevel> > >::_M_erase
+            |
+            ---std::_Rb_tree<int, std::pair<int const, MapOrderBook::PriceLevel>, std::_Select1st<std::pair<int const, MapOrderBook::PriceLevel> >, std::less<int>, std::allocator<std::pair<int const, MapOrderBook::PriceLevel> > >::_M_erase
+               |          
+                --5.03%--runUntimed<MapOrderBook>
+                          bench<MapOrderBook>
+                          main
+                          __libc_start_call_main
+                          __libc_start_main@@GLIBC_2.34
+                          _start
+
+     2.92%  bench                  [.] makeWorkload
+            |
+            ---makeWorkload
+               bench<MapOrderBook>
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     2.40%  libc.so.6              [.] _int_malloc
+            |
+            ---_int_malloc
+               |          
+                --2.22%--malloc
+
+     2.24%  libc.so.6              [.] cfree@GLIBC_2.17
+            |
+            ---cfree@GLIBC_2.17
+
+
+
+#
+# (Tip: See assembly instructions with percentage: perf annotate <symbol>)
+#
+=============== Implementation B
+# To display the perf.data header info, please use --header/--header-only options.
+#
+# comm: bench
+#
+# Total Lost Samples: 0
+#
+# Samples: 5K of event 'cpu-clock:pppH'
+# Event count (approx.): 1427750000
+#
+# Overhead  Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                
+# ........  .....................  ......................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    35.70%  bench                  [.] HeapOrderBook::cancel_order
+            |
+            ---HeapOrderBook::cancel_order
+               runOp<HeapOrderBook>
+               runUntimed<HeapOrderBook>
+               bench<HeapOrderBook>
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+    10.98%  bench                  [.] HeapOrderBook::add_order
+            |
+            ---HeapOrderBook::add_order
+               |          
+                --10.96%--runUntimed<HeapOrderBook>
+                          bench<HeapOrderBook>
+                          main
+                          __libc_start_call_main
+                          __libc_start_main@@GLIBC_2.34
+                          _start
+
+     5.88%  libstdc++.so.6.0.30    [.] std::_Rb_tree_insert_and_rebalance
+            |
+            ---std::_Rb_tree_insert_and_rebalance
+               HeapOrderBook::add_order
+               runUntimed<HeapOrderBook>
+               bench<HeapOrderBook>
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     5.08%  libc.so.6              [.] __memcpy_generic
+            |
+            ---__memcpy_generic
+               |          
+               |--2.77%--HeapOrderBook::get_bids
+               |          runDepth<HeapOrderBook>
+               |          runUntimed<HeapOrderBook>
+               |          bench<HeapOrderBook>
+               |          main
+               |          __libc_start_call_main
+               |          __libc_start_main@@GLIBC_2.34
+               |          _start
+               |          
+                --2.10%--HeapOrderBook::get_asks
+                          runDepth<HeapOrderBook>
+                          runUntimed<HeapOrderBook>
+                          bench<HeapOrderBook>
+                          main
+                          __libc_start_call_main
+                          __libc_start_main@@GLIBC_2.34
+                          _start
+
+     4.73%  bench                  [.] makeWorkload
+            |
+            ---makeWorkload
+               bench<HeapOrderBook>
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     3.78%  libc.so.6              [.] _int_free
+            |
+            ---_int_free
+               cfree@GLIBC_2.17
+               |          
+                --2.05%--cfree@GLIBC_2.17
+
+     3.33%  libc.so.6              [.] malloc_consolidate
+            |
+            ---malloc_consolidate
+
+     3.33%  libstdc++.so.6.0.30    [.] std::_Rb_tree_rebalance_for_erase
+            |
+            ---std::_Rb_tree_rebalance_for_erase
+               HeapOrderBook::cancel_order
+               runOp<HeapOrderBook>
+               runUntimed<HeapOrderBook>
+               bench<HeapOrderBook>
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     3.17%  bench                  [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, HeapOrderBook::Order>, std::_Select1st<std::pair<unsigned long const, HeapOrderBook::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, HeapOrderBook::Order> > >::_M_erase
+            |
+            ---std::_Rb_tree<unsigned long, std::pair<unsigned long const, HeapOrderBook::Order>, std::_Select1st<std::pair<unsigned long const, HeapOrderBook::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, HeapOrderBook::Order> > >::_M_erase
+               |          
+                --2.03%--std::_Rb_tree<unsigned long, std::pair<unsigned long const, HeapOrderBook::Order>, std::_Select1st<std::pair<unsigned long const, HeapOrderBook::Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, HeapOrderBook::Order> > >::_M_erase
+                          runUntimed<HeapOrderBook>
+                          bench<HeapOrderBook>
+                          main
+                          __libc_start_call_main
+                          __libc_start_main@@GLIBC_2.34
+                          _start
+
+     2.40%  bench                  [.] runOp<HeapOrderBook>
+            |
+            ---runOp<HeapOrderBook>
+               runUntimed<HeapOrderBook>
+               bench<HeapOrderBook>
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     2.38%  bench                  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+            |
+            ---std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+               makeWorkload
+               bench<HeapOrderBook>
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     2.28%  libc.so.6              [.] malloc
+            |
+            ---malloc
+               |          
+                --2.15%--operator new
+
+     2.01%  libc.so.6              [.] _int_malloc
+            |
+            ---_int_malloc
+
+
+
+#
+# (Tip: Order by the overhead of source file name and line number: perf report -s srcline)
+#
+=============== Implementation C
+# To display the perf.data header info, please use --header/--header-only options.
+#
+# comm: bench
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'cpu-clock:pppH'
+# Event count (approx.): 263000000
+#
+# Overhead  Shared Object          Symbol                                                                                                                                                                             
+# ........  .....................  ...................................................................................................................................................................................
+#
+    30.23%  bench                  [.] runOp<ArrayOrderBook>
+            |
+            ---runOp<ArrayOrderBook>
+               runUntimed<ArrayOrderBook>
+               bench<ArrayOrderBook>
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+    26.43%  bench                  [.] makeWorkload
+            |
+            ---makeWorkload
+               bench<ArrayOrderBook>
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+    12.26%  bench                  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+            |
+            ---std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+               |          
+                --12.07%--makeWorkload
+                          bench<ArrayOrderBook>
+                          main
+                          __libc_start_call_main
+                          __libc_start_main@@GLIBC_2.34
+                          _start
+
+     4.85%  bench                  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand
+            |
+            ---std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand
+               std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()
+               makeWorkload
+               bench<ArrayOrderBook>
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     4.37%  [kernel.kallsyms]      [k] __pi_clear_page
+            |
+            ---__pi_clear_page
+               |          
+                --3.61%--do_huge_pmd_anonymous_page
+                          __handle_mm_fault
+                          handle_mm_fault
+                          do_page_fault
+                          do_translation_fault
+                          do_mem_abort
+                          el0_da
+                          el0t_64_sync_handler
+                          el0t_64_sync
+                          |          
+                           --2.19%--makeWorkload
+                                     bench<ArrayOrderBook>
+                                     main
+                                     __libc_start_call_main
+                                     __libc_start_main@@GLIBC_2.34
+                                     _start
+
+     4.09%  bench                  [.] std::vector<ArrayOrderBook::Order, std::allocator<ArrayOrderBook::Order> >::_M_default_append
+            |
+            ---std::vector<ArrayOrderBook::Order, std::allocator<ArrayOrderBook::Order> >::_M_default_append
+               runOp<ArrayOrderBook>
+               runUntimed<ArrayOrderBook>
+               bench<ArrayOrderBook>
+               main
+               __libc_start_call_main
+               __libc_start_main@@GLIBC_2.34
+               _start
+
+     3.04%  libc.so.6              [.] __memcpy_generic
+            |
+            ---__memcpy_generic
+               |          
+                --2.09%--std::vector<ArrayOrderBook::Order, std::allocator<ArrayOrderBook::Order> >::_M_default_append
+                          runOp<ArrayOrderBook>
+                          runUntimed<ArrayOrderBook>
+                          bench<ArrayOrderBook>
+                          main
+                          __libc_start_call_main
+                          __libc_start_main@@GLIBC_2.34
+                          _start
+
+     2.28%  [kernel.kallsyms]      [k] el0_da
+            |
+            ---el0_da
+               el0t_64_sync_handler
+               el0t_64_sync
+
+
+
+#
+# (Tip: Limit to show entries above 5% only: perf report --percent-limit 5)
+#

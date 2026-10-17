@@ -1,0 +1,113 @@
+=============== A
+Cachegrind, a cache and branch-prediction profiler
+Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+Command: /tmp/bench --impl A --perf
+
+brk segment overflow in thread #1: can't grow to 0x485b000
+(see section Limitations in user manual)
+NOTE: further instances of this message will not be shown
+
+I   refs:      903,704,051
+I1  misses:            926
+LLi misses:            920
+I1  miss rate:        0.00%
+LLi miss rate:        0.00%
+
+D   refs:      390,888,382  (254,387,235 rd   + 136,501,147 wr)
+D1  misses:     11,731,354  (  9,783,566 rd   +   1,947,788 wr)
+LLd misses:      3,040,996  (  2,035,908 rd   +   1,005,088 wr)
+D1  miss rate:         3.0% (        3.8%     +         1.4%  )
+LLd miss rate:         0.8% (        0.8%     +         0.7%  )
+
+LL refs:        11,732,280  (  9,784,492 rd   +   1,947,788 wr)
+LL misses:       3,041,916  (  2,036,828 rd   +   1,005,088 wr)
+LL miss rate:          0.2% (        0.2%     +         0.7%  )
+
+Branches:      129,272,664  (119,481,373 cond +   9,791,291 ind)
+Mispredicts:     9,076,255  (  9,076,001 cond +         254 ind)
+Mispred rate:          7.0% (        7.6%     +         0.0%   )
+=============== B
+Cachegrind, a cache and branch-prediction profiler
+Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+Command: /tmp/bench --impl B --perf
+
+brk segment overflow in thread #1: can't grow to 0x4843000
+(see section Limitations in user manual)
+NOTE: further instances of this message will not be shown
+
+I   refs:      922,452,334
+I1  misses:            937
+LLi misses:            931
+I1  miss rate:        0.00%
+LLi miss rate:        0.00%
+
+D   refs:      426,966,682  (282,627,542 rd   + 144,339,140 wr)
+D1  misses:     11,297,297  ( 10,130,593 rd   +   1,166,704 wr)
+LLd misses:      1,503,429  (    928,147 rd   +     575,282 wr)
+D1  miss rate:         2.6% (        3.6%     +         0.8%  )
+LLd miss rate:         0.4% (        0.3%     +         0.4%  )
+
+LL refs:        11,298,234  ( 10,131,530 rd   +   1,166,704 wr)
+LL misses:       1,504,360  (    929,078 rd   +     575,282 wr)
+LL miss rate:          0.1% (        0.1%     +         0.4%  )
+
+Branches:      150,229,077  (145,063,732 cond +   5,165,345 ind)
+Mispredicts:     7,392,817  (  7,392,604 cond +         213 ind)
+Mispred rate:          4.9% (        5.1%     +         0.0%   )
+=============== C
+Cachegrind, a cache and branch-prediction profiler
+Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+Command: /tmp/bench --impl C --perf
+
+brk segment overflow in thread #1: can't grow to 0x4876000
+(see section Limitations in user manual)
+NOTE: further instances of this message will not be shown
+
+I   refs:      294,139,309
+I1  misses:            873
+LLi misses:            867
+I1  miss rate:        0.00%
+LLi miss rate:        0.00%
+
+D   refs:      115,722,327  (65,786,230 rd   + 49,936,097 wr)
+D1  misses:      1,551,977  ( 1,017,339 rd   +    534,638 wr)
+LLd misses:        840,696  (   306,557 rd   +    534,139 wr)
+D1  miss rate:         1.3% (       1.5%     +        1.1%  )
+LLd miss rate:         0.7% (       0.5%     +        1.1%  )
+
+LL refs:         1,552,850  ( 1,018,212 rd   +    534,638 wr)
+LL misses:         841,563  (   307,424 rd   +    534,139 wr)
+LL miss rate:          0.2% (       0.1%     +        1.1%  )
+
+Branches:       26,504,449  (25,923,696 cond +    580,753 ind)
+Mispredicts:     1,589,764  ( 1,589,564 cond +        200 ind)
+Mispred rate:          6.0% (       6.1%     +        0.0%   )
+=============== none
+Cachegrind, a cache and branch-prediction profiler
+Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+Command: /tmp/bench --impl none --perf
+
+
+I   refs:      167,454,570
+I1  misses:            765
+LLi misses:            760
+I1  miss rate:        0.00%
+LLi miss rate:        0.00%
+
+D   refs:       57,369,922  (31,081,965 rd   + 26,287,957 wr)
+D1  misses:        788,612  (   473,321 rd   +    315,291 wr)
+LLd misses:        569,562  (   254,683 rd   +    314,879 wr)
+D1  miss rate:         1.4% (       1.5%     +        1.2%  )
+LLd miss rate:         1.0% (       0.8%     +        1.2%  )
+
+LL refs:           789,377  (   474,086 rd   +    315,291 wr)
+LL misses:         570,322  (   255,443 rd   +    314,879 wr)
+LL miss rate:          0.3% (       0.1%     +        1.2%  )
+
+Branches:       11,185,650  (11,185,049 cond +        601 ind)
+Mispredicts:       509,025  (   508,839 cond +        186 ind)
+Mispred rate:          4.6% (       4.5%     +       30.9%   )
