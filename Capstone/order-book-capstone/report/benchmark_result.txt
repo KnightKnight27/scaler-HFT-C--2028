@@ -1,0 +1,43 @@
+Order Book Benchmark Results
+
+Environment: Windows 11, MSYS2 UCRT64, g++ 16.1.0, C++17 -O2 Workload:
+1,000,000 operations, seed 42, five runs per implementation ADD: 700,471
+| CANCEL: 199,303 | BBO: 100,226 Depth queries: 10,000 (included in
+total runtime) Median is calculated independently for each metric.
+
+Summary
+
+Metric A: std::map B: sorted vector C: fixed array Total time 473 ms 414
+ms 226 ms ADD latency 429.9 ns/op 309.2 ns/op 163.0 ns/op CANCEL latency
+624.1 ns/op 716.6 ns/op 346.5 ns/op BBO latency 39.5 ns/op 44.9 ns/op
+40.0 ns/op
+
+Correctness comparison
+
+All implementations reported checksum: 508890804 Final best bid: 99.99 x
+2267 Final best ask: 100.01 x 2199
+
+Conclusion
+
+C had the lowest median total time, ADD latency, and CANCEL latency. A
+had the lowest measured BBO latency. The 0.5 ns/op difference between A
+and C for BBO is very small. These results are specific to this
+Windows/MSYS2 environment and workload.
+
+Five-run measurements
+
+A — std::map Run Total(ms) ADD(ns/op) CANCEL(ns/op) BBO(ns/op) 1 399
+356.3 536.1 35.6 2 473 429.9 624.1 38.0 3 462 416.5 599.4 43.4 4 610
+547.7 816.1 47.8 5 484 438.4 633.1 39.5
+
+B — sorted vector Run Total(ms) ADD(ns/op) CANCEL(ns/op) BBO(ns/op) 1
+425 322.8 716.6 58.5 2 414 309.2 733.6 42.3 3 391 289.2 689.4 44.9 4 390
+293.1 671.7 42.4 5 527 399.2 905.9 58.2
+
+C — fixed array Run Total(ms) ADD(ns/op) CANCEL(ns/op) BBO(ns/op) 1 263
+178.7 406.4 40.7 2 240 170.6 358.1 40.1 3 222 159.1 322.4 39.1 4 224
+153.5 346.5 37.6 5 226 163.0 335.9 40.0
+
+Note: Linux perf hardware-counter results are not included here. Do not
+infer cycles, instructions, cache misses, or branch misses from
+wall-clock timings.
