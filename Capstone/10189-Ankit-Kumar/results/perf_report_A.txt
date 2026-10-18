@@ -1,0 +1,25 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 18K of event 'task-clock:ppp'
+# Event count (approx.): 1878100000
+#
+# Overhead  Symbol                                                                                                                                              
+# ........  ....................................................................................................................................................
+#
+    28.10%  [.] MapOrderBook::add_order(unsigned long, Side, int, long)
+    16.07%  [.] MapOrderBook::cancel_order(unsigned long)
+    11.14%  [.] unlink_chunk.isra.0
+    11.12%  [.] malloc_consolidate
+     7.70%  [.] std::_Rb_tree<int, std::pair<int const, MapOrderBook::PriceLevel>, std::_Select1st<std::pair<int const, MapOrderBook::PriceLevel> >, std::greate
+     7.48%  [.] std::_Rb_tree<int, std::pair<int const, MapOrderBook::PriceLevel>, std::_Select1st<std::pair<int const, MapOrderBook::PriceLevel> >, std::less<i
+     4.10%  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, MapOrderBook::Locator>, std::allocator<std::pair<unsigned long const, MapOrderBook
+     2.49%  [.] std::__detail::_List_node_base::_M_hook(std::__detail::_List_node_base*)
+     1.96%  [.] _int_free
+     1.53%  [.] malloc
+     1.51%  [.] _int_malloc
+     1.19%  [.] int (anonymous namespace)::bench<MapOrderBook>(Workload const&, WorkloadConfig const&, int, bool)
+#
+#

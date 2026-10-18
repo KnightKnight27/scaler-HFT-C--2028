@@ -1,0 +1,17 @@
+==536== Command: ./bench_fib --impl C --runs 1 --no-latency
+==536== I refs:        306,722,721
+==536== I1  misses:          2,774
+==536== LLi misses:          2,725
+==536== I1  miss rate:        0.00%
+==536== LLi miss rate:        0.00%
+==536== D refs:         94,296,652  (56,221,667 rd   + 38,074,985 wr)
+==536== D1  misses:      2,942,419  ( 2,236,487 rd   +    705,932 wr)
+==536== LLd misses:      1,284,558  (   643,164 rd   +    641,394 wr)
+==536== D1  miss rate:         3.1% (       4.0%     +        1.9%  )
+==536== LLd miss rate:         1.4% (       1.1%     +        1.7%  )
+==536== LL refs:         2,945,193  ( 2,239,261 rd   +    705,932 wr)
+==536== LL misses:       1,287,283  (   645,889 rd   +    641,394 wr)
+==536== LL miss rate:          0.3% (       0.2%     +        1.7%  )
+==536== Branches:       23,259,285  (23,153,725 cond +    105,560 ind)
+==536== Mispredicts:     1,875,946  ( 1,874,682 cond +      1,264 ind)
+==536== Mispred rate:          8.1% (       8.1%     +        1.2%   )

@@ -1,0 +1,27 @@
+Implementation C: price-indexed arrays + bitmap + open-addressing order table
+workload: 1000000 ops (seed 42, scrambled ids): 700471 add, 199305 cancel, 100224 get_bbo, + get_bids(10)/get_asks(10) every 100 ops
+timer overhead: ~14 ns per steady_clock pair (included in the per-op numbers)
+
+run 1  total    31.0 ms | add  116.6 ns | cancel  119.3 ns | bbo  21.3 ns | depth  135.2 ns
+run 2  total    34.9 ms | add  114.2 ns | cancel  116.4 ns | bbo  21.4 ns | depth  137.2 ns
+run 3  total    35.0 ms | add  113.2 ns | cancel  115.1 ns | bbo  21.3 ns | depth  131.8 ns
+run 4  total    31.7 ms | add  113.8 ns | cancel  113.6 ns | bbo  21.1 ns | depth  146.1 ns
+run 5  total    39.6 ms | add  116.2 ns | cancel  117.8 ns | bbo  21.0 ns | depth  130.7 ns
+
+MEDIAN of 5 runs
+  total time (throughput pass): 34.9 ms  = 34.9 ns per op
+  ns per call                 avg     p50     p99   p99.9      max
+  add_order                 114.2     105     261     380   138611
+  cancel_order              116.4     110     266     391    72001
+  get_bbo                    21.3      20      33     119    14427
+  get_bids+get_asks(10)     135.2     123     280     844    15908
+  get_bbo back-to-back (10M calls on the final book, one clock pair): 0.65 ns per call
+
+book at the end: 5000 bid levels, 5000 ask levels
+memory: resident set grew by 16.1 MB while the book was built (run 1)
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2515
+
+Checksum: 13891949950710415644

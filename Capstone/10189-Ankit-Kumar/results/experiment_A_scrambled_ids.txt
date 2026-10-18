@@ -1,0 +1,27 @@
+Implementation A: std::map levels + std::list orders + std::unordered_map index
+workload: 1000000 ops (seed 42, scrambled ids): 700471 add, 199305 cancel, 100224 get_bbo, + get_bids(10)/get_asks(10) every 100 ops
+timer overhead: ~14 ns per steady_clock pair (included in the per-op numbers)
+
+run 1  total   248.4 ms | add  307.6 ns | cancel  423.3 ns | bbo  27.9 ns | depth  185.1 ns
+run 2  total   241.8 ms | add  284.2 ns | cancel  415.7 ns | bbo  26.9 ns | depth  177.1 ns
+run 3  total   230.5 ms | add  353.8 ns | cancel  461.2 ns | bbo  28.9 ns | depth  212.2 ns
+run 4  total   224.2 ms | add  259.2 ns | cancel  392.5 ns | bbo  25.0 ns | depth  154.3 ns
+run 5  total   216.7 ms | add  264.7 ns | cancel  393.9 ns | bbo  24.8 ns | depth  157.9 ns
+
+MEDIAN of 5 runs
+  total time (throughput pass): 230.5 ms  = 230.5 ns per op
+  ns per call                 avg     p50     p99   p99.9      max
+  add_order                 284.2     232     750    3959   163181
+  cancel_order              415.7     390     811    4302   131900
+  get_bbo                    26.9      23      63     189    34552
+  get_bids+get_asks(10)     177.1     141     475    1701    10957
+  get_bbo back-to-back (10M calls on the final book, one clock pair): 0.83 ns per call
+
+book at the end: 5000 bid levels, 5000 ask levels
+memory: resident set grew by 61.8 MB while the book was built (run 1)
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2515
+
+Checksum: 13891949950710415644

@@ -1,0 +1,15 @@
+
+ Performance counter stats for './bench --baseline' (5 runs):
+
+             30.15 msec task-clock                       #    0.889 CPUs utilized               ( +-  1.32% )
+   <not supported>      cycles                                                                
+   <not supported>      instructions                                                          
+   <not supported>      branches                                                              
+   <not supported>      branch-misses                                                         
+   <not supported>      cache-misses                                                          
+   <not supported>      L1-dcache-load-misses                                                 
+   <not supported>      dTLB-load-misses                                                      
+              6971      page-faults                      #  231.242 K/sec                     
+
+           0.03389 +- 0.00137 seconds time elapsed  ( +-  4.04% )
+

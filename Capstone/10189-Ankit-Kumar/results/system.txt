@@ -1,0 +1,13 @@
+kernel:   Linux 6.18.54.1-microsoft-standard-WSL2 x86_64
+CPU(s): 16
+Model name: 13th Gen Intel(R) Core(TM) i5-13450HX
+Thread(s) per core: 2
+Hypervisor vendor: Microsoft
+L1d cache: 384 KiB (8 instances)
+L2 cache: 10 MiB (8 instances)
+L3 cache: 20 MiB (1 instance)
+compiler: g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+flags:    -std=c++17 -O2 -g
+perf:     perf version 6.8.12
+valgrind: valgrind-3.22.0
+pinning:  taskset -c 2

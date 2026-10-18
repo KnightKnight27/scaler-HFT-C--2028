@@ -1,0 +1,25 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 8K of event 'task-clock:ppp'
+# Event count (approx.): 862100000
+#
+# Overhead  Symbol                                                                                                                                              
+# ........  ....................................................................................................................................................
+#
+    27.09%  [.] VectorOrderBook::cancel_order(unsigned long)
+    12.77%  [.] __gnu_cxx::__normal_iterator<VectorOrderBook::LevelEntry*, std::vector<VectorOrderBook::LevelEntry, std::allocator<VectorOrderBook::LevelEntry> 
+    11.58%  [.] __gnu_cxx::__normal_iterator<VectorOrderBook::LevelEntry*, std::vector<VectorOrderBook::LevelEntry, std::allocator<VectorOrderBook::LevelEntry> 
+    10.10%  [.] int (anonymous namespace)::bench<VectorOrderBook>(Workload const&, WorkloadConfig const&, int, bool)
+     7.28%  [.] VectorOrderBook::add_order(unsigned long, Side, int, long)
+     6.66%  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, VectorOrderBook::OrderRec>, std::allocator<std::pair<unsigned long const, VectorOr
+     6.36%  [.] malloc_consolidate
+     4.83%  [.] unlink_chunk.isra.0
+     1.93%  [.] __memmove_avx_unaligned_erms
+     1.60%  [.] _int_free
+     1.55%  [.] make_workload(WorkloadConfig const&)
+     1.36%  [.] _int_malloc
+#
+#

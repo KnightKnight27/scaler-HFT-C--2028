@@ -1,0 +1,23 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'task-clock:ppp'
+# Event count (approx.): 129900000
+#
+# Overhead  Symbol                                                                                                                                              
+# ........  ....................................................................................................................................................
+#
+    29.79%  [.] ArrayOrderBook::cancel_order(unsigned long)
+    17.78%  [.] ArrayOrderBook::add_order(unsigned long, Side, int, long)
+    13.86%  [.] main
+    12.63%  [.] make_workload(WorkloadConfig const&)
+     4.46%  [.] ArrayOrderBook::top_levels(Side, int) const
+     3.54%  [.] std::vector<OrderTable::Entry, std::allocator<OrderTable::Entry> >::_M_fill_assign(unsigned long, OrderTable::Entry const&)
+     3.39%  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 1
+     2.39%  [k] do_user_addr_fault
+     1.92%  [k] __rmqueue_pcplist
+     1.31%  [k] memcg1_commit_charge
+#
+#

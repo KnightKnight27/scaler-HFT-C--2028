@@ -1,0 +1,4 @@
+bench
+bench_fib
+*.exe
+perf.data*

@@ -1,0 +1,20 @@
+Running correctness test...
+
+Every implementation is checked against a brute-force reference book:
+  - edge cases: empty book, unknown and double cancel, insufficient depth,
+    price band edges, duplicate ids, qty <= 0, a 5000-level walk down the book
+  - benchmark 1000000 ops, seed 42  : the benchmark workload: 70% add / 20% cancel / 10% BBO, full price band
+  - churn      300000 ops, seed 7   : 45% add / 45% cancel on the 8 ticks nearest the mid (levels empty and refill, best moves a lot)
+  - sparse     300000 ops, seed 2026: 50% add / 48% cancel, full band (small book with big gaps between levels)
+  - scrambled  300000 ops, seed 11  : 60% add / 35% cancel with random-looking 64-bit ids (hash collisions)
+  - strided    200000 ops, seed 13  : 60% add / 35% cancel with ids k << 20 (ids that share their low bits)
+  books start with room for 64 orders, so every hash table has to grow many times
+  after every op: return value, get_bbo(), get_bids(10), get_asks(10);
+  every 1000 ops: full bid and ask depth
+
+
+Implementation A: PASS  (8896670 checks, 0 failed)
+Implementation B: PASS  (8896670 checks, 0 failed)
+Implementation C: PASS  (8896670 checks, 0 failed)
+
+All implementations produce identical results.

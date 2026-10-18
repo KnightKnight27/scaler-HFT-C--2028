@@ -1,0 +1,27 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'task-clock:ppp'
+# Event count (approx.): 129900000
+#
+# Overhead  Source:Line
+# ........  ...........................................
+#
+    24.87%  order_table.h:86
+     6.93%  workload.h:98
+     4.00%  order_table.h:77
+     3.85%  bench.cpp:100
+     3.62%  bench.cpp:124
+     3.54%  array_book.h:36
+     3.54%  vector.tcc:119
+     3.23%  new_allocator.h:191
+     2.85%  stl_algobase.h:918
+     2.39%  do_user_addr_fault+211
+     1.92%  array_book.h:31
+     1.85%  order_table.h:52
+     1.77%  __rmqueue_pcplist+194
+     1.62%  bench.cpp:109
+#
+#

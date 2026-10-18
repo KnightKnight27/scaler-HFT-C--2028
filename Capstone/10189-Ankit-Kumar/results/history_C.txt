@@ -1,0 +1,86 @@
+How book C's order table evolved (see 'How C evolved' in the README).
+Same machine, same workload (1M ops, seed 42, sequential ids), ./bench --impl C, median of 5 runs.
+
+==================================================================================
+v1: Fibonacci hashing + plain linear probing (first version), from an earlier run_all.sh
+==================================================================================
+Implementation C: price-indexed arrays + bitmap + open-addressing order table
+workload: 1000000 ops (seed 42): 700471 add, 199305 cancel, 100224 get_bbo, + get_bids(10)/get_asks(10) every 100 ops
+timer overhead: ~15 ns per steady_clock pair (included in the per-op numbers)
+
+run 1  total    29.5 ms | add  126.3 ns | cancel  118.3 ns | bbo  25.2 ns | depth  142.4 ns
+run 2  total    28.1 ms | add  112.6 ns | cancel  100.7 ns | bbo  25.9 ns | depth  134.2 ns
+run 3  total    30.4 ms | add  121.9 ns | cancel  113.5 ns | bbo  25.7 ns | depth  143.3 ns
+run 4  total    30.5 ms | add  132.5 ns | cancel  123.8 ns | bbo  27.5 ns | depth  144.8 ns
+run 5  total    32.0 ms | add  133.2 ns | cancel  130.4 ns | bbo  24.8 ns | depth  146.4 ns
+
+MEDIAN of 5 runs
+  total time (throughput pass): 30.4 ms  = 30.4 ns per op
+  ns per call                 avg     p50     p99   p99.9      max
+  add_order                 126.3     113     274     378   241742
+  cancel_order              118.3     115     275     387   159248
+  get_bbo                    25.7      23      45     199   117343
+  get_bids+get_asks(10)     143.3     131     287     805    24976
+  get_bbo back-to-back (10M calls on the final book, one clock pair): 0.90 ns per call
+
+book at the end: 5000 bid levels, 5000 ask levels
+memory: resident set grew by 16.1 MB while the book was built (run 1)
+
+cachegrind: I refs:        305,633,531
+cachegrind: D1  misses:      2,948,021  ( 2,242,087 rd   +    705,934 wr)
+cachegrind: LLd misses:      1,284,471  (   643,077 rd   +    641,394 wr)
+cachegrind: Branches:       23,061,028  (22,955,473 cond +    105,555 ind)
+cachegrind: Mispredicts:     1,667,412  ( 1,666,149 cond +      1,263 ind)
+
+==================================================================================
+v2: XOR-fold hash + plain linear probing, from an earlier run_all.sh
+==================================================================================
+Implementation C: price-indexed arrays + bitmap + open-addressing order table
+workload: 1000000 ops (seed 42): 700471 add, 199305 cancel, 100224 get_bbo, + get_bids(10)/get_asks(10) every 100 ops
+timer overhead: ~15 ns per steady_clock pair (included in the per-op numbers)
+
+run 1  total    22.7 ms | add   27.2 ns | cancel   93.2 ns | bbo  24.9 ns | depth  138.0 ns
+run 2  total    20.5 ms | add   27.4 ns | cancel   88.9 ns | bbo  24.9 ns | depth  130.4 ns
+run 3  total    21.3 ms | add   27.7 ns | cancel   95.5 ns | bbo  25.8 ns | depth  135.4 ns
+run 4  total    23.4 ms | add   26.5 ns | cancel   83.4 ns | bbo  23.2 ns | depth  137.7 ns
+run 5  total    21.8 ms | add   26.0 ns | cancel   86.3 ns | bbo  23.9 ns | depth  143.6 ns
+
+MEDIAN of 5 runs
+  total time (throughput pass): 21.8 ms  = 21.8 ns per op
+  ns per call                 avg     p50     p99   p99.9      max
+  add_order                  27.2      25     101     227    69237
+  cancel_order               88.9      53     416    1533    67850
+  get_bbo                    24.9      23      32     206    46161
+  get_bids+get_asks(10)     137.7     128     200     696    25794
+  get_bbo back-to-back (10M calls on the final book, one clock pair): 0.90 ns per call
+
+book at the end: 5000 bid levels, 5000 ask levels
+memory: resident set grew by 16.1 MB while the book was built (run 1)
+
+cachegrind: I refs:        396,425,849
+cachegrind: D1  misses:      3,277,828  ( 2,571,293 rd   +    706,535 wr)
+cachegrind: LLd misses:      1,164,275  (   522,883 rd   +    641,392 wr)
+cachegrind: Branches:       30,481,917  (30,376,362 cond +    105,555 ind)
+cachegrind: Mispredicts:     1,863,605  ( 1,862,342 cond +      1,263 ind)
+
+==================================================================================
+v2 vs v3 (final: XOR-fold hash + Robin Hood), both built from the same tree and run
+back to back, alternating, pinned with taskset -c 2 (only the median summary lines)
+==================================================================================
+== v2 round 1
+  total time (throughput pass): 20.6 ms  = 20.6 ns per op
+  add_order                  23.1      23      35     141    82106
+  cancel_order               83.5      48     390    1429    47390
+== v3 round 1
+  total time (throughput pass): 15.1 ms  = 15.1 ns per op
+  add_order                  23.5      22      53     202    81235
+  cancel_order               87.7      98     263     437    72703
+== v2 round 2
+  total time (throughput pass): 20.0 ms  = 20.0 ns per op
+  add_order                  23.7      23      40     165    63688
+  cancel_order               93.3      52     419    1591   105641
+== v3 round 2
+  total time (throughput pass): 15.4 ms  = 15.4 ns per op
+  add_order                  23.4      22      38     182    82728
+  cancel_order               89.6      97     272     471   151923
+(columns: avg, p50, p99, p99.9, max in ns)

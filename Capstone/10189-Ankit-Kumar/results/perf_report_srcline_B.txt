@@ -1,0 +1,28 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 8K of event 'task-clock:ppp'
+# Event count (approx.): 862100000
+#
+# Overhead  Source:Line
+# ........  ............................................................................................................
+#
+    15.82%  hashtable_policy.h:528
+    10.66%  stl_function.h:378
+     6.33%  hashtable_policy.h:1734
+     5.87%  new_allocator.h:172
+     4.34%  stl_iterator.h:1143
+     4.00%  stl_iterator.h:1111
+     3.85%  stl_algobase.h:1472
+     3.71%  stl_algobase.h:1476
+     3.61%  stl_algobase.h:1479
+     2.96%  malloc.c:1616
+     2.62%  stl_algobase.h:1467
+     2.06%  malloc.c:4849
+     1.80%  malloc.c:4874
+     1.60%  stl_algobase.h:1469
+     1.53%  hashtable.h:1954
+#
+#
