@@ -1,0 +1,15 @@
+# build output
+build/
+*.o
+*.a
+*.out
+bench
+verify
+demo
+
+# editor / os
+.DS_Store
+.idea/
+.vscode/
+*~
+*.swp
