@@ -1,0 +1,18 @@
+Benchmarking Implementation C (Array) (5 runs)...
+Run 1: 56.34 ms | add: 27.63 ns | cancel: 60.93 ns | BBO: 26.80 ns
+Run 2: 58.30 ms | add: 27.47 ns | cancel: 68.92 ns | BBO: 26.56 ns
+Run 3: 55.85 ms | add: 27.15 ns | cancel: 61.07 ns | BBO: 26.48 ns
+Run 4: 56.61 ms | add: 27.26 ns | cancel: 62.08 ns | BBO: 26.64 ns
+Run 5: 55.94 ms | add: 26.90 ns | cancel: 62.04 ns | BBO: 25.88 ns
+
+Median Result:
+Total time: 56.34 ms
+ns / add:    27.26
+ns / cancel: 62.04
+ns / BBO:    26.56
+
+Final BBO:
+Bid: 99.99 x 2722
+Ask: 100.01 x 2525
+
+Checksum: 2486454213671

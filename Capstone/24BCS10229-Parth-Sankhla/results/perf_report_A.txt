@@ -1,0 +1,20 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 6K of event 'cpu/cycles/Pu'
+# Event count (approx.): 7128782054
+#
+# Overhead  Command  Shared Object         Symbol
+# ........  .......  ....................  .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    24.25%  bench    bench                 [.] MapBook::cancel_order(unsigned long)
+    17.23%  bench    [vdso]                [.] __vdso_clock_gettime
+    16.12%  bench    bench                 [.] MapBook::add_order(unsigned long, Side, int, long)
+    12.92%  bench    bench                 [.] std::__detail::_Map_base<unsigned long, std::pair<unsigned long const, Order>, std::allocator<std::pair<unsigned long const, Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](unsigned long const&)
+     9.75%  bench    bench                 [.] std::map<int, PriceLevel, std::greater<int>, std::allocator<std::pair<int const, PriceLevel> > >::operator[](int const&)
+     3.40%  bench    bench                 [.] Result run_once<MapBook>(std::vector<Op, std::allocator<Op> > const&)
+#
+# (Tip: To set sampling period of individual events use perf record -e cpu/cpu-cycles,period=100001/,cpu/branches,period=10001/ ...)
+#

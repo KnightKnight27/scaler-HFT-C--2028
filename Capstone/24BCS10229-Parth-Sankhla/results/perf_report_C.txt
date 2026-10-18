@@ -1,0 +1,22 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'cpu/cycles/Pu'
+# Event count (approx.): 1335994987
+#
+# Overhead  Command  Shared Object         Symbol
+# ........  .......  ....................  .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    57.04%  bench    [vdso]                [.] __vdso_clock_gettime
+    12.94%  bench    bench                 [.] Result run_once<ArrayBook>(std::vector<Op, std::allocator<Op> > const&)
+     9.45%  bench    libstdc++.so.6.0.36   [.] std::chrono::_V2::steady_clock::now()
+     6.30%  bench    bench                 [.] ArrayBook::add_order(unsigned long, Side, int, long)
+     4.17%  bench    libc.so.6             [.] clock_gettime
+     2.65%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+     2.07%  bench    bench                 [.] make_workload()
+     1.62%  bench    bench                 [.] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+#
+# (Tip: Limit to show entries above 5% only: perf report --percent-limit 5)
+#

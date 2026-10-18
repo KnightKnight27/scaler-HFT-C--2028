@@ -1,0 +1,12 @@
+CPU:      AMD Ryzen 7 7840HS w/ Radeon 780M Graphics
+Threads:  16
+L1d cache: 256 KiB (8 instances)
+L2 cache: 8 MiB (8 instances)
+L3 cache: 16 MiB (1 instance)
+RAM:      14Gi
+Kernel:   7.2.9-2-cachyos
+OS:       CachyOS (Arch based)
+Compiler: g++ (GCC) 16.2.1 20260810
+Flags:    -std=c++17 -O2 -Wall -Wextra -g -fno-omit-frame-pointer
+perf:     perf version 7.2.9-1, perf_event_paranoid=2 (user space only, events show :u)
+Power:    plugged in, governor powersave, EPP balance_power

@@ -1,0 +1,25 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 5K of event 'cpu/cycles/Pu'
+# Event count (approx.): 5861934799
+#
+# Overhead  Command  Shared Object         Symbol
+# ........  .......  ....................  .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    25.45%  bench    bench                 [.] HeapBook::cancel_order(unsigned long)
+    15.54%  bench    bench                 [.] HeapBook::add_order(unsigned long, Side, int, long)
+    10.87%  bench    [vdso]                [.] __vdso_clock_gettime
+     7.26%  bench    libstdc++.so.6.0.36   [.] std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+     6.39%  bench    bench                 [.] std::_Hashtable<int, std::pair<int const, long>, std::allocator<std::pair<int const, long> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(int const&) const
+     3.76%  bench    bench                 [.] std::__detail::_Map_base<int, std::pair<int const, long>, std::allocator<std::pair<int const, long> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true>, true>::operator[](int const&)
+     3.57%  bench    bench                 [.] std::_Rb_tree<unsigned long, std::pair<unsigned long const, Order>, std::_Select1st<std::pair<unsigned long const, Order> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, Order> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long const, Order> >*) [clone .isra.0]
+     2.34%  bench    bench                 [.] Result run_once<HeapBook>(std::vector<Op, std::allocator<Op> > const&)
+     2.08%  bench    libstdc++.so.6.0.36   [.] std::chrono::_V2::steady_clock::now()
+     1.80%  bench    libstdc++.so.6.0.36   [.] std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+     1.68%  bench    libc.so.6             [.] cfree
+#
+# (Tip: Use parent filter to see specific call path: perf report -p <regex>)
+#
