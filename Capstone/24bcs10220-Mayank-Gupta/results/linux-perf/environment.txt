@@ -1,0 +1,10 @@
+UTC: 2026-10-16T07:08:50Z
+Linux 7.0.0-38-generic aarch64
+g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0
+Copyright (C) 2025 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+perf version 7.0.14
+stat events: task-clock,cycles,instructions,branches,branch-misses,cache-misses,L1-dcache-load-misses,dTLB-load-misses,page-faults
+record event: cpu-clock

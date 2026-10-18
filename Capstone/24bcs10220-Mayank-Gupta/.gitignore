@@ -1,0 +1,8 @@
+/build/
+/bench
+*.dSYM/
+/perf.data*
+*-perf.data
+*-perf.data.old
+/.DS_Store
+

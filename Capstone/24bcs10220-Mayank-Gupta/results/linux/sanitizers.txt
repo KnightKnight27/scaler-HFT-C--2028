@@ -1,0 +1,9 @@
+mkdir -p build
+g++ -Isrc -Itests -std=c++17 -O1 -g -Wall -Wextra -Wpedantic \
+	-fsanitize=address,undefined -fno-omit-frame-pointer src/bench.cpp tests/verify.cpp -o build/bench-sanitize
+./build/bench-sanitize --verify
+Implementation A edge cases: PASS
+Implementation B edge cases: PASS
+Implementation C edge cases: PASS
+Checking all levels after each of 20000 random operations (seed 42)...
+All implementations match the independent reference: PASS

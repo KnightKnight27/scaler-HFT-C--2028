@@ -1,0 +1,1 @@
+g++ -Isrc -Itests -std=c++17 -O2 -g -fno-omit-frame-pointer -Wall -Wextra -Wpedantic src/bench.cpp tests/verify.cpp -o bench

@@ -1,0 +1,450 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 249  of event 'cpu-clock'
+# Event count (approx.): 62250000
+#
+# Overhead  Command  Shared Object        Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+# ........  .......  ...................  ..............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    19.68%  bench    bench                [.] ob::ArrayBook::cancel_order(unsigned long)
+            |          
+             --19.28%--ob::ArrayBook::cancel_order(unsigned long)
+                       (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+                       benchmark<ob::ArrayBook> (inlined)
+                       main
+                       0xf71cbc062f1c
+                       __libc_start_main
+                       _start
+
+     9.64%  bench    bench                [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false>*, unsigned long)
+            |          
+            |--5.22%--std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, std::integral_constant<bool, true>) (inlined)
+            |          std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false>*, unsigned long)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::unordered_map<unsigned long, unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> > >::emplace<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+            |          ob::ArrayBook::add_order(unsigned long, ob::Side, int, long)
+            |          (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+            |          benchmark<ob::ArrayBook> (inlined)
+            |          main
+            |          0xf71cbc062f1c
+            |          __libc_start_main
+            |          _start
+            |          
+            |--2.01%--std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false>*, unsigned long)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+            |          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::unordered_map<unsigned long, unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> > >::emplace<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+            |          ob::ArrayBook::add_order(unsigned long, ob::Side, int, long)
+            |          (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+            |          benchmark<ob::ArrayBook> (inlined)
+            |          main
+            |          0xf71cbc062f1c
+            |          __libc_start_main
+            |          _start
+            |          
+             --2.01%--std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_bucket_begin(unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false>*) (inlined)
+                       std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false>*, unsigned long)
+                       std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+                       std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+                       std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::unordered_map<unsigned long, unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> > >::emplace<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+                       ob::ArrayBook::add_order(unsigned long, ob::Side, int, long)
+                       (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+                       benchmark<ob::ArrayBook> (inlined)
+                       main
+                       0xf71cbc062f1c
+                       __libc_start_main
+                       _start
+
+     8.84%  bench    bench                [.] ob::ArrayBook::add_order(unsigned long, ob::Side, int, long)
+            |          
+            |--5.62%--ob::validate_order(ob::Side, int, long) (inlined)
+            |          ob::ArrayBook::add_order(unsigned long, ob::Side, int, long)
+            |          (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+            |          benchmark<ob::ArrayBook> (inlined)
+            |          main
+            |          0xf71cbc062f1c
+            |          __libc_start_main
+            |          _start
+            |          
+            |--1.61%--ob::ArrayBook::add_order(unsigned long, ob::Side, int, long)
+            |          (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+            |          benchmark<ob::ArrayBook> (inlined)
+            |          main
+            |          0xf71cbc062f1c
+            |          __libc_start_main
+            |          _start
+            |          
+             --0.80%--ob::ArrayBook::StoredOrder& std::vector<ob::ArrayBook::StoredOrder, std::allocator<ob::ArrayBook::StoredOrder> >::emplace_back<ob::ArrayBook::StoredOrder>(ob::ArrayBook::StoredOrder&&) (inlined)
+                       std::vector<ob::ArrayBook::StoredOrder, std::allocator<ob::ArrayBook::StoredOrder> >::push_back(ob::ArrayBook::StoredOrder&&) (inlined)
+                       ob::ArrayBook::add_order(unsigned long, ob::Side, int, long)
+                       (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+                       benchmark<ob::ArrayBook> (inlined)
+                       main
+                       0xf71cbc062f1c
+                       __libc_start_main
+                       _start
+
+     8.43%  bench    bench                [.] ob::make_workload(unsigned long, unsigned int)
+            |          
+             --7.63%--ob::make_workload(unsigned long, unsigned int)
+                       __gnu_cxx::__normal_iterator<ob::Operation const*, std::vector<ob::Operation, std::allocator<ob::Operation> > >::__normal_iterator(ob::Operation const* const&) (inlined)
+                       std::vector<ob::Operation, std::allocator<ob::Operation> >::begin() const (inlined)
+                       benchmark<ob::ArrayBook> (inlined)
+                       main
+                       0xf71cbc062f1c
+                       __libc_start_main
+                       _start
+
+     7.23%  bench    libc.so.6            [.] malloc
+            |
+            ---malloc
+               operator new(unsigned long)
+               std::__new_allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> >::allocate(unsigned long, void const*) (inlined)
+               std::allocator_traits<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> > >::allocate(std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> >&, unsigned long) (inlined)
+               std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false>* std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> > >::_M_allocate_node<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::unordered_map<unsigned long, unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> > >::emplace<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+               ob::ArrayBook::add_order(unsigned long, ob::Side, int, long)
+               (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+               benchmark<ob::ArrayBook> (inlined)
+               main
+               0xf71cbc062f1c
+               __libc_start_main
+               _start
+
+     6.02%  bench    bench                [.] (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+            |          
+            |--3.21%--(anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+            |          benchmark<ob::ArrayBook> (inlined)
+            |          main
+            |          0xf71cbc062f1c
+            |          __libc_start_main
+            |          _start
+            |          
+             --2.01%--ob::ArrayBook::get_bbo() const (inlined)
+                       (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+                       benchmark<ob::ArrayBook> (inlined)
+                       main
+                       0xf71cbc062f1c
+                       __libc_start_main
+                       _start
+
+     5.22%  bench    bench                [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+            |
+            ---std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+               |          
+                --4.82%--unsigned int std::uniform_int_distribution<int>::_S_nd<unsigned long, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>, unsigned int>(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, unsigned int) (inlined)
+                          int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) (inlined)
+                          |          
+                          |--2.81%--ob::make_workload(unsigned long, unsigned int)
+                          |          __gnu_cxx::__normal_iterator<ob::Operation const*, std::vector<ob::Operation, std::allocator<ob::Operation> > >::__normal_iterator(ob::Operation const* const&) (inlined)
+                          |          std::vector<ob::Operation, std::allocator<ob::Operation> >::begin() const (inlined)
+                          |          benchmark<ob::ArrayBook> (inlined)
+                          |          main
+                          |          0xf71cbc062f1c
+                          |          __libc_start_main
+                          |          _start
+                          |          
+                          |--1.20%--int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) (inlined)
+                          |          ob::make_workload(unsigned long, unsigned int)
+                          |          __gnu_cxx::__normal_iterator<ob::Operation const*, std::vector<ob::Operation, std::allocator<ob::Operation> > >::__normal_iterator(ob::Operation const* const&) (inlined)
+                          |          std::vector<ob::Operation, std::allocator<ob::Operation> >::begin() const (inlined)
+                          |          benchmark<ob::ArrayBook> (inlined)
+                          |          main
+                          |          0xf71cbc062f1c
+                          |          __libc_start_main
+                          |          _start
+                          |          
+                           --0.80%--ob::Operation& std::vector<ob::Operation, std::allocator<ob::Operation> >::emplace_back<ob::Operation>(ob::Operation&&) (inlined)
+                                     std::vector<ob::Operation, std::allocator<ob::Operation> >::push_back(ob::Operation&&) (inlined)
+                                     ob::make_workload(unsigned long, unsigned int)
+                                     __gnu_cxx::__normal_iterator<ob::Operation const*, std::vector<ob::Operation, std::allocator<ob::Operation> > >::__normal_iterator(ob::Operation const* const&) (inlined)
+                                     std::vector<ob::Operation, std::allocator<ob::Operation> >::begin() const (inlined)
+                                     benchmark<ob::ArrayBook> (inlined)
+                                     main
+                                     0xf71cbc062f1c
+                                     __libc_start_main
+                                     _start
+
+     4.42%  bench    bench                [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&)
+            |          
+            |--2.41%--std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node(unsigned long, unsigned long const&, unsigned long) const (inlined)
+            |          std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+            |          std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&)
+            |          std::unordered_map<unsigned long, unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> > >::find(unsigned long const&) (inlined)
+            |          |          
+            |          |--1.61%--ob::ArrayBook::add_order(unsigned long, ob::Side, int, long)
+            |          |          (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+            |          |          benchmark<ob::ArrayBook> (inlined)
+            |          |          main
+            |          |          0xf71cbc062f1c
+            |          |          __libc_start_main
+            |          |          _start
+            |          |          
+            |           --0.80%--ob::ArrayBook::cancel_order(unsigned long)
+            |                     (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+            |                     benchmark<ob::ArrayBook> (inlined)
+            |                     main
+            |                     0xf71cbc062f1c
+            |                     __libc_start_main
+            |                     _start
+            |          
+             --2.01%--std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type::_M_node() const (inlined)
+                       std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::__location_type::operator std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>() const (inlined)
+                       std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&)
+                       std::unordered_map<unsigned long, unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> > >::find(unsigned long const&) (inlined)
+                       |          
+                       |--1.20%--ob::ArrayBook::add_order(unsigned long, ob::Side, int, long)
+                       |          (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+                       |          benchmark<ob::ArrayBook> (inlined)
+                       |          main
+                       |          0xf71cbc062f1c
+                       |          __libc_start_main
+                       |          _start
+                       |          
+                        --0.80%--ob::ArrayBook::cancel_order(unsigned long)
+                                  (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+                                  benchmark<ob::ArrayBook> (inlined)
+                                  main
+                                  0xf71cbc062f1c
+                                  __libc_start_main
+                                  _start
+
+     4.42%  bench    libc.so.6            [.] 0x000000000009a42c
+            |
+            ---0xf71cbc0da42c
+               0xf71cbc0db60c
+               0xf71cbc0db6f4
+               std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false>*) (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+               std::unordered_map<unsigned long, unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> > >::~unordered_map() (inlined)
+               ob::ArrayBook::~ArrayBook() (inlined)
+               (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+               benchmark<ob::ArrayBook> (inlined)
+               main
+               0xf71cbc062f1c
+               __libc_start_main
+               _start
+
+     2.41%  bench    bench                [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand()
+            |
+            ---std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand()
+               std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+               |          
+                --2.01%--unsigned int std::uniform_int_distribution<int>::_S_nd<unsigned long, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>, unsigned int>(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, unsigned int) (inlined)
+                          int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) (inlined)
+                          |          
+                           --1.20%--int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) (inlined)
+                                     ob::make_workload(unsigned long, unsigned int)
+                                     __gnu_cxx::__normal_iterator<ob::Operation const*, std::vector<ob::Operation, std::allocator<ob::Operation> > >::__normal_iterator(ob::Operation const* const&) (inlined)
+                                     std::vector<ob::Operation, std::allocator<ob::Operation> >::begin() const (inlined)
+                                     benchmark<ob::ArrayBook> (inlined)
+                                     main
+                                     0xf71cbc062f1c
+                                     __libc_start_main
+                                     _start
+
+     2.01%  bench    bench                [.] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+            |
+            ---int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) (inlined)
+               |          
+                --1.61%--ob::make_workload(unsigned long, unsigned int)
+                          __gnu_cxx::__normal_iterator<ob::Operation const*, std::vector<ob::Operation, std::allocator<ob::Operation> > >::__normal_iterator(ob::Operation const* const&) (inlined)
+                          std::vector<ob::Operation, std::allocator<ob::Operation> >::begin() const (inlined)
+                          benchmark<ob::ArrayBook> (inlined)
+                          main
+                          0xf71cbc062f1c
+                          __libc_start_main
+                          _start
+
+     1.61%  bench    libc.so.6            [.] cfree
+            |
+            ---cfree
+               |          
+                --1.20%--std::__new_allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> >::deallocate(std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false>*, unsigned long) (inlined)
+                          std::allocator_traits<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> > >::deallocate(std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> >&, std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false>*, unsigned long) (inlined)
+                          std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> > >::_M_deallocate_node_ptr(std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false>*) (inlined)
+                          std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> > >::_M_deallocate_node(std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false>*) (inlined)
+                          std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false>*) (inlined)
+                          std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+                          std::unordered_map<unsigned long, unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> > >::~unordered_map() (inlined)
+                          ob::ArrayBook::~ArrayBook() (inlined)
+                          (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+                          benchmark<ob::ArrayBook> (inlined)
+                          main
+                          0xf71cbc062f1c
+                          __libc_start_main
+                          _start
+
+     1.61%  bench    libstdc++.so.6.0.35  [.] std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const
+            |
+            ---std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false>*, unsigned long)
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::unordered_map<unsigned long, unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> > >::emplace<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+               ob::ArrayBook::add_order(unsigned long, ob::Side, int, long)
+               (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+               benchmark<ob::ArrayBook> (inlined)
+               main
+               0xf71cbc062f1c
+               __libc_start_main
+               _start
+
+     1.20%  bench    libc.so.6            [.] 0x000000000009a480
+            |
+            ---0xf71cbc0da480
+               0xf71cbc0db60c
+               0xf71cbc0db6f4
+               std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false>*) (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+               std::unordered_map<unsigned long, unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> > >::~unordered_map() (inlined)
+               ob::ArrayBook::~ArrayBook() (inlined)
+               (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+               benchmark<ob::ArrayBook> (inlined)
+               main
+               0xf71cbc062f1c
+               __libc_start_main
+               _start
+
+     1.20%  bench    libc.so.6            [.] 0x000000000009b5c8
+            |
+            ---0xf71cbc0db5c8
+               0xf71cbc0db6f4
+               std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false>*) (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+               std::unordered_map<unsigned long, unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> > >::~unordered_map() (inlined)
+               ob::ArrayBook::~ArrayBook() (inlined)
+               (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+               benchmark<ob::ArrayBook> (inlined)
+               main
+               0xf71cbc062f1c
+               __libc_start_main
+               _start
+
+     1.20%  bench    libc.so.6            [.] 0x000000000009c350
+            |
+            ---0xf71cbc0dc350
+               0x3cf71cbc0dcd43
+               operator new(unsigned long)
+               std::__new_allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> >::allocate(unsigned long, void const*) (inlined)
+               std::allocator_traits<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> > >::allocate(std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> >&, unsigned long) (inlined)
+               std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false>* std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> > >::_M_allocate_node<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::unordered_map<unsigned long, unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> > >::emplace<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+               ob::ArrayBook::add_order(unsigned long, ob::Side, int, long)
+               (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+               benchmark<ob::ArrayBook> (inlined)
+               main
+               0xf71cbc062f1c
+               __libc_start_main
+               _start
+
+     0.80%  bench    bench                [.] main
+     0.80%  bench    libc.so.6            [.] 0x000000000009b574
+            |
+            ---0xf71cbc0db574
+               0xf71cbc0db6f4
+               std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false>*) (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+               std::unordered_map<unsigned long, unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> > >::~unordered_map() (inlined)
+               ob::ArrayBook::~ArrayBook() (inlined)
+               (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+               benchmark<ob::ArrayBook> (inlined)
+               main
+               0xf71cbc062f1c
+               __libc_start_main
+               _start
+
+     0.80%  bench    libc.so.6            [.] 0x000000000009b5fc
+            |
+            ---0xf71cbc0db5fc
+               0xf71cbc0db6f4
+               std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false>*) (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+               std::unordered_map<unsigned long, unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> > >::~unordered_map() (inlined)
+               ob::ArrayBook::~ArrayBook() (inlined)
+               (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+               benchmark<ob::ArrayBook> (inlined)
+               main
+               0xf71cbc062f1c
+               __libc_start_main
+               _start
+
+     0.80%  bench    libc.so.6            [.] 0x000000000009c0a0
+            |
+            ---0xf71cbc0dc0a0
+               0xf71cbc0dcd43
+               operator new(unsigned long)
+               std::__new_allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> >::allocate(unsigned long, void const*) (inlined)
+               std::allocator_traits<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> > >::allocate(std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> >&, unsigned long) (inlined)
+               std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false>* std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> > >::_M_allocate_node<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::unordered_map<unsigned long, unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> > >::emplace<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+               ob::ArrayBook::add_order(unsigned long, ob::Side, int, long)
+               (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+               benchmark<ob::ArrayBook> (inlined)
+               main
+               0xf71cbc062f1c
+               __libc_start_main
+               _start
+
+     0.80%  bench    libc.so.6            [.] 0x000000000009cc34
+            |
+            ---0xf71cbc0dcc34
+               operator new(unsigned long)
+               std::__new_allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> >::allocate(unsigned long, void const*) (inlined)
+               std::allocator_traits<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> > >::allocate(std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> >&, unsigned long) (inlined)
+               std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false>* std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, unsigned long>, false> > >::_M_allocate_node<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, unsigned long>, false, false>, bool> std::unordered_map<unsigned long, unsigned long, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, unsigned long> > >::emplace<unsigned long&, unsigned long>(unsigned long&, unsigned long&&) (inlined)
+               ob::ArrayBook::add_order(unsigned long, ob::Side, int, long)
+               (anonymous namespace)::Result (anonymous namespace)::replay<ob::ArrayBook, false>(std::vector<ob::Operation, std::allocator<ob::Operation> > const&)
+               benchmark<ob::ArrayBook> (inlined)
+               main
+               0xf71cbc062f1c
+               __libc_start_main
+               _start
+
+     0.80%  bench    libc.so.6            [.] 0x00000000000a9680
+            |
+            ---0xf71cbc0e9680
+
+     0.40%  bench    [kernel.kallsyms]    [k] __alloc_frozen_pages_noprof
+     0.40%  bench    [kernel.kallsyms]    [k] __pi_clear_page
+     0.40%  bench    [kernel.kallsyms]    [k] el0_da
+     0.40%  bench    [kernel.kallsyms]    [k] get_mem_cgroup_from_mm
+     0.40%  bench    [kernel.kallsyms]    [k] ptep_clear_flush
+     0.40%  bench    bench                [.] operator new(unsigned long)@plt
+     0.40%  bench    bench                [.] std::vector<ob::Level, std::allocator<ob::Level> >::reserve(unsigned long)
+     0.40%  bench    libc.so.6            [.] __munmap
+     0.40%  bench    libc.so.6            [.] 0x0000000000099d98
+     0.40%  bench    libc.so.6            [.] 0x000000000009a37c
+     0.40%  bench    libc.so.6            [.] 0x000000000009a408
+     0.40%  bench    libc.so.6            [.] 0x000000000009a464
+     0.40%  bench    libc.so.6            [.] 0x000000000009a478
+     0.40%  bench    libc.so.6            [.] 0x000000000009b2ac
+     0.40%  bench    libc.so.6            [.] 0x000000000009b6d4
+     0.40%  bench    libc.so.6            [.] 0x000000000009b6dc
+     0.40%  bench    libc.so.6            [.] 0x000000000009c0c0
+     0.40%  bench    libc.so.6            [.] 0x000000000009c0c8
+     0.40%  bench    libc.so.6            [.] 0x000000000009c118
+     0.40%  bench    libc.so.6            [.] 0x000000000009c2d4
+     0.40%  bench    libc.so.6            [.] 0x000000000009c938
+     0.40%  bench    libc.so.6            [.] 0x000000000009ccdc
+     0.40%  bench    libc.so.6            [.] 0x00000000000a9688
+     0.40%  bench    libstdc++.so.6.0.35  [.] operator delete(void*)@plt
+     0.40%  bench    libstdc++.so.6.0.35  [.] operator new(unsigned long)
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

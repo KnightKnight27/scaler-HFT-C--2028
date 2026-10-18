@@ -1,0 +1,2 @@
+Local source files match the source hashes of the measured Linux build: PASS
+Million-operation timed, perf stat and perf record checksums across A/B/C agree: PASS

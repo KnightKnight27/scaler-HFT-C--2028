@@ -1,0 +1,327 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 418  of event 'cpu-clock'
+# Event count (approx.): 104500000
+#
+# Overhead  Command  Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+# ........  .......  .....................  ..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    35.65%  bench    bench                  [.] ob::VectorBook::add_order(unsigned long, ob::Side, int, long)
+            |          
+            |--27.51%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::find_level(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}> >(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::find_level(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>) (inlined)
+            |          __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::VectorBook::find_level(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::VectorBook::find_level(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+            |          ob::VectorBook::find_level(std::vector<ob::Level, std::allocator<ob::Level> >&, int) (inlined)
+            |          ob::VectorBook::add_order(unsigned long, ob::Side, int, long)
+            |          replay<ob::VectorBook, false> (inlined)
+            |          benchmark<ob::VectorBook> (inlined)
+            |          main
+            |          0xe31c53082f1c
+            |          __libc_start_main
+            |          _start
+            |          
+            |--3.35%--ob::VectorBook::add_order(unsigned long, ob::Side, int, long)
+            |          replay<ob::VectorBook, false> (inlined)
+            |          benchmark<ob::VectorBook> (inlined)
+            |          main
+            |          0xe31c53082f1c
+            |          __libc_start_main
+            |          _start
+            |          
+            |--2.39%--ob::validate_order(ob::Side, int, long) (inlined)
+            |          ob::VectorBook::add_order(unsigned long, ob::Side, int, long)
+            |          replay<ob::VectorBook, false> (inlined)
+            |          benchmark<ob::VectorBook> (inlined)
+            |          main
+            |          0xe31c53082f1c
+            |          __libc_start_main
+            |          _start
+            |          
+             --1.44%--std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node(unsigned long, unsigned long const&, unsigned long) const (inlined)
+                       std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+                       |          
+                        --1.20%--std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+                                  std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+                                  std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+                                  ob::VectorBook::add_order(unsigned long, ob::Side, int, long)
+                                  replay<ob::VectorBook, false> (inlined)
+                                  benchmark<ob::VectorBook> (inlined)
+                                  main
+                                  0xe31c53082f1c
+                                  __libc_start_main
+                                  _start
+
+    22.01%  bench    bench                  [.] ob::VectorBook::cancel_order(unsigned long)
+            |          
+            |--19.86%--__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::__lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::find_level(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}> >(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, __gnu_cxx::__ops::_Iter_comp_val<ob::VectorBook::find_level(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>) (inlined)
+            |          __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > > std::lower_bound<__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int, ob::VectorBook::find_level(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, __gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, int const&, ob::VectorBook::find_level(std::vector<ob::Level, std::allocator<ob::Level> >&, int)::{lambda(ob::Level const&, int)#1}) (inlined)
+            |          ob::VectorBook::find_level(std::vector<ob::Level, std::allocator<ob::Level> >&, int) (inlined)
+            |          ob::VectorBook::cancel_order(unsigned long)
+            |          main
+            |          benchmark<ob::VectorBook> (inlined)
+            |          main
+            |          0xe31c53082f1c
+            |          __libc_start_main
+            |          _start
+            |          
+             --0.96%--ob::VectorBook::cancel_order(unsigned long)
+                       main
+                       benchmark<ob::VectorBook> (inlined)
+                       main
+                       0xe31c53082f1c
+                       __libc_start_main
+                       _start
+
+     5.98%  bench    bench                  [.] ob::make_workload(unsigned long, unsigned int)
+            |          
+            |--3.59%--ob::make_workload(unsigned long, unsigned int)
+            |          __gnu_cxx::__normal_iterator<ob::Operation const*, std::vector<ob::Operation, std::allocator<ob::Operation> > >::__normal_iterator(ob::Operation const* const&) (inlined)
+            |          std::vector<ob::Operation, std::allocator<ob::Operation> >::end() const (inlined)
+            |          benchmark<ob::VectorBook> (inlined)
+            |          main
+            |          0xe31c53082f1c
+            |          __libc_start_main
+            |          _start
+            |          
+            |--0.96%--ob::Operation& std::vector<ob::Operation, std::allocator<ob::Operation> >::emplace_back<ob::Operation>(ob::Operation&&) (inlined)
+            |          std::vector<ob::Operation, std::allocator<ob::Operation> >::push_back(ob::Operation&&) (inlined)
+            |          ob::make_workload(unsigned long, unsigned int)
+            |          __gnu_cxx::__normal_iterator<ob::Operation const*, std::vector<ob::Operation, std::allocator<ob::Operation> > >::__normal_iterator(ob::Operation const* const&) (inlined)
+            |          std::vector<ob::Operation, std::allocator<ob::Operation> >::end() const (inlined)
+            |          benchmark<ob::VectorBook> (inlined)
+            |          main
+            |          0xe31c53082f1c
+            |          __libc_start_main
+            |          _start
+            |          
+             --0.96%--int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) (inlined)
+                       ob::make_workload(unsigned long, unsigned int)
+                       __gnu_cxx::__normal_iterator<ob::Operation const*, std::vector<ob::Operation, std::allocator<ob::Operation> > >::__normal_iterator(ob::Operation const* const&) (inlined)
+                       std::vector<ob::Operation, std::allocator<ob::Operation> >::end() const (inlined)
+                       benchmark<ob::VectorBook> (inlined)
+                       main
+                       0xe31c53082f1c
+                       __libc_start_main
+                       _start
+
+     5.02%  bench    bench                  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false>*, unsigned long)
+            |
+            ---std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, std::integral_constant<bool, true>) (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false>*, unsigned long)
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+               ob::VectorBook::add_order(unsigned long, ob::Side, int, long)
+               replay<ob::VectorBook, false> (inlined)
+               benchmark<ob::VectorBook> (inlined)
+               main
+               0xe31c53082f1c
+               __libc_start_main
+               _start
+
+     4.78%  bench    libc.so.6              [.] 0x000000000009a42c
+            |
+            ---0xe31c530fa42c
+               0xe31c530fb60c
+               0xe31c530fb6f4
+               std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false>*) (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+               std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::~unordered_map() (inlined)
+               ob::VectorBook::~VectorBook() (inlined)
+               replay<ob::VectorBook, false> (inlined)
+               benchmark<ob::VectorBook> (inlined)
+               main
+               0xe31c53082f1c
+               __libc_start_main
+               _start
+
+     2.87%  bench    bench                  [.] main
+            |          
+            |--1.20%--replay<ob::VectorBook, false> (inlined)
+            |          benchmark<ob::VectorBook> (inlined)
+            |          main
+            |          0xe31c53082f1c
+            |          __libc_start_main
+            |          _start
+            |          
+             --0.72%--main
+
+     2.87%  bench    bench                  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+            |
+            ---std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+               unsigned int std::uniform_int_distribution<int>::_S_nd<unsigned long, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>, unsigned int>(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, unsigned int) (inlined)
+               int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) (inlined)
+               |          
+               |--1.67%--ob::make_workload(unsigned long, unsigned int)
+               |          __gnu_cxx::__normal_iterator<ob::Operation const*, std::vector<ob::Operation, std::allocator<ob::Operation> > >::__normal_iterator(ob::Operation const* const&) (inlined)
+               |          std::vector<ob::Operation, std::allocator<ob::Operation> >::end() const (inlined)
+               |          benchmark<ob::VectorBook> (inlined)
+               |          main
+               |          0xe31c53082f1c
+               |          __libc_start_main
+               |          _start
+               |          
+                --0.72%--ob::Operation& std::vector<ob::Operation, std::allocator<ob::Operation> >::emplace_back<ob::Operation>(ob::Operation&&) (inlined)
+                          std::vector<ob::Operation, std::allocator<ob::Operation> >::push_back(ob::Operation&&) (inlined)
+                          ob::make_workload(unsigned long, unsigned int)
+                          __gnu_cxx::__normal_iterator<ob::Operation const*, std::vector<ob::Operation, std::allocator<ob::Operation> > >::__normal_iterator(ob::Operation const* const&) (inlined)
+                          std::vector<ob::Operation, std::allocator<ob::Operation> >::end() const (inlined)
+                          benchmark<ob::VectorBook> (inlined)
+                          main
+                          0xe31c53082f1c
+                          __libc_start_main
+                          _start
+
+     2.63%  bench    libc.so.6              [.] 0x000000000009a480
+            |
+            ---0xe31c530fa480
+               0xe31c530fb60c
+               0xe31c530fb6f4
+               std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false>*) (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+               std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::~unordered_map() (inlined)
+               ob::VectorBook::~VectorBook() (inlined)
+               replay<ob::VectorBook, false> (inlined)
+               benchmark<ob::VectorBook> (inlined)
+               main
+               0xe31c53082f1c
+               __libc_start_main
+               _start
+
+     2.15%  bench    libc.so.6              [.] malloc
+            |
+            ---malloc
+               operator new(unsigned long)
+               |          
+                --1.91%--std::__new_allocator<std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false> >::allocate(unsigned long, void const*) (inlined)
+                          std::allocator_traits<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false> > >::allocate(std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false> >&, unsigned long) (inlined)
+                          std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false>* std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false> > >::_M_allocate_node<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+                          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace_uniq<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+                          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+                          std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, ob::Order>, false, false>, bool> std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::emplace<unsigned long&, ob::Order>(unsigned long&, ob::Order&&) (inlined)
+                          ob::VectorBook::add_order(unsigned long, ob::Side, int, long)
+                          replay<ob::VectorBook, false> (inlined)
+                          benchmark<ob::VectorBook> (inlined)
+                          main
+                          0xe31c53082f1c
+                          __libc_start_main
+                          _start
+
+     1.91%  bench    libc.so.6              [.] 0x00000000000a9730
+            |
+            ---0xe31c53109730
+               ob::Level* std::__copy_move_backward_a2<true, ob::Level*, ob::Level*>(ob::Level*, ob::Level*, ob::Level*) (inlined)
+               ob::Level* std::__copy_move_backward_a1<true, ob::Level*, ob::Level*>(ob::Level*, ob::Level*, ob::Level*) (inlined)
+               ob::Level* std::__copy_move_backward_a<true, ob::Level*, ob::Level*>(ob::Level*, ob::Level*, ob::Level*) (inlined)
+               ob::Level* std::move_backward<ob::Level*, ob::Level*>(ob::Level*, ob::Level*, ob::Level*) (inlined)
+               void std::vector<ob::Level, std::allocator<ob::Level> >::_M_insert_aux<ob::Level>(__gnu_cxx::__normal_iterator<ob::Level*, std::vector<ob::Level, std::allocator<ob::Level> > >, ob::Level&&) (inlined)
+               std::vector<ob::Level, std::allocator<ob::Level> >::_M_insert_rval(__gnu_cxx::__normal_iterator<ob::Level const*, std::vector<ob::Level, std::allocator<ob::Level> > >, ob::Level&&) (inlined)
+               std::vector<ob::Level, std::allocator<ob::Level> >::insert(__gnu_cxx::__normal_iterator<ob::Level const*, std::vector<ob::Level, std::allocator<ob::Level> > >, ob::Level&&) (inlined)
+               ob::VectorBook::add_order(unsigned long, ob::Side, int, long)
+               replay<ob::VectorBook, false> (inlined)
+               benchmark<ob::VectorBook> (inlined)
+               main
+               0xe31c53082f1c
+               __libc_start_main
+               _start
+
+     1.44%  bench    libc.so.6              [.] cfree
+            |
+            ---cfree
+
+     0.72%  bench    [kernel.kallsyms]      [k] __pi_clear_page
+            |
+            ---__pi_clear_page
+               get_page_from_freelist
+               __alloc_frozen_pages_noprof
+               alloc_pages_mpol
+               folio_alloc_mpol_noprof
+               vma_alloc_folio_noprof
+               vma_alloc_anon_folio_pmd
+               __do_huge_pmd_anonymous_page
+               do_huge_pmd_anonymous_page
+               __handle_mm_fault
+               handle_mm_fault
+               do_page_fault
+               do_translation_fault
+               do_mem_abort
+               el0_da
+               el0t_64_sync_handler
+               el0t_64_sync
+
+     0.72%  bench    bench                  [.] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]
+            |
+            ---int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) (inlined)
+               ob::make_workload(unsigned long, unsigned int)
+               __gnu_cxx::__normal_iterator<ob::Operation const*, std::vector<ob::Operation, std::allocator<ob::Operation> > >::__normal_iterator(ob::Operation const* const&) (inlined)
+               std::vector<ob::Operation, std::allocator<ob::Operation> >::end() const (inlined)
+               benchmark<ob::VectorBook> (inlined)
+               main
+               0xe31c53082f1c
+               __libc_start_main
+               _start
+
+     0.72%  bench    bench                  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand()
+            |
+            ---std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand()
+               std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+               unsigned int std::uniform_int_distribution<int>::_S_nd<unsigned long, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>, unsigned int>(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, unsigned int) (inlined)
+               int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) (inlined)
+
+     0.72%  bench    libc.so.6              [.] 0x000000000009b5c8
+            |
+            ---0xe31c530fb5c8
+               0xe31c530fb6f4
+               std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false>*) (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+               std::unordered_map<unsigned long, ob::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, ob::Order> > >::~unordered_map() (inlined)
+               ob::VectorBook::~VectorBook() (inlined)
+               replay<ob::VectorBook, false> (inlined)
+               benchmark<ob::VectorBook> (inlined)
+               main
+               0xe31c53082f1c
+               __libc_start_main
+               _start
+
+     0.72%  bench    libc.so.6              [.] 0x00000000000a9680
+            |
+            ---0xe31c53109680
+
+     0.48%  bench    [kernel.kallsyms]      [k] el0_da
+     0.48%  bench    bench                  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, ob::Order>, std::allocator<std::pair<unsigned long const, ob::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_erase(unsigned long, std::__detail::_Hash_node_base*, std::__detail::_Hash_node<std::pair<unsigned long const, ob::Order>, false>*)
+     0.48%  bench    libc.so.6              [.] 0x000000000009b5fc
+     0.48%  bench    libc.so.6              [.] 0x000000000009b61c
+     0.48%  bench    libc.so.6              [.] 0x000000000009c944
+     0.48%  bench    libc.so.6              [.] 0x000000000009cc34
+     0.48%  bench    libstdc++.so.6.0.35    [.] malloc@plt
+     0.24%  bench    [kernel.kallsyms]      [k] charge_memcg
+     0.24%  bench    [kernel.kallsyms]      [k] folio_add_lru_vma
+     0.24%  bench    [kernel.kallsyms]      [k] mod_node_state
+     0.24%  bench    bench                  [.] operator delete(void*, unsigned long)@plt
+     0.24%  bench    bench                  [.] std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const@plt
+     0.24%  bench    bench                  [.] unsigned long std::uniform_int_distribution<unsigned long>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<unsigned long>::param_type const&) [clone .isra.0]
+     0.24%  bench    ld-linux-aarch64.so.1  [.] 0x00000000000092bc
+     0.24%  bench    libc.so.6              [.] 0x0000000000099da4
+     0.24%  bench    libc.so.6              [.] 0x000000000009a340
+     0.24%  bench    libc.so.6              [.] 0x000000000009a3b0
+     0.24%  bench    libc.so.6              [.] 0x000000000009a474
+     0.24%  bench    libc.so.6              [.] 0x000000000009a47c
+     0.24%  bench    libc.so.6              [.] 0x000000000009b2ac
+     0.24%  bench    libc.so.6              [.] 0x000000000009b6e0
+     0.24%  bench    libc.so.6              [.] 0x000000000009b704
+     0.24%  bench    libc.so.6              [.] 0x000000000009c0a0
+     0.24%  bench    libc.so.6              [.] 0x000000000009c0c0
+     0.24%  bench    libc.so.6              [.] 0x000000000009c118
+     0.24%  bench    libc.so.6              [.] 0x000000000009c2d4
+     0.24%  bench    libc.so.6              [.] 0x000000000009c350
+     0.24%  bench    libc.so.6              [.] 0x000000000009c354
+     0.24%  bench    libc.so.6              [.] 0x000000000009ccdc
+     0.24%  bench    libstdc++.so.6.0.35    [.] operator delete(void*)@plt
+     0.24%  bench    libstdc++.so.6.0.35    [.] std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

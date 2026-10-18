@@ -1,0 +1,40 @@
+Implementation: B
+Mode: profile (no per-operation timers)
+Operations: 1000000, seed: 42, runs: 1
+Adds: 700471, cancels: 199303, BBO queries: 100226
+Depth queries per side: 10000, final live orders: 501168
+Replay total (ms): 71.95
+Final BBO: bid 99.99 x 2722, ask 100.01 x 2525
+Checksum: 4513379934266391350
+Implementation: B
+Mode: profile (no per-operation timers)
+Operations: 1000000, seed: 42, runs: 1
+Adds: 700471, cancels: 199303, BBO queries: 100226
+Depth queries per side: 10000, final live orders: 501168
+Replay total (ms): 74.90
+Final BBO: bid 99.99 x 2722, ask 100.01 x 2525
+Checksum: 4513379934266391350
+Implementation: B
+Mode: profile (no per-operation timers)
+Operations: 1000000, seed: 42, runs: 1
+Adds: 700471, cancels: 199303, BBO queries: 100226
+Depth queries per side: 10000, final live orders: 501168
+Replay total (ms): 74.62
+Final BBO: bid 99.99 x 2722, ask 100.01 x 2525
+Checksum: 4513379934266391350
+Implementation: B
+Mode: profile (no per-operation timers)
+Operations: 1000000, seed: 42, runs: 1
+Adds: 700471, cancels: 199303, BBO queries: 100226
+Depth queries per side: 10000, final live orders: 501168
+Replay total (ms): 73.09
+Final BBO: bid 99.99 x 2722, ask 100.01 x 2525
+Checksum: 4513379934266391350
+Implementation: B
+Mode: profile (no per-operation timers)
+Operations: 1000000, seed: 42, runs: 1
+Adds: 700471, cancels: 199303, BBO queries: 100226
+Depth queries per side: 10000, final live orders: 501168
+Replay total (ms): 79.75
+Final BBO: bid 99.99 x 2722, ask 100.01 x 2525
+Checksum: 4513379934266391350

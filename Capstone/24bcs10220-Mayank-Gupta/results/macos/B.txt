@@ -1,0 +1,14 @@
+Implementation: B
+Mode: timed
+Operations: 1000000, seed: 42, runs: 5
+Adds: 700006, cancels: 199895, BBO queries: 100099
+Depth queries per side: 10000, final live orders: 500111
+run,total_ms,ns/add,ns/cancel,ns/BBO
+1,69.47,45.75,102.28,11.89
+2,69.70,48.48,96.40,11.70
+3,66.21,42.98,98.21,11.90
+4,65.25,42.12,96.30,11.93
+5,96.61,57.15,192.59,12.08
+median,69.47,45.75,98.21,11.90
+Final BBO: bid 99.99 x 2724, ask 100.01 x 2111
+Checksum: 2541037891179849727
