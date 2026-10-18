@@ -1,0 +1,148 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 4K of event 'cpu/cycles/Pu'
+# Event count (approx.): 7621690208
+#
+# Overhead  Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             IPC   [IPC Coverage]
+# ........  .................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................  ....................
+#
+    37.60%  [.] MapBook::add_order(unsigned long, Side, double, long)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          -      -
+    26.45%  [.] MapBook::cancel_order(unsigned long)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           -      -
+     7.53%  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, MapBook::Order>, std::allocator<std::pair<unsigned long const, MapBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, MapBook::Order>, false>*, unsigned long)  -      -
+     6.02%  [.] int run_bench<MapBook>(char const*, int) [clone .constprop.0] [clone .isra.0]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  -      -
+     4.65%  [.] __vdso_clock_gettime                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           -      -
+     3.32%  [.] 0x00000000000b0f93                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             -      -
+     1.24%  [.] percentile(std::vector<unsigned int, std::allocator<unsigned int> >&, double)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  -      -
+     1.17%  [.] cfree                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          -      -
+     1.10%  [.] make_workload(WorkloadConfig const&)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           -      -
+     0.98%  [.] 0x00000000000b0f9d                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             -      -
+     0.90%  [.] 0x00000000000b2185                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             -      -
+     0.59%  [.] 0x00000000000b215d                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             -      -
+     0.58%  [.] llroundf32x                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    -      -
+     0.54%  [.] malloc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         -      -
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
+
+
+######## Call graph (perf report -g caller, entries above 3%)
+
+    37.60%  [.] MapBook::add_order(unsigned long, Side, double, long)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          -      -
+            |
+            |--20.15%--_S_right (inlined)
+            |          _M_lower_bound (inlined)
+            |          lower_bound (inlined)
+            |          lower_bound (inlined)
+            |          operator[] (inlined)
+            |          add_order (inlined)
+            |          int run_bench<MapBook>(char const*, int) [clone .constprop.0] [clone .isra.0]
+            |          |
+            |          |--10.27%--int run_bench<MapBook>(char const*, int) [clone .constprop.0] [clone .isra.0]
+            |          |          main
+            |          |          0x71bd3182a601
+            |          |          __libc_start_main
+            |          |          _start
+            |          |
+            |           --9.88%--run_total<MapBook> (inlined)
+            |                     int run_bench<MapBook>(char const*, int) [clone .constprop.0] [clone .isra.0]
+            |                     main
+            |                     0x71bd3182a601
+            |                     __libc_start_main
+            |                     _start
+            |
+            |--8.44%--_M_lower_bound (inlined)
+            |          lower_bound (inlined)
+            |          lower_bound (inlined)
+            |          operator[] (inlined)
+            |          add_order (inlined)
+            |          int run_bench<MapBook>(char const*, int) [clone .constprop.0] [clone .isra.0]
+            |          |
+            |          |--4.39%--int run_bench<MapBook>(char const*, int) [clone .constprop.0] [clone .isra.0]
+            |          |          main
+            |          |          0x71bd3182a601
+            |          |          __libc_start_main
+            |          |          _start
+            |          |
+            |           --4.05%--run_total<MapBook> (inlined)
+            |                     int run_bench<MapBook>(char const*, int) [clone .constprop.0] [clone .isra.0]
+            |                     main
+            |                     0x71bd3182a601
+            |                     __libc_start_main
+            |                     _start
+            |
+             --3.04%--operator() (inlined)
+
+    26.45%  [.] MapBook::cancel_order(unsigned long)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           -      -
+            |
+            |--8.50%--std::__detail::_Mod_range_hashing::operator()(unsigned long, unsigned long) const (inlined)
+            |          |
+            |          |--5.02%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, MapBook::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(unsigned long, unsigned long) const (inlined)
+            |          |          std::_Hashtable<unsigned long, std::pair<unsigned long const, MapBook::Order>, std::allocator<std::pair<unsigned long const, MapBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_bucket_index(unsigned long) const (inlined)
+            |          |          std::_Hashtable<unsigned long, std::pair<unsigned long const, MapBook::Order>, std::allocator<std::pair<unsigned long const, MapBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+            |          |          std::_Hashtable<unsigned long, std::pair<unsigned long const, MapBook::Order>, std::allocator<std::pair<unsigned long const, MapBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) (inlined)
+            |          |          std::unordered_map<unsigned long, MapBook::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, MapBook::Order> > >::find(unsigned long const&) (inlined)
+            |          |          MapBook::cancel_order(unsigned long)
+            |          |          main
+            |          |          0x71bd3182a601
+            |          |          __libc_start_main
+            |          |          _start
+            |          |
+            |           --3.48%--std::__detail::_Hash_code_base<unsigned long, std::pair<unsigned long const, MapBook::Order>, std::__detail::_Select1st, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, false>::_M_bucket_index(std::__detail::_Hash_node_value<std::pair<unsigned long const, MapBook::Order>, false> const&, unsigned long) const (inlined)
+            |                     std::_Hashtable<unsigned long, std::pair<unsigned long const, MapBook::Order>, std::allocator<std::pair<unsigned long const, MapBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_bucket_index(std::__detail::_Hash_node_value<std::pair<unsigned long const, MapBook::Order>, false> const&) const (inlined)
+            |                     |
+            |                      --3.46%--std::_Hashtable<unsigned long, std::pair<unsigned long const, MapBook::Order>, std::allocator<std::pair<unsigned long const, MapBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_erase(unsigned long, std::__detail::_Hash_node_base*, std::__detail::_Hash_node<std::pair<unsigned long const, MapBook::Order>, false>*) (inlined)
+            |                                std::_Hashtable<unsigned long, std::pair<unsigned long const, MapBook::Order>, std::allocator<std::pair<unsigned long const, MapBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::erase(std::__detail::_Node_const_iterator<std::pair<unsigned long const, MapBook::Order>, false, false>) (inlined)
+            |                                std::_Hashtable<unsigned long, std::pair<unsigned long const, MapBook::Order>, std::allocator<std::pair<unsigned long const, MapBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::erase(std::__detail::_Node_iterator<std::pair<unsigned long const, MapBook::Order>, false, false>) (inlined)
+            |                                std::unordered_map<unsigned long, MapBook::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, MapBook::Order> > >::erase(std::__detail::_Node_iterator<std::pair<unsigned long const, MapBook::Order>, false, false>) (inlined)
+            |                                MapBook::cancel_order(unsigned long)
+            |
+            |--5.36%--std::equal_to<unsigned long>::operator()(unsigned long const&, unsigned long const&) const (inlined)
+            |          std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, MapBook::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_key_equals(unsigned long const&, std::__detail::_Hash_node_value<std::pair<unsigned long const, MapBook::Order>, false> const&) const (inlined)
+            |          std::__detail::_Hashtable_base<unsigned long, std::pair<unsigned long const, MapBook::Order>, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<false, false, true> >::_M_equals(unsigned long const&, unsigned long, std::__detail::_Hash_node_value<std::pair<unsigned long const, MapBook::Order>, false> const&) const (inlined)
+            |          std::_Hashtable<unsigned long, std::pair<unsigned long const, MapBook::Order>, std::allocator<std::pair<unsigned long const, MapBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node(unsigned long, unsigned long const&, unsigned long) const (inlined)
+            |          std::_Hashtable<unsigned long, std::pair<unsigned long const, MapBook::Order>, std::allocator<std::pair<unsigned long const, MapBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+            |          std::_Hashtable<unsigned long, std::pair<unsigned long const, MapBook::Order>, std::allocator<std::pair<unsigned long const, MapBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) (inlined)
+            |          std::unordered_map<unsigned long, MapBook::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, MapBook::Order> > >::find(unsigned long const&) (inlined)
+            |          MapBook::cancel_order(unsigned long)
+            |          main
+            |          0x71bd3182a601
+            |          __libc_start_main
+            |          _start
+            |
+             --4.71%--std::_Hashtable<unsigned long, std::pair<unsigned long const, MapBook::Order>, std::allocator<std::pair<unsigned long const, MapBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_find_before_node(unsigned long, unsigned long const&, unsigned long) const (inlined)
+                       std::_Hashtable<unsigned long, std::pair<unsigned long const, MapBook::Order>, std::allocator<std::pair<unsigned long const, MapBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_locate(unsigned long const&) const (inlined)
+                       std::_Hashtable<unsigned long, std::pair<unsigned long const, MapBook::Order>, std::allocator<std::pair<unsigned long const, MapBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::find(unsigned long const&) (inlined)
+                       std::unordered_map<unsigned long, MapBook::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, MapBook::Order> > >::find(unsigned long const&) (inlined)
+                       MapBook::cancel_order(unsigned long)
+                       main
+                       0x71bd3182a601
+                       __libc_start_main
+                       _start
+
+     7.53%  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, MapBook::Order>, std::allocator<std::pair<unsigned long const, MapBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, MapBook::Order>, false>*, unsigned long)  -      -
+            |
+             --4.62%--operator() (inlined)
+                       _M_bucket_index (inlined)
+                       |
+                        --4.54%--_M_rehash (inlined)
+                                  _M_insert_unique_node (inlined)
+                                  _M_emplace_uniq<long unsigned int&, MapBook::Order> (inlined)
+                                  emplace<long unsigned int&, MapBook::Order> (inlined)
+                                  emplace<long unsigned int&, MapBook::Order> (inlined)
+                                  add_order (inlined)
+                                  int run_bench<MapBook>(char const*, int) [clone .constprop.0] [clone .isra.0]
+
+     6.02%  [.] int run_bench<MapBook>(char const*, int) [clone .constprop.0] [clone .isra.0]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  -      -
+     4.65%  [.] __vdso_clock_gettime                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           -      -
+            |
+             --4.39%--clock_gettime
+                       std::chrono::_V2::steady_clock::now()
+
+     3.32%  [.] 0x00000000000b0f93                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             -      -
+
+

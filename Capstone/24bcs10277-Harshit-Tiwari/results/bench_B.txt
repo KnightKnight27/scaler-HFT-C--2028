@@ -1,0 +1,51 @@
+### round 1
+Implementation B: sorted std::vector levels + std::map orders
+Workload: 1000000 ops (seed 42) = 700471 add, 199303 cancel, 100226 bbo, plus get_bids(10)+get_asks(10) every 100 ops
+Runs: 5 (median reported)   timer overhead: ~37 ns per measured call
+
+Total time (ms):      451.17
+
+                        avg      p50      p99
+ns / add_order:       367.8      286      745
+ns / cancel_order:   1370.5     1076     2473
+ns / get_bbo:          50.6       38       69
+ns / bids+asks(10):   397.5
+
+Final BBO:
+  Bid: 99.99 x 2525
+  Ask: 100.01 x 2573
+Checksum: 12647226763645828079
+### round 2
+Implementation B: sorted std::vector levels + std::map orders
+Workload: 1000000 ops (seed 42) = 700471 add, 199303 cancel, 100226 bbo, plus get_bids(10)+get_asks(10) every 100 ops
+Runs: 5 (median reported)   timer overhead: ~21 ns per measured call
+
+Total time (ms):      442.17
+
+                        avg      p50      p99
+ns / add_order:       344.6      268      769
+ns / cancel_order:   1373.2     1053     2612
+ns / get_bbo:          42.5       35       70
+ns / bids+asks(10):   444.2
+
+Final BBO:
+  Bid: 99.99 x 2525
+  Ask: 100.01 x 2573
+Checksum: 12647226763645828079
+### round 3
+Implementation B: sorted std::vector levels + std::map orders
+Workload: 1000000 ops (seed 42) = 700471 add, 199303 cancel, 100226 bbo, plus get_bids(10)+get_asks(10) every 100 ops
+Runs: 5 (median reported)   timer overhead: ~22 ns per measured call
+
+Total time (ms):      496.78
+
+                        avg      p50      p99
+ns / add_order:       382.7      292      808
+ns / cancel_order:   1608.6     1214     3289
+ns / get_bbo:          57.4       39       72
+ns / bids+asks(10):   483.7
+
+Final BBO:
+  Bid: 99.99 x 2525
+  Ask: 100.01 x 2573
+Checksum: 12647226763645828079

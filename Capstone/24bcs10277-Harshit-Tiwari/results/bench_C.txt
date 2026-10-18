@@ -1,0 +1,51 @@
+### round 1
+Implementation C: flat tick array + open-addressing order table
+Workload: 1000000 ops (seed 42) = 700471 add, 199303 cancel, 100226 bbo, plus get_bids(10)+get_asks(10) every 100 ops
+Runs: 5 (median reported)   timer overhead: ~53 ns per measured call
+
+Total time (ms):      140.43
+
+                        avg      p50      p99
+ns / add_order:       274.5      157      688
+ns / cancel_order:    199.0      160      692
+ns / get_bbo:          50.9       43       64
+ns / bids+asks(10):   585.8
+
+Final BBO:
+  Bid: 99.99 x 2525
+  Ask: 100.01 x 2573
+Checksum: 12647226763645828079
+### round 2
+Implementation C: flat tick array + open-addressing order table
+Workload: 1000000 ops (seed 42) = 700471 add, 199303 cancel, 100226 bbo, plus get_bids(10)+get_asks(10) every 100 ops
+Runs: 5 (median reported)   timer overhead: ~27 ns per measured call
+
+Total time (ms):      113.73
+
+                        avg      p50      p99
+ns / add_order:       223.5      132      673
+ns / cancel_order:    158.6      135      677
+ns / get_bbo:          35.3       32       56
+ns / bids+asks(10):   346.4
+
+Final BBO:
+  Bid: 99.99 x 2525
+  Ask: 100.01 x 2573
+Checksum: 12647226763645828079
+### round 3
+Implementation C: flat tick array + open-addressing order table
+Workload: 1000000 ops (seed 42) = 700471 add, 199303 cancel, 100226 bbo, plus get_bids(10)+get_asks(10) every 100 ops
+Runs: 5 (median reported)   timer overhead: ~20 ns per measured call
+
+Total time (ms):      125.17
+
+                        avg      p50      p99
+ns / add_order:       247.7      141      678
+ns / cancel_order:    156.5      144      683
+ns / get_bbo:          38.5       34       60
+ns / bids+asks(10):   363.4
+
+Final BBO:
+  Bid: 99.99 x 2525
+  Ask: 100.01 x 2573
+Checksum: 12647226763645828079

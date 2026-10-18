@@ -1,0 +1,17 @@
+# started on Sat Oct 17 13:53:38 2026
+
+
+ Performance counter stats for './bench --impl B --runs 1' (5 runs):
+
+           1690.01 msec task-clock:u                                                            ( +-  9.23% )
+        3461375581      cycles:u                                                                ( +-  4.09% )
+        2079909357      instructions:u                                                          ( +-  0.02% )
+         439822754      branches:u                                                              ( +-  0.02% )
+          25965797      branch-misses:u                                                         ( +-  0.15% )
+          15251491      cache-misses:u                                                          ( +-  1.82% )
+          53845357      L1-dcache-load-misses:u                                                 ( +-  2.86% )
+           2744387      dTLB-load-misses:u                                                      ( +-  5.93% )
+             20756      page-faults:u                                                           ( +-  0.00% )
+
+       1.699708135 +- 0.156470471 seconds time elapsed  ( +-  9.21% )
+

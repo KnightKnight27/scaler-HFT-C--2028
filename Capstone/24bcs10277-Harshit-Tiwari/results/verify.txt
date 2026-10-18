@@ -1,0 +1,10 @@
+Running correctness test...
+Workloads: 1,000,000 ops (seed 42), 300,000 ops churn (seed 7), 100,000 ops tiny book (seed 99)
+Checked after every op: add/cancel result, BBO, top-10 bids and asks, repeated cancel.
+Full depth checked every 10,000 ops. Edge cases: empty book, unknown ids, short depth, bad prices.
+
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+
+All implementations produce identical results.

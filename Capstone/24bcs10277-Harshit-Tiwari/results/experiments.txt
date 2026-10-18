@@ -1,0 +1,46 @@
+################ null
+Total time (ms):        3.47
+
+                        avg      p50      p99
+ns / add_order:        26.5       21       40
+ns / cancel_order:     34.1       29       50
+ns / get_bbo:          37.5       34       56
+ns / bids+asks(10):    22.4
+
+ Performance counter stats for '/tmp/orderbook_exp/bench_null --impl C --runs 1' (5 runs):
+
+            158.04 msec task-clock:u                                                            ( +-  2.04% )
+         387504833      cycles:u                                                                ( +-  0.52% )
+         568694026      instructions:u                                                          ( +-  0.16% )
+          93195559      branches:u                                                              ( +-  0.18% )
+           2925210      branch-misses:u                                                         ( +-  1.14% )
+            833676      cache-misses:u                                                          ( +-  2.07% )
+           2476399      L1-dcache-load-misses:u                                                 ( +-  0.79% )
+             37207      dTLB-load-misses:u                                                      ( +-  6.96% )
+             10909      page-faults:u                                                           ( +-  0.00% )
+
+       0.158859274 +- 0.003242070 seconds time elapsed  ( +-  2.04% )
+
+################ presize
+Total time (ms):       99.57
+
+                        avg      p50      p99
+ns / add_order:       191.8      148      688
+ns / cancel_order:    193.5      150      690
+ns / get_bbo:          38.6       33       60
+ns / bids+asks(10):   372.3
+
+ Performance counter stats for '/tmp/orderbook_exp/bench_presize --impl C --runs 1' (5 runs):
+
+            525.00 msec task-clock:u                                                            ( +-  7.14% )
+        1150167205      cycles:u                                                                ( +-  4.79% )
+         901184760      instructions:u                                                          ( +-  0.14% )
+         144596782      branches:u                                                              ( +-  0.18% )
+           3992728      branch-misses:u                                                         ( +-  1.03% )
+           4935642      cache-misses:u                                                          ( +-  3.98% )
+          12355430      L1-dcache-load-misses:u                                                 ( +-  2.35% )
+           1806912      dTLB-load-misses:u                                                      ( +-  2.34% )
+             35509      page-faults:u                                                           ( +-  0.00% )
+
+       0.527238008 +- 0.038089079 seconds time elapsed  ( +-  7.22% )
+

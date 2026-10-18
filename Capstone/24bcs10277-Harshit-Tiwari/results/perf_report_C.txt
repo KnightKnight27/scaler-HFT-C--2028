@@ -1,0 +1,100 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'cpu/cycles/Pu'
+# Event count (approx.): 2554725648
+#
+# Overhead  Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 IPC   [IPC Coverage]
+# ........  .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................  ....................
+#
+    42.57%  [.] ArrayBook::add_order(unsigned long, Side, double, long)                                                                                                                                                                                                                                                                                                                                                                                                                                            -      -
+    12.76%  [.] ArrayBook::rebuild(unsigned long)                                                                                                                                                                                                                                                                                                                                                                                                                                                                  -      -
+    11.60%  [.] __vdso_clock_gettime                                                                                                                                                                                                                                                                                                                                                                                                                                                                               -      -
+    10.96%  [.] ArrayBook::cancel_order(unsigned long)                                                                                                                                                                                                                                                                                                                                                                                                                                                             -      -
+     6.08%  [.] int run_bench<ArrayBook>(char const*, int) [clone .constprop.0] [clone .isra.0]                                                                                                                                                                                                                                                                                                                                                                                                                    -      -
+     3.25%  [.] percentile(std::vector<unsigned int, std::allocator<unsigned int> >&, double)                                                                                                                                                                                                                                                                                                                                                                                                                      -      -
+     2.60%  [k] 0xffffffff81001320                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 -      -
+     2.52%  [.] make_workload(WorkloadConfig const&)                                                                                                                                                                                                                                                                                                                                                                                                                                                               -      -
+     1.15%  [.] std::chrono::_V2::steady_clock::now()                                                                                                                                                                                                                                                                                                                                                                                                                                                              -      -
+     1.04%  [.] int std::uniform_int_distribution<int>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_int_distribution<int>::param_type const&) [clone .isra.0]                                -      -
+     0.98%  [.] llroundf32x                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        -      -
+     0.90%  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()                                                                                                                                                                                                                                                                                                                   -      -
+     0.56%  [.] std::chrono::_V2::steady_clock::now()@plt                                                                                                                                                                                                                                                                                                                                                                                                                                                          -      -
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
+
+
+######## Call graph (perf report -g caller, entries above 3%)
+
+    42.57%  [.] ArrayBook::add_order(unsigned long, Side, double, long)                                                                                                                                                                                                                                                                                                                                                                                                                                            -      -
+            |
+             --38.67%--ArrayBook::find_slot(unsigned long) const (inlined)
+                       ArrayBook::add_order(unsigned long, Side, double, long)
+                       int run_bench<ArrayBook>(char const*, int) [clone .constprop.0] [clone .isra.0]
+                       int run_bench<ArrayBook>(char const*, int) [clone .constprop.0] [clone .isra.0]
+                       main
+                       0x76473402a601
+                       __libc_start_main
+                       _start
+
+    12.76%  [.] ArrayBook::rebuild(unsigned long)                                                                                                                                                                                                                                                                                                                                                                                                                                                                  -      -
+            |
+             --5.09%--ArrayBook::insert_slot(unsigned long, int, long) (inlined)
+                       ArrayBook::rebuild(unsigned long)
+                       ArrayBook::home(unsigned long) const (inlined)
+                       ArrayBook::insert_slot(unsigned long, int, long) (inlined)
+                       ArrayBook::add_order(unsigned long, Side, double, long)
+                       int run_bench<ArrayBook>(char const*, int) [clone .constprop.0] [clone .isra.0]
+                       int run_bench<ArrayBook>(char const*, int) [clone .constprop.0] [clone .isra.0]
+                       main
+                       0x76473402a601
+                       __libc_start_main
+                       _start
+
+    11.60%  [.] __vdso_clock_gettime                                                                                                                                                                                                                                                                                                                                                                                                                                                                               -      -
+            |
+             --11.44%--clock_gettime
+                       std::chrono::_V2::steady_clock::now()
+                       |
+                       |--5.42%--unsigned int& std::vector<unsigned int, std::allocator<unsigned int> >::emplace_back<unsigned int>(unsigned int&&) (inlined)
+                       |          std::vector<unsigned int, std::allocator<unsigned int> >::push_back(unsigned int&&) (inlined)
+                       |          run_per_op<ArrayBook> (inlined)
+                       |          int run_bench<ArrayBook>(char const*, int) [clone .constprop.0] [clone .isra.0]
+                       |          main
+                       |          0x76473402a601
+                       |          __libc_start_main
+                       |          _start
+                       |
+                        --5.33%--run_per_op<ArrayBook> (inlined)
+                                  int run_bench<ArrayBook>(char const*, int) [clone .constprop.0] [clone .isra.0]
+                                  main
+                                  0x76473402a601
+                                  __libc_start_main
+                                  _start
+
+    10.96%  [.] ArrayBook::cancel_order(unsigned long)                                                                                                                                                                                                                                                                                                                                                                                                                                                             -      -
+            |
+             --9.42%--ArrayBook::find_slot(unsigned long) const (inlined)
+                       ArrayBook::cancel_order(unsigned long)
+                       main
+                       0x76473402a601
+                       __libc_start_main
+                       _start
+
+     6.08%  [.] int run_bench<ArrayBook>(char const*, int) [clone .constprop.0] [clone .isra.0]                                                                                                                                                                                                                                                                                                                                                                                                                    -      -
+            |
+             --3.03%--run_per_op<ArrayBook> (inlined)
+                       int run_bench<ArrayBook>(char const*, int) [clone .constprop.0] [clone .isra.0]
+                       main
+                       0x76473402a601
+                       __libc_start_main
+                       _start
+
+     3.25%  [.] percentile(std::vector<unsigned int, std::allocator<unsigned int> >&, double)                                                                                                                                                                                                                                                                                                                                                                                                                      -      -
+
+
