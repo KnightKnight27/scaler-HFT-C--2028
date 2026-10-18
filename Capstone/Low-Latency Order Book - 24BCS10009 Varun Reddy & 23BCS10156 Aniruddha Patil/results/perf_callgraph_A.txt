@@ -1,0 +1,1097 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 9K of event 'cpu/cycles/P'
+# Event count (approx.): 1017617623
+#
+# Children      Self  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+# ........  ........  .......  ....................  ....................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    83.18%     0.00%  bench    bench                 [.] main
+            |          
+             --82.95%--main
+                       |          
+                        --82.39%--__libc_start_call_main
+                                  |          
+                                   --81.34%--call_init (inlined)
+                                             __libc_start_main_impl (inlined)
+                                             |          
+                                              --77.64%--_start
+    82.63%     0.00%  bench    libc.so.6             [.] __libc_start_call_main
+            |
+            ---__libc_start_call_main
+               |          
+                --81.58%--call_init (inlined)
+                          __libc_start_main_impl (inlined)
+                          |          
+                           --77.82%--_start
+    81.58%     0.00%  bench    libc.so.6             [.] __libc_start_main_impl (inlined)
+            |
+            ---__libc_start_main_impl (inlined)
+               |          
+                --77.82%--_start
+    81.58%     0.00%  bench    libc.so.6             [.] call_init (inlined)
+            |
+            ---call_init (inlined)
+               __libc_start_main_impl (inlined)
+               |          
+                --77.82%--_start
+    77.82%     0.00%  bench    bench                 [.] _start
+            |
+            ---_start
+    69.37%     1.60%  bench    bench                 [.] int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |          
+            |--67.55%--int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |          |          
+            |           --67.04%--main
+            |                     |          
+            |                      --66.87%--__libc_start_call_main
+            |                                |          
+            |                                 --66.37%--call_init (inlined)
+            |                                           __libc_start_main_impl (inlined)
+            |                                           |          
+            |                                            --62.82%--_start
+            |          
+             --0.53%--_S_right (inlined)
+                       _M_lower_bound (inlined)
+    69.30%     0.00%  bench    bench                 [.] run_once<OrderBookMap> (inlined)
+            |
+            ---run_once<OrderBookMap> (inlined)
+               int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+               |          
+                --68.78%--main
+                          |          
+                           --68.61%--__libc_start_call_main
+                                     |          
+                                      --68.11%--call_init (inlined)
+                                                __libc_start_main_impl (inlined)
+                                                |          
+                                                 --64.53%--_start
+    54.82%     0.00%  bench    bench                 [.] void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+            |
+            ---void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+               |          
+                --54.38%--run_once<OrderBookMap> (inlined)
+                          int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                          |          
+                           --53.85%--main
+                                     |          
+                                      --53.69%--__libc_start_call_main
+                                                |          
+                                                 --53.19%--call_init (inlined)
+                                                           __libc_start_main_impl (inlined)
+                                                           |          
+                                                            --52.07%--_start
+    39.69%     0.00%  bench    bench                 [.] add_order (inlined)
+            |
+            ---add_order (inlined)
+               |          
+                --39.45%--void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+                          run_once<OrderBookMap> (inlined)
+                          int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                          |          
+                           --39.02%--main
+                                     |          
+                                      --38.87%--__libc_start_call_main
+                                                |          
+                                                 --38.39%--call_init (inlined)
+                                                           __libc_start_main_impl (inlined)
+                                                           |          
+                                                            --37.31%--_start
+    23.38%    23.38%  bench    bench                 [.] OrderBookMap::add_order(unsigned long, Side, double, long)
+            |          
+            |--9.73%--_S_right (inlined)
+            |          _M_lower_bound (inlined)
+            |          |          
+            |          |--9.13%--lower_bound (inlined)
+            |          |          lower_bound (inlined)
+            |          |          operator[] (inlined)
+            |          |          add_order (inlined)
+            |          |          void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+            |          |          run_once<OrderBookMap> (inlined)
+            |          |          int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |          |          main
+            |          |          __libc_start_call_main
+            |          |          call_init (inlined)
+            |          |          __libc_start_main_impl (inlined)
+            |          |          _start
+            |          |          
+            |           --0.60%--find (inlined)
+            |                     find (inlined)
+            |          
+            |--4.94%--cancel_order (inlined)
+            |          void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+            |          run_once<OrderBookMap> (inlined)
+            |          int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |          main
+            |          __libc_start_call_main
+            |          call_init (inlined)
+            |          __libc_start_main_impl (inlined)
+            |          _start
+            |          
+            |--3.14%--_M_lower_bound (inlined)
+            |          |          
+            |           --2.85%--lower_bound (inlined)
+            |                     lower_bound (inlined)
+            |                     operator[] (inlined)
+            |                     add_order (inlined)
+            |                     void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+            |                     run_once<OrderBookMap> (inlined)
+            |                     int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |                     main
+            |                     __libc_start_call_main
+            |                     call_init (inlined)
+            |                     __libc_start_main_impl (inlined)
+            |                     _start
+            |          
+            |--0.90%--operator() (inlined)
+            |          |          
+            |           --0.83%--_M_key_equals (inlined)
+            |                     _M_equals (inlined)
+            |                     _M_find_before_node (inlined)
+            |                     _M_find_node (inlined)
+            |                     try_emplace<long unsigned int const&, OrderBookMap::Order> (inlined)
+            |                     try_emplace<OrderBookMap::Order> (inlined)
+            |                     add_order (inlined)
+            |                     void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+            |                     run_once<OrderBookMap> (inlined)
+            |                     int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |                     main
+            |                     __libc_start_call_main
+            |                     call_init (inlined)
+            |                     __libc_start_main_impl (inlined)
+            |                     _start
+            |          
+            |--0.83%--_M_find_before_node (inlined)
+            |          _M_find_node (inlined)
+            |          try_emplace<long unsigned int const&, OrderBookMap::Order> (inlined)
+            |          try_emplace<OrderBookMap::Order> (inlined)
+            |          add_order (inlined)
+            |          void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+            |          run_once<OrderBookMap> (inlined)
+            |          int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |          main
+            |          __libc_start_call_main
+            |          call_init (inlined)
+            |          __libc_start_main_impl (inlined)
+            |          _start
+            |          
+             --0.57%--_int_malloc
+                       |          
+                        --0.55%--__libc_malloc (inlined)
+                                  operator new(unsigned long)
+                                  |          
+                                   --0.54%--pair<long unsigned int const&, 0, OrderBookMap::Order&&, 0> (inlined)
+                                             pair<long unsigned int const&, OrderBookMap::Order&&> (inlined)
+                                             construct<std::pair<long unsigned int const, OrderBookMap::Order>, const std::piecewise_construct_t&, std::tuple<long unsigned int const&>, std::tuple<OrderBookMap::Order&&> > (inlined)
+                                             construct<std::pair<long unsigned int const, OrderBookMap::Order>, const std::piecewise_construct_t&, std::tuple<long unsigned int const&>, std::tuple<OrderBookMap::Order&&> > (inlined)
+                                             _M_allocate_node<const std::piecewise_construct_t&, std::tuple<long unsigned int const&>, std::tuple<OrderBookMap::Order&&> > (inlined)
+                                             _Scoped_node<const std::piecewise_construct_t&, std::tuple<long unsigned int const&>, std::tuple<OrderBookMap::Order&&> > (inlined)
+                                             try_emplace<long unsigned int const&, OrderBookMap::Order> (inlined)
+                                             try_emplace<OrderBookMap::Order> (inlined)
+                                             add_order (inlined)
+                                             void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+                                             run_once<OrderBookMap> (inlined)
+                                             int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                                             main
+                                             __libc_start_call_main
+                                             call_init (inlined)
+                                             __libc_start_main_impl (inlined)
+    20.85%     0.00%  bench    bench                 [.] operator[] (inlined)
+            |
+            ---operator[] (inlined)
+               add_order (inlined)
+               |          
+                --20.83%--void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+                          run_once<OrderBookMap> (inlined)
+                          int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                          |          
+                           --20.70%--main
+                                     |          
+                                      --20.68%--__libc_start_call_main
+                                                |          
+                                                 --20.64%--call_init (inlined)
+                                                           __libc_start_main_impl (inlined)
+                                                           |          
+                                                            --20.61%--_start
+    20.18%     0.00%  bench    bench                 [.] lower_bound (inlined)
+            |
+            ---lower_bound (inlined)
+               lower_bound (inlined)
+               operator[] (inlined)
+               add_order (inlined)
+               |          
+                --20.16%--void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+                          run_once<OrderBookMap> (inlined)
+                          int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                          |          
+                           --20.03%--main
+                                     |          
+                                      --20.02%--__libc_start_call_main
+                                                |          
+                                                 --19.99%--call_init (inlined)
+                                                           __libc_start_main_impl (inlined)
+                                                           |          
+                                                            --19.98%--_start
+    20.18%     0.00%  bench    bench                 [.] _M_lower_bound (inlined)
+            |
+            ---_M_lower_bound (inlined)
+               lower_bound (inlined)
+               lower_bound (inlined)
+               operator[] (inlined)
+               add_order (inlined)
+               |          
+                --20.16%--void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+                          run_once<OrderBookMap> (inlined)
+                          int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                          |          
+                           --20.03%--main
+                                     |          
+                                      --20.02%--__libc_start_call_main
+                                                |          
+                                                 --19.99%--call_init (inlined)
+                                                           __libc_start_main_impl (inlined)
+                                                           |          
+                                                            --19.98%--_start
+    17.48%     0.00%  bench    bench                 [.] try_emplace<OrderBookMap::Order> (inlined)
+            |
+            ---try_emplace<OrderBookMap::Order> (inlined)
+               add_order (inlined)
+               |          
+                --17.31%--void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+                          run_once<OrderBookMap> (inlined)
+                          int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                          |          
+                           --17.01%--main
+                                     |          
+                                      --16.88%--__libc_start_call_main
+                                                |          
+                                                 --16.44%--call_init (inlined)
+                                                           __libc_start_main_impl (inlined)
+                                                           |          
+                                                            --15.39%--_start
+    17.48%     0.00%  bench    bench                 [.] try_emplace<long unsigned int const&, OrderBookMap::Order> (inlined)
+            |
+            ---try_emplace<long unsigned int const&, OrderBookMap::Order> (inlined)
+               try_emplace<OrderBookMap::Order> (inlined)
+               add_order (inlined)
+               |          
+                --17.31%--void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+                          run_once<OrderBookMap> (inlined)
+                          int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                          |          
+                           --17.01%--main
+                                     |          
+                                      --16.88%--__libc_start_call_main
+                                                |          
+                                                 --16.44%--call_init (inlined)
+                                                           __libc_start_main_impl (inlined)
+                                                           |          
+                                                            --15.39%--_start
+    15.34%     0.00%  bench    bench                 [.] _S_right (inlined)
+            |
+            ---_S_right (inlined)
+               _M_lower_bound (inlined)
+               lower_bound (inlined)
+               lower_bound (inlined)
+               operator[] (inlined)
+               add_order (inlined)
+               |          
+                --15.33%--void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+                          run_once<OrderBookMap> (inlined)
+                          int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                          |          
+                           --15.23%--main
+                                     |          
+                                      --15.23%--__libc_start_call_main
+                                                |          
+                                                 --15.19%--call_init (inlined)
+                                                           __libc_start_main_impl (inlined)
+                                                           |          
+                                                            --15.18%--_start
+    14.38%     0.00%  bench    bench                 [.] std::unique_ptr<OrderBookMap, std::default_delete<OrderBookMap> >::~unique_ptr() (inlined)
+            |
+            ---std::unique_ptr<OrderBookMap, std::default_delete<OrderBookMap> >::~unique_ptr() (inlined)
+               run_once<OrderBookMap> (inlined)
+               int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               |          
+                --11.96%--_start
+    14.38%     0.00%  bench    bench                 [.] std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+            |
+            ---std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::unique_ptr<OrderBookMap, std::default_delete<OrderBookMap> >::~unique_ptr() (inlined)
+               run_once<OrderBookMap> (inlined)
+               int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               |          
+                --11.96%--_start
+    14.33%     0.00%  bench    bench                 [.] OrderBookMap::~OrderBookMap() (inlined)
+            |
+            ---OrderBookMap::~OrderBookMap() (inlined)
+               std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::unique_ptr<OrderBookMap, std::default_delete<OrderBookMap> >::~unique_ptr() (inlined)
+               run_once<OrderBookMap> (inlined)
+               int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               |          
+                --11.91%--_start
+    13.46%     0.00%  bench    bench                 [.] cancel_order (inlined)
+            |
+            ---cancel_order (inlined)
+               |          
+                --13.42%--void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+                          run_once<OrderBookMap> (inlined)
+                          int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                          |          
+                           --13.32%--main
+                                     __libc_start_call_main
+                                     |          
+                                      --13.30%--call_init (inlined)
+                                                __libc_start_main_impl (inlined)
+                                                |          
+                                                 --13.26%--_start
+    12.66%     0.00%  bench    bench                 [.] make_benchmark_workload (inlined)
+            |
+            ---make_benchmark_workload (inlined)
+               |          
+                --12.48%--main
+                          |          
+                           --12.08%--__libc_start_call_main
+                                     |          
+                                      --11.54%--call_init (inlined)
+                                                __libc_start_main_impl (inlined)
+                                                |          
+                                                 --11.42%--_start
+    12.35%     0.00%  bench    bench                 [.] operator() (inlined)
+            |
+            ---operator() (inlined)
+               |          
+               |--10.85%--_M_bucket_index (inlined)
+               |          _M_bucket_index (inlined)
+               |          |          
+               |           --10.79%--_M_insert_unique_node (inlined)
+               |                     try_emplace<long unsigned int const&, OrderBookMap::Order> (inlined)
+               |                     try_emplace<OrderBookMap::Order> (inlined)
+               |                     add_order (inlined)
+               |                     |          
+               |                      --10.77%--void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+               |                                run_once<OrderBookMap> (inlined)
+               |                                int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+               |                                |          
+               |                                 --10.66%--main
+               |                                           |          
+               |                                            --10.57%--__libc_start_call_main
+               |                                                      |          
+               |                                                       --10.52%--call_init (inlined)
+               |                                                                 __libc_start_main_impl (inlined)
+               |                                                                 |          
+               |                                                                  --10.47%--_start
+               |          
+                --1.50%--_M_key_equals (inlined)
+                          _M_equals (inlined)
+                          _M_find_before_node (inlined)
+                          _M_find_node (inlined)
+                          try_emplace<long unsigned int const&, OrderBookMap::Order> (inlined)
+                          try_emplace<OrderBookMap::Order> (inlined)
+                          add_order (inlined)
+                          void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+                          run_once<OrderBookMap> (inlined)
+                          int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                          |          
+                           --1.48%--main
+                                     __libc_start_call_main
+                                     call_init (inlined)
+                                     __libc_start_main_impl (inlined)
+                                     _start
+    11.43%     0.00%  bench    bench                 [.] _M_insert_unique_node (inlined)
+            |
+            ---_M_insert_unique_node (inlined)
+               try_emplace<long unsigned int const&, OrderBookMap::Order> (inlined)
+               try_emplace<OrderBookMap::Order> (inlined)
+               add_order (inlined)
+               |          
+                --11.41%--void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+                          run_once<OrderBookMap> (inlined)
+                          int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                          |          
+                           --11.28%--main
+                                     |          
+                                      --11.19%--__libc_start_call_main
+                                                |          
+                                                 --11.12%--call_init (inlined)
+                                                           __libc_start_main_impl (inlined)
+                                                           |          
+                                                            --11.07%--_start
+    11.21%    11.21%  bench    bench                 [.] OrderBookMap::cancel_order(unsigned long)
+            |          
+            |--3.67%--_S_right (inlined)
+            |          _M_lower_bound (inlined)
+            |          |          
+            |          |--2.62%--lower_bound (inlined)
+            |          |          lower_bound (inlined)
+            |          |          operator[] (inlined)
+            |          |          add_order (inlined)
+            |          |          void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+            |          |          run_once<OrderBookMap> (inlined)
+            |          |          int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |          |          main
+            |          |          __libc_start_call_main
+            |          |          call_init (inlined)
+            |          |          __libc_start_main_impl (inlined)
+            |          |          _start
+            |          |          
+            |           --1.05%--find (inlined)
+            |                     find (inlined)
+            |                     |          
+            |                      --0.60%--reduce_level<std::map<int, long int, std::less<int> > > (inlined)
+            |                                cancel_order (inlined)
+            |                                void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+            |                                run_once<OrderBookMap> (inlined)
+            |                                int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |                                main
+            |                                __libc_start_call_main
+            |                                call_init (inlined)
+            |                                __libc_start_main_impl (inlined)
+            |                                _start
+            |          
+            |--2.05%--cancel_order (inlined)
+            |          |          
+            |           --2.03%--void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+            |                     run_once<OrderBookMap> (inlined)
+            |                     int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |                     main
+            |                     __libc_start_call_main
+            |                     call_init (inlined)
+            |                     __libc_start_main_impl (inlined)
+            |                     _start
+            |          
+            |--1.70%--operator() (inlined)
+            |          |          
+            |           --1.36%--_M_bucket_index (inlined)
+            |                     _M_bucket_index (inlined)
+            |                     |          
+            |                      --1.31%--_M_erase (inlined)
+            |                                erase (inlined)
+            |                                erase (inlined)
+            |                                erase (inlined)
+            |                                cancel_order (inlined)
+            |                                void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+            |                                run_once<OrderBookMap> (inlined)
+            |                                int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |                                main
+            |                                __libc_start_call_main
+            |                                call_init (inlined)
+            |                                __libc_start_main_impl (inlined)
+            |                                _start
+            |          
+             --1.01%--_M_lower_bound (inlined)
+                       |          
+                        --0.82%--lower_bound (inlined)
+                                  lower_bound (inlined)
+                                  operator[] (inlined)
+                                  add_order (inlined)
+                                  void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+                                  run_once<OrderBookMap> (inlined)
+                                  int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                                  main
+                                  __libc_start_call_main
+                                  call_init (inlined)
+                                  __libc_start_main_impl (inlined)
+                                  _start
+    10.85%     0.00%  bench    bench                 [.] _M_bucket_index (inlined)
+            |
+            ---_M_bucket_index (inlined)
+               _M_bucket_index (inlined)
+               |          
+                --10.79%--_M_insert_unique_node (inlined)
+                          try_emplace<long unsigned int const&, OrderBookMap::Order> (inlined)
+                          try_emplace<OrderBookMap::Order> (inlined)
+                          add_order (inlined)
+                          |          
+                           --10.77%--void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+                                     run_once<OrderBookMap> (inlined)
+                                     int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                                     |          
+                                      --10.66%--main
+                                                |          
+                                                 --10.57%--__libc_start_call_main
+                                                           |          
+                                                            --10.52%--call_init (inlined)
+                                                                      __libc_start_main_impl (inlined)
+                                                                      |          
+                                                                       --10.47%--_start
+     9.85%     0.00%  bench    bench                 [.] _M_rehash (inlined)
+            |
+            ---_M_rehash (inlined)
+               |          
+                --9.82%--operator() (inlined)
+                          _M_bucket_index (inlined)
+                          _M_bucket_index (inlined)
+                          _M_insert_unique_node (inlined)
+                          try_emplace<long unsigned int const&, OrderBookMap::Order> (inlined)
+                          try_emplace<OrderBookMap::Order> (inlined)
+                          add_order (inlined)
+                          |          
+                           --9.81%--void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+                                     run_once<OrderBookMap> (inlined)
+                                     int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                                     main
+                                     |          
+                                      --9.78%--__libc_start_call_main
+                                                call_init (inlined)
+                                                __libc_start_main_impl (inlined)
+                                                _start
+     9.85%     0.00%  bench    bench                 [.] _M_rehash_aux (inlined)
+            |
+            ---_M_rehash_aux (inlined)
+               _M_rehash (inlined)
+               |          
+                --9.82%--operator() (inlined)
+                          _M_bucket_index (inlined)
+                          _M_bucket_index (inlined)
+                          _M_insert_unique_node (inlined)
+                          try_emplace<long unsigned int const&, OrderBookMap::Order> (inlined)
+                          try_emplace<OrderBookMap::Order> (inlined)
+                          add_order (inlined)
+                          |          
+                           --9.81%--void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+                                     run_once<OrderBookMap> (inlined)
+                                     int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                                     main
+                                     |          
+                                      --9.78%--__libc_start_call_main
+                                                call_init (inlined)
+                                                __libc_start_main_impl (inlined)
+                                                _start
+     9.74%     9.74%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookMap::Order>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+            |          
+            |--8.42%--operator() (inlined)
+            |          _M_bucket_index (inlined)
+            |          _M_rehash_aux (inlined)
+            |          _M_rehash (inlined)
+            |          operator() (inlined)
+            |          _M_bucket_index (inlined)
+            |          _M_bucket_index (inlined)
+            |          _M_insert_unique_node (inlined)
+            |          try_emplace<long unsigned int const&, OrderBookMap::Order> (inlined)
+            |          try_emplace<OrderBookMap::Order> (inlined)
+            |          add_order (inlined)
+            |          void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+            |          run_once<OrderBookMap> (inlined)
+            |          int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |          main
+            |          __libc_start_call_main
+            |          call_init (inlined)
+            |          __libc_start_main_impl (inlined)
+            |          _start
+            |          
+             --1.33%--_M_rehash_aux (inlined)
+                       _M_rehash (inlined)
+                       operator() (inlined)
+                       _M_bucket_index (inlined)
+                       _M_bucket_index (inlined)
+                       _M_insert_unique_node (inlined)
+                       try_emplace<long unsigned int const&, OrderBookMap::Order> (inlined)
+                       try_emplace<OrderBookMap::Order> (inlined)
+                       add_order (inlined)
+                       void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+                       run_once<OrderBookMap> (inlined)
+                       int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                       main
+                       __libc_start_call_main
+                       call_init (inlined)
+                       __libc_start_main_impl (inlined)
+                       _start
+     8.48%     0.00%  bench    bench                 [.] _M_bucket_index (inlined)
+            |
+            ---_M_bucket_index (inlined)
+               _M_rehash_aux (inlined)
+               _M_rehash (inlined)
+               |          
+                --8.47%--operator() (inlined)
+                          _M_bucket_index (inlined)
+                          _M_bucket_index (inlined)
+                          _M_insert_unique_node (inlined)
+                          try_emplace<long unsigned int const&, OrderBookMap::Order> (inlined)
+                          try_emplace<OrderBookMap::Order> (inlined)
+                          add_order (inlined)
+                          void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+                          run_once<OrderBookMap> (inlined)
+                          int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                          main
+                          |          
+                           --8.44%--__libc_start_call_main
+                                     call_init (inlined)
+                                     __libc_start_main_impl (inlined)
+                                     _start
+     8.48%     0.00%  bench    bench                 [.] operator() (inlined)
+            |
+            ---operator() (inlined)
+               _M_bucket_index (inlined)
+               _M_rehash_aux (inlined)
+               _M_rehash (inlined)
+               |          
+                --8.47%--operator() (inlined)
+                          _M_bucket_index (inlined)
+                          _M_bucket_index (inlined)
+                          _M_insert_unique_node (inlined)
+                          try_emplace<long unsigned int const&, OrderBookMap::Order> (inlined)
+                          try_emplace<OrderBookMap::Order> (inlined)
+                          add_order (inlined)
+                          void execute<OrderBookMap>(OrderBookMap&, Op const&, Checksum&) (inlined)
+                          run_once<OrderBookMap> (inlined)
+                          int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                          main
+                          |          
+                           --8.44%--__libc_start_call_main
+                                     call_init (inlined)
+                                     __libc_start_main_impl (inlined)
+                                     _start
+     8.43%     0.00%  bench    libc.so.6             [.] __libc_free (inlined)
+            |
+            ---__libc_free (inlined)
+               |          
+               |--6.19%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::~_Rb_tree() (inlined)
+               |          std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::~map() (inlined)
+               |          OrderBookMap::~OrderBookMap() (inlined)
+               |          std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               |          std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               |          std::unique_ptr<OrderBookMap, std::default_delete<OrderBookMap> >::~unique_ptr() (inlined)
+               |          run_once<OrderBookMap> (inlined)
+               |          int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+               |          main
+               |          __libc_start_call_main
+               |          call_init (inlined)
+               |          __libc_start_main_impl (inlined)
+               |          |          
+               |           --3.77%--_start
+               |          
+                --1.91%--std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*) (inlined)
+                          std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookMap::Order>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::clear() (inlined)
+                          std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookMap::Order>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+                          std::unordered_map<unsigned long, OrderBookMap::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> > >::~unordered_map() (inlined)
+                          OrderBookMap::~OrderBookMap() (inlined)
+                          std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+                          std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+                          std::unique_ptr<OrderBookMap, std::default_delete<OrderBookMap> >::~unique_ptr() (inlined)
+                          run_once<OrderBookMap> (inlined)
+                          int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                          main
+                          __libc_start_call_main
+                          call_init (inlined)
+                          __libc_start_main_impl (inlined)
+                          _start
+     8.02%     0.00%  bench    bench                 [.] std::unordered_map<unsigned long, OrderBookMap::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> > >::~unordered_map() (inlined)
+            |
+            ---std::unordered_map<unsigned long, OrderBookMap::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> > >::~unordered_map() (inlined)
+               OrderBookMap::~OrderBookMap() (inlined)
+               std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::unique_ptr<OrderBookMap, std::default_delete<OrderBookMap> >::~unique_ptr() (inlined)
+               run_once<OrderBookMap> (inlined)
+               int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+     8.02%     0.00%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookMap::Order>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+            |
+            ---std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookMap::Order>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+               std::unordered_map<unsigned long, OrderBookMap::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> > >::~unordered_map() (inlined)
+               OrderBookMap::~OrderBookMap() (inlined)
+               std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::unique_ptr<OrderBookMap, std::default_delete<OrderBookMap> >::~unique_ptr() (inlined)
+               run_once<OrderBookMap> (inlined)
+               int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+     8.02%     0.00%  bench    bench                 [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookMap::Order>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::clear() (inlined)
+            |
+            ---std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookMap::Order>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::clear() (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookMap::Order>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+               std::unordered_map<unsigned long, OrderBookMap::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> > >::~unordered_map() (inlined)
+               OrderBookMap::~OrderBookMap() (inlined)
+               std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::unique_ptr<OrderBookMap, std::default_delete<OrderBookMap> >::~unique_ptr() (inlined)
+               run_once<OrderBookMap> (inlined)
+               int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+     8.02%     0.00%  bench    bench                 [.] std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*) (inlined)
+            |
+            ---std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*) (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookMap::Order>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::clear() (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookMap::Order>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+               std::unordered_map<unsigned long, OrderBookMap::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> > >::~unordered_map() (inlined)
+               OrderBookMap::~OrderBookMap() (inlined)
+               std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::unique_ptr<OrderBookMap, std::default_delete<OrderBookMap> >::~unique_ptr() (inlined)
+               run_once<OrderBookMap> (inlined)
+               int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+     6.69%     6.69%  bench    libc.so.6             [.] cfree@GLIBC_2.2.5
+            |          
+            |--4.64%--std::__new_allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> >::deallocate(std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*, unsigned long) (inlined)
+            |          std::allocator_traits<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::deallocate(std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> >&, std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*, unsigned long) (inlined)
+            |          std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::_M_deallocate_node_ptr(std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*) (inlined)
+            |          std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::_M_deallocate_node(std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*) (inlined)
+            |          std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*) (inlined)
+            |          std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookMap::Order>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::clear() (inlined)
+            |          std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookMap::Order>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+            |          std::unordered_map<unsigned long, OrderBookMap::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> > >::~unordered_map() (inlined)
+            |          OrderBookMap::~OrderBookMap() (inlined)
+            |          std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+            |          std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+            |          std::unique_ptr<OrderBookMap, std::default_delete<OrderBookMap> >::~unique_ptr() (inlined)
+            |          run_once<OrderBookMap> (inlined)
+            |          int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |          main
+            |          __libc_start_call_main
+            |          call_init (inlined)
+            |          __libc_start_main_impl (inlined)
+            |          _start
+            |          
+             --1.25%--_int_free
+                       |          
+                        --1.22%--__libc_free (inlined)
+                                  |          
+                                   --1.20%--std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*) (inlined)
+                                             std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookMap::Order>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::clear() (inlined)
+                                             std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookMap::Order>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+                                             std::unordered_map<unsigned long, OrderBookMap::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> > >::~unordered_map() (inlined)
+                                             OrderBookMap::~OrderBookMap() (inlined)
+                                             std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+                                             std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+                                             std::unique_ptr<OrderBookMap, std::default_delete<OrderBookMap> >::~unique_ptr() (inlined)
+                                             run_once<OrderBookMap> (inlined)
+                                             int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                                             main
+                                             __libc_start_call_main
+                                             call_init (inlined)
+                                             __libc_start_main_impl (inlined)
+                                             _start
+     6.21%     4.98%  bench    libc.so.6             [.] malloc_consolidate
+            |          
+            |--4.29%--malloc_consolidate
+            |          |          
+            |           --4.28%--_int_free_maybe_consolidate
+            |                     __libc_free (inlined)
+            |                     |          
+            |                      --4.27%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::~_Rb_tree() (inlined)
+            |                                std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::~map() (inlined)
+            |                                OrderBookMap::~OrderBookMap() (inlined)
+            |                                std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+            |                                std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+            |                                std::unique_ptr<OrderBookMap, std::default_delete<OrderBookMap> >::~unique_ptr() (inlined)
+            |                                run_once<OrderBookMap> (inlined)
+            |                                int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |                                main
+            |                                __libc_start_call_main
+            |                                call_init (inlined)
+            |                                __libc_start_main_impl (inlined)
+            |                                |          
+            |                                 --3.76%--_start
+            |          
+             --1.92%--unlink_chunk (inlined)
+                       |          
+                        --1.91%--malloc_consolidate
+                                  _int_free_maybe_consolidate
+                                  __libc_free (inlined)
+                                  std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::~_Rb_tree() (inlined)
+                                  std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::~map() (inlined)
+                                  OrderBookMap::~OrderBookMap() (inlined)
+                                  std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+                                  std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+                                  std::unique_ptr<OrderBookMap, std::default_delete<OrderBookMap> >::~unique_ptr() (inlined)
+                                  run_once<OrderBookMap> (inlined)
+                                  int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                                  main
+                                  __libc_start_call_main
+                                  call_init (inlined)
+                                  __libc_start_main_impl (inlined)
+     6.20%     0.00%  bench    libc.so.6             [.] _int_free_maybe_consolidate
+            |
+            ---_int_free_maybe_consolidate
+               __libc_free (inlined)
+               |          
+                --6.19%--std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::~_Rb_tree() (inlined)
+                          std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::~map() (inlined)
+                          OrderBookMap::~OrderBookMap() (inlined)
+                          std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+                          std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+                          std::unique_ptr<OrderBookMap, std::default_delete<OrderBookMap> >::~unique_ptr() (inlined)
+                          run_once<OrderBookMap> (inlined)
+                          int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                          main
+                          __libc_start_call_main
+                          call_init (inlined)
+                          __libc_start_main_impl (inlined)
+                          |          
+                           --3.77%--_start
+     6.19%     0.00%  bench    bench                 [.] std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::~map() (inlined)
+            |
+            ---std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::~map() (inlined)
+               OrderBookMap::~OrderBookMap() (inlined)
+               std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::unique_ptr<OrderBookMap, std::default_delete<OrderBookMap> >::~unique_ptr() (inlined)
+               run_once<OrderBookMap> (inlined)
+               int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               |          
+                --3.77%--_start
+     6.19%     0.00%  bench    bench                 [.] std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::~_Rb_tree() (inlined)
+            |
+            ---std::_Rb_tree<int, std::pair<int const, long>, std::_Select1st<std::pair<int const, long> >, std::less<int>, std::allocator<std::pair<int const, long> > >::~_Rb_tree() (inlined)
+               std::map<int, long, std::less<int>, std::allocator<std::pair<int const, long> > >::~map() (inlined)
+               OrderBookMap::~OrderBookMap() (inlined)
+               std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::unique_ptr<OrderBookMap, std::default_delete<OrderBookMap> >::~unique_ptr() (inlined)
+               run_once<OrderBookMap> (inlined)
+               int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               |          
+                --3.77%--_start
+     6.18%     0.05%  bench    [unknown]             [k] 0xffffffffa734b3bf
+            |          
+             --6.14%--0xffffffffa734b3bf
+                       |          
+                        --5.06%--0xffffffffa734b95a
+                                  |          
+                                   --4.43%--0xffffffffa734bc9d
+                                             |          
+                                              --3.63%--0xffffffffa6f60122
+                                                        |          
+                                                         --2.54%--0xffffffffa8289e61
+                                                                   |          
+                                                                    --2.07%--0xffffffffa6c00bb7
+                                                                              |          
+                                                                               --0.55%--construct<Op, const Op&> (inlined)
+                                                                                         construct<Op, const Op&> (inlined)
+                                                                                         push_back (inlined)
+                                                                                         push (inlined)
+     6.06%     0.00%  bench    bench                 [.] std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::_M_deallocate_node(std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*) (inlined)
+            |
+            ---std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::_M_deallocate_node(std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*) (inlined)
+               std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*) (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookMap::Order>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::clear() (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookMap::Order>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+               std::unordered_map<unsigned long, OrderBookMap::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> > >::~unordered_map() (inlined)
+               OrderBookMap::~OrderBookMap() (inlined)
+               std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::unique_ptr<OrderBookMap, std::default_delete<OrderBookMap> >::~unique_ptr() (inlined)
+               run_once<OrderBookMap> (inlined)
+               int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+     6.06%     0.00%  bench    bench                 [.] std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::_M_deallocate_node_ptr(std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*) (inlined)
+            |
+            ---std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::_M_deallocate_node_ptr(std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*) (inlined)
+               std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::_M_deallocate_node(std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*) (inlined)
+               std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*) (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookMap::Order>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::clear() (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookMap::Order>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+               std::unordered_map<unsigned long, OrderBookMap::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> > >::~unordered_map() (inlined)
+               OrderBookMap::~OrderBookMap() (inlined)
+               std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::unique_ptr<OrderBookMap, std::default_delete<OrderBookMap> >::~unique_ptr() (inlined)
+               run_once<OrderBookMap> (inlined)
+               int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+     6.06%     0.00%  bench    bench                 [.] std::allocator_traits<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::deallocate(std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> >&, std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*, unsigned long) (inlined)
+            |
+            ---std::allocator_traits<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::deallocate(std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> >&, std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*, unsigned long) (inlined)
+               std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::_M_deallocate_node_ptr(std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*) (inlined)
+               std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::_M_deallocate_node(std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*) (inlined)
+               std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*) (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookMap::Order>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::clear() (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookMap::Order>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+               std::unordered_map<unsigned long, OrderBookMap::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> > >::~unordered_map() (inlined)
+               OrderBookMap::~OrderBookMap() (inlined)
+               std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::unique_ptr<OrderBookMap, std::default_delete<OrderBookMap> >::~unique_ptr() (inlined)
+               run_once<OrderBookMap> (inlined)
+               int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+     6.06%     0.00%  bench    bench                 [.] std::__new_allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> >::deallocate(std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*, unsigned long) (inlined)
+            |
+            ---std::__new_allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> >::deallocate(std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*, unsigned long) (inlined)
+               std::allocator_traits<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::deallocate(std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> >&, std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*, unsigned long) (inlined)
+               std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::_M_deallocate_node_ptr(std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*) (inlined)
+               std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::_M_deallocate_node(std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*) (inlined)
+               std::__detail::_Hashtable_alloc<std::allocator<std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false> > >::_M_deallocate_nodes(std::__detail::_Hash_node<std::pair<unsigned long const, OrderBookMap::Order>, false>*) (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookMap::Order>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::clear() (inlined)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, OrderBookMap::Order>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable() (inlined)
+               std::unordered_map<unsigned long, OrderBookMap::Order, std::hash<unsigned long>, std::equal_to<unsigned long>, std::allocator<std::pair<unsigned long const, OrderBookMap::Order> > >::~unordered_map() (inlined)
+               OrderBookMap::~OrderBookMap() (inlined)
+               std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::default_delete<OrderBookMap>::operator()(OrderBookMap*) const (inlined)
+               std::unique_ptr<OrderBookMap, std::default_delete<OrderBookMap> >::~unique_ptr() (inlined)
+               run_once<OrderBookMap> (inlined)
+               int (anonymous namespace)::benchmark<OrderBookMap>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+               main
+               __libc_start_call_main
+               call_init (inlined)
+               __libc_start_main_impl (inlined)
+               _start
+     5.57%     0.01%  bench    [unknown]             [k] 0xffffffffa734b95a
+            |          
+             --5.56%--0xffffffffa734b95a
+                       |          
+                        --4.91%--0xffffffffa734bc9d
+                                  |          
+                                   --4.10%--0xffffffffa6f60122
+                                             |          
+                                              --2.92%--0xffffffffa8289e61
+                                                        |          
+                                                         --2.42%--0xffffffffa6c00bb7
+                                                                   |          
+                                                                    --0.68%--construct<Op, const Op&> (inlined)
+                                                                              construct<Op, const Op&> (inlined)
+                                                                              push_back (inlined)
+                                                                              push (inlined)
+     5.54%     5.54%  bench    bench                 [.] make_benchmark_workload(unsigned long, unsigned int)
+            |          
+            |--2.46%--take_random (inlined)
+            |          make_benchmark_workload (inlined)
+            |          main
+            |          __libc_start_call_main
+            |          call_init (inlined)
+            |          __libc_start_main_impl (inlined)
+            |          _start
+            |          
+            |--1.05%--push_back (inlined)
+            |          push (inlined)
+            |          make_benchmark_workload (inlined)
+            |          main
+            |          __libc_start_call_main
+            |          call_init (inlined)
+            |          __libc_start_main_impl (inlined)
+            |          _start
+            |          
+             --0.72%--operator() (inlined)
+     5.51%     0.01%  bench    [unknown]             [k] 0xffffffffa734a014
+            |          
+             --5.50%--0xffffffffa734a014
+                       |          
+                        --3.44%--0xffffffffa734b3bf
+                                  |          
+                                   --2.57%--0xffffffffa734b95a
+                                             |          
+                                              --2.10%--0xffffffffa734bc9d
+                                                        |          
+                                                         --1.50%--0xffffffffa6f60122
+                                                                   |          
+                                                                    --0.70%--0xffffffffa8289e61
+     5.49%     0.00%  bench    [unknown]             [k] 0xffffffffa734bc9d
+            |
+            ---0xffffffffa734bc9d
+               |          
+                --4.67%--0xffffffffa6f60122
+                          |          
+                           --3.49%--0xffffffffa8289e61
+                                     |          
+                                      --2.99%--0xffffffffa6c00bb7
+                                                |          
+                                                |--0.83%--construct<Op, const Op&> (inlined)
+                                                |          construct<Op, const Op&> (inlined)
+                                                |          push_back (inlined)
+                                                |          push (inlined)
+                                                |          
+                                                 --0.74%--_int_malloc
+     5.25%     0.05%  bench    [unknown]             [k] 0xffffffffa6f60122
+            |          
+             --5.20%--0xffffffffa6f60122
+                       |          
+                        --4.02%--0xffffffffa8289e61
+                                  |          
+                                   --3.52%--0xffffffffa6c00bb7
+                                             |          
+                                             |--1.18%--construct<Op, const Op&> (inlined)
+                                             |          construct<Op, const Op&> (inlined)
+                                             |          push_back (inlined)
+                                             |          push (inlined)
+                                             |          |          
+                                             |           --0.60%--make_benchmark_workload (inlined)
+                                             |                     |          
+                                             |                      --0.51%--main
+                                             |          
+                                              --0.83%--_int_malloc
+                                                        |          
+                                                         --0.52%--__libc_malloc (inlined)
+     5.14%     0.00%  bench    bench                 [.] take_random (inlined)
+            |
+            ---take_random (inlined)
+               make_benchmark_workload (inlined)
+               |          
+                --5.13%--main
+                          __libc_start_call_main
+                          call_init (inlined)
+                          __libc_start_main_impl (inlined)
+                          _start
+     5.04%     0.00%  bench    bench                 [.] push (inlined)
+            |
+            ---push (inlined)
+               |          
+                --4.30%--make_benchmark_workload (inlined)
+                          |          
+                           --4.21%--main
+                                     |          
+                                      --3.84%--__libc_start_call_main
+                                                |          
+                                                 --3.36%--call_init (inlined)
+                                                           __libc_start_main_impl (inlined)
+                                                           |          
+                                                            --3.27%--_start
+#
+# (Cannot load tips.txt file, please install perf!)
+#

@@ -1,0 +1,804 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 4K of event 'cpu/cycles/P'
+# Event count (approx.): 525508574
+#
+# Children      Self  Command  Shared Object         Symbol                                                                                                                                                                                                                                                                                        
+# ........  ........  .......  ....................  ..............................................................................................................................................................................................................................................................................................
+#
+    70.07%     0.00%  bench    bench                 [.] main
+            |
+            ---main
+               |          
+                --68.66%--__libc_start_call_main
+                          |          
+                           --67.69%--call_init (inlined)
+                                     __libc_start_main_impl (inlined)
+                                     |          
+                                      --67.08%--_start
+    68.66%     0.00%  bench    libc.so.6             [.] __libc_start_call_main
+            |
+            ---__libc_start_call_main
+               |          
+                --67.69%--call_init (inlined)
+                          __libc_start_main_impl (inlined)
+                          |          
+                           --67.08%--_start
+    67.69%     0.00%  bench    libc.so.6             [.] __libc_start_main_impl (inlined)
+            |
+            ---__libc_start_main_impl (inlined)
+               |          
+                --67.08%--_start
+    67.69%     0.00%  bench    libc.so.6             [.] call_init (inlined)
+            |
+            ---call_init (inlined)
+               __libc_start_main_impl (inlined)
+               |          
+                --67.08%--_start
+    67.08%     0.00%  bench    bench                 [.] _start
+            |
+            ---_start
+    50.19%     2.18%  bench    bench                 [.] int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |          
+            |--48.01%--int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |          |          
+            |           --46.88%--main
+            |                     |          
+            |                      --46.12%--__libc_start_call_main
+            |                                |          
+            |                                 --45.67%--call_init (inlined)
+            |                                           __libc_start_main_impl (inlined)
+            |                                           |          
+            |                                            --45.31%--_start
+            |          
+             --1.14%--__lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::Order*, std::vector<OrderBookVector::Order> >, long unsigned int, __gnu_cxx::__ops::_Iter_comp_val<OrderBookVector::find_order(uint64_t)::<lambda(const OrderBookVector::Order&, uint64_t)> > > (inlined)
+                       lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::Order*, std::vector<OrderBookVector::Order> >, long unsigned int, OrderBookVector::find_order(uint64_t)::<lambda(const OrderBookVector::Order&, uint64_t)> > (inlined)
+                       find_order (inlined)
+                       void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+                       run_once<OrderBookVector> (inlined)
+                       int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                       main
+                       __libc_start_call_main
+                       call_init (inlined)
+                       __libc_start_main_impl (inlined)
+                       _start
+    50.14%     0.00%  bench    bench                 [.] run_once<OrderBookVector> (inlined)
+            |
+            ---run_once<OrderBookVector> (inlined)
+               int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+               |          
+                --49.02%--main
+                          |          
+                           --48.25%--__libc_start_call_main
+                                     |          
+                                      --47.80%--call_init (inlined)
+                                                __libc_start_main_impl (inlined)
+                                                |          
+                                                 --47.47%--_start
+    49.86%     0.00%  bench    bench                 [.] void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+            |
+            ---void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+               |          
+               |--49.16%--run_once<OrderBookVector> (inlined)
+               |          int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+               |          |          
+               |           --48.03%--main
+               |                     |          
+               |                      --47.29%--__libc_start_call_main
+               |                                |          
+               |                                 --46.84%--call_init (inlined)
+               |                                           __libc_start_main_impl (inlined)
+               |                                           |          
+               |                                            --46.52%--_start
+               |          
+                --0.71%--void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+                          run_once<OrderBookVector> (inlined)
+                          int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                          main
+                          |          
+                           --0.68%--__libc_start_call_main
+                                     call_init (inlined)
+                                     __libc_start_main_impl (inlined)
+                                     |          
+                                      --0.67%--_start
+    18.58%     0.00%  bench    bench                 [.] make_benchmark_workload (inlined)
+            |
+            ---make_benchmark_workload (inlined)
+               |          
+                --18.11%--main
+                          |          
+                           --17.46%--__libc_start_call_main
+                                     |          
+                                      --16.97%--call_init (inlined)
+                                                __libc_start_main_impl (inlined)
+                                                |          
+                                                 --16.73%--_start
+    18.34%     0.00%  bench    bench                 [.] find_order (inlined)
+            |
+            ---find_order (inlined)
+               |          
+                --18.32%--void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+                          run_once<OrderBookVector> (inlined)
+                          int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                          |          
+                           --18.28%--main
+                                     __libc_start_call_main
+                                     |          
+                                      --18.22%--call_init (inlined)
+                                                __libc_start_main_impl (inlined)
+                                                _start
+    18.07%     0.00%  bench    bench                 [.] lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::Order*, std::vector<OrderBookVector::Order> >, long unsigned int, OrderBookVector::find_order(uint64_t)::<lambda(const OrderBookVector::Order&, uint64_t)> > (inlined)
+            |
+            ---lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::Order*, std::vector<OrderBookVector::Order> >, long unsigned int, OrderBookVector::find_order(uint64_t)::<lambda(const OrderBookVector::Order&, uint64_t)> > (inlined)
+               find_order (inlined)
+               |          
+                --18.05%--void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+                          run_once<OrderBookVector> (inlined)
+                          int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                          |          
+                           --18.01%--main
+                                     __libc_start_call_main
+                                     |          
+                                      --17.95%--call_init (inlined)
+                                                __libc_start_main_impl (inlined)
+                                                _start
+    18.07%     0.00%  bench    bench                 [.] __lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::Order*, std::vector<OrderBookVector::Order> >, long unsigned int, __gnu_cxx::__ops::_Iter_comp_val<OrderBookVector::find_order(uint64_t)::<lambda(const OrderBookVector::Order&, uint64_t)> > > (inlined)
+            |
+            ---__lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::Order*, std::vector<OrderBookVector::Order> >, long unsigned int, __gnu_cxx::__ops::_Iter_comp_val<OrderBookVector::find_order(uint64_t)::<lambda(const OrderBookVector::Order&, uint64_t)> > > (inlined)
+               lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::Order*, std::vector<OrderBookVector::Order> >, long unsigned int, OrderBookVector::find_order(uint64_t)::<lambda(const OrderBookVector::Order&, uint64_t)> > (inlined)
+               find_order (inlined)
+               |          
+                --18.05%--void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+                          run_once<OrderBookVector> (inlined)
+                          int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                          |          
+                           --18.01%--main
+                                     __libc_start_call_main
+                                     |          
+                                      --17.95%--call_init (inlined)
+                                                __libc_start_main_impl (inlined)
+                                                _start
+    16.36%     0.00%  bench    bench                 [.] find_pos (inlined)
+            |
+            ---find_pos (inlined)
+               void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+               run_once<OrderBookVector> (inlined)
+               int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+               |          
+                --16.33%--main
+                          __libc_start_call_main
+                          |          
+                           --16.28%--call_init (inlined)
+                                     __libc_start_main_impl (inlined)
+                                     _start
+    13.42%     0.00%  bench    bench                 [.] add_order (inlined)
+            |
+            ---add_order (inlined)
+               |          
+                --12.47%--void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+                          run_once<OrderBookVector> (inlined)
+                          int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                          |          
+                           --11.41%--main
+                                     |          
+                                      --10.67%--__libc_start_call_main
+                                                |          
+                                                 --10.33%--call_init (inlined)
+                                                           __libc_start_main_impl (inlined)
+                                                           |          
+                                                            --10.01%--_start
+    13.02%     0.05%  bench    [unknown]             [k] 0xffffffffa734b3bf
+            |          
+             --12.96%--0xffffffffa734b3bf
+                       |          
+                        --10.27%--0xffffffffa734b95a
+                                  |          
+                                   --8.61%--0xffffffffa734bc9d
+                                             |          
+                                              --7.34%--0xffffffffa6f60122
+                                                        |          
+                                                         --5.04%--0xffffffffa8289e61
+                                                                   |          
+                                                                    --4.38%--0xffffffffa6c00bb7
+                                                                              |          
+                                                                              |--0.81%--construct<Op, const Op&> (inlined)
+                                                                              |          construct<Op, const Op&> (inlined)
+                                                                              |          push_back (inlined)
+                                                                              |          push (inlined)
+                                                                              |          
+                                                                              |--0.63%--__memmove_avx_unaligned_erms
+                                                                              |          
+                                                                               --0.57%--construct<OrderBookVector::Order, const OrderBookVector::Order&> (inlined)
+                                                                                         construct<OrderBookVector::Order, const OrderBookVector::Order&> (inlined)
+                                                                                         push_back (inlined)
+                                                                                         add_order (inlined)
+    11.24%     0.08%  bench    [unknown]             [k] 0xffffffffa734a014
+            |          
+             --11.16%--0xffffffffa734a014
+                       |          
+                        --7.04%--0xffffffffa734b3bf
+                                  |          
+                                   --4.74%--0xffffffffa734b95a
+                                             |          
+                                              --3.47%--0xffffffffa734bc9d
+                                                        |          
+                                                         --2.65%--0xffffffffa6f60122
+                                                                   |          
+                                                                    --1.09%--0xffffffffa8289e61
+                                                                              |          
+                                                                               --0.83%--0xffffffffa6c00bb7
+    11.19%     0.05%  bench    [unknown]             [k] 0xffffffffa734b95a
+            |          
+             --11.14%--0xffffffffa734b95a
+                       |          
+                        --9.48%--0xffffffffa734bc9d
+                                  |          
+                                   --8.20%--0xffffffffa6f60122
+                                             |          
+                                              --5.82%--0xffffffffa8289e61
+                                                        |          
+                                                         --5.13%--0xffffffffa6c00bb7
+                                                                   |          
+                                                                   |--1.02%--construct<Op, const Op&> (inlined)
+                                                                   |          construct<Op, const Op&> (inlined)
+                                                                   |          push_back (inlined)
+                                                                   |          push (inlined)
+                                                                   |          
+                                                                   |--0.81%--__memmove_avx_unaligned_erms
+                                                                   |          
+                                                                    --0.69%--construct<OrderBookVector::Order, const OrderBookVector::Order&> (inlined)
+                                                                              construct<OrderBookVector::Order, const OrderBookVector::Order&> (inlined)
+                                                                              push_back (inlined)
+                                                                              add_order (inlined)
+    11.19%    11.19%  bench    bench                 [.] OrderBookVector::find_order(unsigned long)
+            |          
+            |--5.24%--__lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::Order*, std::vector<OrderBookVector::Order> >, long unsigned int, __gnu_cxx::__ops::_Iter_comp_val<OrderBookVector::find_order(uint64_t)::<lambda(const OrderBookVector::Order&, uint64_t)> > > (inlined)
+            |          lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::Order*, std::vector<OrderBookVector::Order> >, long unsigned int, OrderBookVector::find_order(uint64_t)::<lambda(const OrderBookVector::Order&, uint64_t)> > (inlined)
+            |          find_order (inlined)
+            |          void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+            |          run_once<OrderBookVector> (inlined)
+            |          int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |          main
+            |          __libc_start_call_main
+            |          call_init (inlined)
+            |          __libc_start_main_impl (inlined)
+            |          _start
+            |          
+            |--1.40%--__lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, __gnu_cxx::__ops::_Iter_comp_val<OrderBookVector::SortedLevels<std::greater<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > > (inlined)
+            |          lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, OrderBookVector::SortedLevels<std::greater<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > (inlined)
+            |          find_pos (inlined)
+            |          void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+            |          run_once<OrderBookVector> (inlined)
+            |          int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |          main
+            |          __libc_start_call_main
+            |          call_init (inlined)
+            |          __libc_start_main_impl (inlined)
+            |          _start
+            |          
+            |--1.29%--__lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, __gnu_cxx::__ops::_Iter_comp_val<OrderBookVector::SortedLevels<std::less<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > > (inlined)
+            |          lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, OrderBookVector::SortedLevels<std::less<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > (inlined)
+            |          find_pos (inlined)
+            |          void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+            |          run_once<OrderBookVector> (inlined)
+            |          int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |          main
+            |          __libc_start_call_main
+            |          call_init (inlined)
+            |          __libc_start_main_impl (inlined)
+            |          _start
+            |          
+             --1.03%--operator++ (inlined)
+    10.96%     0.02%  bench    [unknown]             [k] 0xffffffffa734bc9d
+            |          
+             --10.95%--0xffffffffa734bc9d
+                       |          
+                        --9.64%--0xffffffffa6f60122
+                                  |          
+                                   --7.27%--0xffffffffa8289e61
+                                             |          
+                                              --6.58%--0xffffffffa6c00bb7
+                                                        |          
+                                                        |--1.56%--__memmove_avx_unaligned_erms
+                                                        |          |          
+                                                        |           --0.91%--push_back (inlined)
+                                                        |                     add_order (inlined)
+                                                        |                     |          
+                                                        |                      --0.75%--void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+                                                        |                                run_once<OrderBookVector> (inlined)
+                                                        |                                int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                                                        |          
+                                                        |--1.43%--construct<Op, const Op&> (inlined)
+                                                        |          construct<Op, const Op&> (inlined)
+                                                        |          push_back (inlined)
+                                                        |          push (inlined)
+                                                        |          |          
+                                                        |           --0.59%--make_benchmark_workload (inlined)
+                                                        |          
+                                                         --0.85%--construct<OrderBookVector::Order, const OrderBookVector::Order&> (inlined)
+                                                                   construct<OrderBookVector::Order, const OrderBookVector::Order&> (inlined)
+                                                                   push_back (inlined)
+                                                                   add_order (inlined)
+    10.79%     0.08%  bench    [unknown]             [k] 0xffffffffa6f60122
+            |          
+             --10.71%--0xffffffffa6f60122
+                       |          
+                        --8.34%--0xffffffffa8289e61
+                                  |          
+                                   --7.65%--0xffffffffa6c00bb7
+                                             |          
+                                             |--2.07%--__memmove_avx_unaligned_erms
+                                             |          |          
+                                             |           --1.42%--push_back (inlined)
+                                             |                     add_order (inlined)
+                                             |                     |          
+                                             |                      --1.27%--void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+                                             |                                run_once<OrderBookVector> (inlined)
+                                             |                                int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                                             |          
+                                             |--1.69%--construct<Op, const Op&> (inlined)
+                                             |          construct<Op, const Op&> (inlined)
+                                             |          push_back (inlined)
+                                             |          push (inlined)
+                                             |          |          
+                                             |           --0.85%--make_benchmark_workload (inlined)
+                                             |                     |          
+                                             |                      --0.67%--main
+                                             |          
+                                              --1.06%--construct<OrderBookVector::Order, const OrderBookVector::Order&> (inlined)
+                                                        construct<OrderBookVector::Order, const OrderBookVector::Order&> (inlined)
+                                                        push_back (inlined)
+                                                        add_order (inlined)
+    10.50%    10.50%  bench    bench                 [.] OrderBookVector::SortedLevels<std::greater<int> >::find_pos(int)
+            |          
+            |--3.84%--__lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::Order*, std::vector<OrderBookVector::Order> >, long unsigned int, __gnu_cxx::__ops::_Iter_comp_val<OrderBookVector::find_order(uint64_t)::<lambda(const OrderBookVector::Order&, uint64_t)> > > (inlined)
+            |          lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::Order*, std::vector<OrderBookVector::Order> >, long unsigned int, OrderBookVector::find_order(uint64_t)::<lambda(const OrderBookVector::Order&, uint64_t)> > (inlined)
+            |          find_order (inlined)
+            |          void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+            |          run_once<OrderBookVector> (inlined)
+            |          int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |          main
+            |          __libc_start_call_main
+            |          call_init (inlined)
+            |          __libc_start_main_impl (inlined)
+            |          _start
+            |          
+            |--1.52%--__lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, __gnu_cxx::__ops::_Iter_comp_val<OrderBookVector::SortedLevels<std::less<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > > (inlined)
+            |          lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, OrderBookVector::SortedLevels<std::less<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > (inlined)
+            |          find_pos (inlined)
+            |          void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+            |          run_once<OrderBookVector> (inlined)
+            |          int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |          main
+            |          __libc_start_call_main
+            |          call_init (inlined)
+            |          __libc_start_main_impl (inlined)
+            |          _start
+            |          
+            |--1.37%--__lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, __gnu_cxx::__ops::_Iter_comp_val<OrderBookVector::SortedLevels<std::greater<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > > (inlined)
+            |          lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, OrderBookVector::SortedLevels<std::greater<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > (inlined)
+            |          find_pos (inlined)
+            |          void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+            |          run_once<OrderBookVector> (inlined)
+            |          int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |          main
+            |          __libc_start_call_main
+            |          call_init (inlined)
+            |          __libc_start_main_impl (inlined)
+            |          _start
+            |          
+             --1.12%--operator++ (inlined)
+                       |          
+                        --0.51%--__lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, __gnu_cxx::__ops::_Iter_comp_val<OrderBookVector::SortedLevels<std::greater<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > > (inlined)
+                                  lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, OrderBookVector::SortedLevels<std::greater<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > (inlined)
+                                  find_pos (inlined)
+                                  void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+                                  run_once<OrderBookVector> (inlined)
+                                  int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                                  main
+                                  __libc_start_call_main
+                                  call_init (inlined)
+                                  __libc_start_main_impl (inlined)
+                                  _start
+    10.16%     0.02%  bench    [unknown]             [k] 0xffffffffa7349c1d
+            |          
+             --10.14%--0xffffffffa7349c1d
+                       |          
+                        --8.17%--0xffffffffa734a014
+                                  |          
+                                   --4.05%--0xffffffffa734b3bf
+                                             |          
+                                              --1.86%--0xffffffffa734b95a
+                                                        |          
+                                                         --0.82%--0xffffffffa734bc9d
+    10.06%     0.01%  bench    [unknown]             [k] 0xffffffffa73cc8ad
+            |          
+             --10.05%--0xffffffffa73cc8ad
+                       |          
+                        --9.90%--0xffffffffa7349c1d
+                                  |          
+                                   --7.93%--0xffffffffa734a014
+                                             |          
+                                              --3.81%--0xffffffffa734b3bf
+                                                        |          
+                                                         --1.62%--0xffffffffa734b95a
+                                                                   |          
+                                                                    --0.58%--0xffffffffa734bc9d
+    10.05%     0.03%  bench    [unknown]             [k] 0xffffffffa73c95ee
+            |          
+             --10.02%--0xffffffffa73c95ee
+                       |          
+                        --9.73%--0xffffffffa73cc8ad
+                                  |          
+                                   --9.58%--0xffffffffa7349c1d
+                                             |          
+                                              --7.61%--0xffffffffa734a014
+                                                        |          
+                                                         --3.49%--0xffffffffa734b3bf
+                                                                   |          
+                                                                    --1.30%--0xffffffffa734b95a
+     9.83%     9.83%  bench    bench                 [.] OrderBookVector::SortedLevels<std::less<int> >::find_pos(int)
+            |          
+            |--3.67%--__lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::Order*, std::vector<OrderBookVector::Order> >, long unsigned int, __gnu_cxx::__ops::_Iter_comp_val<OrderBookVector::find_order(uint64_t)::<lambda(const OrderBookVector::Order&, uint64_t)> > > (inlined)
+            |          lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::Order*, std::vector<OrderBookVector::Order> >, long unsigned int, OrderBookVector::find_order(uint64_t)::<lambda(const OrderBookVector::Order&, uint64_t)> > (inlined)
+            |          find_order (inlined)
+            |          void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+            |          run_once<OrderBookVector> (inlined)
+            |          int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |          main
+            |          __libc_start_call_main
+            |          call_init (inlined)
+            |          __libc_start_main_impl (inlined)
+            |          _start
+            |          
+            |--1.46%--__lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, __gnu_cxx::__ops::_Iter_comp_val<OrderBookVector::SortedLevels<std::greater<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > > (inlined)
+            |          lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, OrderBookVector::SortedLevels<std::greater<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > (inlined)
+            |          find_pos (inlined)
+            |          void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+            |          run_once<OrderBookVector> (inlined)
+            |          int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |          main
+            |          __libc_start_call_main
+            |          call_init (inlined)
+            |          __libc_start_main_impl (inlined)
+            |          _start
+            |          
+            |--1.27%--__lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, __gnu_cxx::__ops::_Iter_comp_val<OrderBookVector::SortedLevels<std::less<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > > (inlined)
+            |          lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, OrderBookVector::SortedLevels<std::less<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > (inlined)
+            |          find_pos (inlined)
+            |          void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+            |          run_once<OrderBookVector> (inlined)
+            |          int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+            |          main
+            |          __libc_start_call_main
+            |          call_init (inlined)
+            |          __libc_start_main_impl (inlined)
+            |          _start
+            |          
+             --1.10%--operator++ (inlined)
+     9.51%     0.12%  bench    [unknown]             [k] 0xffffffffa7387530
+            |          
+             --9.39%--0xffffffffa7387530
+                       |          
+                        --9.37%--0xffffffffa73c95ee
+                                  |          
+                                   --9.13%--0xffffffffa73cc8ad
+                                             |          
+                                              --8.99%--0xffffffffa7349c1d
+                                                        |          
+                                                         --7.02%--0xffffffffa734a014
+                                                                   |          
+                                                                    --2.90%--0xffffffffa734b3bf
+                                                                              |          
+                                                                               --0.70%--0xffffffffa734b95a
+     9.38%     0.22%  bench    [unknown]             [k] 0xffffffffa8289e61
+            |          
+             --9.17%--0xffffffffa8289e61
+                       |          
+                        --8.48%--0xffffffffa6c00bb7
+                                  |          
+                                  |--2.28%--__memmove_avx_unaligned_erms
+                                  |          |          
+                                  |           --1.62%--push_back (inlined)
+                                  |                     add_order (inlined)
+                                  |                     |          
+                                  |                      --1.47%--void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+                                  |                                run_once<OrderBookVector> (inlined)
+                                  |                                int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                                  |                                |          
+                                  |                                 --0.51%--main
+                                  |          
+                                  |--1.96%--construct<Op, const Op&> (inlined)
+                                  |          construct<Op, const Op&> (inlined)
+                                  |          push_back (inlined)
+                                  |          push (inlined)
+                                  |          |          
+                                  |           --1.12%--make_benchmark_workload (inlined)
+                                  |                     |          
+                                  |                      --0.94%--main
+                                  |          
+                                  |--1.32%--construct<OrderBookVector::Order, const OrderBookVector::Order&> (inlined)
+                                  |          construct<OrderBookVector::Order, const OrderBookVector::Order&> (inlined)
+                                  |          push_back (inlined)
+                                  |          add_order (inlined)
+                                  |          |          
+                                  |           --0.69%--void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+                                  |                     run_once<OrderBookVector> (inlined)
+                                  |                     int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                                  |                     |          
+                                  |                      --0.62%--main
+                                  |          
+                                   --0.56%--construct<long unsigned int, long unsigned int> (inlined)
+                                             construct<long unsigned int, long unsigned int> (inlined)
+                                             emplace_back<long unsigned int> (inlined)
+                                             push_back (inlined)
+                                             make_benchmark_workload (inlined)
+     9.35%     4.94%  bench    libc.so.6             [.] __memmove_avx_unaligned_erms
+            |          
+             --6.52%--__memmove_avx_unaligned_erms
+                       |          
+                       |--3.63%--push_back (inlined)
+                       |          add_order (inlined)
+                       |          |          
+                       |           --3.47%--void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+                       |                     run_once<OrderBookVector> (inlined)
+                       |                     int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                       |                     |          
+                       |                      --3.27%--main
+                       |                                |          
+                       |                                 --2.91%--__libc_start_call_main
+                       |                                           |          
+                       |                                            --2.89%--call_init (inlined)
+                       |                                                      __libc_start_main_impl (inlined)
+                       |                                                      |          
+                       |                                                       --2.76%--_start
+                       |          
+                       |--0.89%--add_order (inlined)
+                       |          void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+                       |          run_once<OrderBookVector> (inlined)
+                       |          int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                       |          main
+                       |          __libc_start_call_main
+                       |          call_init (inlined)
+                       |          __libc_start_main_impl (inlined)
+                       |          _start
+                       |          
+                        --0.86%--insert (inlined)
+                                  add (inlined)
+                                  add_order (inlined)
+                                  void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+                                  run_once<OrderBookVector> (inlined)
+                                  int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                                  main
+                                  __libc_start_call_main
+                                  call_init (inlined)
+                                  __libc_start_main_impl (inlined)
+                                  _start
+     9.16%     0.06%  bench    [unknown]             [k] 0xffffffffa6c00bb7
+            |          
+             --9.10%--0xffffffffa6c00bb7
+                       |          
+                       |--2.48%--__memmove_avx_unaligned_erms
+                       |          |          
+                       |           --1.82%--push_back (inlined)
+                       |                     add_order (inlined)
+                       |                     |          
+                       |                      --1.67%--void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+                       |                                run_once<OrderBookVector> (inlined)
+                       |                                int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                       |                                |          
+                       |                                 --0.69%--main
+                       |          
+                       |--2.23%--construct<Op, const Op&> (inlined)
+                       |          construct<Op, const Op&> (inlined)
+                       |          push_back (inlined)
+                       |          push (inlined)
+                       |          |          
+                       |           --1.39%--make_benchmark_workload (inlined)
+                       |                     |          
+                       |                      --1.20%--main
+                       |                                |          
+                       |                                 --0.65%--__libc_start_call_main
+                       |          
+                       |--1.43%--construct<OrderBookVector::Order, const OrderBookVector::Order&> (inlined)
+                       |          construct<OrderBookVector::Order, const OrderBookVector::Order&> (inlined)
+                       |          push_back (inlined)
+                       |          add_order (inlined)
+                       |          |          
+                       |           --0.80%--void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+                       |                     run_once<OrderBookVector> (inlined)
+                       |                     int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                       |                     |          
+                       |                      --0.72%--main
+                       |          
+                        --0.62%--construct<long unsigned int, long unsigned int> (inlined)
+                                  construct<long unsigned int, long unsigned int> (inlined)
+                                  emplace_back<long unsigned int> (inlined)
+                                  push_back (inlined)
+                                  make_benchmark_workload (inlined)
+     9.00%     0.00%  bench    bench                 [.] push_back (inlined)
+            |
+            ---push_back (inlined)
+               add_order (inlined)
+               |          
+                --8.22%--void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+                          run_once<OrderBookVector> (inlined)
+                          int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+                          |          
+                           --7.16%--main
+                                     |          
+                                      --6.42%--__libc_start_call_main
+                                                |          
+                                                 --6.08%--call_init (inlined)
+                                                           __libc_start_main_impl (inlined)
+                                                           |          
+                                                            --5.76%--_start
+     8.83%     8.83%  bench    bench                 [.] make_benchmark_workload(unsigned long, unsigned int)
+            |          
+            |--2.46%--take_random (inlined)
+            |          make_benchmark_workload (inlined)
+            |          main
+            |          __libc_start_call_main
+            |          call_init (inlined)
+            |          __libc_start_main_impl (inlined)
+            |          _start
+            |          
+            |--1.64%--operator() (inlined)
+            |          |          
+            |          |--0.92%--main
+            |          |          __libc_start_call_main
+            |          |          call_init (inlined)
+            |          |          __libc_start_main_impl (inlined)
+            |          |          _start
+            |          |          
+            |           --0.58%--uniform (inlined)
+            |          
+             --1.53%--push_back (inlined)
+                       push (inlined)
+                       make_benchmark_workload (inlined)
+                       main
+                       __libc_start_call_main
+                       call_init (inlined)
+                       __libc_start_main_impl (inlined)
+                       _start
+     8.71%     0.00%  bench    bench                 [.] push (inlined)
+            |
+            ---push (inlined)
+               |          
+                --7.52%--make_benchmark_workload (inlined)
+                          |          
+                           --7.34%--main
+                                     |          
+                                      --6.76%--__libc_start_call_main
+                                                |          
+                                                 --6.40%--call_init (inlined)
+                                                           __libc_start_main_impl (inlined)
+                                                           |          
+                                                            --6.23%--_start
+     8.31%     0.00%  bench    bench                 [.] push_back (inlined)
+            |
+            ---push_back (inlined)
+               push (inlined)
+               |          
+                --7.47%--make_benchmark_workload (inlined)
+                          |          
+                           --7.28%--main
+                                     |          
+                                      --6.70%--__libc_start_call_main
+                                                |          
+                                                 --6.35%--call_init (inlined)
+                                                           __libc_start_main_impl (inlined)
+                                                           |          
+                                                            --6.17%--_start
+     7.92%     0.00%  bench    bench                 [.] lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, OrderBookVector::SortedLevels<std::greater<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > (inlined)
+            |
+            ---lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, OrderBookVector::SortedLevels<std::greater<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > (inlined)
+               find_pos (inlined)
+               void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+               run_once<OrderBookVector> (inlined)
+               int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+               main
+               __libc_start_call_main
+               |          
+                --7.89%--call_init (inlined)
+                          __libc_start_main_impl (inlined)
+                          _start
+     7.92%     0.00%  bench    bench                 [.] __lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, __gnu_cxx::__ops::_Iter_comp_val<OrderBookVector::SortedLevels<std::greater<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > > (inlined)
+            |
+            ---__lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, __gnu_cxx::__ops::_Iter_comp_val<OrderBookVector::SortedLevels<std::greater<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > > (inlined)
+               lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, OrderBookVector::SortedLevels<std::greater<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > (inlined)
+               find_pos (inlined)
+               void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+               run_once<OrderBookVector> (inlined)
+               int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+               main
+               __libc_start_call_main
+               |          
+                --7.89%--call_init (inlined)
+                          __libc_start_main_impl (inlined)
+                          _start
+     7.57%     0.00%  bench    bench                 [.] lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, OrderBookVector::SortedLevels<std::less<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > (inlined)
+            |
+            ---lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, OrderBookVector::SortedLevels<std::less<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > (inlined)
+               find_pos (inlined)
+               void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+               run_once<OrderBookVector> (inlined)
+               int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+               |          
+                --7.53%--main
+                          __libc_start_call_main
+                          |          
+                           --7.52%--call_init (inlined)
+                                     __libc_start_main_impl (inlined)
+                                     _start
+     7.57%     0.00%  bench    bench                 [.] __lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, __gnu_cxx::__ops::_Iter_comp_val<OrderBookVector::SortedLevels<std::less<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > > (inlined)
+            |
+            ---__lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, __gnu_cxx::__ops::_Iter_comp_val<OrderBookVector::SortedLevels<std::less<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > > (inlined)
+               lower_bound<__gnu_cxx::__normal_iterator<OrderBookVector::LevelEntry*, std::vector<OrderBookVector::LevelEntry> >, int, OrderBookVector::SortedLevels<std::less<int> >::find_pos(int32_t)::<lambda(const OrderBookVector::LevelEntry&, int32_t)> > (inlined)
+               find_pos (inlined)
+               void execute<OrderBookVector>(OrderBookVector&, Op const&, Checksum&) (inlined)
+               run_once<OrderBookVector> (inlined)
+               int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+               |          
+                --7.53%--main
+                          __libc_start_call_main
+                          |          
+                           --7.52%--call_init (inlined)
+                                     __libc_start_main_impl (inlined)
+                                     _start
+     6.00%     0.17%  bench    [unknown]             [k] 0xffffffffa7385e06
+            |          
+             --5.84%--0xffffffffa7385e06
+                       0xffffffffa7387530
+                       0xffffffffa73c95ee
+                       |          
+                        --5.61%--0xffffffffa73cc8ad
+                                  |          
+                                   --5.46%--0xffffffffa7349c1d
+                                             |          
+                                              --3.49%--0xffffffffa734a014
+                                                        |          
+                                                         --1.91%--0xffffffffa734b3bf
+     5.04%     0.00%  bench    bench                 [.] construct<Op, const Op&> (inlined)
+            |
+            ---construct<Op, const Op&> (inlined)
+               construct<Op, const Op&> (inlined)
+               push_back (inlined)
+               push (inlined)
+               |          
+                --4.20%--make_benchmark_workload (inlined)
+                          |          
+                           --4.02%--main
+                                     |          
+                                      --3.47%--__libc_start_call_main
+                                                |          
+                                                 --3.11%--call_init (inlined)
+                                                           __libc_start_main_impl (inlined)
+                                                           |          
+                                                            --2.94%--_start
+     5.00%     5.00%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+            |          
+            |--1.26%--take_random (inlined)
+            |          make_benchmark_workload (inlined)
+            |          main
+            |          __libc_start_call_main
+            |          call_init (inlined)
+            |          __libc_start_main_impl (inlined)
+            |          _start
+            |          
+            |--1.02%--push_back (inlined)
+            |          push (inlined)
+            |          make_benchmark_workload (inlined)
+            |          main
+            |          __libc_start_call_main
+            |          call_init (inlined)
+            |          __libc_start_main_impl (inlined)
+            |          _start
+            |          
+             --0.91%--operator() (inlined)
+#
+# (Cannot load tips.txt file, please install perf!)
+#

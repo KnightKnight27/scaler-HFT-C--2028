@@ -1,0 +1,25 @@
+Implementation C: tick-indexed array + bitmap + open-addressing order table
+Workload: 1000000 core ops (seed fixed) = 700471 add, 199305 cancel, 100224 bbo; plus 10000 x [get_bids(10) + get_asks(10)]
+Peak live orders: 501168
+Per-op timer: std::chrono::steady_clock (empty start/stop pair = 1397.0 ns, subtracted)
+Repetitions: 1 (median reported)
+
+run      total_ms    add_ns  cancel_ns   bbo_ns   depth_ns  bbo_loop_ns  page_faults    heap_MB
+1           51.05     138.8      155.5     34.2      290.2         3.31         4098       16.1
+median      51.05     138.8      155.5     34.2      290.2         3.31         4098       16.1
+
+Page faults while building the book on a fresh heap (run 1): 4098
+(later runs reuse memory the allocator kept from run 1, so they can show 0)
+
+Latency distribution, ns (median run):
+op            p50      p90      p99    p99.9        max
+add            69      489      978     8590      44488
+cancel         69      489      978     8590      23885
+bbo             0       70      559     8241      24304
+depth          70      559     1396     9568      15923
+
+Final BBO:
+Bid: 99.99 x 1,784
+Ask: 100.01 x 2,982
+
+Checksum: 4d916b0a83d36be5

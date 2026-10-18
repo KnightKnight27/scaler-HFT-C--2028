@@ -1,0 +1,623 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 3K of event 'cpu/cycles/P'
+# Event count (approx.): 500999922
+#
+# Children      Self  Command  Shared Object         Symbol                                                                                                                                                                               
+# ........  ........  .......  ....................  .....................................................................................................................................................................................
+#
+    73.37%     0.00%  bench    libc.so.6             [.] __libc_start_call_main
+            |
+            ---__libc_start_call_main
+               |          
+                --71.63%--call_init (inlined)
+                          __libc_start_main_impl (inlined)
+                          |          
+                           --70.84%--_start
+    71.63%     0.00%  bench    libc.so.6             [.] __libc_start_main_impl (inlined)
+            |
+            ---__libc_start_main_impl (inlined)
+               |          
+                --70.84%--_start
+    71.63%     0.00%  bench    libc.so.6             [.] call_init (inlined)
+            |
+            ---call_init (inlined)
+               __libc_start_main_impl (inlined)
+               |          
+                --70.84%--_start
+    70.93%     3.01%  bench    bench                 [.] main
+            |          
+            |--67.93%--main
+            |          |          
+            |           --66.60%--__libc_start_call_main
+            |                     |          
+            |                      --64.86%--call_init (inlined)
+            |                                __libc_start_main_impl (inlined)
+            |                                |          
+            |                                 --64.08%--_start
+            |          
+             --2.46%--insert (inlined)
+                       add_order (inlined)
+                       void execute<OrderBookArray>(OrderBookArray&, Op const&, Checksum&) (inlined)
+                       run_once<OrderBookArray> (inlined)
+                       benchmark<OrderBookArray> (inlined)
+                       main
+                       __libc_start_call_main
+                       call_init (inlined)
+                       __libc_start_main_impl (inlined)
+                       _start
+    70.84%     0.00%  bench    bench                 [.] _start
+            |
+            ---_start
+    39.55%     0.00%  bench    bench                 [.] benchmark<OrderBookArray> (inlined)
+            |
+            ---benchmark<OrderBookArray> (inlined)
+               main
+               |          
+                --39.42%--__libc_start_call_main
+                          |          
+                           --38.80%--call_init (inlined)
+                                     __libc_start_main_impl (inlined)
+                                     |          
+                                      --38.48%--_start
+    39.52%     0.00%  bench    bench                 [.] run_once<OrderBookArray> (inlined)
+            |
+            ---run_once<OrderBookArray> (inlined)
+               benchmark<OrderBookArray> (inlined)
+               main
+               |          
+                --39.39%--__libc_start_call_main
+                          |          
+                           --38.78%--call_init (inlined)
+                                     __libc_start_main_impl (inlined)
+                                     |          
+                                      --38.46%--_start
+    36.17%     0.00%  bench    bench                 [.] void execute<OrderBookArray>(OrderBookArray&, Op const&, Checksum&) (inlined)
+            |
+            ---void execute<OrderBookArray>(OrderBookArray&, Op const&, Checksum&) (inlined)
+               |          
+               |--35.37%--run_once<OrderBookArray> (inlined)
+               |          benchmark<OrderBookArray> (inlined)
+               |          main
+               |          |          
+               |           --35.29%--__libc_start_call_main
+               |                     |          
+               |                      --35.27%--call_init (inlined)
+               |                                __libc_start_main_impl (inlined)
+               |                                _start
+               |          
+                --0.80%--void execute<OrderBookArray>(OrderBookArray&, Op const&, Checksum&) (inlined)
+                          run_once<OrderBookArray> (inlined)
+                          benchmark<OrderBookArray> (inlined)
+                          main
+                          __libc_start_call_main
+                          call_init (inlined)
+                          __libc_start_main_impl (inlined)
+                          _start
+    33.88%     0.00%  bench    bench                 [.] add_order (inlined)
+            |
+            ---add_order (inlined)
+               |          
+                --33.82%--void execute<OrderBookArray>(OrderBookArray&, Op const&, Checksum&) (inlined)
+                          run_once<OrderBookArray> (inlined)
+                          benchmark<OrderBookArray> (inlined)
+                          main
+                          |          
+                           --33.75%--__libc_start_call_main
+                                     |          
+                                      --33.72%--call_init (inlined)
+                                                __libc_start_main_impl (inlined)
+                                                _start
+    31.85%     0.00%  bench    bench                 [.] insert (inlined)
+            |
+            ---insert (inlined)
+               add_order (inlined)
+               void execute<OrderBookArray>(OrderBookArray&, Op const&, Checksum&) (inlined)
+               run_once<OrderBookArray> (inlined)
+               benchmark<OrderBookArray> (inlined)
+               main
+               |          
+                --31.77%--__libc_start_call_main
+                          |          
+                           --31.75%--call_init (inlined)
+                                     __libc_start_main_impl (inlined)
+                                     _start
+    30.54%    30.54%  bench    bench                 [.] OrderBookArray::add_order(unsigned long, Side, double, long)
+            |          
+            |--24.38%--insert (inlined)
+            |          add_order (inlined)
+            |          void execute<OrderBookArray>(OrderBookArray&, Op const&, Checksum&) (inlined)
+            |          run_once<OrderBookArray> (inlined)
+            |          benchmark<OrderBookArray> (inlined)
+            |          main
+            |          __libc_start_call_main
+            |          call_init (inlined)
+            |          __libc_start_main_impl (inlined)
+            |          _start
+            |          
+            |--2.94%--erase (inlined)
+            |          cancel_order (inlined)
+            |          |          
+            |           --2.67%--__libc_start_call_main
+            |                     call_init (inlined)
+            |                     __libc_start_main_impl (inlined)
+            |                     _start
+            |          
+            |--0.80%--to_tick (inlined)
+            |          |          
+            |           --0.61%--to_tick (inlined)
+            |                     validate_order (inlined)
+            |                     add_order (inlined)
+            |                     void execute<OrderBookArray>(OrderBookArray&, Op const&, Checksum&) (inlined)
+            |                     run_once<OrderBookArray> (inlined)
+            |                     benchmark<OrderBookArray> (inlined)
+            |                     main
+            |                     __libc_start_call_main
+            |                     call_init (inlined)
+            |                     __libc_start_main_impl (inlined)
+            |                     _start
+            |          
+             --0.62%--add_order (inlined)
+                       |          
+                        --0.60%--void execute<OrderBookArray>(OrderBookArray&, Op const&, Checksum&) (inlined)
+                                  run_once<OrderBookArray> (inlined)
+                                  benchmark<OrderBookArray> (inlined)
+                                  main
+                                  __libc_start_call_main
+                                  call_init (inlined)
+                                  __libc_start_main_impl (inlined)
+                                  _start
+    28.24%     0.00%  bench    bench                 [.] make_benchmark_workload (inlined)
+            |
+            ---make_benchmark_workload (inlined)
+               |          
+                --27.75%--main
+                          |          
+                           --26.60%--__libc_start_call_main
+                                     |          
+                                      --25.48%--call_init (inlined)
+                                                __libc_start_main_impl (inlined)
+                                                |          
+                                                 --25.02%--_start
+    11.69%     0.00%  bench    bench                 [.] push (inlined)
+            |
+            ---push (inlined)
+               |          
+                --10.54%--make_benchmark_workload (inlined)
+                          |          
+                           --10.23%--main
+                                     |          
+                                      --9.08%--__libc_start_call_main
+                                                |          
+                                                 --8.16%--call_init (inlined)
+                                                           __libc_start_main_impl (inlined)
+                                                           |          
+                                                            --7.72%--_start
+    11.62%    11.62%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+            |          
+            |--4.23%--take_random (inlined)
+            |          make_benchmark_workload (inlined)
+            |          main
+            |          __libc_start_call_main
+            |          call_init (inlined)
+            |          __libc_start_main_impl (inlined)
+            |          _start
+            |          
+            |--2.08%--operator() (inlined)
+            |          |          
+            |          |--1.36%--main
+            |          |          __libc_start_call_main
+            |          |          call_init (inlined)
+            |          |          __libc_start_main_impl (inlined)
+            |          |          _start
+            |          |          
+            |           --0.55%--uniform (inlined)
+            |          
+            |--1.82%--push_back (inlined)
+            |          push (inlined)
+            |          make_benchmark_workload (inlined)
+            |          main
+            |          __libc_start_call_main
+            |          call_init (inlined)
+            |          __libc_start_main_impl (inlined)
+            |          _start
+            |          
+            |--1.02%--uniform (inlined)
+            |          |          
+            |           --0.95%--make_benchmark_workload (inlined)
+            |                     main
+            |                     __libc_start_call_main
+            |                     call_init (inlined)
+            |                     __libc_start_main_impl (inlined)
+            |                     _start
+            |          
+             --0.55%--make_benchmark_workload (inlined)
+                       main
+                       __libc_start_call_main
+                       call_init (inlined)
+                       __libc_start_main_impl (inlined)
+                       _start
+    11.41%     0.00%  bench    bench                 [.] push_back (inlined)
+            |
+            ---push_back (inlined)
+               push (inlined)
+               |          
+                --10.49%--make_benchmark_workload (inlined)
+                          |          
+                           --10.18%--main
+                                     |          
+                                      --9.03%--__libc_start_call_main
+                                                |          
+                                                 --8.11%--call_init (inlined)
+                                                           __libc_start_main_impl (inlined)
+                                                           |          
+                                                            --7.67%--_start
+    10.96%     0.08%  bench    [unknown]             [k] 0xffffffffa734b3bf
+            |          
+             --10.88%--0xffffffffa734b3bf
+                       |          
+                        --8.98%--0xffffffffa734b95a
+                                  |          
+                                   --7.63%--0xffffffffa734bc9d
+                                             |          
+                                              --6.08%--0xffffffffa6f60122
+                                                        |          
+                                                         --4.32%--0xffffffffa8289e61
+                                                                   |          
+                                                                    --3.24%--0xffffffffa6c00bb7
+                                                                              |          
+                                                                              |--0.84%--construct<Op, const Op&> (inlined)
+                                                                              |          construct<Op, const Op&> (inlined)
+                                                                              |          push_back (inlined)
+                                                                              |          push (inlined)
+                                                                              |          
+                                                                               --0.54%--__gnu_cxx::__enable_if<!std::__is_scalar<OrderSlot>::__value, void>::__type std::__fill_a1<OrderSlot*, OrderSlot>(OrderSlot*, OrderSlot*, OrderSlot const&) (inlined)
+                                                                                         void std::__fill_a<OrderSlot*, OrderSlot>(OrderSlot*, OrderSlot*, OrderSlot const&) (inlined)
+                                                                                         OrderSlot* std::__fill_n_a<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&, std::random_access_iterator_tag) (inlined)
+                                                                                         OrderSlot* std::__fill_n_a<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&, std::random_access_iterator_tag) (inlined)
+                                                                                         OrderSlot* std::fill_n<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&) (inlined)
+                                                                                         OrderSlot* std::__uninitialized_fill_n<true>::__uninit_fill_n<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&) (inlined)
+                                                                                         OrderSlot* std::uninitialized_fill_n<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&) (inlined)
+                                                                                         OrderSlot* std::__uninitialized_fill_n_a<OrderSlot*, unsigned long, OrderSlot, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&, std::allocator<OrderSlot>&) (inlined)
+                                                                                         std::vector<OrderSlot, std::allocator<OrderSlot> >::_M_fill_initialize(unsigned long, OrderSlot const&) (inlined)
+                                                                                         std::vector<OrderSlot, std::allocator<OrderSlot> >::vector(unsigned long, OrderSlot const&, std::allocator<OrderSlot> const&) (inlined)
+                                                                                         std::vector<OrderSlot, std::allocator<OrderSlot> >::_M_fill_assign(unsigned long, OrderSlot const&)
+    10.08%     0.05%  bench    [unknown]             [k] 0xffffffffa734a014
+            |          
+             --10.03%--0xffffffffa734a014
+                       |          
+                        --6.51%--0xffffffffa734b3bf
+                                  |          
+                                   --4.77%--0xffffffffa734b95a
+                                             |          
+                                              --3.76%--0xffffffffa734bc9d
+                                                        |          
+                                                         --2.64%--0xffffffffa6f60122
+                                                                   |          
+                                                                    --1.35%--0xffffffffa8289e61
+                                                                              |          
+                                                                               --0.74%--0xffffffffa6c00bb7
+     9.90%     0.03%  bench    [unknown]             [k] 0xffffffffa734b95a
+            |          
+             --9.88%--0xffffffffa734b95a
+                       |          
+                        --8.50%--0xffffffffa734bc9d
+                                  |          
+                                   --6.91%--0xffffffffa6f60122
+                                             |          
+                                              --5.01%--0xffffffffa8289e61
+                                                        |          
+                                                         --3.91%--0xffffffffa6c00bb7
+                                                                   |          
+                                                                   |--1.12%--construct<Op, const Op&> (inlined)
+                                                                   |          construct<Op, const Op&> (inlined)
+                                                                   |          push_back (inlined)
+                                                                   |          push (inlined)
+                                                                   |          
+                                                                    --0.70%--__gnu_cxx::__enable_if<!std::__is_scalar<OrderSlot>::__value, void>::__type std::__fill_a1<OrderSlot*, OrderSlot>(OrderSlot*, OrderSlot*, OrderSlot const&) (inlined)
+                                                                              void std::__fill_a<OrderSlot*, OrderSlot>(OrderSlot*, OrderSlot*, OrderSlot const&) (inlined)
+                                                                              OrderSlot* std::__fill_n_a<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&, std::random_access_iterator_tag) (inlined)
+                                                                              OrderSlot* std::__fill_n_a<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&, std::random_access_iterator_tag) (inlined)
+                                                                              OrderSlot* std::fill_n<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&) (inlined)
+                                                                              OrderSlot* std::__uninitialized_fill_n<true>::__uninit_fill_n<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&) (inlined)
+                                                                              OrderSlot* std::uninitialized_fill_n<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&) (inlined)
+                                                                              OrderSlot* std::__uninitialized_fill_n_a<OrderSlot*, unsigned long, OrderSlot, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&, std::allocator<OrderSlot>&) (inlined)
+                                                                              std::vector<OrderSlot, std::allocator<OrderSlot> >::_M_fill_initialize(unsigned long, OrderSlot const&) (inlined)
+                                                                              std::vector<OrderSlot, std::allocator<OrderSlot> >::vector(unsigned long, OrderSlot const&, std::allocator<OrderSlot> const&) (inlined)
+                                                                              std::vector<OrderSlot, std::allocator<OrderSlot> >::_M_fill_assign(unsigned long, OrderSlot const&)
+     9.75%     0.03%  bench    [unknown]             [k] 0xffffffffa734bc9d
+            |          
+             --9.72%--0xffffffffa734bc9d
+                       |          
+                        --8.11%--0xffffffffa6f60122
+                                  |          
+                                   --6.21%--0xffffffffa8289e61
+                                             |          
+                                              --5.11%--0xffffffffa6c00bb7
+                                                        |          
+                                                        |--1.70%--construct<Op, const Op&> (inlined)
+                                                        |          construct<Op, const Op&> (inlined)
+                                                        |          push_back (inlined)
+                                                        |          push (inlined)
+                                                        |          |          
+                                                        |           --0.81%--make_benchmark_workload (inlined)
+                                                        |                     |          
+                                                        |                      --0.58%--main
+                                                        |          
+                                                         --1.13%--__gnu_cxx::__enable_if<!std::__is_scalar<OrderSlot>::__value, void>::__type std::__fill_a1<OrderSlot*, OrderSlot>(OrderSlot*, OrderSlot*, OrderSlot const&) (inlined)
+                                                                   void std::__fill_a<OrderSlot*, OrderSlot>(OrderSlot*, OrderSlot*, OrderSlot const&) (inlined)
+                                                                   OrderSlot* std::__fill_n_a<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&, std::random_access_iterator_tag) (inlined)
+                                                                   OrderSlot* std::__fill_n_a<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&, std::random_access_iterator_tag) (inlined)
+                                                                   OrderSlot* std::fill_n<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&) (inlined)
+                                                                   OrderSlot* std::__uninitialized_fill_n<true>::__uninit_fill_n<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&) (inlined)
+                                                                   OrderSlot* std::uninitialized_fill_n<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&) (inlined)
+                                                                   OrderSlot* std::__uninitialized_fill_n_a<OrderSlot*, unsigned long, OrderSlot, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&, std::allocator<OrderSlot>&) (inlined)
+                                                                   std::vector<OrderSlot, std::allocator<OrderSlot> >::_M_fill_initialize(unsigned long, OrderSlot const&) (inlined)
+                                                                   std::vector<OrderSlot, std::allocator<OrderSlot> >::vector(unsigned long, OrderSlot const&, std::allocator<OrderSlot> const&) (inlined)
+                                                                   std::vector<OrderSlot, std::allocator<OrderSlot> >::_M_fill_assign(unsigned long, OrderSlot const&)
+     9.22%     9.22%  bench    bench                 [.] make_benchmark_workload(unsigned long, unsigned int)
+            |          
+            |--2.98%--take_random (inlined)
+            |          make_benchmark_workload (inlined)
+            |          main
+            |          __libc_start_call_main
+            |          call_init (inlined)
+            |          __libc_start_main_impl (inlined)
+            |          _start
+            |          
+            |--1.90%--operator() (inlined)
+            |          |          
+            |          |--1.08%--main
+            |          |          __libc_start_call_main
+            |          |          call_init (inlined)
+            |          |          __libc_start_main_impl (inlined)
+            |          |          _start
+            |          |          
+            |           --0.62%--uniform (inlined)
+            |          
+            |--1.54%--push_back (inlined)
+            |          push (inlined)
+            |          make_benchmark_workload (inlined)
+            |          main
+            |          __libc_start_call_main
+            |          call_init (inlined)
+            |          __libc_start_main_impl (inlined)
+            |          _start
+            |          
+             --0.65%--uniform (inlined)
+                       make_benchmark_workload (inlined)
+                       main
+                       __libc_start_call_main
+                       call_init (inlined)
+                       __libc_start_main_impl (inlined)
+                       _start
+     9.17%     0.05%  bench    [unknown]             [k] 0xffffffffa6f60122
+            |          
+             --9.12%--0xffffffffa6f60122
+                       |          
+                        --7.23%--0xffffffffa8289e61
+                                  |          
+                                   --6.13%--0xffffffffa6c00bb7
+                                             |          
+                                             |--2.42%--construct<Op, const Op&> (inlined)
+                                             |          construct<Op, const Op&> (inlined)
+                                             |          push_back (inlined)
+                                             |          push (inlined)
+                                             |          |          
+                                             |           --1.53%--make_benchmark_workload (inlined)
+                                             |                     |          
+                                             |                      --1.24%--main
+                                             |                                |          
+                                             |                                 --0.51%--__libc_start_call_main
+                                             |          
+                                              --1.35%--__gnu_cxx::__enable_if<!std::__is_scalar<OrderSlot>::__value, void>::__type std::__fill_a1<OrderSlot*, OrderSlot>(OrderSlot*, OrderSlot*, OrderSlot const&) (inlined)
+                                                        void std::__fill_a<OrderSlot*, OrderSlot>(OrderSlot*, OrderSlot*, OrderSlot const&) (inlined)
+                                                        OrderSlot* std::__fill_n_a<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&, std::random_access_iterator_tag) (inlined)
+                                                        OrderSlot* std::__fill_n_a<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&, std::random_access_iterator_tag) (inlined)
+                                                        OrderSlot* std::fill_n<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&) (inlined)
+                                                        OrderSlot* std::__uninitialized_fill_n<true>::__uninit_fill_n<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&) (inlined)
+                                                        OrderSlot* std::uninitialized_fill_n<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&) (inlined)
+                                                        OrderSlot* std::__uninitialized_fill_n_a<OrderSlot*, unsigned long, OrderSlot, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&, std::allocator<OrderSlot>&) (inlined)
+                                                        std::vector<OrderSlot, std::allocator<OrderSlot> >::_M_fill_initialize(unsigned long, OrderSlot const&) (inlined)
+                                                        std::vector<OrderSlot, std::allocator<OrderSlot> >::vector(unsigned long, OrderSlot const&, std::allocator<OrderSlot> const&) (inlined)
+                                                        std::vector<OrderSlot, std::allocator<OrderSlot> >::_M_fill_assign(unsigned long, OrderSlot const&)
+                                                        |          
+                                                         --0.70%--OrderTable::rebuild(unsigned long) (inlined)
+                                                                   OrderTable::OrderTable(unsigned long) (inlined)
+                                                                   OrderBookArray::OrderBookArray(unsigned long) (inlined)
+                                                                   std::__detail::_MakeUniq<OrderBookArray>::__single_object std::make_unique<OrderBookArray>() (inlined)
+                                                                   run_once<OrderBookArray> (inlined)
+                                                                   benchmark<OrderBookArray> (inlined)
+                                                                   main
+                                                                   |          
+                                                                    --0.64%--__libc_start_call_main
+     8.95%     0.00%  bench    bench                 [.] take_random (inlined)
+            |
+            ---take_random (inlined)
+               make_benchmark_workload (inlined)
+               |          
+                --8.93%--main
+                          __libc_start_call_main
+                          call_init (inlined)
+                          __libc_start_main_impl (inlined)
+                          _start
+     8.74%     0.13%  bench    [unknown]             [k] 0xffffffffa8289e61
+            |          
+             --8.61%--0xffffffffa8289e61
+                       |          
+                        --7.48%--0xffffffffa6c00bb7
+                                  |          
+                                  |--3.31%--construct<Op, const Op&> (inlined)
+                                  |          construct<Op, const Op&> (inlined)
+                                  |          push_back (inlined)
+                                  |          push (inlined)
+                                  |          |          
+                                  |           --2.41%--make_benchmark_workload (inlined)
+                                  |                     |          
+                                  |                      --2.12%--main
+                                  |                                |          
+                                  |                                 --1.06%--__libc_start_call_main
+                                  |          
+                                   --1.67%--__gnu_cxx::__enable_if<!std::__is_scalar<OrderSlot>::__value, void>::__type std::__fill_a1<OrderSlot*, OrderSlot>(OrderSlot*, OrderSlot*, OrderSlot const&) (inlined)
+                                             void std::__fill_a<OrderSlot*, OrderSlot>(OrderSlot*, OrderSlot*, OrderSlot const&) (inlined)
+                                             OrderSlot* std::__fill_n_a<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&, std::random_access_iterator_tag) (inlined)
+                                             OrderSlot* std::__fill_n_a<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&, std::random_access_iterator_tag) (inlined)
+                                             OrderSlot* std::fill_n<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&) (inlined)
+                                             OrderSlot* std::__uninitialized_fill_n<true>::__uninit_fill_n<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&) (inlined)
+                                             OrderSlot* std::uninitialized_fill_n<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&) (inlined)
+                                             OrderSlot* std::__uninitialized_fill_n_a<OrderSlot*, unsigned long, OrderSlot, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&, std::allocator<OrderSlot>&) (inlined)
+                                             std::vector<OrderSlot, std::allocator<OrderSlot> >::_M_fill_initialize(unsigned long, OrderSlot const&) (inlined)
+                                             std::vector<OrderSlot, std::allocator<OrderSlot> >::vector(unsigned long, OrderSlot const&, std::allocator<OrderSlot> const&) (inlined)
+                                             std::vector<OrderSlot, std::allocator<OrderSlot> >::_M_fill_assign(unsigned long, OrderSlot const&)
+                                             |          
+                                              --1.02%--OrderTable::rebuild(unsigned long) (inlined)
+                                                        OrderTable::OrderTable(unsigned long) (inlined)
+                                                        OrderBookArray::OrderBookArray(unsigned long) (inlined)
+                                                        std::__detail::_MakeUniq<OrderBookArray>::__single_object std::make_unique<OrderBookArray>() (inlined)
+                                                        run_once<OrderBookArray> (inlined)
+                                                        benchmark<OrderBookArray> (inlined)
+                                                        main
+                                                        |          
+                                                         --0.96%--__libc_start_call_main
+     8.58%     0.06%  bench    [unknown]             [k] 0xffffffffa7349c1d
+            |          
+             --8.53%--0xffffffffa7349c1d
+                       |          
+                        --7.05%--0xffffffffa734a014
+                                  |          
+                                   --3.53%--0xffffffffa734b3bf
+                                             |          
+                                              --1.88%--0xffffffffa734b95a
+                                                        |          
+                                                         --1.18%--0xffffffffa734bc9d
+                                                                   |          
+                                                                    --0.55%--0xffffffffa6f60122
+     8.38%     0.02%  bench    [unknown]             [k] 0xffffffffa73cc8ad
+            |          
+             --8.35%--0xffffffffa73cc8ad
+                       |          
+                        --8.22%--0xffffffffa7349c1d
+                                  |          
+                                   --6.75%--0xffffffffa734a014
+                                             |          
+                                              --3.22%--0xffffffffa734b3bf
+                                                        |          
+                                                         --1.58%--0xffffffffa734b95a
+                                                                   |          
+                                                                    --0.87%--0xffffffffa734bc9d
+     8.33%     0.05%  bench    [unknown]             [k] 0xffffffffa6c00bb7
+            |          
+             --8.27%--0xffffffffa6c00bb7
+                       |          
+                       |--3.88%--construct<Op, const Op&> (inlined)
+                       |          construct<Op, const Op&> (inlined)
+                       |          push_back (inlined)
+                       |          push (inlined)
+                       |          |          
+                       |           --2.99%--make_benchmark_workload (inlined)
+                       |                     |          
+                       |                      --2.70%--main
+                       |                                |          
+                       |                                 --1.58%--__libc_start_call_main
+                       |                                           |          
+                       |                                            --0.66%--call_init (inlined)
+                       |                                                      __libc_start_main_impl (inlined)
+                       |          
+                        --1.83%--__gnu_cxx::__enable_if<!std::__is_scalar<OrderSlot>::__value, void>::__type std::__fill_a1<OrderSlot*, OrderSlot>(OrderSlot*, OrderSlot*, OrderSlot const&) (inlined)
+                                  void std::__fill_a<OrderSlot*, OrderSlot>(OrderSlot*, OrderSlot*, OrderSlot const&) (inlined)
+                                  OrderSlot* std::__fill_n_a<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&, std::random_access_iterator_tag) (inlined)
+                                  OrderSlot* std::__fill_n_a<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&, std::random_access_iterator_tag) (inlined)
+                                  OrderSlot* std::fill_n<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&) (inlined)
+                                  OrderSlot* std::__uninitialized_fill_n<true>::__uninit_fill_n<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&) (inlined)
+                                  OrderSlot* std::uninitialized_fill_n<OrderSlot*, unsigned long, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&) (inlined)
+                                  OrderSlot* std::__uninitialized_fill_n_a<OrderSlot*, unsigned long, OrderSlot, OrderSlot>(OrderSlot*, unsigned long, OrderSlot const&, std::allocator<OrderSlot>&) (inlined)
+                                  std::vector<OrderSlot, std::allocator<OrderSlot> >::_M_fill_initialize(unsigned long, OrderSlot const&) (inlined)
+                                  std::vector<OrderSlot, std::allocator<OrderSlot> >::vector(unsigned long, OrderSlot const&, std::allocator<OrderSlot> const&) (inlined)
+                                  std::vector<OrderSlot, std::allocator<OrderSlot> >::_M_fill_assign(unsigned long, OrderSlot const&)
+                                  |          
+                                   --1.18%--OrderTable::rebuild(unsigned long) (inlined)
+                                             OrderTable::OrderTable(unsigned long) (inlined)
+                                             OrderBookArray::OrderBookArray(unsigned long) (inlined)
+                                             std::__detail::_MakeUniq<OrderBookArray>::__single_object std::make_unique<OrderBookArray>() (inlined)
+                                             run_once<OrderBookArray> (inlined)
+                                             benchmark<OrderBookArray> (inlined)
+                                             main
+                                             |          
+                                              --1.12%--__libc_start_call_main
+                                                        |          
+                                                         --0.53%--call_init (inlined)
+                                                                   __libc_start_main_impl (inlined)
+     8.31%     0.11%  bench    [unknown]             [k] 0xffffffffa73c95ee
+            |          
+             --8.20%--0xffffffffa73c95ee
+                       |          
+                        --8.03%--0xffffffffa73cc8ad
+                                  |          
+                                   --7.90%--0xffffffffa7349c1d
+                                             |          
+                                              --6.43%--0xffffffffa734a014
+                                                        |          
+                                                         --2.90%--0xffffffffa734b3bf
+                                                                   |          
+                                                                    --1.26%--0xffffffffa734b95a
+                                                                              |          
+                                                                               --0.55%--0xffffffffa734bc9d
+     7.59%     0.03%  bench    [unknown]             [k] 0xffffffffa7387530
+            |          
+             --7.56%--0xffffffffa7387530
+                       0xffffffffa73c95ee
+                       |          
+                        --7.42%--0xffffffffa73cc8ad
+                                  |          
+                                   --7.29%--0xffffffffa7349c1d
+                                             |          
+                                              --5.82%--0xffffffffa734a014
+                                                        |          
+                                                         --2.29%--0xffffffffa734b3bf
+                                                                   |          
+                                                                    --0.65%--0xffffffffa734b95a
+     7.05%     0.00%  bench    bench                 [.] construct<Op, const Op&> (inlined)
+            |
+            ---construct<Op, const Op&> (inlined)
+               construct<Op, const Op&> (inlined)
+               push_back (inlined)
+               push (inlined)
+               |          
+                --6.13%--make_benchmark_workload (inlined)
+                          |          
+                           --5.82%--main
+                                     |          
+                                      --4.70%--__libc_start_call_main
+                                                |          
+                                                 --3.78%--call_init (inlined)
+                                                           __libc_start_main_impl (inlined)
+                                                           |          
+                                                            --3.34%--_start
+     5.01%     0.00%  bench    bench                 [.] operator() (inlined)
+            |
+            ---operator() (inlined)
+               |          
+               |--3.10%--main
+               |          |          
+               |           --3.05%--__libc_start_call_main
+               |                     call_init (inlined)
+               |                     __libc_start_main_impl (inlined)
+               |                     _start
+               |          
+                --1.42%--uniform (inlined)
+                          |          
+                           --1.01%--random_tick (inlined)
+                                     |          
+                                      --0.75%--random_tick (inlined)
+                                                make_benchmark_workload (inlined)
+                                                main
+                                                __libc_start_call_main
+                                                call_init (inlined)
+                                                __libc_start_main_impl (inlined)
+                                                _start
+#
+# (Cannot load tips.txt file, please install perf!)
+#

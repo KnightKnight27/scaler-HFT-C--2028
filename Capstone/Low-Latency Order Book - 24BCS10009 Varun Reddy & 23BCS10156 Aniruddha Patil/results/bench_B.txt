@@ -1,0 +1,29 @@
+Implementation B: sorted std::vector levels + id-sorted std::vector orders
+Workload: 1000000 core ops (seed fixed) = 700471 add, 199305 cancel, 100224 bbo; plus 10000 x [get_bids(10) + get_asks(10)]
+Peak live orders: 501168
+Per-op timer: TSC, calibrated against steady_clock (empty start/stop pair = 20.0 ns, subtracted)
+Repetitions: 5 (median reported)
+
+run      total_ms    add_ns  cancel_ns   bbo_ns   depth_ns  bbo_loop_ns  page_faults    heap_MB
+1          155.22     128.2      379.6     26.5      216.4         3.26        10063       24.3
+2          170.29     136.6      361.1     26.5      210.3         3.33         9242       24.3
+3          207.84     166.2      444.9     32.6      277.1         6.25         9242       24.3
+4          164.52     131.2      327.7     25.2      205.7         3.34         9248       24.3
+5          157.94     130.6      317.4     24.7      203.8         3.19         9216       24.3
+median     164.52     131.2      361.1     26.5      210.3         3.33         9242       24.3
+
+Page faults while building the book on a fresh heap (run 1): 10063
+(later runs reuse memory the allocator kept from run 1, so they can show 0)
+
+Latency distribution, ns (median run):
+op            p50      p90      p99    p99.9        max
+add            80      110      651     2675   11670147
+cancel        270      491     1132     2485      30887
+bbo            20       30       40       50      28723
+depth         200      220      270     1232       9928
+
+Final BBO:
+Bid: 99.99 x 1,784
+Ask: 100.01 x 2,982
+
+Checksum: 4d916b0a83d36be5

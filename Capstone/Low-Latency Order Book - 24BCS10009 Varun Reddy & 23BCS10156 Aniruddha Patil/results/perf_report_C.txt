@@ -1,0 +1,25 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 3K of event 'cpu/cycles/P'
+# Event count (approx.): 500999922
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                               
+# ........  .......  ....................  .....................................................................................................................................................................................
+#
+    30.54%  bench    bench                 [.] OrderBookArray::add_order(unsigned long, Side, double, long)
+    11.62%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+     9.22%  bench    bench                 [.] make_benchmark_workload(unsigned long, unsigned int)
+     3.34%  bench    bench                 [.] OrderBookArray::cancel_order(unsigned long)
+     3.02%  bench    [unknown]             [k] 0xffffffffa7379f5e
+     3.01%  bench    bench                 [.] main
+     2.36%  bench    [unknown]             [k] 0xffffffffa6c011b2
+     2.13%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand()
+     2.10%  bench    bench                 [.] (anonymous namespace)::push(Workload&, Op const&)
+     1.27%  bench    bench                 [.] OrderBookArray::get_bbo() const
+     1.17%  bench    [unknown]             [k] 0xffffffffa6d04109
+#
+# (Cannot load tips.txt file, please install perf!)
+#

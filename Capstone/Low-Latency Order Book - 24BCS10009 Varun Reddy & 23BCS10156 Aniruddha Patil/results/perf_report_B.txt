@@ -1,0 +1,27 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 4K of event 'cpu/cycles/P'
+# Event count (approx.): 525508574
+#
+# Overhead  Command  Shared Object         Symbol                                                                                                                                                                                                                                    
+# ........  .......  ....................  ..........................................................................................................................................................................................................................................
+#
+    11.19%  bench    bench                 [.] OrderBookVector::find_order(unsigned long)
+    10.50%  bench    bench                 [.] OrderBookVector::SortedLevels<std::greater<int> >::find_pos(int)
+     9.83%  bench    bench                 [.] OrderBookVector::SortedLevels<std::less<int> >::find_pos(int)
+     8.83%  bench    bench                 [.] make_benchmark_workload(unsigned long, unsigned int)
+     5.00%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+     4.94%  bench    libc.so.6             [.] __memmove_avx_unaligned_erms
+     4.24%  bench    bench                 [.] OrderBookVector::add_order(unsigned long, Side, double, long)
+     2.18%  bench    bench                 [.] int (anonymous namespace)::benchmark<OrderBookVector>(Workload const&, int, (anonymous namespace)::TimerKind, bool)
+     2.07%  bench    [unknown]             [k] 0xffffffffa6c011b2
+     1.83%  bench    [unknown]             [k] 0xffffffffa7379f5e
+     1.60%  bench    bench                 [.] (anonymous namespace)::push(Workload&, Op const&)
+     1.28%  bench    bench                 [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand()
+     1.22%  bench    bench                 [.] OrderBookVector::cancel_order(unsigned long)
+#
+# (Cannot load tips.txt file, please install perf!)
+#

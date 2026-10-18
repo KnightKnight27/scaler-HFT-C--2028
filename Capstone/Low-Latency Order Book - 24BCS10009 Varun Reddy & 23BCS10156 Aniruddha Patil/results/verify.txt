@@ -1,0 +1,11 @@
+Running correctness test...
+
+[1/3] Edge-case checks (31 per implementation): A ok, B ok, C ok
+[2/3] benchmark workload: 1010000 ops (700471 add, 199305 cancel, 100224 bbo, 10000 depth), 4041010 checks per implementation: A ok, B ok, C ok
+[3/3] stress workload: 329438 ops (146662 add, 155827 cancel, 15050 bbo, 11899 depth), 1318082 checks per implementation: A ok, B ok, C ok
+
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+
+All implementations produce identical results.

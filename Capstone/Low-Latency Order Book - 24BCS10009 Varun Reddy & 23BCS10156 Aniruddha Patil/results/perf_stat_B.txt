@@ -1,0 +1,17 @@
+# started on Sat Oct 17 15:08:19 2026
+
+
+ Performance counter stats for 'taskset -c 2 ./build/bench --impl B --reps 1 --no-latency' (5 runs):
+
+            270.04 msec task-clock                                                              ( +-  1.50% )
+       854,207,945      cycles                                                                  ( +-  1.03% )  (70.97%)
+       674,318,763      instructions                                                            ( +-  0.28% )  (71.24%)
+       108,208,068      branches                                                                ( +-  0.15% )  (71.63%)
+        13,013,013      branch-misses                                                           ( +-  0.27% )  (71.72%)
+        18,838,311      cache-misses                                                            ( +-  1.01% )  (71.71%)
+        41,965,584      L1-dcache-load-misses                                                   ( +-  0.46% )  (71.54%)
+           550,431      dTLB-load-misses                                                        ( +-  8.45% )  (71.18%)
+            19,349      page-faults                                                             ( +-  0.00% )
+
+       0.272633984 +- 0.004104321 seconds time elapsed  ( +-  1.51% )
+

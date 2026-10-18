@@ -1,0 +1,29 @@
+Implementation A: std::map levels + std::unordered_map orders
+Workload: 1000000 core ops (seed fixed) = 700471 add, 199305 cancel, 100224 bbo; plus 10000 x [get_bids(10) + get_asks(10)]
+Peak live orders: 501168
+Per-op timer: TSC, calibrated against steady_clock (empty start/stop pair = 20.0 ns, subtracted)
+Repetitions: 5 (median reported)
+
+run      total_ms    add_ns  cancel_ns   bbo_ns   depth_ns  bbo_loop_ns  page_faults    heap_MB
+1          217.54     206.6      396.4     27.0      243.6         3.31         7228       29.0
+2          195.32     165.3      314.0     23.8      213.1         3.23            0       29.0
+3          188.44     173.5      299.3     24.3      215.7         3.22            0       29.0
+4          190.80     192.7      382.4     24.9      225.2         3.21            0       29.0
+5          224.96     199.8      407.9     27.3      236.6         3.64            0       29.0
+median     195.32     192.7      382.4     24.9      225.2         3.23            0       29.0
+
+Page faults while building the book on a fresh heap (run 1): 7228
+(later runs reuse memory the allocator kept from run 1, so they can show 0)
+
+Latency distribution, ns (median run):
+op            p50      p90      p99    p99.9        max
+add           130      170      351     1262   10471267
+cancel        291      471      761     2084      25587
+bbo            20       30       30       40      24565
+depth         210      230      271      892       1563
+
+Final BBO:
+Bid: 99.99 x 1,784
+Ask: 100.01 x 2,982
+
+Checksum: 4d916b0a83d36be5
