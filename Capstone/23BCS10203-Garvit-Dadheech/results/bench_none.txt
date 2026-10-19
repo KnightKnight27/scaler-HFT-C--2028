@@ -1,0 +1,23 @@
+Implementation none: empty harness baseline
+Workload: 1000000 ops (seed 42): 700829 adds, 199496 cancels, 99675 bbo queries, + 10000 depth snapshots (get_bids(10)+get_asks(10))
+Timer overhead (steady_clock pair): 27.8 ns, included in per-op numbers
+Runs: 5, reporting the median
+
+run 1: total    55.29 ms | add    25.5 ns | cancel    25.9 ns | bbo   25.0 ns | depth    25.1 ns
+run 2: total    53.08 ms | add    25.5 ns | cancel    25.8 ns | bbo   25.3 ns | depth    25.3 ns
+run 3: total    52.85 ms | add    25.2 ns | cancel    25.8 ns | bbo   25.6 ns | depth    25.5 ns
+run 4: total    52.54 ms | add    25.1 ns | cancel    25.5 ns | bbo   25.4 ns | depth    25.4 ns
+run 5: total    52.51 ms | add    25.1 ns | cancel    25.6 ns | bbo   25.1 ns | depth    25.2 ns
+
+Median of 5 runs
+  Total time      : 52.85 ms
+  ns / add_order  : 25.2
+  ns / cancel     : 25.8
+  ns / get_bbo    : 25.3
+  ns / depth(10)  : 25.3  (get_bids(10) + get_asks(10))
+
+Final BBO:
+  Bid: (none)
+  Ask: (none)
+
+Checksum: 18305076596948464285

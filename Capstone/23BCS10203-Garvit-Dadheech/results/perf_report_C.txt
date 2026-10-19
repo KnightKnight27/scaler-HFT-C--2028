@@ -1,0 +1,67 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 4K of event 'task-clock:ppp'
+# Event count (approx.): 227750000
+#
+# Overhead  Command  Shared Object          Symbol                                                                                                                                                                               
+# ........  .......  .....................  .....................................................................................................................................................................................
+#
+    32.51%  bench    bench                  [.] ArrayBook::add_order(unsigned long, Side, double, long)
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               |          
+                --32.47%--ob::RunResult ob::run_once<ArrayBook, false>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+                          ArrayBook::add_order(unsigned long, Side, double, long)
+
+    15.52%  bench    bench                  [.] ArrayBook::cancel_order(unsigned long)
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               ob::RunResult ob::run_once<ArrayBook, false>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+               ArrayBook::cancel_order(unsigned long)
+
+    11.26%  bench    bench                  [.] ob::make_workload(unsigned long, unsigned int, ob::WorkloadStats*)
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               ob::make_workload(unsigned long, unsigned int, ob::WorkloadStats*)
+
+     9.66%  bench    bench                  [.] ob::RunResult ob::run_once<ArrayBook, false>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               ob::RunResult ob::run_once<ArrayBook, false>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+
+     3.93%  bench    bench                  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               ob::make_workload(unsigned long, unsigned int, ob::WorkloadStats*)
+               std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+
+     2.20%  bench    [kernel.kallsyms]      [k] el0_da
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

@@ -1,0 +1,5 @@
+build/
+perf*.data*
+*.o
+*.trace/
+build-linux*/

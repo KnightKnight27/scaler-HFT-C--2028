@@ -1,0 +1,10 @@
+Running correctness test...
+
+Workload: 1000000 ops, seed 42
+Checked : 1010000 BBO snapshots, 199496 cancel results, 10000 depth snapshots (top-10 and full book), plus edge cases
+
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+
+All implementations produce identical results.

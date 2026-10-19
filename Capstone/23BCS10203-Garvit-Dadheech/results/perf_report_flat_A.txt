@@ -1,0 +1,33 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 47K of event 'task-clock:ppp'
+# Event count (approx.): 2358300000
+#
+# Overhead  Command  Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+# ........  .......  .....................  ..............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    25.46%  bench    bench                  [.] MapBook::add_order(unsigned long, Side, double, long)
+    16.94%  bench    bench                  [.] MapBook::cancel_order(unsigned long)
+    13.10%  bench    libc.so.6              [.] _int_free
+     9.35%  bench    libc.so.6              [.] malloc_consolidate
+     6.17%  bench    libc.so.6              [.] cfree@GLIBC_2.17
+     4.71%  bench    bench                  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, MapBook::Handle>, std::allocator<std::pair<unsigned long const, MapBook::Handle> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+     3.29%  bench    libc.so.6              [.] _int_malloc
+     2.82%  bench    libc.so.6              [.] unlink_chunk.isra.0
+     2.26%  bench    bench                  [.] ob::make_workload(unsigned long, unsigned int, ob::WorkloadStats*)
+     1.81%  bench    libc.so.6              [.] malloc
+     1.62%  bench    bench                  [.] ob::RunResult ob::run_once<MapBook, false>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+     1.36%  bench    bench                  [.] std::pair<std::__detail::_Node_iterator<std::pair<unsigned long const, MapBook::Handle>, false, false>, bool> std::_Hashtable<unsigned long, std::pair<unsigned long const, MapBook::Handle>, std::allocator<std::pair<unsigned long const, MapBook::Handle> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_emplace<unsigned long&, MapBook::Handle>(std::integral_constant<bool, true>, unsigned long&, MapBook::Handle&&) [clone .isra.0]
+     1.24%  bench    bench                  [.] operator delete(void*, unsigned long)@plt
+     0.97%  bench    [kernel.kallsyms]      [k] __pi_clear_page
+     0.73%  bench    bench                  [.] std::_Rb_tree<int, std::pair<int const, MapBook::PriceLevel>, std::_Select1st<std::pair<int const, MapBook::PriceLevel> >, std::greater<int>, std::allocator<std::pair<int const, MapBook::PriceLevel> > >::_M_erase(std::_Rb_tree_node<std::pair<int const, MapBook::PriceLevel> >*) [clone .isra.0]
+     0.72%  bench    bench                  [.] std::_Rb_tree<int, std::pair<int const, MapBook::PriceLevel>, std::_Select1st<std::pair<int const, MapBook::PriceLevel> >, std::less<int>, std::allocator<std::pair<int const, MapBook::PriceLevel> > >::_M_erase(std::_Rb_tree_node<std::pair<int const, MapBook::PriceLevel> >*) [clone .isra.0]
+     0.67%  bench    bench                  [.] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

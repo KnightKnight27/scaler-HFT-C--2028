@@ -1,0 +1,14 @@
+# started on Mon Oct 19 04:09:39 2026
+
+
+ Performance counter stats for './build-linux/bench --impl A --reps 1 --no-timers' (5 runs):
+
+            434.63 msec task-clock                       #    0.988 CPUs utilized               ( +-  2.11% )
+                 7      context-switches                 #   16.106 /sec                        ( +- 44.03% )
+                 0      cpu-migrations                   #    0.000 /sec                      
+             22999      page-faults                      #   52.917 K/sec                     
+             22998      minor-faults                     #   52.915 K/sec                     
+                 1      major-faults                     #    2.301 /sec                      
+
+           0.44007 +- 0.00928 seconds time elapsed  ( +-  2.11% )
+

@@ -1,0 +1,23 @@
+Implementation A: std::map<tick, std::list<Order>> + std::unordered_map<id, iterator>
+Workload: 1000000 ops (seed 42): 700829 adds, 199496 cancels, 99675 bbo queries, + 10000 depth snapshots (get_bids(10)+get_asks(10))
+Timer overhead (steady_clock pair): 31.8 ns, included in per-op numbers
+Runs: 5, reporting the median
+
+run 1: total   810.25 ms | add   726.8 ns | cancel  1163.5 ns | bbo   74.0 ns | depth   472.3 ns
+run 2: total   762.25 ms | add   806.5 ns | cancel   678.4 ns | bbo   53.5 ns | depth   379.2 ns
+run 3: total  1502.78 ms | add  1493.9 ns | cancel  1781.8 ns | bbo   64.2 ns | depth  1338.8 ns
+run 4: total   515.15 ms | add   483.1 ns | cancel   607.7 ns | bbo   42.2 ns | depth   333.6 ns
+run 5: total   522.62 ms | add   500.5 ns | cancel   609.1 ns | bbo   43.2 ns | depth   315.5 ns
+
+Median of 5 runs
+  Total time      : 762.25 ms
+  ns / add_order  : 726.8
+  ns / cancel     : 678.4
+  ns / get_bbo    : 53.5
+  ns / depth(10)  : 379.2  (get_bids(10) + get_asks(10))
+
+Final BBO:
+  Bid: 99.99 x 3244
+  Ask: 100.01 x 2193
+
+Checksum: 17464855786638258893

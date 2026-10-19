@@ -1,0 +1,23 @@
+Implementation B: std::unordered_map (orders + levels) + std::priority_queue with lazy deletion
+Workload: 1000000 ops (seed 42): 700829 adds, 199496 cancels, 99675 bbo queries, + 10000 depth snapshots (get_bids(10)+get_asks(10))
+Timer overhead (steady_clock pair): 36.9 ns, included in per-op numbers
+Runs: 5, reporting the median
+
+run 1: total   257.57 ms | add   143.1 ns | cancel   360.9 ns | bbo   53.9 ns | depth  3689.7 ns
+run 2: total   203.39 ms | add   112.3 ns | cancel   256.8 ns | bbo   50.4 ns | depth  2808.3 ns
+run 3: total   202.40 ms | add   111.7 ns | cancel   261.6 ns | bbo   50.0 ns | depth  2641.9 ns
+run 4: total   236.02 ms | add   130.2 ns | cancel   347.6 ns | bbo   52.6 ns | depth  2806.9 ns
+run 5: total   250.19 ms | add   146.1 ns | cancel   366.7 ns | bbo   51.8 ns | depth  2787.2 ns
+
+Median of 5 runs
+  Total time      : 236.02 ms
+  ns / add_order  : 130.2
+  ns / cancel     : 347.6
+  ns / get_bbo    : 51.8
+  ns / depth(10)  : 2806.9  (get_bids(10) + get_asks(10))
+
+Final BBO:
+  Bid: 99.99 x 3244
+  Ask: 100.01 x 2193
+
+Checksum: 17464855786638258893

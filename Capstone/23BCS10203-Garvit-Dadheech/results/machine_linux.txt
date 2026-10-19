@@ -1,0 +1,2 @@
+# Mon Oct 19 04:09:33 UTC 2026  kernel 7.0.12-linuxkit  g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+# cpu: (model name unavailable)  perf perf version 6.8.12

@@ -1,0 +1,23 @@
+Implementation C: fixed price array + two-level bitmap + open-addressing order table
+Workload: 1000000 ops (seed 42): 700829 adds, 199496 cancels, 99675 bbo queries, + 10000 depth snapshots (get_bids(10)+get_asks(10))
+Timer overhead (steady_clock pair): 27.1 ns, included in per-op numbers
+Runs: 5, reporting the median
+
+run 1: total    73.14 ms | add    43.4 ns | cancel    41.5 ns | bbo   29.0 ns | depth   104.3 ns
+run 2: total    80.38 ms | add    51.3 ns | cancel    51.7 ns | bbo   28.5 ns | depth   112.7 ns
+run 3: total    92.47 ms | add    63.1 ns | cancel    65.9 ns | bbo   28.9 ns | depth   119.0 ns
+run 4: total    72.86 ms | add    43.5 ns | cancel    43.2 ns | bbo   28.4 ns | depth   104.1 ns
+run 5: total    72.05 ms | add    43.0 ns | cancel    41.8 ns | bbo   28.2 ns | depth   103.9 ns
+
+Median of 5 runs
+  Total time      : 73.14 ms
+  ns / add_order  : 43.5
+  ns / cancel     : 43.2
+  ns / get_bbo    : 28.5
+  ns / depth(10)  : 104.3  (get_bids(10) + get_asks(10))
+
+Final BBO:
+  Bid: 99.99 x 3244
+  Ask: 100.01 x 2193
+
+Checksum: 17464855786638258893

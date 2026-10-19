@@ -1,0 +1,189 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 10K of event 'task-clock:ppp'
+# Event count (approx.): 530150000
+#
+# Overhead  Command  Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+# ........  .......  .....................  ...........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    14.89%  bench    libc.so.6              [.] malloc
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               ob::RunResult ob::run_once<HeapBook, false>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+               |          
+                --14.75%--HeapBook::add_order(unsigned long, Side, double, long)
+                          |          
+                           --14.66%--operator new(unsigned long)
+                                     malloc
+
+     9.82%  bench    libc.so.6              [.] __memcpy_generic
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               |          
+                --9.59%--ob::RunResult ob::run_once<HeapBook, false>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+                          |          
+                          |--4.90%--HeapBook::get_bids(int) const
+                          |          __memcpy_generic
+                          |          
+                           --4.68%--HeapBook::get_asks(int) const
+                                     __memcpy_generic
+
+     7.82%  bench    libc.so.6              [.] _int_free
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               ob::RunResult ob::run_once<HeapBook, false>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+               |          
+               |--4.82%--std::_Hashtable<unsigned long, std::pair<unsigned long const, HeapBook::Order>, std::allocator<std::pair<unsigned long const, HeapBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable()
+               |          cfree@GLIBC_2.17
+               |          _int_free
+               |          
+                --2.86%--HeapBook::cancel_order(unsigned long)
+                          cfree@GLIBC_2.17
+                          _int_free
+
+     7.30%  bench    libc.so.6              [.] malloc_consolidate
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               ob::RunResult ob::run_once<HeapBook, false>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+               |          
+               |--4.65%--cfree@GLIBC_2.17
+               |          _int_free_maybe_consolidate.part.0
+               |          malloc_consolidate
+               |          
+                --2.64%--HeapBook::HeapBook()
+                          std::_Hashtable<unsigned long, std::pair<unsigned long const, HeapBook::Order>, std::allocator<std::pair<unsigned long const, HeapBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+                          operator new(unsigned long)
+                          malloc
+                          _int_malloc
+                          malloc_consolidate
+
+     6.70%  bench    bench                  [.] HeapBook::add_order(unsigned long, Side, double, long)
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               |          
+                --6.28%--ob::RunResult ob::run_once<HeapBook, false>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+                          HeapBook::add_order(unsigned long, Side, double, long)
+
+     6.53%  bench    libc.so.6              [.] _int_malloc
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               |          
+                --6.49%--ob::RunResult ob::run_once<HeapBook, false>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+                          |          
+                           --5.71%--HeapBook::add_order(unsigned long, Side, double, long)
+                                     |          
+                                      --5.69%--operator new(unsigned long)
+                                                malloc
+                                                _int_malloc
+
+     5.02%  bench    bench                  [.] ob::make_workload(unsigned long, unsigned int, ob::WorkloadStats*)
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               ob::make_workload(unsigned long, unsigned int, ob::WorkloadStats*)
+
+     3.76%  bench    bench                  [.] ob::RunResult ob::run_once<HeapBook, false>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               ob::RunResult ob::run_once<HeapBook, false>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+
+     3.42%  bench    libc.so.6              [.] cfree@GLIBC_2.17
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               ob::RunResult ob::run_once<HeapBook, false>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+               |          
+                --2.55%--std::_Hashtable<unsigned long, std::pair<unsigned long const, HeapBook::Order>, std::allocator<std::pair<unsigned long const, HeapBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::~_Hashtable()
+                          cfree@GLIBC_2.17
+
+     3.29%  bench    bench                  [.] std::_Hashtable<unsigned long, std::pair<unsigned long const, HeapBook::Order>, std::allocator<std::pair<unsigned long const, HeapBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               ob::RunResult ob::run_once<HeapBook, false>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+               HeapBook::add_order(unsigned long, Side, double, long)
+               std::_Hashtable<unsigned long, std::pair<unsigned long const, HeapBook::Order>, std::allocator<std::pair<unsigned long const, HeapBook::Order> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_rehash(unsigned long, unsigned long const&)
+
+     3.24%  bench    bench                  [.] void std::__adjust_heap<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, long, int, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, long, long, int, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> >) [clone .isra.0]
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               ob::RunResult ob::run_once<HeapBook, false>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+               HeapBook::get_asks(int) const
+               void std::__adjust_heap<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, long, int, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, long, long, int, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> >) [clone .isra.0]
+
+     2.97%  bench    bench                  [.] void std::__adjust_heap<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, long, int, __gnu_cxx::__ops::_Iter_comp_iter<std::less<int> > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, long, long, int, __gnu_cxx::__ops::_Iter_comp_iter<std::less<int> >) [clone .isra.0]
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               ob::RunResult ob::run_once<HeapBook, false>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+               HeapBook::get_bids(int) const
+               void std::__adjust_heap<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, long, int, __gnu_cxx::__ops::_Iter_comp_iter<std::less<int> > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, long, long, int, __gnu_cxx::__ops::_Iter_comp_iter<std::less<int> >) [clone .isra.0]
+
+     2.89%  bench    bench                  [.] HeapBook::cancel_order(unsigned long)
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               ob::RunResult ob::run_once<HeapBook, false>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+               HeapBook::cancel_order(unsigned long)
+
+     2.65%  bench    bench                  [.] std::pair<std::__detail::_Node_iterator<std::pair<int const, long>, false, false>, bool> std::__detail::_Insert_base<int, std::pair<int const, long>, std::allocator<std::pair<int const, long> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::try_emplace<int const&, long>(std::__detail::_Node_const_iterator<std::pair<int const, long>, false, false>, int const&, long&&) [clone .isra.0]
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               ob::RunResult ob::run_once<HeapBook, false>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+               |          
+                --2.05%--HeapBook::add_order(unsigned long, Side, double, long)
+                          std::pair<std::__detail::_Node_iterator<std::pair<int const, long>, false, false>, bool> std::__detail::_Insert_base<int, std::pair<int const, long>, std::allocator<std::pair<int const, long> >, std::__detail::_Select1st, std::equal_to<int>, std::hash<int>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::try_emplace<int const&, long>(std::__detail::_Node_const_iterator<std::pair<int const, long>, false, false>, int const&, long&&) [clone .isra.0]
+
+     2.06%  bench    libc.so.6              [.] unlink_chunk.isra.0
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               ob::RunResult ob::run_once<HeapBook, false>(std::vector<ob::Op, std::allocator<ob::Op> > const&)
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
