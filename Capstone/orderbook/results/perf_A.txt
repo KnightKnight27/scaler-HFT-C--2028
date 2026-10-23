@@ -1,0 +1,70 @@
+impl=A ops=1000000 seed=42
+total_ms=227.89
+add:    count=701221 ns/op=183.9
+cancel: count=198995 ns/op=357.0
+bbo:    count=99784 ns/op=22.1
+depth(10+10 per 100 ops): count=10000 ns/op=296.1
+Final BBO:
+Bid: 99.99 x 3059
+Ask: 100.01 x 3152
+Checksum: 304767386
+Peak RSS: 64548 KB, minor faults: 20092, major faults: 0
+impl=A ops=1000000 seed=42
+total_ms=238.19
+add:    count=701221 ns/op=192.6
+cancel: count=198995 ns/op=377.8
+bbo:    count=99784 ns/op=22.5
+depth(10+10 per 100 ops): count=10000 ns/op=299.5
+Final BBO:
+Bid: 99.99 x 3059
+Ask: 100.01 x 3152
+Checksum: 304767386
+Peak RSS: 64652 KB, minor faults: 20091, major faults: 0
+impl=A ops=1000000 seed=42
+total_ms=232.84
+add:    count=701221 ns/op=189.2
+cancel: count=198995 ns/op=362.0
+bbo:    count=99784 ns/op=22.4
+depth(10+10 per 100 ops): count=10000 ns/op=302.5
+Final BBO:
+Bid: 99.99 x 3059
+Ask: 100.01 x 3152
+Checksum: 304767386
+Peak RSS: 64708 KB, minor faults: 20092, major faults: 0
+impl=A ops=1000000 seed=42
+total_ms=235.06
+add:    count=701221 ns/op=191.0
+cancel: count=198995 ns/op=364.7
+bbo:    count=99784 ns/op=22.8
+depth(10+10 per 100 ops): count=10000 ns/op=309.1
+Final BBO:
+Bid: 99.99 x 3059
+Ask: 100.01 x 3152
+Checksum: 304767386
+Peak RSS: 65048 KB, minor faults: 20091, major faults: 0
+impl=A ops=1000000 seed=42
+total_ms=233.30
+add:    count=701221 ns/op=188.8
+cancel: count=198995 ns/op=365.1
+bbo:    count=99784 ns/op=22.3
+depth(10+10 per 100 ops): count=10000 ns/op=314.7
+Final BBO:
+Bid: 99.99 x 3059
+Ask: 100.01 x 3152
+Checksum: 304767386
+Peak RSS: 64908 KB, minor faults: 20092, major faults: 0
+
+ Performance counter stats for './bench --impl A' (5 runs):
+
+            418.89 msec task-clock:u                                                            ( +-  0.54% )
+     1,671,325,866      cycles:u                                                                ( +-  0.70% )  (71.40%)
+     1,231,510,976      instructions:u                                                          ( +-  0.42% )  (71.55%)
+       230,750,507      branches:u                                                              ( +-  0.34% )  (71.54%)
+         9,474,510      branch-misses:u                                                         ( +-  0.42% )  (71.51%)
+        10,476,146      cache-misses:u                                                          ( +-  0.53% )  (71.54%)
+        22,501,248      L1-dcache-load-misses:u                                                 ( +-  0.68% )  (71.32%)
+         1,257,563      dTLB-load-misses:u                                                      ( +-  1.86% )  (71.15%)
+            20,071      page-faults:u                                                           ( +-  0.00% )
+
+       0.421538012 +- 0.002269838 seconds time elapsed  ( +-  0.54% )
+

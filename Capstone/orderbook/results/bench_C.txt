@@ -1,0 +1,11 @@
+impl=C ops=1000000 seed=42
+total_ms=147.48
+add:    count=701221 ns/op=90.7
+cancel: count=198995 ns/op=282.6
+bbo:    count=99784 ns/op=24.5
+depth(10+10 per 100 ops): count=10000 ns/op=182.9
+Final BBO:
+Bid: 99.99 x 3059
+Ask: 100.01 x 3152
+Checksum: 304767386
+Peak RSS: 64684 KB, minor faults: 20019, major faults: 0

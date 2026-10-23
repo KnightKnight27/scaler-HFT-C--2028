@@ -1,0 +1,14 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 31.43      0.11     0.11   701221     0.00     0.00  MapOrderBook::add_order(unsigned long, Side, double, long)
+ 22.86      0.19     0.08  1099234     0.00     0.00  frame_dummy
+ 22.86      0.27     0.08    14093     0.01     0.01  build_workload(int, unsigned int)
+ 20.00      0.34     0.07   198995     0.00     0.00  MapOrderBook::cancel_order(unsigned long)
+  2.86      0.35     0.01        1    10.00   349.99  void run_bench<MapOrderBook>(std::vector<Op, std::allocator<Op> > const&, char const*)
+  0.00      0.35     0.00  1601443     0.00     0.00  std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+  0.00      0.35     0.00  1601437     0.00     0.00  run_verify(std::vector<Op, std::allocator<Op> > const&)
+  0.00      0.35     0.00   100000     0.00     0.00  void std::vector<Level, std::allocator<Level> >::_M_realloc_append<Level>(Level&&)
+  0.00      0.35     0.00     8020     0.00     0.00  std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand()

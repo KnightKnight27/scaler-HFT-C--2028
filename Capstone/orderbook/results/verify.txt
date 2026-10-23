@@ -1,0 +1,6 @@
+Running correctness test...
+Edge cases (empty BBO, unknown/double cancel, shallow depth): PASS
+Implementation A: PASS
+Implementation B: PASS
+Implementation C: PASS
+All implementations produce identical results.

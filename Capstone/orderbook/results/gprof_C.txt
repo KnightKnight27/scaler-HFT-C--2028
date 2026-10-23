@@ -1,0 +1,14 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 29.17      0.07     0.07        1    70.00   130.00  build_workload(int, unsigned int)
+ 25.00      0.13     0.06  1099211     0.00     0.00  frame_dummy
+ 25.00      0.19     0.06   198995     0.00     0.00  ArrayOrderBook::cancel_order(unsigned long)
+ 12.50      0.22     0.03        1    30.00   110.00  void run_bench<ArrayOrderBook>(std::vector<Op, std::allocator<Op> > const&, char const*)
+  8.33      0.24     0.02   701221     0.00     0.00  std::_Hashtable<unsigned long, std::pair<unsigned long const, ArrayOrderBook::OrderInfo>, std::allocator<std::pair<unsigned long const, ArrayOrderBook::OrderInfo> >, std::__detail::_Select1st, std::equal_to<unsigned long>, std::hash<unsigned long>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<unsigned long const, ArrayOrderBook::OrderInfo>, false>*, unsigned long)
+  0.00      0.24     0.00  1601443     0.00     0.00  std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+  0.00      0.24     0.00  1601437     0.00     0.00  run_verify(std::vector<Op, std::allocator<Op> > const&)
+  0.00      0.24     0.00   701221     0.00     0.00  ArrayOrderBook::add_order(unsigned long, Side, double, long)
+  0.00      0.24     0.00   100000     0.00     0.00  void std::vector<Level, std::allocator<Level> >::_M_realloc_append<Level>(Level&&)

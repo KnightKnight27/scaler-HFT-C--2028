@@ -1,0 +1,4 @@
+bench
+bench_pg
+gmon.out
+*.o
